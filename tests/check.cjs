@@ -251,3 +251,19 @@ vm.runInContext(`
 }
 `,ctx);
 console.log('PASS: Alle sieben weiteren Ansätze mit wechselnden, kohärenten, editierbaren Zufallsparametern und verlustfreiem Backup; eigene Profile bleiben erhalten.');
+vm.runInContext(`{
+ const oldSize=centurySize,oldSelection=centurySelection;
+ try{
+ for(const size of [200,500,1000]){
+ centurySize=size;const groups=centuryGroups();
+ for(let i=1;i<groups.length;i++){const a=groups[i-1],b=groups[i];if(astronomical(b.from)!==astronomical(a.to)+1)throw Error('Lücke zwischen Jahrhundertgruppen');if(b.to-b.from+1!==size)throw Error('Ungleiche numerische Gruppen')}
+ }
+ centurySize=200;centurySelection=new Set(['1801']);
+ if(!centuryVisible({year:1790,end:1820})||centuryVisible({year:1800})||!centuryVisible({year:2000})||centuryVisible({year:2001}))throw Error('Zeitgrenzen oder Überlappung falsch');
+ if(!centuryVisible({title:'Undatiert'}))throw Error('Undatierte Begriffe verloren');
+ if(JSON.stringify(centuryDomain())!==JSON.stringify([1801,2000]))throw Error('Falscher Ausschnitt');
+ centurySelection=new Set();if(centuryVisible({year:1900}))throw Error('Leere Auswahl ignoriert');
+ centurySelection=null;if(!centuryVisible({year:-17000}))throw Error('Gesamtbestand fehlt');
+ }finally{centurySize=oldSize;centurySelection=oldSelection}
+}`,ctx);
+console.log('PASS: Numerisch gleichmässige Jahrhundertgruppen ohne Jahr null; Überlappungen, leere Auswahl und vollständiger Bestand.');
