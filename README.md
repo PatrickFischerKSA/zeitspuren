@@ -123,3 +123,5 @@ Auch Ordnung/Erneuerung, Materialismus, Wiederkunft, Zeitschichten, erlebte Zeit
 
 ## Vergleichbare Deutungsentwürfe
 Jedes Geschichtsbild unterstützt getrennte, benannte Entwürfe mit eigenen Voraussetzungen, Notizen, Untersuchungsschwerpunkten und begründeten Einordnungen. Schüler*innen setzen Rolle und Gewicht einer Spur; diese Entscheidungen verändern Position, Hervorhebung und Grösse. Ein zweiter Entwurf kann daneben mit denselben Quellen verglichen werden. Geänderte Voraussetzungen markieren frühere Einordnungen als erneut prüfbedürftig. Neue Entwürfe sind leer oder ausdrücklich Kopien; keine automatische Ableitung von Gruppenmeinungen. Entwürfe werden lokal und im Export gesichert, Importkonflikte bleiben als getrennte Fassungen erhalten.
+
+Die acht Perspektiven sind nach vier Leitfragen geordnet. Jede Ansicht beginnt mit einer standardmässig geöffneten Einführung zu Kontext, Begriffen, einem konkreten Untersuchungsbeispiel, der Übertragung in die Grafik und ihren Grenzen. Dieselbe Gruppierung gilt für beide Auswahlmenüs und die Perspektivübersicht.

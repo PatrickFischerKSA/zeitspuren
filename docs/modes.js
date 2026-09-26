@@ -17,7 +17,7 @@ function prepareRepresentation(){
  $$('.timeline-nav,.timeline-caption,#scroll,.timeline-foot,#timelineUndated').forEach(el=>el.hidden=!chrono);
  $('.toolbar').hidden=!browsing;$('#modeStage').hidden=chrono;
  $$('.viewoptions label').forEach(el=>{if(el.querySelector('#scale,#zoom'))el.hidden=!chrono});$('#epoch').hidden=!chrono;
- const picker=$('#conceptView');if(picker){picker.value=GLOBAL_LENSES[representation]?representation:'';picker.onchange=e=>{if(e.target.value)switchRepresentation(e.target.value)}}
+ const picker=$('#conceptView');if(picker){picker.innerHTML=perspectiveOptions(representation,true);picker.value=GLOBAL_LENSES[representation]?representation:'';picker.onchange=e=>{if(e.target.value)switchRepresentation(e.target.value)}}
  const memoryButton=$('#memoryView');if(memoryButton){memoryButton.onclick=()=>switchRepresentation('memoria');memoryButton.setAttribute('aria-pressed',String(representation==='memoria'))}
  $('#modeHelp').textContent=REPRESENTATIONS.find(r=>r[0]===representation)[2];
 }
@@ -222,7 +222,7 @@ function worldSceneHtml(items){
 function lensUniverseHtml(query='',own=false){
  const model=GLOBAL_LENSES[representation],reading=WORLD_READINGS[representation],items=lensItems(query,own),corpus=lensCorpus();let focus=byId(lensFocus)||byId('paris')||corpus[0];lensFocus=focus.id;
  const assignment=lensAssignment(representation,lensFocus),source=SOURCES[reading.source],src=source?.url?`<a href="${esc(source.url)}" target="_blank" rel="noopener">${esc(source.title)}</a>`:'';
- return `<section class="world-view"><div class="mode-heading"><p class="eyebrow">WELTGESCHEHEN ANDERS SEHEN · EINE KONSTRUKTION ERPROBEN</p><h2>${reading.name}</h2><p>${reading.mechanism}</p></div><div class="world-switches" aria-label="Ansicht des Weltgeschehens">${Object.entries(WORLD_READINGS).map(([k,r])=>`<button data-world-mode="${k}" aria-pressed="${k===representation}">${r.short}</button>`).join('')}</div>${profilePanelHtml()}<div class="world-controls"><label>Betrachtungszeit <select id="worldTime"><option value="recent" ${!worldAll?'selected':''}>Zeitfenster um mein Standjahr</option><option value="all" ${worldAll?'selected':''}>Gesamte Zeit</option></select></label><label>Standjahr <input id="worldYear" type="number" value="${worldYear}" step="1"></label><button id="worldGo">Standpunkt setzen</button><label>Zeitfenster ± Jahre <select id="worldWindow">${[25,50,130,500,2000,20000].map(n=>`<option ${n===worldWindow?'selected':''} value="${n}">${n}</option>`).join('')}</select></label><button id="worldNow">Gegenwart betrachten</button></div>${telosHtml()}${premiseLabHtml()}<label class="world-assumption"><input id="worldAssumption" type="checkbox" ${worldAssumption?'checked':''}>${reading.action}</label>${representation==='recurrence'?`<label class="world-cycle">Länge eines versuchsweisen Umlaufs <input id="worldPeriod" type="range" min="10" max="500" value="${worldPeriod}"><output>${worldPeriod} Jahre</output></label>`:''}<p class="world-experiment">Gedankenexperiment: Die Bildordnung ist unsere Übertragung. Sie beschreibt nicht automatisch, wie die Beteiligten selbst dachten.</p>${readingLegend()}${worldSceneHtml(items)}${readingComparisonHtml(items)}<div class="world-consequences"><article><h3>Was dieser Blick erschliesst</h3><p>${reading.gain}</p></article><article><h3>Was er verdecken kann</h3><p>${reading.loss}</p></article></div><section class="world-workbench"><div><label for="lensFocus">Ein Ereignis in dieser Ansicht untersuchen</label><select id="lensFocus">${corpus.map(e=>`<option value="${esc(e.id)}" ${e.id===lensFocus?'selected':''}>${esc(spurDate(e))} · ${esc(e.title)}</option>`).join('')}</select><h3>${esc(focus.title)}</h3><p>${esc(focus.intro||focus.question||'Eigene Spur')}</p>${focus.image?`<img class="world-focus-image" src="${imageSrc(focus.image)}" alt="${esc(focus.title)}">`:''}<button id="lensSource">Quelle und Materialien öffnen ↗</button>${!items.some(e=>e.id===lensFocus)?'<p class="notice">Diese Spur liegt ausserhalb des aktuellen Suchfilters bzw. der Kategorienauswahl. Die Auswahl bleibt für deinen Vergleich erhalten.</p>':''}<p class="small">Quellenbefund und Deutung trennen: ${esc(focus.text||'Öffne die eigene Spur und prüfe ihre Belege.')}</p></div><div><p class="eyebrow">MIT DIESER KONSTRUKTION ERZÄHLEN</p><h3>${reading.short}: ${esc(focus.title)}</h3><p>${reading.task}</p>${lensFocus==='paris'?`<p class="world-example"><strong>Ein möglicher Ansatz, keine historische Aussage:</strong> ${reading.paris}</p>`:''}<h4>Die Konstruktion aufbrechen</h4><p>${reading.counter}</p>${decisionEditorHtml(focus)}<label for="lensPlacement">Ergänzender Untersuchungsschwerpunkt</label><select id="lensPlacement"><option value="">Noch offen</option>${model.slots.map(([k,t])=>`<option value="${k}" ${assignment===k?'selected':''}>${t}</option>`).join('')}</select>${modeNote(lensNoteKey(representation,lensFocus),'Deine Erzählung und ihre Gegenprüfung','Meine Erzählung unter diesem Geschichtsbild: …\nWas ich aus der Quelle belegen kann: …\nWas erst die Konstruktion hineinträgt: …\nWas ein anderer Blick sichtbar macht: …')}<label for="lensSwitch">Dasselbe Ereignis anders sehen</label><select id="lensSwitch">${Object.entries(WORLD_READINGS).map(([k,r])=>`<option value="${k}" ${k===representation?'selected':''}>${r.short}</option>`).join('')}</select></div></section><details class="world-foundations"><summary>Historischer Ansatz, Quellen und Unterschiede innerhalb des Modells</summary><p>${reading.caution}</p>${lensExplanationHtml()}<p>${src}</p><button id="lensTheory">Konzept und Quellen erklären ↗</button><button id="lensExamples">${representation==='recurrence'?'Nietzsche und den Podcast öffnen ↗':'Weitere Ausprägungen und Beispiele ↗'}</button><button data-switch="network">Begriffsbeziehungen nachschlagen ↗</button></details><details class="world-register"><summary>Alle Spuren dieser Auswahl (${items.length}) – auch ausserhalb des Bildausschnitts</summary><p class="lens-count">${items.length} von ${corpus.length} Spuren im gewählten Bestand. Undatierte Begriffe werden nicht künstlich in die Grafik datiert.</p><div>${items.map(e=>corpusEntryHtml(e,'data-lens-focus')).join('')}</div></details><div class="world-compare"><label for="lensPartner">Mit einer weiteren Spur vergleichen</label><select id="lensPartner">${corpus.filter(e=>e.id!==lensFocus).map(e=>`<option value="${esc(e.id)}">${esc(e.title)}</option>`).join('')}</select><button id="lensCompare">Vergleich begründen ↗</button></div></section>`;
+ return `<section class="world-view"><div class="mode-heading"><p class="eyebrow">WELTGESCHEHEN ANDERS SEHEN · EINE KONSTRUKTION ERPROBEN</p><h2>${reading.name}</h2><p>${reading.mechanism}</p></div>${perspectiveNavigation()}${perspectiveIntroduction()}<div id="interpretationExperiment" tabindex="-1"></div>${profilePanelHtml()}<div class="world-controls"><label>Betrachtungszeit <select id="worldTime"><option value="recent" ${!worldAll?'selected':''}>Zeitfenster um mein Standjahr</option><option value="all" ${worldAll?'selected':''}>Gesamte Zeit</option></select></label><label>Standjahr <input id="worldYear" type="number" value="${worldYear}" step="1"></label><button id="worldGo">Standpunkt setzen</button><label>Zeitfenster ± Jahre <select id="worldWindow">${[25,50,130,500,2000,20000].map(n=>`<option ${n===worldWindow?'selected':''} value="${n}">${n}</option>`).join('')}</select></label><button id="worldNow">Gegenwart betrachten</button></div>${telosHtml()}${premiseLabHtml()}<label class="world-assumption"><input id="worldAssumption" type="checkbox" ${worldAssumption?'checked':''}>${reading.action}</label>${representation==='recurrence'?`<label class="world-cycle">Länge eines versuchsweisen Umlaufs <input id="worldPeriod" type="range" min="10" max="500" value="${worldPeriod}"><output>${worldPeriod} Jahre</output></label>`:''}<p class="world-experiment">Gedankenexperiment: Die Bildordnung ist unsere Übertragung. Sie beschreibt nicht automatisch, wie die Beteiligten selbst dachten.</p>${readingLegend()}${worldSceneHtml(items)}${readingComparisonHtml(items)}<div class="world-consequences"><article><h3>Was dieser Blick erschliesst</h3><p>${reading.gain}</p></article><article><h3>Was er verdecken kann</h3><p>${reading.loss}</p></article></div><section class="world-workbench"><div><label for="lensFocus">Ein Ereignis in dieser Ansicht untersuchen</label><select id="lensFocus">${corpus.map(e=>`<option value="${esc(e.id)}" ${e.id===lensFocus?'selected':''}>${esc(spurDate(e))} · ${esc(e.title)}</option>`).join('')}</select><h3>${esc(focus.title)}</h3><p>${esc(focus.intro||focus.question||'Eigene Spur')}</p>${focus.image?`<img class="world-focus-image" src="${imageSrc(focus.image)}" alt="${esc(focus.title)}">`:''}<button id="lensSource">Quelle und Materialien öffnen ↗</button>${!items.some(e=>e.id===lensFocus)?'<p class="notice">Diese Spur liegt ausserhalb des aktuellen Suchfilters bzw. der Kategorienauswahl. Die Auswahl bleibt für deinen Vergleich erhalten.</p>':''}<p class="small">Quellenbefund und Deutung trennen: ${esc(focus.text||'Öffne die eigene Spur und prüfe ihre Belege.')}</p></div><div><p class="eyebrow">MIT DIESER KONSTRUKTION ERZÄHLEN</p><h3>${reading.short}: ${esc(focus.title)}</h3><p>${reading.task}</p>${lensFocus==='paris'?`<p class="world-example"><strong>Ein möglicher Ansatz, keine historische Aussage:</strong> ${reading.paris}</p>`:''}<h4>Die Konstruktion aufbrechen</h4><p>${reading.counter}</p>${decisionEditorHtml(focus)}<label for="lensPlacement">Ergänzender Untersuchungsschwerpunkt</label><select id="lensPlacement"><option value="">Noch offen</option>${model.slots.map(([k,t])=>`<option value="${k}" ${assignment===k?'selected':''}>${t}</option>`).join('')}</select>${modeNote(lensNoteKey(representation,lensFocus),'Deine Erzählung und ihre Gegenprüfung','Meine Erzählung unter diesem Geschichtsbild: …\nWas ich aus der Quelle belegen kann: …\nWas erst die Konstruktion hineinträgt: …\nWas ein anderer Blick sichtbar macht: …')}<label for="lensSwitch">Dasselbe Ereignis anders sehen</label><select id="lensSwitch">${perspectiveOptions(representation)}</select></div></section><details class="world-foundations"><summary>Historischer Ansatz, Quellen und Unterschiede innerhalb des Modells</summary><p>${reading.caution}</p>${lensExplanationHtml()}<p>${src}</p><button id="lensTheory">Konzept und Quellen erklären ↗</button><button id="lensExamples">${representation==='recurrence'?'Nietzsche und den Podcast öffnen ↗':'Weitere Ausprägungen und Beispiele ↗'}</button><button data-switch="network">Begriffsbeziehungen nachschlagen ↗</button></details><details class="world-register"><summary>Alle Spuren dieser Auswahl (${items.length}) – auch ausserhalb des Bildausschnitts</summary><p class="lens-count">${items.length} von ${corpus.length} Spuren im gewählten Bestand. Undatierte Begriffe werden nicht künstlich in die Grafik datiert.</p><div>${items.map(e=>corpusEntryHtml(e,'data-lens-focus')).join('')}</div></details><div class="world-compare"><label for="lensPartner">Mit einer weiteren Spur vergleichen</label><select id="lensPartner">${corpus.filter(e=>e.id!==lensFocus).map(e=>`<option value="${esc(e.id)}">${esc(e.title)}</option>`).join('')}</select><button id="lensCompare">Vergleich begründen ↗</button></div></section>`;
 }
 function renderLensUniverse(){
  ensureReading(representation);const stage=$('#modeStage');stage.innerHTML=lensUniverseHtml($('#search').value,onlyOwn);wireMode();
@@ -232,7 +232,7 @@ function renderLensUniverse(){
  const choose=id=>{lensFocus=id;const e=byId(id);if(e?.year&&!worldAll&&Math.abs(e.year-worldYear)>worldWindow)worldYear=e.year;redraw();$('.world-workbench').scrollIntoView({block:'start',behavior:'smooth'})};
  $$('[data-lens-focus]').forEach(b=>b.onclick=()=>{const other=b.closest('[data-reading-scene]')?.dataset.readingScene;if(other)switchReading(other);choose(b.dataset.lensFocus)});
  $$('[data-world-mode]').forEach(b=>b.onclick=()=>switchRepresentation(b.dataset.worldMode));
- $('#lensFocus').onchange=e=>choose(e.target.value);$('#lensSwitch').onchange=e=>switchRepresentation(e.target.value);
+ $('#perspectiveExplanation').ontoggle=e=>{introductionOpen[representation]=e.target.open};$('#lensFocus').onchange=e=>choose(e.target.value);$('#lensSwitch').onchange=e=>switchRepresentation(e.target.value);
  $('#worldTime').onchange=e=>{worldAll=e.target.value==='all';redraw()};$('#worldWindow').onchange=e=>{worldWindow=Number(e.target.value);redraw()};
  const setYear=()=>{const e=$('#worldYear'),n=Number(e.value);if(!Number.isInteger(n)||n===0||n< -100000||n>10000){e.setCustomValidity('Bitte ein ganzzahliges Jahr ohne Jahr null eingeben (−100000 bis 10000).');e.reportValidity();return}e.setCustomValidity('');worldYear=n;redraw()};$('#worldGo').onclick=setYear;$('#worldYear').onkeydown=e=>{if(e.key==='Enter')setYear()};
  $('#worldNow').onclick=()=>{worldYear=new Date().getFullYear();worldWindow=130;worldAll=false;lensFocus=byId('paris')?'paris':lensFocus;redraw()};
@@ -315,3 +315,270 @@ function readingComparisonHtml(items){const b=profileBucket(representation),a=ac
 function wireReadings(redraw){$('#readingSelect').onchange=e=>{switchReading(e.target.value);readingComparison='';redraw()};for(const [id,copy] of [['readingNew',false],['readingCopy',true]])$('#'+id).onclick=()=>{try{addReading($('#readingName').value,copy);readingComparison='';redraw()}catch(e){$('#readingError').textContent=e.message}};$('#readingRename').onclick=()=>{const n=$('#readingName').value.trim();if(!n){$('#readingError').textContent='Bitte zuerst einen Namen eingeben.';return}activeReading().name=n.slice(0,100);save();redraw()};if($('#readingCompare'))$('#readingCompare').onchange=e=>{readingComparison=e.target.value;redraw()};$('#decisionApply').onclick=()=>{try{setReadingDecision(lensFocus,$('#decisionRole').value,Number($('#decisionWeight').value),$('#decisionReason').value);redraw();$('.world-scene').scrollIntoView({block:'start'})}catch(e){$('#decisionError').textContent=e.message}};}
 function validateReadings(x,out,seen){const record=v=>v&&typeof v==='object'&&!Array.isArray(v);if(!record(x.interpretations))return;for(const [mode,b] of Object.entries(x.interpretations)){if(!Object.hasOwn(GLOBAL_LENSES,mode)||!Array.isArray(b?.profiles))continue;const ids=new Set(),profiles=[];for(const p of b.profiles.slice(0,30)){if(!p||typeof p.id!=='string'||!/^[A-Za-z0-9_-]{1,100}$/.test(p.id)||['__proto__','constructor','prototype'].includes(p.id)||ids.has(p.id))continue;ids.add(p.id);const q={id:p.id,name:typeof p.name==='string'?p.name.slice(0,100):'Entwurf',notes:{},assignments:{},decisions:{}};for(const [k,v] of Object.entries(record(p.notes)?p.notes:{})){const lk=parseLensNote(k);if(profileNote(mode,k)&&(!lk||seen.has(lk.id))&&typeof v==='string')q.notes[k]=v.slice(0,30000)}for(const [id,v] of Object.entries(record(p.assignments)?p.assignments:{}))if(seen.has(id)&&GLOBAL_LENSES[mode].slots.some(s=>s[0]===v))q.assignments[id]=v;for(const [id,d] of Object.entries(record(p.decisions)?p.decisions:{}))if(seen.has(id)&&d&&ROLE_KEYS.includes(d.role)&&[1,2,3].includes(d.weight)&&typeof d.reason==='string'&&typeof d.basis==='string')q.decisions[id]={role:d.role,weight:d.weight,reason:d.reason.slice(0,6000),basis:d.basis.slice(0,200000)};profiles.push(q)}if(profiles.length)out.interpretations[mode]={active:profiles.some(p=>p.id===b.active)?b.active:profiles[0].id,profiles}}}
 function mergeReadings(incoming,map,fresh,previous){for(const [mode,ib] of Object.entries(incoming.interpretations||{})){let b=state.interpretations[mode];if(!b){const p={id:uid(),name:'Bisheriger Entwurf',notes:profileNotes(mode,previous),assignments:{...previous.lensAssignments[mode]},decisions:{}};b=state.interpretations[mode]={active:p.id,profiles:fresh?[]:[p]}}let importedActive='';for(const source of ib.profiles){const p=JSON.parse(JSON.stringify(source));p.notes=Object.fromEntries(Object.entries(p.notes).map(([k,v])=>{const l=parseLensNote(k);return [l?lensNoteKey(mode,map(l.id)):k,v]}));for(const field of ['assignments','decisions'])p[field]=Object.fromEntries(Object.entries(p[field]).map(([id,v])=>[map(id),v]));const existing=b.profiles.find(x=>x.id===p.id);if(existing&&JSON.stringify(existing)===JSON.stringify(p)){if(source.id===ib.active)importedActive=existing.id;continue}if(existing){p.id=uid();p.name+=' (importiert)'}if(b.profiles.length>=30)throw Error('Zu viele Deutungsentwürfe beim Import. Bitte Arbeitsstände getrennt verwenden.');b.profiles.push(p);if(source.id===ib.active)importedActive=p.id}loadReading(mode,fresh?importedActive:b.active)}}
+
+// Shared question-led navigation and introductions; not a chronology of theories.
+const PERSPECTIVE_GROUPS=[
+  {
+    "title": "Weltordnung und Sinn",
+    "question": "In welcher Ordnung erhält Geschehen Bedeutung?",
+    "keys": [
+      "egypt",
+      "medieval"
+    ]
+  },
+  {
+    "title": "Richtung und Wiederkehr",
+    "question": "Worauf läuft Geschichte zu – oder kehrt etwas wieder?",
+    "keys": [
+      "direction",
+      "recurrence"
+    ]
+  },
+  {
+    "title": "Gesellschaftlichen Wandel erklären",
+    "question": "Welche Bedingungen und Zeiträume erklären Veränderungen?",
+    "keys": [
+      "materialism",
+      "layers"
+    ]
+  },
+  {
+    "title": "Zeit erfahren und Vergangenheit erinnern",
+    "question": "Von welchem Standpunkt aus wird Vergangenheit gegenwärtig?",
+    "keys": [
+      "present",
+      "memoria"
+    ]
+  }
+];
+const PERSPECTIVE_INTROS={
+  "egypt": {
+    "label": "Altägypten · Ordnung und Erneuerung",
+    "kind": "Historische religiöse und politische Ordnungsvorstellungen",
+    "lead": "Muss eine Veränderung etwas Neues schaffen, um bedeutsam zu sein? In dieser Ansicht kann gerade das Erhalten und Wiederherstellen als entscheidende Leistung erscheinen. Damit verändert sich die Frage an jedes Ereignis: Welche Ordnung soll es sichern, wer erklärt diese Ordnung für richtig und wer trägt die Arbeit dafür?",
+    "context": "Altägyptische Gesellschaften bestanden über Jahrtausende; ihre Vorstellungen waren weder einheitlich noch unveränderlich. In königlichen und religiösen Darstellungen ist Maʿat zentral: ein Zusammenhang von Wahrheit, Gerechtigkeit und geordneter Welt. Das Königtum beanspruchte, diese Ordnung gegen Unordnung zu erhalten. Solche Darstellungen zeigen einen Anspruch auf legitime Herrschaft, nicht unmittelbar den Alltag oder die Zustimmung aller Menschen. Wiederkehrende religiöse Erneuerung steht neben der Zählung von Regierungsjahren und der Erinnerung an besondere Taten.",
+    "terms": [
+      [
+        "Maʿat",
+        "Eine religiös und gesellschaftlich verbindliche Weltordnung; der Begriff meint mehr als Ruhe oder politische Stabilität."
+      ],
+      [
+        "Erneuerung",
+        "Die Ordnung muss durch Handlungen erhalten werden. Wiederkehr bedeutet deshalb nicht, dass nichts geschieht."
+      ],
+      [
+        "Herrschaftsdarstellung",
+        "Wenn ein Herrscher sich als Bewahrer darstellt, ist das selbst eine politische Aussage, die geprüft werden muss."
+      ]
+    ],
+    "example": "Erprobe den Blick an der Linthkorrektion. Du könntest sie als Wiederherstellung sicherer Lebensbedingungen erzählen. Dieselbe Massnahme lässt sich aber als tiefgreifender Eingriff in Landschaft und Nutzung verstehen. Wessen bisherige Ordnung würde in der ersten Erzählung verschwinden? Suche nach Betroffenen und nach dem Aufwand, den die neue Ordnung dauerhaft verlangt. Diese Fragen sind unsere Übertragung; sie behaupten keinen ägyptischen Einfluss auf das Linthwerk.",
+    "transfer": "Das Zentrum der Grafik erhält die Ordnung, die du ausdrücklich benennst. Erst danach ordnest du einzelne Spuren mit Belegen als stützend, störend oder widersprüchlich ein. Ändere beispielsweise «verlässliche Versorgung» zu «Erhalt bestehender Besitzverhältnisse»: Du musst die Einordnungen erneut begründen. Die Software kennt die Interessen der Beteiligten nicht.",
+    "limit": "Der Kreis ist ein Unterrichtsmodell für eine Frage nach Erhaltung. Er bildet weder das gesamte altägyptische Denken ab noch belegt er einen zyklischen Verlauf aller Geschichte. Der Gewinn liegt im Blick auf Bewahrung und ihre Kosten; die Grenze zeigt sich, sobald eine bestimmte Ordnung als selbstverständlich gut vorausgesetzt wird.",
+    "sources": [
+      "metKings",
+      "metEgyptEducation",
+      "metMiddleKingdom"
+    ]
+  },
+  "medieval": {
+    "label": "Mittelalter · Heilsgeschichte",
+    "kind": "Historische christliche Geschichtsdeutungen",
+    "lead": "Stell dir vor, der Sinn der Weltgeschichte hängt nicht davon ab, ob Menschen immer reicher oder technisch leistungsfähiger werden. Ihr Zusammenhang liegt vielmehr in Schöpfung, Erlösung und einer endgültigen Vollendung. Eine Niederlage könnte dann bedeutsam sein, ohne als Fortschritt auszusehen. Genau diesen Perspektivwechsel kannst du hier an jeder Zeit, auch der Gegenwart, erproben.",
+    "context": "Christliche Heilsgeschichte deutet die Zeit zwischen Schöpfung und Vollendung im Verhältnis zu Gott. Augustinus entwickelt in der Spätantike mit dem Gottesstaat einen wichtigen Bezugspunkt späterer christlicher Geschichtsdeutung. Irdischer politischer Erfolg ist dabei nicht einfach mit dem Heil gleichzusetzen. Im europäischen Mittelalter bestanden heilsgeschichtliche Deutungen neben Chroniken, Herrschergenealogien und der wiederkehrenden Zeit des Kirchenjahres. «Mittelalterlich» bezeichnet hier einen ausgewählten christlichen Deutungsrahmen, nicht das Denken aller Menschen dieser Zeit oder aller Weltregionen.",
+    "terms": [
+      [
+        "Heilsgeschichte",
+        "Ereignisse erhalten Bedeutung innerhalb einer religiösen Erzählung von Schöpfung, Erlösung und Vollendung."
+      ],
+      [
+        "Telos",
+        "Das Ziel, von dem her ein Verlauf seinen Sinn erhält. Ein vorausgesetztes göttliches Ziel ist etwas anderes als ein menschlicher Plan."
+      ],
+      [
+        "Vorsehung",
+        "Die Annahme göttlicher Führung. Sie lässt sich nicht aus einem Ereignisdatum oder einem Erfolg unmittelbar ablesen."
+      ]
+    ],
+    "example": "Betrachte das Pariser Klimaabkommen. Als gegenwärtige Übung könntest du es unter einen Horizont der Verantwortung für die Schöpfung stellen. Damit erhält gemeinsames Handeln eine religiöse Bedeutung. Daraus folgt aber weder, dass das Abkommen Heil bewirkt, noch dass eine Katastrophe göttliche Strafe wäre. Markiere genau die Stelle, an der deine Deutung einen Glaubenssatz benötigt, den die historische Quelle selbst nicht beweisen kann.",
+    "transfer": "Benenne zuerst den Heilshorizont und die Perspektive, aus der du sprichst. Du darfst das Ziel auch offenlassen. Die Grafik hält dann die Leerstelle sichtbar. Wenn du statt Erlösung ein heutiges Ziel wie Frieden einsetzt, untersuchst du eine veränderte teleologische Konstruktion; du rekonstruierst damit nicht unverändert ein mittelalterliches Weltbild.",
+    "limit": "Dieser Blick erschliesst Sinn, Hoffnung und die Bedeutung scheinbarer Niederlagen. Er wird problematisch, wenn man anderen einen gemeinsamen Glauben unterstellt oder Opfer nachträglich zu notwendigen Mitteln eines höheren Plans erklärt. Prüfe deshalb stets: Was sagt die Quelle, was glaube ich, und was ordne ich erst im Rückblick zu?",
+    "sources": [
+      "augustineCity",
+      "augustine"
+    ]
+  },
+  "direction": {
+    "label": "Fortschritt · Ziel und offene Zukunft",
+    "kind": "Geschichtsphilosophie und Kritik teleologischer Erzählungen",
+    "lead": "«Es wird besser» klingt vertraut. Doch besser worin, für wen und bis wann? Erst ein Massstab macht aus zeitlichem Nacheinander eine Fortschrittserzählung. Diese Ansicht lässt dich einen solchen Massstab setzen und anschliessend erfahren, welche Ereignisse dazu passen, welche widersprechen und welche sich überhaupt nicht sinnvoll einordnen lassen.",
+    "context": "Georg Wilhelm Friedrich Hegel (1770–1831) versteht Weltgeschichte als Entwicklung des Bewusstseins und der Verwirklichung von Freiheit. Gemeint ist nicht bloss eine Folge technischer Verbesserungen: Freiheit erhält eine geschichtliche Gestalt in gesellschaftlichen und politischen Ordnungen. Die philosophische Deutung schreibt dem Gesamtverlauf einen vernünftigen Zusammenhang zu. Ihre weltgeschichtliche Hierarchie ist selbst zu hinterfragen: Wer erscheint als Träger der Entwicklung, wer wird an den Rand gestellt?",
+    "terms": [
+      [
+        "Teleologie",
+        "Ein Geschehen wird von einem Ziel oder einer Vollendung her verständlich gemacht. Ein erwünschtes Ziel allein beweist noch keinen notwendigen Verlauf."
+      ],
+      [
+        "Fortschrittsmassstab",
+        "Ein bestimmtes Kriterium, etwa politische Beteiligung. Verschiedene Kriterien können zu entgegengesetzten Urteilen über dasselbe Ereignis führen."
+      ],
+      [
+        "Offene Zukunft",
+        "Menschen handelten ohne unser Wissen über den späteren Ausgang. Kosellecks Unterscheidung von Erfahrungsraum und Erwartungshorizont lenkt auf diese Differenz; sie ist keine Variante von Hegels Zielgewissheit."
+      ]
+    ],
+    "example": "Nimm die Einführung des eidgenössischen Frauenstimmrechts 1971. Unter «gleiche politische Beteiligung» erscheint sie als Fortschritt. Daraus folgt nicht, dass sie zwangsläufig eintreten musste oder sämtliche Ungleichheiten beendete. Wechsle das Ziel zu «wirtschaftliche Gleichheit»: Nun reicht derselbe Beleg für dieselbe Wertung nicht mehr aus. Rekonstruiere ausserdem die Erwartungen vor dem Entscheid, statt das bekannte Ergebnis schon in die Vergangenheit hineinzulesen.",
+    "transfer": "Schreibe ein Ziel, einen Standpunkt und deine Annahme über Notwendigkeit auf. Ohne Ziel bleibt die Richtung begründungspflichtig. Mit Ziel kannst du Spuren zuordnen und gewichten, aber jede Zuordnung verlangt einen Beleg. Zwei Entwürfe machen sichtbar, wie dieselben Daten verschiedene Erzählungen ergeben. Hararis Hinweis auf die Veränderbarkeit gegenwärtiger Ordnungen bietet dazu einen weiteren Gesprächspartner, keine Bestätigung eines vorherbestimmten Endpunkts.",
+    "limit": "Die steigende Bildform ist eine absichtliche Zuspitzung, kein Diagramm von Hegels vollständiger Philosophie. Spätere Ereignisse sind nicht automatisch besser. Gerade eine nicht zuweisbare Spur kann zeigen, dass dein Telos zu unbestimmt ist oder verschiedene Lebensbereiche unzulässig auf einen einzigen Wert reduziert.",
+    "sources": [
+      "hegel",
+      "koselleck"
+    ]
+  },
+  "recurrence": {
+    "label": "Wiederkehr · Nietzsche und historischer Vergleich",
+    "kind": "Philosophisches Gedankenexperiment und vergleichende Untersuchung",
+    "lead": "Wenn zwei Krisen ähnlich aussehen, hat sich dann Geschichte wiederholt? Vielleicht erkennen wir ein wiederkehrendes Problem; vielleicht haben wir nur alle Unterschiede weggelassen. Diese Ansicht trennt deshalb drei Dinge: ein philosophisches Gedankenexperiment, die Verwendung von Vergangenheit für das Leben und einen überprüfbaren Vergleich von Ereignissen.",
+    "context": "Friedrich Nietzsche (1844–1900) fragt 1874 nach Nutzen und Schaden der Historie für das Leben. Er unterscheidet monumentales Erinnern an grosse Vorbilder, antiquarisches Bewahren und kritisches Urteilen über eine belastende Vergangenheit. Jede Haltung kann helfen und zugleich schaden. In Die fröhliche Wissenschaft, § 341 (1882), stellt er die Vorstellung vor, das eigene Leben mit allem Leid und aller Freude unendlich oft wieder leben zu müssen. Diese ewige Wiederkunft fordert eine Haltung zum Leben heraus; der Text liefert keinen Nachweis, dass sich Revolutionen in festen Abständen wiederholen.",
+    "terms": [
+      [
+        "Ewige Wiederkunft",
+        "Hier zunächst die radikale Frage nach der Bejahung des eigenen Lebens, nicht eine statistische Regel für historische Ereignisse."
+      ],
+      [
+        "Historische Analogie",
+        "Ein begrenzter Vergleich unter einem genannten Gesichtspunkt. Ähnlichkeit in einem Merkmal bedeutet keine Identität."
+      ],
+      [
+        "Rhythmus",
+        "Ein behaupteter zeitlicher Abstand. Seine Regelmässigkeit müsste an Daten geprüft werden; eine gewählte Kreisform erzeugt diesen Beleg nicht."
+      ]
+    ],
+    "example": "Vergleiche die Französische und die Haitianische Revolution. «Kampf um Freiheit» eröffnet eine Beziehung. Wer Freiheit beansprucht, welche Rolle Versklavung spielt und gegen welche Herrschaft sich der Kampf richtet, verlangt aber getrennte Untersuchungen. Wenn du nur «Revolution» als Etikett verwendest, scheint die Wiederholung grösser, als deine Belege erlauben. Formuliere einen Unterschied, der deine erste Analogie wirklich verändert.",
+    "transfer": "Lege Vergleichskriterium und Fälle fest. Verändere dann den Umlauf der Spirale: Die Nachbarschaften verschieben sich, obwohl kein historisches Datum geändert wurde. Genau das macht die Setzung sichtbar. Hör ergänzend den verlinkten Podcast «Wiederholt sich die Geschichte?» und prüfe eine seiner Aussagen an deinem Fallpaar; der Podcast ist ein Diskussionsbeitrag, kein Beweis für die Grafik.",
+    "limit": "Die Spirale hilft, Ähnlichkeit und Abstand gleichzeitig zu sehen. Ihre Grenze ist erreicht, wenn optische Nähe zur Ursache oder Vorhersage erklärt wird. Eine begründete Antwort kann deshalb lauten: Ein Problem kehrt unter veränderten Bedingungen wieder; der Verlauf und sein Ausgang bleiben verschieden.",
+    "sources": [
+      "nietzsche",
+      "nietzsche341"
+    ]
+  },
+  "materialism": {
+    "label": "Materialismus · Arbeit, Eigentum und Konflikt",
+    "kind": "Gesellschafts- und Geschichtstheorie",
+    "lead": "Wer arbeitet, wer verfügt über Arbeitsmittel und wer erhält die Ergebnisse? Mit diesen Fragen verändert sich der Blick auf politische Beschlüsse, technische Erfindungen und kulturelle Bilder. Eine neue Maschine ist dann nicht schon die Erklärung des Wandels: Entscheidend ist auch, in welchen sozialen Beziehungen sie eingesetzt wird.",
+    "context": "Karl Marx (1818–1883) und Friedrich Engels (1820–1895) entwickeln ihre Geschichtsauffassung im Zusammenhang mit der kapitalistischen Industriegesellschaft und ihren Konflikten. Marx skizziert 1859, wie die materielle Produktion des Lebens gesellschaftliche Verhältnisse bedingt. Produktivkräfte können in Widerspruch zu bestehenden Produktionsverhältnissen geraten; daraus erklärt er gesellschaftliche Umbrüche. Sein Text enthält auch eine weitreichende Entwicklungsannahme. Diese ist von der konkreten Untersuchung eines einzelnen Konflikts zu unterscheiden und nicht als weltweit gültiger Stundenplan vorauszusetzen.",
+    "terms": [
+      [
+        "Produktivkräfte",
+        "Arbeitsvermögen, Wissen, Technik und Mittel, mit denen Menschen produzieren."
+      ],
+      [
+        "Produktionsverhältnisse",
+        "Soziale Beziehungen der Produktion: beispielsweise Eigentum, Verfügung über Arbeit und Aneignung ihrer Ergebnisse."
+      ],
+      [
+        "Klassenkonflikt",
+        "Ein Konflikt aus unterschiedlichen Stellungen in diesen Verhältnissen. Beteiligte haben deshalb nicht automatisch in jeder Frage dieselben Interessen."
+      ],
+      [
+        "Basis und Überbau",
+        "Ein Modell des Zusammenhangs von wirtschaftlichen Verhältnissen mit Recht, Politik und Bewusstsein; keine Erlaubnis, jede Idee unmittelbar auf Geld zu reduzieren."
+      ]
+    ],
+    "example": "Untersuche die Textilproduktion in Murg. Die Fabrik lässt sich als technische Neuerung darstellen. Eine materialistische Untersuchung fragt zusätzlich nach Kapital, Arbeitszeiten, Abhängigkeiten, Absatzmärkten und Verfügung über den Ertrag. Für die spätere Schliessung reicht weder «neue Technik» noch «Profitinteresse» als unbelegtes Schlagwort. Welche konkreten Beziehungen und Veränderungen könntest du aus Quellen nachweisen?",
+    "transfer": "Benenne Akteure, Verfügungsrechte und einen vermuteten Wirkungszusammenhang. Die vier Felder der Grafik sind Fragen an jede Spur, keine automatische Klassifikation von Menschen. Vergleiche zwei Erklärungsentwürfe: etwa technische Möglichkeiten und Eigentumsverhältnisse. Gewichte nur, was du begründen kannst, und halte eine Beobachtung fest, die deine Erklärung schwächen würde.",
+    "limit": "Der Ansatz macht Voraussetzungen sichtbar, die in einer Geschichte grosser Persönlichkeiten leicht fehlen. Seine Anwendung verengt sich, wenn Religion, politische Entscheidungen, Geschlecht oder koloniale Herrschaft ohne Untersuchung zu blossen Nebenwirkungen erklärt werden. Eine historische Erklärung muss zeigen, wie Bedingungen im konkreten Fall wirksam werden; das Wort «materiell» ersetzt diesen Nachweis nicht.",
+    "sources": [
+      "marx1859"
+    ]
+  },
+  "layers": {
+    "label": "Braudel · Verschiedene Geschwindigkeiten",
+    "kind": "Historiographischer Ansatz: Geschichte auf mehreren Zeitebenen",
+    "lead": "Ein Vertrag wird an einem Tag unterschrieben. Die Handelswege, Abhängigkeiten und Gewohnheiten, auf die er trifft, können viel älter sein. Wer nur Ereignisdaten sammelt, sieht deshalb nicht alle Bedingungen eines Wandels. Diese Ansicht fragt, welche Prozesse gleichzeitig stattfinden, aber verschieden schnell verlaufen.",
+    "context": "Fernand Braudel (1902–1985), ein Historiker der Annales-Tradition, wendet sich gegen eine Geschichte, die vor allem kurze politische Ereignisse erzählt. In seinem Aufsatz zur longue durée von 1958 rückt er langsam veränderliche Strukturen in den Blick. Zwischen kurzem Ereignis und langer Dauer liegen etwa wirtschaftliche Konjunkturen. Marc Bloch gehört zur vorausgehenden Annales-Generation: Seine Forderung, Menschen in der Zeit zu untersuchen, ist ein wichtiger Zusammenhang, aber keine blosse andere Bezeichnung für Braudels Modell.",
+    "terms": [
+      [
+        "Ereignis",
+        "Ein zeitlich enger umrissener Vorgang, etwa ein Beschluss oder eine Eröffnung."
+      ],
+      [
+        "Konjunktur",
+        "Eine Entwicklung mittlerer Dauer, beispielsweise eine wirtschaftliche Auf- oder Abschwungphase; hier nicht nur das alltagssprachliche Wort für gute Wirtschaftslage."
+      ],
+      [
+        "Longue durée",
+        "Lange Dauer: relativ beständige Bedingungen wie Verkehrsgeographien oder gesellschaftliche Ordnungen. Auch sie können sich verändern."
+      ]
+    ],
+    "example": "Die Linthkorrektion lässt sich als Bauprojekt von 1807 bis 1823 erzählen. Auf einer anderen Ebene liegen Planung, Finanzierung und veränderte Nutzungsmöglichkeiten; auf wieder einer anderen die Landschaft und langfristige Verkehrsbeziehungen. Diese Ebenen erklären einander nicht von selbst. Untersuche, welche Beziehung du belegen kannst: Ermöglichte eine Veränderung eine andere, begrenzte sie diese oder verlief sie nur gleichzeitig?",
+    "transfer": "Wähle einen Untersuchungsgegenstand und benenne ausdrücklich einen Prozess sowie eine längerfristige Bedingung. Eine Spur darf in mehreren Bändern erscheinen: Sie ist dann dieselbe Spur unter verschiedenen Fragen. Die Breite eines Bandes ist kein gemessener Zeitraum. Für eine Dauerbehauptung brauchst du Anfang, Ende oder begründete Unsicherheit aus deinen Materialien.",
+    "limit": "Der Gewinn liegt darin, die vermeintliche Alleinursache eines spektakulären Ereignisses zu prüfen. Die Grenze zeigt sich, wenn «Struktur» menschliche Entscheidungen verschwinden lässt oder jede langsam verlaufende Entwicklung zur unveränderlichen Natur erklärt wird. Frage deshalb auch, wann eine Struktur bricht und für welche Gruppen sie verschieden wirksam ist.",
+    "sources": [
+      "braudel",
+      "bloch"
+    ]
+  },
+  "present": {
+    "label": "Augustinus · Zeit im Bewusstsein",
+    "kind": "Philosophisch-theologische Reflexion auf Zeiterfahrung",
+    "lead": "Du erinnerst dich jetzt an gestern und erwartest jetzt etwas von morgen. Vergangenheit und Zukunft sind also nicht einfach zwei Orte, die du betreten könntest. Dieser Blick beginnt bei der Erfahrung von Zeit und fragt anschliessend, wie wir einen vergangenen Standpunkt rekonstruieren können, ohne unser späteres Wissen hineinzuschmuggeln.",
+    "context": "Augustinus (354–430), Bischof von Hippo in Nordafrika, untersucht im elften Buch seiner Bekenntnisse die Zeit im Zusammenhang mit Schöpfung und Ewigkeit. Vergangenheit ist nicht mehr, Zukunft noch nicht; dennoch sprechen wir sinnvoll über beide. Er unterscheidet ihre Gegenwart im Erinnern und Erwarten von der Aufmerksamkeit auf Gegenwärtiges. Die Seele ist dabei zwischen diesen Bezügen ausgespannt. Das ist zunächst eine Reflexion auf Zeiterfahrung, keine Methode zum Sortieren historischer Ereignisse und auch nicht identisch mit seiner Heilsgeschichte.",
+    "terms": [
+      [
+        "Erinnerung",
+        "Vergangenes wird in einer gegenwärtigen Erinnerung zugänglich. Das Erinnerungsbild ist nicht das vergangene Ereignis selbst."
+      ],
+      [
+        "Aufmerksamkeit",
+        "Die Zuwendung zu dem, was gegenwärtig geschieht; auch sie ist begrenzt und perspektivisch."
+      ],
+      [
+        "Erwartung",
+        "Eine Zukunft ist schon als Erwartung wirksam, obwohl ihr tatsächlicher Verlauf noch offen ist."
+      ]
+    ],
+    "example": "Versetze dich an einen Standpunkt vor der Abstimmung über das Frauenstimmrecht 1971. Welche früheren Erfahrungen wären einer bestimmten Person verfügbar, was könnte sie beobachten, worauf hoffen? Du kennst das Ergebnis; die Person noch nicht. Schreibe deshalb keinen inneren Monolog als vermeintliche Quelle. Halte auseinander, welche Erwartung ein zeitgenössischer Text belegt und welche du dir nur vorstellen kannst.",
+    "transfer": "Setze ein Standjahr und benenne eine Person oder einen möglichst genau bestimmten Standpunkt. Die Ansicht verdeckt spätere Ereignisinformationen unter der eingeschalteten Annahme. Das ist eine Lernhilfe, keine vollständige Rekonstruktion des damaligen Wissens: Auch ein früheres Ereignis musste der Person nicht bekannt sein. Deine Wissensauswahl muss zusätzlich an Quellen geprüft werden.",
+    "limit": "So lässt sich der Rückschaufehler erfahren: Was geschehen ist, erscheint uns leicht als vorhersehbar. Die Grenze der Übertragung liegt im Zugang zu fremdem Erleben. Wir können es nicht unmittelbar wiederherstellen. Augustinus hilft, die Frage zu formulieren; Quellen und historische Kontextarbeit müssen die konkrete Antwort tragen.",
+    "sources": [
+      "augustine"
+    ]
+  },
+  "memoria": {
+    "label": "Memoria · Soziale und kulturelle Erinnerung",
+    "kind": "Soziologie und Kulturwissenschaft des Erinnerns",
+    "lead": "Eine Fabrikschliessung kann für ehemalige Beschäftigte ein biographischer Bruch sein, für ein Unternehmen eine Geschäftsentscheidung und in einer Ortsgeschichte fast verschwinden. Nicht das Datum wechselt, sondern die soziale Bedeutung. Diese Ansicht untersucht, wer welche Vergangenheit gegenwärtig hält, mit welchen Mitteln und unter welchen Ausschlüssen.",
+    "context": "Maurice Halbwachs (1877–1945) erklärt individuelles Erinnern aus sozialen Rahmen: Sprache, Familie, Arbeitswelt oder religiöse Gemeinschaften ermöglichen und ordnen, was Menschen erinnern. «Kollektiv» meint kein gemeinsames Gehirn und keine notwendig einheitliche Meinung. Jan und Aleida Assmann untersuchen darüber hinaus die Weitergabe von Erinnerung über Medien, Rituale und Institutionen. Die Unterscheidung von kommunikativem und kulturellem Gedächtnis hilft, alltäglichen Austausch von langfristig organisierter Erinnerung zu unterscheiden; beides kann sich überlagern.",
+    "terms": [
+      [
+        "Soziale Rahmen",
+        "Beziehungen und gemeinsame Bezugspunkte, innerhalb derer Erinnerungen verständlich werden."
+      ],
+      [
+        "Kommunikatives Gedächtnis",
+        "Erinnerung im alltäglichen Austausch, beispielsweise zwischen Menschen verschiedener Generationen; an lebende Trägerinnen und Träger gebunden."
+      ],
+      [
+        "Kulturelles Gedächtnis",
+        "Vergangenheit wird durch Texte, Bilder, Rituale, Denkmäler oder Institutionen über längere Zeit verbindlich gehalten."
+      ],
+      [
+        "Memoria",
+        "Praktiken des Erinnerns und Gedenkens. Ein Archivbestand, eine persönliche Erinnerung und ein öffentliches Denkmal sind dabei verschiedene Formen."
+      ]
+    ],
+    "example": "Wähle die Schliessung der Textilfabrik Murg und formuliere zwei Entwürfe: ehemalige Beschäftigte und eine touristische Ortsdarstellung. Frage jeweils, welche Bilder und Zeugnisse im Zentrum stehen könnten und wer diese Auswahl tatsächlich belegen kann. «Die Beschäftigten erinnern so» wäre ohne Material selbst eine Zuschreibung. Suche deshalb auch nach unterschiedlichen Stimmen innerhalb der gewählten Gruppe.",
+    "transfer": "Benenne Gruppe, Erinnerungspraktik und Auswahlprinzip. Erst deine begründeten Zuordnungen rücken Spuren ins Zentrum oder an den Rand. Ein Gruppenname erzeugt keine automatische Deutung. Vergleiche Entwürfe und prüfe anschliessend, ob die jeweils wenig sichtbaren Ereignisse vergessen, bewusst ausgeschlossen oder lediglich in deinen Quellen nicht vertreten sind.",
+    "limit": "Erinnerungsbedeutung ist nicht dasselbe wie historische Wahrheit. Eine starke Erinnerung kann sachlich unzutreffend sein; eine gut belegte Tatsache kann öffentlich kaum erinnert werden. Gerade digitale Bilder können weit zirkulieren, ohne das dargestellte Ereignis zu belegen. Halte darum zwei Prüfungen offen: Wie wird erinnert, und was lässt sich über das Vergangene nachweisen?",
+    "sources": [
+      "halbwachs",
+      "assmann",
+      "assmannDigital"
+    ]
+  }
+};
+
+function perspectiveOptions(selected='',placeholder=false){return (placeholder?'<option value="">Ansatz nach Leitfrage wählen …</option>':'')+PERSPECTIVE_GROUPS.map(g=>`<optgroup label="${esc(g.title)}">${g.keys.map(k=>`<option value="${k}" ${k===selected?'selected':''}>${esc(PERSPECTIVE_INTROS[k].label)}</option>`).join('')}</optgroup>`).join('')}
+function perspectiveNavigation(){return `<section class="perspective-map" aria-labelledby="perspectiveMapTitle"><h3 id="perspectiveMapTitle">Welche Frage möchtest du an Geschichte stellen?</h3><p>Die vier Gruppen ordnen nach Leitfragen, nicht nach einer zeitlichen Entwicklung. Religiöse Weltdeutungen, philosophische Entwürfe und Forschungsansätze leisten Unterschiedliches; ihre Fragen können sich überschneiden.</p><div class="world-switches">${PERSPECTIVE_GROUPS.map(g=>`<div class="perspective-group"><h4>${esc(g.title)}</h4><p>${esc(g.question)}</p>${g.keys.map(k=>`<button data-world-mode="${k}" aria-pressed="${k===representation}">${esc(PERSPECTIVE_INTROS[k].label)}</button>`).join('')}</div>`).join('')}</div></section>`}
+let introductionOpen={};
+function perspectiveIntroduction(){const d=PERSPECTIVE_INTROS[representation];return `<section class="perspective-intro" aria-labelledby="perspectiveIntroTitle"><p class="eyebrow">DEN ANSATZ VERSTEHEN · ${esc(d.kind)}</p><h3 id="perspectiveIntroTitle">${esc(d.label)}</h3><p class="intro-lead">${esc(d.lead)}</p><details id="perspectiveExplanation" ${introductionOpen[representation]!==false?'open':''}><summary>Einführung, Begriffe und ein konkretes Beispiel</summary><div class="intro-reading"><section><h4>Woher kommt dieser Blick?</h4><p>${esc(d.context)}</p><dl>${d.terms.map(([t,v])=>`<dt>${esc(t)}</dt><dd>${esc(v)}</dd>`).join('')}</dl></section><aside class="intro-example"><p class="eyebrow">VOM ANSATZ ZUR UNTERSUCHUNG</p><h4>So verändert sich der Blick auf eine Spur</h4><p>${esc(d.example)}</p></aside><section><h4>Was du in dieser Ansicht tatsächlich veränderst</h4><p>${esc(d.transfer)}</p></section><section class="intro-boundary"><h4>Woran du die Grenze des Ansatzes erkennst</h4><p>${esc(d.limit)}</p></section><details class="intro-sources"><summary>Texte und fachliche Grundlagen</summary><ul class="source-list">${sourceHtml(d.sources)}</ul></details></div></details><a class="intro-start" href="#interpretationExperiment">Mit diesem Ansatz arbeiten ↓</a></section>`}

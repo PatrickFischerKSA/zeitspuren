@@ -142,3 +142,19 @@ console.log('PASS: Getrennte Zielentwürfe, tatsächliche Neupositionierung und 
  const profilesIncoming=api.defaults();profilesIncoming.own=[{id:'merge-own',year:1901,lane:'local',own:true,title:'Profilspur',text:'Import'}];profilesIncoming.interpretations.direction={active:'import-profile',profiles:[{id:'import-profile',name:'Importiertes Ziel',notes:{'telos-direction-goal':'Ziel aus Import'},assignments:{},decisions:{'merge-own':{role:'counter',weight:2,reason:'Andere Perspektive',basis:'[]'}}}]};ctx.mergePayload=JSON.stringify(profilesIncoming);await vm.runInContext("importFile({size:mergePayload.length,text:async()=>mergePayload})",ctx);const withProfiles=vm.runInContext('state',ctx),imported=withProfiles.interpretations.direction.profiles.find(p=>p.id==='import-profile'),importedEvent=withProfiles.own.find(e=>e.title==='Profilspur (importierte Fassung)');assert(importedEvent);assert(imported.decisions[importedEvent.id]);assert(!imported.decisions['merge-own']);console.log('PASS: Importierte Deutungsentwürfe folgen umbenannten eigenen Ereignissen.');
 
 })().catch(e=>{console.error(e);process.exitCode=1});
+
+// The three navigation surfaces share a question-led order; every perspective is explained before its controls.
+vm.runInContext(`
+const orderedPerspectives=PERSPECTIVE_GROUPS.flatMap(g=>g.keys);
+if(new Set(orderedPerspectives).size!==8||orderedPerspectives.some(k=>!GLOBAL_LENSES[k]))throw Error('Perspective grouping loses a view');
+for(const key of orderedPerspectives){
+ representation=key;
+ const html=lensUniverseHtml();
+ if(html.indexOf('perspectiveIntroTitle')>html.indexOf('id="readingSelect"'))throw Error('Introduction follows controls');
+ if(!html.includes('id="perspectiveExplanation" open'))throw Error('Introduction not initially visible');
+ for(const source of PERSPECTIVE_INTROS[key].sources)if(!SOURCES[source])throw Error('Missing introduction source: '+source);
+ const navigation=perspectiveOptions(key);
+ if((navigation.match(/<optgroup /g)||[]).length!==4||(navigation.match(/<option /g)||[]).length!==8)throw Error('Navigation grouping mismatch');
+}
+`,ctx);
+console.log('PASS: Vier Leitfragen, acht vollständig erreichbare Ansätze, sichtbare Einführungen vor der Arbeit und gültige Quellennachweise.');
