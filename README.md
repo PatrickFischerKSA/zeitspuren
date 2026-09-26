@@ -67,7 +67,7 @@ Der Denkraum erschliesst die Begriffe nach Fragen. Die Startansicht zeigt den ge
 
 Die Wiederholungsfrage unterscheidet Rhythmus, historischen Vergleich und Nietzsches Wiederkunftsgedanken aus § 341 der Fröhlichen Wissenschaft. Der von der Lehrperson bereitgestellte Podcast ist als MP3 eingebunden; es wurde kein Transkript oder eine vermeintliche Zusammenfassung erzeugt. Der Player lädt Audio erst auf Anforderung. Zeitmarken und Hörnotizen können in den Arbeitsstand übernommen werden. Die rund 80-minütige Originaldatei wurde ohne inhaltlichen Schnitt auf 64 kbit/s Mono verkleinert; eingebettete Bearbeitungsmetadaten wurden entfernt. Die Webdatei umfasst ca. 37 MB.
 
-Notizen zu den Darstellungsmodellen und zum Podcast werden lokal gespeichert, im Denkprotokoll angezeigt und mit exportiert. Die eigenständige Offline-HTML enthält auch den Podcast und ist daher rund 54 MB gross. Keine Laufzeitabhängigkeit von der ZDF-Referenz oder einem Sites-Projekt.
+Notizen zu den Darstellungsmodellen und zum Podcast werden lokal gespeichert, im Denkprotokoll angezeigt und mit exportiert. Die eigenständige Offline-HTML enthält auch den Podcast und ist daher rund 65 MB gross. Keine Laufzeitabhängigkeit von der ZDF-Referenz oder einem Sites-Projekt.
 
 ## Historischer Materialismus
 
@@ -79,18 +79,18 @@ Zwei eigenständige Modi mit je drei Zugängen: Sechs-Weltalter-Schema, Kirchenj
 
 ## Perspektiven auf den gesamten Bestand
 
-Die sieben Konzeptansichten erschliessen nun denselben vollständigen Bestand aus Ereignissen, Begriffen und eigenen Einträgen. Suche und Eigenfilter gelten übergreifend. Die ausgewählte Spur bleibt beim Wechsel erhalten; eine zweite Umschaltung steht direkt bei der ausgewählten Spur. Individuelle Schwerpunkte ordnen Einträge in das jeweilige Modell ein. Zuordnungen sowie ereignis- und konzeptbezogene Begründungen werden lokal gespeichert und exportiert; alte Sicherungen bleiben lesbar. Importierte abweichende Zuordnungen werden als Alternativen in der Deutungsnotiz erhalten. Die bisherigen kuratierten Fallstudien sind über «Einführung & ausgearbeitete Beispiele» weiterhin zugänglich, aber nicht mehr die Hauptansicht eines Konzepts. Keine automatische Deutung eines beliebigen Ereignisses wird als Quellenbefund ausgegeben.
+Die acht Konzeptansichten erschliessen nun denselben vollständigen Bestand aus Ereignissen, Begriffen und eigenen Einträgen. Suche und Eigenfilter gelten übergreifend. Die ausgewählte Spur bleibt beim Wechsel erhalten; eine zweite Umschaltung steht direkt bei der ausgewählten Spur. Individuelle Schwerpunkte ordnen Einträge in das jeweilige Modell ein. Zuordnungen sowie ereignis- und konzeptbezogene Begründungen werden lokal gespeichert und exportiert; alte Sicherungen bleiben lesbar. Importierte abweichende Zuordnungen werden als Alternativen in der Deutungsnotiz erhalten. Die bisherigen kuratierten Fallstudien sind über «Einführung & ausgearbeitete Beispiele» weiterhin zugänglich, aber nicht mehr die Hauptansicht eines Konzepts. Keine automatische Deutung eines beliebigen Ereignisses wird als Quellenbefund ausgegeben.
 
 Die Modellgrafiken enthalten sämtliche gefilterten Spuren als anklickbare, nummerierte Punkte. Spirale, Kreis, Gegenwartsordnung, Schichten, Wirkungsgefüge und heilsgeschichtlicher Bogen sind ausdrücklich gekennzeichnete Denkfiguren; Positionen werden nicht als automatisch erschlossene historische Deutungen ausgegeben. Nummern verbinden Grafik und Bildkarten.
 
-## Vollständiger Bestand in allen zehn Modi
+## Vollständiger Bestand in allen elf Modi
 
-Zeitstrahl, Zeittunnel und Denkraum verwenden nun denselben vollständigen Bestand wie die sieben Konzeptansichten: 48 datierte Ausgangsspuren und sechs undatierte Begriffsfenster, ergänzt um eigene Einträge. Im Zeitstrahl stehen undatierte Begriffe neben der Jahresachse; datierte Theorieeinträge werden in einer ausdrücklich als Text-/Bezugsdaten gekennzeichneten Spur gezeigt. Im Zeittunnel folgen undatierte Begriffe als gesonderter Begriffsraum, ohne behauptete zeitliche Nachordnung. Der Denkraum zeigt zusätzlich zu den Fragegruppen sämtliche Spuren mit ihren Beziehungen. Suche und Eigenfilter gelten in jedem Modus. Automatisierte Prüfungen vergleichen die vollständigen Eintragsmengen aller zehn Ansichten einschliesslich eigener Theorieeinträge und leerer Suchergebnisse.
+Zeitstrahl, Zeittunnel und Denkraum verwenden nun denselben vollständigen Bestand wie die acht Konzeptansichten: 48 datierte Ausgangsspuren und sechs undatierte Begriffsfenster, ergänzt um eigene Einträge. Im Zeitstrahl stehen undatierte Begriffe neben der Jahresachse; datierte Theorieeinträge werden in einer ausdrücklich als Text-/Bezugsdaten gekennzeichneten Spur gezeigt. Im Zeittunnel folgen undatierte Begriffe als gesonderter Begriffsraum, ohne behauptete zeitliche Nachordnung. Der Denkraum zeigt zusätzlich zu den Fragegruppen sämtliche Spuren mit ihren Beziehungen. Suche und Eigenfilter gelten in jedem Modus. Automatisierte Prüfungen vergleichen die vollständigen Eintragsmengen aller elf Ansichten einschliesslich eigener Theorieeinträge und leerer Suchergebnisse.
 
 
 ## Bilder, kurze Filme und Originaltöne
 
-17 zusätzliche Bildquellen mit Urheberschaft, Lizenz, Bilddatum und eigener Beobachtungsfrage. Rekonstruktionen und spätere Geschichtsbilder sind ausdrücklich eingeordnet. Grössere Bildkarten und ein bildlicher Einstieg führen zu denselben Einträgen in allen zehn Modi.
+17 zusätzliche Bildquellen mit Urheberschaft, Lizenz, Bilddatum und eigener Beobachtungsfrage. Rekonstruktionen und spätere Geschichtsbilder sind ausdrücklich eingeordnet. Grössere Bildkarten und ein bildlicher Einstieg führen zu denselben Einträgen in allen elf Modi.
 
 Vier neue Spuren: Apollo 11 (1969), Berliner Grenzöffnung (1989), Pariser Klimaabkommen (2015) und technisch vermittelte Marsaufnahmen (2021). Sie ergänzen den Originalton Emilie Lieberherrs beim bestehenden Frauenstimmrecht-Eintrag. Insgesamt sieben Film-/Tonangebote: drei Audios, ein direkt eingebundenes Archivvideo und drei offizielle YouTube-Videos. Für längere Videos ist ein zweiminütiger Arbeitsabschnitt eingestellt.
 
@@ -99,3 +99,10 @@ Die Player verbinden sich erst nach «Video laden» / «Ton laden» mit dem jewe
 Externe Filme und Töne benötigen Internet und bleiben bei ihren Anbietern (NASA, SRF, Bundesregierung/Bundesarchiv, UN/YouTube); sie sind nicht in der Offline-HTML enthalten. Die lokal gespeicherten Bilder und der bereits bereitgestellte Podcast bleiben offline verfügbar. Anbieter können Einbettung und regionale Verfügbarkeit ändern.
 
 Eigene MP3-Dateien und Kurzvideos (MP4/WebM, jeweils bis 8 MB) können als Material ergänzt und direkt im Popup abgespielt werden. Sie bleiben lokal und werden im Arbeitsstand exportiert.
+
+
+## Navigation und Memoria
+
+Die Seite startet im Zeitstrahl. Drei kompakte Ansichten (Zeitstrahl, Zeittunnel, Denkraum) stehen neben einer Auswahl von acht Geschichtsbildern. Jeder Ansatz hat eine eigene grafische Darstellung und eine Erklärung ihrer Aussage und Grenzen. Die Grundfragen «Was ist Geschichte?» und «Epochen sind Vorschläge» sowie der Memoria-Zugang beginnen die obere Bildstrecke. Der bisherige grosse Block undatierter Begriffe entfällt; ein standardmässig geschlossenes Nachschlagefeld unterhalb der Achse erhält den vollständigen Zugriff auf den Bestand.
+
+Memoria ist ein eigener elfter Darstellungsmodus für alle Spuren, einschliesslich neuer eigener Einträge. Überlappende Erinnerungsräume zeigen soziale Beziehungen und kulturelle Vermittlung. Die vier frei begründbaren Untersuchungsschwerpunkte sind soziale Rahmen, alltägliche Weitergabe, kulturelle Formen sowie Auswahl/Auslassung. Halbwachs und Jan Assmann werden direkt eingeführt und in einem gemeinsamen Erklärfenster unterschieden; ausführliche bestehende Untersuchungsaufträge bleiben erreichbar. Keine automatische Gleichsetzung eines Ereignisses mit seiner späteren Erinnerung. Zuordnungen und Notizen nutzen denselben Export-/Importmechanismus wie die übrigen Geschichtsbilder.

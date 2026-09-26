@@ -1423,3 +1423,9 @@ EVENTS.find(e=>e.id==='vote').sources.push('srfVote');
 
 IMAGE_MANIFEST.find(a=>a.filename==='wall-source.jpg').author='Yann Forget; Bildbearbeitung: Durova';
 IMAGE_MANIFEST.find(a=>a.filename==='mars-source.jpg').author='NASA/JPL-Caltech/MSSS';
+
+CONCEPTS.history.image='gobekli-source.jpg';
+CONCEPTS.history.visualQuestion='Diese heutige Ausgrabungsaufnahme ist nicht die Vergangenheit selbst. Unterscheide: Was liegt als Spur vor, was wurde rekonstruiert und welche Geschichte erzählst du daraus?';
+CONCEPTS.period.image='medievaldaily-source.jpg';
+CONCEPTS.period.visualQuestion='Ein Monatsbild ordnet Zeit als Jahreslauf; das Etikett «Mittelalter» ordnet vergangene Gesellschaften in eine Epoche ein. Welche Frage beantwortet die jeweilige Ordnung – und welche nicht?';
+SOURCES.assmannDigital={title:'Universität Münster: Jan Assmann über kulturelles Gedächtnis und digitalen Medienwandel (2021)',url:'https://www.uni-muenster.de/Religion-und-Politik/aktuelles/2021/PM_Jan_Assmann_Internet_ungeeignet_als_kulturelles_Speichergedaechtnis.shtml'};
