@@ -63,7 +63,7 @@ Alle 44 Zeitstrahlfenster und beide Begriffsfenster erhalten je einen eigens aus
 
 ## Darstellungsformen und Podcast
 
-Startansicht ist ein nach Fragen gegliederter Denkraum. Acht Ansichten sind umschaltbar: Denkraum, Ereigniszeitstrahl, räumlicher Zeittunnel, Augustinus’ erlebte Zeit, Braudels Zeitschichten, Richtung/offene Wege, historischer Materialismus und Kreis/Spirale. Die Theoriekonzepte stehen nicht mehr als vermeintliche Fortschrittsstationen auf der Ereignisachse. Daten ihrer Texte bleiben in den Popups erhalten.
+Startansicht ist ein nach Fragen gegliederter Denkraum. Zehn Ansichten sind umschaltbar: Denkraum, Ereigniszeitstrahl, räumlicher Zeittunnel, Augustinus’ erlebte Zeit, Braudels Zeitschichten, Richtung/offene Wege, mittelalterliche Geschichtsbilder, altägyptische Geschichtsbilder, historischer Materialismus und Kreis/Spirale. Die Theoriekonzepte stehen nicht mehr als vermeintliche Fortschrittsstationen auf der Ereignisachse. Daten ihrer Texte bleiben in den Popups erhalten.
 
 Die Wiederholungsfrage unterscheidet Rhythmus, historischen Vergleich und Nietzsches Wiederkunftsgedanken aus § 341 der Fröhlichen Wissenschaft. Der von der Lehrperson bereitgestellte Podcast ist als MP3 eingebunden; es wurde kein Transkript oder eine vermeintliche Zusammenfassung erzeugt. Der Player lädt Audio erst auf Anforderung. Zeitmarken und Hörnotizen können in den Arbeitsstand übernommen werden. Die rund 80-minütige Originaldatei wurde ohne inhaltlichen Schnitt auf 64 kbit/s Mono verkleinert; eingebettete Bearbeitungsmetadaten wurden entfernt. Die Webdatei umfasst ca. 37 MB.
 
@@ -72,3 +72,7 @@ Notizen zu den Darstellungsmodellen und zum Podcast werden lokal gespeichert, im
 ## Historischer Materialismus
 
 Eigenständiges Wirkungsgefüge mit Einführung zu Marx und Engels, zwei Fällen (Fabrikarbeit und Saint-Domingue), wechselbaren Untersuchungen zu Produktivkräften, Produktionsverhältnissen und politischem Handeln. Hypothetische Folgen werden von historischen Befunden getrennt. Marx’ Entwicklungsannahmen von 1859 und Engels’ Wechselwirkungen von 1890 werden mit Primärtextnachweisen kritisch erschlossen; keine weltweite Epochenpflichtfolge. Fallbezogene Notizen und eigene Materialien im Begriffsfenster sind möglich.
+
+## Mittelalterliche und altägyptische Geschichtsbilder
+
+Zwei eigenständige Modi mit je drei Zugängen: Sechs-Weltalter-Schema, Kirchenjahr und Weltchronik/Herrschaft; solare Erneuerung, Regierungsjahre/selektive Königslisten und Maʿat. Die Darstellung unterscheidet historische Perspektiven von heutigen Epochenbegriffen und vermeidet die pauschale Gleichsetzung «Mittelalter = linear, Ägypten = zyklisch». Eine Getty-Buchmalerei und zwei Ansichten eines Met-Skarabäus liegen mit CC0/Public-Domain-Nachweisen lokal vor. Ein Schalter macht die Wirkung einer Auslassung in einer erfundenen Königsliste sichtbar. Alle sechs Zugänge haben eigene Aufgaben und gespeicherte Notizen; die Begriffsfenster ermöglichen eigene Materialien.
