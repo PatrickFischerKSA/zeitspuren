@@ -278,3 +278,18 @@ vm.runInContext(`{
  }finally{comparePeriods=old}
 }`,ctx);
 console.log('PASS: Zeitvergleich mit gemeinsamem proportionalem Massstab, unterschiedlichen Dauern, Intervallüberlappung und ohne Jahr null.');
+vm.runInContext(`{
+ const snapshot={representation,centurySelection,centurySize,periodCompare,visibleCategories,worldAll,state,tunnelTime,tunnelSpan};
+ try{
+ state=defaults();centurySize=200;centurySelection=new Set(['1801']);visibleCategories=new Set(['local']);periodCompare=false;
+ for(const mode of REPRESENTATIONS.map(r=>r[0])){representation=mode;const items=lensItems();if(items.some(e=>e.lane!=='local'||!centuryVisible(e)))throw Error('Profil ignoriert Filter: '+mode);if(items.length!==6)throw Error('Unterschiedlicher Bestand: '+mode)}
+ periodCompare=true;const p={from:1801,to:1900};
+ for(const mode of Object.keys(GLOBAL_LENSES)){
+ representation=mode;ensureReading(mode);const items=lensItems().filter(e=>periodContains(e,p)),before=JSON.stringify(state),oldAll=worldAll;
+ const html=profileComparisonScene(items,p,0);for(const e of items)if(!html.includes('data-lens-focus="'+e.id+'"'))throw Error('Vergleich verliert Spur '+mode);
+ if(before!==JSON.stringify(state)||worldAll!==oldAll)throw Error('Vergleich verändert Entwurf');
+ }
+ representation='tunnel';const t=tunnelTime,span=tunnelSpan;profileComparisonScene(lensItems().filter(e=>periodContains(e,p)),p,0);if(t!==tunnelTime||span!==tunnelSpan)throw Error('Vergleich verändert Zeitfahrt');
+ }finally{({representation,centurySelection,centurySize,periodCompare,visibleCategories,worldAll,state,tunnelTime,tunnelSpan}=snapshot)}
+}`,ctx);
+console.log('PASS: Gemeinsame Kategorie- und Zeitfilter in elf Profilen; acht native Vergleichsformen ohne Veränderung der Deutungen oder Tunnelparameter.');

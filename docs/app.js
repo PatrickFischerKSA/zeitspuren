@@ -35,7 +35,7 @@ function centuryGroups(){
 function centuryVisible(e){if(!Number.isFinite(e.year)||centurySelection===null)return true;const end=Number.isFinite(e.end)?e.end:e.year;return centuryGroups().some(g=>centurySelection.has(g.id)&&e.year<=g.to&&end>=g.from)}
 function centuryDomain(){if(centurySelection===null||!centurySelection.size)return null;const chosen=centuryGroups().filter(g=>centurySelection.has(g.id));if(!chosen.length)return null;return [Math.max(Math.min(-18000,...state.own.map(e=>e.year).filter(Number.isFinite)),Math.min(...chosen.map(g=>g.from))),Math.max(...chosen.map(g=>g.to))]}
 function renderCenturyControls(){
- const container=$('#centuryControls');if(!container)return;container.hidden=representation!=='timeline';
+ const container=$('#centuryControls');if(!container)return;container.hidden=false;
  $$('[data-period-preset]').forEach(el=>el.innerHTML='<option value="">Zeitgruppe übernehmen …</option>'+periodOptions());
  const groups=centuryGroups();$('#centuryChoices').innerHTML=groups.map(g=>`<div class="century-chip"><label><input type="checkbox" data-century="${g.id}" ${centurySelection===null||centurySelection.has(g.id)?'checked':''}><span>${g.label}</span></label><button data-century-solo="${g.id}" aria-label="Nur ${g.label} anzeigen" aria-pressed="${centurySelection?.size===1&&centurySelection.has(g.id)}">Solo</button></div>`).join('');
  $('#centuryStatus').textContent=centurySelection===null?'Gesamte Zeit':centurySelection.size+(centurySelection.size===1?' Zeitgruppe':' Zeitgruppen')+' · nicht gewählte Zwischenräume bleiben zeitlich erhalten';
@@ -66,13 +66,14 @@ function initPeriodCompare(){
 }
 function syncPeriodInputs(){comparePeriods.forEach((p,i)=>{$('#periodFrom'+i).value=p.from;$('#periodTo'+i).value=p.to})}
 function syncPeriodCompare(){
- const on=representation==='timeline'&&periodCompare;document.body?.classList.toggle('period-comparison-active',on);
+ const on=periodCompare;document.body?.classList.toggle('period-comparison-active',on);
  if($('#periodCompareControls'))$('#periodCompareControls').hidden=!on;
  if($('#periodCompareStage'))$('#periodCompareStage').hidden=!on;
  if($('#periodCompareToggle')){$('#periodCompareToggle').textContent=on?'Zum einzelnen Zeitstrahl ↩':'Zwei Zeiträume vergleichen ⇄';$('#periodCompareToggle').setAttribute('aria-pressed',String(on))}
- if(on){$('#scroll').hidden=true;$('.timeline-nav').hidden=true;$('#timelineUndated').hidden=true;$('.timeline-caption').hidden=true;$$('.viewoptions label').forEach(el=>{if(el.querySelector('#scale'))el.hidden=true})}
+ if(on){$('#modeStage').hidden=true;$('#scroll').hidden=true;$('.timeline-nav').hidden=true;$('#timelineUndated').hidden=true;$('.timeline-caption').hidden=true;$$('.viewoptions label').forEach(el=>{if(el.querySelector('#scale'))el.hidden=true})}
 }
 function renderPeriodCompare(){
+ if($('#comparisonTravelLabel'))$('#comparisonTravelLabel').hidden=true;$('#periodCompareHelp').textContent='Beide Anfänge liegen übereinander. Gleiche Abstände bedeuten gleich viele Jahre, nicht gleiche historische Bedeutung. Jahreszahlen vor unserer Zeitrechnung negativ eingeben.';
  const width=2600*Number($('#zoom').value),corpus=lensItems($('#search').value,onlyOwn),counts=[];
  $('#periodCompareStage').innerHTML=comparePeriods.map((p,index)=>{const items=corpus.filter(e=>periodContains(e,p));counts.push(items.length);const map=y=>periodPosition(y,p,width),duration=periodDuration(p),longest=Math.max(1,...comparePeriods.map(periodDuration));
  let html=`<div class="compare-axis" style="width:${width}px">${Array.from({length:6},(_,i)=>{const elapsed=Math.round(longest*i/5);if(elapsed>duration)return '';const astro=astronomical(p.from)+elapsed,year=astro<=0?astro-1:astro;return `<span style="left:${map(year)}px">${yr(year)}<small>+${elapsed} Jahre</small></span>`}).join('')}</div>`;
@@ -83,10 +84,35 @@ function renderPeriodCompare(){
  $$('#periodCompareStage [data-event]').forEach(b=>b.onclick=()=>openEvent(b.dataset.event));
  const views=$$('.period-viewport');let syncing=false;views.forEach(v=>{v.addEventListener('scroll',()=>{if(syncing)return;syncing=true;views.forEach(other=>{if(other!==v)other.scrollLeft=v.scrollLeft});syncing=false});v.addEventListener('wheel',e=>{if(e.ctrlKey||e.metaKey){e.preventDefault();setTimelineZoom(Number($('#zoom').value)*Math.exp(-e.deltaY*.005),e.clientX-v.getBoundingClientRect().left)}},{passive:false});let drag=null;v.onpointerdown=e=>{if(e.button||e.target.closest('button'))return;drag={x:e.clientX,y:e.clientY,left:v.scrollLeft,top:v.scrollTop};v.setPointerCapture(e.pointerId)};v.onpointermove=e=>{if(drag){v.scrollLeft=drag.left+drag.x-e.clientX;v.scrollTop=drag.top+drag.y-e.clientY}};v.onpointerup=v.onpointercancel=()=>drag=null;});
 }
+
+let comparisonTravel=0;
+function profileComparisonScene(items,p,index){
+ if(GLOBAL_LENSES[representation]){const old=worldAll;try{worldAll=true;return worldSceneHtml(items)}finally{worldAll=old}}
+ if(representation==='tunnel'){const oldTime=tunnelTime,oldSpan=tunnelSpan;try{const duration=Math.max(1,...comparePeriods.map(periodDuration));tunnelTime=tunnelOrdinal(p.from)+comparisonTravel*duration;tunnelSpan=Math.max(1,duration/4);return '<div class="comparison-tunnel">'+tunnelScene(items).html+'</div>'}finally{tunnelTime=oldTime;tunnelSpan=oldSpan}}
+ return networkCorpusHtml(items);
+}
+function renderProfilePeriodCompare(){
+ stopTunnel();if(GLOBAL_LENSES[representation])ensureReading(representation);
+ const corpus=lensItems($('#search').value,onlyOwn),name=REPRESENTATIONS.find(r=>r[0]===representation)[1];
+ $('#periodCompareHelp').textContent=representation==='tunnel'?'Zwei Zeitkorridore mit gleichem Tiefenmassstab. Die Zeitfahrt verschiebt beide Standorte um gleich viele Jahre.':'Dasselbe Geschichtsbild und dieselben Voraussetzungen für zwei Zeiträume. Räumliche Nähe ist eine Modelldeutung, kein Beleg für Ähnlichkeit; die Bildabstände messen hier keine Jahre.';
+ let travel=$('#comparisonTravel');if(!travel){const label=document.createElement('label');label.id='comparisonTravelLabel';label.innerHTML='Gemeinsame Zeitfahrt <input type="range" id="comparisonTravel" min="0" max="1" step="0.001" value="0">';$('#periodCompareControls').append(label);travel=$('#comparisonTravel');travel.oninput=e=>{comparisonTravel=Number(e.target.value);renderProfilePeriodCompare()}}$('#comparisonTravelLabel').hidden=representation!=='tunnel';travel.value=comparisonTravel;
+ $('#periodCompareStage').innerHTML=comparePeriods.map((p,i)=>{const items=corpus.filter(e=>periodContains(e,p));let html=profileComparisonScene(items,p,i);html=html.replace(/id="([^" ]+)"/g,(_,id)=>`id="compare-${i}-${id}"`).replace(/url\(#([^)]*)\)/g,(_,id)=>`url(#compare-${i}-${id})`);return `<section class="period-panel profile-period-panel"><header><strong>${i?'B':'A'} · ${yr(p.from)} – ${yr(p.to)}</strong><span>${esc(name)} · ${items.length} ${items.length===1?'Spur':'Spuren'}</span></header><div class="profile-period-content">${html}</div></section>`}).join('');
+ $$('#periodCompareStage [data-lens-focus],#periodCompareStage [data-explore],#periodCompareStage [data-event]').forEach(b=>{b.onclick=()=>openEvent(b.dataset.lensFocus||b.dataset.explore||b.dataset.event);b.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();b.onclick()}}});
+ $$('#periodCompareStage a[href="#interpretationSettings"]').forEach(a=>a.onclick=e=>{e.preventDefault();periodCompare=false;worldSheet='settings';render()});
+ $('#count').textContent=name+' · zwei Zeiträume · gemeinsame Kategorien und Suchauswahl';$('.timeline-foot').hidden=false;installProfileZoom();
+}
+function setProfileZoom(value){const next=Math.max(.25,Math.min(5,Number(value)));let option=$('#zoom option[data-continuous]');if(!option){option=document.createElement('option');option.dataset.continuous='true';$('#zoom').append(option)}option.value=String(next);option.textContent=Math.round(next*100)+' %';$('#zoom').value=String(next);syncTimelineStudio();if(representation==='network')$$('.network-space,.profile-period-content .network-corpus').forEach(el=>el.style.zoom=String(next));$$('.profile-zoom-viewport svg').forEach(svg=>{const panel=svg.closest('.profile-period-content'),box=svg.parentElement,ratio=(svg.viewBox.baseVal.width||1180)/(svg.viewBox.baseVal.height||580);svg.style.width=panel?Math.min(box.clientWidth,Math.max(100,panel.clientHeight-65)*ratio)*next+'px':(next*100)+'%';svg.style.maxWidth='none';svg.style.height='auto'});}
+function installProfileZoom(){
+ const root=periodCompare?$('#periodCompareStage'):$('#modeStage');if(!root)return;if(!periodCompare){$$('.world-controls label').forEach(el=>{if(el.querySelector('#worldTime,#worldWindow'))el.hidden=centurySelection!==null});}
+ root.querySelectorAll('.schematic-scene>svg,.comparison-tunnel>svg,#spaceScene>svg').forEach(svg=>{if(svg.parentElement.classList.contains('profile-zoom-viewport'))return;const wrap=document.createElement('div');wrap.className='profile-zoom-viewport';wrap.tabIndex=0;wrap.setAttribute('aria-label','Schaubild zoomen und verschieben');svg.before(wrap);wrap.append(svg);
+ wrap.addEventListener('wheel',e=>{if(e.ctrlKey||e.metaKey){e.preventDefault();e.stopPropagation();setProfileZoom(Number($('#zoom').value)*Math.exp(-e.deltaY*.005))}},{passive:false});
+ let drag=null;wrap.onpointerdown=e=>{if(e.button||e.target.closest('button,[role="button"],a'))return;drag={x:e.clientX,y:e.clientY,left:wrap.scrollLeft,top:wrap.scrollTop};wrap.setPointerCapture(e.pointerId)};wrap.onpointermove=e=>{if(drag){wrap.scrollLeft=drag.left+drag.x-e.clientX;wrap.scrollTop=drag.top+drag.y-e.clientY}};wrap.onpointerup=wrap.onpointercancel=()=>drag=null;
+ wrap.addEventListener('scroll',()=>{if(!periodCompare)return;$$('.profile-zoom-viewport').forEach(other=>{if(other!==wrap&&Math.abs(other.scrollLeft-wrap.scrollLeft)>1)other.scrollLeft=wrap.scrollLeft})});
+ });setProfileZoom(Number($('#zoom').value));
+}
 function mapFn(width){const left=180,span=width-400,domain=centuryDomain();if(domain)return y=>left+(astronomical(y)-astronomical(domain[0]))/(astronomical(domain[1])-astronomical(domain[0]))*span;let low=Math.min(-18000,...state.own.map(e=>e.year)),high=Math.max(2050,...state.own.map(e=>e.end||e.year));if($('#scale').value==='linear')return y=>left+(astronomical(y)-astronomical(low))/(astronomical(high)-astronomical(low))*span;const anchors=[[low,0],[-10000,.08],[-7000,.16],[-3500,.24],[1,.36],[600,.44],[1000,.51],[1400,.61],[1600,.70],[1800,.79],[1900,.88],[high,1]];return y=>{for(let i=1;i<anchors.length;i++){if(y<=anchors[i][0]){const [a,x]=anchors[i-1],[b,z]=anchors[i];return left+(x+(y-a)/(b-a)*(z-x))*span}}return left+span}}
 function render(){
- prepareRepresentation();syncTimelineStudio();renderCenturyControls();syncPeriodCompare();if(representation!=='timeline'){renderMode();return;}
- if(periodCompare){renderPeriodCompare();return;}
+ prepareRepresentation();syncTimelineStudio();renderCenturyControls();syncPeriodCompare();if(periodCompare){if(representation==='timeline')renderPeriodCompare();else renderProfilePeriodCompare();return;}if(representation!=='timeline'){renderMode();installProfileZoom();return;}
  const width=2600*Number($('#zoom').value),map=mapFn(width),query=$('#search').value.toLocaleLowerCase('de');const visible=lensItems(query,onlyOwn).filter(centuryVisible),items=visible.filter(e=>Number.isFinite(e.year)),undated=visible.filter(e=>!Number.isFinite(e.year));
  $('#timeline').style.width=width+'px';const domain=centuryDomain();$$('.viewoptions label').forEach(el=>{if(el.querySelector('#scale'))el.hidden=!!domain});$('.timeline-nav').hidden=!!domain;const ticks=domain?Array.from({length:6},(_,i)=>Math.round(domain[0]+i*(domain[1]-domain[0])/5)).filter(y=>y!==0):$('#scale').value==='linear'?[-15000,-10000,-5000,1,2023]:[-17000,-10000,-7000,-3200,1,476,868,1200,1492,1789,1914,2023];let html=`<div class="axis">${ticks.map(y=>`<span class="tick" style="left:${map(y)}px">${yr(y)}</span>`).join('')}</div>`;
  const ends=[-18000,-800,...state.bounds,2050],names=['Vor- / Frühgeschichte?','Antike (regional)','Mittelalter','Frühe Neuzeit','Moderne','Zeitgeschichte'];html+=`<div class="lane" style="height:68px"><div class="lane-name">Epochenentwurf<small>Europa · veränderbar</small></div>${names.map((n,i)=>domain&&(ends[i]>domain[1]||ends[i+1]<domain[0])?'':`<button class="periodbar" data-epoch style="left:${map(domain?Math.max(domain[0],ends[i]):ends[i])}px;width:${Math.max(35,map(domain?Math.min(domain[1],ends[i+1]):ends[i+1])-map(domain?Math.max(domain[0],ends[i]):ends[i])-2)}px" title="${n}: ${yr(ends[i])} bis ${yr(ends[i+1])}; Grenzen hinterfragen">${n}</button>`).join('')}</div>`;
@@ -173,13 +199,14 @@ function initCategoryControls(){
 // Full-window timeline: zoom changes the temporal scale, keeping the pointed date fixed.
 let timelineStudio=true;
 function syncTimelineStudio(){
- document.body?.classList.toggle('timeline-studio',representation==='timeline'&&timelineStudio);
- const bar=$('#timelineStudioBar');if(bar)bar.hidden=representation!=='timeline';
+ document.body?.classList.toggle('timeline-studio',timelineStudio);
+ const bar=$('#timelineStudioBar');if(bar)bar.hidden=false;if($('#studioProfile'))$('#studioProfile').value=representation;
  if($('#timelineExpand'))$('#timelineExpand').textContent=timelineStudio?'Vollbild verlassen ↙':'Vollbild öffnen ↗';
  if($('#timelineZoomRange')){$('#timelineZoomRange').value=$('#zoom').value;$('#timelineZoomValue').textContent=Math.round(Number($('#zoom').value)*100)+' %'}
  $$('[data-isolate]').forEach(b=>b.setAttribute('aria-pressed',String(visibleCategories.size===1&&visibleCategories.has(b.dataset.isolate))));
 }
 function setTimelineZoom(value,anchor){
+ if(representation!=='timeline'){setProfileZoom(value);return}
  const viewport=periodCompare?$('.period-viewport'):$('#scroll'),old=2600*Number($('#zoom').value),next=Math.max(.25,Math.min(5,Number(value)));
  const x=anchor??viewport.clientWidth/2,position=(viewport.scrollLeft+x-180)/(old-400);
  let option=$('#zoom option[data-continuous]');if(!option){option=document.createElement('option');option.dataset.continuous='true';$('#zoom').append(option)}
@@ -187,13 +214,13 @@ function setTimelineZoom(value,anchor){
  if(periodCompare)$$('.period-viewport').forEach(v=>v.scrollLeft=180+position*(2600*next-400)-x);else viewport.scrollLeft=180+position*(2600*next-400)-x;
 }
 function initTimelineStudio(){
- const bar=document.createElement('div');bar.id='timelineStudioBar';bar.innerHTML=`<strong>Zeitspuren <span>· Zeitstrahl</span></strong><div class="timeline-zoom-controls"><button id="timelineZoomOut" aria-label="Herauszoomen">−</button><input id="timelineZoomRange" type="range" min="0.25" max="5" step="0.05" value="1" aria-label="Zeitstrahl zoomen"><output id="timelineZoomValue">100 %</output><button id="timelineZoomIn" aria-label="Hineinzoomen">+</button><button id="timelineZoomReset">Übersicht</button></div><button id="timelineExpand">Vollbild verlassen ↙</button>`;
- $('.workspace').prepend(bar);
+ const bar=document.createElement('div');bar.id='timelineStudioBar';bar.innerHTML=`<label class="studio-profile">Ansicht <select id="studioProfile" aria-label="Darstellungsprofil">${REPRESENTATIONS.map(([id,name])=>`<option value="${id}">${name}</option>`).join('')}</select></label><div class="timeline-zoom-controls"><button id="timelineZoomOut" aria-label="Herauszoomen">−</button><input id="timelineZoomRange" type="range" min="0.25" max="5" step="0.05" value="1" aria-label="Zeitstrahl zoomen"><output id="timelineZoomValue">100 %</output><button id="timelineZoomIn" aria-label="Hineinzoomen">+</button><button id="timelineZoomReset">Übersicht</button></div><button id="timelineExpand">Vollbild verlassen ↙</button>`;
+ $('.workspace').prepend(bar);$('#studioProfile').onchange=e=>switchRepresentation(e.target.value);
  $('#timelineExpand').onclick=()=>{timelineStudio=!timelineStudio;syncTimelineStudio()};
  $('#timelineZoomIn').onclick=()=>setTimelineZoom(Number($('#zoom').value)*1.3);
  $('#timelineZoomOut').onclick=()=>setTimelineZoom(Number($('#zoom').value)/1.3);
  $('#timelineZoomRange').oninput=e=>setTimelineZoom(e.target.value);
- $('#timelineZoomReset').onclick=()=>{const v=periodCompare?$('.period-viewport'):$('#scroll');setTimelineZoom(Math.max(.25,(v.clientWidth-20)/2600));(periodCompare?$$('.period-viewport'):[$('#scroll')]).forEach(el=>el.scrollTo({left:0,top:0}))};
+ $('#timelineZoomReset').onclick=()=>{if(representation!=='timeline'){setProfileZoom(1);$$('.profile-zoom-viewport').forEach(v=>v.scrollTo({left:0,top:0}));return}const v=periodCompare?$('.period-viewport'):$('#scroll');setTimelineZoom(Math.max(.25,(v.clientWidth-20)/2600));(periodCompare?$$('.period-viewport'):[$('#scroll')]).forEach(el=>el.scrollTo({left:0,top:0}))};
  const viewport=$('#scroll');let drag=null;
  viewport.addEventListener('wheel',e=>{if(e.ctrlKey||e.metaKey){e.preventDefault();setTimelineZoom(Number($('#zoom').value)*Math.exp(-e.deltaY*.005),e.clientX-viewport.getBoundingClientRect().left)}},{passive:false});
  viewport.addEventListener('pointerdown',e=>{if(e.button!==0||e.target.closest('button,input,select,a'))return;drag={x:e.clientX,y:e.clientY,left:viewport.scrollLeft,top:viewport.scrollTop};viewport.setPointerCapture(e.pointerId);viewport.classList.add('dragging')});
