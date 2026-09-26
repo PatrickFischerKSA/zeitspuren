@@ -100,6 +100,13 @@ const pLocal=ctx.spatial.tunnelProject('local',0),pEurope=ctx.spatial.tunnelProj
 const before=ctx.spatial.tunnelScene(events);vm.runInContext('tunnelTime=1800.5',ctx);const after=ctx.spatial.tunnelScene(events);assert.notEqual(before.html,after.html);assert(after.shown.some(o=>o.e.id==='local-linth'));assert(!after.shown.some(o=>!Number.isFinite(o.e.year)));assert(!after.html.includes('NaN'));
 console.log('PASS: Zeitfahrt zwischen Ereignisdaten; getrennte räumliche Kategorienachsen; Perspektivtiefe; kein Jahr null.');
 
+vm.runInContext("globalThis.worldAPI={worldSelection,worldSceneHtml};worldYear=2026;worldWindow=130;worldAll=false;worldAssumption=true;state=defaults();state.own=[{id:'own-present',year:2026,lane:'local',own:true,title:'Eigene Gegenwart',text:'Beleg'}]",ctx);
+for(const mode of Object.keys(ut.lenses)){vm.runInContext(`representation='${mode}';worldAssumption=true`,ctx);const first=ctx.worldAPI.worldSceneHtml(ut.lensItems());assert(first.includes('data-lens-focus="own-present"'));assert(first.includes('data-lens-focus="paris"'));assert(!first.includes('data-lens-focus="history"'));vm.runInContext('worldAssumption=false',ctx);assert.notEqual(first,ctx.worldAPI.worldSceneHtml(ut.lensItems()),mode+' changes the visible construction')}
+vm.runInContext("representation='present';worldYear=2014;worldAssumption=true",ctx);assert(ctx.worldAPI.worldSceneHtml(ut.lensItems()).includes('Erwartung ist kein Rückblick'));
+vm.runInContext("representation='recurrence';worldPeriod=100",ctx);const cycle=ctx.worldAPI.worldSceneHtml(ut.lensItems());vm.runInContext('worldPeriod=73',ctx);assert.notEqual(cycle,ctx.worldAPI.worldSceneHtml(ut.lensItems()));
+vm.runInContext('worldAll=true',ctx);assert.equal(ctx.worldAPI.worldSelection(ut.lensItems()).length,ut.lensItems().filter(e=>Number.isFinite(e.year)).length);
+console.log('PASS: Gegenwart und eigene Ereignisse in acht Weltansichten; wirksame Annahmenschalter; offener Zukunftshorizont; veränderbare Zyklen; vollständiger Zeitraum.');
+
 (async()=>{
  vm.runInContext("render=()=>{};save=async()=>true;toast=()=>{};state=defaults();state.own=[{id:'merge-own',year:1900,lane:'eu',own:true,title:'Lokale Fassung',text:'lokal'}];state.lensAssignments.egypt={haiti:'order'}",ctx);
  const incoming=api.defaults();incoming.own=[{id:'merge-own',year:1900,lane:'eu',own:true,title:'Andere Fassung',text:'importiert'}];incoming.lensAssignments.egypt={'merge-own':'selection',haiti:'renewal'};incoming.notes['lens-egypt-merge-own']='Importierte Interpretation';
