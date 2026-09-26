@@ -109,3 +109,5 @@ Memoria ist ein eigener elfter Darstellungsmodus für alle Spuren, einschliessli
 
 ## Lokalgeschichte Zürichsee bis Chur
 Zwölf Quellenfenster von Zürich-Parkhaus Opéra bis zum Welterbe 2011: Chur-Welschdörfli, Rapperswil–Hurden, Zürcher Reformation, Käpfnach, Linthkorrektion, Spinnerei Murg (Gründung und Schliessung), Ragaz, Eisenbahn und Heidi. Sechs zusätzliche lizenzierte Quellenbilder mit Nachweisen. Der Raumfilter gilt in allen Darstellungsmodi; eigene Einträge können derselben Spur zugeordnet werden. Moderne Ansichten und Vergleichsbilder sind ausdrücklich von historischen Ereignissen unterschieden.
+
+Kategorien lassen sich einzeln über Checkboxen kombinieren. «Alle einschalten» und «Alle ausschalten» erleichtern die Auswahl. Sie gilt bis zum Neuladen über alle Ansichten hinweg; undatierte Begriffe gehören zu «Zeit, Wissen & Erinnerung».

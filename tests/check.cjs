@@ -77,15 +77,22 @@ vm.runInContext("representation='timeline';onlyOwn=true;render()",ctx);assert(ct
 console.log('PASS: Alle elf Modi enthalten exakt denselben Bestand; vollständiger Ausgangsbestand plus eigene Ereignisse und Theorien; undatierte Begriffe, Suchfilter, Eigenfilter und leere Tunnel-Auswahl.');
 
 
-ctx.dom['#regionFilter'].value='local';
+vm.runInContext("visibleCategories=new Set(['local'])",ctx);
 vm.runInContext("state=defaults();state.own=[{id:'own-local',year:2026,lane:'local',own:true,title:'Eigene Ortsgeschichte',text:'Beleg'}];onlyOwn=false;representation='timeline';render()",ctx);
 const localIds=events.filter(e=>e.lane==='local').map(e=>e.id).concat('own-local');
 assert.equal(localIds.length,13);assert.equal(cv.tunnelItems('',false).length,13);
 for(const id of localIds){assert(ctx.dom['#timeline'].innerHTML.includes('data-event="'+id+'"'));assert(cv.networkHtml('',false).includes('data-explore="'+id+'"'))}
 for(const mode of ['present','layers','direction','medieval','egypt','materialism','recurrence','memoria']){vm.runInContext(`representation='${mode}'`,ctx);const html=cv.lensUniverseHtml('',false);for(const id of localIds)assert(html.includes('data-lens-focus="'+id+'"'),mode+' local '+id)}
 assert.equal(vm.runInContext('validate(JSON.parse(JSON.stringify(state))).own[0].lane',ctx),'local');
-assert.equal(cv.tunnelItems('',true).length,1);assert(!ctx.dom['#timeline'].innerHTML.includes('data-event="moon"'));ctx.dom['#regionFilter'].value='';
+assert.equal(cv.tunnelItems('',true).length,1);assert(!ctx.dom['#timeline'].innerHTML.includes('data-event="moon"'));vm.runInContext('visibleCategories=new Set(LANES.map(l=>l[0]))',ctx);
 console.log('PASS: Lokalfilter in elf Modi; eigene lokale Einträge sofort enthalten und im Backup erhalten.');
+
+vm.runInContext("visibleCategories=new Set(['local','eu']);onlyOwn=false;representation='timeline';render()",ctx);
+const combined=cv.tunnelItems('',false);assert(combined.some(e=>e.lane==='local'));assert(combined.some(e=>e.lane==='eu'));assert(combined.every(e=>['local','eu'].includes(e.lane)));
+vm.runInContext('visibleCategories.clear();render()',ctx);assert.equal(cv.tunnelItems('',false).length,0);assert(cv.tunnelHtml([]).includes('Keine Spur'));assert(!ctx.dom['#timeline'].innerHTML.includes('class="event '));
+vm.runInContext("visibleCategories=new Set(['ideas'])",ctx);assert(cv.tunnelItems('',false).some(e=>e.id==='history'));assert(cv.tunnelItems('',false).every(e=>!e.lane||e.lane==='ideas'));
+vm.runInContext('visibleCategories=new Set(LANES.map(l=>l[0]))',ctx);
+console.log('PASS: Mehrfachauswahl, leere Auswahl, erneutes Einschalten und Begriffe in der Erinnerungskategorie.');
 
 (async()=>{
  vm.runInContext("render=()=>{};save=async()=>true;toast=()=>{};state=defaults();state.own=[{id:'merge-own',year:1900,lane:'eu',own:true,title:'Lokale Fassung',text:'lokal'}];state.lensAssignments.egypt={haiti:'order'}",ctx);
