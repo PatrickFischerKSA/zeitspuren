@@ -101,7 +101,7 @@ const before=ctx.spatial.tunnelScene(events);vm.runInContext('tunnelTime=1800.5'
 console.log('PASS: Zeitfahrt zwischen Ereignisdaten; getrennte räumliche Kategorienachsen; Perspektivtiefe; kein Jahr null.');
 
 vm.runInContext("globalThis.worldAPI={worldSelection,worldSceneHtml};worldYear=2026;worldWindow=130;worldAll=false;worldAssumption=true;state=defaults();state.own=[{id:'own-present',year:2026,lane:'local',own:true,title:'Eigene Gegenwart',text:'Beleg'}]",ctx);
-for(const mode of Object.keys(ut.lenses)){vm.runInContext(`representation='${mode}';worldAssumption=true`,ctx);const first=ctx.worldAPI.worldSceneHtml(ut.lensItems());assert(first.includes('data-lens-focus="own-present"'));assert(first.includes('data-lens-focus="paris"'));assert(!first.includes('data-lens-focus="history"'));vm.runInContext('worldAssumption=false',ctx);assert.notEqual(first,ctx.worldAPI.worldSceneHtml(ut.lensItems()),mode+' changes the visible construction')}
+for(const mode of Object.keys(ut.lenses)){vm.runInContext(`representation='${mode}';worldAssumption=true`,ctx);if(mode==='memoria')vm.runInContext("state.notes['premise-memoria-group']='Untersuchtes Stadtmuseum'",ctx);const first=ctx.worldAPI.worldSceneHtml(ut.lensItems());assert(first.includes('data-lens-focus="own-present"'));assert(first.includes('data-lens-focus="paris"'));assert(!first.includes('data-lens-focus="history"'));vm.runInContext('worldAssumption=false',ctx);assert.notEqual(first,ctx.worldAPI.worldSceneHtml(ut.lensItems()),mode+' changes the visible construction')}
 vm.runInContext("representation='present';worldYear=2014;worldAssumption=true",ctx);assert(ctx.worldAPI.worldSceneHtml(ut.lensItems()).includes('Erwartung ist kein Rückblick'));
 vm.runInContext("representation='recurrence';worldPeriod=100",ctx);const cycle=ctx.worldAPI.worldSceneHtml(ut.lensItems());vm.runInContext('worldPeriod=73',ctx);assert.notEqual(cycle,ctx.worldAPI.worldSceneHtml(ut.lensItems()));
 vm.runInContext('worldAll=true',ctx);assert.equal(ctx.worldAPI.worldSelection(ut.lensItems()).length,ut.lensItems().filter(e=>Number.isFinite(e.year)).length);
@@ -112,6 +112,16 @@ assert(ctx.telosAPI.telosHtml().includes('Die Zielfrage bleibt offen'));assert(c
 vm.runInContext("state.notes['telos-medieval-goal']='Freiheit <für alle>';state.notes['telos-medieval-counter']='Ein begründeter Gegenbefund'",ctx);
 assert(ctx.worldAPI.worldSceneHtml(events).includes('Freiheit &lt;für alle&gt;'));assert.equal(api.validate(JSON.parse(vm.runInContext('JSON.stringify(state)',ctx))).notes['telos-medieval-counter'],'Ein begründeter Gegenbefund');assert(ctx.telosAPI.modeNoteLabel('telos-medieval-goal').includes('Telos:'));
 console.log('PASS: Offenes Telos, sichere Darstellung eigener Zielvorstellungen und gesicherte Gegenprüfung.');
+
+vm.runInContext('globalThis.premiseAPI={labs:PREMISE_LABS,premiseLabHtml,premiseKey,modeNoteLabel};state=defaults();worldYear=2026;worldWindow=130;worldAll=false;worldAssumption=true',ctx);
+for(const [mode,lab] of Object.entries(ctx.premiseAPI.labs)){
+ vm.runInContext(`representation='${mode}';state=defaults()`,ctx);assert(ctx.premiseAPI.premiseLabHtml().includes(lab.open));const initial=ctx.worldAPI.worldSceneHtml(events);
+ ctx.testPremiseKey=ctx.premiseAPI.premiseKey(mode,lab.anchor);vm.runInContext("state.notes[testPremiseKey]='Prüfannahme <mit Gegenargument>';",ctx);
+ const changed=ctx.worldAPI.worldSceneHtml(events);assert(changed.includes('Prüfannahme &lt;mit Gegenargument&gt;'));assert.notEqual(initial,changed);assert(ctx.premiseAPI.modeNoteLabel(ctx.testPremiseKey).includes('Voraussetzung:'));assert.equal(api.validate(JSON.parse(vm.runInContext('JSON.stringify(state)',ctx))).notes[ctx.testPremiseKey],'Prüfannahme <mit Gegenargument>');
+}
+vm.runInContext("representation='memoria';state=defaults()",ctx);assert(!ctx.worldAPI.worldSceneHtml(events).includes('world-muted'));
+vm.runInContext("state.notes['premise-memoria-group']='Familiengespräch';state.lensAssignments.memoria={paris:'social'}",ctx);assert(ctx.worldAPI.worldSceneHtml(events).includes('world-muted'));assert(ctx.worldAPI.worldSceneHtml(events).includes('Familiengespräch'));
+console.log('PASS: Sechs offene Voraussetzungen, individuell formulierte Gegenprüfungen, sichtbare Annahmen, sichere Notizen und Erinnerungsblende mit benanntem Rahmen.');
 
 (async()=>{
  vm.runInContext("render=()=>{};save=async()=>true;toast=()=>{};state=defaults();state.own=[{id:'merge-own',year:1900,lane:'eu',own:true,title:'Lokale Fassung',text:'lokal'}];state.lensAssignments.egypt={haiti:'order'}",ctx);
