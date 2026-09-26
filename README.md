@@ -133,3 +133,5 @@ Die Ereignistafeln stehen jetzt unmittelbar nach den Zeitreglern, vor Beispielen
 Die Weltansichten verwenden eine kompakte Arbeitsfläche: je ein aktives Deutungsfeld mit horizontalem Bildstreifen. Einführungen, Beispiele, Voraussetzungen, Einzeluntersuchung, Vergleiche und Gesamtregister öffnen in einem modalen Arbeitsfenster. Die lange Folge von Arbeitsblättern und grossen Kopfkästen entfällt.
 
 Die Hauptansicht zeigt wieder räumliche Schaubilder statt Tafeln oder Bildstreifen: Heilshorizont, Zielachsen, Ordnungskreis, Erinnerungsräume, Produktionsgefüge, Zeitschichten, Wissenshorizont und Spirale. Bildpunkte sind per Maus und Tastatur erreichbar; Quellen und Deutungen bleiben im Popup. Die Modelle unterscheiden Datumsordnung, eigene Einordnungen und reine Anpassungen für Lesbarkeit ausdrücklich.
+
+«Schaubild verstehen» führt in jeden Ansatz mit zwei umschaltbaren Setzungen ein. Das Bild zeigt den konkreten Befund, seine veränderte Lesart und die Beleggrenze. «Mit allen Spuren arbeiten» wechselt in die bestehende vollständige Ansicht. Die Lehrbeispiele verändern keine eigenen Entwürfe.

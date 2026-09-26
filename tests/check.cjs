@@ -187,3 +187,15 @@ if(!board.includes('board-role-counter')||!board.includes('Konkrete Begründung'
 state=boardTestState;representation=boardTestMode;worldAll=boardTestAll;
 `,ctx);
 console.log('PASS: Neue Tafeln vor allen Erklärungen; vollständige Karten ohne SVG-Clipping, alle datierten Spuren und lesbare Begründungen.');
+vm.runInContext(`
+const lessonOldMode=representation,lessonOldChoices={...concreteChoice};
+const lessonOldState=JSON.stringify(state);
+for(const mode of Object.keys(DIAGRAM_LESSONS)){
+ representation=mode;concreteChoice[mode]=0;const a=instructionalDiagramHtml();concreteChoice[mode]=1;const b=instructionalDiagramHtml();
+ if(a===b||!a.includes('<svg')||!b.includes('Hier endet der Beleg'))throw Error('Missing instructional contrast: '+mode);
+ if(!byId(CONCRETE_READINGS[mode].event))throw Error('Missing lesson source');
+}
+if(JSON.stringify(state)!==lessonOldState)throw Error('Lesson modifies learner data');
+representation=lessonOldMode;for(const k of Object.keys(concreteChoice))delete concreteChoice[k];Object.assign(concreteChoice,lessonOldChoices);
+`,ctx);
+console.log('PASS: Acht angeleitete Schaubilder mit sichtbarem Perspektivwechsel, Beleggrenzen und unveränderten eigenen Entwürfen.');
