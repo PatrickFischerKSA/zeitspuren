@@ -16,13 +16,17 @@ for(const bad of [0,1.5,10001,-100001]){const x=JSON.parse(JSON.stringify(state)
 const bad=JSON.parse(JSON.stringify(state));bad.materials['test-event'][0].type='text/html';assert.throws(()=>api.validate(bad));
 const duplicate=JSON.parse(JSON.stringify(state));duplicate.own[0].id='haiti';assert.throws(()=>api.validate(duplicate));
 assert.equal(api.esc('<img onerror="x">'),'&lt;img onerror=&quot;x&quot;&gt;');
-for(const e of events){assert(e.activity && e.tasks.length>=2,e.id+' individual activity');assert(e.activity.cards.length>0,e.id+' materials');assert(e.activity.result.length>30,e.id+' outcome');assert(e.year!==0,e.id+' year');for(const k of e.sources||[])assert(sources[k],e.id+' source '+k);for(const r of e.related||[])assert(events.some(x=>x.id===r)||['history','period','recurrence'].includes(r),e.id+' related '+r);if(e.image)assert(fs.existsSync(root+'/docs/assets/'+e.image),e.id+' image')}
+for(const e of events){assert(e.activity && e.tasks.length>=2,e.id+' individual activity');assert(e.activity.cards.length>0,e.id+' materials');assert(e.activity.result.length>30,e.id+' outcome');assert(e.year!==0,e.id+' year');for(const k of e.sources||[])assert(sources[k],e.id+' source '+k);for(const r of e.related||[])assert(events.some(x=>x.id===r)||['history','period','recurrence','materialism'].includes(r),e.id+' related '+r);if(e.image)assert(fs.existsSync(root+'/docs/assets/'+e.image),e.id+' image')}
 console.log('PASS: Chronologie ohne Jahr null; Export/Import-Rundlauf mit Datei, Notiz und Relation; ungültige Daten; sichere Textausgabe; '+events.length+' Einträge mit gültigen Quellen, Beziehungen und Bilddateien.');
 
-vm.runInContext('globalThis.modelTests={groups:CONCEPT_GROUPS,concepts:CONCEPTS,modeNoteLabel,networkHtml,presentHtml,layersHtml,directionHtml,recurrenceHtml}',ctx);
+vm.runInContext('globalThis.modelTests={groups:CONCEPT_GROUPS,concepts:CONCEPTS,modeNoteLabel,networkHtml,presentHtml,layersHtml,directionHtml,recurrenceHtml,materialismHtml}',ctx);
 for(const group of ctx.modelTests.groups)for(const id of group.items)assert(events.some(e=>e.id===id)||ctx.modelTests.concepts[id],id+' model link');
-for(const name of ['networkHtml','presentHtml','layersHtml','directionHtml','recurrenceHtml']){const html=ctx.modelTests[name]();assert(!html.includes('undefined'),name+' undefined content');assert(html.length>500,name+' content')}
+for(const name of ['networkHtml','presentHtml','layersHtml','directionHtml','recurrenceHtml','materialismHtml']){const html=ctx.modelTests[name]();assert(!html.includes('undefined'),name+' undefined content');assert(html.length>500,name+' content')}
 assert(ctx.modelTests.modeNoteLabel('mode-present-war').includes('1914'));
 assert(ctx.modelTests.modeNoteLabel('mode-layers-roman').includes('Infrastruktur'));
 const notesState=api.defaults();notesState.notes['mode-podcast']='[03:20] Vergleich prüfen';assert.equal(api.validate(notesState).notes['mode-podcast'],notesState.notes['mode-podcast']);
 console.log('PASS: Darstellungsmodelle, Konzeptverweise und Sicherung des Hörprotokolls.');
+
+for(const which of ['factory','plantation'])for(const lens of ['forces','relations','politics','conflict']){vm.runInContext(`modeState.materialCase='${which}';modeState.materialLens='${lens}'`,ctx);const html=ctx.modelTests.materialismHtml();assert(!html.includes('undefined'));assert(html.includes('mode-materialism-'+which));assert(ctx.modelTests.modeNoteLabel('mode-materialism-'+which).length>35)}
+const materialNotes=api.defaults();materialNotes.notes['mode-materialism-factory']='Maschine → Vereinbarung → Arbeitszeit';assert.equal(api.validate(materialNotes).notes['mode-materialism-factory'],materialNotes.notes['mode-materialism-factory']);
+console.log('PASS: Beide Materialismusfälle, alle Perspektiven und Notizensicherung.');
