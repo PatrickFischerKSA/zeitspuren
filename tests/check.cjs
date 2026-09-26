@@ -120,7 +120,7 @@ for(const [mode,lab] of Object.entries(ctx.premiseAPI.labs)){
  const changed=ctx.worldAPI.worldSceneHtml(events);assert(changed.includes('Prüfannahme &lt;mit Gegenargument&gt;'));assert.notEqual(initial,changed);assert(ctx.premiseAPI.modeNoteLabel(ctx.testPremiseKey).includes('Voraussetzung:'));assert.equal(api.validate(JSON.parse(vm.runInContext('JSON.stringify(state)',ctx))).notes[ctx.testPremiseKey],'Prüfannahme <mit Gegenargument>');
 }
 vm.runInContext("representation='memoria';state=defaults()",ctx);assert(!ctx.worldAPI.worldSceneHtml(events).includes('world-muted'));
-vm.runInContext("state.notes['premise-memoria-group']='Familiengespräch';state.lensAssignments.memoria={paris:'social'}",ctx);assert(ctx.worldAPI.worldSceneHtml(events).includes('world-muted'));assert(ctx.worldAPI.worldSceneHtml(events).includes('Familiengespräch'));
+vm.runInContext("state.notes['premise-memoria-group']='Familiengespräch';state.lensAssignments.memoria={paris:'social'}",ctx);assert(ctx.worldAPI.worldSceneHtml(events).includes('board-unplaced'));assert(ctx.worldAPI.worldSceneHtml(events).includes('Familiengespräch'));
 console.log('PASS: Sechs offene Voraussetzungen, individuell formulierte Gegenprüfungen, sichtbare Annahmen, sichere Notizen und Erinnerungsblende mit benanntem Rahmen.');
 
 vm.runInContext("globalThis.profileAPI={ensureReading,activeReading,addReading,switchReading,setReadingDecision,readingDecision,readingLayout,captureReadings,readingComparisonHtml};state=defaults();representation='direction';worldAssumption=true;globalThis.originalSave=save;save=()=>{captureReadings();return Promise.resolve(true)}",ctx);
@@ -169,3 +169,21 @@ for(const key of Object.keys(GLOBAL_LENSES)){
 }
 `,ctx);
 console.log('PASS: Acht konkrete Beispiele wechseln ihre Lesart, ohne eigene Entwürfe zu verändern; alle Grafiken haben Lesehilfen.');
+
+vm.runInContext(`
+const boardTestState=state,boardTestMode=representation,boardTestAll=worldAll;
+state=defaults();worldAll=true;worldAssumption=true;
+for(const mode of Object.keys(GLOBAL_LENSES)){
+ representation=mode;ensureReading(mode);
+ const board=worldSceneHtml(lensItems());
+ if(board.includes('<foreignObject')||!board.includes('semantic-board'))throw Error('Old clipped SVG board remains');
+ for(const e of worldSelection(lensItems()))if(!board.includes('data-lens-focus="'+e.id+'"'))throw Error('Board lost '+e.id);
+ const page=lensUniverseHtml();if(page.indexOf('semantic-board')>page.indexOf('concrete-reading'))throw Error('Board must precede explanation');
+}
+representation='medieval';state.notes['telos-medieval-goal']='Frieden';
+setReadingDecision('paris','counter',2,'Konkrete Begründung');
+const board=worldSceneHtml(lensItems());
+if(!board.includes('board-role-counter')||!board.includes('Konkrete Begründung'))throw Error('Decision not legible on board');
+state=boardTestState;representation=boardTestMode;worldAll=boardTestAll;
+`,ctx);
+console.log('PASS: Neue Tafeln vor allen Erklärungen; vollständige Karten ohne SVG-Clipping, alle datierten Spuren und lesbare Begründungen.');
