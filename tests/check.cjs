@@ -107,6 +107,12 @@ vm.runInContext("representation='recurrence';worldPeriod=100",ctx);const cycle=c
 vm.runInContext('worldAll=true',ctx);assert.equal(ctx.worldAPI.worldSelection(ut.lensItems()).length,ut.lensItems().filter(e=>Number.isFinite(e.year)).length);
 console.log('PASS: Gegenwart und eigene Ereignisse in acht Weltansichten; wirksame Annahmenschalter; offener Zukunftshorizont; veränderbare Zyklen; vollständiger Zeitraum.');
 
+vm.runInContext("representation='medieval';state=defaults();worldAll=false;worldAssumption=true;globalThis.telosAPI={telosHtml,telosHeading,modeNoteLabel}",ctx);
+assert(ctx.telosAPI.telosHtml().includes('Die Zielfrage bleibt offen'));assert(ctx.telosAPI.telosHeading('medieval').includes('Telos offen'));
+vm.runInContext("state.notes['telos-medieval-goal']='Freiheit <für alle>';state.notes['telos-medieval-counter']='Ein begründeter Gegenbefund'",ctx);
+assert(ctx.worldAPI.worldSceneHtml(events).includes('Freiheit &lt;für alle&gt;'));assert.equal(api.validate(JSON.parse(vm.runInContext('JSON.stringify(state)',ctx))).notes['telos-medieval-counter'],'Ein begründeter Gegenbefund');assert(ctx.telosAPI.modeNoteLabel('telos-medieval-goal').includes('Telos:'));
+console.log('PASS: Offenes Telos, sichere Darstellung eigener Zielvorstellungen und gesicherte Gegenprüfung.');
+
 (async()=>{
  vm.runInContext("render=()=>{};save=async()=>true;toast=()=>{};state=defaults();state.own=[{id:'merge-own',year:1900,lane:'eu',own:true,title:'Lokale Fassung',text:'lokal'}];state.lensAssignments.egypt={haiti:'order'}",ctx);
  const incoming=api.defaults();incoming.own=[{id:'merge-own',year:1900,lane:'eu',own:true,title:'Andere Fassung',text:'importiert'}];incoming.lensAssignments.egypt={'merge-own':'selection',haiti:'renewal'};incoming.notes['lens-egypt-merge-own']='Importierte Interpretation';

@@ -116,3 +116,5 @@ Der Zeittunnel ist ein perspektivischer Zeitkorridor mit getrennten Kategorienac
 
 ## Weltgeschehen durch Geschichtsbilder betrachten
 Der Hauptzugang «Weltbilder» öffnet acht eigenständige Ansichten desselben Weltgeschehens. Standjahr, Zeitfenster und Kategorien bleiben beim Perspektivwechsel erhalten. Gegenwärtige Ereignisse können unter einem Heilshorizont, als Erneuerung, in materiellen Beziehungen, Wiederholungszyklen, Fortschrittsannahmen, Zeitschichten, Erwartungshorizonten oder Erinnerungsselektionen betrachtet werden. Ein Schalter nimmt die jeweilige Bildannahme zurück; individuell erläuterte Potenziale, Grenzen und Gegenprüfungen begleiten die Quellenarbeit. Eigene Deutungen werden weiterhin im Arbeitsstand gesichert. Alle Einträge bleiben im Register erreichbar; «Gesamte Zeit» zeigt sämtliche datierten Spuren der Auswahl.
+
+Die teleologischen Ansichten beginnen mit einer offenen Zielfrage. Zielvorstellung, Standpunkt, Begründung einer behaupteten Notwendigkeit und möglicher Gegenbefund werden im Denkprotokoll gespeichert. Ein formuliertes Ziel erscheint als Vorschlag in der Grafik; das begründete Offenlassen ist ausdrücklich möglich.
