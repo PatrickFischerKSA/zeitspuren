@@ -210,3 +210,19 @@ for(const mode of Object.keys(WHOLE_VIEW_FORMS)){
 representation=overviewOldMode;worldAll=overviewOldAll;
 `,ctx);
 console.log('PASS: Acht erkennbare Gesamtformen mit dem identischen vollständigen Bestand einschliesslich undatierter Begriffe.');
+vm.runInContext(`
+const randomSnapshot={state,representation,worldYear,worldWindow,worldAll,worldAssumption,visibleCategories,onlyOwn,readingComparison,worldSheet,lastRestoredHeil,assumptions:{...worldAssumptions}};
+try{
+ state=defaults();representation='medieval';ensureReading('medieval');state.notes['telos-medieval-goal']='Eigener Entwurf bleibt';captureReadings();
+ const original=activeReading(),first=randomHeilDraft(()=>0),firstId=activeReading().id;
+ if(original.notes['telos-medieval-goal']!=='Eigener Entwurf bleibt')throw Error('Own draft overwritten');
+ for(let i=0;i<20;i++){const old=generatedHeilMeta().model;const next=randomHeilDraft(()=>0);if(next.model===old)throw Error('Same random goal repeated');if(activeReading().id!==firstId)throw Error('Unbounded draft accumulation')}
+ randomHeilDraft(()=>.99);if(worldAll||worldYear!==1975||worldWindow!==50)throw Error('Parameters not applied');
+ captureReadings();const restored=validate(JSON.parse(JSON.stringify(state)));const profile=restored.interpretations.medieval.profiles.find(p=>p.id===firstId);
+ if(!generatedHeilMeta(profile))throw Error('Generated parameters lost in backup');
+ if(!randomHeilHtml().includes('1925 bis 2025'))throw Error('Period not disclosed');
+ state.notes['telos-medieval-goal']='Bearbeitet';if(!randomHeilHtml().includes('Manuell angepasst'))throw Error('Edited provenance missing');
+ if(Object.keys(activeReading().decisions).length)throw Error('Invented event interpretations');
+}finally{({state,representation,worldYear,worldWindow,worldAll,worldAssumption,visibleCategories,onlyOwn,readingComparison,worldSheet,lastRestoredHeil}=randomSnapshot);for(const key of Object.keys(worldAssumptions))delete worldAssumptions[key];Object.assign(worldAssumptions,randomSnapshot.assumptions)}
+`,ctx);
+console.log('PASS: Zufallsentwürfe wechseln garantiert, setzen Zeitraum und Parameter, kennzeichnen Bearbeitung und überstehen Export/Import ohne eigene Entwürfe zu überschreiben.');
