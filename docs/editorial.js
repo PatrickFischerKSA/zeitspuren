@@ -1167,3 +1167,259 @@ CONCEPTS.recurrence.related.push('medievalworld','egyptworld');
 IMAGE_MANIFEST.push({...IMAGE_MANIFEST.find(x=>x.filename==='egypt-scarab.jpg'),filename:'egypt-scarab-top.jpg',motif:'Skarabäus-Amulett, Käferseite, Inv. 10.130.519'});
 CONCEPTS.egyptworld.image='egypt-scarab-top.jpg';
 CONCEPTS.egyptworld.imageCaption='Skarabäus, ca. 1300–1080 v. u. Z., Länge 2 cm. Käferseite und Unterseite mit Zeichen; moderne Museumsaufnahmen. The Met, Inv. 10.130.519, Public Domain.';
+
+IMAGE_MANIFEST.push(...[
+  {
+    "filename": "augustine-source.jpg",
+    "motif": "Sandro Botticelli - St Augustine - WGA02709.jpg",
+    "author": "Sandro Botticelli",
+    "image_date": "1480date QS:P571,+1480-00-00T00:00:00Z/9",
+    "license": "Public domain",
+    "license_url": "",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Sandro_Botticelli_-_St_Augustine_-_WGA02709.jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Sandro_Botticelli_-_St_Augustine_-_WGA02709.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "hegel-source.jpg",
+    "motif": "Hegel portrait by Schlesinger 1831.jpg",
+    "author": "Jakob Schlesinger (1792-1855)",
+    "image_date": "1831date QS:P571,+1831-00-00T00:00:00Z/9",
+    "license": "Public domain",
+    "license_url": "",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Hegel_portrait_by_Schlesinger_1831.jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Hegel_portrait_by_Schlesinger_1831.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "gobekli-source.jpg",
+    "motif": "The archaeological site of Göbekli Tepe - main excavation area.png",
+    "author": "German Archaeological Institute, photo E. Kücük.",
+    "image_date": "2019-05-01",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:The_archaeological_site_of_G%C3%B6bekli_Tepe_-_main_excavation_area.png",
+    "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/The_archaeological_site_of_G%C3%B6bekli_Tepe_-_main_excavation_area.png/1280px-The_archaeological_site_of_G%C3%B6bekli_Tepe_-_main_excavation_area.png",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "catal-source.jpg",
+    "motif": "Catal Hüyük EL.JPG",
+    "author": "Elelicht",
+    "image_date": "2009-03-23 22:29:37",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Catal_H%C3%BCy%C3%BCk_EL.JPG",
+    "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Catal_H%C3%BCy%C3%BCk_EL.JPG/1280px-Catal_H%C3%BCy%C3%BCk_EL.JPG",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "pilehouses-source.jpg",
+    "motif": "Pfahlbaumuseum Unteruhldingen Bronzezeitdorf Unteruhldingen SO 2010 04 10.jpg",
+    "author": "Andreas F. Borchert",
+    "image_date": "2010-04-10",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Pfahlbaumuseum_Unteruhldingen_Bronzezeitdorf_Unteruhldingen_SO_2010_04_10.jpg",
+    "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Pfahlbaumuseum_Unteruhldingen_Bronzezeitdorf_Unteruhldingen_SO_2010_04_10.jpg/1280px-Pfahlbaumuseum_Unteruhldingen_Bronzezeitdorf_Unteruhldingen_SO_2010_04_10.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "athens-source.jpg",
+    "motif": "Parthenon from south.jpg",
+    "author": "Thermos",
+    "image_date": "5 December 2005 (according to Exif data)",
+    "license": "CC BY-SA 2.5",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Parthenon_from_south.jpg",
+    "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Parthenon_from_south.jpg/1280px-Parthenon_from_south.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "medievaldaily-source.jpg",
+    "motif": "Les Très Riches Heures du duc de Berry mars.jpg",
+    "author": "Limbourg brothers / Barthélemy d'Eyck",
+    "image_date": "between 1412 and 1416date QS:P571,+1412-00-00T00:00:00Z/8,P1319,+1412-00-00T00:00:00Z/9,P1326,+1416-00-00T00:00:00Z/9 and circa 1440date QS:P571,+1440-00-00T00:00:00Z/9,P1480,Q5727902",
+    "license": "Public domain",
+    "license_url": "",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Les_Tr%C3%A8s_Riches_Heures_du_duc_de_Berry_mars.jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Les_Tr%C3%A8s_Riches_Heures_du_duc_de_Berry_mars.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "revolution-source.jpg",
+    "motif": "Declaration of the Rights of Man and of the Citizen in 1789.jpg",
+    "author": "Urheberschaft in diesem Datensatz nicht angegeben",
+    "image_date": "Datierung im Bildnachweis prüfen",
+    "license": "Public domain",
+    "license_url": "",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg",
+    "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg/1280px-Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "india-source.jpg",
+    "motif": "Lord Mountbatten swears in Jawaharlal Nehru as the first Prime Minister of free India on Aug 15, 1947.jpg",
+    "author": "photodivision.gov.in",
+    "image_date": "1947-08-15",
+    "license": "Public domain",
+    "license_url": "",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Lord_Mountbatten_swears_in_Jawaharlal_Nehru_as_the_first_Prime_Minister_of_free_India_on_Aug_15,_1947.jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Lord_Mountbatten_swears_in_Jawaharlal_Nehru_as_the_first_Prime_Minister_of_free_India_on_Aug_15%2C_1947.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "americas1491-source.jpg",
+    "motif": "99 - Machu Picchu - Juin 2009.edit3.jpg",
+    "author": "Martin St-Amant (S23678)",
+    "image_date": "2009-06-28",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:99_-_Machu_Picchu_-_Juin_2009.edit3.jpg",
+    "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/99_-_Machu_Picchu_-_Juin_2009.edit3.jpg/1280px-99_-_Machu_Picchu_-_Juin_2009.edit3.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "gutenberg-source.jpg",
+    "motif": "Gutenberg Bible, New York Public Library, USA. Pic 01.jpg",
+    "author": "Joshua Keller",
+    "image_date": "2009-05-09",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Gutenberg_Bible,_New_York_Public_Library,_USA._Pic_01.jpg",
+    "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Gutenberg_Bible%2C_New_York_Public_Library%2C_USA._Pic_01.jpg/1280px-Gutenberg_Bible%2C_New_York_Public_Library%2C_USA._Pic_01.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "hijra-source.jpg",
+    "motif": "Astrolabe planisférique.jpg",
+    "author": "Urheberschaft in diesem Datensatz nicht angegeben",
+    "image_date": "between 1686 and 1687date QS:P,+1686-00-00T00:00:00Z/8,P1319,+1686-00-00T00:00:00Z/9,P1326,+1687-00-00T00:00:00Z/9",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Astrolabe_planisf%C3%A9rique.jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Astrolabe_planisf%C3%A9rique.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "moon-source.jpg",
+    "motif": "Aldrin Apollo 11.jpg",
+    "author": "Neil A. Armstrong",
+    "image_date": "1969-07-20",
+    "license": "Public domain",
+    "license_url": "",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Aldrin_Apollo_11.jpg",
+    "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Aldrin_Apollo_11.jpg/1280px-Aldrin_Apollo_11.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "wall-source.jpg",
+    "motif": "Juggling on the Berlin Wall 1a.jpg",
+    "author": "Juggling_on_the_Berlin_Wall_1.jpg: Yann Forget\nderivative work: Durova (talk)",
+    "image_date": "1989-11-16",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Juggling_on_the_Berlin_Wall_1a.jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Juggling_on_the_Berlin_Wall_1a.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "mars-source.jpg",
+    "motif": "PIA24836 Perseverance's Selfie at Rochette.jpg",
+    "author": "NASA",
+    "image_date": "2021-09-20",
+    "license": "Public domain",
+    "license_url": "",
+    "source_page": "https://commons.wikimedia.org/wiki/File:PIA24836_Perseverance%27s_Selfie_at_Rochette.jpg",
+    "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/PIA24836_Perseverance%27s_Selfie_at_Rochette.jpg/1280px-PIA24836_Perseverance%27s_Selfie_at_Rochette.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "marx-source.jpg",
+    "motif": "Karl Marx 001.jpg",
+    "author": "John Jabez Edwin Mayall",
+    "image_date": "before 24th August 1875",
+    "license": "Public domain",
+    "license_url": "",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Karl_Marx_001.jpg",
+    "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Karl_Marx_001.jpg/1280px-Karl_Marx_001.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  },
+  {
+    "filename": "helvetians-source.jpg",
+    "motif": "Lionel Royer - Vercingetorix Throwing down His Weapons at the feet of Julius Caesar.jpg",
+    "author": "Lionel Royer",
+    "image_date": "1899date QS:P571,+1899-00-00T00:00:00Z/9",
+    "license": "Public domain",
+    "license_url": "",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Lionel_Royer_-_Vercingetorix_Throwing_down_His_Weapons_at_the_feet_of_Julius_Caesar.jpg",
+    "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Lionel_Royer_-_Vercingetorix_Throwing_down_His_Weapons_at_the_feet_of_Julius_Caesar.jpg/1280px-Lionel_Royer_-_Vercingetorix_Throwing_down_His_Weapons_at_the_feet_of_Julius_Caesar.jpg",
+    "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."
+  }
+]);
+
+// Visual sources are distinct from the dates of the events they help investigate.
+const VISUAL_READINGS={
+ augustine:['Augustinus im Studierzimmer','1480; Darstellung eines Denkers des 4./5. Jahrhunderts','Botticellis Bild ist fast tausend Jahre jünger als Augustinus. Bücher, Geräte und Arbeitsraum zeigen auch, wie das 15. Jahrhundert einen Gelehrten sehen wollte.','Welche Vorstellung von Nachdenken entsteht durch Haltung, Blick und Gegenstände? Trenne Augustinus’ Zeitbegriff von diesem späteren Bild des Denkers.'],
+ hegel:['Porträt Georg Wilhelm Friedrich Hegels','1831','Porträt von Jakob Schlesinger; keine bildliche Erklärung von Hegels Geschichtsphilosophie.','Wie wird geistige Autorität inszeniert? Stelle neben dieses Einzelporträt das Fabrikbild: Wer erscheint dort als Träger geschichtlicher Veränderung?'],
+ gobekli:['Ausgrabungsareal von Göbekli Tepe','Fotografie 2019; Anlagen aus dem frühen Neolithikum','Ausgrabung, Schutz und fotografischer Standort bestimmen, was heute sichtbar ist. Die Funktion der Anlagen lässt sich nicht allein am Foto ablesen.','Suche wiederkehrende Formen und Grössenunterschiede. Welche Art gemeinsamer Arbeit setzt ihre Herstellung voraus – und was beweist das noch nicht über Herrschaft?'],
+ catal:['Rekonstruktion eines Innenraums von Çatalhöyük','Fotografie 2009; moderne Rekonstruktion eines neolithischen Raums','Kein erhaltenes bewohntes Zimmer: Eine Rekonstruktion fügt Befunde und ergänzende Annahmen zu einem anschaulichen Ganzen.','Welche Materialien, Wege und Tätigkeiten legt dieser Raum nahe? Welche Einzelheiten würdest du anhand eines Grabungsplans nachprüfen?'],
+ pilehouses:['Rekonstruiertes bronzezeitliches Dorf in Unteruhldingen','Fotografie 2010; moderne Museumsrekonstruktion','Die Häuser repräsentieren bronzezeitliche Befunde. Sie sind keine Aufnahme der hier um 4000 v. u. Z. angesetzten frühen Seeufersiedlungen.','Ein vertrautes Schulbuchbild: Häuser über Wasser. Welche Aussagen zum konkreten Siedlungsplatz brauchen zusätzlich Pfahlfunde, Uferlinien und Datierungen?'],
+ athens:['Parthenon auf der Athener Akropolis','Fotografie 2005; Bauwerk des 5. Jahrhunderts v. u. Z.','Ein repräsentativer Tempel ist kein Abbild der gesamten athenischen Gesellschaft. Die heutige Ansicht zeigt Erhaltung und Restaurierung.','Welche Arbeit und Ressourcen verschwinden hinter der monumentalen Fassade? Verbinde das Bild mit der Frage, wer in Athen mitbestimmen durfte.'],
+ medievaldaily:['Monatsbild März aus den Très Riches Heures','Buchmalerei des 15. Jahrhunderts','Auftragskunst aus einem höfischen Umfeld, deutlich jünger als der Bezugspunkt um 1200. Sie zeigt Arbeit innerhalb einer herrschaftlich geordneten Landschaft.','Verfolge Pflug, Felder und Burg mit dem Blick. Erzählt dieses Bild eher von wiederkehrender Jahresarbeit oder von unveränderlicher sozialer Ordnung? Begründe am Bild.'],
+ revolution:['Bildliche Fassung der Menschen- und Bürgerrechte','um 1789; Gemälde','Jean-Jacques-François Le Barbier zugeschrieben; Musée Carnavalet. Allegorien rahmen einen Rechtstext. Anspruch und tatsächliche Teilhabe sind zu unterscheiden.','Wie verleihen Tafeln, Figuren und Licht dem Text Autorität? Suche danach in den Einträgen Haiti und Frauenstimmrecht nach Grenzen des behaupteten «Alle».'],
+ india:['Vereidigung Jawaharlal Nehrus durch Lord Mountbatten','15. August 1947','Offizielle Zeremonie der Staatsgründung; das Foto zeigt weder die gesamte Bevölkerung noch Flucht und Gewalt während der Teilung.','Welche Kontinuität und welcher Bruch werden in dieser Zeremonie sichtbar? Entwirf eine zweite Bildunterschrift, die auch auf das ausserhalb des Bildes Geschehende verweist.'],
+ americas1491:['Machu Picchu vom Wayna Picchu aus','Fotografie 2009; Inka-Anlage des 15. Jahrhunderts','Ein heutiger Blick auf eine bestimmte Andenregion; weder eine Darstellung aller amerikanischen Gesellschaften noch ein menschenleerer Kontinent von 1491.','Untersuche Wege, Terrassen und Gebäude. Welche Kenntnisse und Arbeit werden darin sichtbar? Was lässt das Bild über Bewohner*innen und politische Beziehungen offen?'],
+ gutenberg:['Gutenberg-Bibel in der New York Public Library','Fotografie 2009; Druck aus der Mitte des 15. Jahrhunderts','Museale Präsentation eines europäischen Drucks. Exemplar, Verfahren und spätere Aufbewahrung haben jeweils eine eigene Geschichte.','Vergleiche Schriftbild und Seitenaufbau mit dem Diamant-Sutra von 868. Welche Gemeinsamkeit ist sichtbar, welcher technische Unterschied muss zusätzlich erklärt werden?'],
+ hijra:['Zusammengesetztes islamisches Astrolabium','Grundkörper 1686–1687; Netz um 1850; moderne Objektaufnahme','Ein viel jüngeres astronomisches Instrument, kein Gegenstand der Hidschra von 622. Die Datierung des Grundkörpers wird auch mit 1098 H angegeben.','Zwei Jahreszahlen für dasselbe Objekt: Was wird beim Umrechnen übersetzt? Warum erklärt ein astronomisches Instrument allein noch nicht die religiöse Bedeutung eines Kalenderbeginns?'],
+ moon:['Buzz Aldrin auf dem Mond, fotografiert von Neil Armstrong','20. Juli 1969','Foto eines konkreten Augenblicks. Die Aufnahme entstand bei derselben Mission wie Armstrongs erster Schritt, zeigt aber einen anderen Astronauten.','Im Visier spiegelt sich die Umgebung. Welche Position hat der Fotograf? Warum darf das Foto nicht einfach als «Armstrongs erster Schritt» beschriftet werden?'],
+ wall:['Jonglieren auf der Berliner Mauer','16. November 1989; Foto Yann Forget, Bearbeitung Durova','Eine Woche nach der Grenzöffnung aufgenommen. Die spielerische Aneignung der Mauer ist eine andere Szene als die Nacht des 9. November.','Wie verändert sich die Bedeutung eines Bauwerks, wenn jemand darauf jongliert? Vergleiche das Foto mit der Auswahl jubelnder Menschen im Wochenschauclip.'],
+ mars:['Perseverance bei «Rochette»','Aufnahmen vom 10. September 2021; veröffentlicht am 20. September','NASA/JPL-Caltech/MSSS: aus 57 Einzelaufnahmen zusammengesetztes Selbstporträt. Eine fotografische Montage, keine KI-Erfindung und kein einzelner Kameramoment.','Wo müsste die Kamera stehen, um dieses Bild aufzunehmen? Warum kann ein zusammengesetztes Bild wissenschaftlich brauchbar sein, obwohl es keinen einzigen solchen Augenblick gab?'],
+ marx:['Porträt Karl Marx','vor dem 24. August 1875','Fotografie von John Jabez Edwin Mayall. Ein Autorenporträt ersetzt keine Untersuchung von Produktions- und Eigentumsverhältnissen.','Stelle dieses Porträt neben Menzels Fabrikbild. Was ändert sich, wenn die historische Erklärung bei einem Denker oder bei arbeitenden Menschen beginnt?'],
+ helvetians:['Vercingetorix vor Caesar – ein späteres Geschichtsbild','1899; dargestelltes Ereignis 52 v. u. Z.','Lionel Royer malt die Kapitulation nach Alesia. Das Bild zeigt nicht die Helvetier von 58 v. u. Z.; es dient hier ausdrücklich als Vergleich späterer Caesar-Bilder.','Wer sitzt, wer steht, wer schaut zu? Prüfe, wie das Bild Besiegte und Sieger wertet. Weshalb wäre es irreführend, es ohne diesen Hinweis beim Helvetierzug abzubilden?']
+};
+for(const [id,v] of Object.entries(VISUAL_READINGS)){
+ const e=EVENTS.find(e=>e.id===id)||(id==='marx'?CONCEPTS.materialism:null);
+ const a=IMAGE_MANIFEST.find(a=>a.filename===id+'-source.jpg');
+ if(a){a.motif=v[0];a.image_date=v[1];a.source_criticism=v[2]+' Für die Webansicht verkleinert; Vorschaubilder können beschnitten sein.';}
+ if(e){e.image=id+'-source.jpg';e.visualQuestion=v[3]}
+}
+IMAGE_MANIFEST.find(a=>a.filename==='revolution-source.jpg').author='Jean-Jacques-François Le Barbier (zugeschrieben); Paris Musées / Musée Carnavalet';
+const gutenbergEvent=EVENTS.find(e=>e.id==='gutenberg');
+gutenbergEvent.text=gutenbergEvent.text.replace('Das hier bewusst gegenübergestellte Bild stammt aus China und dem Jahr 868; es zeigt nicht Gutenbergs Verfahren.','Das Foto zeigt ein Exemplar der Gutenberg-Bibel in einer heutigen Bibliothek. Über die verknüpfte Spur zum Diamant-Sutra lässt sich diese europäische Geschichte mit dem chinesischen Holzblockdruck vergleichen.');
+
+Object.assign(SOURCES,{
+ apolloMedia:{title:'NASA: Apollo 11 – Mission, Bild- und Tonüberlieferung',url:'https://www.nasa.gov/mission/apollo-11/'},
+ nasaSounds:{title:'NASA: Historical Sounds – ausgewählte Missionsaufnahmen',url:'https://www.nasa.gov/historical-sounds/'},
+ wallMedia:{title:'Bundesregierung / Bundesarchiv: Maueröffnung und das Freudenfest, Wochenschauausschnitt',url:'https://www.bundesregierung.de/breg-de/schwerpunkte/deutsche-einheit/maueroeffnung-und-das-freudenfest-403928'},
+ srfVote:{title:'SRF: Emilie Lieberherr zum Frauenstimmrecht, Echo der Zeit, 7. Februar 1971',url:'https://www.srf.ch/audio/echo-der-zeit/zuercher-stadtraetin-emilie-lieberherr-zum-frauenstimmrecht-1971?partId=ec0a8f1c-94c0-4dfc-8fd9-0875257ae875',note:'SRF weist auf Lücken und Unsicherheiten in den historischen Archivmetadaten hin.'},
+ parisMedia:{title:'UN: The Paris Agreement; UN-Erklärfilm vom 21. Januar 2021',url:'https://webtv.un.org/en/asset/k16/k16ojprimc'},
+ parisTreaty:{title:'UN: The Paris Agreement – Annahme 2015, Inkrafttreten 2016',url:'https://www.un.org/en/climatechange/paris-agreement'},
+ marsMedia:{title:'NASA: Sounds of Perseverance Mars Rover Driving – 90-second highlights',url:'https://science.nasa.gov/resource/sounds-of-perseverance-mars-rover-driving-sol-16-90-second-highlights/'}
+});
+const NEW_MEDIA_EVENTS=[
+ {id:'moon',year:1969,lane:'am',date:'20./21. Juli 1969 (je nach Zeitzone)',title:'Ein Schritt – für die ganze Menschheit?',intro:'Eine technische Leistung wird schon im Augenblick ihres Geschehens zur grossen Erzählung.',text:'Apollo 11 brachte erstmals Menschen auf den Mond. Die Mission stand im Wettbewerb der USA und der Sowjetunion und wurde weltweit medial verfolgt. Armstrongs Worte deuten den Schritt als Leistung der Menschheit. Wer sprechen kann, wer die Mission finanziert und wer im Bild erscheint, sind andere Fragen. Der erste Schritt fand am 21. Juli nach UTC statt, in den USA war noch der 20. Juli.',sources:['apolloMedia','nasaSounds'],related:['hegel','industry','mars','ai'],activity:{title:'Wie gross wird ein kleiner Schritt?',scene:'Du bearbeitest für ein Archiv zwei Fassungen derselben Mission: den kurzen Funkspruch und das restaurierte Fernsehbild. Deine Bildunterschrift soll Ereignis und Deutung auseinanderhalten.',cards:[{label:'Ton',text:'Die Formulierung «mankind» beansprucht eine Bedeutung für alle Menschen. Das ist bereits eine Deutung innerhalb der Quelle.'},{label:'Bild',text:'Schwache Kontraste und die technische Übertragung gehören zur Überlieferung. Restauriertes Material ist bearbeitetes historisches Material.'}],steps:[{label:'Zuerst nur hören',text:'Welche Grössenordnung geben die Worte dem Geschehen? Notiere, was du aus dem Ton allein über Ort und beteiligte Menschen belegen kannst.'},{label:'Dann sehen',text:'Prüfe deine Vorstellung am Video. Halte fest, was erst das Bild erkennen lässt und was die Kamera weiterhin nicht zeigt.'},{label:'Den Massstab wechseln',text:'Betrachte die Mission unter «Richtung & Offenheit» und «Historischer Materialismus». Formuliere je eine Frage, die im Funkspruch nicht vorkommt.'}],result:'Schreibe zwei Bildunterschriften: eine beschreibt den belegbaren Vorgang, die andere benennt den Anspruch der «Menschheit». Ergänze einen Satz zur Grenze dieser Deutung.',hint:'Eine Quelle kann ein Ereignis dokumentieren und es gleichzeitig symbolisch aufladen. Beides lässt sich untersuchen, ohne die technische Leistung zu bestreiten.'}},
+ {id:'wall',year:1989,lane:'eu',date:'9. November 1989; Foto vom 16. November',title:'Wann wird eine Grenze Vergangenheit?',intro:'49 Sekunden Jubel – wie viel Erklärung steckt darin?',text:'Am 9. November 1989 wurden die Berliner Grenzübergänge geöffnet. Proteste, Ausreisebewegungen, politische Entscheidungen und das Handeln an den Übergängen trafen zusammen. Ein kurzer Wochenschaubericht verdichtet den Umbruch zu einer sichtbaren und hörbaren Szene. Der Abbau der Mauer, die staatliche Einheit und Veränderungen im Alltag folgten in unterschiedlichen Zeiträumen.',sources:['wallMedia'],related:['koselleck','braudel','memory','hegel'],activity:{title:'Die Nacht und die lange Veränderung',scene:'Ein Filmarchiv will den Clip mit «An diesem Abend war die Teilung vorbei» beschriften. Du sollst beurteilen, welche Teile dieser Aussage die Bilder tragen.',cards:[{label:'49 Sekunden',text:'Eine Montage kann viele Orte und Menschen zu einem einzigen Ereigniseindruck verbinden.'},{label:'Eine Woche später',text:'Das Foto vom 16. November zeigt eine neue Nutzung der Mauer. Auch das ist ein eigener Zeitpunkt, kein Ersatzbild für die Grenzöffnung.'}],steps:[{label:'Schnittprotokoll',text:'Notiere bei jedem erkennbaren Bildwechsel: Menschen, Ort, Handlung. Zähle nicht nur Sekunden, sondern verschiedene Situationen.'},{label:'Ton gegen Bild',text:'Was behauptet der Kommentar zusätzlich? Welche Aussage lässt sich sehen, welche nur hören, welche brauchst du aus anderen Quellen?'},{label:'Drei Enden der Teilung',text:'Setze Grenzöffnung, staatliche Einheit und eine Veränderung im Alltag in verschiedene Zeitschichten. Begründe, weshalb sie nicht dasselbe Enddatum haben müssen.'}],result:'Überarbeite die Archivbeschriftung in drei Sätzen: sichtbar, zusätzlich erzählt, noch offen. Füge einen Zeitcode als Beleg hinzu.',hint:'Freude ist ein historischer Befund. Sie erklärt weder allein den Umbruch noch die Erfahrungen aller Beteiligten.'}},
+ {id:'paris',year:2015,lane:'eu',date:'12. Dezember 2015; Erklärfilm von 2021',title:'Ein Abkommen beendet keine Erwärmung',intro:'Politische Beschlüsse haben ein Datum. Ihre Wirkungen haben viele Geschwindigkeiten.',text:'Das Pariser Klimaabkommen wurde 2015 angenommen und trat 2016 in Kraft. Es formuliert gemeinsame Ziele, deren Verwirklichung von politischen, wirtschaftlichen und gesellschaftlichen Veränderungen abhängt. Der kurze UN-Film von 2021 erklärt den Anspruch des Abkommens aus Sicht der Organisation. Er ist eine spätere Darstellung und kein Beleg dafür, dass die Ziele schon erreicht wurden.',sources:['parisMedia','parisTreaty'],related:['environmenthistory','braudel','materialism','hegel'],activity:{title:'Drei Uhren für einen Beschluss',scene:'Du sollst eine einzige senkrechte Epochengrenze bei 2015 setzen. Zur Verfügung stehen ein politischer Vertrag, langlebige Infrastrukturen und langfristige Klimaprozesse.',cards:[{label:'Politische Zeit',text:'Ein Abkommen kann an einem bestimmten Tag angenommen werden.'},{label:'Materielle Zeit',text:'Gebäude, Verkehrssysteme und Energieanlagen haben lange Nutzungsdauern; ihre Veränderung folgt keinem einzigen Beschlussdatum.'},{label:'Erdsystem',text:'Die Folgen menschlicher Eingriffe folgen wiederum anderen Zeitskalen.'}],steps:[{label:'Auf die Verben hören',text:'Sammle im UN-Film Formulierungen für Ziele und für bereits Geschehenes. Welche Verwechslung entsteht, wenn beides als «Erfolg» zusammengefasst wird?'},{label:'Die Grenze aufspalten',text:'Entwirf je eine Zeitspur für Beschluss, Infrastruktur und Klimawirkung. Markiere, wo dir konkrete Daten fehlen.'},{label:'Eine Epoche begründen',text:'Ist 2015 für deine Frage ein sinnvoller Einschnitt? Formuliere eine Frage, für die du eine andere Grenze benötigen würdest.'}],result:'Halte einen Epochenvorschlag mit Kriterium fest und ergänze zwei Prozesse, die diese Grenze überqueren. Beziehe dich auf eine konkrete Aussage des Films.',hint:'Die institutionelle Perspektive der UN ist Teil der Quelle. Ziele, Massnahmen und gemessene Wirkungen sind unterschiedliche Belegarten.'}},
+ {id:'mars',year:2021,lane:'am',date:'2021; Tonmontage der Fahrt an Sol 16',title:'Wie klingt eine überlieferte Gegenwart?',intro:'Ein Mikrofon macht etwas hörbar – aber nie alles.',text:'Der Marsrover Perseverance zeichnete 2021 unter anderem Fahrgeräusche auf. NASA stellte daraus einen 90-sekündigen Ausschnitt zusammen. Auswahl und Bearbeitung gehören damit zur Quelle. Die Aufnahme dokumentiert eine technisch vermittelte Begegnung von menschlicher Forschung und planetarer Umwelt; sie ist keine unveränderte akustische Gesamtheit eines Ortes.',sources:['marsMedia'],related:['moon','ai','history','environmenthistory'],activity:{title:'Das Geräusch und die Geschichte, die wir daraus machen',scene:'Ein Tonarchiv bietet den Ausschnitt als «So klingt der Mars» an. Du sollst diese Überschrift am Material prüfen, ohne aus jedem Geräusch eine sichere Ursache zu machen.',cards:[{label:'Auswahl',text:'NASA hat drei Abschnitte zu einem etwa 90 Sekunden langen Hörbeispiel verbunden.'},{label:'Messanordnung',text:'Das Mikrofon sitzt an einem fahrenden technischen Gerät. Gerät, Umgebung und Aufnahmebedingungen wirken zusammen.'}],steps:[{label:'Blind hören',text:'Höre zunächst ohne das Bild. Beschreibe Klangmerkmale – etwa gleichmässig, unterbrochen, hoch oder rau – bevor du Ursachen benennst.'},{label:'Die Quelle lokalisieren',text:'Lies den Herkunftshinweis. Kennzeichne in deiner ersten Notiz die Stellen, an denen du mehr behauptet hast, als du hören konntest.'},{label:'Zurück zur Geschichtsfrage',text:'Ist dies Naturgeschichte, Technikgeschichte oder Geschichte einer Forschungspraxis? Begründe zwei unterschiedliche Fragen an dieselbe Aufnahme.'}],result:'Verfasse eine präzisere Archivüberschrift und eine Hörnotiz mit Zeitcode. Trenne hörbaren Befund, plausible Erklärung und offene Frage.',hint:'Eine bearbeitete Quelle ist nicht automatisch unbrauchbar. Entscheidend ist, welche Eingriffe bekannt sind und welche Frage sich damit beantworten lässt.'}}
+];
+for(const e of NEW_MEDIA_EVENTS){e.tasks=e.activity.steps.map(s=>s.text);e.hint=e.activity.hint;if(VISUAL_READINGS[e.id]){e.image=e.id+'-source.jpg';e.visualQuestion=VISUAL_READINGS[e.id][3]}EVENTS.push(e)}
+// The climate entry uses a clearly identified material counterpoint, not a photo of COP21.
+EVENTS.find(e=>e.id==='paris').image='industrialisation.jpg';
+EVENTS.find(e=>e.id==='paris').visualQuestion='Menzels Fabrikbild von 1872–1875 zeigt nicht die Klimakonferenz. Welche längerfristige Geschichte von Arbeit und Energie liegt zwischen diesem Bild und dem Beschluss von 2015?';
+
+const HISTORICAL_MEDIA={
+ moon:[
+ {id:'apollo-voice',kind:'audio',title:'Armstrongs Funkspruch',duration:'kurzer O-Ton · Englisch',src:'https://www.nasa.gov/wp-content/uploads/2015/01/590331main_ringtone_smallStep.mp3',source:'https://www.nasa.gov/historical-sounds/',credit:'NASA · Missionsfunk Apollo 11, 1969; von NASA ausgewählter kurzer Ausschnitt',context:'Der Sprecher setzt seinen einzelnen Schritt zur «Menschheit» ins Verhältnis. Die Wortwahl gehört zur historischen Quelle, nicht nur zu ihrer späteren Erinnerung.',question:'Wer ist im «Wir» dieser Menschheitsgeschichte enthalten? Welche Gruppen, Mittel und Interessen müsste eine weiterführende Untersuchung sichtbar machen?',access:'Sinngemässe deutsche Verständnishilfe: Ein kleiner Schritt für einen Menschen wird einem grossen Sprung für die Menschheit gegenübergestellt. Das unbestimmte englische «a» ist in der Übertragung umstritten; diese Hilfe ist kein Transkript.'},
+ {id:'apollo-film',kind:'youtube',youtube:'xSdHina-fTk',title:'Der erste Schritt als Fernsehbild',duration:'Arbeitsausschnitt: erste 2 Minuten',end:120,source:'https://www.youtube.com/watch?v=xSdHina-fTk',credit:'NASA Video · Aufnahme 1969, restaurierte Fassung, veröffentlicht 2013',context:'Historisches Bild und historischer Ton erreichen uns in einer restaurierten Veröffentlichung. Das daneben gezeigte Foto stellt Aldrin dar, das Video Armstrong.',question:'Welche Handlung kannst du tatsächlich erkennen? Wo brauchst du Kommentar oder Vorwissen? Vergleiche die Sicherheit deiner Aussagen beim Foto und beim bewegten Bild.',access:'Das Video dokumentiert Armstrongs Abstieg und ersten Schritt in kontrastarmen Fernsehbildern. Für die Aufgaben kannst du auch Foto, kurzen O-Ton und die Herkunftsangaben vergleichen.'}
+ ],
+ vote:[{id:'lieberherr',kind:'audio',title:'Emilie Lieberherr am Abstimmungstag',duration:'2:09 · 7. Februar 1971 · Deutsch',src:'https://download-media.srf.ch/ch/audio/Echo_der_Zeit_radio/1971/02/d1beef29-37b4-48d0-9b6a-3bf64ba32c79.mp3',source:SOURCES.srfVote.url,credit:'SRF / Echo der Zeit · Zürcher Stadträtin Emilie Lieberherr · Rechte bei SRF',context:'Eine politische Akteurin spricht am Tag des Entscheids. SRF weist auf lückenhafte historische Archivmetadaten hin. Die Aufnahme vertritt eine Stimme, nicht «die Frauen» insgesamt.',question:'Welche Erwartung an die Zukunft hörst du heraus? Notiere einen Zeitcode und unterscheide das bereits erreichte Stimmrecht von dem, was noch erkämpft werden soll.',access:'SRF beschreibt den Ausschnitt als Lieberherrs Stellungnahme zum Abstimmungssonntag über das Frauenstimmrecht auf Bundesebene. Ein geprüftes Worttranskript liegt hier nicht vor. Alternativ: Untersuche das Abstimmungsbild und den Unterschied zwischen Rechtsänderung und gesellschaftlicher Gleichheit.'}],
+ wall:[{id:'wall-news',kind:'video',title:'Maueröffnung und das Freudenfest',duration:'0:49 · Wochenschauausschnitt · Deutsch',src:'https://video.bundesregierung.de/storage/videostorage/2024/06/04/g9p9b4-1989-11-09-master.mp4',source:SOURCES.wallMedia.url,credit:'Bundesarchiv, bereitgestellt durch die Bundesregierung · Bericht zum 9. November 1989',context:'Eine kurze redaktionelle Montage der Grenzöffnung. Die Bundesregierung präsentiert sie unter dem Titel «Maueröffnung und das Freudenfest».',question:'Welche Stimmung erzeugen Auswahl, Schnitt und Kommentar? Formuliere eine Frage zur Grenzöffnung, die dieser Clip gerade nicht beantworten kann.',access:'Der Anbieter beschreibt Szenen feiernder Menschen nach der Grenzöffnung. Untersuche alternativ das Foto vom 16. November: Es zeigt eine spätere Aneignung der Mauer, nicht die Öffnungsnacht.'}],
+ paris:[{id:'paris-film',kind:'youtube',youtube:'5THr3bFj8Z4',title:'Was das Pariser Abkommen erreichen soll',duration:'1:39 · UN-Erklärfilm von 2021 · Englisch',source:'https://webtv.un.org/en/asset/k16/k16ojprimc',credit:'United Nations / UN Climate Change · 21. Januar 2021',context:'Ein institutioneller Rückblick auf den Vertrag von 2015. Der Film erklärt Ziele; seine spätere Veröffentlichung ist ein eigenes Datum.',question:'Höre auf den Unterschied zwischen «soll» und «hat erreicht». Welche Daten bräuchtest du, um aus einem politischen Ziel ein Urteil über historische Wirkung zu machen?',access:'Deutsche Orientierung: Der Film erläutert Begrenzung der Erwärmung, Anpassung und gemeinsame Klimapolitik. Er ist keine Messung der Zielerreichung. Englische Untertitel können im Player verfügbar sein; diese Orientierung ersetzt kein Worttranskript.'}],
+ mars:[{id:'mars-drive',kind:'audio',title:'90 Sekunden Fahrt auf dem Mars',duration:'1:30 · Aufnahme 2021 · Geräusche ohne Sprache',src:'https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/4/5/45857_FILTERED_HIGHLIGHTS_-_Sol16RoverDriveHighlights.mp3',source:SOURCES.marsMedia.url,credit:'NASA/JPL-Caltech · drei ausgewählte Abschnitte der Fahrt an Sol 16, veröffentlicht 17. März 2021',context:'Eine gekürzte und bearbeitete Zusammenstellung. Fahrgeräusche des Rovers sind Teil des Gehörten; «Mars» ist keine eindeutige Klangquelle.',question:'An welcher Sekunde wechselt dein Höreindruck? Beschreibe zuerst das Geräusch und begründe erst danach, welche Ursache du vermutest.',access:'Hörbeschreibung: wechselnde raue, ratternde und quietschende Geräusche. Es wird nicht gesprochen. Die Zuordnung einzelner Töne zu Bauteilen lässt sich aus dem Höreindruck allein nicht sichern.'},
+ {id:'mars-film',kind:'youtube',youtube:'GHenFGnixzU',title:'Wie die Marsmikrofone zu Quellen werden',duration:'Arbeitsausschnitt: erste 2 Minuten · Englisch',end:120,source:'https://www.jpl.nasa.gov/videos/nasas-perseverance-rover-captures-the-sounds-of-mars/',credit:'NASA/JPL-Caltech · Erklärvideo vom 18. Oktober 2021',context:'Forschende erläutern Aufnahmen von Mikrofonen auf Perseverance. Stimme, Bilder und Tonbeispiele sind in einer späteren Darstellung kombiniert.',question:'Welche zusätzlichen Informationen geben die Forschenden, die du beim reinen Hören nicht gewinnen konntest? Ändere mit diesen Informationen eine deiner ersten Vermutungen.',access:'Der Film erläutert, wie Mikrofone Atmosphäre, Instrumente und Geräusche des Rovers erfassen. Als sprachfreie Alternative steht der 90-sekündige Hörausschnitt zur Verfügung.'}]
+};
+EVENTS.find(e=>e.id==='vote').sources.push('srfVote');
+
+IMAGE_MANIFEST.find(a=>a.filename==='wall-source.jpg').author='Yann Forget; Bildbearbeitung: Durova';
+IMAGE_MANIFEST.find(a=>a.filename==='mars-source.jpg').author='NASA/JPL-Caltech/MSSS';

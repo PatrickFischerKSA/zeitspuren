@@ -85,4 +85,17 @@ Die Modellgrafiken enthalten sämtliche gefilterten Spuren als anklickbare, numm
 
 ## Vollständiger Bestand in allen zehn Modi
 
-Zeitstrahl, Zeittunnel und Denkraum verwenden nun denselben vollständigen Bestand wie die sieben Konzeptansichten: 44 datierte Ausgangsspuren und sechs undatierte Begriffsfenster, ergänzt um eigene Einträge. Im Zeitstrahl stehen undatierte Begriffe neben der Jahresachse; datierte Theorieeinträge werden in einer ausdrücklich als Text-/Bezugsdaten gekennzeichneten Spur gezeigt. Im Zeittunnel folgen undatierte Begriffe als gesonderter Begriffsraum, ohne behauptete zeitliche Nachordnung. Der Denkraum zeigt zusätzlich zu den Fragegruppen sämtliche Spuren mit ihren Beziehungen. Suche und Eigenfilter gelten in jedem Modus. Automatisierte Prüfungen vergleichen die vollständigen Eintragsmengen aller zehn Ansichten einschliesslich eigener Theorieeinträge und leerer Suchergebnisse.
+Zeitstrahl, Zeittunnel und Denkraum verwenden nun denselben vollständigen Bestand wie die sieben Konzeptansichten: 48 datierte Ausgangsspuren und sechs undatierte Begriffsfenster, ergänzt um eigene Einträge. Im Zeitstrahl stehen undatierte Begriffe neben der Jahresachse; datierte Theorieeinträge werden in einer ausdrücklich als Text-/Bezugsdaten gekennzeichneten Spur gezeigt. Im Zeittunnel folgen undatierte Begriffe als gesonderter Begriffsraum, ohne behauptete zeitliche Nachordnung. Der Denkraum zeigt zusätzlich zu den Fragegruppen sämtliche Spuren mit ihren Beziehungen. Suche und Eigenfilter gelten in jedem Modus. Automatisierte Prüfungen vergleichen die vollständigen Eintragsmengen aller zehn Ansichten einschliesslich eigener Theorieeinträge und leerer Suchergebnisse.
+
+
+## Bilder, kurze Filme und Originaltöne
+
+17 zusätzliche Bildquellen mit Urheberschaft, Lizenz, Bilddatum und eigener Beobachtungsfrage. Rekonstruktionen und spätere Geschichtsbilder sind ausdrücklich eingeordnet. Grössere Bildkarten und ein bildlicher Einstieg führen zu denselben Einträgen in allen zehn Modi.
+
+Vier neue Spuren: Apollo 11 (1969), Berliner Grenzöffnung (1989), Pariser Klimaabkommen (2015) und technisch vermittelte Marsaufnahmen (2021). Sie ergänzen den Originalton Emilie Lieberherrs beim bestehenden Frauenstimmrecht-Eintrag. Insgesamt sieben Film-/Tonangebote: drei Audios, ein direkt eingebundenes Archivvideo und drei offizielle YouTube-Videos. Für längere Videos ist ein zweiminütiger Arbeitsabschnitt eingestellt.
+
+Die Player verbinden sich erst nach «Video laden» / «Ton laden» mit dem jeweiligen Anbieter und starten nicht automatisch. Der Quellenlink bleibt immer sichtbar. Beim Schliessen oder Wechseln eines Popups stoppt die Wiedergabe. Beobachtungen lassen sich mit aktuellem Zeitcode bei nativen Playern bzw. einem Platzhalter beim YouTube-Player in die bestehenden, exportierbaren Notizen übernehmen. Zu jedem Medium gibt es Einordnung, eine eigene Untersuchungsfrage und eine textliche Alternative. Kein ungeprüftes Volltranskript.
+
+Externe Filme und Töne benötigen Internet und bleiben bei ihren Anbietern (NASA, SRF, Bundesregierung/Bundesarchiv, UN/YouTube); sie sind nicht in der Offline-HTML enthalten. Die lokal gespeicherten Bilder und der bereits bereitgestellte Podcast bleiben offline verfügbar. Anbieter können Einbettung und regionale Verfügbarkeit ändern.
+
+Eigene MP3-Dateien und Kurzvideos (MP4/WebM, jeweils bis 8 MB) können als Material ergänzt und direkt im Popup abgespielt werden. Sie bleiben lokal und werden im Arbeitsstand exportiert.

@@ -17,6 +17,11 @@ const bad=JSON.parse(JSON.stringify(state));bad.materials['test-event'][0].type=
 const duplicate=JSON.parse(JSON.stringify(state));duplicate.own[0].id='haiti';assert.throws(()=>api.validate(duplicate));
 assert.equal(api.esc('<img onerror="x">'),'&lt;img onerror=&quot;x&quot;&gt;');
 for(const e of events){assert(e.activity && e.tasks.length>=2,e.id+' individual activity');assert(e.activity.cards.length>0,e.id+' materials');assert(e.activity.result.length>30,e.id+' outcome');assert(e.year!==0,e.id+' year');for(const k of e.sources||[])assert(sources[k],e.id+' source '+k);for(const r of e.related||[])assert(events.some(x=>x.id===r)||['history','period','recurrence','materialism','medievalworld','egyptworld'].includes(r),e.id+' related '+r);if(e.image)assert(fs.existsSync(root+'/docs/assets/'+e.image),e.id+' image')}
+vm.runInContext('globalThis.mediaTests={media:HISTORICAL_MEDIA,mediaHtml,images:IMAGE_MANIFEST}',ctx);
+for(const [id,items] of Object.entries(ctx.mediaTests.media)){const e=events.find(e=>e.id===id);assert(e,id+' media event');const html=ctx.mediaTests.mediaHtml(e);assert(!html.includes('<iframe'),id+' no automatic embed');assert(!html.includes('<audio'),id+' no automatic audio load');for(const m of items){assert(m.source.startsWith('https://'));assert(m.question.length>50);assert(m.access.length>50);assert(html.includes('data-load-media="'+m.id+'"'));if(m.kind==='youtube')assert(/^[\w-]{11}$/.test(m.youtube));else assert(m.src.startsWith('https://'))}}
+for(const a of ctx.mediaTests.images.filter(a=>a.filename.endsWith('-source.jpg'))){assert(a.author&&a.license&&a.source_page&&a.source_criticism);assert(fs.existsSync(root+'/docs/assets/'+a.filename));assert(!a.image_date.includes('QS:'))}
+const videoBackup=api.defaults();videoBackup.materials.moon=[{name:'eigene-spur.mp4',type:'video/mp4',data:'data:video/mp4;base64,VGVzdA==',description:'Testmaterial'}];assert.equal(api.validate(videoBackup).materials.moon[0].type,'video/mp4');
+console.log('PASS: Medien haben Quellen, individuelle Fragen und Alternativen; Player laden erst auf Aktion; neue Bilder haben Nachweise.');
 console.log('PASS: Chronologie ohne Jahr null; Export/Import-Rundlauf mit Datei, Notiz und Relation; ungültige Daten; sichere Textausgabe; '+events.length+' Einträge mit gültigen Quellen, Beziehungen und Bilddateien.');
 
 vm.runInContext('globalThis.modelTests={groups:CONCEPT_GROUPS,concepts:CONCEPTS,modeNoteLabel,networkHtml,presentHtml,layersHtml,directionHtml,recurrenceHtml,materialismHtml,medievalHtml,egyptHtml}',ctx);
@@ -53,12 +58,12 @@ console.log('PASS: Gesamter Bestand in allen sieben Konzeptansichten; eigene Beg
 ctx.dom={};ctx.document.querySelector=s=>ctx.dom[s]??=( {style:{},value:s==='#zoom'?'1':s==='#scale'?'focus':'',innerHTML:'',textContent:''} );ctx.document.querySelectorAll=()=>[];
 vm.runInContext("state=defaults();state.own=[{id:'own-theory',year:1900,lane:'ideas',own:true,title:'Eigene Theorie',text:'Probe'},{id:'own-event',year:2000,lane:'eu',own:true,title:'Eigenes Ereignis',text:'Probe'}];globalThis.completeViews={tunnelItems,tunnelHtml,networkHtml,lensCorpus,lensUniverseHtml};",ctx);
 const cv=ctx.completeViews,ids=cv.lensCorpus().map(e=>e.id);
-assert.equal(ids.length,52);
+assert.equal(ids.length,events.length+Object.keys(ctx.modelTests.concepts).length+2);
 for(const mode of Object.keys(ut.lenses)){vm.runInContext(`representation='${mode}'`,ctx);const html=cv.lensUniverseHtml();for(const id of ids)assert(html.includes('data-lens-focus="'+id+'"'),mode+' missing '+id)}
 vm.runInContext("representation='timeline';onlyOwn=false;render()",ctx);
 const timeline=ctx.dom['#timeline'].innerHTML,undated=ctx.dom['#timelineUndated'].innerHTML;
 for(const id of ids)assert((timeline+undated).includes('data-event="'+id+'"'),'timeline missing '+id);
-assert(!timeline.includes('data-event="history"'));assert(undated.includes('data-event="history"'));assert(timeline.includes('data-event="augustine"'));assert(ctx.dom['#count'].textContent.startsWith('52 von 52'));
+assert(!timeline.includes('data-event="history"'));assert(undated.includes('data-event="history"'));assert(timeline.includes('data-event="augustine"'));assert(ctx.dom['#count'].textContent.startsWith(ids.length+' von '+ids.length));
 const tunnel=cv.tunnelItems('',false);assert.deepEqual(Array.from(tunnel,e=>e.id).sort(),Array.from(ids).sort());
 for(let i=0;i<tunnel.length;i++){vm.runInContext(`tunnelIndex=${i}`,ctx);const html=cv.tunnelHtml(tunnel);assert(html.includes('data-explore="'+tunnel[i].id+'"'));assert(!html.includes('NaN'));assert(!html.includes('undefined'));if(!tunnel[i].year)assert(html.includes('Begriffsraum ohne zeitliche Position'))}
 assert(cv.tunnelHtml([]).includes('Keine Spur'));assert(!cv.tunnelHtml([]).includes('tunnelSelect'));
@@ -67,7 +72,7 @@ for(const topic of ['all','experience','change','knowing','remember']){vm.runInC
 assert.equal(cv.tunnelItems('',true).length,2);assert.equal(cv.tunnelItems('Eigene Theorie',false).length,1);
 const ownNetwork=cv.networkHtml('',true);assert(ownNetwork.includes('data-explore="own-theory"'));assert(ownNetwork.includes('data-explore="own-event"'));assert(!ownNetwork.includes('data-explore="augustine"'));
 vm.runInContext("representation='timeline';onlyOwn=true;render()",ctx);assert(ctx.dom['#timeline'].innerHTML.includes('data-event="own-theory"'));assert(!ctx.dom['#timeline'].innerHTML.includes('data-event="augustine"'));
-console.log('PASS: Alle zehn Modi enthalten exakt denselben Bestand; 50 Ausgangseinträge plus eigene Ereignisse und Theorien; undatierte Begriffe, Suchfilter, Eigenfilter und leere Tunnel-Auswahl.');
+console.log('PASS: Alle zehn Modi enthalten exakt denselben Bestand; vollständiger Ausgangsbestand plus eigene Ereignisse und Theorien; undatierte Begriffe, Suchfilter, Eigenfilter und leere Tunnel-Auswahl.');
 
 (async()=>{
  vm.runInContext("render=()=>{};save=async()=>true;toast=()=>{};state=defaults();state.own=[{id:'merge-own',year:1900,lane:'eu',own:true,title:'Lokale Fassung',text:'lokal'}];state.lensAssignments.egypt={haiti:'order'}",ctx);
