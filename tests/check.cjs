@@ -304,3 +304,9 @@ vm.runInContext(`{
  }finally{({representation,worldYear,worldAll,worldAssumption}=snapshot)}
 }`,ctx);
 console.log('PASS: Erlebte Zeit trennt Erwartungen vom geschlossenen Rückblick und verschiebt datierte Spuren mit dem Standjahr.');
+vm.runInContext(`{
+ for(let i=0;i<8;i++){if(augustinePhase(i,0)!=='expected'||augustinePhase(i,1)!=='remembered')throw Error('Anfang/Ende des Klangversuchs falsch')}
+ if(augustinePhase(0,.2)!=='remembered'||augustinePhase(1,.2)!=='attended'||augustinePhase(2,.2)!=='expected')throw Error('Drei Vollzüge im Verlauf fehlen');
+ const html=presentSceneHtml([]);if(!html.includes('conscious-eternity" hidden')||!html.includes('keinem Nacheinander')||!html.includes('kein historisches Lied'))throw Error('Ewigkeit/Modellgrenze nicht ausgewiesen');
+}`,ctx);
+console.log('PASS: Klangfolge wandert von Erwartung über Aufmerksamkeit in Erinnerung; Ewigkeit und didaktischer Modellstatus ausdrücklich getrennt.');
