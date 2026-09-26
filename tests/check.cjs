@@ -267,3 +267,14 @@ vm.runInContext(`{
  }finally{centurySize=oldSize;centurySelection=oldSelection}
 }`,ctx);
 console.log('PASS: Numerisch gleichmässige Jahrhundertgruppen ohne Jahr null; Überlappungen, leere Auswahl und vollständiger Bestand.');
+vm.runInContext(`{
+ const old=comparePeriods;
+ try{
+ comparePeriods=[{from:1701,to:1800},{from:1901,to:2100}];
+ if(periodPosition(1751,comparePeriods[0],2600)!==periodPosition(1951,comparePeriods[1],2600))throw Error('Ungleicher Massstab');
+ if(periodPosition(1800,comparePeriods[0],2600)>=periodPosition(2100,comparePeriods[1],2600))throw Error('Ungleiche Dauern gestreckt');
+ if(!periodContains({year:1690,end:1720},comparePeriods[0])||periodContains({year:1801},comparePeriods[0])||periodContains({},comparePeriods[0]))throw Error('Falsche Vergleichsauswahl');
+ if(periodDuration({from:-1,to:1})!==1)throw Error('Jahr null im Vergleich');
+ }finally{comparePeriods=old}
+}`,ctx);
+console.log('PASS: Zeitvergleich mit gemeinsamem proportionalem Massstab, unterschiedlichen Dauern, Intervallüberlappung und ohne Jahr null.');

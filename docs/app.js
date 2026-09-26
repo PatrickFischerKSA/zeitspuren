@@ -36,8 +36,9 @@ function centuryVisible(e){if(!Number.isFinite(e.year)||centurySelection===null)
 function centuryDomain(){if(centurySelection===null||!centurySelection.size)return null;const chosen=centuryGroups().filter(g=>centurySelection.has(g.id));if(!chosen.length)return null;return [Math.max(Math.min(-18000,...state.own.map(e=>e.year).filter(Number.isFinite)),Math.min(...chosen.map(g=>g.from))),Math.max(...chosen.map(g=>g.to))]}
 function renderCenturyControls(){
  const container=$('#centuryControls');if(!container)return;container.hidden=representation!=='timeline';
+ $$('[data-period-preset]').forEach(el=>el.innerHTML='<option value="">Zeitgruppe übernehmen …</option>'+periodOptions());
  const groups=centuryGroups();$('#centuryChoices').innerHTML=groups.map(g=>`<div class="century-chip"><label><input type="checkbox" data-century="${g.id}" ${centurySelection===null||centurySelection.has(g.id)?'checked':''}><span>${g.label}</span></label><button data-century-solo="${g.id}" aria-label="Nur ${g.label} anzeigen" aria-pressed="${centurySelection?.size===1&&centurySelection.has(g.id)}">Solo</button></div>`).join('');
- $('#centuryStatus').textContent=centurySelection===null?'Gesamte Zeit':centurySelection.size+' Zeitgruppen · nicht gewählte Zwischenräume bleiben zeitlich erhalten';
+ $('#centuryStatus').textContent=centurySelection===null?'Gesamte Zeit':centurySelection.size+(centurySelection.size===1?' Zeitgruppe':' Zeitgruppen')+' · nicht gewählte Zwischenräume bleiben zeitlich erhalten';
 }
 function initCenturyControls(){
  const panel=document.createElement('section');panel.id='centuryControls';panel.setAttribute('aria-label','Numerische Jahrhundertgruppen');panel.innerHTML=`<div class="century-heading"><strong>Jahrhundertgruppen</strong><label>Gruppengrösse <select id="centurySize"><option value="200">2 Jahrhunderte</option><option value="500" selected>5 Jahrhunderte</option><option value="1000">10 Jahrhunderte</option></select></label><span>Numerische Zeitfenster · keine Epochen</span></div><div id="centuryChoices"></div><div class="century-actions"><button id="centuryAll">Alle einschalten</button><button id="centuryNone">Alle ausschalten</button><span id="centuryStatus" aria-live="polite"></span></div>`;
@@ -47,9 +48,45 @@ function initCenturyControls(){
  panel.onclick=e=>{const solo=e.target.closest('[data-century-solo]');if(solo){centurySelection=new Set([solo.dataset.centurySolo]);update()}};
  $('#centuryAll').onclick=()=>{centurySelection=null;update()};$('#centuryNone').onclick=()=>{centurySelection=new Set();update()};renderCenturyControls();
 }
+
+let periodCompare=false,comparePeriods=[{from:1701,to:1800},{from:1901,to:2000}];
+function periodContains(e,p){return Number.isFinite(e.year)&&e.year<=p.to&&(Number.isFinite(e.end)?e.end:e.year)>=p.from}
+function periodDuration(p){return astronomical(p.to)-astronomical(p.from)}
+function periodPosition(year,p,width){const duration=Math.max(1,...comparePeriods.map(periodDuration));return 180+(astronomical(year)-astronomical(p.from))/duration*(width-400)}
+function periodOptions(){return centuryGroups().filter(g=>g.id!=='early').map(g=>`<option value="${g.from},${g.to}">${g.label}</option>`).join('')}
+function initPeriodCompare(){
+ const button=document.createElement('button');button.id='periodCompareToggle';button.textContent='Zwei Zeiträume vergleichen ⇄';$('.century-heading').append(button);
+ const controls=document.createElement('section');controls.id='periodCompareControls';controls.hidden=true;controls.innerHTML=`<form id="periodCompareForm">${['A','B'].map((label,i)=>`<fieldset><legend>Zeitraum ${label}</legend><select data-period-preset="${i}" aria-label="Jahrhundertgruppe ${label} übernehmen"><option value="">Zeitgruppe übernehmen …</option>${periodOptions()}</select><label>Von <input id="periodFrom${i}" type="number" required min="-100000" max="10000" value="${comparePeriods[i].from}"></label><label>Bis <input id="periodTo${i}" type="number" required min="-100000" max="10000" value="${comparePeriods[i].to}"></label></fieldset>`).join('')}<button type="submit">Vergleichen</button><button type="button" id="periodSwap">A ⇅ B</button></form><p id="periodCompareHelp">Beide Anfänge liegen übereinander. Gleiche Abstände bedeuten gleich viele Jahre, nicht gleiche historische Bedeutung. Jahreszahlen vor unserer Zeitrechnung negativ eingeben.</p><p id="periodCompareError" role="alert"></p>`;
+ $('#centuryControls').after(controls);
+ const stage=document.createElement('div');stage.id='periodCompareStage';stage.hidden=true;$('#scroll').after(stage);
+ button.onclick=()=>{periodCompare=!periodCompare;if(periodCompare&&centurySelection?.size===2){comparePeriods=centuryGroups().filter(g=>centurySelection.has(g.id)).map(g=>({from:g.from,to:g.to}));syncPeriodInputs()}render()};
+ controls.onchange=e=>{const i=e.target.dataset.periodPreset;if(i===undefined||!e.target.value)return;const [from,to]=e.target.value.split(',').map(Number);$('#periodFrom'+i).value=from;$('#periodTo'+i).value=to};
+ $('#periodCompareForm').onsubmit=e=>{e.preventDefault();const next=[0,1].map(i=>({from:Number($('#periodFrom'+i).value),to:Number($('#periodTo'+i).value)}));if(next.some(p=>!Number.isInteger(p.from)||!Number.isInteger(p.to)||p.from===0||p.to===0||p.to<p.from||p.from< -100000||p.to>10000)){$('#periodCompareError').textContent='Gültige ganze Jahre ohne Jahr null eingeben; das Ende darf nicht vor dem Anfang liegen.';return}comparePeriods=next;$('#periodCompareError').textContent='';render()};
+ $('#periodSwap').onclick=()=>{comparePeriods.reverse();syncPeriodInputs();render()};
+}
+function syncPeriodInputs(){comparePeriods.forEach((p,i)=>{$('#periodFrom'+i).value=p.from;$('#periodTo'+i).value=p.to})}
+function syncPeriodCompare(){
+ const on=representation==='timeline'&&periodCompare;document.body?.classList.toggle('period-comparison-active',on);
+ if($('#periodCompareControls'))$('#periodCompareControls').hidden=!on;
+ if($('#periodCompareStage'))$('#periodCompareStage').hidden=!on;
+ if($('#periodCompareToggle')){$('#periodCompareToggle').textContent=on?'Zum einzelnen Zeitstrahl ↩':'Zwei Zeiträume vergleichen ⇄';$('#periodCompareToggle').setAttribute('aria-pressed',String(on))}
+ if(on){$('#scroll').hidden=true;$('.timeline-nav').hidden=true;$('#timelineUndated').hidden=true;$('.timeline-caption').hidden=true;$$('.viewoptions label').forEach(el=>{if(el.querySelector('#scale'))el.hidden=true})}
+}
+function renderPeriodCompare(){
+ const width=2600*Number($('#zoom').value),corpus=lensItems($('#search').value,onlyOwn),counts=[];
+ $('#periodCompareStage').innerHTML=comparePeriods.map((p,index)=>{const items=corpus.filter(e=>periodContains(e,p));counts.push(items.length);const map=y=>periodPosition(y,p,width),duration=periodDuration(p),longest=Math.max(1,...comparePeriods.map(periodDuration));
+ let html=`<div class="compare-axis" style="width:${width}px">${Array.from({length:6},(_,i)=>{const elapsed=Math.round(longest*i/5);if(elapsed>duration)return '';const astro=astronomical(p.from)+elapsed,year=astro<=0?astro-1:astro;return `<span style="left:${map(year)}px">${yr(year)}<small>+${elapsed} Jahre</small></span>`}).join('')}</div>`;
+ for(const [id,label,,color] of LANES){if(!visibleCategories.has(id))continue;const lane=items.filter(e=>e.lane===id),slots=[];let cards='';for(const e of lane){const x=map(Math.max(p.from,e.year));let row=slots.findIndex(end=>end+10<x);if(row<0)row=slots.length;slots[row]=x+170;cards+=`<button class="period-compare-event" data-event="${esc(e.id)}" style="left:${x}px;top:${8+row*88}px;border-color:${color}" title="${esc(e.title)}">${e.image?`<img src="${esc(imageSrc(e.image))}" alt="">`:''}<span><time>${esc(e.date||yr(e.year))}</time><strong>${esc(e.title)}</strong></span></button>`}
+ html+=`<div class="compare-lane" style="height:${Math.max(65,slots.length*88+12)}px;width:${width}px"><div class="lane-name">${label}</div><div class="compare-extent" style="left:180px;width:${Math.max(1,map(p.to)-180)}px"></div>${cards}${!lane.length?'<p class="compare-empty">Keine Spuren im gewählten Bestand.</p>':''}</div>`}
+ return `<section class="period-panel"><header><strong>${index?'B':'A'} · ${yr(p.from)} – ${yr(p.to)}</strong><span>${items.length} ${items.length===1?'Spur':'Spuren'} · ${duration+1} Kalenderjahre</span></header><div class="period-viewport" tabindex="0" role="region" aria-label="Zeitraum ${index?'B':'A'}; verschiebbar">${html}</div></section>`}).join('');
+ $('#count').textContent=`Vergleich A: ${counts[0]} · B: ${counts[1]} Spuren · Kategorien und Suche gelten für beide`;
+ $$('#periodCompareStage [data-event]').forEach(b=>b.onclick=()=>openEvent(b.dataset.event));
+ const views=$$('.period-viewport');let syncing=false;views.forEach(v=>{v.addEventListener('scroll',()=>{if(syncing)return;syncing=true;views.forEach(other=>{if(other!==v)other.scrollLeft=v.scrollLeft});syncing=false});v.addEventListener('wheel',e=>{if(e.ctrlKey||e.metaKey){e.preventDefault();setTimelineZoom(Number($('#zoom').value)*Math.exp(-e.deltaY*.005),e.clientX-v.getBoundingClientRect().left)}},{passive:false});let drag=null;v.onpointerdown=e=>{if(e.button||e.target.closest('button'))return;drag={x:e.clientX,y:e.clientY,left:v.scrollLeft,top:v.scrollTop};v.setPointerCapture(e.pointerId)};v.onpointermove=e=>{if(drag){v.scrollLeft=drag.left+drag.x-e.clientX;v.scrollTop=drag.top+drag.y-e.clientY}};v.onpointerup=v.onpointercancel=()=>drag=null;});
+}
 function mapFn(width){const left=180,span=width-400,domain=centuryDomain();if(domain)return y=>left+(astronomical(y)-astronomical(domain[0]))/(astronomical(domain[1])-astronomical(domain[0]))*span;let low=Math.min(-18000,...state.own.map(e=>e.year)),high=Math.max(2050,...state.own.map(e=>e.end||e.year));if($('#scale').value==='linear')return y=>left+(astronomical(y)-astronomical(low))/(astronomical(high)-astronomical(low))*span;const anchors=[[low,0],[-10000,.08],[-7000,.16],[-3500,.24],[1,.36],[600,.44],[1000,.51],[1400,.61],[1600,.70],[1800,.79],[1900,.88],[high,1]];return y=>{for(let i=1;i<anchors.length;i++){if(y<=anchors[i][0]){const [a,x]=anchors[i-1],[b,z]=anchors[i];return left+(x+(y-a)/(b-a)*(z-x))*span}}return left+span}}
 function render(){
- prepareRepresentation();syncTimelineStudio();renderCenturyControls();if(representation!=='timeline'){renderMode();return;}
+ prepareRepresentation();syncTimelineStudio();renderCenturyControls();syncPeriodCompare();if(representation!=='timeline'){renderMode();return;}
+ if(periodCompare){renderPeriodCompare();return;}
  const width=2600*Number($('#zoom').value),map=mapFn(width),query=$('#search').value.toLocaleLowerCase('de');const visible=lensItems(query,onlyOwn).filter(centuryVisible),items=visible.filter(e=>Number.isFinite(e.year)),undated=visible.filter(e=>!Number.isFinite(e.year));
  $('#timeline').style.width=width+'px';const domain=centuryDomain();$$('.viewoptions label').forEach(el=>{if(el.querySelector('#scale'))el.hidden=!!domain});$('.timeline-nav').hidden=!!domain;const ticks=domain?Array.from({length:6},(_,i)=>Math.round(domain[0]+i*(domain[1]-domain[0])/5)).filter(y=>y!==0):$('#scale').value==='linear'?[-15000,-10000,-5000,1,2023]:[-17000,-10000,-7000,-3200,1,476,868,1200,1492,1789,1914,2023];let html=`<div class="axis">${ticks.map(y=>`<span class="tick" style="left:${map(y)}px">${yr(y)}</span>`).join('')}</div>`;
  const ends=[-18000,-800,...state.bounds,2050],names=['Vor- / Frühgeschichte?','Antike (regional)','Mittelalter','Frühe Neuzeit','Moderne','Zeitgeschichte'];html+=`<div class="lane" style="height:68px"><div class="lane-name">Epochenentwurf<small>Europa · veränderbar</small></div>${names.map((n,i)=>domain&&(ends[i]>domain[1]||ends[i+1]<domain[0])?'':`<button class="periodbar" data-epoch style="left:${map(domain?Math.max(domain[0],ends[i]):ends[i])}px;width:${Math.max(35,map(domain?Math.min(domain[1],ends[i+1]):ends[i+1])-map(domain?Math.max(domain[0],ends[i]):ends[i])-2)}px" title="${n}: ${yr(ends[i])} bis ${yr(ends[i+1])}; Grenzen hinterfragen">${n}</button>`).join('')}</div>`;
@@ -143,11 +180,11 @@ function syncTimelineStudio(){
  $$('[data-isolate]').forEach(b=>b.setAttribute('aria-pressed',String(visibleCategories.size===1&&visibleCategories.has(b.dataset.isolate))));
 }
 function setTimelineZoom(value,anchor){
- const viewport=$('#scroll'),old=2600*Number($('#zoom').value),next=Math.max(.25,Math.min(5,Number(value)));
+ const viewport=periodCompare?$('.period-viewport'):$('#scroll'),old=2600*Number($('#zoom').value),next=Math.max(.25,Math.min(5,Number(value)));
  const x=anchor??viewport.clientWidth/2,position=(viewport.scrollLeft+x-180)/(old-400);
  let option=$('#zoom option[data-continuous]');if(!option){option=document.createElement('option');option.dataset.continuous='true';$('#zoom').append(option)}
  option.value=String(next);option.textContent=Math.round(next*100)+' %';$('#zoom').value=String(next);render();
- viewport.scrollLeft=180+position*(2600*next-400)-x;
+ if(periodCompare)$$('.period-viewport').forEach(v=>v.scrollLeft=180+position*(2600*next-400)-x);else viewport.scrollLeft=180+position*(2600*next-400)-x;
 }
 function initTimelineStudio(){
  const bar=document.createElement('div');bar.id='timelineStudioBar';bar.innerHTML=`<strong>Zeitspuren <span>· Zeitstrahl</span></strong><div class="timeline-zoom-controls"><button id="timelineZoomOut" aria-label="Herauszoomen">−</button><input id="timelineZoomRange" type="range" min="0.25" max="5" step="0.05" value="1" aria-label="Zeitstrahl zoomen"><output id="timelineZoomValue">100 %</output><button id="timelineZoomIn" aria-label="Hineinzoomen">+</button><button id="timelineZoomReset">Übersicht</button></div><button id="timelineExpand">Vollbild verlassen ↙</button>`;
@@ -156,7 +193,7 @@ function initTimelineStudio(){
  $('#timelineZoomIn').onclick=()=>setTimelineZoom(Number($('#zoom').value)*1.3);
  $('#timelineZoomOut').onclick=()=>setTimelineZoom(Number($('#zoom').value)/1.3);
  $('#timelineZoomRange').oninput=e=>setTimelineZoom(e.target.value);
- $('#timelineZoomReset').onclick=()=>{setTimelineZoom(Math.max(.25,($('#scroll').clientWidth-20)/2600));$('#scroll').scrollTo({left:0,top:0})};
+ $('#timelineZoomReset').onclick=()=>{const v=periodCompare?$('.period-viewport'):$('#scroll');setTimelineZoom(Math.max(.25,(v.clientWidth-20)/2600));(periodCompare?$$('.period-viewport'):[$('#scroll')]).forEach(el=>el.scrollTo({left:0,top:0}))};
  const viewport=$('#scroll');let drag=null;
  viewport.addEventListener('wheel',e=>{if(e.ctrlKey||e.metaKey){e.preventDefault();setTimelineZoom(Number($('#zoom').value)*Math.exp(-e.deltaY*.005),e.clientX-viewport.getBoundingClientRect().left)}},{passive:false});
  viewport.addEventListener('pointerdown',e=>{if(e.button!==0||e.target.closest('button,input,select,a'))return;drag={x:e.clientX,y:e.clientY,left:viewport.scrollLeft,top:viewport.scrollTop};viewport.setPointerCapture(e.pointerId);viewport.classList.add('dragging')});
@@ -177,3 +214,4 @@ function drawTimeModel(kind){const common='viewBox="0 0 700 180" role="img" styl
 
 initTimelineStudio();
 initCenturyControls();
+initPeriodCompare();
