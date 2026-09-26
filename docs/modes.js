@@ -816,6 +816,7 @@ function compactWorldWorkspace(){
  const bar=document.createElement('nav');bar.className='world-commandbar';bar.setAttribute('aria-label','Werkzeuge zur Ansicht');for(const name of ['explain','example','settings','compare','register']){const b=document.createElement('button');b.textContent=groups.find(g=>g[0]===name)[1];b.onclick=()=>open(name);bar.append(b)}root.insertBefore(bar,root.firstChild);
  $('#worldDrawerClose').onclick=()=>{worldSheet='';sheet.close()};sheet.addEventListener('cancel',()=>{worldSheet=''});
  root.querySelectorAll('a[href="#interpretationSettings"]').forEach(a=>a.onclick=e=>{e.preventDefault();open('settings')});
+ root.querySelectorAll('a[href="#interpretationExperiment"]').forEach(a=>a.onclick=e=>{e.preventDefault();worldSheet='';sheet.close();$('#interpretationExperiment').scrollIntoView({block:'nearest'})});
  const board=root.querySelector('#interpretationExperiment .semantic-board');if(board){
  const fields=[...board.querySelectorAll('.board-field')],tabs=document.createElement('div'),deck=document.createElement('div');tabs.className='board-field-tabs';tabs.setAttribute('role','group');tabs.setAttribute('aria-label','Deutungsfeld wählen');deck.className='board-deck';
  let current=boardFieldSelection[representation];if(!Number.isInteger(current)||current>=fields.length)current=Math.max(0,fields.findIndex(f=>f.querySelector('.board-card')));
