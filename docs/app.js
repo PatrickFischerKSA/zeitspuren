@@ -26,7 +26,7 @@ function diagramHtml(e){return `<figure class="thinking-figure"><svg viewBox="0 
 function imageHtml(e){if(!e.image)return e.diagram?diagramHtml(e):'';const a=assets[e.image];let caption=a?`${esc(a.motif)}. ${esc(a.image_date)}. ${esc(a.author)} · ${a.license_url?`<a href="${esc(a.license_url)}" target="_blank" rel="noopener">${esc(a.license)}</a>`:esc(a.license)} · <a href="${esc(a.source_page)}" target="_blank" rel="noopener">Bildnachweis</a>. ${esc(a.source_criticism)}`:`Bild aus der bereitgestellten Unterrichtsvorlage, ${e.image.includes('6-')?'S. 6':'S. 5'}. Urheberschaft und genaue Bilddatierung dort nicht ausgewiesen; keine freie Nutzungslizenz belegt.`;if(e.id==='ai')caption='KI-GENERIERT · Meysam Azarneshin / Adobe Stock. Im bereitgestellten NZZ-Artikel vom 13.11.2023 abgebildet. Als Gegenstand der Bildkritik wiedergegeben, kein Ereignisfoto. Keine freie Nutzungslizenz belegt.';return `<figure><img src="${esc(imageSrc(e.image))}" alt="${esc(a?.motif||e.title)}${e.id==='ai'?' – ausdrücklich KI-generiert':''}"><figcaption>${caption}</figcaption></figure>`}
 function mapFn(width){const left=180,span=width-400;let low=Math.min(-18000,...state.own.map(e=>e.year)),high=Math.max(2050,...state.own.map(e=>e.end||e.year));if($('#scale').value==='linear')return y=>left+(astronomical(y)-astronomical(low))/(astronomical(high)-astronomical(low))*span;const anchors=[[low,0],[-10000,.08],[-7000,.16],[-3500,.24],[1,.36],[600,.44],[1000,.51],[1400,.61],[1600,.70],[1800,.79],[1900,.88],[high,1]];return y=>{for(let i=1;i<anchors.length;i++){if(y<=anchors[i][0]){const [a,x]=anchors[i-1],[b,z]=anchors[i];return left+(x+(y-a)/(b-a)*(z-x))*span}}return left+span}}
 function render(){
- prepareRepresentation();if(representation!=='timeline'){renderMode();return;}
+ prepareRepresentation();syncTimelineStudio();if(representation!=='timeline'){renderMode();return;}
  const width=2600*Number($('#zoom').value),map=mapFn(width),query=$('#search').value.toLocaleLowerCase('de');const visible=lensItems(query,onlyOwn),items=visible.filter(e=>Number.isFinite(e.year)),undated=visible.filter(e=>!Number.isFinite(e.year));
  $('#timeline').style.width=width+'px';const ticks=$('#scale').value==='linear'?[-15000,-10000,-5000,1,2023]:[-17000,-10000,-7000,-3200,1,476,868,1200,1492,1789,1914,2023];let html=`<div class="axis">${ticks.map(y=>`<span class="tick" style="left:${map(y)}px">${yr(y)}</span>`).join('')}</div>`;
  const ends=[-18000,-800,...state.bounds,2050],names=['Vor- / Frühgeschichte?','Antike (regional)','Mittelalter','Frühe Neuzeit','Moderne','Zeitgeschichte'];html+=`<div class="lane" style="height:68px"><div class="lane-name">Epochenentwurf<small>Europa · veränderbar</small></div>${names.map((n,i)=>`<button class="periodbar" data-epoch style="left:${map(ends[i])}px;width:${Math.max(35,map(ends[i+1])-map(ends[i])-2)}px" title="${n}: ${yr(ends[i])} bis ${yr(ends[i+1])}; Grenzen hinterfragen">${n}</button>`).join('')}</div>`;
@@ -97,24 +97,59 @@ function openMemoria(){
 
 function initCategoryControls(){
  const choices=$('#categoryChoices');
- choices.innerHTML=LANES.map(([id,label,,color])=>`<label class="category-choice" style="--category-color:${color}"><input type="checkbox" data-category="${id}" checked><span>${esc(label)}</span></label>`).join('');
+ choices.innerHTML=LANES.map(([id,label,,color])=>`<div class="category-chip" style="--category-color:${color}"><label class="category-choice"><input type="checkbox" data-category="${id}" checked><span>${esc(label)}</span></label><button type="button" data-isolate="${id}" aria-label="Nur ${esc(label)} anzeigen" title="Nur diese Kategorie anzeigen">Solo</button></div>`).join('');
  const update=()=>{
   $$('[data-category]').forEach(input=>{input.checked=visibleCategories.has(input.dataset.category)});
   $('#categoryStatus').textContent=visibleCategories.size?`${visibleCategories.size} von ${LANES.length} Kategorien sichtbar`:'Keine Kategorie ausgewählt – schalte eine Kategorie ein.';
   render();
-  if(representation==='timeline'){
-   const first=$('#timeline .event');
-   if(first)$('#scroll').scrollTo({left:Math.max(0,parseFloat(first.style.left)-210),top:0,behavior:'auto'});
-  }
+  if(representation==='timeline')$('#scroll').scrollTop=0;
  };
+ choices.onclick=e=>{const solo=e.target.closest('[data-isolate]');if(!solo)return;visibleCategories=new Set([solo.dataset.isolate]);update()};
  choices.onchange=e=>{const id=e.target.dataset.category;if(!LANES.some(l=>l[0]===id))return;if(e.target.checked)visibleCategories.add(id);else visibleCategories.delete(id);update()};
  $('#categoriesAll').onclick=()=>{visibleCategories=new Set(LANES.map(l=>l[0]));update()};
  $('#categoriesNone').onclick=()=>{visibleCategories.clear();update()};
  $('#categoryStatus').textContent=`${LANES.length} von ${LANES.length} Kategorien sichtbar`;
 }
+// Full-window timeline: zoom changes the temporal scale, keeping the pointed date fixed.
+let timelineStudio=true;
+function syncTimelineStudio(){
+ document.body?.classList.toggle('timeline-studio',representation==='timeline'&&timelineStudio);
+ const bar=$('#timelineStudioBar');if(bar)bar.hidden=representation!=='timeline';
+ if($('#timelineExpand'))$('#timelineExpand').textContent=timelineStudio?'Vollbild verlassen ↙':'Vollbild öffnen ↗';
+ if($('#timelineZoomRange')){$('#timelineZoomRange').value=$('#zoom').value;$('#timelineZoomValue').textContent=Math.round(Number($('#zoom').value)*100)+' %'}
+ $$('[data-isolate]').forEach(b=>b.setAttribute('aria-pressed',String(visibleCategories.size===1&&visibleCategories.has(b.dataset.isolate))));
+}
+function setTimelineZoom(value,anchor){
+ const viewport=$('#scroll'),old=2600*Number($('#zoom').value),next=Math.max(.25,Math.min(5,Number(value)));
+ const x=anchor??viewport.clientWidth/2,position=(viewport.scrollLeft+x-180)/(old-400);
+ let option=$('#zoom option[data-continuous]');if(!option){option=document.createElement('option');option.dataset.continuous='true';$('#zoom').append(option)}
+ option.value=String(next);option.textContent=Math.round(next*100)+' %';$('#zoom').value=String(next);render();
+ viewport.scrollLeft=180+position*(2600*next-400)-x;
+}
+function initTimelineStudio(){
+ const bar=document.createElement('div');bar.id='timelineStudioBar';bar.innerHTML=`<strong>Zeitspuren <span>· Zeitstrahl</span></strong><div class="timeline-zoom-controls"><button id="timelineZoomOut" aria-label="Herauszoomen">−</button><input id="timelineZoomRange" type="range" min="0.25" max="5" step="0.05" value="1" aria-label="Zeitstrahl zoomen"><output id="timelineZoomValue">100 %</output><button id="timelineZoomIn" aria-label="Hineinzoomen">+</button><button id="timelineZoomReset">Übersicht</button></div><button id="timelineExpand">Vollbild verlassen ↙</button>`;
+ $('.workspace').prepend(bar);
+ $('#timelineExpand').onclick=()=>{timelineStudio=!timelineStudio;syncTimelineStudio()};
+ $('#timelineZoomIn').onclick=()=>setTimelineZoom(Number($('#zoom').value)*1.3);
+ $('#timelineZoomOut').onclick=()=>setTimelineZoom(Number($('#zoom').value)/1.3);
+ $('#timelineZoomRange').oninput=e=>setTimelineZoom(e.target.value);
+ $('#timelineZoomReset').onclick=()=>{setTimelineZoom(Math.max(.25,($('#scroll').clientWidth-20)/2600));$('#scroll').scrollTo({left:0,top:0})};
+ const viewport=$('#scroll');let drag=null;
+ viewport.addEventListener('wheel',e=>{if(e.ctrlKey||e.metaKey){e.preventDefault();setTimelineZoom(Number($('#zoom').value)*Math.exp(-e.deltaY*.005),e.clientX-viewport.getBoundingClientRect().left)}},{passive:false});
+ viewport.addEventListener('pointerdown',e=>{if(e.button!==0||e.target.closest('button,input,select,a'))return;drag={x:e.clientX,y:e.clientY,left:viewport.scrollLeft,top:viewport.scrollTop};viewport.setPointerCapture(e.pointerId);viewport.classList.add('dragging')});
+ viewport.addEventListener('pointermove',e=>{if(!drag)return;viewport.scrollLeft=drag.left+drag.x-e.clientX;viewport.scrollTop=drag.top+drag.y-e.clientY});
+ const end=()=>{drag=null;viewport.classList.remove('dragging')};viewport.addEventListener('pointerup',end);viewport.addEventListener('pointercancel',end);
+ viewport.addEventListener('keydown',e=>{if(e.target!==viewport)return;if(['+','=','-','0'].includes(e.key)){e.preventDefault();if(e.key==='0')$('#timelineZoomReset').click();else setTimelineZoom(Number($('#zoom').value)*(e.key==='-'?1/1.3:1.3))}});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.querySelector('dialog[open]')){timelineStudio=false;syncTimelineStudio()}});
+ syncTimelineStudio();
+}
+
 $('#close').onclick=()=>popup.close();popup.addEventListener('close',stopHistoricalMedia);popup.addEventListener('click',e=>{if(e.target===popup){const r=popup.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)popup.close()}});$('#add').onclick=()=>openForm();$('#sources').onclick=openSources;$('#backup').onclick=exportState;$('#restore').onclick=()=>$('#restoreFile').click();$('#restoreFile').onchange=e=>importFile(e.target.files[0]);$('#epoch').onclick=openEpochs;$('#compareStart').onclick=()=>openCompare();$('#journal').onclick=openJournal;$('#viewAll').onclick=()=>{onlyOwn=false;$('#viewAll').classList.add('active');$('#viewOwn').classList.remove('active');render()};$('#viewOwn').onclick=()=>{onlyOwn=true;$('#viewOwn').classList.add('active');$('#viewAll').classList.remove('active');render()};$('#scale').onchange=render;$('#zoom').onchange=render;$('#search').oninput=render;initCategoryControls();$('#jumpPresent').onclick=()=>$('#scroll').scrollTo({left:$('#timeline').offsetWidth,behavior:'smooth'});document.querySelectorAll('.question[data-open]').forEach(b=>b.onclick=()=>openEvent(b.dataset.open));init();
 
 $('#jumpTime').onchange=e=>{const map=mapFn($('#timeline').offsetWidth);$('#scroll').scrollTo({left:Math.max(0,map(Number(e.target.value))-200),top:0,behavior:'smooth'})};
 $('#jumpIdeas').onclick=()=>switchRepresentation('network');
 
 function drawTimeModel(kind){const common='viewBox="0 0 700 180" role="img" style="width:100%;max-height:210px;background:#f2f6f5;border-radius:6px;margin-top:15px"';let html='';if(kind==='line')html=`<svg ${common} aria-label="Drei Zeitpunkte auf einer gerichteten Linie"><path d="M70 90H620l-16-10m16 10l-16 10" stroke="#244653" stroke-width="3" fill="none"/><g fill="#b83f24"><circle cx="110" cy="90" r="7"/><circle cx="340" cy="90" r="7"/><circle cx="570" cy="90" r="7"/></g><g fill="#18343c" font-family="Arial" font-size="19"><text x="70" y="135">Vorher</text><text x="310" y="135">Jetzt</text><text x="540" y="135">Nachher</text></g></svg><p class="small">Reihenfolge ist sichtbar. Fortschritt, Zusammenhang und Ursache sind damit noch nicht bewiesen.</p>`;if(kind==='cycle')html=`<svg ${common} aria-label="Kreis der wiederkehrenden Jahreszeiten"><ellipse cx="350" cy="90" rx="145" ry="58" fill="none" stroke="#477b6a" stroke-width="3"/><g fill="#18343c" font-family="Arial" font-size="18"><text x="315" y="25">Frühling</text><text x="515" y="95">Sommer</text><text x="320" y="174">Herbst</text><text x="125" y="95">Winter</text></g><circle cx="350" cy="32" r="7" fill="#b83f24"/></svg><p class="small">Ein Rhythmus kehrt wieder. Menschen, Bedingungen und Bedeutungen können sich dennoch ändern.</p>`;if(kind==='layers')html=`<svg ${common} aria-label="Kurzes Ereignis, mittlere Entwicklung und lange Struktur"><g fill="#18343c" font-family="Arial" font-size="17"><text x="20" y="42">Ereignis</text><text x="20" y="94">Entwicklung</text><text x="20" y="146">Struktur</text></g><path d="M190 35H250" stroke="#b83f24" stroke-width="15"/><path d="M190 87H440" stroke="#a18456" stroke-width="15"/><path d="M190 139H660" stroke="#477b6a" stroke-width="15"/></svg><p class="small">Schematische Dauern, kein gemessener Datensatz: Verschiedene Tempi wirken ineinander.</p>`;$('#modelDrawing').innerHTML=html}
+
+
+initTimelineStudio();
