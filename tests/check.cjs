@@ -120,7 +120,7 @@ for(const [mode,lab] of Object.entries(ctx.premiseAPI.labs)){
  const changed=ctx.worldAPI.worldSceneHtml(events);assert(changed.includes('Prüfannahme &lt;mit Gegenargument&gt;'));assert.notEqual(initial,changed);assert(ctx.premiseAPI.modeNoteLabel(ctx.testPremiseKey).includes('Voraussetzung:'));assert.equal(api.validate(JSON.parse(vm.runInContext('JSON.stringify(state)',ctx))).notes[ctx.testPremiseKey],'Prüfannahme <mit Gegenargument>');
 }
 vm.runInContext("representation='memoria';state=defaults()",ctx);assert(!ctx.worldAPI.worldSceneHtml(events).includes('world-muted'));
-vm.runInContext("state.notes['premise-memoria-group']='Familiengespräch';state.lensAssignments.memoria={paris:'social'}",ctx);assert(ctx.worldAPI.worldSceneHtml(events).includes('board-unplaced'));assert(ctx.worldAPI.worldSceneHtml(events).includes('Familiengespräch'));
+vm.runInContext("state.notes['premise-memoria-group']='Familiengespräch';state.lensAssignments.memoria={paris:'social'}",ctx);assert(ctx.worldAPI.worldSceneHtml(events).includes('board-role-open'));assert(ctx.worldAPI.worldSceneHtml(events).includes('Familiengespräch'));
 console.log('PASS: Sechs offene Voraussetzungen, individuell formulierte Gegenprüfungen, sichtbare Annahmen, sichere Notizen und Erinnerungsblende mit benanntem Rahmen.');
 
 vm.runInContext("globalThis.profileAPI={ensureReading,activeReading,addReading,switchReading,setReadingDecision,readingDecision,readingLayout,captureReadings,readingComparisonHtml};state=defaults();representation='direction';worldAssumption=true;globalThis.originalSave=save;save=()=>{captureReadings();return Promise.resolve(true)}",ctx);
