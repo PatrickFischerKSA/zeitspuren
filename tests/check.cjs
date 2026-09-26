@@ -49,6 +49,26 @@ assert.equal(ut.lensItems('',true).length,1);assert.equal(ut.lensItems('eigene d
 const malformed=api.defaults();malformed.lensAssignments={egypt:{haiti:'not-a-slot',invented:'order'}};assert.deepEqual(Object.keys(api.validate(malformed).lensAssignments.egypt),[]);
 const legacy=api.defaults();delete legacy.lensAssignments;assert(api.validate(legacy).lensAssignments);
 console.log('PASS: Gesamter Bestand in allen sieben Konzeptansichten; eigene Begriffe; Suchfilter; Fokus; Zuordnungen und Deutungen im Sicherungsrundlauf; alte Sicherungen.');
+// Exercise the actual timeline renderer and all ten views with the same corpus.
+ctx.dom={};ctx.document.querySelector=s=>ctx.dom[s]??=( {style:{},value:s==='#zoom'?'1':s==='#scale'?'focus':'',innerHTML:'',textContent:''} );ctx.document.querySelectorAll=()=>[];
+vm.runInContext("state=defaults();state.own=[{id:'own-theory',year:1900,lane:'ideas',own:true,title:'Eigene Theorie',text:'Probe'},{id:'own-event',year:2000,lane:'eu',own:true,title:'Eigenes Ereignis',text:'Probe'}];globalThis.completeViews={tunnelItems,tunnelHtml,networkHtml,lensCorpus,lensUniverseHtml};",ctx);
+const cv=ctx.completeViews,ids=cv.lensCorpus().map(e=>e.id);
+assert.equal(ids.length,52);
+for(const mode of Object.keys(ut.lenses)){vm.runInContext(`representation='${mode}'`,ctx);const html=cv.lensUniverseHtml();for(const id of ids)assert(html.includes('data-lens-focus="'+id+'"'),mode+' missing '+id)}
+vm.runInContext("representation='timeline';onlyOwn=false;render()",ctx);
+const timeline=ctx.dom['#timeline'].innerHTML,undated=ctx.dom['#timelineUndated'].innerHTML;
+for(const id of ids)assert((timeline+undated).includes('data-event="'+id+'"'),'timeline missing '+id);
+assert(!timeline.includes('data-event="history"'));assert(undated.includes('data-event="history"'));assert(timeline.includes('data-event="augustine"'));assert(ctx.dom['#count'].textContent.startsWith('52 von 52'));
+const tunnel=cv.tunnelItems('',false);assert.deepEqual(Array.from(tunnel,e=>e.id).sort(),Array.from(ids).sort());
+for(let i=0;i<tunnel.length;i++){vm.runInContext(`tunnelIndex=${i}`,ctx);const html=cv.tunnelHtml(tunnel);assert(html.includes('data-explore="'+tunnel[i].id+'"'));assert(!html.includes('NaN'));assert(!html.includes('undefined'));if(!tunnel[i].year)assert(html.includes('Begriffsraum ohne zeitliche Position'))}
+assert(cv.tunnelHtml([]).includes('Keine Spur'));assert(!cv.tunnelHtml([]).includes('tunnelSelect'));
+for(const id of ids)assert(cv.networkHtml('',false).includes('data-explore="'+id+'"'),'network missing '+id);
+for(const topic of ['all','experience','change','knowing','remember']){vm.runInContext(`networkTopic='${topic}'`,ctx);const html=cv.networkHtml('',false);for(const id of ids)assert(html.includes('data-explore="'+id+'"'),'topic hides '+id)}
+assert.equal(cv.tunnelItems('',true).length,2);assert.equal(cv.tunnelItems('Eigene Theorie',false).length,1);
+const ownNetwork=cv.networkHtml('',true);assert(ownNetwork.includes('data-explore="own-theory"'));assert(ownNetwork.includes('data-explore="own-event"'));assert(!ownNetwork.includes('data-explore="augustine"'));
+vm.runInContext("representation='timeline';onlyOwn=true;render()",ctx);assert(ctx.dom['#timeline'].innerHTML.includes('data-event="own-theory"'));assert(!ctx.dom['#timeline'].innerHTML.includes('data-event="augustine"'));
+console.log('PASS: Alle zehn Modi enthalten exakt denselben Bestand; 50 Ausgangseinträge plus eigene Ereignisse und Theorien; undatierte Begriffe, Suchfilter, Eigenfilter und leere Tunnel-Auswahl.');
+
 (async()=>{
  vm.runInContext("render=()=>{};save=async()=>true;toast=()=>{};state=defaults();state.own=[{id:'merge-own',year:1900,lane:'eu',own:true,title:'Lokale Fassung',text:'lokal'}];state.lensAssignments.egypt={haiti:'order'}",ctx);
  const incoming=api.defaults();incoming.own=[{id:'merge-own',year:1900,lane:'eu',own:true,title:'Andere Fassung',text:'importiert'}];incoming.lensAssignments.egypt={'merge-own':'selection',haiti:'renewal'};incoming.notes['lens-egypt-merge-own']='Importierte Interpretation';
