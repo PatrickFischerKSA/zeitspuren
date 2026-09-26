@@ -135,3 +135,5 @@ Die Weltansichten verwenden eine kompakte Arbeitsfläche: je ein aktives Deutung
 Die Hauptansicht zeigt wieder räumliche Schaubilder statt Tafeln oder Bildstreifen: Heilshorizont, Zielachsen, Ordnungskreis, Erinnerungsräume, Produktionsgefüge, Zeitschichten, Wissenshorizont und Spirale. Bildpunkte sind per Maus und Tastatur erreichbar; Quellen und Deutungen bleiben im Popup. Die Modelle unterscheiden Datumsordnung, eigene Einordnungen und reine Anpassungen für Lesbarkeit ausdrücklich.
 
 «Schaubild verstehen» führt in jeden Ansatz mit zwei umschaltbaren Setzungen ein. Das Bild zeigt den konkreten Befund, seine veränderte Lesart und die Beleggrenze. «Mit allen Spuren arbeiten» wechselt in die bestehende vollständige Ansicht. Die Lehrbeispiele verändern keine eigenen Entwürfe.
+
+Die Hauptansicht startet direkt als Gesamtschau der gesamten Zeit, ohne vorgeschaltete Lehrbeispiele. Acht Form-Silhouetten wechseln zwischen den Gesamtmodellen; kräftige Flächen und Richtungen machen ihre Form unterscheidbar. Alle datierten Spuren erscheinen im Schaubild, undatierte Begriffe in einer separaten Leiste ohne erfundene Zeitposition.

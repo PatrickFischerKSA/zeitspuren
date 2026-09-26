@@ -101,7 +101,7 @@ const before=ctx.spatial.tunnelScene(events);vm.runInContext('tunnelTime=1800.5'
 console.log('PASS: Zeitfahrt zwischen Ereignisdaten; getrennte räumliche Kategorienachsen; Perspektivtiefe; kein Jahr null.');
 
 vm.runInContext("globalThis.worldAPI={worldSelection,worldSceneHtml};worldYear=2026;worldWindow=130;worldAll=false;worldAssumption=true;state=defaults();state.own=[{id:'own-present',year:2026,lane:'local',own:true,title:'Eigene Gegenwart',text:'Beleg'}]",ctx);
-for(const mode of Object.keys(ut.lenses)){vm.runInContext(`representation='${mode}';worldAssumption=true`,ctx);if(mode==='memoria')vm.runInContext("state.notes['premise-memoria-group']='Untersuchtes Stadtmuseum'",ctx);const first=ctx.worldAPI.worldSceneHtml(ut.lensItems());assert(first.includes('data-lens-focus="own-present"'));assert(first.includes('data-lens-focus="paris"'));assert(!first.includes('data-lens-focus="history"'));vm.runInContext('worldAssumption=false',ctx);assert.notEqual(first,ctx.worldAPI.worldSceneHtml(ut.lensItems()),mode+' changes the visible construction')}
+for(const mode of Object.keys(ut.lenses)){vm.runInContext(`representation='${mode}';worldAssumption=true`,ctx);if(mode==='memoria')vm.runInContext("state.notes['premise-memoria-group']='Untersuchtes Stadtmuseum'",ctx);const first=ctx.worldAPI.worldSceneHtml(ut.lensItems());assert(first.includes('data-lens-focus="own-present"'));assert(first.includes('data-lens-focus="paris"'));assert(first.includes('data-lens-focus="history"'));vm.runInContext('worldAssumption=false',ctx);assert.notEqual(first,ctx.worldAPI.worldSceneHtml(ut.lensItems()),mode+' changes the visible construction')}
 vm.runInContext("representation='present';worldYear=2014;worldAssumption=true",ctx);assert(ctx.worldAPI.worldSceneHtml(ut.lensItems()).includes('Erwartung ist kein Rückblick'));
 vm.runInContext("representation='recurrence';worldPeriod=100",ctx);const cycle=ctx.worldAPI.worldSceneHtml(ut.lensItems());vm.runInContext('worldPeriod=73',ctx);assert.notEqual(cycle,ctx.worldAPI.worldSceneHtml(ut.lensItems()));
 vm.runInContext('worldAll=true',ctx);assert.equal(ctx.worldAPI.worldSelection(ut.lensItems()).length,ut.lensItems().filter(e=>Number.isFinite(e.year)).length);
@@ -199,3 +199,14 @@ if(JSON.stringify(state)!==lessonOldState)throw Error('Lesson modifies learner d
 representation=lessonOldMode;for(const k of Object.keys(concreteChoice))delete concreteChoice[k];Object.assign(concreteChoice,lessonOldChoices);
 `,ctx);
 console.log('PASS: Acht angeleitete Schaubilder mit sichtbarem Perspektivwechsel, Beleggrenzen und unveränderten eigenen Entwürfen.');
+vm.runInContext(`
+const overviewOldMode=representation,overviewOldAll=worldAll;worldAll=true;
+const wholeItems=lensItems();
+for(const mode of Object.keys(WHOLE_VIEW_FORMS)){
+ representation=mode;const html=worldSceneHtml(wholeItems);
+ for(const e of wholeItems)if(!html.includes('data-lens-focus="'+e.id+'"'))throw Error('Gesamtschau verliert '+e.id+' in '+mode);
+ if(!html.includes('whole-form-backdrop'))throw Error('Gesamtform fehlt');
+}
+representation=overviewOldMode;worldAll=overviewOldAll;
+`,ctx);
+console.log('PASS: Acht erkennbare Gesamtformen mit dem identischen vollständigen Bestand einschliesslich undatierter Begriffe.');
