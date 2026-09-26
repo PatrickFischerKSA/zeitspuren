@@ -67,7 +67,7 @@ const timeline=ctx.dom['#timeline'].innerHTML,undated=ctx.dom['#timelineUndated'
 for(const id of ids)assert((timeline+undated).includes('data-event="'+id+'"'),'timeline missing '+id);
 assert(undated.includes('<details'));assert(!undated.includes('<h2>'));assert(!undated.includes('<details open'));assert(!timeline.includes('data-event="history"'));assert(undated.includes('data-event="history"'));assert(timeline.includes('data-event="augustine"'));assert(ctx.dom['#count'].textContent.startsWith(ids.length+' von '+ids.length));
 const tunnel=cv.tunnelItems('',false);assert.deepEqual(Array.from(tunnel,e=>e.id).sort(),Array.from(ids).sort());
-for(let i=0;i<tunnel.length;i++){vm.runInContext(`tunnelIndex=${i}`,ctx);const html=cv.tunnelHtml(tunnel);assert(html.includes('data-explore="'+tunnel[i].id+'"'));assert(!html.includes('NaN'));assert(!html.includes('undefined'));if(!tunnel[i].year)assert(html.includes('Begriffsraum ohne zeitliche Position'))}
+for(let i=0;i<tunnel.length;i++){const html=cv.tunnelHtml(tunnel);assert(html.includes('data-explore="'+tunnel[i].id+'"'));assert(!html.includes('NaN'));assert(!html.includes('undefined'));if(!tunnel[i].year)assert(html.includes('Begriffsraum ohne zeitliche Position'))}
 assert(cv.tunnelHtml([]).includes('Keine Spur'));assert(!cv.tunnelHtml([]).includes('tunnelSelect'));
 for(const id of ids)assert(cv.networkHtml('',false).includes('data-explore="'+id+'"'),'network missing '+id);
 for(const topic of ['all','experience','change','knowing','remember']){vm.runInContext(`networkTopic='${topic}'`,ctx);const html=cv.networkHtml('',false);for(const id of ids)assert(html.includes('data-explore="'+id+'"'),'topic hides '+id)}
@@ -93,6 +93,12 @@ vm.runInContext('visibleCategories.clear();render()',ctx);assert.equal(cv.tunnel
 vm.runInContext("visibleCategories=new Set(['ideas'])",ctx);assert(cv.tunnelItems('',false).some(e=>e.id==='history'));assert(cv.tunnelItems('',false).every(e=>!e.lane||e.lane==='ideas'));
 vm.runInContext('visibleCategories=new Set(LANES.map(l=>l[0]))',ctx);
 console.log('PASS: Mehrfachauswahl, leere Auswahl, erneutes Einschalten und Begriffe in der Erinnerungskategorie.');
+
+vm.runInContext('globalThis.spatial={tunnelOrdinal,tunnelYear,tunnelProject,tunnelScene};tunnelTime=1800;tunnelSpan=200',ctx);
+assert.equal(ctx.spatial.tunnelYear(ctx.spatial.tunnelOrdinal(-1)+1),1);
+const pLocal=ctx.spatial.tunnelProject('local',0),pEurope=ctx.spatial.tunnelProject('eu',0);assert.notEqual(pLocal.x,pEurope.x);assert.notEqual(pLocal.y,pEurope.y);assert(ctx.spatial.tunnelProject('local',1).scale<pLocal.scale);
+const before=ctx.spatial.tunnelScene(events);vm.runInContext('tunnelTime=1800.5',ctx);const after=ctx.spatial.tunnelScene(events);assert.notEqual(before.html,after.html);assert(after.shown.some(o=>o.e.id==='local-linth'));assert(!after.shown.some(o=>!Number.isFinite(o.e.year)));assert(!after.html.includes('NaN'));
+console.log('PASS: Zeitfahrt zwischen Ereignisdaten; getrennte räumliche Kategorienachsen; Perspektivtiefe; kein Jahr null.');
 
 (async()=>{
  vm.runInContext("render=()=>{};save=async()=>true;toast=()=>{};state=defaults();state.own=[{id:'merge-own',year:1900,lane:'eu',own:true,title:'Lokale Fassung',text:'lokal'}];state.lensAssignments.egypt={haiti:'order'}",ctx);
