@@ -76,6 +76,17 @@ const ownNetwork=cv.networkHtml('',true);assert(ownNetwork.includes('data-explor
 vm.runInContext("representation='timeline';onlyOwn=true;render()",ctx);assert(ctx.dom['#timeline'].innerHTML.includes('data-event="own-theory"'));assert(!ctx.dom['#timeline'].innerHTML.includes('data-event="augustine"'));
 console.log('PASS: Alle elf Modi enthalten exakt denselben Bestand; vollständiger Ausgangsbestand plus eigene Ereignisse und Theorien; undatierte Begriffe, Suchfilter, Eigenfilter und leere Tunnel-Auswahl.');
 
+
+ctx.dom['#regionFilter'].value='local';
+vm.runInContext("state=defaults();state.own=[{id:'own-local',year:2026,lane:'local',own:true,title:'Eigene Ortsgeschichte',text:'Beleg'}];onlyOwn=false;representation='timeline';render()",ctx);
+const localIds=events.filter(e=>e.lane==='local').map(e=>e.id).concat('own-local');
+assert.equal(localIds.length,13);assert.equal(cv.tunnelItems('',false).length,13);
+for(const id of localIds){assert(ctx.dom['#timeline'].innerHTML.includes('data-event="'+id+'"'));assert(cv.networkHtml('',false).includes('data-explore="'+id+'"'))}
+for(const mode of ['present','layers','direction','medieval','egypt','materialism','recurrence','memoria']){vm.runInContext(`representation='${mode}'`,ctx);const html=cv.lensUniverseHtml('',false);for(const id of localIds)assert(html.includes('data-lens-focus="'+id+'"'),mode+' local '+id)}
+assert.equal(vm.runInContext('validate(JSON.parse(JSON.stringify(state))).own[0].lane',ctx),'local');
+assert.equal(cv.tunnelItems('',true).length,1);assert(!ctx.dom['#timeline'].innerHTML.includes('data-event="moon"'));ctx.dom['#regionFilter'].value='';
+console.log('PASS: Lokalfilter in elf Modi; eigene lokale Einträge sofort enthalten und im Backup erhalten.');
+
 (async()=>{
  vm.runInContext("render=()=>{};save=async()=>true;toast=()=>{};state=defaults();state.own=[{id:'merge-own',year:1900,lane:'eu',own:true,title:'Lokale Fassung',text:'lokal'}];state.lensAssignments.egypt={haiti:'order'}",ctx);
  const incoming=api.defaults();incoming.own=[{id:'merge-own',year:1900,lane:'eu',own:true,title:'Andere Fassung',text:'importiert'}];incoming.lensAssignments.egypt={'merge-own':'selection',haiti:'renewal'};incoming.notes['lens-egypt-merge-own']='Importierte Interpretation';
