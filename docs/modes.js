@@ -215,18 +215,18 @@ function worldSceneHtml(items){
  }else{
   bg=worldAssumption?'<path d="M60 530H230V420H400V310H570V200H740V90H940" stroke-dasharray="7 5"/>':'<path d="M50 340H950"/>';
   bg+=label(500,40,worldAssumption?esc(telosHeading(mode)):'Zeitliche Folge ohne Wertsteigerung');
-  dated.forEach((e,i)=>{const counter=lensAssignment(mode,e.id)==='exclusion';nodes+=worldCard(e,70+i/n*860,worldAssumption?(counter?570:505-i/n*390):240+(i%3)*110,110)});footer='Höhe ist keine Messung von Freiheit. Gegenbefunde verlassen die vermeintliche Aufstiegslinie.';
+  dated.forEach((e,i)=>{const counter=lensAssignment(mode,e.id)==='exclusion';nodes+=worldCard(e,70+i/n*860,worldAssumption?(counter?570:390+(i%2)*90):240+(i%3)*110,110)});footer='Ohne begründete Einordnung keine Aufwärtsbewegung: Spätere Ereignisse sind nicht automatisch Fortschritte. Höhe ist keine Messung von Freiheit.';
  }
  return `<figure class="world-scene world-${mode}"><div class="world-scene-scroll"><svg viewBox="0 0 1000 ${height}" role="group" aria-label="Weltgeschehen in der Ansicht ${esc(WORLD_READINGS[mode].short)}"><g class="world-background">${bg}</g>${nodes}</svg></div><figcaption>${footer}${premiseSceneCaption()}</figcaption></figure><p class="world-window-count">${shown.length} datierte Spuren im Bild · ${items.length} im gefilterten Bestand. ${!shown.length?'Wähle einen anderen Zeitraum oder «Gesamte Zeit».':''}</p>`;
 }
 function lensUniverseHtml(query='',own=false){
  const model=GLOBAL_LENSES[representation],reading=WORLD_READINGS[representation],items=lensItems(query,own),corpus=lensCorpus();let focus=byId(lensFocus)||byId('paris')||corpus[0];lensFocus=focus.id;
  const assignment=lensAssignment(representation,lensFocus),source=SOURCES[reading.source],src=source?.url?`<a href="${esc(source.url)}" target="_blank" rel="noopener">${esc(source.title)}</a>`:'';
- return `<section class="world-view"><div class="mode-heading"><p class="eyebrow">WELTGESCHEHEN ANDERS SEHEN · EINE KONSTRUKTION ERPROBEN</p><h2>${reading.name}</h2><p>${reading.mechanism}</p></div>${perspectiveNavigation()}${perspectiveIntroduction()}<div id="interpretationExperiment" tabindex="-1"></div>${profilePanelHtml()}<div class="world-controls"><label>Betrachtungszeit <select id="worldTime"><option value="recent" ${!worldAll?'selected':''}>Zeitfenster um mein Standjahr</option><option value="all" ${worldAll?'selected':''}>Gesamte Zeit</option></select></label><label>Standjahr <input id="worldYear" type="number" value="${worldYear}" step="1"></label><button id="worldGo">Standpunkt setzen</button><label>Zeitfenster ± Jahre <select id="worldWindow">${[25,50,130,500,2000,20000].map(n=>`<option ${n===worldWindow?'selected':''} value="${n}">${n}</option>`).join('')}</select></label><button id="worldNow">Gegenwart betrachten</button></div>${telosHtml()}${premiseLabHtml()}<label class="world-assumption"><input id="worldAssumption" type="checkbox" ${worldAssumption?'checked':''}>${reading.action}</label>${representation==='recurrence'?`<label class="world-cycle">Länge eines versuchsweisen Umlaufs <input id="worldPeriod" type="range" min="10" max="500" value="${worldPeriod}"><output>${worldPeriod} Jahre</output></label>`:''}<p class="world-experiment">Gedankenexperiment: Die Bildordnung ist unsere Übertragung. Sie beschreibt nicht automatisch, wie die Beteiligten selbst dachten.</p>${readingLegend()}${worldSceneHtml(items)}${readingComparisonHtml(items)}<div class="world-consequences"><article><h3>Was dieser Blick erschliesst</h3><p>${reading.gain}</p></article><article><h3>Was er verdecken kann</h3><p>${reading.loss}</p></article></div><section class="world-workbench"><div><label for="lensFocus">Ein Ereignis in dieser Ansicht untersuchen</label><select id="lensFocus">${corpus.map(e=>`<option value="${esc(e.id)}" ${e.id===lensFocus?'selected':''}>${esc(spurDate(e))} · ${esc(e.title)}</option>`).join('')}</select><h3>${esc(focus.title)}</h3><p>${esc(focus.intro||focus.question||'Eigene Spur')}</p>${focus.image?`<img class="world-focus-image" src="${imageSrc(focus.image)}" alt="${esc(focus.title)}">`:''}<button id="lensSource">Quelle und Materialien öffnen ↗</button>${!items.some(e=>e.id===lensFocus)?'<p class="notice">Diese Spur liegt ausserhalb des aktuellen Suchfilters bzw. der Kategorienauswahl. Die Auswahl bleibt für deinen Vergleich erhalten.</p>':''}<p class="small">Quellenbefund und Deutung trennen: ${esc(focus.text||'Öffne die eigene Spur und prüfe ihre Belege.')}</p></div><div><p class="eyebrow">MIT DIESER KONSTRUKTION ERZÄHLEN</p><h3>${reading.short}: ${esc(focus.title)}</h3><p>${reading.task}</p>${lensFocus==='paris'?`<p class="world-example"><strong>Ein möglicher Ansatz, keine historische Aussage:</strong> ${reading.paris}</p>`:''}<h4>Die Konstruktion aufbrechen</h4><p>${reading.counter}</p>${decisionEditorHtml(focus)}<label for="lensPlacement">Ergänzender Untersuchungsschwerpunkt</label><select id="lensPlacement"><option value="">Noch offen</option>${model.slots.map(([k,t])=>`<option value="${k}" ${assignment===k?'selected':''}>${t}</option>`).join('')}</select>${modeNote(lensNoteKey(representation,lensFocus),'Deine Erzählung und ihre Gegenprüfung','Meine Erzählung unter diesem Geschichtsbild: …\nWas ich aus der Quelle belegen kann: …\nWas erst die Konstruktion hineinträgt: …\nWas ein anderer Blick sichtbar macht: …')}<label for="lensSwitch">Dasselbe Ereignis anders sehen</label><select id="lensSwitch">${perspectiveOptions(representation)}</select></div></section><details class="world-foundations"><summary>Historischer Ansatz, Quellen und Unterschiede innerhalb des Modells</summary><p>${reading.caution}</p>${lensExplanationHtml()}<p>${src}</p><button id="lensTheory">Konzept und Quellen erklären ↗</button><button id="lensExamples">${representation==='recurrence'?'Nietzsche und den Podcast öffnen ↗':'Weitere Ausprägungen und Beispiele ↗'}</button><button data-switch="network">Begriffsbeziehungen nachschlagen ↗</button></details><details class="world-register"><summary>Alle Spuren dieser Auswahl (${items.length}) – auch ausserhalb des Bildausschnitts</summary><p class="lens-count">${items.length} von ${corpus.length} Spuren im gewählten Bestand. Undatierte Begriffe werden nicht künstlich in die Grafik datiert.</p><div>${items.map(e=>corpusEntryHtml(e,'data-lens-focus')).join('')}</div></details><div class="world-compare"><label for="lensPartner">Mit einer weiteren Spur vergleichen</label><select id="lensPartner">${corpus.filter(e=>e.id!==lensFocus).map(e=>`<option value="${esc(e.id)}">${esc(e.title)}</option>`).join('')}</select><button id="lensCompare">Vergleich begründen ↗</button></div></section>`;
+ return `<section class="world-view"><div class="mode-heading"><p class="eyebrow">WELTGESCHEHEN ANDERS SEHEN · EINE KONSTRUKTION ERPROBEN</p><h2>${reading.name}</h2><p>${reading.mechanism}</p></div>${perspectiveNavigation()}${concreteReadingHtml()}${perspectiveIntroduction()}<div id="interpretationExperiment" tabindex="-1"></div>${profilePanelHtml()}<div class="world-controls"><label>Betrachtungszeit <select id="worldTime"><option value="recent" ${!worldAll?'selected':''}>Zeitfenster um mein Standjahr</option><option value="all" ${worldAll?'selected':''}>Gesamte Zeit</option></select></label><label>Standjahr <input id="worldYear" type="number" value="${worldYear}" step="1"></label><button id="worldGo">Standpunkt setzen</button><label>Zeitfenster ± Jahre <select id="worldWindow">${[25,50,130,500,2000,20000].map(n=>`<option ${n===worldWindow?'selected':''} value="${n}">${n}</option>`).join('')}</select></label><button id="worldNow">Gegenwart betrachten</button></div>${telosHtml()}${premiseLabHtml()}<label class="world-assumption"><input id="worldAssumption" type="checkbox" ${worldAssumption?'checked':''}>${reading.action}</label>${representation==='recurrence'?`<label class="world-cycle">Länge eines versuchsweisen Umlaufs <input id="worldPeriod" type="range" min="10" max="500" value="${worldPeriod}"><output>${worldPeriod} Jahre</output></label>`:''}<p class="world-experiment">Gedankenexperiment: Die Bildordnung ist unsere Übertragung. Sie beschreibt nicht automatisch, wie die Beteiligten selbst dachten.</p>${worldReadingGuide()}${readingLegend()}${worldSceneHtml(items)}${readingComparisonHtml(items)}<div class="world-consequences"><article><h3>Was dieser Blick erschliesst</h3><p>${reading.gain}</p></article><article><h3>Was er verdecken kann</h3><p>${reading.loss}</p></article></div><section class="world-workbench"><div><label for="lensFocus">Ein Ereignis in dieser Ansicht untersuchen</label><select id="lensFocus">${corpus.map(e=>`<option value="${esc(e.id)}" ${e.id===lensFocus?'selected':''}>${esc(spurDate(e))} · ${esc(e.title)}</option>`).join('')}</select><h3>${esc(focus.title)}</h3><p>${esc(focus.intro||focus.question||'Eigene Spur')}</p>${focus.image?`<img class="world-focus-image" src="${imageSrc(focus.image)}" alt="${esc(focus.title)}">`:''}<button id="lensSource">Quelle und Materialien öffnen ↗</button>${!items.some(e=>e.id===lensFocus)?'<p class="notice">Diese Spur liegt ausserhalb des aktuellen Suchfilters bzw. der Kategorienauswahl. Die Auswahl bleibt für deinen Vergleich erhalten.</p>':''}<p class="small">Quellenbefund und Deutung trennen: ${esc(focus.text||'Öffne die eigene Spur und prüfe ihre Belege.')}</p></div><div><p class="eyebrow">MIT DIESER KONSTRUKTION ERZÄHLEN</p><h3>${reading.short}: ${esc(focus.title)}</h3><p>${reading.task}</p>${lensFocus==='paris'?`<p class="world-example"><strong>Ein möglicher Ansatz, keine historische Aussage:</strong> ${reading.paris}</p>`:''}<h4>Die Konstruktion aufbrechen</h4><p>${reading.counter}</p>${decisionEditorHtml(focus)}<label for="lensPlacement">Ergänzender Untersuchungsschwerpunkt</label><select id="lensPlacement"><option value="">Noch offen</option>${model.slots.map(([k,t])=>`<option value="${k}" ${assignment===k?'selected':''}>${t}</option>`).join('')}</select>${modeNote(lensNoteKey(representation,lensFocus),'Deine Erzählung und ihre Gegenprüfung','Meine Erzählung unter diesem Geschichtsbild: …\nWas ich aus der Quelle belegen kann: …\nWas erst die Konstruktion hineinträgt: …\nWas ein anderer Blick sichtbar macht: …')}<label for="lensSwitch">Dasselbe Ereignis anders sehen</label><select id="lensSwitch">${perspectiveOptions(representation)}</select></div></section><details class="world-foundations"><summary>Historischer Ansatz, Quellen und Unterschiede innerhalb des Modells</summary><p>${reading.caution}</p>${lensExplanationHtml()}<p>${src}</p><button id="lensTheory">Konzept und Quellen erklären ↗</button><button id="lensExamples">${representation==='recurrence'?'Nietzsche und den Podcast öffnen ↗':'Weitere Ausprägungen und Beispiele ↗'}</button><button data-switch="network">Begriffsbeziehungen nachschlagen ↗</button></details><details class="world-register"><summary>Alle Spuren dieser Auswahl (${items.length}) – auch ausserhalb des Bildausschnitts</summary><p class="lens-count">${items.length} von ${corpus.length} Spuren im gewählten Bestand. Undatierte Begriffe werden nicht künstlich in die Grafik datiert.</p><div>${items.map(e=>corpusEntryHtml(e,'data-lens-focus')).join('')}</div></details><div class="world-compare"><label for="lensPartner">Mit einer weiteren Spur vergleichen</label><select id="lensPartner">${corpus.filter(e=>e.id!==lensFocus).map(e=>`<option value="${esc(e.id)}">${esc(e.title)}</option>`).join('')}</select><button id="lensCompare">Vergleich begründen ↗</button></div></section>`;
 }
 function renderLensUniverse(){
  ensureReading(representation);const stage=$('#modeStage');stage.innerHTML=lensUniverseHtml($('#search').value,onlyOwn);wireMode();
- const redraw=()=>renderMode();wireReadings(redraw);
+ const redraw=()=>renderMode();wireReadings(redraw);$$('[data-concrete-choice]').forEach(b=>b.onclick=()=>{concreteChoice[representation]=Number(b.dataset.concreteChoice);redraw();$('.concrete-choice').scrollIntoView({block:'start'})});
  $$('[data-premise]').forEach(el=>el.oninput=()=>{state.notes[premiseKey(representation,el.dataset.premise)]=el.value;save()});if($('#premiseApply'))$('#premiseApply').onclick=()=>{redraw();$('.world-scene').scrollIntoView({block:'start',behavior:'smooth'})};
  $$('[data-telos]').forEach(el=>el.oninput=()=>{state.notes[telosKey(representation,el.dataset.telos)]=el.value;save()});if($('#telosApply'))$('#telosApply').onclick=()=>{redraw();$('.world-scene').scrollIntoView({block:'start',behavior:'smooth'})};
  const choose=id=>{lensFocus=id;const e=byId(id);if(e?.year&&!worldAll&&Math.abs(e.year-worldYear)>worldWindow)worldYear=e.year;redraw();$('.world-workbench').scrollIntoView({block:'start',behavior:'smooth'})};
@@ -579,6 +579,205 @@ const PERSPECTIVE_INTROS={
 };
 
 function perspectiveOptions(selected='',placeholder=false){return (placeholder?'<option value="">Ansatz nach Leitfrage wählen …</option>':'')+PERSPECTIVE_GROUPS.map(g=>`<optgroup label="${esc(g.title)}">${g.keys.map(k=>`<option value="${k}" ${k===selected?'selected':''}>${esc(PERSPECTIVE_INTROS[k].label)}</option>`).join('')}</optgroup>`).join('')}
-function perspectiveNavigation(){return `<section class="perspective-map" aria-labelledby="perspectiveMapTitle"><h3 id="perspectiveMapTitle">Welche Frage möchtest du an Geschichte stellen?</h3><p>Die vier Gruppen ordnen nach Leitfragen, nicht nach einer zeitlichen Entwicklung. Religiöse Weltdeutungen, philosophische Entwürfe und Forschungsansätze leisten Unterschiedliches; ihre Fragen können sich überschneiden.</p><div class="world-switches">${PERSPECTIVE_GROUPS.map(g=>`<div class="perspective-group"><h4>${esc(g.title)}</h4><p>${esc(g.question)}</p>${g.keys.map(k=>`<button data-world-mode="${k}" aria-pressed="${k===representation}">${esc(PERSPECTIVE_INTROS[k].label)}</button>`).join('')}</div>`).join('')}</div></section>`}
+function perspectiveNavigation(){return `<details class="perspective-map"><summary>Anderen Ansatz wählen · Übersicht nach vier Leitfragen</summary><h3 id="perspectiveMapTitle">Welche Frage möchtest du an Geschichte stellen?</h3><p>Die vier Gruppen ordnen nach Leitfragen, nicht nach einer zeitlichen Entwicklung. Religiöse Weltdeutungen, philosophische Entwürfe und Forschungsansätze leisten Unterschiedliches; ihre Fragen können sich überschneiden.</p><div class="world-switches">${PERSPECTIVE_GROUPS.map(g=>`<div class="perspective-group"><h4>${esc(g.title)}</h4><p>${esc(g.question)}</p>${g.keys.map(k=>`<button data-world-mode="${k}" aria-pressed="${k===representation}">${esc(PERSPECTIVE_INTROS[k].label)}</button>`).join('')}</div>`).join('')}</div></details>`}
 let introductionOpen={};
 function perspectiveIntroduction(){const d=PERSPECTIVE_INTROS[representation];return `<section class="perspective-intro" aria-labelledby="perspectiveIntroTitle"><p class="eyebrow">DEN ANSATZ VERSTEHEN · ${esc(d.kind)}</p><h3 id="perspectiveIntroTitle">${esc(d.label)}</h3><p class="intro-lead">${esc(d.lead)}</p><details id="perspectiveExplanation" ${introductionOpen[representation]!==false?'open':''}><summary>Einführung, Begriffe und ein konkretes Beispiel</summary><div class="intro-reading"><section><h4>Woher kommt dieser Blick?</h4><p>${esc(d.context)}</p><dl>${d.terms.map(([t,v])=>`<dt>${esc(t)}</dt><dd>${esc(v)}</dd>`).join('')}</dl></section><aside class="intro-example"><p class="eyebrow">VOM ANSATZ ZUR UNTERSUCHUNG</p><h4>So verändert sich der Blick auf eine Spur</h4><p>${esc(d.example)}</p></aside><section><h4>Was du in dieser Ansicht tatsächlich veränderst</h4><p>${esc(d.transfer)}</p></section><section class="intro-boundary"><h4>Woran du die Grenze des Ansatzes erkennst</h4><p>${esc(d.limit)}</p></section><details class="intro-sources"><summary>Texte und fachliche Grundlagen</summary><ul class="source-list">${sourceHtml(d.sources)}</ul></details></div></details><a class="intro-start" href="#interpretationExperiment">Mit diesem Ansatz arbeiten ↓</a></section>`}
+
+const CONCRETE_READINGS={
+  "medieval": {
+    "event": "paris",
+    "title": "Dasselbe Abkommen – mit und ohne Heilsperspektive",
+    "fact": "2015 wurde das Pariser Klimaabkommen angenommen. Der Vertrag formuliert Ziele; seine Annahme beweist noch nicht deren Verwirklichung.",
+    "choices": [
+      {
+        "label": "Mit religiöser Sinnannahme",
+        "premise": "Ich lese das Handeln als Verantwortung für die Schöpfung.",
+        "claim": "Das Abkommen könnte als Versuch gelten, dieser Verantwortung gerecht zu werden. Ob es einem göttlichen Heilsplan entspricht, lässt sich am Vertrag nicht nachweisen.",
+        "check": "Der Vertrag belegt eine politische Vereinbarung. Die religiöse Bedeutung füge ich als Perspektive hinzu. Aus dem erhofften Sinn folgt keine Gewissheit über den Ausgang."
+      },
+      {
+        "label": "Ohne vorgegebenen Heilsplan",
+        "premise": "Ich untersuche Ziele, Interessen und überprüfbare Folgen menschlichen Handelns.",
+        "claim": "Das Abkommen ist ein politischer Schritt mit offenem Ausgang. Ob er wirkt, muss an Umsetzung und Folgen untersucht werden.",
+        "check": "Der historische Befund bleibt derselbe. Weggefallen ist die Annahme, dass das Ereignis seinen letzten Sinn von einer göttlichen Vollendung erhält."
+      }
+    ],
+    "guide": [
+      "Der Bogen oben steht für einen angenommenen Sinnhorizont. Er ist kein Datum.",
+      "Die Karten darunter sind historische Vorgänge. Ihre Nähe zum Bogen misst weder Heil noch moralischen Wert.",
+      "Die gestrichelten Verbindungen stellen die Frage nach einer Deutung. Sie belegen keinen göttlichen Plan."
+    ]
+  },
+  "egypt": {
+    "event": "paris",
+    "title": "Erfolg als Neuerung – oder als Bewahrung?",
+    "fact": "Das Pariser Abkommen formuliert gemeinsame Klimaziele. Ob diese erreicht werden, ist eine andere Frage als die Annahme des Vertrags.",
+    "choices": [
+      {
+        "label": "Lebensbedingungen bewahren",
+        "premise": "Als erhaltenswert setze ich verlässliche Lebensbedingungen.",
+        "claim": "Der Vertrag lässt sich als Versuch erzählen, Gefährdungen zu begrenzen und Bedingungen des Zusammenlebens zu bewahren. Sein Wert läge dann nicht allein darin, neu zu sein.",
+        "check": "Welche Lebensbedingungen für welche Menschen gesichert werden, müsste konkret untersucht werden. Der Beschluss allein zeigt das noch nicht."
+      },
+      {
+        "label": "Bestehende Nutzung bewahren",
+        "premise": "Als erhaltenswert setze ich bestehende Formen der Energienutzung.",
+        "claim": "Derselbe Vertrag kann nun als Aufforderung erscheinen, die gewählte Ordnung zu verändern. Was unter der ersten Setzung Bewahrung hiess, wird unter dieser Setzung zum Eingriff.",
+        "check": "Der Wechsel legt den Interessenkonflikt offen. Keine dieser heutigen Setzungen ist mit Maʿat gleichzusetzen; die Analogie betrifft die Frage, welche Ordnung als richtig gelten soll."
+      }
+    ],
+    "guide": [
+      "Im Zentrum steht die von dir benannte Ordnung; ohne Benennung bleibt sie offen.",
+      "Der Kreis sammelt Ereignisse unter dieser Frage. Die Position auf dem Kreis sagt noch nichts über ihre Bewertung.",
+      "Erst deine begründete Zuordnung macht eine Spur zum Beitrag, zum Konflikt oder zum nicht passenden Fall."
+    ]
+  },
+  "direction": {
+    "event": "vote",
+    "title": "1971: Fortschritt – gemessen woran?",
+    "fact": "1971 wurde in der Schweiz das Frauenstimm- und Wahlrecht auf Bundesebene angenommen. Dieser Befund betrifft politische Rechte auf einer bestimmten staatlichen Ebene.",
+    "choices": [
+      {
+        "label": "Ziel: politische Gleichberechtigung",
+        "premise": "Mein Massstab ist gleichberechtigte politische Beteiligung.",
+        "claim": "Der Entscheid ist ein begründbarer Fortschritt unter diesem Massstab: Er erweitert die politischen Rechte. Das Ziel war zuvor nicht erreicht; der Ausgang war nicht zwangsläufig.",
+        "check": "Der Beleg reicht für dieses Urteil über politische Rechte. Er beweist keine notwendige Aufwärtsbewegung der gesamten Geschichte."
+      },
+      {
+        "label": "Ziel: wirtschaftliche Gleichheit",
+        "premise": "Mein Massstab ist gleiche wirtschaftliche Stellung.",
+        "claim": "Der gleiche Entscheid reicht jetzt nicht als Beleg für Zielerreichung. Er kann relevant sein, aber seine wirtschaftlichen Folgen müssten gesondert nachgewiesen werden.",
+        "check": "Die Spur wird nicht zum Rückschritt. Sie bleibt hinsichtlich dieses anderen Ziels zunächst unentschieden. Genau diese dritte Möglichkeit verhindert ein erzwungenes Gut-oder-Schlecht-Schema."
+      }
+    ],
+    "guide": [
+      "Das Ziel oben ist eine Setzung, keine aus den Daten berechnete Zukunft.",
+      "Die gestrichelte Treppe zeigt die zu prüfende Vorstellung eines Aufstiegs. Ohne eigene Zuordnung stehen die Karten auf gleicher Höhe.",
+      "Erst begründete Rollen verändern die Position. Die Höhe misst keine tatsächliche Menge an Freiheit oder Fortschritt."
+    ]
+  },
+  "recurrence": {
+    "event": "haiti",
+    "title": "Zwei Revolutionen: ähnlich ist nicht dasselbe",
+    "fact": "1789 und die Haitianische Revolution von 1791–1804 lassen sich unter der Frage nach Freiheit vergleichen. Die Unabhängigkeit Haitis wurde 1804 erklärt.",
+    "choices": [
+      {
+        "label": "Gemeinsames Merkmal hervorheben",
+        "premise": "Ich vergleiche den Anspruch, bestehende Herrschaft im Namen von Freiheit zu verändern.",
+        "claim": "Unter dieser Frage entsteht eine Ähnlichkeit. «Freiheit wird beansprucht» verbindet die Fälle, ohne sie gleichzusetzen.",
+        "check": "Damit ist eine Vergleichsfrage benannt. Weder Ursachen noch Beteiligte oder Ergebnisse sind dadurch identisch."
+      },
+      {
+        "label": "Unterschied ernst nehmen",
+        "premise": "Ich vergleiche die Stellung versklavter Menschen und kolonialer Herrschaft.",
+        "claim": "Nun wird die Begrenzung der Analogie sichtbar: Die Haitianische Revolution lässt sich nicht als blosse Wiederholung eines europäischen Ereignisses erklären.",
+        "check": "Nietzsches Frage nach ewiger Wiederkunft wird dadurch weder bewiesen noch widerlegt. Ein historischer Vergleich und sein philosophisches Gedankenexperiment prüfen verschiedene Dinge."
+      }
+    ],
+    "guide": [
+      "Der eingestellte Umlauf ordnet die Jahre räumlich. Er ist von dir gewählt.",
+      "Ähnliche Winkel bedeuten rechnerische Nähe im gewählten Umlauf, keine nachgewiesene Wiederholung.",
+      "Ändere die Umlauflänge: Wenn Nachbarschaften wechseln, hat sich die Darstellung geändert – nicht die Vergangenheit."
+    ]
+  },
+  "materialism": {
+    "event": "paris",
+    "title": "Ein Klimaziel wird noch keine neue Produktionsweise",
+    "fact": "Ein Vertrag kann gemeinsame Ziele beschliessen. Energieanlagen, Eigentum und Arbeitsverhältnisse ändern sich dadurch nicht automatisch am selben Tag.",
+    "choices": [
+      {
+        "label": "Technische Möglichkeiten untersuchen",
+        "premise": "Ich frage nach Anlagen, Wissen und Arbeit, mit denen Energie bereitgestellt wird.",
+        "claim": "Der Vertrag trifft auf materielle Möglichkeiten und Grenzen. Eine Erklärung müsste zeigen, welche Produktionsmittel vorhanden sind und wie sie verändert werden können.",
+        "check": "Benötigt werden konkrete Befunde zu Technik, Investitionen und Arbeit. Der Begriff «Produktivkräfte» ist eine Suchrichtung, noch keine fertige Erklärung."
+      },
+      {
+        "label": "Verfügung und Interessen untersuchen",
+        "premise": "Ich frage, wer über Anlagen und Investitionen entscheidet und wer Kosten trägt.",
+        "claim": "Jetzt stehen soziale Beziehungen im Vordergrund. Eine technisch mögliche Veränderung kann an Eigentum, Macht oder gegensätzlichen Interessen auf Widerstand treffen.",
+        "check": "Das ist eine zu prüfende Erklärung. Welche Akteure im konkreten Fall wie handeln, darf nicht aus dem Wort «Kapitalismus» allein abgeleitet werden."
+      }
+    ],
+    "guide": [
+      "Die vier Spalten stellen vier Fragen an denselben Vorgang. Wiederholte Karten sind keine zusätzlichen Ereignisse.",
+      "Die Spalten zeigen keine automatisch nachgewiesene Kette von Technik über Recht zum Konflikt.",
+      "Ein Wirkungszusammenhang entsteht erst aus deiner Erklärung und ihren Belegen."
+    ]
+  },
+  "layers": {
+    "event": "paris",
+    "title": "Ein Datum – drei verschiedene Zeitprobleme",
+    "fact": "Der politische Beschluss von 2015 lässt sich datieren. Die Veränderung von Infrastrukturen und die Entwicklung des Klimas folgen nicht demselben Takt.",
+    "choices": [
+      {
+        "label": "Nur den Beschluss betrachten",
+        "premise": "Ich frage: Wann wurde das Abkommen angenommen?",
+        "claim": "2015 ist für diese Frage ein geeigneter Einschnitt. Eine kurze Ereignisgeschichte kann den Beschluss und seine unmittelbare Vorgeschichte untersuchen.",
+        "check": "Die Antwort ist richtig, beantwortet aber noch nicht, wann Anlagen umgebaut wurden oder Klimawirkungen eintraten."
+      },
+      {
+        "label": "Verschiedene Dauern unterscheiden",
+        "premise": "Ich frage zusätzlich nach Umsetzung, Lebensdauer von Anlagen und Klimaprozessen.",
+        "claim": "Ein einziges Datum reicht jetzt nicht mehr. Der Beschluss, gesellschaftliche Veränderungen und längerfristige Bedingungen benötigen unterschiedliche Zeitangaben.",
+        "check": "Welche Dauer im konkreten Fall gilt, muss belegt werden. «Lange Dauer» ist kein Freipass, einen beliebig langen Balken zu zeichnen."
+      }
+    ],
+    "guide": [
+      "Oben stehen datierte Vorgänge; darunter Fragen nach Entwicklungen und längerfristigen Bedingungen.",
+      "Dieselbe Karte kann auf mehreren Ebenen erscheinen, weil du verschiedene Aspekte untersuchst.",
+      "Die gestrichelten Bänder sind Platzhalter für eine Untersuchung, keine gemessenen Laufzeiten."
+    ]
+  },
+  "present": {
+    "event": "vote",
+    "title": "1970 wissen wir noch nicht, was 1971 geschieht",
+    "fact": "Heute ist das Abstimmungsergebnis von 1971 bekannt. Von einem Standpunkt im Jahr 1970 aus gehört es noch zur offenen Zukunft.",
+    "choices": [
+      {
+        "label": "Vom Standpunkt 1970",
+        "premise": "Ich trenne damalige Informationen und Erwartungen von späterem Wissen.",
+        "claim": "Eine Person konnte hoffen, zweifeln oder sich engagieren. Welche Erwartung sie tatsächlich hatte, kann nur eine zeitgenössische Quelle belegen.",
+        "check": "«Es musste so kommen» wäre hier eingeschmuggeltes Rückblickswissen. Auch die frühere Erfahrung einer Person darf nicht einfach erfunden werden."
+      },
+      {
+        "label": "Im heutigen Rückblick",
+        "premise": "Ich kenne den späteren Ausgang und erzähle auf ihn hin.",
+        "claim": "Frühere Handlungen können nun wie Vorstufen eines bekannten Erfolgs erscheinen. So wird die damalige Unsicherheit leicht unsichtbar.",
+        "check": "Augustinus hilft, Erinnern, Aufmerksamkeit und Erwarten zu unterscheiden. Unsere historische Übung überträgt diese Unterscheidung; sie rekonstruiert kein Bewusstsein automatisch."
+      }
+    ],
+    "guide": [
+      "Das Standjahr trennt mögliche frühere Bezüge von späteren Ereignissen.",
+      "Verdeckte Zukunftskarten schützen vor Rückblickswissen. Sie beweisen nicht, was eine damalige Person erwartete.",
+      "Auch links sichtbare Ereignisse sind nur mögliche Erinnerungsbezüge. Ob die Person sie kannte, bleibt eine Quellenfrage."
+    ]
+  },
+  "memoria": {
+    "event": "vote",
+    "title": "Dasselbe Jahr – zwei Erinnerungsfragen",
+    "fact": "1971 bezeichnet die Annahme des Frauenstimmrechts auf Bundesebene. Welche Bedeutung diesem Datum gegeben wird, hängt zusätzlich von der Erinnerungsfrage ab.",
+    "choices": [
+      {
+        "label": "Den Erfolg öffentlich erinnern",
+        "premise": "Ich entwerfe eine Gedenkveranstaltung zur Erweiterung politischer Rechte.",
+        "claim": "1971 rückt ins Zentrum. Bilder, Reden und Zeugnisse könnten den erkämpften Erfolg hervorheben. Das ist eine mögliche Auswahl, keine Behauptung über alle damaligen Beteiligten.",
+        "check": "Untersuche eine tatsächliche Gedenkquelle: Wer spricht, welche Vorgeschichte erscheint und welche Stimmen fehlen?"
+      },
+      {
+        "label": "Den langen Ausschluss erinnern",
+        "premise": "Ich entwerfe eine Ausstellung darüber, wem Rechte lange vorenthalten wurden.",
+        "claim": "Dasselbe Datum markiert nun auch die Dauer des vorausgehenden Ausschlusses. Das Ereignis bleibt wahr, erhält aber einen anderen Akzent.",
+        "check": "Ein Wechsel der Erinnerungsfrage verändert Bedeutung und Auswahl, nicht den historischen Befund. Innerhalb jeder Gruppe können verschiedene Erinnerungen nebeneinander bestehen."
+      }
+    ],
+    "guide": [
+      "Zentrum und Rand zeigen Gewichtungen in deinem Erinnerungsentwurf, keine Rangliste historischer Wahrheit.",
+      "Ohne benannte Gruppe und begründete Zuordnungen ist noch keine soziale Erinnerung rekonstruiert.",
+      "Blasse Karten bleiben im Bestand. Aus ihrer Darstellung folgt nicht, dass eine wirkliche Gruppe sie vergessen hat."
+    ]
+  }
+};
+
+const concreteChoice={};
+function concreteReadingHtml(){const d=CONCRETE_READINGS[representation],e=byId(d.event),selected=concreteChoice[representation]||0,c=d.choices[selected];return `<section class="concrete-reading" aria-labelledby="concreteTitle"><p class="eyebrow">ZUERST AN EINEM FALL VERSTEHEN</p><h3 id="concreteTitle">${esc(d.title)}</h3><div class="concrete-fact">${e.image?`<img src="${imageSrc(e.image)}" alt="Bildmaterial zur Spur: ${esc(e.title)}">`:''}<div><span class="step-label">1 · Der Befund bleibt gleich</span><p>${esc(d.fact)}</p><button data-explore="${esc(e.id)}">Spur, Quelle und Bildnachweis öffnen ↗</button></div></div><div class="concrete-choice"><span class="step-label">2 · Wechsle die ausdrücklich gesetzte Perspektive</span><div role="group" aria-label="Zwei beispielhafte Lesarten">${d.choices.map((v,i)=>`<button data-concrete-choice="${i}" aria-pressed="${selected===i}">${esc(v.label)}</button>`).join('')}</div></div><div class="concrete-result" aria-live="polite"><article><span class="step-label">Meine Voraussetzung</span><p>${esc(c.premise)}</p></article><span class="concrete-arrow" aria-label="Unter dieser Voraussetzung lese ich">↓ <small>So verändert sich die Lesart</small></span><article class="concrete-claim"><span class="step-label">3 · Die daraus entwickelte Deutung</span><p>${esc(c.claim)}</p></article><aside><strong>Was ist damit belegt – und was nicht?</strong><p>${esc(c.check)}</p></aside></div><p class="small">Zwei ausgearbeitete Unterrichtsbeispiele. Der Wechsel verändert nur dieses Beispiel; deine eigenen Entwürfe bleiben erhalten. Anschliessend kannst du jede Spur des Bestands selbst untersuchen.</p></section>`}
+function worldReadingGuide(){const d=CONCRETE_READINGS[representation];return `<section class="world-reading-guide" aria-label="Lesehilfe zur Grafik"><h3>So liest du die folgende Darstellung</h3><ol>${d.guide.map(t=>`<li>${esc(t)}</li>`).join('')}</ol><p><strong>Eine Karte öffnen:</strong> Klicke auf ein Ereignis. Im Arbeitsbereich darunter kannst du Quellen prüfen und deine Einordnung begründen. Die Farben zeigen deine gewählte Rolle; eine stärkere Gewichtung macht die Karte grösser. Ohne eigene Einordnung ist ihre Platzierung zunächst eine Anordnungshilfe.</p></section>`}

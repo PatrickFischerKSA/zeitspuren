@@ -158,3 +158,14 @@ for(const key of orderedPerspectives){
 }
 `,ctx);
 console.log('PASS: Vier Leitfragen, acht vollständig erreichbare Ansätze, sichtbare Einführungen vor der Arbeit und gültige Quellennachweise.');
+vm.runInContext(`
+for(const key of Object.keys(GLOBAL_LENSES)){
+ representation=key;concreteChoice[key]=0;
+ const first=concreteReadingHtml(),before=JSON.stringify(state);
+ concreteChoice[key]=1;const second=concreteReadingHtml();
+ if(first===second||!byId(CONCRETE_READINGS[key].event))throw Error('Worked example does not switch');
+ if(before!==JSON.stringify(state))throw Error('Worked example changed student work');
+ if(!worldReadingGuide().includes('<ol>'))throw Error('Missing graphic reading guide');
+}
+`,ctx);
+console.log('PASS: Acht konkrete Beispiele wechseln ihre Lesart, ohne eigene Entwürfe zu verändern; alle Grafiken haben Lesehilfen.');
