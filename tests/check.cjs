@@ -293,3 +293,14 @@ vm.runInContext(`{
  }finally{({representation,centurySelection,centurySize,periodCompare,visibleCategories,worldAll,state,tunnelTime,tunnelSpan}=snapshot)}
 }`,ctx);
 console.log('PASS: Gemeinsame Kategorie- und Zeitfilter in elf Profilen; acht native Vergleichsformen ohne Veränderung der Deutungen oder Tunnelparameter.');
+vm.runInContext(`{
+ const snapshot={representation,worldYear,worldAll,worldAssumption};
+ try{representation='present';worldAll=true;worldAssumption=true;worldYear=1850;
+ const items=[{id:'test-before',year:1800,title:'Frühere Spur'},{id:'test-after',year:1900,title:'Spätere Spur'}];
+ let html=worldSceneHtml(items);
+ if(!html.includes('present-retrospect" >')||!html.includes('keine damaligen Erwartungen')||html.includes('Erwarten: Ausgang noch offen'))throw Error('Rückblick nicht sauber getrennt');
+ if(html.indexOf('data-lens-focus="test-after"')<html.indexOf('present-retrospect'))throw Error('Zukunft als damalige Erwartung gezeigt');
+ worldYear=1950;html=worldSceneHtml(items);if(html.indexOf('data-lens-focus="test-after"')>html.indexOf('present-retrospect'))throw Error('Standjahr verschiebt Spur nicht');
+ }finally{({representation,worldYear,worldAll,worldAssumption}=snapshot)}
+}`,ctx);
+console.log('PASS: Erlebte Zeit trennt Erwartungen vom geschlossenen Rückblick und verschiebt datierte Spuren mit dem Standjahr.');
