@@ -4,13 +4,15 @@ Interaktive Lerneinheit zu Zeitstrahl, Epochen, historischem Denken und Erinneru
 
 ## Start
 
-`output/Zeitspuren.html` ist eine eigenständige HTML-Datei mit eingebetteten Bildern. Im aktuellen Browser öffnen; kein Server und keine Installation nötig. Falls ein Browser bei lokal geöffneten Dateien dauerhafte Speicherung einschränkt, den Arbeitsstand über den Export sichern oder die Webfassung verwenden.
+Die veröffentlichte Lerneinheit: https://patrickfischerksa.github.io/zeitspuren/
 
-`output/Zeitspuren-Webpaket.zip` enthält die Webfassung. Entpacken und `index.html` über einen statischen Webserver anbieten; ebenso als HTML-Dateipaket in einer geeigneten Moodle-Dateiaktivität einsetzbar (index.html als Hauptdatei, Darstellung in neuem Fenster). Das Paket ist kein SCORM-Kurs und hat keine LMS-Notenübertragung.
+GitHub Pages veröffentlicht `docs/` vom Branch `main`. Alle für die Ausführung nötigen Texte, Skripte, Stile und Bilder liegen hier. Keine Laufzeitabhängigkeit von ChatGPT Sites; Quellenlinks dienen ausschliesslich als Nachweise. Die Original-PDFs und private Moodle-Dateien sind nicht enthalten.
 
-GitHub Pages: https://patrickfischerksa.github.io/zeitspuren/
+## Umzug und Sicherung
 
-Die Website wird aus `docs/` auf dem Branch `main` veröffentlicht. Alle für die Ausführung nötigen Skripte, Stile und Bilder liegen im Repository. Keine Laufzeitabhängigkeit von ChatGPT Sites; Quellenlinks dienen ausschliesslich als Nachweise. Die genannten Offline-Pakete gehören zur lokalen Arbeitsfassung.
+Vor dem Wechsel auf einer bisherigen Fassung «Arbeitsstand sichern» wählen. Die JSON-Datei enthält eigene Einträge, Materialien, Notizen und Beziehungen. Auf der GitHub-Seite über «Importieren» einlesen und kontrollieren. Browserspeicher wird zwischen unterschiedlichen Webadressen nicht automatisch übertragen.
+
+Nach Prüfung der neuen Website und Sicherung bisheriger Arbeitsstände kann das zugehörige Sites-Projekt unabhängig entfernt werden. Das Löschen wurde bei der Veröffentlichung nicht ausgeführt.
 
 ## Didaktischer Gebrauch
 
