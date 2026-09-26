@@ -18,13 +18,13 @@ Nach Prüfung der neuen Website und Sicherung bisheriger Arbeitsstände kann das
 
 - Mit «Was ist Geschichte?» eine erste Definition formulieren, nach der Arbeit an mehreren Quellen überarbeiten.
 - Einträge öffnen, Material und Herstellungskontext unterscheiden, zunächst selbst deuten, danach die Denkhilfe nutzen.
-- Dieselbe Spur aus politischer, sozialer, geschlechtergeschichtlicher, globaler oder umwelthistorischer Perspektive befragen.
+- Je nach Gegenstand eine Bildlegende redigieren, einen Datierungsschluss prüfen, ein Argument untersuchen oder verschiedene Zeitordnungen erproben.
 - Zwei Spuren mit Behauptung, Beleg und Gegenargument verbinden. Zeitliche Nachbarschaft ist ausdrücklich kein automatischer Kausalzusammenhang.
 - Epochenentwürfe mit Kriterium, Raum, Gruppe und Gegenbeispiel begründen. Frühere Entwürfe bleiben im Denkprotokoll.
 - Proportionale Achse und Leseraster vergleichen: Der Zeitstrahl wird selbst zum Erkenntnisgegenstand.
 - Eigene Ereignisse oder Zeiträume, Quellen, Datierungen, Unsicherheiten und Materialien ergänzen.
 
-44 Ausgangsspuren, zusätzliche Begriffsfenster, 132 offene Denkaufträge an den datierten Spuren, Denkhilfen und Quellenangaben. Enthalten: Augustinus, Hegel, Nietzsche, Bloch, Braudel, Halbwachs, Jan und Aleida Assmann sowie Koselleck. Eigene Beiträge werden nicht automatisch inhaltlich benotet.
+44 Ausgangsspuren, zusätzliche Begriffsfenster, individuell ausgearbeitete Arbeitsaufträge an den datierten Spuren, Denkhilfen und Quellenangaben. Enthalten: Augustinus, Hegel, Nietzsche, Bloch, Braudel, Halbwachs, Jan und Aleida Assmann sowie Koselleck. Eigene Beiträge werden nicht automatisch inhaltlich benotet.
 
 ## Materialien
 
@@ -51,8 +51,12 @@ Im Browser geprüft: eigenen Eintrag anlegen, Notiz, Verbindung, Textanhang, Per
 
 ## Ergänzung: Geschichte bis 1500
 
-Die verlinkte Lernseite wurde in 13 zusätzliche Zeitstrahlfenster und Verbindungen zu bestehenden Spuren umgearbeitet: Neolithisierung, Göbekli Tepe, Çatalhöyük, alpine Seeufersiedlungen, Athen, Helvetier, römische Infrastruktur, Münzfund Ueken, mittelalterlicher Alltag, Quellenkritik am «Kinderkreuzzug», Amerika 1491, Harari versus Graeber/Wengrow sowie Umweltgeschichte. Zwölf eigene schematische Denkbilder ergänzen die historischen Bildquellen; sie sind ausdrücklich keine Rekonstruktionen. Die dort genannten Videos und Dossiers wurden nicht pauschal als eigenständig ausgewertet ausgegeben. Keine Modulschranken oder automatische Benotung wurden übernommen.
+Die verlinkte Lernseite wurde in 13 zusätzliche Zeitstrahlfenster und Verbindungen zu bestehenden Spuren umgearbeitet: Neolithisierung, Göbekli Tepe, Çatalhöyük, alpine Seeufersiedlungen, Athen, Helvetier, römische Infrastruktur, Münzfund Ueken, mittelalterlicher Alltag, Quellenkritik am «Kinderkreuzzug», Amerika 1491, Harari versus Graeber/Wengrow sowie Umweltgeschichte. Die historischen Bildquellen werden durch fallbezogene Materialkarten ergänzt. Erfundene Übungsfälle sind ausdrücklich gekennzeichnet. Die dort genannten Videos und Dossiers wurden nicht pauschal als eigenständig ausgewertet ausgegeben. Keine Modulschranken oder automatische Benotung wurden übernommen.
 
 ## Direkte Harari-Lektüre
 
 Das bereitgestellte PDF von Hararis deutscher Ausgabe (DVA 2013, 540 PDF-Seiten) wurde anhand ausgewählter Passagen thematisch ausgewertet: Geschichtsdefinition und Revolutionen (Kap. 1), Kooperation und Institutionen (Kap. 2), Landwirtschaft (Kap. 5), intersubjektive Ordnung (Kap. 6), globale Verflechtung (Kap. 9), Geld (Kap. 10), Kontingenz (Kap. 13) und Fortschritt/Glück (Kap. 19). Acht bestehende Popups enthalten eine aufklappbare kritische Lektüre mit genauen PDF-Fundstellen; zwei zusätzliche Theorie-Spuren behandeln geteilte Ordnungen und historische Möglichkeiten. Darstellungsaussagen, didaktische Gegenfragen und Befunde sind getrennt. Das Buch und die Arbeitsextraktion werden nicht mit ausgeliefert.
+
+## Redaktionelle Überarbeitung
+
+Alle 44 Zeitstrahlfenster und beide Begriffsfenster erhalten je einen eigens ausgearbeiteten Fall, unmittelbar verfügbare Arbeitsgrundlagen, zwei oder drei inhaltlich passende Tätigkeiten, ein konkretes Ergebnis und einen fallbezogenen Hinweis. Fehlende Originalauszüge werden nicht vorgetäuscht; modellhafte Beispiele sind ausdrücklich als erfunden markiert. Harari wird vor den Lektürevergleichen mit Biographie, Leitfrage, Alltagsbeispiel, Begriffserklärung und den Grenzen seines Ansatzes eingeführt. Die Inhalte dieser Überarbeitung liegen in `editorial.js`.
