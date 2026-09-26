@@ -223,11 +223,11 @@ function legacyWorldBoardHtml(items){
 function lensUniverseHtml(query='',own=false){
  const model=GLOBAL_LENSES[representation],reading=WORLD_READINGS[representation],items=lensItems(query,own),corpus=lensCorpus();let focus=byId(lensFocus)||byId('paris')||corpus[0];lensFocus=focus.id;
  const assignment=lensAssignment(representation,lensFocus),source=SOURCES[reading.source],src=source?.url?`<a href="${esc(source.url)}" target="_blank" rel="noopener">${esc(source.title)}</a>`:'';
- return `<section class="world-view"><div class="mode-heading"><p class="eyebrow">WELTGESCHEHEN ANDERS SEHEN · EINE KONSTRUKTION ERPROBEN</p><h2>${reading.name}</h2><p>${reading.mechanism}</p></div>${perspectiveNavigation()}<div class="world-controls"><label>Betrachtungszeit <select id="worldTime"><option value="recent" ${!worldAll?'selected':''}>Zeitfenster um mein Standjahr</option><option value="all" ${worldAll?'selected':''}>Gesamte Zeit</option></select></label><label>Standjahr <input id="worldYear" type="number" value="${worldYear}" step="1"></label><button id="worldGo">Standpunkt setzen</button><label>Zeitfenster ± Jahre <select id="worldWindow">${[25,50,130,500,2000,20000].map(n=>`<option ${n===worldWindow?'selected':''} value="${n}">${n}</option>`).join('')}</select></label><button id="worldNow">Gegenwart betrachten</button></div><label class="world-assumption"><input id="worldAssumption" type="checkbox" ${worldAssumption?'checked':''}>${reading.action}</label>${representation==='recurrence'?`<label class="world-cycle">Länge eines versuchsweisen Umlaufs <input id="worldPeriod" type="range" min="10" max="500" value="${worldPeriod}"><output>${worldPeriod} Jahre</output></label>`:''}<div id="interpretationExperiment" tabindex="-1">${randomHeilHtml()}${worldSceneHtml(items)}</div>${readingComparisonHtml(items)}<details class="board-help"><summary>Diese Ereignistafel lesen</summary>${worldReadingGuide()}</details>${concreteReadingHtml()}${perspectiveIntroduction()}<div id="interpretationSettings" tabindex="-1"></div>${profilePanelHtml()}${telosHtml()}${premiseLabHtml()}<p class="world-experiment">Gedankenexperiment: Die Bildordnung ist unsere Übertragung. Sie beschreibt nicht automatisch, wie die Beteiligten selbst dachten.</p><div class="world-consequences"><article><h3>Was dieser Blick erschliesst</h3><p>${reading.gain}</p></article><article><h3>Was er verdecken kann</h3><p>${reading.loss}</p></article></div><section class="world-workbench"><div><label for="lensFocus">Ein Ereignis in dieser Ansicht untersuchen</label><select id="lensFocus">${corpus.map(e=>`<option value="${esc(e.id)}" ${e.id===lensFocus?'selected':''}>${esc(spurDate(e))} · ${esc(e.title)}</option>`).join('')}</select><h3>${esc(focus.title)}</h3><p>${esc(focus.intro||focus.question||'Eigene Spur')}</p>${focus.image?`<img class="world-focus-image" src="${imageSrc(focus.image)}" alt="${esc(focus.title)}">`:''}<button id="lensSource">Quelle und Materialien öffnen ↗</button>${!items.some(e=>e.id===lensFocus)?'<p class="notice">Diese Spur liegt ausserhalb des aktuellen Suchfilters bzw. der Kategorienauswahl. Die Auswahl bleibt für deinen Vergleich erhalten.</p>':''}<p class="small">Quellenbefund und Deutung trennen: ${esc(focus.text||'Öffne die eigene Spur und prüfe ihre Belege.')}</p></div><div><p class="eyebrow">MIT DIESER KONSTRUKTION ERZÄHLEN</p><h3>${reading.short}: ${esc(focus.title)}</h3><p>${reading.task}</p>${lensFocus==='paris'?`<p class="world-example"><strong>Ein möglicher Ansatz, keine historische Aussage:</strong> ${reading.paris}</p>`:''}<h4>Die Konstruktion aufbrechen</h4><p>${reading.counter}</p>${decisionEditorHtml(focus)}<label for="lensPlacement">Ergänzender Untersuchungsschwerpunkt</label><select id="lensPlacement"><option value="">Noch offen</option>${model.slots.map(([k,t])=>`<option value="${k}" ${assignment===k?'selected':''}>${t}</option>`).join('')}</select>${modeNote(lensNoteKey(representation,lensFocus),'Deine Erzählung und ihre Gegenprüfung','Meine Erzählung unter diesem Geschichtsbild: …\nWas ich aus der Quelle belegen kann: …\nWas erst die Konstruktion hineinträgt: …\nWas ein anderer Blick sichtbar macht: …')}<label for="lensSwitch">Dasselbe Ereignis anders sehen</label><select id="lensSwitch">${perspectiveOptions(representation)}</select></div></section><details class="world-foundations"><summary>Historischer Ansatz, Quellen und Unterschiede innerhalb des Modells</summary><p>${reading.caution}</p>${lensExplanationHtml()}<p>${src}</p><button id="lensTheory">Konzept und Quellen erklären ↗</button><button id="lensExamples">${representation==='recurrence'?'Nietzsche und den Podcast öffnen ↗':'Weitere Ausprägungen und Beispiele ↗'}</button><button data-switch="network">Begriffsbeziehungen nachschlagen ↗</button></details><details class="world-register"><summary>Alle Spuren dieser Auswahl (${items.length}) – auch ausserhalb des Bildausschnitts</summary><p class="lens-count">${items.length} von ${corpus.length} Spuren im gewählten Bestand. Undatierte Begriffe werden nicht künstlich in die Grafik datiert.</p><div>${items.map(e=>corpusEntryHtml(e,'data-lens-focus')).join('')}</div></details><div class="world-compare"><label for="lensPartner">Mit einer weiteren Spur vergleichen</label><select id="lensPartner">${corpus.filter(e=>e.id!==lensFocus).map(e=>`<option value="${esc(e.id)}">${esc(e.title)}</option>`).join('')}</select><button id="lensCompare">Vergleich begründen ↗</button></div></section>`;
+ return `<section class="world-view"><div class="mode-heading"><p class="eyebrow">WELTGESCHEHEN ANDERS SEHEN · EINE KONSTRUKTION ERPROBEN</p><h2>${reading.name}</h2><p>${reading.mechanism}</p></div>${perspectiveNavigation()}<div class="world-controls"><label>Betrachtungszeit <select id="worldTime"><option value="recent" ${!worldAll?'selected':''}>Zeitfenster um mein Standjahr</option><option value="all" ${worldAll?'selected':''}>Gesamte Zeit</option></select></label><label>Standjahr <input id="worldYear" type="number" value="${worldYear}" step="1"></label><button id="worldGo">Standpunkt setzen</button><label>Zeitfenster ± Jahre <select id="worldWindow">${[25,50,130,500,2000,20000].map(n=>`<option ${n===worldWindow?'selected':''} value="${n}">${n}</option>`).join('')}</select></label><button id="worldNow">Gegenwart betrachten</button></div><label class="world-assumption"><input id="worldAssumption" type="checkbox" ${worldAssumption?'checked':''}>${reading.action}</label>${representation==='recurrence'?`<label class="world-cycle">Länge eines versuchsweisen Umlaufs <input id="worldPeriod" type="range" min="10" max="500" value="${worldPeriod}"><output>${worldPeriod} Jahre</output></label>`:''}<div id="interpretationExperiment" tabindex="-1">${randomConceptHtml()}${worldSceneHtml(items)}</div>${readingComparisonHtml(items)}<details class="board-help"><summary>Diese Ereignistafel lesen</summary>${worldReadingGuide()}</details>${concreteReadingHtml()}${perspectiveIntroduction()}<div id="interpretationSettings" tabindex="-1"></div>${profilePanelHtml()}${telosHtml()}${premiseLabHtml()}<p class="world-experiment">Gedankenexperiment: Die Bildordnung ist unsere Übertragung. Sie beschreibt nicht automatisch, wie die Beteiligten selbst dachten.</p><div class="world-consequences"><article><h3>Was dieser Blick erschliesst</h3><p>${reading.gain}</p></article><article><h3>Was er verdecken kann</h3><p>${reading.loss}</p></article></div><section class="world-workbench"><div><label for="lensFocus">Ein Ereignis in dieser Ansicht untersuchen</label><select id="lensFocus">${corpus.map(e=>`<option value="${esc(e.id)}" ${e.id===lensFocus?'selected':''}>${esc(spurDate(e))} · ${esc(e.title)}</option>`).join('')}</select><h3>${esc(focus.title)}</h3><p>${esc(focus.intro||focus.question||'Eigene Spur')}</p>${focus.image?`<img class="world-focus-image" src="${imageSrc(focus.image)}" alt="${esc(focus.title)}">`:''}<button id="lensSource">Quelle und Materialien öffnen ↗</button>${!items.some(e=>e.id===lensFocus)?'<p class="notice">Diese Spur liegt ausserhalb des aktuellen Suchfilters bzw. der Kategorienauswahl. Die Auswahl bleibt für deinen Vergleich erhalten.</p>':''}<p class="small">Quellenbefund und Deutung trennen: ${esc(focus.text||'Öffne die eigene Spur und prüfe ihre Belege.')}</p></div><div><p class="eyebrow">MIT DIESER KONSTRUKTION ERZÄHLEN</p><h3>${reading.short}: ${esc(focus.title)}</h3><p>${reading.task}</p>${lensFocus==='paris'?`<p class="world-example"><strong>Ein möglicher Ansatz, keine historische Aussage:</strong> ${reading.paris}</p>`:''}<h4>Die Konstruktion aufbrechen</h4><p>${reading.counter}</p>${decisionEditorHtml(focus)}<label for="lensPlacement">Ergänzender Untersuchungsschwerpunkt</label><select id="lensPlacement"><option value="">Noch offen</option>${model.slots.map(([k,t])=>`<option value="${k}" ${assignment===k?'selected':''}>${t}</option>`).join('')}</select>${modeNote(lensNoteKey(representation,lensFocus),'Deine Erzählung und ihre Gegenprüfung','Meine Erzählung unter diesem Geschichtsbild: …\nWas ich aus der Quelle belegen kann: …\nWas erst die Konstruktion hineinträgt: …\nWas ein anderer Blick sichtbar macht: …')}<label for="lensSwitch">Dasselbe Ereignis anders sehen</label><select id="lensSwitch">${perspectiveOptions(representation)}</select></div></section><details class="world-foundations"><summary>Historischer Ansatz, Quellen und Unterschiede innerhalb des Modells</summary><p>${reading.caution}</p>${lensExplanationHtml()}<p>${src}</p><button id="lensTheory">Konzept und Quellen erklären ↗</button><button id="lensExamples">${representation==='recurrence'?'Nietzsche und den Podcast öffnen ↗':'Weitere Ausprägungen und Beispiele ↗'}</button><button data-switch="network">Begriffsbeziehungen nachschlagen ↗</button></details><details class="world-register"><summary>Alle Spuren dieser Auswahl (${items.length}) – auch ausserhalb des Bildausschnitts</summary><p class="lens-count">${items.length} von ${corpus.length} Spuren im gewählten Bestand. Undatierte Begriffe werden nicht künstlich in die Grafik datiert.</p><div>${items.map(e=>corpusEntryHtml(e,'data-lens-focus')).join('')}</div></details><div class="world-compare"><label for="lensPartner">Mit einer weiteren Spur vergleichen</label><select id="lensPartner">${corpus.filter(e=>e.id!==lensFocus).map(e=>`<option value="${esc(e.id)}">${esc(e.title)}</option>`).join('')}</select><button id="lensCompare">Vergleich begründen ↗</button></div></section>`;
 }
 function renderLensUniverse(){
- ensureReading(representation);if(representation==='medieval'){const p=activeReading(),meta=generatedHeilMeta(p);if(profileBucket('medieval').profiles.length===1&&p.name==='Erster Entwurf'&&!telosGoal('medieval')&&!Object.values(profileNotes('medieval')).some(v=>v.trim())&&!Object.keys(p.decisions).length&&!Object.keys(p.assignments).length){randomHeilDraft();render();return}if(meta&&lastRestoredHeil!==p.id){applyHeilParameters(meta);lastRestoredHeil=p.id}}const stage=$('#modeStage');stage.innerHTML=lensUniverseHtml($('#search').value,onlyOwn);compactWorldWorkspace();wireMode();
- const redraw=()=>renderMode();wireReadings(redraw);if($('#randomHeilButton'))$('#randomHeilButton').onclick=()=>{try{randomHeilDraft();render();}catch(e){$('#randomHeilStatus').textContent=e.message}};$$('[data-concrete-choice]').forEach(b=>b.onclick=()=>{concreteChoice[representation]=Number(b.dataset.concreteChoice);redraw();$('.concrete-choice').scrollIntoView({block:'start'})});
+ ensureReading(representation);if(prepareRandomConcept()){render();return}const stage=$('#modeStage');stage.innerHTML=lensUniverseHtml($('#search').value,onlyOwn);compactWorldWorkspace();wireMode();
+ const redraw=()=>renderMode();wireReadings(redraw);if($('#randomHeilButton'))$('#randomHeilButton').onclick=()=>{try{randomConceptDraft();render();}catch(e){$('#randomHeilStatus').textContent=e.message}};$$('[data-concrete-choice]').forEach(b=>b.onclick=()=>{concreteChoice[representation]=Number(b.dataset.concreteChoice);redraw();$('.concrete-choice').scrollIntoView({block:'start'})});
  $$('[data-premise]').forEach(el=>el.oninput=()=>{state.notes[premiseKey(representation,el.dataset.premise)]=el.value;save()});if($('#premiseApply'))$('#premiseApply').onclick=()=>{worldSheet='';redraw();$('.world-scene').scrollIntoView({block:'start',behavior:'smooth'})};
  $$('[data-telos]').forEach(el=>el.oninput=()=>{state.notes[telosKey(representation,el.dataset.telos)]=el.value;save()});if($('#telosApply'))$('#telosApply').onclick=()=>{worldSheet='';redraw();$('.world-scene').scrollIntoView({block:'start',behavior:'smooth'})};
  const choose=id=>{worldSheet="investigate";lensFocus=id;const e=byId(id);if(e?.year&&!worldAll&&Math.abs(e.year-worldYear)>worldWindow)worldYear=e.year;redraw();$('.world-workbench').scrollIntoView({block:'start',behavior:'smooth'})};
@@ -295,7 +295,7 @@ function activeReading(mode=representation){const b=profileBucket(mode);return b
 function captureReadings(){for(const [mode,b] of Object.entries(state.interpretations||{})){const p=b.profiles.find(p=>p.id===b.active);if(p){p.notes=profileNotes(mode);p.assignments={...state.lensAssignments[mode]}}}}
 function ensureReading(mode){let b=profileBucket(mode);if(!b){const p={id:uid(),name:'Erster Entwurf',notes:profileNotes(mode),assignments:{...state.lensAssignments[mode]},decisions:{}};b=state.interpretations[mode]={active:p.id,profiles:[p]}}return b}
 function loadReading(mode,id){const b=profileBucket(mode),p=b?.profiles.find(p=>p.id===id);if(!p)return;for(const k of Object.keys(state.notes))if(profileNote(mode,k))delete state.notes[k];Object.assign(state.notes,p.notes);state.lensAssignments[mode]={...p.assignments};b.active=id}
-function switchReading(id){captureReadings();loadReading(representation,id);if(representation==='medieval')lastRestoredHeil='';save()}
+function switchReading(id){captureReadings();loadReading(representation,id);if(representation==='medieval')lastRestoredHeil='';else delete restoredRandomConcept[representation];save()}
 function addReading(name,copy=false){captureReadings();const b=ensureReading(representation);if(b.profiles.length>=30)throw Error('Maximal 30 Entwürfe pro Geschichtsbild.');const old=activeReading(),p={id:uid(),name:name.trim().slice(0,100)||'Weiterer Entwurf',notes:copy?{...old.notes}:{},assignments:copy?{...old.assignments}:{},decisions:copy?JSON.parse(JSON.stringify(old.decisions)):{} };b.profiles.push(p);loadReading(representation,p.id);save();return p}
 function readingBasis(mode=representation){return JSON.stringify(Object.entries(profileNotes(mode)).filter(([k])=>!k.startsWith('lens-')).sort(([a],[b])=>a.localeCompare(b)))}
 function readingDecision(id,mode=representation){const d=activeReading(mode)?.decisions[id];return d?{...d,stale:d.basis!==readingBasis(mode)}:null}
@@ -984,4 +984,277 @@ function randomHeilDraft(random=Math.random){
 function randomHeilHtml(){if(representation!=='medieval')return '';const p=activeReading(),m=generatedHeilMeta(p),model=m&&RANDOM_HEIL_MODELS.find(x=>x.id===m.model),changed=m&&['goal','standpoint','necessity','counter'].some(f=>state.notes[telosKey('medieval',f)]!==model[f]);
  const changedView=m&&(worldYear!==m.year||worldWindow!==m.window||worldAll!==m.all||!worldAssumption||visibleCategories.size!==LANES.length||onlyOwn||($('#search')?.value||''));
  return `<section class="random-heil"><div><strong>${m?'ZUFALLSENTWURF · '+esc(model.name):'Einen Heilshorizont erproben'}</strong><button id="randomHeilButton">${m?'Anderen Zufallsentwurf einsetzen ↻':'Zufallsentwurf einsetzen ↻'}</button><a href="#interpretationSettings">Entwurf bearbeiten ↗</a></div>${m?`<p>${changed||changedView?'Manuell angepasst · ursprüngliche Zufallssetzungen unten dokumentiert.':'Die folgenden Setzungen wurden zufällig zusammengestellt.'} Didaktischer Entwurf, keine historische Quelle und keine Tatsachenbehauptung.</p><p><strong>Erzeugter Zeitraum:</strong> ${m.all?'gesamte Zeit':yr(m.year-m.window)+' bis '+yr(m.year+m.window)} · Standjahr ${yr(m.year)} · alle Kategorien.</p><details><summary>Sämtliche gesetzten Parameter anzeigen</summary><dl><dt>Erstellt</dt><dd>${esc(m.generatedAt.replace('T',' · ').replace(/\.\d+Z$/,' UTC'))} · Variante ${m.revision}</dd><dt>Heilsvorstellung</dt><dd>${esc(model.goal)}</dd><dt>Perspektive</dt><dd>${esc(model.standpoint)}</dd><dt>Verlaufsannahme</dt><dd>${esc(model.necessity)}</dd><dt>Gegenprüfung</dt><dd>${esc(model.counter)}</dd><dt>Zeitraum</dt><dd>${m.all?'Gesamte Zeit: alle datierten Spuren des Bestands':yr(m.year-m.window)+' bis '+yr(m.year+m.window)} · Standjahr ${yr(m.year)} · Fenster ± ${m.window} Jahre${m.all?' (bei Gesamtsicht nicht angewendet)':''}</dd><dt>Bestand und Filter</dt><dd>Alle sechs Kategorien; vorhandene und eigene Einträge; Suchfeld leer.</dd><dt>Darstellung</dt><dd>Heilsgeschichte; Heilshorizont eingeschaltet. Zeitfolge von links nach rechts, keine proportionalen Jahresabstände. Undatierte Begriffe separat.</dd><dt>Zuordnungen</dt><dd>Keine automatisch erfundenen Ereignisdeutungen: Rollen, Gewichte und Untersuchungsschwerpunkte dieses Zufallsentwurfs sind zunächst offen.</dd></dl><p>Der nächste Klick ersetzt diesen Zufallsentwurf einschliesslich seiner Bearbeitungen. Über «Voraussetzung & Entwürfe» kannst du ihn vorher kopieren. Andere Entwürfe bleiben erhalten.</p></details>`:'<p>Setzt ein zusammenhängendes Unterrichtsmodell mit Zeitraum und offengelegten Annahmen ein. Bestehende eigene Entwürfe bleiben erhalten.</p>'}<p id="randomHeilStatus" role="status"></p></section>`;
+}
+
+const RANDOM_CONCEPT_MODELS={
+  "direction": [
+    {
+      "id": "participation",
+      "name": "Politische Teilhabe",
+      "fields": {
+        "goal": "Gleichberechtigte politische Beteiligung",
+        "standpoint": "Didaktische Perspektive bisher von politischen Rechten ausgeschlossener Menschen. Innerhalb dieser Gruppe sind Interessen nicht einheitlich.",
+        "necessity": "Ein normativer Massstab, kein zwangsläufiger Geschichtsverlauf. Erweiterte Rechte können als Beiträge geprüft werden.",
+        "counter": "Rechtliche Gleichheit kann mit tatsächlicher Ausschliessung zusammenbestehen. Prüfe beide Ebenen."
+      }
+    },
+    {
+      "id": "welfare",
+      "name": "Materielle Sicherheit",
+      "fields": {
+        "goal": "Gesicherte Lebensgrundlagen für alle",
+        "standpoint": "Didaktische Perspektive von Menschen mit unsicherer Versorgung; keine automatisch unterstellte Gruppenmeinung.",
+        "necessity": "Verbesserungen sind an Versorgung, Zugang und Verteilung zu prüfen. Wachstum allein garantiert keine Sicherheit.",
+        "counter": "Wessen Sicherheit wächst, wer trägt die Kosten? Prüfe Verteilungswirkungen und ökologische Folgen."
+      }
+    },
+    {
+      "id": "ecology",
+      "name": "Ökologische Tragfähigkeit",
+      "fields": {
+        "goal": "Dauerhaft bewohnbare Lebensbedingungen",
+        "standpoint": "Didaktische Perspektive, die langfristige Folgen für zukünftige Generationen mitbedenkt.",
+        "necessity": "Das Ziel ist eine Setzung. Technische Neuerung bedeutet nicht automatisch weniger Ressourcenverbrauch.",
+        "counter": "Eine Verbesserung an einem Ort kann Belastungen verlagern. Benenne räumliche und zeitliche Grenzen des Urteils."
+      }
+    }
+  ],
+  "egypt": [
+    {
+      "id": "provision",
+      "name": "Verlässliche Versorgung",
+      "fields": {
+        "order": "Verlässliche Versorgung und gemeinsame Instandhaltung",
+        "authority": "Gedankenexperiment aus Sicht einer auf Versorgung angewiesenen Gemeinschaft; Herrschaft und Betroffene können Erhaltung verschieden bewerten.",
+        "change": "Reparaturen und gesicherter Zugang gelten als mögliche Erneuerung; veränderte Verfügungsrechte wären zusätzlich als Wandel zu untersuchen.",
+        "counter": "Die heutige Analogie zur Ordnungserhaltung ist keine Gleichsetzung mit Maʿat. Religion und Herrschaft verlangen eigene Quellen."
+      }
+    },
+    {
+      "id": "property",
+      "name": "Überlieferte Besitzordnung",
+      "fields": {
+        "order": "Fortbestand bestehender Besitz- und Nutzungsrechte",
+        "authority": "Didaktischer Blick einer besitzenden Institution. Abhängige oder ausgeschlossene Menschen können der Ordnung widersprechen.",
+        "change": "Kontinuität von Ansprüchen steht gegen Veränderungen des Zugangs. Eine neue Technik kann alte Verhältnisse stützen.",
+        "counter": "Erhaltung ist nicht schon Gerechtigkeit. Der Begriff Maʿat darf bestehendes Eigentum nicht nachträglich legitimieren."
+      }
+    },
+    {
+      "id": "ritual",
+      "name": "Rituelle Erneuerung",
+      "fields": {
+        "order": "Wiederkehrende Pflege einer religiösen Ordnung",
+        "authority": "Didaktisch gesetzter Blick einer religiösen Gemeinschaft; ihre tatsächlichen Praktiken und innere Vielfalt bleiben zu belegen.",
+        "change": "Wiederkehrende Handlungen können Ordnung erneuern, obwohl ihre Ausführung und Bedeutung sich wandeln.",
+        "counter": "Ähnliche Rituale verschiedener Zeiten belegen weder identische Glaubensinhalte noch ein zeitloses ägyptisches Weltbild."
+      }
+    }
+  ],
+  "materialism": [
+    {
+      "id": "work",
+      "name": "Arbeit und Verfügung",
+      "fields": {
+        "actors": "Arbeitende und Eigentümer unter Bedingungen industrieller Produktion",
+        "control": "Zu prüfen sind Verfügungsrechte über Anlagen, Arbeitszeit und Ertrag; keine Rechte werden ohne Beleg unterstellt.",
+        "mechanism": "Verfügung über Arbeitsmittel prägt Handlungsmöglichkeiten",
+        "counter": "Prüfe zusätzlich Organisation, Recht und Überzeugungen. Eine materielle Bedingung erklärt noch keine einzelne Entscheidung."
+      }
+    },
+    {
+      "id": "infrastructure",
+      "name": "Infrastruktur und Macht",
+      "fields": {
+        "actors": "Betreiber, Beschäftigte und Nutzer von Verkehrs- oder Energieanlagen",
+        "control": "Wer kann investieren, Zugang gewähren und Kosten verteilen? Eigentum und tatsächliche Entscheidungsmacht getrennt prüfen.",
+        "mechanism": "Infrastrukturinvestitionen verändern Abhängigkeiten",
+        "counter": "Prüfe alternative Trassen, politische Entscheidungen und Widerstand. Die gebaute Lösung war nicht automatisch die einzig mögliche."
+      }
+    },
+    {
+      "id": "knowledge",
+      "name": "Wissen als Produktionsmittel",
+      "fields": {
+        "actors": "Produzierende, Vermittler und Nutzer technischen Wissens",
+        "control": "Zu untersuchen sind Ausbildung, Zugang zu Verfahren und Kontrolle ihrer wirtschaftlichen Nutzung.",
+        "mechanism": "Kontrolle über Wissen beeinflusst Arbeit und Erträge",
+        "counter": "Eine Erfindung beweist keine durchgesetzte Veränderung. Prüfe Anwendung, Verbreitung und mögliche Gegenwirkungen."
+      }
+    }
+  ],
+  "recurrence": [
+    {
+      "id": "revolutions",
+      "name": "Freiheitsansprüche vergleichen",
+      "fields": {
+        "criterion": "Freiheitsansprüche gegen bestehende Herrschaft",
+        "cases": "Französische Revolution 1789 und Haitianische Revolution 1791–1804; Quellen zu Trägern und Reichweite der Ansprüche vergleichen.",
+        "difference": "Versklavung, koloniale Herrschaft und politische Rechte verlangen unterschiedliche Erklärungen.",
+        "counter": "Wenn das gemeinsame Etikett Revolution entscheidende Unterschiede verdeckt, auf die Wiederholungsbehauptung verzichten."
+      }
+    },
+    {
+      "id": "media",
+      "name": "Medienumbrüche vergleichen",
+      "fields": {
+        "criterion": "Veränderte Möglichkeiten, Wissen zu verbreiten",
+        "cases": "Druck vor Gutenberg, europäischer Buchdruck und digitale Geschichtsbilder; Verfügbarkeit, Nutzung und Kontrolle jeweils belegen.",
+        "difference": "Technik, Reichweite und politische Kontrolle unterscheiden sich. Ähnliche Funktionen sind keine identischen Ursachen.",
+        "counter": "Die optische Gruppierung muss einem Wechsel der Umlauflänge standhalten: Gemeinsamkeiten müssen an Quellen erkennbar bleiben."
+      }
+    },
+    {
+      "id": "borders",
+      "name": "Grenzen und Öffnungen",
+      "fields": {
+        "criterion": "Grenzen ordnen Zugehörigkeit und Handlungsspielräume",
+        "cases": "Unabhängigkeit und Teilung 1947 sowie der Mauerfall 1989 als unterschiedlich gelagerte Fälle untersuchen.",
+        "difference": "Staatsgründung, Teilung und Öffnung haben verschiedene Voraussetzungen und Folgen.",
+        "counter": "Keine wiederkehrende Gesetzmässigkeit aus zwei Fällen ableiten. Prüfe auch Menschen, für die dieselbe Grenze etwas anderes bedeutete."
+      }
+    }
+  ],
+  "layers": [
+    {
+      "id": "transport",
+      "name": "Verkehr in mehreren Dauern",
+      "fields": {
+        "aspect": "Verkehrsverbindungen zwischen See und Alpen",
+        "process": "Datierte Brücken- und Bahnbauten von Veränderungen der Nutzung und Erreichbarkeit unterscheiden.",
+        "structure": "Topographie und bestehende Verkehrsnetze als relativ dauerhafte Bedingungen prüfen; auch sie sind veränderlich.",
+        "counter": "Ein langer Zeitraum darf die plötzlichen Folgen für einzelne Orte oder Gruppen nicht verdecken."
+      }
+    },
+    {
+      "id": "rights",
+      "name": "Politische Rechte und Alltag",
+      "fields": {
+        "aspect": "Rechtliche Beteiligung und gelebte Teilhabe",
+        "process": "Beschlussdaten mit der Entwicklung von Zugang, Organisation und tatsächlicher Beteiligung vergleichen.",
+        "structure": "Soziale Normen und Institutionen als mögliche längerfristige Bedingungen untersuchen, nicht ungeprüft voraussetzen.",
+        "counter": "Langsame Veränderung kann behauptet werden, obwohl ein bestimmter Entscheid für Betroffene einen unmittelbaren Bruch bedeutete."
+      }
+    },
+    {
+      "id": "climate",
+      "name": "Klima, Technik und Politik",
+      "fields": {
+        "aspect": "Klimabeschlüsse und materielle Umsetzung",
+        "process": "Vertragsdatum, Umbau von Anlagen und beobachtete Folgen gesondert datieren.",
+        "structure": "Langlebige Infrastrukturen und Klimaprozesse als unterschiedliche Bedingungen prüfen.",
+        "counter": "Ein politisches Ziel ist weder ein gemessener Effekt noch eine bereits abgeschlossene Entwicklung."
+      }
+    }
+  ],
+  "present": [
+    {
+      "id": "rights1970",
+      "name": "Offene Zukunft 1970",
+      "fields": {
+        "person": "Befürworterin politischer Gleichberechtigung, Schweiz 1970",
+        "knowledge": "Mögliche Informationen: damalige Debatten und frühere Erfahrungen. Konkretes Wissen nur anhand zeitgenössischer Zeugnisse zuschreiben.",
+        "expectation": "Hoffnung auf Zustimmung und Sorge vor Ablehnung sind mögliche Erwartungen; keine davon wird einer realen Person ohne Quelle zugeschrieben.",
+        "counter": "Das Ergebnis von 1971 darf nicht als damals bekanntes Wissen erscheinen."
+      },
+      "view": {
+        "year": 1970,
+        "window": 50,
+        "all": false
+      }
+    },
+    {
+      "id": "climate2014",
+      "name": "Offene Zukunft 2014",
+      "fields": {
+        "person": "An Klimaverhandlungen interessierte Person, 2014",
+        "knowledge": "Zugang zu damaligen Nachrichten und Verhandlungspositionen prüfen; spätere Rückblicke davon trennen.",
+        "expectation": "Mehrere mögliche Verhandlungsausgänge offenhalten. Die spätere Annahme eines Abkommens ist noch nicht bekannt.",
+        "counter": "Weder der Vertrag von 2015 noch spätere Wirkungen dürfen als Gewissheit dieses Standpunkts gelten."
+      },
+      "view": {
+        "year": 2014,
+        "window": 25,
+        "all": false
+      }
+    },
+    {
+      "id": "rail1850",
+      "name": "Offene Zukunft 1850",
+      "fields": {
+        "person": "Bewohnerin eines Orts zwischen Zürich und Chur, 1850",
+        "knowledge": "Welche Pläne, Nachrichten und bisherigen Verkehrswege waren ihr nachweislich bekannt? Der soziale Zugang zu Information bleibt offen.",
+        "expectation": "Hoffnungen und Sorgen über neue Verkehrsverbindungen anhand damaliger Quellen suchen; keine Vorhersage des tatsächlichen Netzes.",
+        "counter": "Die Bahneröffnungen von 1858–1859 und spätere wirtschaftliche Folgen gehören zum Rückblick."
+      },
+      "view": {
+        "year": 1850,
+        "window": 50,
+        "all": false
+      }
+    }
+  ],
+  "memoria": [
+    {
+      "id": "workers",
+      "name": "Erinnerung an Arbeit",
+      "fields": {
+        "group": "Ehemalige Beschäftigte eines Industriebetriebs",
+        "practice": "Als Unterrichtsentwurf: ein Gespräch mit Fotografien und persönlichen Gegenständen. Eine tatsächlich gemeinsame Erinnerung muss erst belegt werden.",
+        "selection": "Arbeitserfahrungen und betriebliche Veränderungen untersuchen; abweichende Erfahrungen innerhalb der Gruppe ausdrücklich suchen.",
+        "counter": "Ein fehlendes Thema im Entwurf beweist kein Vergessen. Andere Interviews und schriftliche Überlieferungen vergleichen."
+      }
+    },
+    {
+      "id": "museum",
+      "name": "Öffentliche Ortsgeschichte",
+      "fields": {
+        "group": "Kuratorisches Team eines Ortsmuseums",
+        "practice": "Didaktischer Entwurf einer Ausstellung mit Objekten, Beschriftungen und Besucheransprache; keine Behauptung über ein bestimmtes Museum.",
+        "selection": "Prüfen, wie Verkehr, Arbeit, Migration und lokale Selbstbilder ausgewählt werden könnten. Tatsächliche Auswahl an Ausstellungsquellen belegen.",
+        "counter": "Wessen Überlieferung gelangt nicht ins Museum? Fehlende Repräsentation und fehlende Erinnerung sind nicht dasselbe."
+      }
+    },
+    {
+      "id": "family",
+      "name": "Erinnern zwischen Generationen",
+      "fields": {
+        "group": "Eine Familie mit unterschiedlichen Generationserfahrungen",
+        "practice": "Als Untersuchungssituation: gemeinsames Betrachten von Fotos, Erzählen und Widersprechen. Die Familie ist kein einheitliches Gedächtnis.",
+        "selection": "Biographisch bedeutsame Ortswechsel und gesellschaftliche Veränderungen als mögliche Bezugspunkte prüfen.",
+        "counter": "Wer besitzt Fotos, wer darf erzählen, wer widerspricht? Die angenommene Nähe einer Gruppe ersetzt keine Quellenprüfung."
+      }
+    }
+  ]
+};
+
+const restoredRandomConcept={};
+const randomConceptKey=mode=>(mode==='direction'?'telos-':'premise-')+mode+'-random';
+const randomFieldKey=(mode,field)=>mode==='direction'?telosKey(mode,field):premiseKey(mode,field);
+function randomConceptMeta(profile=activeReading(),mode=representation){
+ if(mode==='medieval')return generatedHeilMeta(profile);
+ try{const x=JSON.parse(profile?.notes?.[randomConceptKey(mode)]||'null'),model=RANDOM_CONCEPT_MODELS[mode]?.find(m=>m.id===x?.model);return model&&typeof x.generatedAt==='string'&&x.generatedAt.length<=40&&Number.isFinite(Date.parse(x.generatedAt))&&Number.isInteger(x.revision)&&x.revision>0&&Number.isInteger(x.year)&&x.year!==0&&x.year>=-100000&&x.year<=10000&&[25,50,130,250,500].includes(x.window)&&typeof x.all==='boolean'&&[25,50,100,200].includes(x.period)?x:null}catch{return null}
+}
+function applyRandomConcept(meta){if(representation==='medieval'){applyHeilParameters(meta);return}worldYear=meta.year;worldWindow=meta.window;worldAll=meta.all;worldPeriod=meta.period;worldAssumption=true;worldAssumptions[representation]=true;visibleCategories=new Set(LANES.map(l=>l[0]));onlyOwn=false;$('#search').value='';$$('[data-category]').forEach(el=>el.checked=true);$('#categoryStatus').textContent=LANES.length+' von '+LANES.length+' Kategorien sichtbar';$('#viewAll')?.classList?.add('active');$('#viewOwn')?.classList?.remove('active');}
+function randomConceptDraft(random=Math.random){
+ const mode=representation;if(mode==='medieval')return randomHeilDraft(random);
+ captureReadings();const bucket=ensureReading(mode),old=activeReading(),previous=randomConceptMeta(old),pick=a=>a[Math.min(a.length-1,Math.floor(random()*a.length))],model=pick(RANDOM_CONCEPT_MODELS[mode].filter(m=>m.id!==previous?.model));
+ let p=previous?old:bucket.profiles.find(x=>randomConceptMeta(x,mode));
+ if(!p){if(bucket.profiles.length>=30)throw Error('Maximal 30 Entwürfe pro Ansatz. Nutze einen bestehenden Zufallsentwurf oder einen neuen Arbeitsstand.');p={id:uid(),name:'',notes:{},assignments:{},decisions:{}};bucket.profiles.push(p)}
+ // Standpoint exercises require coherent dates. Other overviews use the full corpus or a modern time window.
+ const view=model.view||pick([{year:2026,window:130,all:true},{year:1975,window:50,all:false}]);
+ const meta={model:model.id,...view,period:pick([25,50,100,200]),generatedAt:new Date().toISOString(),revision:(randomConceptMeta(p,mode)?.revision||0)+1};
+ if(mode==='recurrence')meta.all=true;
+ p.name='Zufallsentwurf · '+model.name;p.notes=Object.fromEntries(Object.entries(model.fields).map(([k,v])=>[randomFieldKey(mode,k),v]));p.notes[randomConceptKey(mode)]=JSON.stringify(meta);p.assignments={};p.decisions={};loadReading(mode,p.id);applyRandomConcept(meta);restoredRandomConcept[mode]=p.id;readingComparison='';worldSheet='';save();return meta;
+}
+function prepareRandomConcept(){
+ const mode=representation,p=activeReading(),meta=randomConceptMeta(p);
+ if(profileBucket(mode).profiles.length===1&&p.name==='Erster Entwurf'&&!Object.values(profileNotes(mode)).some(v=>v.trim())&&!Object.keys(p.decisions).length&&!Object.keys(p.assignments).length){randomConceptDraft();return true}
+ const restored=mode==='medieval'?lastRestoredHeil:restoredRandomConcept[mode];
+ if(meta&&restored!==p.id){applyRandomConcept(meta);if(mode==='medieval')lastRestoredHeil=p.id;else restoredRandomConcept[mode]=p.id}
+ return false;
+}
+function randomConceptHtml(){if(representation==='medieval')return randomHeilHtml();const mode=representation,m=randomConceptMeta(),model=m&&RANDOM_CONCEPT_MODELS[mode].find(x=>x.id===m.model),fields=mode==='direction'?TELOS_FIELDS:PREMISE_LABS[mode].fields;
+ const edited=m&&(Object.entries(model.fields).some(([k,v])=>state.notes[randomFieldKey(mode,k)]!==v)||worldYear!==m.year||worldWindow!==m.window||worldAll!==m.all||!worldAssumption||visibleCategories.size!==LANES.length||onlyOwn||($('#search')?.value||'')||(mode==='recurrence'&&worldPeriod!==m.period));
+ return `<section class="random-heil"><div><strong>${m?'ZUFALLSENTWURF · '+esc(model.name):'Zufallsentwurf für '+esc(WHOLE_VIEW_FORMS[mode].title)}</strong><button id="randomHeilButton">${m?'Anderen Zufallsentwurf einsetzen ↻':'Zufallsentwurf einsetzen ↻'}</button><a href="#interpretationSettings">Entwurf bearbeiten ↗</a></div>${m?`<p>${edited?'Manuell angepasst · die ursprünglichen Setzungen bleiben unten dokumentiert.':'Zufällig ausgewählter, zusammenhängender Unterrichtsentwurf.'} Keine historische Quelle und keine automatisch behauptete Gruppenmeinung.</p><p><strong>Erzeugter Zeitraum:</strong> ${m.all?'gesamte Zeit':yr(m.year-m.window)+' bis '+yr(m.year+m.window)} · Standjahr ${yr(m.year)} · alle Kategorien.${mode==='recurrence'?' Umlauf: '+m.period+' Jahre.':''}</p><details><summary>Sämtliche gesetzten Parameter anzeigen</summary><dl><dt>Erstellt</dt><dd>${esc(m.generatedAt)} · Variante ${m.revision}</dd>${fields.map(([key,label])=>`<dt>${esc(label)}</dt><dd>${esc(model.fields[key])}</dd>`).join('')}<dt>Zeitraum</dt><dd>${m.all?'Gesamte Zeit':yr(m.year-m.window)+' bis '+yr(m.year+m.window)} · Standjahr ${yr(m.year)} · Fenster ± ${m.window} Jahre${m.all?' (nicht angewendet)':''}</dd>${mode==='recurrence'?`<dt>Versuchsweiser Umlauf</dt><dd>${m.period} Jahre; gesetzter Darstellungsparameter, kein nachgewiesener Rhythmus.</dd>`:''}<dt>Bestand und Filter</dt><dd>Alle sechs Kategorien, vorhandene und eigene Einträge, Suchfeld leer.</dd><dt>Darstellung</dt><dd>${esc(WHOLE_VIEW_FORMS[mode].title)} · Modellannahme eingeschaltet. ${esc(WHOLE_VIEW_FORMS[mode].subtitle)}. Undatierte Begriffe separat; Abstände sind keine proportionalen Jahresmessungen.</dd><dt>Einordnungen</dt><dd>Rollen, Gewichte und Untersuchungsschwerpunkte bleiben zunächst offen. Der Vorschlag erzeugt keine Belege oder Ereignisbewertungen.</dd></dl><p>Der nächste Zufallsklick ersetzt diesen Zufallsentwurf einschliesslich Bearbeitungen. Du kannst ihn unter «Voraussetzung & Entwürfe» vorher kopieren; andere Entwürfe bleiben erhalten.</p></details>`:'<p>Passende Voraussetzungen und Zeitraum erzeugen; eigene ausgefüllte Entwürfe bleiben erhalten.</p>'}<p id="randomHeilStatus" role="status"></p></section>`;
 }

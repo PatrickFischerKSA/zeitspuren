@@ -226,3 +226,28 @@ try{
 }finally{({state,representation,worldYear,worldWindow,worldAll,worldAssumption,visibleCategories,onlyOwn,readingComparison,worldSheet,lastRestoredHeil}=randomSnapshot);for(const key of Object.keys(worldAssumptions))delete worldAssumptions[key];Object.assign(worldAssumptions,randomSnapshot.assumptions)}
 `,ctx);
 console.log('PASS: Zufallsentwürfe wechseln garantiert, setzen Zeitraum und Parameter, kennzeichnen Bearbeitung und überstehen Export/Import ohne eigene Entwürfe zu überschreiben.');
+vm.runInContext(`
+{
+ const snapshot={state,representation,worldYear,worldWindow,worldAll,worldPeriod,worldAssumption,visibleCategories,onlyOwn,readingComparison,worldSheet,lastRestoredHeil,assumptions:{...worldAssumptions},restored:{...restoredRandomConcept}};
+ try{
+ for(const mode of Object.keys(RANDOM_CONCEPT_MODELS)){
+  state=defaults();representation=mode;ensureReading(mode);
+  const field=Object.keys(RANDOM_CONCEPT_MODELS[mode][0].fields)[0],key=randomFieldKey(mode,field);
+  state.notes[key]='Eigener unveränderter Entwurf';captureReadings();const original=activeReading();
+  randomConceptDraft(()=>0);const id=activeReading().id;
+  for(let i=0;i<8;i++){const before=randomConceptMeta().model;randomConceptDraft(()=>i%2?.99:0);if(randomConceptMeta().model===before)throw Error('Wiederholung: '+mode);if(activeReading().id!==id)throw Error('Neue Profile ohne Grenze')}
+  if(original.notes[key]!=='Eigener unveränderter Entwurf')throw Error('Eigener Entwurf überschrieben');
+  const meta=randomConceptMeta(),model=RANDOM_CONCEPT_MODELS[mode].find(m=>m.id===meta.model);
+  for(const [field,value] of Object.entries(model.fields))if(state.notes[randomFieldKey(mode,field)]!==value)throw Error('Parameter fehlt: '+mode+field);
+  if(worldYear!==meta.year||worldAll!==meta.all||worldPeriod!==meta.period)throw Error('Ansicht nicht angewendet');
+  if(mode==='present'&&worldYear!==model.view.year)throw Error('Inkohärenter Wissensstand');
+  if(!randomConceptHtml().includes('Erzeugter Zeitraum:'))throw Error('Zeitraum fehlt');
+  captureReadings();const copy=validate(JSON.parse(JSON.stringify(state))).interpretations[mode].profiles.find(p=>p.id===id);
+  if(!randomConceptMeta(copy,mode))throw Error('Backup verliert Zufallsparameter');
+  state.notes[key]='Manuell geändert';if(!randomConceptHtml().includes('Manuell angepasst'))throw Error('Änderung nicht kenntlich');
+  if(Object.keys(activeReading().decisions).length)throw Error('Erfundene Ereignisbewertung');
+ }
+ }finally{({state,representation,worldYear,worldWindow,worldAll,worldPeriod,worldAssumption,visibleCategories,onlyOwn,readingComparison,worldSheet,lastRestoredHeil}=snapshot);for(const k of Object.keys(worldAssumptions))delete worldAssumptions[k];Object.assign(worldAssumptions,snapshot.assumptions);for(const k of Object.keys(restoredRandomConcept))delete restoredRandomConcept[k];Object.assign(restoredRandomConcept,snapshot.restored)}
+}
+`,ctx);
+console.log('PASS: Alle sieben weiteren Ansätze mit wechselnden, kohärenten, editierbaren Zufallsparametern und verlustfreiem Backup; eigene Profile bleiben erhalten.');
