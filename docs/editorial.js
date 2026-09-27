@@ -83,14 +83,14 @@ const ACTIVITIES = {
   },
   "script": {
     "title": "Zwei Anfänge für dieselbe Geschichte",
-    "scene": "Eine Redaktion will den Beginn der Geschichte mit der Erfindung der Schrift markieren. Eine Archäologin widerspricht: Dann verschwinden viele ihrer Fragen aus dem Buch.",
+    "scene": "Beginnt Geschichte erst mit der Schrift? Überlege, was wir dann mit der Geschichte von Menschen machen, die keine schriftlichen Aufzeichnungen hinterlassen haben. Auch Häuser, Werkzeuge und Nahrungsreste geben Auskunft über ihr Leben.",
     "cards": [
       {
-        "label": "Redaktionsvorschlag – erfundenes Beispiel",
+        "label": "Eine mögliche Definition",
         "text": "Geschichte beginnt dort, wo Menschen schriftliche Aufzeichnungen hinterlassen."
       },
       {
-        "label": "Gegenstand im Fenster",
+        "label": "Die abgebildete Schreiberfigur",
         "text": "Die ägyptische Schreiberfigur ist jünger als die ersten Schriftsysteme; sie zeigt nicht deren Erfindung."
       }
     ],
@@ -624,8 +624,8 @@ const ACTIVITIES = {
     "hint": "Die Herstellung eines Erinnerungszeichens ist selbst ein historisches Ereignis. Es ist nicht mit den Ereignissen identisch, an die erinnert wird."
   },
   "ai": {
-    "title": "Die Bildredaktion muss entscheiden",
-    "scene": "Eine Redaktion bekommt die Ruinenszene mit Kindern. Die Herkunftsinformation lautet: KI-generiert; im NZZ-Artikel vom 13.11.2023 untersucht. Ein konkreter fotografierter Ort und Augenblick sind nicht belegt.",
+    "title": "Was kann ein künstliches Kriegsbild belegen?",
+    "scene": "Das Bild zeigt Kinder in einer Ruinenszene. Es wurde mit KI erzeugt und im NZZ-Artikel vom 13.11.2023 untersucht. Es ist keine Fotografie eines belegten Ortes und Augenblicks. Wofür lässt es sich trotzdem als Quelle verwenden?",
     "cards": [
       {
         "label": "Zwei mögliche Verwendungen",
@@ -646,7 +646,7 @@ const ACTIVITIES = {
         "text": "Dürfte dieselbe Szene in einer historischen Rekonstruktion erscheinen? Nenne genau eine Information, die zusätzlich sichtbar sein müsste, und eine Aussage, die auch dann unzulässig bliebe."
       }
     ],
-    "result": "Eine redaktionelle Entscheidung samt verwendbarer Bildlegende.",
+    "result": "Eine begründete Entscheidung darüber, wofür du das Bild verwenden würdest, und eine passende Bildunterschrift.",
     "hint": "Ein KI-Bild kann als Analysegegenstand wertvoll sein. Ein glaubhaft aussehendes Detail erhält dadurch aber keine Beweiskraft für ein konkretes Ereignis."
   },
   "china": {
@@ -964,26 +964,26 @@ const ACTIVITIES = {
     "hint": "Das Beispiel ist kein mittelalterlicher Originaltext. Es zeigt, weshalb Vorschrift, Praxis und archäologische Erhaltung getrennt behandelt werden müssen."
   },
   "crusade1212": {
-    "title": "Die Redaktion hat noch keine Chronik gelesen",
-    "scene": "Eine Filmredaktion möchte die Bewegungen von 1212 als geschlossene Geschichte erzählen. Ihr liegt hier aber kein ausgewerteter Originalauszug vor. Was darf sie schon behaupten?",
+    "title": "«Kinderkreuzzug»: Was sagt der Name – und was wissen wir?",
+    "scene": "Der Name «Kinderkreuzzug» weckt ein bestimmtes Bild: Kinder ziehen gemeinsam ins Heilige Land. Aber belegt der Name allein, wer 1212 aufbrach, wie alt die Beteiligten waren und wohin sie gelangten? Unterscheide deine Vorstellung von dem, was historische Berichte belegen müssten.",
     "cards": [
       {
-        "label": "Redaktionsnotiz – erfunden",
-        "text": "Im Titel stehen «Kinder». Daher sollen ausschliesslich kleine Kinder gezeigt werden; Alter, Zahl und Reiseverlauf werden aus der Vorstellung ergänzt."
+        "label": "Eine Behauptung zum Prüfen",
+        "text": "«1212 zogen ausschliesslich kleine Kinder auf derselben Route nach Jerusalem.» Dieser Satz ist keine Quellenangabe. Er macht mehrere Behauptungen, die sich aus der Bezeichnung «Kinderkreuzzug» nicht ableiten lassen."
       }
     ],
     "steps": [
       {
-        "label": "Den Arbeitsauftrag stoppen und präzisieren",
-        "text": "Markiere drei Angaben, die vor einer Darstellung anhand konkreter Überlieferung geprüft werden müssen. Formuliere jeweils eine genaue Frage an den Text, der diese Angabe liefern soll."
+        "label": "Welche Angaben brauchen einen Beleg?",
+        "text": "Markiere im Satz die Angaben zu Alter, Weg und Ziel. Welche Auskunft müsste ein Bericht von 1212 oder aus späterer Zeit zu jeder dieser Angaben geben? Frage auch, wann der Bericht entstand und woher sein Verfasser davon wusste."
       },
       {
-        "label": "Eine vorläufige Ankündigung schreiben",
-        "text": "Verfasse 40–60 Wörter, die das Thema interessant eröffnen, ohne Alter, Zahl oder Schicksal der Beteiligten zu erfinden. Benenne ausdrücklich die umstrittene Bezeichnung als Untersuchungsfrage."
+        "label": "Was lässt sich bisher sagen?",
+        "text": "Schreibe drei Sätze: Welches Bild erzeugt der Name? Was ist damit noch nicht belegt? Welche Frage würdest du zuerst anhand eines historischen Berichts untersuchen?"
       }
     ],
-    "result": "Eine Recherchekarte und eine verantwortbare vorläufige Ankündigung.",
-    "hint": "Dass hier kein Chronikauszug vorliegt, ist eine Grenze dieses Fensters. Die Aufgabe besteht gerade darin, daraus keine scheinbar quellennahe Nacherzählung zu machen."
+    "result": "Drei Sätze, die zwischen dem Namen, den damit verbundenen Vorstellungen und offenen historischen Fragen unterscheiden.",
+    "hint": "Dieser Eintrag enthält keinen Chronikauszug. Du kannst deshalb hier die Behauptungen prüfen und Fragen formulieren, aber Alter, Reiseweg und Ziel noch nicht anhand eines historischen Berichts klären."
   },
   "americas1491": {
     "title": "Die erste Seite beginnt vor der Ankunft",
@@ -1144,7 +1144,7 @@ EVENTS.find(e=>e.id==='nietzsche').related.push('recurrence');
 CONCEPTS.history.related.push('recurrence');
 SOURCES.marx1859={title:'Karl Marx: Zur Kritik der politischen Ökonomie, Vorwort (1859)',url:'https://www.marxists.org/archive/marx/works/1859/critique-pol-economy/preface.htm',note:'Primärtext, englische Übersetzung. Hier eigenständige deutsche Paraphrasen; besonders Produktionsverhältnisse, gesellschaftlicher Wandel und Epochenannahmen.'};
 SOURCES.engels1890={title:'Friedrich Engels an Joseph Bloch, September 1890',url:'https://www.marxists.org/archive/marx/works/1890/letters/90_09_21.htm',note:'Primärtextauszug, englische Übersetzung. Wechselwirkungen und Kritik an einer ausschliesslich ökonomischen Erklärung. Joseph Bloch ist nicht Marc Bloch.'};
-CONCEPTS.materialism={id:'materialism',title:'Historischer Materialismus: Bedingungen und Konflikte',intro:'Wie verändert sich die Erklärung von Geschichte, wenn wir bei Arbeit und gesellschaftlichen Beziehungen beginnen?',text:'Karl Marx (1818–1883) und Friedrich Engels (1820–1895) entwickelten ihre materialistische Geschichtsauffassung im 19. Jahrhundert in der Auseinandersetzung mit Philosophie, politischer Ökonomie und sozialen Konflikten. Sie waren Forscher und politische Akteure. Der Ansatz erklärt gesellschaftlichen Wandel aus den Bedingungen menschlicher Lebensproduktion und ihren Widersprüchen. Er lenkt den Blick auf Arbeit, Eigentum, Herrschaft und Klassenkonflikte. Dabei ist umstritten, welches Gewicht materiellen Bedingungen gegenüber politischem Handeln und Ideen zukommt. Seine Entwicklungsannahmen sind selbst historisch zu untersuchen.',sources:['marx1859','engels1890'],related:['industry','haiti','hegel','harariorders','period'],activity:{title:'Zwei Erklärungen derselben Maschine',scene:'Ein erfundener Fabrikfall: Eine neue Maschine ermöglicht dieselbe Gütermenge in sechs statt acht Stunden. Mehr wissen wir zunächst nicht. Verwechsle diese Annahme nicht mit einem Befund über Menzels Eisenwalzwerk.',cards:[{label:'Redaktion A · technische Erklärung',text:'«Weil die Maschine Zeit spart, arbeiten nun alle kürzer.» Diese Schlussfolgerung ist eine zu prüfende Behauptung.'},{label:'Redaktion B · gesellschaftliche Erklärung',text:'«Ob die gewonnene Zeit frei wird, hängt auch davon ab, wer über Produktion und Arbeitszeit entscheiden kann.» Auch diese Erklärung braucht konkrete Belege.'}],steps:[{label:'Den fehlenden Zwischenschritt finden',text:'Zeichne zwischen Maschine und kürzerem Arbeitstag ein zusätzliches Feld. Trage eine Entscheidung, Vereinbarung oder Regel ein, ohne die der Schluss nicht trägt.'},{label:'Die eigene Erklärung angreifbar machen',text:'Wechsle zum Wirkungsgefüge. Entwickle aus demselben technischen Ausgangspunkt zwei verschiedene mögliche Folgen. Nenne für jede eine notwendige Bedingung und eine Quelle, die diese Bedingung prüfen könnte.'},{label:'Den Massstab wechseln',text:'Wähle danach Saint-Domingue. Welche Verbindung verschiedener Arbeitsverhältnisse geht verloren, wenn du Gesellschaften bloss auf früheren und späteren Stufen derselben Treppe einzeichnest?'}],result:'Eine begründete Wirkungskette mit einem alternativen Ausgang und einer benannten Beleglücke; dazu eine Kritik an einer weltweiten Pflichtfolge von Epochen.',hint:'Eine Maschine trifft keine Vereinbarung über Arbeitszeit. Wer handeln und entscheiden kann, muss ebenso untersucht werden wie die Technik. Umgekehrt erklärt eine Forderung noch nicht die materiellen Bedingungen ihrer Durchsetzung.'}};
+CONCEPTS.materialism={id:'materialism',title:'Historischer Materialismus: Bedingungen und Konflikte',intro:'Wie verändert sich die Erklärung von Geschichte, wenn wir bei Arbeit und gesellschaftlichen Beziehungen beginnen?',text:'Karl Marx (1818–1883) und Friedrich Engels (1820–1895) entwickelten ihre materialistische Geschichtsauffassung im 19. Jahrhundert in der Auseinandersetzung mit Philosophie, politischer Ökonomie und sozialen Konflikten. Sie waren Forscher und politische Akteure. Der Ansatz erklärt gesellschaftlichen Wandel aus den Bedingungen menschlicher Lebensproduktion und ihren Widersprüchen. Er lenkt den Blick auf Arbeit, Eigentum, Herrschaft und Klassenkonflikte. Dabei ist umstritten, welches Gewicht materiellen Bedingungen gegenüber politischem Handeln und Ideen zukommt. Seine Entwicklungsannahmen sind selbst historisch zu untersuchen.',sources:['marx1859','engels1890'],related:['industry','haiti','hegel','harariorders','period'],activity:{title:'Zwei Erklärungen derselben Maschine',scene:'Ein erfundener Fabrikfall: Eine neue Maschine ermöglicht dieselbe Gütermenge in sechs statt acht Stunden. Mehr wissen wir zunächst nicht. Verwechsle diese Annahme nicht mit einem Befund über Menzels Eisenwalzwerk.',cards:[{label:'Erklärung A · Technik',text:'«Weil die Maschine Zeit spart, arbeiten nun alle kürzer.» Diese Schlussfolgerung ist eine zu prüfende Behauptung.'},{label:'Erklärung B · gesellschaftliche Beziehungen',text:'«Ob die gewonnene Zeit frei wird, hängt auch davon ab, wer über Produktion und Arbeitszeit entscheiden kann.» Auch diese Erklärung braucht konkrete Belege.'}],steps:[{label:'Den fehlenden Zwischenschritt finden',text:'Zeichne zwischen Maschine und kürzerem Arbeitstag ein zusätzliches Feld. Trage eine Entscheidung, Vereinbarung oder Regel ein, ohne die der Schluss nicht trägt.'},{label:'Die eigene Erklärung angreifbar machen',text:'Wechsle zum Wirkungsgefüge. Entwickle aus demselben technischen Ausgangspunkt zwei verschiedene mögliche Folgen. Nenne für jede eine notwendige Bedingung und eine Quelle, die diese Bedingung prüfen könnte.'},{label:'Den Massstab wechseln',text:'Wähle danach Saint-Domingue. Welche Verbindung verschiedener Arbeitsverhältnisse geht verloren, wenn du Gesellschaften bloss auf früheren und späteren Stufen derselben Treppe einzeichnest?'}],result:'Eine begründete Wirkungskette mit einem alternativen Ausgang und einer benannten Beleglücke; dazu eine Kritik an einer weltweiten Pflichtfolge von Epochen.',hint:'Eine Maschine trifft keine Vereinbarung über Arbeitszeit. Wer handeln und entscheiden kann, muss ebenso untersucht werden wie die Technik. Umgekehrt erklärt eine Forderung noch nicht die materiellen Bedingungen ihrer Durchsetzung.'}};
 CONCEPTS.materialism.tasks=CONCEPTS.materialism.activity.steps.map(s=>s.text);
 CONCEPTS.materialism.hint=CONCEPTS.materialism.activity.hint;
 EVENTS.find(e=>e.id==='hegel').related.push('materialism');
