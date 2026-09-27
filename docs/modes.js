@@ -1133,7 +1133,7 @@ const AUGUSTINE_CHARACTERS=[
     "id": "archaeology2010",
     "year": 2010,
     "role": "Archäologin",
-    "place": "Zürich, Opernhausplatz",
+    "place": "Zürich, Sechseläutenplatz beim Opernhaus nahe Stadelhofen",
     "related": "local-opera",
     "memory": "Ich erinnere mich an eine ältere Grabung, bei der ein unscheinbarer Fund wichtig wurde.",
     "attention": "Ich dokumentiere Holzreste und ihre Lage, bevor der Zusammenhang verloren geht.",
