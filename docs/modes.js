@@ -831,6 +831,342 @@ function compactWorldWorkspace(){
 
 // A designed experience, not a reconstruction of Augustine's own spatial model.
 let augustineProgress=0,augustinePlaying=false,augustineFrame=0,augustineAudio=null,augustineVoice=null,augustineLastTone=-1,augustineSound=true;
+const AUGUSTINE_CHARACTERS=[
+  {
+    "id": "scribe",
+    "year": -1900,
+    "role": "Schreiber",
+    "place": "Ägypten",
+    "related": "scribe",
+    "memory": "Ich erinnere mich an die Zahlen, die ich gestern aufgeschrieben habe. Bei einer Lieferung musste ich nachzählen.",
+    "attention": "Ich prüfe die nächste Getreidemenge und halte die Angaben fest.",
+    "expectation": "Ich hoffe, dass meine Aufzeichnungen bei der nächsten Kontrolle stimmen.",
+    "limit": "Mein Wissen stammt aus meiner Arbeit und aus Mitteilungen im Umfeld der Verwaltung."
+  },
+  {
+    "id": "potter",
+    "year": -450,
+    "role": "Töpferin",
+    "place": "Athen",
+    "related": "athens",
+    "memory": "Ich erinnere mich an ein Gefäss, das beim Brennen gesprungen ist.",
+    "attention": "Ich glätte den Rand eines neuen Gefässes und höre das Gespräch in der Werkstatt.",
+    "expectation": "Ich hoffe, dass der nächste Brand gelingt und wir genügend verkaufen.",
+    "limit": "Politische Teilhabe und Einblick in öffentliche Entscheidungen sind nicht für alle Menschen gleich."
+  },
+  {
+    "id": "nero",
+    "year": 60,
+    "role": "Versklavte Frau zur Zeit Neros",
+    "place": "Rom",
+    "related": "rome",
+    "memory": "Ich erinnere mich an den Haushalt, aus dem man mich fortgebracht hat, und an eine dort zurückgebliebene Person.",
+    "attention": "Ich erledige die zugewiesene Arbeit und achte darauf, ob jemand nach mir ruft.",
+    "expectation": "Ich wünsche mir, die zurückgebliebene Person wiederzusehen. Ob ich den Haushalt verlassen darf, entscheide ich nicht selbst.",
+    "limit": "Diese erfundene Lebenssituation steht im Zusammenhang römischer Sklaverei. Sie ist keine überlieferte Biografie."
+  },
+  {
+    "id": "chur",
+    "year": 150,
+    "role": "Handwerker",
+    "place": "Chur",
+    "related": "local-chur",
+    "memory": "Ich erinnere mich an eine Reparatur für einen Reisenden, dessen Wagen beschädigt war.",
+    "attention": "Ich prüfe ein Werkzeug. Von der Strasse höre ich Menschen und Tiere.",
+    "expectation": "Ich rechne mit neuer Arbeit, weiss aber nicht, wer als Nächstes hier ankommt.",
+    "limit": "Nachrichten erreichen mich durch Menschen, die den Ort besuchen; ich überblicke nicht das ganze Reich."
+  },
+  {
+    "id": "rome470",
+    "year": 470,
+    "role": "Händlerin",
+    "place": "Italien",
+    "related": "romeend",
+    "memory": "Ich erinnere mich an eine Reise, auf der wir länger als geplant auf Weiterfahrt warten mussten.",
+    "attention": "Ich bespreche eine Lieferung und frage nach der Sicherheit des Weges.",
+    "expectation": "Ich hoffe, dass die Ware ankommt. Welche politische Ordnung in einigen Jahren besteht, weiss ich nicht.",
+    "limit": "Die spätere Epochengrenze 476 gehört nicht zum Wissen dieser Figur."
+  },
+  {
+    "id": "china868",
+    "year": 868,
+    "role": "Mitarbeiter einer Druckwerkstatt",
+    "place": "China",
+    "related": "print",
+    "memory": "Ich erinnere mich an ein Blatt, auf dem die Schrift nur unvollständig erschien.",
+    "attention": "Ich kontrolliere den Abdruck und vergleiche die Zeichen mit der Vorlage.",
+    "expectation": "Ich möchte weitere gut lesbare Blätter herstellen. Wer sie später lesen wird, kenne ich nicht.",
+    "limit": "Der Entwurf knüpft an den belegten Holzblockdruck an, nicht an eine bekannte Person aus der Werkstatt des Diamant-Sutra."
+  },
+  {
+    "id": "custos",
+    "year": 1150,
+    "role": "Kustos eines Klosters",
+    "place": "Mitteleuropa",
+    "related": "medievalworld",
+    "memory": "Ich erinnere mich an das letzte Fest, als vor dem Gottesdienst noch etwas fehlte.",
+    "attention": "Ich prüfe die für den Gottesdienst benötigten Gegenstände und höre auf das Glockenzeichen.",
+    "expectation": "Ich erwarte die nächste Gebetszeit und hoffe, dass alles bereitliegt. Mein Dienst gehört für mich zum Leben vor Gott.",
+    "limit": "Kustos bezeichnet hier einen mit der Sorge für Kirche und Gottesdienst betrauten Mönch. Aufgaben unterschieden sich zwischen Klöstern."
+  },
+  {
+    "id": "nun",
+    "year": 1250,
+    "role": "Nonne",
+    "place": "England",
+    "related": "medievalworld",
+    "memory": "Ich erinnere mich an eine Textstelle, die wir gemeinsam gelesen haben.",
+    "attention": "Ich versuche, beim Gebet aufmerksam zu bleiben, während mir diese Worte wieder einfallen.",
+    "expectation": "Ich hoffe, die Stelle besser zu verstehen und meine täglichen Aufgaben erfüllen zu können.",
+    "limit": "Die Stimme ist erfunden. Sie steht nicht für alle Nonnen oder für ein einheitliches mittelalterliches Denken."
+  },
+  {
+    "id": "bridge",
+    "year": 1360,
+    "role": "Arbeiter am Seeübergang",
+    "place": "Rapperswil–Hurden",
+    "related": "local-bridge",
+    "memory": "Ich erinnere mich an einen Arbeitstag, an dem Wind unsere Arbeit am Wasser erschwerte.",
+    "attention": "Ich achte auf meinen Stand und auf die Menschen, mit denen ich arbeite.",
+    "expectation": "Ich hoffe, dass die Arbeit heute ohne Unfall endet. Wie lange der Übergang bestehen wird, weiss ich nicht.",
+    "limit": "Arbeitsablauf und persönliche Erinnerung sind für diesen Entwurf angenommen."
+  },
+  {
+    "id": "ming",
+    "year": 1370,
+    "role": "Handwerker",
+    "place": "China unter der frühen Ming-Dynastie",
+    "related": "china",
+    "memory": "Ich erinnere mich an die Unruhe der vergangenen Jahre.",
+    "attention": "Ich arbeite an einem Auftrag und höre, was andere über die neue Herrschaft erzählen.",
+    "expectation": "Ich wünsche mir verlässliche Aufträge. Ob die neue Herrschaft meinen Alltag dauerhaft verändert, bleibt offen.",
+    "limit": "Der Dynastiebeginn ist ein historischer Bezugspunkt; die individuelle Erfahrung wird hier nicht als belegt ausgegeben."
+  },
+  {
+    "id": "mainz",
+    "year": 1455,
+    "role": "Geselle einer Druckwerkstatt",
+    "place": "Mainz",
+    "related": "gutenberg",
+    "memory": "Ich erinnere mich an die Mühe, einen fehlerhaften Satz zu berichtigen.",
+    "attention": "Ich prüfe die gesetzten Zeichen und einen frischen Abdruck.",
+    "expectation": "Ich hoffe, dass die Arbeit gelingt. Welche Verbreitung gedruckte Bücher später erreichen, kann ich nicht wissen.",
+    "limit": "Die Figur kennt ihre Werkstatt, nicht die spätere Erzählung einer weltweiten Medienrevolution."
+  },
+  {
+    "id": "caribbean",
+    "year": 1491,
+    "role": "Bäuerin",
+    "place": "Karibik",
+    "related": "americas1491",
+    "memory": "Ich erinnere mich an die letzte Ernte und daran, mit wem ich die Arbeit geteilt habe.",
+    "attention": "Ich prüfe die Pflanzen und bespreche mit anderen die anstehenden Arbeiten.",
+    "expectation": "Ich hoffe auf eine ausreichende Ernte. Von einer späteren europäischen Ankunft weiss ich nichts.",
+    "limit": "Die Region umfasste unterschiedliche Gesellschaften. Dieser allgemeine Entwurf behauptet keine bestimmte lokale Biografie."
+  },
+  {
+    "id": "timbuktu",
+    "year": 1500,
+    "role": "Abschreiber",
+    "place": "Timbuktu",
+    "related": "timbuktu",
+    "memory": "Ich erinnere mich an eine schwierige Passage, zu der ich eine Erklärung gehört habe.",
+    "attention": "Ich vergleiche meine Abschrift mit der Vorlage und halte bei einer unklaren Stelle inne.",
+    "expectation": "Ich hoffe, eine zuverlässige Abschrift fertigzustellen und die Passage besser zu verstehen.",
+    "limit": "Die Stimme knüpft an handschriftliche Wissensvermittlung an; ihre konkreten Gedanken sind erfunden."
+  },
+  {
+    "id": "zurich",
+    "year": 1523,
+    "role": "Handwerkerin",
+    "place": "Zürich",
+    "related": "local-reform",
+    "memory": "Ich erinnere mich an Gespräche über Predigten, bei denen wir uneinig waren.",
+    "attention": "Ich höre Berichte über die Disputation und frage nach dem Entscheid des Rats.",
+    "expectation": "Ich möchte wissen, was sich für Gottesdienst und Alltag ändern wird. Den weiteren Verlauf kenne ich nicht.",
+    "limit": "Die Figur hört vermittelte Nachrichten. Sie ist weder automatisch Augenzeugin noch Vertreterin aller Zürcherinnen."
+  },
+  {
+    "id": "coal",
+    "year": 1784,
+    "role": "Bergarbeiter",
+    "place": "Käpfnach bei Horgen",
+    "related": "local-coal",
+    "memory": "Ich erinnere mich an die Erschöpfung nach meiner letzten Arbeit unter Tage.",
+    "attention": "Ich achte auf Werkzeug, Arbeitsraum und die Menschen neben mir.",
+    "expectation": "Ich hoffe, nach der Arbeit sicher zurückzukehren und meinen Lebensunterhalt bestreiten zu können.",
+    "limit": "Der Beginn des staatlichen Betriebs ist der Bezugspunkt; Arbeitsbedingungen im Einzelnen werden nicht rekonstruiert."
+  },
+  {
+    "id": "paris1789",
+    "year": 1789,
+    "role": "Wäscherin",
+    "place": "Paris",
+    "related": "revolution",
+    "memory": "Ich erinnere mich an Tage, an denen das Geld kaum für Nahrung reichte.",
+    "attention": "Ich höre politische Forderungen und frage mich, was davon meinen Alltag betrifft.",
+    "expectation": "Ich hoffe auf Erleichterung. Ob sich Rechte und Lebensbedingungen für mich verändern, weiss ich nicht.",
+    "limit": "Eine mögliche individuelle Hoffnung, keine belegte Meinung einer ganzen Berufsgruppe."
+  },
+  {
+    "id": "haiti1791",
+    "year": 1791,
+    "role": "Versklavte Arbeiterin",
+    "place": "Saint-Domingue",
+    "related": "haiti",
+    "memory": "Ich erinnere mich an die Trennung von einem nahestehenden Menschen.",
+    "attention": "Ich versuche zu verstehen, welchen Nachrichten über Widerstand ich trauen kann.",
+    "expectation": "Ich wünsche mir Freiheit und Sicherheit. Den Ausgang der Konflikte kenne ich nicht.",
+    "limit": "Die spätere Unabhängigkeit Haitis ist keine Erinnerung oder sichere Erwartung dieser Figur."
+  },
+  {
+    "id": "linth",
+    "year": 1810,
+    "role": "Arbeiter an der Linthkorrektion",
+    "place": "Linthebene",
+    "related": "local-linth",
+    "memory": "Ich erinnere mich an Wege und Felder, auf denen Wasser stand.",
+    "attention": "Ich arbeite am Kanal und sehe, wie sich der Verlauf des Wassers verändert.",
+    "expectation": "Ich hoffe auf weniger Überschwemmungen. Welche Folgen der Eingriff langfristig hat, kann ich nicht überblicken.",
+    "limit": "Die individuelle Lebensgeschichte ist erfunden; der Zeitraum gehört zur Linthkorrektion."
+  },
+  {
+    "id": "murg1840",
+    "year": 1840,
+    "role": "Spinnerin",
+    "place": "Murg am Walensee",
+    "related": "local-murg",
+    "memory": "Ich erinnere mich an meinen ersten Arbeitstag und die ungewohnten Geräusche.",
+    "attention": "Ich achte auf den laufenden Arbeitsvorgang und darauf, ob eine Störung auftritt.",
+    "expectation": "Ich hoffe auf einen verlässlichen Lohn und darauf, nach der Arbeit Zeit für meine Angehörigen zu haben.",
+    "limit": "Die Stimme beschreibt eine mögliche einzelne Perspektive, keine erhobene Aussage über die Belegschaft."
+  },
+  {
+    "id": "ragaz",
+    "year": 1850,
+    "role": "Wäscherin im Kurort",
+    "place": "Ragaz",
+    "related": "local-ragaz",
+    "memory": "Ich erinnere mich an eine Zeit mit besonders viel Wäsche und langen Arbeitstagen.",
+    "attention": "Ich sortiere die Wäsche und höre, dass neue Gäste angekommen sind.",
+    "expectation": "Ich hoffe auf genug Arbeit, aber auch auf Erholung. Ob die Saison gut wird, weiss ich noch nicht.",
+    "limit": "Die angenommene Arbeitsperspektive unterscheidet sich vom Blick zahlender Kurgäste."
+  },
+  {
+    "id": "boat",
+    "year": 1858,
+    "role": "Schiffer",
+    "place": "Walensee",
+    "related": "local-rail",
+    "memory": "Ich erinnere mich an Fahrten, bei denen Reisende und Waren auf mein Boot angewiesen waren.",
+    "attention": "Ich höre von neuen Bahnverbindungen und bespreche einen Transport.",
+    "expectation": "Ich frage mich, ob ich künftig weniger Aufträge bekomme oder andere Fahrten anbieten kann.",
+    "limit": "Die wirtschaftliche Folge wird als offene Frage formuliert, nicht aus dem späteren Bahnnetz abgeleitet."
+  },
+  {
+    "id": "reader",
+    "year": 1881,
+    "role": "Junge Leserin",
+    "place": "Zürich",
+    "related": "local-heidi",
+    "memory": "Ich erinnere mich an eine Berglandschaft, die ich selbst gesehen habe.",
+    "attention": "Ich lese Heidi und vergleiche die beschriebene Welt mit meinen eigenen Vorstellungen.",
+    "expectation": "Ich möchte weiter lesen und vielleicht einmal die Gegend besuchen. Wie berühmt die Geschichte wird, weiss ich nicht.",
+    "limit": "Die Figur erlebt Literatur. Heidis Handlungen werden nicht zu historischen Erinnerungen eines wirklichen Mädchens."
+  },
+  {
+    "id": "war1914",
+    "year": 1914,
+    "role": "Angehörige eines Gefallenen",
+    "place": "Deutschsprachiger Raum",
+    "related": "war",
+    "memory": "Ich erinnere mich an unser letztes Gespräch, bevor er fortging.",
+    "attention": "Ich lese die Todesanzeige und bleibe am Wort Heldentod hängen.",
+    "expectation": "Ich frage mich, wie wir künftig von ihm sprechen werden. Wann der Krieg endet, weiss ich nicht.",
+    "limit": "Die Angehörige und ihre Beziehung sind erfunden; die vorhandene Anzeige dient als Anlass, nicht als Beleg ihrer Gefühle."
+  },
+  {
+    "id": "india1947",
+    "year": 1947,
+    "role": "Schneiderin",
+    "place": "Punjab",
+    "related": "india",
+    "memory": "Ich erinnere mich an die Nachbarschaft, in der ich gearbeitet habe.",
+    "attention": "Ich versuche, Nachrichten über sichere Wege und über Angehörige zu bekommen.",
+    "expectation": "Ich hoffe, wieder einen sicheren Alltag aufbauen zu können. Wo das möglich sein wird, ist offen.",
+    "limit": "Die Stimme ist ein angenommener Einzelfall im Zusammenhang der Teilung, keine allgemeine Erfahrung aller Betroffenen."
+  },
+  {
+    "id": "vote1971",
+    "year": 1971,
+    "role": "Stimmbürgerin vor ihrer ersten eidgenössischen Abstimmung",
+    "place": "Schweiz",
+    "related": "vote",
+    "memory": "Ich erinnere mich an politische Entscheidungen, bei denen ich auf Bundesebene nicht mitstimmen durfte.",
+    "attention": "Ich lese die Abstimmungsunterlagen und bespreche unterschiedliche Argumente.",
+    "expectation": "Ich will meine Stimme abgeben. Welche Entscheidung sich durchsetzt, kenne ich noch nicht.",
+    "limit": "Der Standpunkt liegt nach Einführung des Frauenstimmrechts; lokale und persönliche Vorgeschichten bleiben verschieden."
+  },
+  {
+    "id": "berlin1989",
+    "year": 1989,
+    "role": "Student",
+    "place": "Ost-Berlin, 8. November",
+    "related": "wall",
+    "memory": "Ich erinnere mich an Gespräche und öffentliche Proteste der letzten Wochen.",
+    "attention": "Ich höre Nachrichten und spreche mit Freunden darüber, was sich ändern könnte.",
+    "expectation": "Ich hoffe auf mehr Freiheit zu reisen. Was morgen geschieht, weiss ich nicht.",
+    "limit": "Der Tag ist bewusst vor der Maueröffnung gewählt. Spätere Ereignisse werden nicht vorweggenommen."
+  },
+  {
+    "id": "murg1996",
+    "year": 1996,
+    "role": "Mechaniker der Spinnerei",
+    "place": "Murg",
+    "related": "local-murg1996",
+    "memory": "Ich erinnere mich an eine Maschine, deren Geräusche ich nach Jahren genau kannte.",
+    "attention": "Ich sehe, dass der Betrieb endet, und frage nach meiner nächsten Arbeit.",
+    "expectation": "Ich hoffe, eine neue Stelle zu finden. Welche Nutzung das Gebäude später erhält, weiss ich noch nicht.",
+    "limit": "Die konkrete Berufsbiografie ist erfunden; die Schliessung von 1996 ist der historische Bezugspunkt."
+  },
+  {
+    "id": "archaeology2010",
+    "year": 2010,
+    "role": "Archäologin",
+    "place": "Zürich, Opernhausplatz",
+    "related": "local-opera",
+    "memory": "Ich erinnere mich an eine ältere Grabung, bei der ein unscheinbarer Fund wichtig wurde.",
+    "attention": "Ich dokumentiere Holzreste und ihre Lage, bevor der Zusammenhang verloren geht.",
+    "expectation": "Ich hoffe auf auswertbare Datierungen. Welche Ergebnisse sie liefern werden, steht noch nicht fest.",
+    "limit": "Diese Stimme gehört zur heutigen Erforschung, nicht zur prähistorischen Bevölkerung."
+  },
+  {
+    "id": "paris2015",
+    "year": 2015,
+    "role": "Studentin",
+    "place": "Paris",
+    "related": "paris",
+    "memory": "Ich erinnere mich an Diskussionen, in denen wir an einer gemeinsamen Klimapolitik gezweifelt haben.",
+    "attention": "Ich lese Nachrichten über das beschlossene Abkommen und suche nach seinen Zielen.",
+    "expectation": "Ich hoffe auf wirksame Umsetzung. Ob die Ziele erreicht werden, lässt sich heute nicht wissen.",
+    "limit": "Die Hoffnung gehört zum erfundenen Entwurf; der Vertragsbeschluss ist kein Beleg seiner späteren Wirkung."
+  },
+  {
+    "id": "image2023",
+    "year": 2023,
+    "role": "Nutzerin sozialer Medien",
+    "place": "Zürich",
+    "related": "ai",
+    "memory": "Ich erinnere mich an ein früheres Bild, dessen Herkunft sich später anders herausstellte.",
+    "attention": "Ich sehe eine eindringliche Kriegsszene und suche nach Angaben zu ihrer Herstellung.",
+    "expectation": "Ich möchte die Herkunft klären, bevor ich das Bild weitergebe. Noch weiss ich nicht, was meine Suche ergibt.",
+    "limit": "Die Figur illustriert eine mögliche Prüfung digitaler Bilder, nicht einen dokumentierten Einzelfall."
+  }
+];
+let augustineCharacterIndex=Math.floor(Math.random()*AUGUSTINE_CHARACTERS.length),augustineExperience='person';
+function nextAugustineCharacter(current,random=Math.random()){return (current+1+Math.floor(Math.max(0,Math.min(.999999999,random))*(AUGUSTINE_CHARACTERS.length-1)))%AUGUSTINE_CHARACTERS.length}
+function augustineCharacter(){return AUGUSTINE_CHARACTERS[augustineCharacterIndex]}
+function augustineCharacterControls(){const c=augustineCharacter();return `<div class="conscious-character-controls"><div class="conscious-experience" role="group" aria-label="Zeiterfahrung wählen"><button data-conscious-view="person" aria-pressed="${augustineExperience==='person'}">Ich-Perspektive</button><button data-conscious-view="sound" aria-pressed="${augustineExperience==='sound'}">Klangfolge</button></div><label>Figur <select data-conscious-character aria-label="Historische Ich-Perspektive">${AUGUSTINE_CHARACTERS.map((v,i)=>`<option value="${i}" ${i===augustineCharacterIndex?'selected':''}>${yr(v.year)} · ${esc(v.role)} · ${esc(v.place)}</option>`).join('')}</select></label><button data-conscious-random>Andere Figur zufällig ↻</button><span class="character-disclaimer">30 erfundene Ich-Entwürfe · keine historischen Zitate</span></div>${augustineExperience==='person'?`<div class="conscious-character-context"><strong>${esc(c.role)} · ${esc(c.place)} · ${yr(c.year)}</strong><span>Eine mögliche Einzelperspektive. Alle drei Bezüge vollziehen sich in ihrem Jetzt.</span></div>`:''}`}
 const AUGUSTINE_TONES=[261.63,293.66,329.63,392,349.23,329.63,293.66,261.63];
 function augustinePhase(index,progress){if(progress<=0)return 'expected';const phase=progress*8-index;return phase<0?'expected':phase<1?'attended':'remembered'}
 function stopAugustine(){augustinePlaying=false;if(augustineFrame&&typeof cancelAnimationFrame==='function')cancelAnimationFrame(augustineFrame);augustineFrame=0;if(augustineVoice){try{augustineVoice.stop()}catch{}augustineVoice=null}}
@@ -838,8 +1174,8 @@ function augustinePaint(room){const progress=augustineProgress;room.style.setPro
 async function augustinePlay(room){if(augustinePlaying){stopAugustine();augustinePaint(room);return}if(augustineProgress>=1)augustineProgress=0;augustineLastTone=-1;if(augustineSound){try{augustineAudio??=new (window.AudioContext||window.webkitAudioContext)();await augustineAudio.resume()}catch{augustineSound=false;room.querySelector('[data-conscious-sound]').checked=false;room.querySelector('[data-audio-status]').textContent='Audio hier nicht verfügbar; die sichtbare Folge funktioniert weiterhin.'}}augustinePlaying=true;const start=performance.now()-augustineProgress*16000;
  const tick=now=>{if(!augustinePlaying||!room.isConnected){stopAugustine();return}augustineProgress=Math.min(1,(now-start)/16000);const index=Math.floor(augustineProgress*8);if(index<8&&index!==augustineLastTone){augustineLastTone=index;if(augustineSound&&augustineAudio){const osc=augustineAudio.createOscillator(),gain=augustineAudio.createGain(),t=augustineAudio.currentTime;osc.type='sine';osc.frequency.value=AUGUSTINE_TONES[index];gain.gain.setValueAtTime(0,t);gain.gain.linearRampToValueAtTime(.1,t+.04);gain.gain.exponentialRampToValueAtTime(.001,t+1.6);osc.connect(gain);gain.connect(augustineAudio.destination);osc.start(t);osc.stop(t+1.65);augustineVoice=osc}}if(augustineProgress>=1)stopAugustine();augustinePaint(room);if(augustinePlaying)augustineFrame=requestAnimationFrame(tick)};augustineFrame=requestAnimationFrame(tick);
 }
-function presentSceneHtml(items){return `<figure class="world-scene semantic-board schematic-scene augustine-room" data-conscious-room><div class="conscious-heading"><div><span>AUGUSTINUS · DISTENTIO ANIMI</span><h3>Ein Bewusstsein. Drei Weisen des Gegenwärtigseins.</h3></div><button data-eternity aria-pressed="false">Ewigkeit gegenüberstellen ↗</button></div><div class="conscious-space"><div class="conscious-floor" aria-hidden="true"></div><div class="conscious-stretch" aria-hidden="true"></div><div class="conscious-self"><small>BEWUSSTSEIN</small><strong>Jetzt</strong><span>Die Seele hält auseinander,<br>was sie zugleich gegenwärtig hat.</span></div><div class="conscious-label conscious-memory"><h4>memoria</h4><p>Gegenwart des Vergangenen</p><span>Der Ton ist nicht mehr.<br>Seine Spur ist jetzt in dir.</span></div><div class="conscious-label conscious-attention"><h4>attentio / contuitus</h4><p>Gegenwart des Gegenwärtigen</p><span>Du hörst. Schon vergeht der Ton.</span></div><div class="conscious-label conscious-expectation"><h4>expectatio</h4><p>Gegenwart des Zukünftigen</p><span>Der Ton ist noch nicht.<br>Du bist jetzt auf ihn gerichtet.</span></div><div class="conscious-focus" aria-hidden="true"></div><div class="conscious-score" aria-label="Acht Töne: vom Erwarteten durch die Aufmerksamkeit ins Erinnerte">${AUGUSTINE_TONES.map((_,i)=>`<span class="conscious-tone" data-tone="${i}" data-phase="expected" style="left:${50+i*6}%">♪<small>${i+1}</small></span>`).join('')}</div><div class="conscious-direction">← aus Erwartung durch Aufmerksamkeit in Erinnerung</div><aside class="conscious-eternity" hidden><span>THEOLOGISCHER GEGENBEGRIFF</span><h3>Gottes Ewigkeit</h3><strong>Kein Vorher. Kein Nachher.</strong><p>Bei Augustinus ist Gott nicht am Ende einer unendlich langen Zeitachse. Ewigkeit unterliegt keinem Nacheinander.</p><p>Die räumliche Trennung veranschaulicht den Unterschied zwischen zeitlichem Erleben und Ewigkeit.</p><button data-eternity-back>Zur menschlichen Zeiterfahrung ↩</button></aside></div><div class="conscious-player"><button data-conscious-play>▶ Klangfolge erleben</button><button data-conscious-reset aria-label="Klangfolge zurücksetzen">↺ Anfang</button><label><input type="checkbox" data-conscious-sound checked> Mit Ton</label><input type="range" min="0" max="1" step="0.001" value="${augustineProgress}" data-conscious-progress aria-label="Verlauf der Klangfolge"><output data-conscious-status aria-live="off">Die Folge ist noch nicht erklungen. Was erwartest du?</output><span data-audio-status role="status"></span></div><details class="conscious-explain"><summary>Was erfahre ich hier – und wo endet das Bild?</summary><p>Höre die Folge, halte sie an und höre sie erneut. Beim zweiten Hören kann deine Erinnerung die Erwartung verändern. Während des Hörens wird Erwartetes gegenwärtig und geht ins Erinnern über. Erinnerung und Erwartung vollziehen sich beide jetzt.</p><p>Die «Erstreckung der Seele» bezeichnet diese Spannung. Der Raum und die wandernden Noten sind unsere Veranschaulichung, keine von Augustinus entworfene Geometrie. Die Töne bilden ein eigens erzeugtes Klangbeispiel, kein historisches Lied. Beim ersten Hören kennst du die genaue Fortsetzung noch nicht; die sichtbaren Noten zeigen nur die angekündigte Anzahl, nicht die Tonhöhen.</p><p>Augustinus fragt in <em>Confessiones</em> XI, wie Zeit sein kann, wenn Vergangenes nicht mehr und Zukünftiges noch nicht ist und Gegenwart vergeht. Seine Unterscheidung der drei Gegenwarten ist keine Behauptung dreier voneinander unabhängiger Zeiträume. Vgl. XI, 20 und 26–28.</p><ul>${sourceHtml(['augustine'])}</ul></details><details class="conscious-history"><summary>Historische Spuren in diesen Bewusstseinsraum einbringen · ${worldSelection(items).length} datierte Spuren</summary><p>Der Hörversuch ist deine eigene Zeiterfahrung. Für eine historische Person brauchst du dagegen Quellen: Was erinnerte sie, worauf achtete sie, was erwartete sie? Frühere Ereignisse werden nicht allein durch ihr Datum zu ihrer Erinnerung. Alle ausgewählten Spuren bleiben hier untersuchbar.</p>${historicalPresentSceneHtml(items)}</details><figcaption>Ein virtueller Bewusstseinsraum, keine Kugel und keine objektive Weltzeit. Erinnerung, Aufmerksamkeit und Erwartung sind gegenwärtige Vollzüge.</figcaption></figure>`}
-function wireAugustine(){document.addEventListener('click',e=>{const room=e.target.closest('[data-conscious-room]');if(!room)return;if(e.target.closest('[data-conscious-play]'))augustinePlay(room);if(e.target.closest('[data-conscious-reset]')){stopAugustine();augustineProgress=0;augustinePaint(room)}if(e.target.closest('[data-eternity],[data-eternity-back]')){stopAugustine();const panel=room.querySelector('.conscious-eternity'),opening=panel.hidden;panel.hidden=!opening;room.classList.toggle('eternity-visible',opening);room.querySelector('[data-eternity]').setAttribute('aria-pressed',String(opening));augustinePaint(room)}});document.addEventListener('input',e=>{const room=e.target.closest('[data-conscious-room]');if(!room)return;if(e.target.matches('[data-conscious-progress]')){stopAugustine();augustineProgress=Number(e.target.value);augustinePaint(room)}if(e.target.matches('[data-conscious-sound]')){augustineSound=e.target.checked;if(!augustineSound&&augustineVoice){try{augustineVoice.stop()}catch{}augustineVoice=null}}});document.addEventListener('visibilitychange',()=>{if(document.hidden)stopAugustine()});}
+function presentSceneHtml(items){const c=augustineCharacter(),person=augustineExperience==='person';return `<figure class="world-scene semantic-board schematic-scene augustine-room ${person?'person-mode':'sound-mode'}" data-conscious-room><div class="conscious-heading"><div><span>AUGUSTINUS · DISTENTIO ANIMI</span><h3>Ein Bewusstsein. Drei Weisen des Gegenwärtigseins.</h3></div><button data-eternity aria-pressed="false">Ewigkeit gegenüberstellen ↗</button></div>${augustineCharacterControls()}<div class="conscious-space"><div class="conscious-floor" aria-hidden="true"></div><div class="conscious-stretch" aria-hidden="true"></div><div class="conscious-self"><small>BEWUSSTSEIN</small><strong>${person?yr(c.year):'Jetzt'}</strong><span>${person?'Mein Jetzt · '+esc(c.place):'Die Seele hält auseinander,<br>was sie zugleich gegenwärtig hat.'}</span></div><div class="conscious-label conscious-memory"><h4>memoria</h4><p>Gegenwart des Vergangenen</p><span>${person?esc(c.memory):'Der Ton ist nicht mehr.<br>Seine Spur ist jetzt in dir.'}</span></div><div class="conscious-label conscious-attention"><h4>attentio / contuitus</h4><p>Gegenwart des Gegenwärtigen</p><span>${person?esc(c.attention):'Du hörst. Schon vergeht der Ton.'}</span></div><div class="conscious-label conscious-expectation"><h4>expectatio</h4><p>Gegenwart des Zukünftigen</p><span>${person?esc(c.expectation):'Der Ton ist noch nicht.<br>Du bist jetzt auf ihn gerichtet.'}</span></div><div class="conscious-focus" aria-hidden="true"></div><div class="conscious-score" aria-label="Acht Töne: vom Erwarteten durch die Aufmerksamkeit ins Erinnerte">${AUGUSTINE_TONES.map((_,i)=>`<span class="conscious-tone" data-tone="${i}" data-phase="expected" style="left:${50+i*6}%">♪<small>${i+1}</small></span>`).join('')}</div><div class="conscious-direction">← aus Erwartung durch Aufmerksamkeit in Erinnerung</div><aside class="conscious-eternity" hidden><span>THEOLOGISCHER GEGENBEGRIFF</span><h3>Gottes Ewigkeit</h3><strong>Kein Vorher. Kein Nachher.</strong><p>Bei Augustinus ist Gott nicht am Ende einer unendlich langen Zeitachse. Ewigkeit unterliegt keinem Nacheinander.</p><p>Die räumliche Trennung veranschaulicht den Unterschied zwischen zeitlichem Erleben und Ewigkeit.</p><button data-eternity-back>Zur menschlichen Zeiterfahrung ↩</button></aside></div><div class="conscious-player"><button data-conscious-play>▶ Klangfolge erleben</button><button data-conscious-reset aria-label="Klangfolge zurücksetzen">↺ Anfang</button><label><input type="checkbox" data-conscious-sound checked> Mit Ton</label><input type="range" min="0" max="1" step="0.001" value="${augustineProgress}" data-conscious-progress aria-label="Verlauf der Klangfolge"><output data-conscious-status aria-live="off">Die Folge ist noch nicht erklungen. Was erwartest du?</output><span data-audio-status role="status"></span></div>${person?`<details class="conscious-character-note"><summary>Was ist an dieser Figur angenommen?</summary><p>${esc(c.limit)}</p><p>Die Ich-Sätze sind für diese Ansicht geschrieben. Sie beschreiben keine belegte Person und keine einheitliche Sicht ihrer Gruppe. Augustinus’ Begriffe werden hier auf eine mögliche Erfahrung übertragen; die Figur muss sie nicht selbst gekannt haben. Die Figurenwahl verändert deine Kategorie- und Zeitfilter nicht.</p>${eventLink(c.related,'Historischen Zusammenhang im vorhandenen Eintrag öffnen')}${c.id==='nero'?'<p><a href="https://www.britishmuseum.org/exhibitions/nero-man-behind-myth/slavery-ancient-rome" target="_blank" rel="noopener">British Museum: Sklaverei im antiken Rom</a></p>':''}</details>`:''}<details class="conscious-explain"><summary>Was erfahre ich hier – und wo endet das Bild?</summary><p>Höre die Folge, halte sie an und höre sie erneut. Beim zweiten Hören kann deine Erinnerung die Erwartung verändern. Während des Hörens wird Erwartetes gegenwärtig und geht ins Erinnern über. Erinnerung und Erwartung vollziehen sich beide jetzt.</p><p>Die «Erstreckung der Seele» bezeichnet diese Spannung. Der Raum und die wandernden Noten sind unsere Veranschaulichung, keine von Augustinus entworfene Geometrie. Die Töne bilden ein eigens erzeugtes Klangbeispiel, kein historisches Lied. Beim ersten Hören kennst du die genaue Fortsetzung noch nicht; die sichtbaren Noten zeigen nur die angekündigte Anzahl, nicht die Tonhöhen.</p><p>Augustinus fragt in <em>Confessiones</em> XI, wie Zeit sein kann, wenn Vergangenes nicht mehr und Zukünftiges noch nicht ist und Gegenwart vergeht. Seine Unterscheidung der drei Gegenwarten ist keine Behauptung dreier voneinander unabhängiger Zeiträume. Vgl. XI, 20 und 26–28.</p><ul>${sourceHtml(['augustine'])}</ul></details><details class="conscious-history"><summary>Historische Spuren in diesen Bewusstseinsraum einbringen · ${worldSelection(items).length} datierte Spuren</summary><p>Der Hörversuch ist deine eigene Zeiterfahrung. Für eine historische Person brauchst du dagegen Quellen: Was erinnerte sie, worauf achtete sie, was erwartete sie? Frühere Ereignisse werden nicht allein durch ihr Datum zu ihrer Erinnerung. Alle ausgewählten Spuren bleiben hier untersuchbar.</p>${historicalPresentSceneHtml(items)}</details><figcaption>Ein virtueller Bewusstseinsraum, keine Kugel und keine objektive Weltzeit. Erinnerung, Aufmerksamkeit und Erwartung sind gegenwärtige Vollzüge.</figcaption></figure>`}
+function wireAugustine(){document.addEventListener('change',e=>{if(!e.target.matches('[data-conscious-character]'))return;const i=Number(e.target.value);if(!Number.isInteger(i)||i<0||i>=AUGUSTINE_CHARACTERS.length)return;stopAugustine();augustineCharacterIndex=i;augustineExperience='person';render()});document.addEventListener('click',e=>{const room=e.target.closest('[data-conscious-room]');if(!room)return;if(e.target.closest('[data-conscious-random]')){stopAugustine();augustineCharacterIndex=nextAugustineCharacter(augustineCharacterIndex);augustineExperience='person';render();return}const experience=e.target.closest('[data-conscious-view]');if(experience){stopAugustine();augustineExperience=experience.dataset.consciousView;render();return}if(e.target.closest('[data-conscious-play]'))augustinePlay(room);if(e.target.closest('[data-conscious-reset]')){stopAugustine();augustineProgress=0;augustinePaint(room)}if(e.target.closest('[data-eternity],[data-eternity-back]')){stopAugustine();const panel=room.querySelector('.conscious-eternity'),opening=panel.hidden;panel.hidden=!opening;room.classList.toggle('eternity-visible',opening);room.querySelector('[data-eternity]').setAttribute('aria-pressed',String(opening));augustinePaint(room)}});document.addEventListener('input',e=>{const room=e.target.closest('[data-conscious-room]');if(!room)return;if(e.target.matches('[data-conscious-progress]')){stopAugustine();augustineProgress=Number(e.target.value);augustinePaint(room)}if(e.target.matches('[data-conscious-sound]')){augustineSound=e.target.checked;if(!augustineSound&&augustineVoice){try{augustineVoice.stop()}catch{}augustineVoice=null}}});document.addEventListener('visibilitychange',()=>{if(document.hidden)stopAugustine()});}
 
 function historicalPresentSceneHtml(items){
  const shown=worldSelection(items).sort((a,b)=>a.year-b.year),past=shown.filter(e=>e.year<worldYear),now=shown.filter(e=>e.year===worldYear),future=shown.filter(e=>e.year>worldYear);

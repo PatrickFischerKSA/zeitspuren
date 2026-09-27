@@ -310,3 +310,16 @@ vm.runInContext(`{
  const html=presentSceneHtml([]);if(!html.includes('conscious-eternity" hidden')||!html.includes('keinem Nacheinander')||!html.includes('kein historisches Lied'))throw Error('Ewigkeit/Modellgrenze nicht ausgewiesen');
 }`,ctx);
 console.log('PASS: Klangfolge wandert von Erwartung über Aufmerksamkeit in Erinnerung; Ewigkeit und didaktischer Modellstatus ausdrücklich getrennt.');
+
+// Character drafts remain separate from historical entries and filter state.
+vm.runInContext('globalThis.characterTests={characters:AUGUSTINE_CHARACTERS,next:nextAugustineCharacter};',ctx);
+const ct=ctx.characterTests;
+assert.equal(ct.characters.length,30);
+assert.equal(new Set(ct.characters.map(c=>c.id)).size,30);
+for(let i=0;i<30;i++){
+ const c=ct.characters[i];assert(Number.isInteger(c.year)&&c.year!==0);assert(events.some(e=>e.id===c.related)||ctx.modelTests.concepts[c.related]);
+ for(const field of ['memory','attention','expectation','limit'])assert(c[field].length>35,c.id+' '+field);
+ for(const value of [0,.01,.5,.99,.99999999]){const next=ct.next(i,value);assert(next>=0&&next<30);assert.notEqual(next,i);}
+}
+assert(ct.characters.some(c=>c.id==='nero'&&c.year===60));assert(ct.characters.some(c=>c.id==='custos'&&c.year===1150));
+console.log('PASS: 30 distinct historical first-person drafts, complete perspectives, existing context links and random change without immediate repetition.');
