@@ -1,7 +1,7 @@
 const ACTIVITIES = {
   "history": {
     "title": "Drei Dinge, die leicht verwechselt werden",
-    "scene": "Auf deinem Tisch liegen eine Todesanzeige von 1914 und ein 2023 erzeugtes KI-Kriegsbild. Beide sind hier im Zeitstrahl zu finden. Kann man mit beiden Geschichte schreiben?",
+    "scene": "Vergleiche die Todesanzeige von 1914 mit dem KI-Kriegsbild von 2023. Welche Aussagen lassen sich mit dem jeweiligen Bild belegen?",
     "cards": [
       {
         "label": "Die Anzeige",
@@ -22,12 +22,12 @@ const ACTIVITIES = {
         "text": "Vervollständige: «Vergangen ist …; eine Quelle ist …; Geschichte schreiben heisst …». Probiere deine Definition an der Todesanzeige aus: Ist deren Heldendeutung schon deine Erklärung?"
       }
     ],
-    "result": "Drei zusammenhängende Definitionssätze und ein konkreter Beleg dafür, warum Quelle und Darstellung nicht dasselbe sind.",
+    "result": "Eine Erklärung des Unterschieds zwischen vergangenem Geschehen, Quelle und historischer Darstellung, bezogen auf die beiden Bilder.",
     "hint": "Das KI-Bild kann eine Quelle für seine eigene Herstellung und Verwendung sein, ohne das dargestellte Kriegsgeschehen zu bezeugen."
   },
   "period": {
-    "title": "Eine Grenze braucht einen Auftrag",
-    "scene": "Du sollst eine Ausstellung mit dem Titel «Eine neue Zeit beginnt» eröffnen. Zur Wahl stehen 476, 1492 und 1971. Die Daten stehen hier für sehr unterschiedliche Veränderungen.",
+    "title": "Was verändert sich an einer Epochengrenze?",
+    "scene": "476, 1492 und 1971 stehen für unterschiedliche Veränderungen. Untersuche, für welchen Ort, Lebensbereich und welche Menschen eines dieser Daten einen Einschnitt bezeichnet.",
     "cards": [
       {
         "label": "476",
@@ -44,24 +44,24 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Den Ausstellungstitel präzisieren",
-        "text": "Wähle ein Datum. Ergänze den Titel um einen Ort, einen Lebensbereich und betroffene Menschen. Aus «Eine neue Zeit» könnte etwa eine bestimmte neue politische Ordnung werden."
+        "label": "Die Veränderung benennen",
+        "text": "Wähle ein Datum. Beschreibe anhand des zugehörigen Eintrags, was sich verändert und wen dies betrifft."
       },
       {
-        "label": "Die Gegenwand gestalten",
-        "text": "Auf der gegenüberliegenden Wand muss eine Fortdauer stehen, die deine Grenze überquert. Entnimm sie dem passenden Popup oder kennzeichne, was du noch recherchieren müsstest."
+        "label": "Fortdauer untersuchen",
+        "text": "Was besteht über dieses Datum hinaus weiter? Unterscheide Angaben im Eintrag von Fragen, die das Material offenlässt."
       },
       {
-        "label": "Im Zeitstrahl entscheiden",
-        "text": "Verändere eine Epochengrenze, wenn dein Kriterium das rechtfertigt. Falls die vorhandenen Regler deinen Vorschlag nicht abbilden, setze einen eigenen Eintrag. Erkläre auch, warum diese Grenze keine Weltnorm ist."
+        "label": "Die Grenze eintragen",
+        "text": "Trage deine begründete Grenze im Zeitstrahl ein. Du kannst dafür auch einen eigenen Eintrag anlegen. Für welche anderen Regionen oder Lebensbereiche passt sie nicht?"
       }
     ],
-    "result": "Ein präziser Ausstellungstitel, eine Gegenwand und ein begründeter Eintrag.",
+    "result": "Eine begründete Zeitgrenze mit Angaben dazu, wo und für wen sie sinnvoll ist.",
     "hint": "«Für alle änderte sich alles» ist eine sehr starke Behauptung. Eine begrenzte, belegbare Zäsur erklärt mehr als ein gross klingender Epochenname."
   },
   "cave": {
-    "title": "Das Museum weiss es nicht genau",
-    "scene": "Das Bild ist da, aber die Unterrichtsvorlage nennt seine genaue Herkunft nicht. Du schreibst die Beschriftung, die daneben hängen soll.",
+    "title": "Was wissen wir über diese Höhlenmalerei?",
+    "scene": "Die genaue Herkunft der abgebildeten Höhlenmalerei ist in der vorliegenden Vorlage nicht angegeben. Unterscheide sichtbare Einzelheiten von Angaben, die zur Einordnung fehlen.",
     "cards": [
       {
         "label": "Was vorliegt",
@@ -70,15 +70,15 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Am Bild bleiben",
-        "text": "Suche zwei sichtbare Details. Beschreibe sie so, dass jemand sie wiederfinden könnte. Verzichte dabei auf Wörter wie «Jagdzauber», die bereits eine Funktion behaupten."
+        "label": "Das Bild beschreiben",
+        "text": "Beschreibe zwei sichtbare Details. Welche Aussagen über die dargestellten Formen sind möglich, welche über ihren Zweck bleiben offen?"
       },
       {
-        "label": "Die Lücke sichtbar machen",
-        "text": "Verfasse eine Museumstafel von höchstens 60 Wörtern: Was lässt sich sehen? Was fehlt zur Einordnung? Weshalb bedeutet fehlende Schrift nicht fehlende Geschichte?"
+        "label": "Das Wissen einordnen",
+        "text": "Halte fest, was du am Bild erkennen kannst und welche Herkunftsangaben fehlen. Was zeigt das Beispiel über Möglichkeiten und Grenzen einer Geschichte ohne schriftliche Zeugnisse?"
       }
     ],
-    "result": "Eine Bildbeschriftung, die anschaulich ist und keine Herkunft erfindet.",
+    "result": "Eine Bildbeschreibung, die sichtbare Merkmale von unbekannter Herkunft und Funktion unterscheidet.",
     "hint": "«Herkunft in der Vorlage nicht belegt» ist eine sachliche Information. Sie ist besser als ein plausibel klingender Höhlenname."
   },
   "script": {
@@ -108,8 +108,8 @@ const ACTIVITIES = {
     "hint": "Schrift erweitert die Überlieferung. Sie setzt nicht rückwirkend alle früheren menschlichen Erfahrungen ausserhalb der Geschichte."
   },
   "scribe": {
-    "title": "Die Berufsberatung des Schreibers",
-    "scene": "Ein Vater wirbt für den Schreiberberuf, indem er körperliche Arbeit schlecht aussehen lässt. Du prüfst diese antike Berufsberatung als interessengeleitete Darstellung.",
+    "title": "Warum empfiehlt der Text den Schreiberberuf?",
+    "scene": "Die Zusammenfassung der Lehre des Cheti beschreibt, wie ein Vater dem Sohn den Schreiberberuf empfiehlt. Wie dienen die Darstellungen anderer Tätigkeiten dieser Empfehlung?",
     "cards": [
       {
         "label": "Inhalt des überlieferten Textes – Zusammenfassung",
@@ -122,20 +122,20 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Das Argument freilegen",
-        "text": "Welche Entscheidung soll der Sohn treffen? Erkläre, warum die Häufung schlechter Arbeitsbedingungen gerade diesem Ziel dient."
+        "label": "Die Empfehlung untersuchen",
+        "text": "Welche Entscheidung soll der Sohn treffen? Welche Rolle spielen dabei die geschilderten Arbeitsbedingungen anderer Berufe?"
       },
       {
-        "label": "Einen fairen Einwand schreiben",
-        "text": "Verfasse die Rückfrage eines Webers an den Vater. Kennzeichne sie als heutiges Gedankenexperiment. Die Frage soll eine Information verlangen, die der Werbetext nicht liefert – etwa über Einkommen, Ausbildung oder Abhängigkeit."
+        "label": "Die Aussagekraft prüfen",
+        "text": "Welche Angaben zu Einkommen, Ausbildung oder Abhängigkeit fehlen für einen Vergleich der Berufe? Die vorliegende Zusammenfassung erschliesst die Empfehlung, aber keine genaue Untersuchung des antiken Wortlauts."
       }
     ],
-    "result": "Ein Satz zur Absicht des Textes und eine gezielte Rückfrage aus einer anderen beruflichen Position.",
-    "hint": "Eine Gegenerzählung wird nicht wahr, weil sie eine benachteiligte Stimme vertritt. Hier entwickelst du eine Forschungsfrage, kein fiktives antikes Zeugnis."
+    "result": "Eine Erklärung der Empfehlung und der Grenzen des Berufsvergleichs in der vorliegenden Zusammenfassung.",
+    "hint": "Der Text empfiehlt eine Tätigkeit. Ob Schreibende tatsächlich besser lebten als andere Berufsgruppen, ist damit noch nicht geklärt."
   },
   "rome": {
-    "title": "Eine Münze muss überzeugen",
-    "scene": "Eine Münze wechselt Hände, ohne dass der Kaiser mitreisen muss. Untersuche, wie das abgebildete Objekt seine Gegenwart dennoch herstellt.",
+    "title": "Wie stellt die Münze den Kaiser dar?",
+    "scene": "Betrachte das Kaiserbild und die übrige Gestaltung der Münze. Welche Vorstellung von Herrschaft vermittelt sie?",
     "cards": [
       {
         "label": "Zwei Daten",
@@ -144,20 +144,20 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Den Blick führen",
-        "text": "Wähle ein sichtbares Detail am Porträt und eines an der übrigen Gestaltung. Beschreibe jeweils zuerst die Form, dann die mögliche politische Wirkung."
+        "label": "Details untersuchen",
+        "text": "Beschreibe ein Detail am Porträt und eines an der übrigen Gestaltung. Welche politische Bedeutung könnten sie haben?"
       },
       {
-        "label": "Die Aussage begrenzen",
-        "text": "Schreibe zwei Museumssätze: «Die Münze präsentiert den Kaiser als …» und «Ob seine Untertanen …, lässt sich daraus nicht erkennen.»"
+        "label": "Darstellung und Wirkung unterscheiden",
+        "text": "Erkläre, wie die Münze den Kaiser präsentiert. Was bleibt darüber offen, wie die Menschen ihn tatsächlich beurteilten?"
       }
     ],
     "result": "Eine kurze Münzinterpretation, die Selbstdarstellung und Zustimmung der Bevölkerung trennt.",
     "hint": "Ein Herrscherbild belegt zunächst, wie Herrschaft dargestellt wird. Es misst nicht die Beliebtheit des Herrschers."
   },
   "romeend": {
-    "title": "Der 1. Januar 477",
-    "scene": "Stell dir eine Schulbuchseite vor, deren linke Hälfte «Antike» und deren rechte «Mittelalter» heisst. Genau in der Mitte steht 476.",
+    "title": "Was änderte sich 476?",
+    "scene": "476 wird häufig als Grenze zwischen Antike und Mittelalter verwendet. Vergleiche die Absetzung des weströmischen Kaisers mit dem Fortbestand Ostroms.",
     "cards": [
       {
         "label": "Politischer Einschnitt",
@@ -170,19 +170,19 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Die Trennlinie testen",
-        "text": "Zeichne unter die politische Linie eine zweite für Wasserleitungen und Verkehrswege. Wo würdest du eine Lücke lassen, weil du über ihre Weiterbenutzung an einem bestimmten Ort noch nichts weisst?"
+        "label": "Reichweite der Zäsur",
+        "text": "Was änderte sich durch die Absetzung, was bestand weiter? Halte dich an die Angaben des Eintrags."
       },
       {
-        "label": "Eine Randbemerkung schreiben",
-        "text": "Erkläre einer lesenden Person in zwei Sätzen, was die Grenze 476 gut ordnet und was sie über den Alltag des folgenden Tages gerade nicht behaupten darf."
+        "label": "Alltag und politische Ordnung",
+        "text": "Lässt sich aus dem Herrschaftswechsel auf ein Ende der Nutzung von Strassen und Wasserleitungen schliessen? Erkläre, warum der Eintrag diese Frage für einen einzelnen Ort nicht beantwortet."
       }
     ],
-    "result": "Zwei übereinanderliegende Zeitlinien und eine Randbemerkung gegen den abrupten Epochenwechsel.",
+    "result": "Eine Erklärung, welche politische Veränderung die Grenze 476 bezeichnet und welche anderen Veränderungen sie nicht datiert.",
     "hint": "Eine politische Zäsur kann gut belegt sein, während die Dauer materieller Praktiken eine andere Untersuchung erfordert."
   },
   "hijra": {
-    "title": "Zwei Uhren laufen verschieden schnell",
+    "title": "Zwei Arten, Jahre zu zählen",
     "scene": "Jemand rechnet 2026 − 622 und nennt das Ergebnis das islamische Kalenderjahr. Der Fehler steckt nicht bloss in einer falschen Zahl.",
     "cards": [
       {
@@ -204,11 +204,11 @@ const ACTIVITIES = {
     "hint": "Im vereinfachten Modell entstehen 110 Tage Differenz. Für eine wirkliche Datumsumrechnung braucht man die Regeln beider Kalender."
   },
   "print": {
-    "title": "Die falsche Bildunterschrift",
-    "scene": "Ein Schulbuch zeigt das Diamant-Sutra und setzt darunter einen Satz über Gutenberg. Du übernimmst das fachliche Lektorat.",
+    "title": "Drucken in China und Europa",
+    "scene": "Das Diamant-Sutra von 868 wurde im Holzblockdruck hergestellt. Gutenbergs europäisches Verfahren verwendete bewegliche Metalllettern. Was unterscheidet die beiden Verfahren?",
     "cards": [
       {
-        "label": "Zu korrigierender Satz – erfunden",
+        "label": "Zu prüfende Behauptung",
         "text": "Gutenberg erfand um 1450 den Druck; vorher mussten Texte überall von Hand abgeschrieben werden."
       },
       {
@@ -218,20 +218,20 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Mit möglichst wenig ändern",
-        "text": "Korrigiere den Satz, ohne Gutenbergs Bedeutung zu streichen. Nenne die beiden Techniken und den jeweiligen Raum."
+        "label": "Die Verfahren vergleichen",
+        "text": "Vergleiche Technik, Datierung und Verbreitungsraum anhand der Angaben im Eintrag. In welchem Sinn ist die Behauptung einer Erfindung des Drucks um 1450 zu ungenau?"
       },
       {
-        "label": "Das Bild beschriften",
-        "text": "Schreibe eine passende Bildlegende zum tatsächlich gezeigten Objekt. Erkläre anschliessend, warum das Bild ein guter Vergleich, aber kein Bildbeleg für Gutenbergs Werkstatt ist."
+        "label": "Das Bild zuordnen",
+        "text": "Welche der beiden Techniken belegt das gezeigte Objekt? Formuliere eine Bildunterschrift mit Titel, Datierung und Verfahren."
       }
     ],
-    "result": "Eine sachlich belastbare Schulbuchkorrektur und eine passende Bildlegende.",
+    "result": "Ein Vergleich zweier Druckverfahren mit einer passenden Beschriftung des abgebildeten Objekts.",
     "hint": "Früherer Druck in China und eine spätere europäische Medienzäsur können beide zutreffen. Der Vergleich verlangt genauere Begriffe."
   },
   "timbuktu": {
     "title": "Ein Manuskript gegen eine Leerstelle",
-    "scene": "In einer europäischen Zeittafel wäre neben 1500 vielleicht nur «Entdeckungen» eingetragen. Setze daneben eine Geschichte von Gelehrsamkeit in Timbuktu.",
+    "scene": "Vergleiche den Eintrag zu Timbuktu mit den Einträgen zum chinesischen und europäischen Druck. Welche unterschiedlichen Formen der Herstellung und Verbreitung von Wissen kommen vor?",
     "cards": [
       {
         "label": "Gesicherter Rahmen",
@@ -244,15 +244,15 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Das Bild nicht überfordern",
-        "text": "Entwirf eine zweizeilige Bildlegende, die das sichtbare Manuskript und den historischen Rahmen verbindet, ohne sein Alter zu erfinden."
+        "label": "Das Manuskript beschreiben",
+        "text": "Welche Merkmale sind sichtbar? Trenne sie von den allgemeinen Angaben über Timbuktu; die Manuskriptseite ist hier nicht als Blatt aus dem Jahr 1500 datiert."
       },
       {
-        "label": "Eine Zeittafel erweitern",
-        "text": "Formuliere einen neuen Eintrag zu Wissen und Austausch. Verknüpfe ihn mit dem chinesischen Druck und frage, was der Vergleich von Manuskript und Druck zeigen kann – und was er nicht als Rangfolge beweist."
+        "label": "Wissen und Austausch vergleichen",
+        "text": "Welche Gemeinsamkeiten und Unterschiede nennen die drei Einträge? Halte auch fest, wo ihre Angaben für einen Vergleich nicht ausreichen."
       }
     ],
-    "result": "Ein ergänzender Zeittafeleintrag mit quellenbewusster Bildlegende.",
+    "result": "Ein Vergleich von Wissen und Austausch, der die unterschiedliche Überlieferung der drei Beispiele berücksichtigt.",
     "hint": "Handschriftliche Überlieferung ist nicht einfach ein unvollständiger Vorläufer von Druckkultur. Frage nach Gebrauch, Zugang und Netzwerken."
   },
   "gutenberg": {
@@ -266,12 +266,12 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Einen Weg verfolgen",
-        "text": "Wähle ein gedrucktes religiöses oder gelehrtes Buch als gedachten Fall. Notiere an jeder Schwelle eine Bedingung, die eine Leserin oder einen Leser erreichen müsste. Erfinde keine historische Person."
+        "label": "Bedingungen des Lesens",
+        "text": "Betrachte Herstellung, Vertrieb, Sprache, Lesefähigkeit und Verwendung. Wie könnte jeder dieser Faktoren den Zugang zu einem gedruckten Buch beeinflussen?"
       },
       {
-        "label": "Die Zäsur benennen",
-        "text": "Formuliere eine Überschrift, die Gutenberg weder zur weltweiten Erfindung des Drucks erklärt noch seine europäische Bedeutung verliert. Vergleiche deine Überschrift mit dem Fenster von 868."
+        "label": "Den Wandel beschreiben",
+        "text": "Vergleiche die Angaben mit dem Eintrag zum Druck von 868. Welche Veränderung lässt sich für Europa beschreiben, ohne sie zum weltweiten Beginn des Druckens zu erklären?"
       }
     ],
     "result": "Eine Kette von Zugangsbedingungen und ein präziser Titel für den Medienwandel.",
@@ -310,37 +310,37 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Den Satz zerlegen",
-        "text": "Prüfe die Schulbuchformulierung «Die Ideen der Französischen Revolution brachten Haiti die Freiheit». Welche handelnden Menschen verschwinden durch das Verb «brachten»?"
+        "label": "Die Erklärung prüfen",
+        "text": "Prüfe die Behauptung «Die Ideen der Französischen Revolution brachten Haiti die Freiheit». Welche Handlungen der Aufständischen nennt der Eintrag? Welche Verbindung zu 1789 müsste zusätzlich belegt werden?"
       },
       {
-        "label": "Eine Verbindung schreiben",
-        "text": "Verfasse einen Ersatzsatz, in dem ein Bezug auf 1789 und die eigenständige Handlungsmacht der Aufständischen vorkommen. Lege die Verbindung im Zeitstrahl an; als Grenze deines Belegs notierst du, was der spätere Stich nicht zeigen kann."
+        "label": "Die Ereignisse verbinden",
+        "text": "Verbinde 1789 und 1804 im Zeitstrahl. Halte fest, welche Beziehung die vorhandenen Angaben stützen und welche offenbleibt. Was kann der spätere Stich zur Untersuchung beitragen?"
       }
     ],
-    "result": "Eine gespeicherte Verbindung zwischen 1789 und 1804, die Ideen und erkämpfte Veränderung unterscheidet.",
+    "result": "Eine Verbindung zwischen 1789 und 1804, die belegte Handlungen von offenen Fragen nach Einflüssen unterscheidet.",
     "hint": "Freiheit wird nicht allein dadurch real, dass ein universeller Anspruch formuliert wird. Frage nach Konflikt, Macht und konkreten Akteuren."
   },
   "revolution": {
-    "title": "Ein Anspruch wandert weiter",
-    "scene": "1789 wird Gleichheit zu einem mächtigen politischen Anspruch. Die damalige Begrenzung seiner Geltung nimmt ihm nicht jede spätere Wirkung.",
+    "title": "Für wen galt der Anspruch auf Gleichheit?",
+    "scene": "Der Eintrag zu 1789 unterscheidet den Anspruch auf Gleichheit von seiner damaligen Geltung. Vergleiche diese Unterscheidung mit Haiti 1804 und dem Frauenstimmrecht 1971.",
     "cards": [
       {
-        "label": "Zwei Lektüren – didaktischer Gegensatz",
-        "text": "A: Mit 1789 ist politische Gleichheit erreicht. B: Wegen der Ausschlüsse war Gleichheit nur ein bedeutungsloses Wort."
+        "label": "Anspruch und Geltung",
+        "text": "Unterscheide den formulierten Gleichheitsanspruch von den politischen Rechten einzelner Gruppen. Die Einträge zu 1789, 1804 und 1971 betreffen unterschiedliche Situationen."
       }
     ],
     "steps": [
       {
-        "label": "Beide Sätze prüfen",
-        "text": "Nutze Haiti 1804 und das Schweizer Frauenstimmrecht 1971. Welcher Eintrag stellt A infrage? Wie könnte ein universeller Anspruch gerade den Ausgeschlossenen ein Argument gegen B liefern?"
+        "label": "Anspruch und Rechte vergleichen",
+        "text": "Welche Ansprüche und welche tatsächlich erreichten Rechte nennen die drei Einträge? Auf welche Menschen und politischen Ordnungen beziehen sie sich?"
       },
       {
-        "label": "Eine dritte Lesart formulieren",
-        "text": "Schreibe drei Sätze, in denen Anspruch, damalige Begrenzung und spätere Aneignung vorkommen. Vermeide eine automatische Erfolgskette von 1789 bis heute."
+        "label": "Den Zusammenhang prüfen",
+        "text": "Was lässt sich über die Unterschiede zwischen den drei Situationen sagen? Unterscheide einen Vergleich ähnlicher Ansprüche vom Nachweis, dass ein späteres Ereignis durch 1789 beeinflusst wurde."
       }
     ],
-    "result": "Eine dritte Deutung, die weder Erfüllung noch Wirkungslosigkeit vorschnell behauptet.",
+    "result": "Ein Vergleich von Gleichheitsansprüchen und Rechten mit klar benannten Grenzen der vorliegenden Angaben.",
     "hint": "Ein politischer Anspruch kann über seine ursprünglichen Träger hinaus wirksam werden. Diese Wirkung muss in jedem Zusammenhang eigens belegt werden."
   },
   "industry": {
@@ -354,24 +354,24 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Einen Ausschnitt wählen",
-        "text": "Wähle eine arbeitende Figur oder eine kleine Gruppe. Beschreibe Haltung, Licht und Verhältnis zur Maschine. Was macht der Maler an dieser Arbeit sichtbar?"
+        "label": "Einen Ausschnitt untersuchen",
+        "text": "Beschreibe Haltung, Beleuchtung und Verhältnis zur Maschine bei einer Figur oder Gruppe. Wie stellt Menzel diese Arbeit dar?"
       },
       {
-        "label": "Zwei Bilanzen öffnen",
-        "text": "Schreibe aus heutiger analytischer Sicht je eine Frage zur Produktionsleistung und zur körperlichen Belastung. Ordne jeder eine zusätzlich benötigte Quellengattung zu."
+        "label": "Produktion und Arbeitsbedingungen",
+        "text": "Was zeigt das Gemälde über die Arbeit, was bleibt zu Produktionsleistung und körperlicher Belastung offen?"
       },
       {
-        "label": "Harari ernst nehmen",
-        "text": "Lies unten Hararis Unterscheidung von Machtzuwachs und Wohlergehen. Formuliere, warum das Gemälde die Frage nach dem Lebensglück der Dargestellten offenlässt."
+        "label": "Hararis Unterscheidung prüfen",
+        "text": "Harari unterscheidet Machtzuwachs und Wohlergehen. Welche dieser Fragen lässt sich mit dem Gemälde untersuchen, welche nicht?"
       }
     ],
-    "result": "Ein kommentierter Bildausschnitt und zwei verschiedene Forschungsfragen zum selben Betrieb.",
+    "result": "Eine Bildinterpretation, die Darstellung der Arbeit, Produktionsleistung und Lebensbedingungen unterscheidet.",
     "hint": "Wirkungsvolle Beleuchtung kann harte Arbeit zugleich würdigen und ästhetisieren. Sichtbare Anstrengung ist noch keine Aussage über das gesamte Leben einer Person."
   },
   "war": {
     "title": "Vom Tod zum Heldentod",
-    "scene": "Die Feuerwehranzeige meldet einen Tod und gibt ihm zugleich einen öffentlichen Sinn. Lies sie mit zwei verschiedenfarbigen gedanklichen Stiften.",
+    "scene": "Die Feuerwehranzeige nennt einen Tod und deutet ihn als Heldentod. Unterscheide Angaben zu Person und Datum von wertenden Formulierungen.",
     "cards": [
       {
         "label": "Datenspuren",
@@ -389,10 +389,10 @@ const ACTIVITIES = {
       },
       {
         "label": "Eine andere Legende schreiben",
-        "text": "Verfasse eine heutige Archivbeschreibung, die die Heldendeutung der Feuerwehr wiedergibt, ohne sie selbst zu übernehmen. Warum ist die Anzeige besonders ergiebig für eine Geschichte öffentlichen Trauerns?"
+        "text": "Beschreibe, wie die Feuerwehr den Tod deutet. Schreibe dabei ausdrücklich, wer diese Wertung formuliert. Was erfahren wir aus der Anzeige über öffentliches Trauern?"
       }
     ],
-    "result": "Eine Archivbeschreibung mit klar zugeschriebener Wertung und getrennten Daten.",
+    "result": "Eine Beschreibung der Anzeige, die Angaben zu Tod und Veröffentlichung von der Wertung der Feuerwehr unterscheidet.",
     "hint": "«Die Feuerwehr bezeichnet den Tod als …» ist eine andere Aussage als «Er starb einen …». Quellenkritik beginnt hier mit der eigenen Satzkonstruktion."
   },
   "vote": {
@@ -410,15 +410,15 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Die Angst rekonstruieren",
-        "text": "Welche Folge politischer Teilhabe von Frauen legt das Bild nahe? Zeige an zwei Bilddetails, wie diese Verbindung hergestellt wird."
+        "label": "Das Argument rekonstruieren",
+        "text": "Welche Folge des Frauenstimmrechts legt das Plakat nahe? Beschreibe, wie Wortlaut und Bild diese Verbindung herstellen."
       },
       {
-        "label": "Dem Argument antworten",
-        "text": "Schreibe eine Antwort von höchstens 50 Wörtern, die den gedanklichen Schluss des Plakats angreift. Anschliessend erklärst du, warum 1971 eine andere Zäsur ergibt als 1789, wenn politische Teilhabe dein Kriterium ist."
+        "label": "Das Argument prüfen",
+        "text": "Welche Annahme über Frauen, Kinder und politische Beteiligung liegt darin? Ist sie im Plakat begründet? Vergleiche anschliessend, welche politischen Rechte die Einträge zu 1789 und 1971 nennen."
       }
     ],
-    "result": "Eine bildgestützte Argumentanalyse und eine präzise Antwort auf den behaupteten Zusammenhang.",
+    "result": "Eine Erklärung des Plakatarguments und ein Vergleich der in den beiden Einträgen genannten politischen Rechte.",
     "hint": "Ein Plakat zeigt, womit eine Kampagne überzeugen wollte. Es belegt nicht ohne Weiteres, was alle Menschen damals glaubten."
   },
   "augustine": {
@@ -466,26 +466,26 @@ const ACTIVITIES = {
     "hint": "Mehr Rechte in einer Region können gleichzeitig mit Unterdrückung in einer anderen auftreten. Die Richtung der Gesamtgeschichte folgt nicht schon aus einem einzelnen Fortschritt."
   },
   "nietzsche": {
-    "title": "Was soll mit der alten Statue geschehen?",
-    "scene": "Ein erfundener Schulrat berät über die Statue eines früher gefeierten Stadtgründers. Neue Recherchen zeigen, dass zu seiner Herrschaft auch Ausgrenzung gehörte.",
+    "title": "Vergangenheit bewahren, würdigen oder kritisieren?",
+    "scene": "Nietzsche unterscheidet drei Formen des Umgangs mit Vergangenheit: Vorbilder hervorheben, Überliefertes bewahren und belastende Vergangenheit kritisieren. Untersuche diese Unterscheidung an der Todesanzeige von 1914.",
     "cards": [
       {
-        "label": "Drei mögliche Redebeiträge – erfunden",
-        "text": "«Wir brauchen Vorbilder.» · «Sie gehört zu unserem vertrauten Stadtbild.» · «Wir müssen die überlieferte Verehrung überprüfen.»"
+        "label": "Nietzsches Unterscheidung",
+        "text": "Monumental: Vorbilder hervorheben. Antiquarisch: Überliefertes bewahren. Kritisch: eine belastende Vergangenheit beurteilen. Die Formen können sich überschneiden."
       }
     ],
     "steps": [
       {
-        "label": "Nietzsches Werkzeuge anwenden",
-        "text": "Ordne die drei Redebeiträge monumentalischem, antiquarischem und kritischem Geschichtsgebrauch zu. Ergänze für jeden eine Stärke und eine Gefahr, die gerade bei dieser Statue entstehen könnte."
+        "label": "Den Umgang mit Vergangenheit erkennen",
+        "text": "Wie wird der Verstorbene beschrieben, welches Andenken wird versprochen? Welche von Nietzsches drei Formen hilft dir, diese Aussagen zu verstehen? Begründe am Wortlaut."
       },
       {
-        "label": "Eine vierte Rede halten",
-        "text": "Schlage einen Umgang mit der Statue vor, der mindestens zwei Anliegen aufnimmt. Sage ausdrücklich, welche historische Recherche der Entscheidung vorausgehen muss."
+        "label": "Den Zweck untersuchen",
+        "text": "Was soll die Erinnerung für die Hinterbliebenen oder den Feuerwehrverein leisten? Was macht die Anzeige sichtbar, was bleibt offen? Mehrere Formen können zusammenwirken."
       }
     ],
-    "result": "Eine begründete Museums- oder Stadtratsrede von ungefähr einer Minute.",
-    "hint": "Nietzsches Begriffe benennen Verwendungen der Vergangenheit. Sie ersetzen weder die Recherche zur Person noch die öffentliche Abwägung."
+    "result": "Eine am Wortlaut begründete Untersuchung der Erinnerung in der Todesanzeige mithilfe von Nietzsches Unterscheidung.",
+    "hint": "Nietzsches Begriffe helfen, den Zweck des Erinnerns zu untersuchen. Welche Form passt, muss am Zeugnis begründet werden."
   },
   "bloch": {
     "title": "Dieselbe Anzeige, zwei Forschungen",
@@ -514,30 +514,30 @@ const ACTIVITIES = {
     "hint": "Die Frage bestimmt, welche Eigenschaften eines Zeugnisses aussagekräftig werden. Sie berechtigt nicht dazu, fehlende Informationen hineinzulesen."
   },
   "halbwachs": {
-    "title": "Ein Schulfest, zwei Erinnerungen",
-    "scene": "Gedankenexperiment: Eine ehemalige Schülerin erinnert vor allem die Bühnenaufführung; ein ehemaliger Hauswart erinnert den Umbau und die Aufräumarbeiten. Beide sprechen über dasselbe Schulfest.",
+    "title": "Wer prägt die Erinnerung?",
+    "scene": "In der Todesanzeige von 1914 spricht ein Feuerwehrverein über ein verstorbenes Mitglied. Untersuche, wie die Zugehörigkeit zum Verein die öffentliche Erinnerung prägt.",
     "cards": [
       {
-        "label": "Keine historischen Zeugnisse",
-        "text": "Die beiden Erinnerungen sind eigens erfundene Fälle. Sie dienen dazu, Halbwachs’ Begriff sozialer Rahmen zu verstehen, nicht dazu, bestimmte Menschen zu beurteilen."
+        "label": "Vorhandenes Zeugnis",
+        "text": "Die Feuerwehranzeige von 1914 bezeichnet den Tod als Heldentod und verspricht ehrendes Andenken. Der Wortlaut ist im Eintrag «Ein Tod wird erzählt» zugänglich."
       }
     ],
     "steps": [
       {
-        "label": "Die Rahmen benennen",
-        "text": "Welche damaligen Aufgaben und heutigen Gesprächssituationen könnten die Auswahl erklären? Formuliere für jede Person eine Nachfrage, die ihren Erinnerungsrahmen sichtbar macht."
+        "label": "Die gemeinsame Erinnerung untersuchen",
+        "text": "Welche Wörter beziehen sich auf den Verein, das Mitglied und das künftige Andenken? Welche Bedeutung erhält der Tod in dieser Darstellung?"
       },
       {
-        "label": "Erinnerung und Ereignis trennen",
-        "text": "Angenommen, beide nennen verschiedene Daten. Welche zusätzliche Unterlage könnte die Datumsfrage prüfen? Warum bleibt der Unterschied ihrer Erinnerungen auch nach dieser Klärung interessant?"
+        "label": "Die Aussage begrenzen",
+        "text": "Was erfahren wir über das öffentlich formulierte Andenken? Können wir daraus auch auf die persönlichen Erinnerungen aller Vereinsmitglieder schliessen? Erkläre den Unterschied."
       }
     ],
-    "result": "Zwei Interviewfragen und ein Satz zum Unterschied zwischen Datumsprüfung und Erinnerungsforschung.",
-    "hint": "Soziale Rahmung bedeutet nicht, dass die Erinnerung absichtlich falsch ist. Unterschiedliche Rollen können unterschiedliche Ausschnitte bedeutsam machen."
+    "result": "Eine Untersuchung des sozialen Zusammenhangs der Anzeige, ohne allen Vereinsmitgliedern dieselbe persönliche Erinnerung zuzuschreiben.",
+    "hint": "Halbwachs fragt, wie soziale Beziehungen das Erinnern prägen. Eine öffentliche Erklärung zeigt nicht automatisch, was jedes Mitglied einer Gruppe denkt."
   },
   "braudel": {
-    "title": "Der Kaiser geht, die Leitung bleibt?",
-    "scene": "Lege 476 und die römische Infrastruktur übereinander. Braudels verschiedene Tempi helfen, eine politische Nachricht nicht mit der Veränderung aller Lebensbedingungen zu verwechseln.",
+    "title": "Politischer Umbruch und längerfristige Veränderungen",
+    "scene": "Die Absetzung von 476 hat ein Datum. Die Nutzungsdauer einer Strasse oder Wasserleitung müsste für den jeweiligen Ort untersucht werden. Braudel unterscheidet solche unterschiedlichen Zeitverläufe.",
     "cards": [
       {
         "label": "Drei Untersuchungsreihen",
@@ -546,15 +546,15 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Drei Zeitlinien zeichnen",
-        "text": "Trage 476 in die erste Reihe ein. Zeichne für die anderen keine erfundenen Enddaten, sondern kennzeichne, welche Zeiträume du anhand welcher Spuren untersuchen müsstest."
+        "label": "Die Angaben zuordnen",
+        "text": "Welche datierten Ereignisse und welche längerfristigen Bedingungen nennen die Einträge zu 476 und zur römischen Infrastruktur?"
       },
       {
-        "label": "Einen gemeinsamen Punkt suchen",
-        "text": "Beschreibe eine denkbare Situation, in der alle drei Tempi zusammenwirken: etwa eine Armee, die eine ältere Route nutzt. Markiere den Satz als Modell und nenne die Belege, die ihn zu einem historischen Fall machen würden."
+        "label": "Die Grenzen des Vergleichs",
+        "text": "Welche Nutzungsdauer einer konkreten Anlage lässt sich aus den Angaben bestimmen? Wo bleibt sie unbekannt? Erkläre, warum der politische Einschnitt allein kein Enddatum ihrer Nutzung liefert."
       }
     ],
-    "result": "Drei Zeitebenen mit einer begründeten Schnittstelle.",
+    "result": "Eine Zuordnung der vorhandenen Angaben zu unterschiedlichen Zeitebenen; unbekannte Nutzungsdauern bleiben offen.",
     "hint": "Lange Dauer bedeutet nicht Unveränderlichkeit. Auch eine langsam veränderte Struktur wird von Menschen benutzt, erhalten oder aufgegeben."
   },
   "koselleck": {
@@ -576,30 +576,30 @@ const ACTIVITIES = {
         "text": "Schreibe zwei Sätze mit verschiedenen Anfängen: «In der Anzeige wird erwartet …» und «Aus heutiger Sicht können wir untersuchen …». Warum beweist der zweite nicht, dass der Ausgang damals vorhersehbar war?"
       }
     ],
-    "result": "Zwei sauber getrennte Sätze über damalige Erwartung und heutige Untersuchung.",
+    "result": "Eine Unterscheidung zwischen der Erwartung in der damaligen Anzeige und den Fragen, die wir heute an sie stellen.",
     "hint": "Kosellecks Erwartungshorizont ist keine Aufforderung, beliebige Hoffnungen zu erfinden. Erwartung muss an Äusserungen oder Handlungen erschlossen werden."
   },
   "assmann": {
-    "title": "Vom Schuhkarton in die Ausstellung",
-    "scene": "Ein erfundenes Familienfoto wird beim Abendessen erklärt, später im Archiv aufbewahrt und schliesslich in einer Ausstellung gezeigt. Dasselbe Objekt verändert seinen Erinnerungszusammenhang.",
+    "title": "Wie wird Erinnerung weitergegeben?",
+    "scene": "Die Todesanzeige von 1914 verspricht Andenken. Das Foto der Stolpersteine zeigt eine andere Form öffentlichen Erinnerns. Vergleiche die Träger und Formen dieser Erinnerung.",
     "cards": [
       {
-        "label": "Drei Situationen – Modellfall",
-        "text": "Gespräch mit einer Zeitzeugin · Foto mit archivischer Beschreibung · öffentlich ausgestelltes Foto mit kuratorischer Bildlegende."
+        "label": "Zwei Erinnerungszeichen",
+        "text": "Die Anzeige formuliert öffentliches Andenken. Die Stolpersteine verbinden Namen und Lebensdaten mit einem Ort. Beide Materialien sind im Bestand vorhanden."
       }
     ],
     "steps": [
       {
-        "label": "Die Übergänge verfolgen",
-        "text": "Notiere bei jedem Übergang, wer nun auswählt und erklärt. Welche Information könnte verloren gehen, welche erstmals zugänglich werden?"
+        "label": "Formen der Weitergabe",
+        "text": "Wer spricht in der Anzeige, wer wird auf den Steinen genannt? Wie können Text, Ort und dauerhaftes Material Erinnerung weitergeben? Unterscheide Sichtbares von unbekannten Entstehungsumständen."
       },
       {
-        "label": "Ein digitales Archiv beurteilen",
-        "text": "Angenommen, das Foto ist online, wird aber nie gefunden oder verwendet. Erkläre an diesem Fall den Unterschied zwischen gespeichertem Wissen und aktivem gesellschaftlichem Erinnern."
+        "label": "Bewahren und Erinnern",
+        "text": "Reicht es, einen Text oder ein Foto zu speichern, damit Menschen sich seiner erinnern? Erkläre am Vergleich den Unterschied zwischen Aufbewahrung und Verwendung. Wo hilft Assmanns Unterscheidung von kommunikativem und kulturellem Gedächtnis?"
       }
     ],
-    "result": "Eine kleine Überlieferungskette mit je einem Verlust, Gewinn und auswählenden Akteur.",
-    "hint": "Jan Assmanns kommunikatives und kulturelles Gedächtnis sind keine Schubladen für Dateiformate. Entscheidend sind Praktiken, Träger und Dauer der Weitergabe."
+    "result": "Ein Vergleich zweier vorhandener Erinnerungszeichen und ihrer Möglichkeiten, Vergangenheit weiterzugeben.",
+    "hint": "Ein dauerhaftes Medium allein erklärt noch keine Erinnerungspraxis. Entscheidend ist auch, wer es verwendet und welche Bedeutung es dabei erhält."
   },
   "memory": {
     "title": "Ein Stein hat mehr als ein Datum",
@@ -643,7 +643,7 @@ const ACTIVITIES = {
       },
       {
         "label": "Den Grenzfall prüfen",
-        "text": "Dürfte dieselbe Szene in einer historischen Rekonstruktion erscheinen? Nenne genau eine Information, die zusätzlich sichtbar sein müsste, und eine Aussage, die auch dann unzulässig bliebe."
+        "text": "Dürfte dieselbe Szene in einer historischen Rekonstruktion erscheinen? Welche Informationen zur Herstellung müssten sichtbar sein? Welche Aussage über das dargestellte Ereignis wäre damit weiterhin nicht belegt?"
       }
     ],
     "result": "Eine begründete Entscheidung darüber, wofür du das Bild verwenden würdest, und eine passende Bildunterschrift.",
@@ -660,20 +660,20 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Das falsche Zuordnen verhindern",
-        "text": "Schreibe einen Warnhinweis direkt zum Bild: Warum belegt diese Rolle nicht die Druckpraxis des Jahres 1368?"
+        "label": "Das Bild zeitlich zuordnen",
+        "text": "Die Druckrolle stammt von 868, der Eintrag zur Ming-Dynastie beginnt 1368. Welche Aussagen kann das Bild zum früheren Druck belegen? Welche Informationen zur späteren Zeit fehlen?"
       },
       {
-        "label": "Eine Forschungsfrage verorten",
-        "text": "Für «Wer herrschte?» ist der Dynastiewechsel wichtig. Formuliere eine andere Frage zur Verbreitung von Texten und erkläre, warum dafür eine andere zeitliche Gliederung erforderlich sein könnte."
+        "label": "Gliederungen vergleichen",
+        "text": "Für welche Frage ist ein Dynastiewechsel wichtig? Welche anderen Zeitpunkte wären für eine Geschichte der Drucktechnik relevant?"
       }
     ],
-    "result": "Ein präziser Bildhinweis und zwei unterschiedlich gegliederte Untersuchungen.",
+    "result": "Eine zeitliche Einordnung des Bildes und ein Vergleich von Dynastiegeschichte und Geschichte des Druckens.",
     "hint": "Die Alternative zu einem europäischen Epochenraster ist nicht automatisch eine einzig richtige chinesische Gliederung. Auch ein Dynastieraster wählt einen Bereich aus."
   },
   "india": {
-    "title": "Eine Überschrift, zwei Erfahrungen",
-    "scene": "Eine Ausstellung beginnt 1947. Die eine Wand erzählt staatliche Unabhängigkeit, die andere Flucht und Trennung. Beides gehört zum selben Umbruch.",
+    "title": "Was bedeutet 1947?",
+    "scene": "1947 steht für Unabhängigkeit und Teilung. Welche politischen Veränderungen und welche Folgen für Menschen nennt der Eintrag?",
     "cards": [
       {
         "label": "Rahmen",
@@ -682,20 +682,20 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Zwei Wände beschriften",
-        "text": "Verfasse je eine Überschrift für die Staatsgeschichte und die Geschichte getrennter Familien. Erfinde keine persönliche Lebensgeschichte, sondern benenne den jeweiligen Untersuchungsgegenstand."
+        "label": "Die Veränderungen unterscheiden",
+        "text": "Ordne die vorhandenen Angaben staatlichen Veränderungen und Folgen für die Bevölkerung zu. Wo hängen beide zusammen?"
       },
       {
-        "label": "Die Ausstellung zusammenhalten",
-        "text": "Schreibe einen Eingangstext von höchstens 70 Wörtern, in dem keine der beiden Erfahrungen als blosse Fussnote erscheint. Nenne je eine passende Quellengattung für die Wände."
+        "label": "Die Aussagekraft prüfen",
+        "text": "Was lässt sich aus der Zusammenfassung sagen, was nicht über die Erfahrungen einzelner Familien? Erkläre, weshalb Unabhängigkeit und Teilung gemeinsam betrachtet werden müssen."
       }
     ],
-    "result": "Zwei Wandtitel und ein gemeinsamer Eingangstext.",
+    "result": "Eine Erklärung der unterschiedlichen Bedeutungen von 1947 auf Grundlage der vorhandenen Angaben.",
     "hint": "Eine nationale Gründung kann Befreiung und Verlust zugleich bedeuten. Die Erfahrungen müssen konkret untersucht werden; nicht alle Familien erlebten dieselbe Geschichte."
   },
   "timeforms": {
-    "title": "Ein Fest ist einmalig und kehrt wieder",
-    "scene": "Nimm ein jährlich stattfindendes Schulfest als Modell: Es hat einen einzelnen Ablauf, wiederkehrende Rituale und möglicherweise eine lange Tradition.",
+    "title": "Ablauf, Wiederkehr und längere Entwicklung",
+    "scene": "An einem jährlich wiederkehrenden Fest lassen sich verschiedene Zeitfragen unterscheiden: der Ablauf eines einzelnen Tages, die Wiederkehr im Kalender und Veränderungen über mehrere Jahre.",
     "cards": [
       {
         "label": "Drei Ansichten",
@@ -708,7 +708,7 @@ const ACTIVITIES = {
         "text": "Schalte das Zeitmodell um. Gib jedem Modell eine konkrete Beschriftung aus dem Festbeispiel: etwa Beginn, Wiederholung oder überdauernde Regel."
       },
       {
-        "label": "Den Verlust benennen",
+        "label": "Was zeigt die Darstellung, was fehlt?",
         "text": "Was verschwindet, wenn du nur den Kreis zeigst? Was verschwindet, wenn du nur die Linie zeigst? Entscheide, welches Modell zu einer Frage nach Veränderungen des Fests passt."
       }
     ],
@@ -731,14 +731,14 @@ const ACTIVITIES = {
       },
       {
         "label": "Die neue Auswahl kritisieren",
-        "text": "Welche Beziehung wird nun leichter sichtbar? Welche Frage verliert gegenüber der ursprünglichen regionalen Ordnung an Übersicht? Schreibe eine Gebrauchsanweisung von zwei Sätzen."
+        "text": "Welche Beziehung wird nun leichter sichtbar? Welche Frage verliert gegenüber der ursprünglichen regionalen Ordnung an Übersicht? Begründe, für welche Frage die neue Ordnung hilfreich ist."
       }
     ],
     "result": "Ein neu geordneter Zeittafelausschnitt mit ausdrücklich benannter Stärke und Grenze.",
     "hint": "Auch eine thematische Ordnung ist eine Auswahl. Eine bessere Ordnung ist besser für eine bestimmte Frage, nicht für jede mögliche Geschichte."
   },
   "neolithic": {
-    "title": "Die Bilanz hat mehrere Konten",
+    "title": "Landwirtschaft: Erfolg nach welchem Massstab?",
     "scene": "Harari erzählt die Ausbreitung des Weizens als Erfolg der Pflanze, der für einzelne Menschen teuer gewesen sein könnte. Prüfe, was diese Umkehrung leistet.",
     "cards": [
       {
@@ -748,19 +748,19 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Den Erfolg auseinandernehmen",
-        "text": "Erkläre an den drei Massstäben, wie eine Entwicklung gleichzeitig als Zuwachs und als Verlust beschrieben werden könnte. Formuliere Möglichkeiten, keine angeblich gemessene Bilanz."
+        "label": "Massstäbe unterscheiden",
+        "text": "Vergleiche Bevölkerungsgrösse, Arbeitsaufwand und Wohlergehen. Wie könnte dieselbe Veränderung nach diesen Massstäben unterschiedlich beurteilt werden? Welche Aussagen bleiben hier Annahmen?"
       },
       {
-        "label": "Die Metapher übersetzen",
-        "text": "Schreibe Hararis Gedanken ohne eine handelnde Pflanze: Welche Abhängigkeiten zwischen Arbeit, Anbau und Sesshaftigkeit meint er?"
+        "label": "Hararis Metapher erklären",
+        "text": "Beschreibe Hararis Gedanken ohne eine handelnde Pflanze. Welche Abhängigkeiten zwischen Arbeit, Anbau und Sesshaftigkeit meint er?"
       },
       {
-        "label": "Einen Befund bestellen",
-        "text": "Du kannst entweder Skelettbefunde, Vorratsanlagen oder Siedlungsgrössen genauer untersuchen lassen. Wähle passend zu einer deiner Behauptungen und erkläre, warum die anderen beiden Fragen damit noch offenbleiben."
+        "label": "Aussagen und Belege zuordnen",
+        "text": "Welche Frage liesse sich mit Skelettbefunden, welche mit Vorratsanlagen oder Siedlungsgrössen untersuchen? Solche Befunde werden hier nicht ausgewertet; eine gemessene Bilanz ist deshalb nicht möglich."
       }
     ],
-    "result": "Eine Bilanz mit getrennten Massstäben und ein begründeter Forschungsauftrag.",
+    "result": "Eine Unterscheidung von Bevölkerungswachstum, Arbeitsaufwand und Wohlergehen sowie der jeweils erforderlichen Belege.",
     "hint": "Mehr Nahrung für eine grössere Bevölkerung beweist weder weniger Arbeitszeit noch eine gerechtere Verteilung. Umgekehrt beweist eine Belastung nicht, dass jeder frühere Lebensstil besser war."
   },
   "gobekli": {
@@ -778,12 +778,12 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Den Unterschied scharf stellen",
-        "text": "Nenne einen archäologischen Befund, der A gegenüber B wahrscheinlicher machen würde. Erkläre, warum die Grösse der Pfeiler allein die Entscheidung nicht trifft."
+        "label": "Die Erklärungen vergleichen",
+        "text": "Welche Formen der Zusammenarbeit könnten die beiden Erklärungen voraussetzen? Was lässt sich allein aus der Grösse der Pfeiler darüber sagen?"
       },
       {
-        "label": "Die Stufenfolge reparieren",
-        "text": "Streiche oder relativiere in «erst Landwirtschaft, dann Religion, dann Staat, dann Monumente» genau die behauptete Notwendigkeit, die dieses Beispiel problematisch macht. Was bleibt trotzdem ungeklärt?"
+        "label": "Die Reihenfolge prüfen",
+        "text": "Welche zeitlichen Angaben enthält der Eintrag zu Bauen und Lebensweise? Was lässt sich damit über ihre Reihenfolge sagen, was bleibt zur Organisation der Arbeit offen?"
       }
     ],
     "result": "Zwei konkurrierende Erklärungen mit einem unterscheidenden Prüfstein.",
@@ -817,7 +817,7 @@ const ACTIVITIES = {
   },
   "pilehouses": {
     "title": "Ein Versuch ist noch keine Zeitreise",
-    "scene": "Eine Fernsehgruppe lebt in rekonstruierten Häusern und berichtet, wie anstrengend der Alltag gewesen sei. Was kann ein solcher Versuch zeigen?",
+    "scene": "Ein Versuch mit rekonstruierten Geräten kann zeigen, ob eine Technik funktioniert. Er stellt nicht die gesamte Lebenswelt früherer Menschen wieder her. Untersuche diesen Unterschied als Gedankenexperiment.",
     "cards": [
       {
         "label": "Gedankenexperiment",
@@ -826,15 +826,15 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Eine prüfbare Frage wählen",
-        "text": "Formuliere eine enge Frage zur Herstellung oder Verwendung eines Geräts. Lege fest, was im Versuch beobachtet und dokumentiert werden müsste."
+        "label": "Einen Versuch beschreiben",
+        "text": "Wähle die Herstellung oder Verwendung eines Geräts. Was müsste beobachtet werden, um zu prüfen, ob die Technik funktioniert?"
       },
       {
-        "label": "Den Filmkommentar korrigieren",
-        "text": "Ersetze «Jetzt wissen wir, wie die Menschen damals lebten und fühlten» durch einen Satz, der das Ergebnis des Versuchs angemessen beschreibt. Benenne eine moderne Voraussetzung, die sich nicht einfach abschalten lässt."
+        "label": "Das Ergebnis einordnen",
+        "text": "Was könnte ein solcher Versuch über eine Technik zeigen? Was bliebe über ihre damalige Verwendung und das Erleben der Menschen offen?"
       }
     ],
-    "result": "Ein kurzer Versuchsplan und ein wissenschaftlich vorsichtiger Filmkommentar.",
+    "result": "Eine Beschreibung eines möglichen Technikversuchs mit einer Erklärung seiner Aussagekraft.",
     "hint": "Eine Technik kann praktisch funktionieren, ohne damit als damals tatsächlich verwendete Technik bewiesen zu sein. Dazu braucht es den Vergleich mit Funden."
   },
   "athens": {
@@ -878,15 +878,15 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Zwei Fragen anlegen",
-        "text": "Formuliere eine Frage zu Caesars Darstellung des Konflikts und eine zum späteren Gebrauch des Namens. Welche zusätzliche Quellengattung würde jeweils am ehesten weiterhelfen?"
+        "label": "Die Fragen unterscheiden",
+        "text": "Welche Aussagen macht der Eintrag zu Caesars Bericht, welche zum späteren Namen Helvetia? Unterscheide die Darstellung des Konflikts von späteren Bezügen auf die Antike."
       },
       {
-        "label": "Einen Ausstellungssatz korrigieren",
-        "text": "Überarbeite «Die Helvetier waren die Schweizer der Antike». Dein Satz soll eine räumliche Beziehung nennen, aber keine moderne Nation in die Antike zurückversetzen."
+        "label": "Die Verbindung beschreiben",
+        "text": "Welche räumliche Beziehung besteht zur heutigen Schweiz? Weshalb folgt daraus nicht, dass eine moderne Nation bereits in der Antike bestand?"
       }
     ],
-    "result": "Zwei getrennte Forschungsfragen und eine historische präzisierte Herkunftsformulierung.",
+    "result": "Zwei getrennte Forschungsfragen und eine historisch präzisierte Herkunftsformulierung.",
     "hint": "Die Geschichte eines Namens kann lange weitergehen, während sich Bevölkerung, politische Ordnung und Bedeutung verändern."
   },
   "infrastructure": {
@@ -904,15 +904,15 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Die Perspektive verändern",
-        "text": "Schreibe zwei kurze Museumstitel zum Bauwerk: einen zur Versorgung, einen zur Organisation von Macht. Unterstreiche im jeweiligen Begleittext, was du am Bild sehen und was du nur als Frage formulieren kannst."
+        "label": "Nutzung und Organisation",
+        "text": "Was zeigt das Bauwerk über seine Nutzung? Was bleibt zur Finanzierung, Arbeit und Kontrolle unbekannt?"
       },
       {
-        "label": "Über 476 hinausdenken",
-        "text": "Würde ein Herrschaftswechsel allein das Ende der Nutzung belegen? Nenne eine konkrete Spur von Reparatur oder Weiterverwendung, nach der du suchen würdest."
+        "label": "Die Nutzungsdauer prüfen",
+        "text": "Welche Angaben enthält der Eintrag zur Dauer der Nutzung? Weshalb lässt sich deren Ende nicht allein aus einem Herrschaftswechsel ableiten?"
       }
     ],
-    "result": "Zwei Museumstitel mit getrennten Beobachtungen und Untersuchungsfragen.",
+    "result": "Eine Untersuchung des Bauwerks, die sichtbare Merkmale von offenen Fragen zu Organisation und Nutzungsdauer trennt.",
     "hint": "Ein Bauwerk hat nicht nur eine Bedeutung. Politische Kontrolle und Versorgung können durch dieselbe Infrastruktur wirken."
   },
   "coins": {
@@ -938,8 +938,8 @@ const ACTIVITIES = {
     "hint": "Die jüngste Münze liefert einen frühestmöglichen Zeitpunkt. Sie setzt kein spätestmögliches Datum und nennt kein Motiv der Verbergung."
   },
   "medievaldaily": {
-    "title": "Eine Regel ist kein Tagesbericht",
-    "scene": "Für eine Geschichte des Alltags stehen normative Texte und materielle Spuren nebeneinander. Erprobe ihren Unterschied an einem bewusst erfundenen Mini-Dossier.",
+    "title": "Vorschrift und Alltag unterscheiden",
+    "scene": "Die beiden folgenden Beispiele sind erfunden. Sie veranschaulichen den Unterschied zwischen einer Vorschrift und einem materiellen Fund; sie belegen keinen konkreten mittelalterlichen Alltag.",
     "cards": [
       {
         "label": "Beispiel A – erfunden",
@@ -952,15 +952,15 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Nicht zu viel schliessen",
+        "label": "Vorschrift und Befund vergleichen",
         "text": "Welche der Aussagen wäre durch A belegt: «Reinigung wurde verlangt» oder «Es wurde jeden Abend gereinigt»? Was sagt B über Entsorgung, und welche Datierung oder Ortszuordnung bräuchtest du?"
       },
       {
-        "label": "Die grosse Behauptung verkleinern",
+        "label": "Die Frage eingrenzen",
         "text": "Ersetze «Im Mittelalter waren die Menschen unhygienisch» durch eine enge Frage zu einem bestimmten Ort, Zeitraum und einer Praxis. Erkläre, welche Kombination von Quellen sie beantworten könnte."
       }
     ],
-    "result": "Eine untersuchbare Alltagsfrage anstelle eines pauschalen Epochenurteils.",
+    "result": "Eine Erklärung, welche Aussage eine Vorschrift und welche ein Fund jeweils ermöglichen; das Beispiel bleibt ein Modell.",
     "hint": "Das Beispiel ist kein mittelalterlicher Originaltext. Es zeigt, weshalb Vorschrift, Praxis und archäologische Erhaltung getrennt behandelt werden müssen."
   },
   "crusade1212": {
@@ -986,8 +986,8 @@ const ACTIVITIES = {
     "hint": "Dieser Eintrag enthält keinen Chronikauszug. Du kannst deshalb hier die Behauptungen prüfen und Fragen formulieren, aber Alter, Reiseweg und Ziel noch nicht anhand eines historischen Berichts klären."
   },
   "americas1491": {
-    "title": "Die erste Seite beginnt vor der Ankunft",
-    "scene": "Die erste Seite eines Geschichtsbuchs über Amerika zeigt oft ein europäisches Schiff. Du sollst einen anderen Einstieg entwerfen, ohne eine neue pauschale Erzählung über den ganzen Kontinent zu erfinden.",
+    "title": "Amerika vor 1492",
+    "scene": "Der Eintrag nennt Gesellschaften, Landwirtschaft und Austausch vor 1492. Was gerät aus dem Blick, wenn eine Geschichte Amerikas erst mit der Ankunft von Kolumbus beginnt?",
     "cards": [
       {
         "label": "Hier verfügbar",
@@ -996,16 +996,16 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Den Schauplatz begrenzen",
-        "text": "Wähle eine Region als Recherchevorhaben und lege einen der Bereiche Nahrung, politische Ordnung oder Austausch fest. Notiere, welches konkrete Zeugnis du für die erste Seite beschaffen müsstest."
+        "label": "Die Angaben auswerten",
+        "text": "Welche Lebensbereiche nennt die Zusammenfassung? Was lässt sich daraus sagen, was bleibt über einzelne Regionen und Gesellschaften offen?"
       },
       {
-        "label": "Die Bildunterschrift vorbereiten",
-        "text": "Schreibe eine Vorlage mit sichtbaren Leerstellen für Objekt, Ort, Datierung und Herkunft. Erkläre daneben, warum 1491 hier ein Perspektivwechsel und keine behauptete gemeinsame Epochengrenze aller amerikanischen Gesellschaften ist."
+        "label": "Den Zeitpunkt erklären",
+        "text": "Weshalb wurde hier 1491 gewählt? Unterscheide einen Blick auf die Zeit vor Kolumbus von der Behauptung, 1491 habe in ganz Amerika eine neue Epoche begonnen."
       }
     ],
-    "result": "Ein präziser Entwurf für eine erste Buchseite mit offen ausgewiesenen Recherchelücken.",
-    "hint": "Ein europazentrisches Bild wird nicht dadurch korrigiert, dass man ein frei erfundenes indigenes Bild an seine Stelle setzt. Der neue Einstieg braucht eigene Belege."
+    "result": "Eine Erklärung der gewählten Zeitposition und der Grenzen dieser knappen Zusammenfassung.",
+    "hint": "1491 bezeichnet hier die Zeit vor Kolumbus. Das Datum benennt keine gemeinsame Veränderung aller amerikanischen Gesellschaften."
   },
   "macrohistory": {
     "title": "Ein Befund, zwei grosse Fragen",
@@ -1016,18 +1016,18 @@ const ACTIVITIES = {
         "text": "Çatalhöyük: eine grosse, dicht bebaute Siedlung; aus dem Fehlen eines eindeutigen Palastes folgt nicht automatisch vollständige Gleichheit."
       },
       {
-        "label": "Zwei Suchrichtungen – didaktische Verdichtung",
+        "label": "Zwei Fragestellungen – zusammengefasst",
         "text": "Harari: Welche gemeinsamen Regeln oder Vorstellungen ermöglichen Zusammenleben? Graeber/Wengrow: Welche Organisationsformen werden übersehen, wenn grosse Siedlungen automatisch als hierarchische Staaten gedacht werden?"
       }
     ],
     "steps": [
       {
-        "label": "Beide Ansätze stark machen",
-        "text": "Formuliere zu derselben Siedlung je eine echte Forschungsfrage aus beiden Suchrichtungen. Lass nicht einen Ansatz etwas behaupten, was er gar nicht benötigt."
+        "label": "Die Fragen unterscheiden",
+        "text": "Welche Frage würde Harari an Çatalhöyük stellen, welche Graeber und Wengrow? Beziehe dich auf die dargestellten Ansätze."
       },
       {
-        "label": "Den Streit eingrenzen",
-        "text": "Prüfe den Satz «Kooperation in grossem Massstab erfordert zwingend einen zentralen Herrscher». Welche der beiden Suchrichtungen greift diese Notwendigkeit direkter an? Welche Befunde würden für eine Entscheidung fehlen?"
+        "label": "Die Erklärungen vergleichen",
+        "text": "Sind gemeinsam anerkannte Regeln und zentrale Herrschaft dasselbe? Was lässt sich anhand des Eintrags zu Çatalhöyük dazu sagen, was bleibt offen?"
       }
     ],
     "result": "Eine Gegenüberstellung von Fragen mit genau benanntem Streitpunkt.",
@@ -1066,15 +1066,15 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Was hat sich verändert?",
-        "text": "Beschreibe getrennt die Karte als Ding, die institutionelle Regel und die persönliche Beziehung zur alten Schule. Welche Ebene erklärt den verlorenen Zugang?"
+        "label": "Die Gültigkeit erklären",
+        "text": "Was hat sich am Ausweis verändert, was an der Zugangsregel? Welche Ebene erklärt, warum die Karte keinen Zugang mehr gewährt?"
       },
       {
-        "label": "Den Fehlschluss verhindern",
-        "text": "Antworte auf «Wenn Gültigkeit von Menschen gemacht wird, kann ein erfundenes historisches Foto genauso wahr sein». Erkläre den Unterschied zwischen einer anerkannten Regel und der Behauptung, ein bestimmtes Ereignis habe stattgefunden."
+        "label": "Zwei Arten von Aussagen unterscheiden",
+        "text": "Vergleiche «Dieser Ausweis gilt» mit «Dieses Foto zeigt ein geschehenes Ereignis». Wie wird die Gültigkeit einer Regel hergestellt, wie lässt sich eine Behauptung über ein Ereignis belegen?"
       }
     ],
-    "result": "Eine Erklärung des Ausweisfalls und eine Widerlegung des Fehlschlusses zur Bildwahrheit.",
+    "result": "Eine Erklärung sozialer Gültigkeit und ihres Unterschieds zu einem Beleg für ein vergangenes Ereignis.",
     "hint": "Eine soziale Regel kann wirksam sein, weil sie anerkannt und durchgesetzt wird. Ein Ereignisbeleg muss dagegen nachweisbar mit dem behaupteten Geschehen zusammenhängen."
   },
   "hararipaths": {
@@ -1092,19 +1092,19 @@ const ACTIVITIES = {
     ],
     "steps": [
       {
-        "label": "Die Behauptungen unterscheiden",
-        "text": "Erkläre an einer selbst gezeichneten Verzweigung, wie ein festes Gesamtziel und verschiedene Wege zusammenpassen könnten. Markiere dies als Denkmodell, nicht als Geschichtsgesetz."
+        "label": "Die Aussagen genau lesen",
+        "text": "Welche Entwicklung bezeichnet Harari als unvermeidlich, welche konkrete Form als offen? Behauptet er damit ein Ziel oder eine Richtung der Entwicklung? Begründe an den beiden Zusammenfassungen."
       },
       {
-        "label": "Harari eine Rückfrage stellen",
-        "text": "Welche Beobachtung könnte zeigen, dass nicht nur der Weg, sondern auch das behauptete Gesamtziel offen war? Formuliere eine prüfbare Rückfrage statt bloss «Ich stimme zu/nicht zu»."
+        "label": "Die Behauptung prüfen",
+        "text": "Welche Beobachtung würde gegen die behauptete Unvermeidlichkeit grösserer kultureller Zusammenhänge sprechen?"
       },
       {
-        "label": "Mit Bloch weiterdenken",
-        "text": "Warum darf man nach Ursachen fragen, auch wenn man einen Verlauf nicht für zwingend hält? Erkläre dies an einem der vorhandenen Ereignisse, ohne eine alternative Vergangenheit als Tatsache auszugeben."
+        "label": "Erklären und Vorhersagen",
+        "text": "Wähle ein Ereignis aus dem Bestand. Weshalb kann man nach seinen Ursachen fragen, ohne damit zu behaupten, sein Ausgang sei vorherbestimmt gewesen?"
       }
     ],
-    "result": "Ein Verzweigungsmodell und eine präzise Rückfrage an Hararis Notwendigkeitsbehauptung.",
+    "result": "Eine Unterscheidung von Entwicklungsrichtung, behaupteter Unvermeidlichkeit und offener konkreter Entwicklung.",
     "hint": "Eine Erklärung zeigt Bedingungen und Zusammenhänge. Sie muss nicht beweisen, dass unter allen denkbaren Bedingungen nur dieser Ausgang möglich war."
   }
 };
@@ -1126,7 +1126,7 @@ const HARARI_INTRO = {
       "Harari verbindet Forschung aus verschiedenen Gebieten zu einer grossen Erzählung. Das hilft, Zusammenhänge zu sehen, führt aber auch zu starken Vereinfachungen. Seine «kognitive Revolution» bezeichnet einen angenommenen Wandel von Denken, Sprache und Kooperation – kein einzelnes datierbares Ereignis. Wir prüfen, wie viel seine Deutungen erklären, welche Belege sie benötigen und welche Unterschiede sie übergehen."
     ]
   ],
-  "example": "Merke dir für die folgenden Fenster zwei Fragen: Wie wird gemeinsame Ordnung möglich? Und wem nützt eine historische Veränderung?",
+  "example": "Zwei Fragen begleiten die folgenden Beispiele: Wie wird gemeinsame Ordnung möglich? Und wem nützt eine historische Veränderung?",
   "sources": [
     "harariBio",
     "harariPDF"
@@ -1144,7 +1144,7 @@ EVENTS.find(e=>e.id==='nietzsche').related.push('recurrence');
 CONCEPTS.history.related.push('recurrence');
 SOURCES.marx1859={title:'Karl Marx: Zur Kritik der politischen Ökonomie, Vorwort (1859)',url:'https://www.marxists.org/archive/marx/works/1859/critique-pol-economy/preface.htm',note:'Primärtext, englische Übersetzung. Hier eigenständige deutsche Paraphrasen; besonders Produktionsverhältnisse, gesellschaftlicher Wandel und Epochenannahmen.'};
 SOURCES.engels1890={title:'Friedrich Engels an Joseph Bloch, September 1890',url:'https://www.marxists.org/archive/marx/works/1890/letters/90_09_21.htm',note:'Primärtextauszug, englische Übersetzung. Wechselwirkungen und Kritik an einer ausschliesslich ökonomischen Erklärung. Joseph Bloch ist nicht Marc Bloch.'};
-CONCEPTS.materialism={id:'materialism',title:'Historischer Materialismus: Bedingungen und Konflikte',intro:'Wie verändert sich die Erklärung von Geschichte, wenn wir bei Arbeit und gesellschaftlichen Beziehungen beginnen?',text:'Karl Marx (1818–1883) und Friedrich Engels (1820–1895) entwickelten ihre materialistische Geschichtsauffassung im 19. Jahrhundert in der Auseinandersetzung mit Philosophie, politischer Ökonomie und sozialen Konflikten. Sie waren Forscher und politische Akteure. Der Ansatz erklärt gesellschaftlichen Wandel aus den Bedingungen menschlicher Lebensproduktion und ihren Widersprüchen. Er lenkt den Blick auf Arbeit, Eigentum, Herrschaft und Klassenkonflikte. Dabei ist umstritten, welches Gewicht materiellen Bedingungen gegenüber politischem Handeln und Ideen zukommt. Seine Entwicklungsannahmen sind selbst historisch zu untersuchen.',sources:['marx1859','engels1890'],related:['industry','haiti','hegel','harariorders','period'],activity:{title:'Zwei Erklärungen derselben Maschine',scene:'Ein erfundener Fabrikfall: Eine neue Maschine ermöglicht dieselbe Gütermenge in sechs statt acht Stunden. Mehr wissen wir zunächst nicht. Verwechsle diese Annahme nicht mit einem Befund über Menzels Eisenwalzwerk.',cards:[{label:'Erklärung A · Technik',text:'«Weil die Maschine Zeit spart, arbeiten nun alle kürzer.» Diese Schlussfolgerung ist eine zu prüfende Behauptung.'},{label:'Erklärung B · gesellschaftliche Beziehungen',text:'«Ob die gewonnene Zeit frei wird, hängt auch davon ab, wer über Produktion und Arbeitszeit entscheiden kann.» Auch diese Erklärung braucht konkrete Belege.'}],steps:[{label:'Den fehlenden Zwischenschritt finden',text:'Zeichne zwischen Maschine und kürzerem Arbeitstag ein zusätzliches Feld. Trage eine Entscheidung, Vereinbarung oder Regel ein, ohne die der Schluss nicht trägt.'},{label:'Die eigene Erklärung angreifbar machen',text:'Wechsle zum Wirkungsgefüge. Entwickle aus demselben technischen Ausgangspunkt zwei verschiedene mögliche Folgen. Nenne für jede eine notwendige Bedingung und eine Quelle, die diese Bedingung prüfen könnte.'},{label:'Den Massstab wechseln',text:'Wähle danach Saint-Domingue. Welche Verbindung verschiedener Arbeitsverhältnisse geht verloren, wenn du Gesellschaften bloss auf früheren und späteren Stufen derselben Treppe einzeichnest?'}],result:'Eine begründete Wirkungskette mit einem alternativen Ausgang und einer benannten Beleglücke; dazu eine Kritik an einer weltweiten Pflichtfolge von Epochen.',hint:'Eine Maschine trifft keine Vereinbarung über Arbeitszeit. Wer handeln und entscheiden kann, muss ebenso untersucht werden wie die Technik. Umgekehrt erklärt eine Forderung noch nicht die materiellen Bedingungen ihrer Durchsetzung.'}};
+CONCEPTS.materialism={id:'materialism',title:'Historischer Materialismus: Bedingungen und Konflikte',intro:'Wie verändert sich die Erklärung von Geschichte, wenn wir bei Arbeit und gesellschaftlichen Beziehungen beginnen?',text:'Karl Marx (1818–1883) und Friedrich Engels (1820–1895) entwickelten ihre materialistische Geschichtsauffassung im 19. Jahrhundert in der Auseinandersetzung mit Philosophie, politischer Ökonomie und sozialen Konflikten. Sie waren Forscher und politische Akteure. Der Ansatz erklärt gesellschaftlichen Wandel aus den Bedingungen menschlicher Lebensproduktion und ihren Widersprüchen. Er lenkt den Blick auf Arbeit, Eigentum, Herrschaft und Klassenkonflikte. Dabei ist umstritten, welches Gewicht materiellen Bedingungen gegenüber politischem Handeln und Ideen zukommt. Seine Entwicklungsannahmen sind selbst historisch zu untersuchen.',sources:['marx1859','engels1890'],related:['industry','haiti','hegel','harariorders','period'],activity:{title:'Zwei Erklärungen derselben Maschine',scene:'Modellfall: Eine neue Maschine ermöglicht dieselbe Gütermenge in sechs statt acht Stunden. Führt das zu kürzerer Arbeitszeit? Welche Entscheidungen und Bedingungen spielen dabei eine Rolle?',cards:[{label:'Erklärung A · Technik',text:'«Weil die Maschine Zeit spart, arbeiten nun alle kürzer.» Diese Schlussfolgerung ist eine zu prüfende Behauptung.'},{label:'Erklärung B · gesellschaftliche Beziehungen',text:'«Ob die gewonnene Zeit frei wird, hängt auch davon ab, wer über Produktion und Arbeitszeit entscheiden kann.» Auch diese Erklärung braucht konkrete Belege.'}],steps:[{label:'Den fehlenden Zwischenschritt finden',text:'Zeichne zwischen Maschine und kürzerem Arbeitstag ein zusätzliches Feld. Trage eine Entscheidung, Vereinbarung oder Regel ein, ohne die der Schluss nicht trägt.'},{label:'Was würde der Erklärung widersprechen?',text:'Wechsle zum Wirkungsgefüge. Entwickle aus demselben technischen Ausgangspunkt zwei verschiedene mögliche Folgen. Nenne für jede eine notwendige Bedingung und eine Quelle, die diese Bedingung prüfen könnte.'},{label:'Den Massstab wechseln',text:'Wähle danach Saint-Domingue. Welche Verbindung verschiedener Arbeitsverhältnisse geht verloren, wenn du Gesellschaften bloss auf früheren und späteren Stufen derselben Treppe einzeichnest?'}],result:'Zwei mögliche Folgen derselben technischen Veränderung mit ihren gesellschaftlichen Bedingungen und offenen Fragen.',hint:'Eine Maschine trifft keine Vereinbarung über Arbeitszeit. Wer handeln und entscheiden kann, muss ebenso untersucht werden wie die Technik. Umgekehrt erklärt eine Forderung noch nicht die materiellen Bedingungen ihrer Durchsetzung.'}};
 CONCEPTS.materialism.tasks=CONCEPTS.materialism.activity.steps.map(s=>s.text);
 CONCEPTS.materialism.hint=CONCEPTS.materialism.activity.hint;
 EVENTS.find(e=>e.id==='hegel').related.push('materialism');
@@ -1159,8 +1159,8 @@ SOURCES.metKings={title:'Susan Allen / The Met: Kings and Queens of Egypt (2004)
 SOURCES.metEgyptEducation={title:'The Met: The Art of Ancient Egypt – A Resource for Educators, Historical Outline',url:'https://resources.metmuseum.org/resources/metpublications/pdf/The_Art_of_Ancient_Egypt_A_Resource_for_Educators.pdf',note:'PDF-Seite 11: Regierungsjahre, selektive Königslisten und Schwierigkeiten der Chronologie. Das A–B–C-Beispiel ist ausdrücklich erfunden.'};
 SOURCES.metMiddleKingdom={title:'The Met: Egypt in the Middle Kingdom (ca. 2030–1650 B.C.)',url:'https://www.metmuseum.org/fr/essays/egypt-in-the-middle-kingdom-2030-1640-b-c',note:'Historischer Wandel von Königtum, Gesellschaft und religiösen Vorstellungen; Gegenakzent zur Vorstellung eines unveränderlichen Ägyptens.'};
 IMAGE_MANIFEST.push({filename:'medieval-abraham.jpg',motif:'Die Berufung Abrahams, Weltchronik, Ms. 33, fol. 25v',author:'Unbekannte Buchmalerei; Texttradition Rudolf von Ems; J. Paul Getty Museum',image_date:'Buchmalerei um 1400–1410, Regensburg; dargestellte biblische Vergangenheit nicht gleich Bilddatum',license:'CC0 · Getty Open Content',license_url:'https://creativecommons.org/publicdomain/zero/1.0/',source_page:'https://www.getty.edu/art/collection/object/105T4N',source_criticism:'Spätmittelalterliche Vergegenwärtigung einer biblischen Erzählung; keine zeitgenössische Darstellung Abrahams.'},{filename:'egypt-scarab.jpg',motif:'Skarabäus-Amulett, glasiertes Steatit, Inv. 10.130.519',author:'Unbekannt, Ägypten; Fotografie: The Metropolitan Museum of Art',image_date:'Objekt ca. 1300–1080 v. u. Z.; moderne Museumsaufnahme',license:'Public Domain · The Met Open Access / CC0',license_url:'https://creativecommons.org/publicdomain/zero/1.0/',source_page:'https://www.metmuseum.org/art/collection/search/549258',source_criticism:'Ein einzelner Gegenstand mit musealer Kontextualisierung; kein unmittelbarer Beleg für die Vorstellungen aller Menschen im Alten Ägypten.'});
-CONCEPTS.medievalworld={id:'medievalworld',title:'Mittelalterliche Geschichtsbilder: Heil, Wiederkehr und Herrschaft',intro:'Warum ist «Mittelalter» keine selbstverständliche Zeitordnung für einen mittelalterlichen Chronisten?',text:'Beda, ein christlicher Gelehrter im England des frühen 8. Jahrhunderts, ordnet Weltgeschichte in sechs Alter. Die eigene Zeit gehört zum sechsten, durch Christus eröffneten Alter. Jahrhunderte später verknüpft Rudolfs Weltchronik biblische Geschichte mit weltlicher Herrschaft. Beide Beispiele zeigen, dass eine Darstellung der Vergangenheit auch den Platz der eigenen Gegenwart bestimmt. Das ist ein Zugang zu christlichen Geschichtsbildern, kein Gesamtbild aller mittelalterlichen Traditionen.',image:'medieval-abraham.jpg',imageAlt:'Handschrift mit zwei Textspalten und der Berufung Abrahams rechts unten',imageCaption:'Die Berufung Abrahams, Weltchronik, Regensburg, um 1400–1410. Getty, Ms. 33, fol. 25v. Texttradition des 13. Jahrhunderts; Bild CC0.',sources:['bedeAges','medievalAges','gettyChronicle','gettyAbraham','gettyCosmos'],related:['augustine','romeend','period','egyptworld'],activity:{title:'Ein Bild mit mindestens zwei Zeiten',scene:'Du verfasst die Beschriftung dieser Buchmalerei für eine Ausstellung über historische Zeit. Der Ausstellungstitel lautet zunächst «So sah Abraham aus».',cards:[{label:'Objektdatum',text:'Die Buchmalerei entstand um 1400–1410 in Regensburg. Das Blatt gehört zu einer Weltchronik in der Texttradition Rudolfs von Ems.'},{label:'Erzählte Vergangenheit',text:'Dargestellt ist Abrahams Berufung, eine biblische Erzählung. Das Herstellungsdatum datiert nicht das dargestellte Geschehen.'},{label:'Eine weitere Zeit',text:'Die Betrachtung heute fügt eine weitere Perspektive hinzu: Wir untersuchen das Bild als Quelle für vergangene Geschichtsvorstellungen.'}],steps:[{label:'Die Beschriftung retten',text:'Ersetze den Ausstellungstitel durch eine präzise Bildlegende. Nenne dargestellte Erzählung, Herstellungszeit und eine Frage, die du mit diesem Bild tatsächlich untersuchen kannst.'},{label:'Eine Epochengrenze verschieben',text:'Wechsle zum Modus «Mittelalterliche Geschichtsbilder» und untersuche 476 im Sechs-Weltalter-Schema. Erkläre, warum ein einschneidendes Ereignis innerhalb eines Weltalters liegen kann.'}],result:'Eine quellenkritische Bildlegende und eine Erklärung dafür, weshalb dasselbe Ereignis in verschiedenen Geschichtsbildern unterschiedlich gewichtet wird.',hint:'Eine Darstellung kann eine sehr alte Geschichte erzählen und dennoch vor allem ihre eigene Herstellungszeit erschliessen. Auch die Bezeichnung «Mittelalter» ist eine spätere Ordnung.'}};
-CONCEPTS.egyptworld={id:'egyptworld',title:'Altägyptische Geschichtsbilder: Erneuern, zählen, bewahren',intro:'Wie passen wiederkehrende Erneuerung und unterscheidbare Herrschaften zusammen?',text:'Der Skarabäus führt zu religiösen Vorstellungen des Werdens und der Erneuerung. Regierungsjahre eröffnen dagegen eine politische Zeitordnung. Maʿat benennt einen Anspruch auf richtige Ordnung. Diese Zugänge können nebeneinander bestehen; keiner allein erklärt die gesamte Geschichte Ägyptens. Die Überlieferung ist selektiv: Welche Herrschaft erinnert wird und welche Menschen in Quellen sprechen können, beeinflusst unser Bild.',image:'egypt-scarab.jpg',imageAlt:'Museumsaufnahme eines kleinen Skarabäus-Amuletts aus glasiertem Steatit',imageCaption:'Skarabäus, ca. 1300–1080 v. u. Z., Länge 2 cm. The Met, Inv. 10.130.519, Gift of Helen Miller Gould, 1910. Moderne Aufnahme, Public Domain.',sources:['metScarab','metKings','metEgyptEducation','metMiddleKingdom'],related:['recurrence','assmann','medievalworld','materialism'],activity:{title:'Was ein Käfer belegen kann – und was nicht',scene:'Eine Ausstellung zeigt den Skarabäus mit der Behauptung «Für die Ägypter wiederholte sich die gesamte Geschichte». Du sollst die Aussage prüfen.',cards:[{label:'Gegenstand',text:'Amulett aus glasiertem Steatit, etwa 2 cm lang, ca. 1300–1080 v. u. Z. Die Abbildung ist eine heutige Museumsaufnahme.'},{label:'Museale Deutung',text:'Der Met-Katalog erklärt den Skarabäus im Zusammenhang mit Khepri, der aufgehenden Sonne und Erneuerung. Diese Erklärung verwendet Wissen über Sprache und religiöse Zusammenhänge.'}],steps:[{label:'Den Sprung in der Behauptung finden',text:'Unterstreiche gedanklich das Wort, das aus einem religiösen Zusammenhang eine Aussage über alle historischen Ereignisse macht. Formuliere eine Ersatzlegende, die das Objekt nicht überfordert.'},{label:'Den Gegenversuch machen',text:'Wechsle im ägyptischen Modus zur Königszeit. Entferne Herrschaft B aus der erfundenen Erinnerungsliste. Begründe, warum ein wiederkehrendes «Jahr 1» weder dieselbe Herrschaft noch dasselbe Ereignis bezeichnet.'}],result:'Eine eng am Objekt begründete Deutung und eine Unterscheidung von religiöser Erneuerung, Jahreszählung und selektiver Erinnerung.',hint:'Vergleiche die Art der Wiederkehr: Ein neuer Regierungsbeginn, ein Sonnenaufgang und ein erneut gefeiertes Fest sind nicht dieselbe historische Behauptung.'}};
+CONCEPTS.medievalworld={id:'medievalworld',title:'Mittelalterliche Geschichtsbilder: Heil, Wiederkehr und Herrschaft',intro:'Warum ist «Mittelalter» keine selbstverständliche Zeitordnung für einen mittelalterlichen Chronisten?',text:'Beda, ein christlicher Gelehrter im England des frühen 8. Jahrhunderts, ordnet Weltgeschichte in sechs Alter. Die eigene Zeit gehört zum sechsten, durch Christus eröffneten Alter. Jahrhunderte später verknüpft Rudolfs Weltchronik biblische Geschichte mit weltlicher Herrschaft. Beide Beispiele zeigen, dass eine Darstellung der Vergangenheit auch den Platz der eigenen Gegenwart bestimmt. Das ist ein Zugang zu christlichen Geschichtsbildern, kein Gesamtbild aller mittelalterlichen Traditionen.',image:'medieval-abraham.jpg',imageAlt:'Handschrift mit zwei Textspalten und der Berufung Abrahams rechts unten',imageCaption:'Die Berufung Abrahams, Weltchronik, Regensburg, um 1400–1410. Getty, Ms. 33, fol. 25v. Texttradition des 13. Jahrhunderts; Bild CC0.',sources:['bedeAges','medievalAges','gettyChronicle','gettyAbraham','gettyCosmos'],related:['augustine','romeend','period','egyptworld'],activity:{title:'Wie zeigt eine Weltchronik biblische Vergangenheit?',scene:'Die Buchmalerei entstand um 1400–1410 und zeigt Abrahams Berufung. Untersuche den Unterschied zwischen der erzählten Vergangenheit und der Entstehungszeit des Bildes.',cards:[{label:'Objektdatum',text:'Die Buchmalerei entstand um 1400–1410 in Regensburg. Das Blatt gehört zu einer Weltchronik in der Texttradition Rudolfs von Ems.'},{label:'Erzählte Vergangenheit',text:'Dargestellt ist Abrahams Berufung, eine biblische Erzählung. Das Herstellungsdatum datiert nicht das dargestellte Geschehen.'},{label:'Eine weitere Zeit',text:'Die Betrachtung heute fügt eine weitere Perspektive hinzu: Wir untersuchen das Bild als Quelle für vergangene Geschichtsvorstellungen.'}],steps:[{label:'Das Bild einordnen',text:'Welche Erzählung wird dargestellt, wann entstand das Bild? Was lässt sich damit über die Darstellung biblischer Vergangenheit untersuchen?'},{label:'Zeitordnungen vergleichen',text:'Betrachte 476 im Sechs-Weltalter-Schema der mittelalterlichen Ansicht. Weshalb kann dasselbe Datum in einer Zeitordnung als Epochengrenze und in einer anderen innerhalb eines Weltalters liegen?'}],result:'Eine quellenkritische Bildlegende und eine Erklärung dafür, weshalb dasselbe Ereignis in verschiedenen Geschichtsbildern unterschiedlich gewichtet wird.',hint:'Eine Darstellung kann eine sehr alte Geschichte erzählen und dennoch vor allem ihre eigene Herstellungszeit erschliessen. Auch die Bezeichnung «Mittelalter» ist eine spätere Ordnung.'}};
+CONCEPTS.egyptworld={id:'egyptworld',title:'Altägyptische Geschichtsbilder: Erneuern, zählen, bewahren',intro:'Wie passen wiederkehrende Erneuerung und unterscheidbare Herrschaften zusammen?',text:'Der Skarabäus führt zu religiösen Vorstellungen des Werdens und der Erneuerung. Regierungsjahre eröffnen dagegen eine politische Zeitordnung. Maʿat benennt einen Anspruch auf richtige Ordnung. Diese Zugänge können nebeneinander bestehen; keiner allein erklärt die gesamte Geschichte Ägyptens. Die Überlieferung ist selektiv: Welche Herrschaft erinnert wird und welche Menschen in Quellen sprechen können, beeinflusst unser Bild.',image:'egypt-scarab.jpg',imageAlt:'Museumsaufnahme eines kleinen Skarabäus-Amuletts aus glasiertem Steatit',imageCaption:'Skarabäus, ca. 1300–1080 v. u. Z., Länge 2 cm. The Met, Inv. 10.130.519, Gift of Helen Miller Gould, 1910. Moderne Aufnahme, Public Domain.',sources:['metScarab','metKings','metEgyptEducation','metMiddleKingdom'],related:['recurrence','assmann','medievalworld','materialism'],activity:{title:'Was ein Käfer belegen kann – und was nicht',scene:'Der Museumskatalog verbindet den Skarabäus mit Khepri, der aufgehenden Sonne und Erneuerung. Welche Vorstellung von Wiederkehr lässt sich damit erläutern?',cards:[{label:'Gegenstand',text:'Amulett aus glasiertem Steatit, etwa 2 cm lang, ca. 1300–1080 v. u. Z. Die Abbildung ist eine heutige Museumsaufnahme.'},{label:'Museale Deutung',text:'Der Met-Katalog erklärt den Skarabäus im Zusammenhang mit Khepri, der aufgehenden Sonne und Erneuerung. Diese Erklärung verwendet Wissen über Sprache und religiöse Zusammenhänge.'}],steps:[{label:'Die Deutung untersuchen',text:'Welche Merkmale des Objekts sind sichtbar, welche Bedeutung erläutert der Katalog? Weshalb beantwortet dies noch nicht, wie sämtliche historischen Ereignisse verstanden wurden?'},{label:'Erneuerung und Jahreszählung',text:'Vergleiche die religiöse Erneuerung mit der Zählung von Regierungsjahren im ägyptischen Modus. Was bedeutet dort ein neuer Beginn bei Jahr 1?'}],result:'Eine eng am Objekt begründete Deutung und eine Unterscheidung von religiöser Erneuerung, Jahreszählung und selektiver Erinnerung.',hint:'Vergleiche die Art der Wiederkehr: Ein neuer Regierungsbeginn, ein Sonnenaufgang und ein erneut gefeiertes Fest sind nicht dieselbe historische Behauptung.'}};
 for(const id of ['medievalworld','egyptworld']){CONCEPTS[id].tasks=CONCEPTS[id].activity.steps.map(s=>s.text);CONCEPTS[id].hint=CONCEPTS[id].activity.hint;}
 CONCEPTS.period.related.push('medievalworld','egyptworld');
 CONCEPTS.recurrence.related.push('medievalworld','egyptworld');
@@ -1398,10 +1398,10 @@ Object.assign(SOURCES,{
  marsMedia:{title:'NASA: Sounds of Perseverance Mars Rover Driving – 90-second highlights',url:'https://science.nasa.gov/resource/sounds-of-perseverance-mars-rover-driving-sol-16-90-second-highlights/'}
 });
 const NEW_MEDIA_EVENTS=[
- {id:'moon',year:1969,lane:'am',date:'20./21. Juli 1969 (je nach Zeitzone)',title:'Ein Schritt – für die ganze Menschheit?',intro:'Eine technische Leistung wird schon im Augenblick ihres Geschehens zur grossen Erzählung.',text:'Apollo 11 brachte erstmals Menschen auf den Mond. Die Mission stand im Wettbewerb der USA und der Sowjetunion und wurde weltweit medial verfolgt. Armstrongs Worte deuten den Schritt als Leistung der Menschheit. Wer sprechen kann, wer die Mission finanziert und wer im Bild erscheint, sind andere Fragen. Der erste Schritt fand am 21. Juli nach UTC statt, in den USA war noch der 20. Juli.',sources:['apolloMedia','nasaSounds'],related:['hegel','industry','mars','ai'],activity:{title:'Wie gross wird ein kleiner Schritt?',scene:'Du bearbeitest für ein Archiv zwei Fassungen derselben Mission: den kurzen Funkspruch und das restaurierte Fernsehbild. Deine Bildunterschrift soll Ereignis und Deutung auseinanderhalten.',cards:[{label:'Ton',text:'Die Formulierung «mankind» beansprucht eine Bedeutung für alle Menschen. Das ist bereits eine Deutung innerhalb der Quelle.'},{label:'Bild',text:'Schwache Kontraste und die technische Übertragung gehören zur Überlieferung. Restauriertes Material ist bearbeitetes historisches Material.'}],steps:[{label:'Zuerst nur hören',text:'Welche Grössenordnung geben die Worte dem Geschehen? Notiere, was du aus dem Ton allein über Ort und beteiligte Menschen belegen kannst.'},{label:'Dann sehen',text:'Prüfe deine Vorstellung am Video. Halte fest, was erst das Bild erkennen lässt und was die Kamera weiterhin nicht zeigt.'},{label:'Den Massstab wechseln',text:'Betrachte die Mission unter «Richtung & Offenheit» und «Historischer Materialismus». Formuliere je eine Frage, die im Funkspruch nicht vorkommt.'}],result:'Schreibe zwei Bildunterschriften: eine beschreibt den belegbaren Vorgang, die andere benennt den Anspruch der «Menschheit». Ergänze einen Satz zur Grenze dieser Deutung.',hint:'Eine Quelle kann ein Ereignis dokumentieren und es gleichzeitig symbolisch aufladen. Beides lässt sich untersuchen, ohne die technische Leistung zu bestreiten.'}},
- {id:'wall',year:1989,lane:'eu',date:'9. November 1989; Foto vom 16. November',title:'Wann wird eine Grenze Vergangenheit?',intro:'49 Sekunden Jubel – wie viel Erklärung steckt darin?',text:'Am 9. November 1989 wurden die Berliner Grenzübergänge geöffnet. Proteste, Ausreisebewegungen, politische Entscheidungen und das Handeln an den Übergängen trafen zusammen. Ein kurzer Wochenschaubericht verdichtet den Umbruch zu einer sichtbaren und hörbaren Szene. Der Abbau der Mauer, die staatliche Einheit und Veränderungen im Alltag folgten in unterschiedlichen Zeiträumen.',sources:['wallMedia'],related:['koselleck','braudel','memory','hegel'],activity:{title:'Die Nacht und die lange Veränderung',scene:'Ein Filmarchiv will den Clip mit «An diesem Abend war die Teilung vorbei» beschriften. Du sollst beurteilen, welche Teile dieser Aussage die Bilder tragen.',cards:[{label:'49 Sekunden',text:'Eine Montage kann viele Orte und Menschen zu einem einzigen Ereigniseindruck verbinden.'},{label:'Eine Woche später',text:'Das Foto vom 16. November zeigt eine neue Nutzung der Mauer. Auch das ist ein eigener Zeitpunkt, kein Ersatzbild für die Grenzöffnung.'}],steps:[{label:'Schnittprotokoll',text:'Notiere bei jedem erkennbaren Bildwechsel: Menschen, Ort, Handlung. Zähle nicht nur Sekunden, sondern verschiedene Situationen.'},{label:'Ton gegen Bild',text:'Was behauptet der Kommentar zusätzlich? Welche Aussage lässt sich sehen, welche nur hören, welche brauchst du aus anderen Quellen?'},{label:'Drei Enden der Teilung',text:'Setze Grenzöffnung, staatliche Einheit und eine Veränderung im Alltag in verschiedene Zeitschichten. Begründe, weshalb sie nicht dasselbe Enddatum haben müssen.'}],result:'Überarbeite die Archivbeschriftung in drei Sätzen: sichtbar, zusätzlich erzählt, noch offen. Füge einen Zeitcode als Beleg hinzu.',hint:'Freude ist ein historischer Befund. Sie erklärt weder allein den Umbruch noch die Erfahrungen aller Beteiligten.'}},
- {id:'paris',year:2015,lane:'eu',date:'12. Dezember 2015; Erklärfilm von 2021',title:'Ein Abkommen beendet keine Erwärmung',intro:'Politische Beschlüsse haben ein Datum. Ihre Wirkungen haben viele Geschwindigkeiten.',text:'Das Pariser Klimaabkommen wurde 2015 angenommen und trat 2016 in Kraft. Es formuliert gemeinsame Ziele, deren Verwirklichung von politischen, wirtschaftlichen und gesellschaftlichen Veränderungen abhängt. Der kurze UN-Film von 2021 erklärt den Anspruch des Abkommens aus Sicht der Organisation. Er ist eine spätere Darstellung und kein Beleg dafür, dass die Ziele schon erreicht wurden.',sources:['parisMedia','parisTreaty'],related:['environmenthistory','braudel','materialism','hegel'],activity:{title:'Drei Uhren für einen Beschluss',scene:'Du sollst eine einzige senkrechte Epochengrenze bei 2015 setzen. Zur Verfügung stehen ein politischer Vertrag, langlebige Infrastrukturen und langfristige Klimaprozesse.',cards:[{label:'Politische Zeit',text:'Ein Abkommen kann an einem bestimmten Tag angenommen werden.'},{label:'Materielle Zeit',text:'Gebäude, Verkehrssysteme und Energieanlagen haben lange Nutzungsdauern; ihre Veränderung folgt keinem einzigen Beschlussdatum.'},{label:'Erdsystem',text:'Die Folgen menschlicher Eingriffe folgen wiederum anderen Zeitskalen.'}],steps:[{label:'Auf die Verben hören',text:'Sammle im UN-Film Formulierungen für Ziele und für bereits Geschehenes. Welche Verwechslung entsteht, wenn beides als «Erfolg» zusammengefasst wird?'},{label:'Die Grenze aufspalten',text:'Entwirf je eine Zeitspur für Beschluss, Infrastruktur und Klimawirkung. Markiere, wo dir konkrete Daten fehlen.'},{label:'Eine Epoche begründen',text:'Ist 2015 für deine Frage ein sinnvoller Einschnitt? Formuliere eine Frage, für die du eine andere Grenze benötigen würdest.'}],result:'Halte einen Epochenvorschlag mit Kriterium fest und ergänze zwei Prozesse, die diese Grenze überqueren. Beziehe dich auf eine konkrete Aussage des Films.',hint:'Die institutionelle Perspektive der UN ist Teil der Quelle. Ziele, Massnahmen und gemessene Wirkungen sind unterschiedliche Belegarten.'}},
- {id:'mars',year:2021,lane:'am',date:'2021; Tonmontage der Fahrt an Sol 16',title:'Wie klingt eine überlieferte Gegenwart?',intro:'Ein Mikrofon macht etwas hörbar – aber nie alles.',text:'Der Marsrover Perseverance zeichnete 2021 unter anderem Fahrgeräusche auf. NASA stellte daraus einen 90-sekündigen Ausschnitt zusammen. Auswahl und Bearbeitung gehören damit zur Quelle. Die Aufnahme dokumentiert eine technisch vermittelte Begegnung von menschlicher Forschung und planetarer Umwelt; sie ist keine unveränderte akustische Gesamtheit eines Ortes.',sources:['marsMedia'],related:['moon','ai','history','environmenthistory'],activity:{title:'Das Geräusch und die Geschichte, die wir daraus machen',scene:'Ein Tonarchiv bietet den Ausschnitt als «So klingt der Mars» an. Du sollst diese Überschrift am Material prüfen, ohne aus jedem Geräusch eine sichere Ursache zu machen.',cards:[{label:'Auswahl',text:'NASA hat drei Abschnitte zu einem etwa 90 Sekunden langen Hörbeispiel verbunden.'},{label:'Messanordnung',text:'Das Mikrofon sitzt an einem fahrenden technischen Gerät. Gerät, Umgebung und Aufnahmebedingungen wirken zusammen.'}],steps:[{label:'Blind hören',text:'Höre zunächst ohne das Bild. Beschreibe Klangmerkmale – etwa gleichmässig, unterbrochen, hoch oder rau – bevor du Ursachen benennst.'},{label:'Die Quelle lokalisieren',text:'Lies den Herkunftshinweis. Kennzeichne in deiner ersten Notiz die Stellen, an denen du mehr behauptet hast, als du hören konntest.'},{label:'Zurück zur Geschichtsfrage',text:'Ist dies Naturgeschichte, Technikgeschichte oder Geschichte einer Forschungspraxis? Begründe zwei unterschiedliche Fragen an dieselbe Aufnahme.'}],result:'Verfasse eine präzisere Archivüberschrift und eine Hörnotiz mit Zeitcode. Trenne hörbaren Befund, plausible Erklärung und offene Frage.',hint:'Eine bearbeitete Quelle ist nicht automatisch unbrauchbar. Entscheidend ist, welche Eingriffe bekannt sind und welche Frage sich damit beantworten lässt.'}}
+ {id:'moon',year:1969,lane:'am',date:'20./21. Juli 1969 (je nach Zeitzone)',title:'Ein Schritt – für die ganze Menschheit?',intro:'Eine technische Leistung wird schon im Augenblick ihres Geschehens zur grossen Erzählung.',text:'Apollo 11 brachte erstmals Menschen auf den Mond. Die Mission stand im Wettbewerb der USA und der Sowjetunion und wurde weltweit medial verfolgt. Armstrongs Worte deuten den Schritt als Leistung der Menschheit. Wer sprechen kann, wer die Mission finanziert und wer im Bild erscheint, sind andere Fragen. Der erste Schritt fand am 21. Juli nach UTC statt, in den USA war noch der 20. Juli.',sources:['apolloMedia','nasaSounds'],related:['hegel','industry','mars','ai'],activity:{title:'Wie gross wird ein kleiner Schritt?',scene:'Vergleiche den Funkspruch mit dem restaurierten Fernsehbild der Mondlandung. Was erfährst du jeweils, und wie wird dem Ereignis Bedeutung gegeben?',cards:[{label:'Ton',text:'Die Formulierung «mankind» beansprucht eine Bedeutung für alle Menschen. Das ist bereits eine Deutung innerhalb der Quelle.'},{label:'Bild',text:'Schwache Kontraste und die technische Übertragung gehören zur Überlieferung. Restauriertes Material ist bearbeitetes historisches Material.'}],steps:[{label:'Zuerst nur hören',text:'Welche Grössenordnung geben die Worte dem Geschehen? Notiere, was du aus dem Ton allein über Ort und beteiligte Menschen belegen kannst.'},{label:'Dann sehen',text:'Prüfe deine Vorstellung am Video. Halte fest, was erst das Bild erkennen lässt und was die Kamera weiterhin nicht zeigt.'},{label:'Den Massstab wechseln',text:'Betrachte die Mission unter «Richtung & Offenheit» und «Historischer Materialismus». Formuliere je eine Frage, die im Funkspruch nicht vorkommt.'}],result:'Schreibe zwei Bildunterschriften: eine beschreibt den belegbaren Vorgang, die andere benennt den Anspruch der «Menschheit». Ergänze einen Satz zur Grenze dieser Deutung.',hint:'Eine Quelle kann ein Ereignis dokumentieren und es gleichzeitig symbolisch aufladen. Beides lässt sich untersuchen, ohne die technische Leistung zu bestreiten.'}},
+ {id:'wall',year:1989,lane:'eu',date:'9. November 1989; Foto vom 16. November',title:'Wann wird eine Grenze Vergangenheit?',intro:'49 Sekunden Jubel – wie viel Erklärung steckt darin?',text:'Am 9. November 1989 wurden die Berliner Grenzübergänge geöffnet. Proteste, Ausreisebewegungen, politische Entscheidungen und das Handeln an den Übergängen trafen zusammen. Ein kurzer Wochenschaubericht verdichtet den Umbruch zu einer sichtbaren und hörbaren Szene. Der Abbau der Mauer, die staatliche Einheit und Veränderungen im Alltag folgten in unterschiedlichen Zeiträumen.',sources:['wallMedia'],related:['koselleck','braudel','memory','hegel'],activity:{title:'Die Nacht und die lange Veränderung',scene:'Was endete am 9. November 1989, was noch nicht? Prüfe, was der Clip zur Grenzöffnung zeigt und wie der Kommentar sie beschreibt.',cards:[{label:'49 Sekunden',text:'Eine Montage kann viele Orte und Menschen zu einem einzigen Ereigniseindruck verbinden.'},{label:'Eine Woche später',text:'Das Foto vom 16. November zeigt eine neue Nutzung der Mauer. Auch das ist ein eigener Zeitpunkt, kein Ersatzbild für die Grenzöffnung.'}],steps:[{label:'Schnittprotokoll',text:'Notiere bei jedem erkennbaren Bildwechsel: Menschen, Ort, Handlung. Zähle nicht nur Sekunden, sondern verschiedene Situationen.'},{label:'Ton gegen Bild',text:'Was behauptet der Kommentar zusätzlich? Welche Aussage lässt sich sehen, welche nur hören, welche brauchst du aus anderen Quellen?'},{label:'Drei Enden der Teilung',text:'Setze Grenzöffnung, staatliche Einheit und eine Veränderung im Alltag in verschiedene Zeitschichten. Begründe, weshalb sie nicht dasselbe Enddatum haben müssen.'}],result:'Überarbeite die Archivbeschriftung in drei Sätzen: sichtbar, zusätzlich erzählt, noch offen. Füge einen Zeitcode als Beleg hinzu.',hint:'Freude ist ein historischer Befund. Sie erklärt weder allein den Umbruch noch die Erfahrungen aller Beteiligten.'}},
+ {id:'paris',year:2015,lane:'eu',date:'12. Dezember 2015; Erklärfilm von 2021',title:'Ein Abkommen beendet keine Erwärmung',intro:'Politische Beschlüsse haben ein Datum. Ihre Wirkungen haben viele Geschwindigkeiten.',text:'Das Pariser Klimaabkommen wurde 2015 angenommen und trat 2016 in Kraft. Es formuliert gemeinsame Ziele, deren Verwirklichung von politischen, wirtschaftlichen und gesellschaftlichen Veränderungen abhängt. Der kurze UN-Film von 2021 erklärt den Anspruch des Abkommens aus Sicht der Organisation. Er ist eine spätere Darstellung und kein Beleg dafür, dass die Ziele schon erreicht wurden.',sources:['parisMedia','parisTreaty'],related:['environmenthistory','braudel','materialism','hegel'],activity:{title:'Drei Uhren für einen Beschluss',scene:'2015 wurde das Pariser Klimaabkommen beschlossen. Unterscheide diesen Beschluss von Veränderungen der Infrastruktur und des Klimas.',cards:[{label:'Politische Zeit',text:'Ein Abkommen kann an einem bestimmten Tag angenommen werden.'},{label:'Materielle Zeit',text:'Gebäude, Verkehrssysteme und Energieanlagen haben lange Nutzungsdauern; ihre Veränderung folgt keinem einzigen Beschlussdatum.'},{label:'Erdsystem',text:'Die Folgen menschlicher Eingriffe folgen wiederum anderen Zeitskalen.'}],steps:[{label:'Auf die Verben hören',text:'Sammle im UN-Film Formulierungen für Ziele und für bereits Geschehenes. Welche Verwechslung entsteht, wenn beides als «Erfolg» zusammengefasst wird?'},{label:'Beschluss und Folgen unterscheiden',text:'Entwirf je eine Zeitspur für Beschluss, Infrastruktur und Klimawirkung. Markiere, wo dir konkrete Daten fehlen.'},{label:'Eine Epoche begründen',text:'Ist 2015 für deine Frage ein sinnvoller Einschnitt? Formuliere eine Frage, für die du eine andere Grenze benötigen würdest.'}],result:'Halte einen Epochenvorschlag mit Kriterium fest und ergänze zwei Prozesse, die diese Grenze überqueren. Beziehe dich auf eine konkrete Aussage des Films.',hint:'Die institutionelle Perspektive der UN ist Teil der Quelle. Ziele, Massnahmen und gemessene Wirkungen sind unterschiedliche Belegarten.'}},
+ {id:'mars',year:2021,lane:'am',date:'2021; Tonmontage der Fahrt an Sol 16',title:'Wie klingt eine überlieferte Gegenwart?',intro:'Ein Mikrofon macht etwas hörbar – aber nie alles.',text:'Der Marsrover Perseverance zeichnete 2021 unter anderem Fahrgeräusche auf. NASA stellte daraus einen 90-sekündigen Ausschnitt zusammen. Auswahl und Bearbeitung gehören damit zur Quelle. Die Aufnahme dokumentiert eine technisch vermittelte Begegnung von menschlicher Forschung und planetarer Umwelt; sie ist keine unveränderte akustische Gesamtheit eines Ortes.',sources:['marsMedia'],related:['moon','ai','history','environmenthistory'],activity:{title:'Das Geräusch und die Geschichte, die wir daraus machen',scene:'Höre die Aufnahme, bevor du den Herkunftshinweis liest. Was lässt sich hören, und welche Informationen zu Ort und Aufnahmebedingungen brauchst du für eine Erklärung?',cards:[{label:'Auswahl',text:'NASA hat drei Abschnitte zu einem etwa 90 Sekunden langen Hörbeispiel verbunden.'},{label:'Messanordnung',text:'Das Mikrofon sitzt an einem fahrenden technischen Gerät. Gerät, Umgebung und Aufnahmebedingungen wirken zusammen.'}],steps:[{label:'Blind hören',text:'Höre zunächst ohne das Bild. Beschreibe Klangmerkmale – etwa gleichmässig, unterbrochen, hoch oder rau – bevor du Ursachen benennst.'},{label:'Die Quelle lokalisieren',text:'Lies den Herkunftshinweis. Kennzeichne in deiner ersten Notiz die Stellen, an denen du mehr behauptet hast, als du hören konntest.'},{label:'Zurück zur Geschichtsfrage',text:'Ist dies Naturgeschichte, Technikgeschichte oder Geschichte einer Forschungspraxis? Begründe zwei unterschiedliche Fragen an dieselbe Aufnahme.'}],result:'Verfasse eine präzisere Archivüberschrift und eine Hörnotiz mit Zeitcode. Trenne hörbaren Befund, plausible Erklärung und offene Frage.',hint:'Eine bearbeitete Quelle ist nicht automatisch unbrauchbar. Entscheidend ist, welche Eingriffe bekannt sind und welche Frage sich damit beantworten lässt.'}}
 ];
 for(const e of NEW_MEDIA_EVENTS){e.tasks=e.activity.steps.map(s=>s.text);e.hint=e.activity.hint;if(VISUAL_READINGS[e.id]){e.image=e.id+'-source.jpg';e.visualQuestion=VISUAL_READINGS[e.id][3]}EVENTS.push(e)}
 // The climate entry uses a clearly identified material counterpoint, not a photo of COP21.
@@ -1432,9 +1432,12 @@ SOURCES.assmannDigital={title:'Universität Münster: Jan Assmann über kulturel
 
 // Regional research windows: Zürichsee, Linth, Walensee, Sarganserland and Chur.
 Object.assign(SOURCES,{"localOpera": {"title": "Stadt Zürich: Die Fundstelle Parkhaus Opéra", "url": "https://www.stadt-zuerich.ch/de/stadtleben/stadtportraet/zuerichs-geschichte/archaeologie/uwad/unterwasser/parkhaus-opera.html"}, "localOperaResearch": {"title": "Antiquity: Settlement and social organisation – Zürich-Parkhaus Opéra", "url": "https://www.cambridge.org/core/journals/antiquity/article/settlement-and-social-organisation-in-the-late-fourth-millennium-bc-in-central-europe-the-waterlogged-site-of-zurichparkhaus-opera/32F0F3792ED5B9DD98628909EC8B04A7"}, "localChur": {"title": "Kanton Graubünden: Schutzbauten über den römischen Ausgrabungen in Chur", "url": "https://portacultura.gr.ch/records/building-2"}, "localBridge": {"title": "Historisches Lexikon der Schweiz: Rapperswil (SG)", "url": "https://hls-dhs-dss.ch/de/articles/001371/2017-09-22/"}, "localReform": {"title": "LutherMuseen: Die erste Zürcher Disputation", "url": "https://www.luthermuseen.de/news/die-erste-zuercher-disputation"}, "localCoal": {"title": "Historisches Lexikon der Schweiz: Käpfnach (französischer Artikel)", "url": "https://hls-dhs-dss.ch/fr/articles/007808/2007-08-23/"}, "localLinth": {"title": "Linthwerk: Die Nationalunternehmung, 1807–1823", "url": "https://www.linthwerk.ch/geschichte/nationalunternehmung"}, "localMurg": {"title": "Alte Spinnerei Murg: Geschichte des Unternehmens und der Umnutzung", "url": "https://www.altespinnerei.ch/geschichte-der-alten-spinnerei-murg/?L=0"}, "localRagaz": {"title": "Historisches Lexikon der Schweiz: Bad Ragaz", "url": "https://hls-dhs-dss.ch/de/articles/001352/2009-09-08/"}, "localRail": {"title": "Historisches Lexikon der Schweiz: Sarganserland", "url": "https://hls-dhs-dss.ch/de/articles/007645/2012-01-11/"}, "localHeidi": {"title": "Schweizerisches Nationalmuseum: Johanna Spyri, literarischer Superstar", "url": "https://blog.nationalmuseum.ch/2019/11/spyri-literaturstar/"}, "localSpyri": {"title": "Historisches Lexikon der Schweiz: Johanna Spyri", "url": "https://hls-dhs-dss.ch/de/articles/012304/2013-01-10/"}, "localUnesco": {"title": "UNESCO: Prehistoric Pile Dwellings around the Alps, Welterbe seit 2011", "url": "https://whc.unesco.org/en/list/1363/"}});
-EVENTS.push(...[{"id": "local-opera", "year": -3234, "lane": "local", "date": "3234–3226 v. u. Z. · eine Siedlungsphase in Zürich", "title": "Unter dem Opernhausplatz: ein Dorf auf Zeit", "intro": "Jahrringe machen einzelne Baujahre sichtbar. Eine ganze Lebensgeschichte liefern sie nicht.", "text": "Beim Bau des Parkhauses Opéra wurden mehrere prähistorische Siedlungsphasen untersucht. Für eine Phase lassen sich Bauhölzer auf 3234–3226 v. u. Z. datieren. Häuser, Pflanzenreste und Geräte erlauben Fragen nach Versorgung und Zusammenleben. Die verschiedenen Schichten gehören nicht zu einem einzigen, über Jahrhunderte unveränderten Dorf. Hier wird Lokalgeschichte durch Ausgrabung und naturwissenschaftliche Datierung erst erschliessbar.", "image": "pilehouses-source.jpg", "sources": ["localOpera", "localOperaResearch"], "related": ["pilehouses", "neolithic", "script"], "visualQuestion": "Das Bild gehört zum allgemeinen Eintrag zu Seeufersiedlungen. Es ist kein Grabungsfoto der Fundstelle Parkhaus Opéra; prüfe seinen Bildnachweis und behandle es als Vergleich.", "activity": {"title": "Acht Jahre – und was geschah dazwischen?", "scene": "Du entwirfst eine kleine Ausstellung unter einem heutigen Stadtplatz. Die Besucher*innen erwarten ein vollständiges Bild des damaligen Dorflebens.", "cards": [{"label": "Datierter Befund", "text": "Die Jahrringfolge eines Bauholzes kann ein Fälljahr erschliessen; Nutzung, Wiederverwendung und Fundzusammenhang bleiben zu prüfen."}, {"label": "Mehrere Siedlungen", "text": "Schichten trennen verschiedene Bau- und Nutzungsphasen am selben Ort."}], "steps": [{"label": "Die Lücke zeigen", "text": "Zeichne zwei Linien: gesicherte Baujahre und vermutete Lebensdauer eines Hauses. Markiere ausdrücklich, wo die zweite Linie zur Hypothese wird."}, {"label": "Schrift als Grenze?", "text": "Stelle dem fast gleichzeitigen Eintrag zur frühen Schrift diese Zürcher Sachquellen gegenüber. Für welche Frage ist die Trennung in Vor- und Geschichte hilfreich, für welche hinderlich?"}], "result": "Verfasse eine Museumsbeschriftung mit einem datierten Befund, einer begründeten Deutung und einer offen bleibenden Frage.", "hint": "Ein genaues Holzdatum macht eine Aussage über damalige Gefühle oder politische Rechte nicht automatisch genauer."}, "tasks": ["Zeichne zwei Linien: gesicherte Baujahre und vermutete Lebensdauer eines Hauses. Markiere ausdrücklich, wo die zweite Linie zur Hypothese wird.", "Stelle dem fast gleichzeitigen Eintrag zur frühen Schrift diese Zürcher Sachquellen gegenüber. Für welche Frage ist die Trennung in Vor- und Geschichte hilfreich, für welche hinderlich?"], "hint": "Ein genaues Holzdatum macht eine Aussage über damalige Gefühle oder politische Rechte nicht automatisch genauer."}, {"id": "local-chur", "year": 100, "lane": "local", "date": "1.–3. Jahrhundert u. Z. · Chur-Welschdörfli", "title": "Chur: römischer Alltag am Alpenweg", "intro": "Ein Verkehrskorridor besteht aus Menschen, Versorgung und Macht.", "text": "Im Churer Welschdörfli sind Reste einer römischen Siedlung erhalten. Die Lage südlich des Bodenseeraums und nahe den Bündner Alpenpässen eröffnet Fragen nach Verkehr, Austausch und Herrschaft. Die 1986 errichteten Schutzbauten gehören zur modernen Bewahrung dieser Überreste. Das Jahr 100 auf der Achse ist eine Orientierung innerhalb der römischen Siedlungszeit, kein Gründungsdatum.", "image": "constantine.jpg", "sources": ["localChur", "localRail"], "related": ["infrastructure", "helvetians", "local-rail"], "visualQuestion": "Der Solidus Konstantins ist ein Vergleichsobjekt zur römischen Herrschaft, kein Fund aus Chur und jünger als die hier hervorgehobene Siedlungszeit.", "activity": {"title": "Eine Strasse aus der Sicht ihres Randes", "scene": "Ein Reiseführer erzählt vom römischen Fortschritt. Du ergänzt eine Seite über jene Menschen, die eine Verkehrsverbindung erst ermöglichen.", "cards": [{"label": "Archäologische Ebene", "text": "Baureste im Welschdörfli belegen eine Siedlung; eine konkrete Lebensgeschichte muss zusätzlich belegt werden."}, {"label": "Überlieferungsebene", "text": "Die heutigen Schutzbauten sind eine Entscheidung des 20. Jahrhunderts darüber, was erhalten und zugänglich bleiben soll."}], "steps": [{"label": "Wege mit Arbeit füllen", "text": "Skizziere Versorgung, Reparaturen, Transport und Kontrolle als mögliche Tätigkeiten. Kennzeichne sie als Untersuchungsfragen, nicht als hier nachgewiesene Berufe."}, {"label": "Zwei Zeiten am selben Ort", "text": "Vergleiche die römische Nutzung mit der Bewahrung seit 1986 im Memoria-Modus: Wer könnte jeweils welchen Wert am Ort sehen?"}], "result": "Halte zwei getrennte Fragen fest: eine zum römischen Alltag und eine zur heutigen Erinnerung. Benenne die jeweils benötigte Quelle.", "hint": "Eine Verkehrsachse bedeutet weder gleiche Vorteile noch gleiche kulturelle Identität für alle Anwohnenden."}, "tasks": ["Skizziere Versorgung, Reparaturen, Transport und Kontrolle als mögliche Tätigkeiten. Kennzeichne sie als Untersuchungsfragen, nicht als hier nachgewiesene Berufe.", "Vergleiche die römische Nutzung mit der Bewahrung seit 1986 im Memoria-Modus: Wer könnte jeweils welchen Wert am Ort sehen?"], "hint": "Eine Verkehrsachse bedeutet weder gleiche Vorteile noch gleiche kulturelle Identität für alle Anwohnenden."}, {"id": "local-bridge", "year": 1360, "lane": "local", "date": "1358–1360 · Rapperswil–Hurden", "title": "Eine Brücke verbindet – und bindet", "intro": "Wer einen Übergang beherrscht, verändert die Wege anderer.", "text": "Unter habsburgischer Herrschaft entstand 1358–1360 die lange Holzbrücke zwischen Rapperswil und Hurden. Sie erleichterte die Seequerung und veränderte die Verbindung von Verkehrswegen und Herrschaft. Die heute begehbare Holzbrücke ist ein moderner Neubau; ihre Ansicht dokumentiert nicht das Aussehen der mittelalterlichen Konstruktion.", "image": "local-bridge-source.jpg", "sources": ["localBridge"], "related": ["medievalworld", "local-rail", "local-unesco"], "visualQuestion": "Welche Teile der heutigen Landschaft darfst du gerade nicht in das Jahr 1360 zurückversetzen?", "activity": {"title": "Der Übergang hat einen Preis", "scene": "Du sollst entscheiden, ob die Brücke in einer Ausstellung unter «Verbindung», «Herrschaft» oder «Alltag» erscheint.", "cards": [{"label": "Bauzeit", "text": "1358–1360: ein datierbares Vorhaben in einem bereits genutzten Verkehrsraum."}, {"label": "Ansicht", "text": "Fotografie von 2011: heutige Holzbrücke neben dem Seedamm, keine mittelalterliche Aufnahme."}], "steps": [{"label": "Eine Entscheidung begründen", "text": "Wähle eine der drei Überschriften. Nenne eine mögliche Perspektive, die dadurch an den Rand gerät: etwa Herrschaft, Reisende oder Bootsleute."}, {"label": "Den Nutzen prüfen", "text": "Welche Belege würden zeigen, wer vom Übergang profitierte und wer Nachteile hatte? Formuliere eine Anfrage an ein Archiv, statt Gebühren oder Konflikte zu erfinden."}], "result": "Schreibe zwei konkurrierende Ausstellungstitel und eine gemeinsame, quellenkritische Bildunterschrift.", "hint": "Verbindung und Kontrolle können dieselbe Infrastruktur beschreiben; das eine widerlegt das andere nicht."}, "tasks": ["Wähle eine der drei Überschriften. Nenne eine mögliche Perspektive, die dadurch an den Rand gerät: etwa Herrschaft, Reisende oder Bootsleute.", "Welche Belege würden zeigen, wer vom Übergang profitierte und wer Nachteile hatte? Formuliere eine Anfrage an ein Archiv, statt Gebühren oder Konflikte zu erfinden."], "hint": "Verbindung und Kontrolle können dieselbe Infrastruktur beschreiben; das eine widerlegt das andere nicht."}, {"id": "local-reform", "year": 1523, "lane": "local", "date": "29. Januar 1523 · Zürich", "title": "Wer entscheidet über den rechten Glauben?", "intro": "Eine religiöse Auseinandersetzung verändert auch politische Zuständigkeiten.", "text": "An der ersten Zürcher Disputation verhandelte der Rat über die von Huldrych Zwingli vertretene Lehre. Die Reformation war ein Prozess, kein einziger Gründungstag. Der Zürcher Entscheid lässt sich deshalb weder zum gleichzeitigen Wandel aller Gemeinden am See noch zur gemeinsamen Epochengrenze des ganzen Raums bis Chur erklären.", "image": "local-reform-source.jpg", "sources": ["localReform"], "related": ["gutenberg", "medievalworld", "period"], "visualQuestion": "Welche Bedeutung erhält Zwingli durch ein repräsentatives Einzelporträt? Welche Beteiligten bleiben unsichtbar?", "activity": {"title": "1523 als Grenze auf Probe", "scene": "Du zeichnest eine Karte der Reformation und bemerkst: Eine Jahreszahl färbt noch keine ganze Region um.", "cards": [{"label": "Politisches Forum", "text": "Die Disputation fand vor dem Zürcher Rat statt."}, {"label": "Religiöser Anspruch", "text": "Lehre und ihre Begründung wurden zum Gegenstand einer öffentlich-politischen Entscheidung."}], "steps": [{"label": "Zuständigkeiten entwirren", "text": "Unterscheide: Wer begründet eine Glaubensaussage, wer trifft einen Entscheid, wer muss mit seinen Folgen leben? Welche dieser Stimmen erschliesst der Museumstext?"}, {"label": "Den Kartenrand ernst nehmen", "text": "Setze 1523 als Zürcher Zäsur und formuliere eine Forschungsfrage zu einem anderen Ort zwischen Zürich und Chur. Lass dessen Antwort offen, bis du eine lokale Quelle ergänzt hast."}], "result": "Begründe eine örtlich begrenzte Epochengrenze und benenne, welche Veränderung sie erfasst.", "hint": "Das spätere Porträt eines Reformators ist kein Mitschnitt einer Disputation und belegt nicht die Zustimmung der Bevölkerung."}, "tasks": ["Unterscheide: Wer begründet eine Glaubensaussage, wer trifft einen Entscheid, wer muss mit seinen Folgen leben? Welche dieser Stimmen erschliesst der Museumstext?", "Setze 1523 als Zürcher Zäsur und formuliere eine Forschungsfrage zu einem anderen Ort zwischen Zürich und Chur. Lass dessen Antwort offen, bis du eine lokale Quelle ergänzt hast."], "hint": "Das spätere Porträt eines Reformators ist kein Mitschnitt einer Disputation und belegt nicht die Zustimmung der Bevölkerung."}, {"id": "local-coal", "year": 1784, "lane": "local", "date": "1784 · Beginn des staatlichen Betriebs in Käpfnach", "title": "Kohle unter Horgen", "intro": "Die Landschaft am See war auch ein Arbeits- und Energieraum.", "text": "In Käpfnach wurde Kohle unter staatlicher Regie von 1784 bis 1910 abgebaut. Die Zahl 1784 bezeichnet diese Betriebsphase, nicht die Entstehung der Lagerstätte und nicht jeden früheren Abbau. Bergbau verbindet geologische Voraussetzungen, Eigentum, Arbeit und Nachfrage nach Energie. Das heutige Besucherbergwerk macht diese Geschichte auf ausgewählten Wegen erfahrbar.", "image": "local-coal-source.jpg", "sources": ["localCoal"], "related": ["industry", "materialism", "local-murg"], "visualQuestion": "Was zeigt das heutige Besucherbergwerk, und welche körperlichen Erfahrungen lassen sich aus der Fotografie nicht gewinnen?", "activity": {"title": "Unter die Postkartenoberfläche", "scene": "Ein Prospekt zeigt Horgen als Wohnort am See. Du ergänzt eine historische Schicht, die darin kaum vorkommt.", "cards": [{"label": "Eigentum", "text": "Der staatliche Betrieb ist eine Organisationsform, keine Aussage über die Verteilung aller Erträge."}, {"label": "Arbeit unter Tage", "text": "Ein heutiger Zugang zum Bergwerk zeigt Überreste und Vermittlung, nicht unmittelbar den Arbeitsalltag von 1784."}], "steps": [{"label": "Ein Wirkungsgefüge bauen", "text": "Ordne Käpfnach im Materialismus-Modus ein. Verbinde Lagerstätte, Arbeitskräfte, Eigentum und Absatz als zu untersuchende Beziehungen."}, {"label": "Eine Behauptung absichern", "text": "Wähle eine Frage zu Lohn, Gefahr oder Arbeitszeit. Welches konkrete Dokument könnte sie beantworten, und wessen Erfahrung bliebe darin möglicherweise verborgen?"}], "result": "Entwirf eine Ergänzung zum Prospekt mit dem Titel «Was unter dem Seeuferbild liegt» und einem klar bezeichneten Quellenbedarf.", "hint": "Technische Verfügbarkeit von Kohle erklärt noch nicht, wie Menschen arbeiten mussten oder welchen Nutzen sie hatten."}, "tasks": ["Ordne Käpfnach im Materialismus-Modus ein. Verbinde Lagerstätte, Arbeitskräfte, Eigentum und Absatz als zu untersuchende Beziehungen.", "Wähle eine Frage zu Lohn, Gefahr oder Arbeitszeit. Welches konkrete Dokument könnte sie beantworten, und wessen Erfahrung bliebe darin möglicherweise verborgen?"], "hint": "Technische Verfügbarkeit von Kohle erklärt noch nicht, wie Menschen arbeiten mussten oder welchen Nutzen sie hatten."}, {"id": "local-linth", "year": 1807, "lane": "local", "date": "1807–1823 · Linthkorrektion", "title": "Ein Fluss bekommt eine andere Geschichte", "intro": "Ein technisches Rettungswerk ist zugleich ein Eingriff in Landschaft und Gesellschaft.", "text": "Die Linthkorrektion wurde ab 1807 als überkantonale Unternehmung umgesetzt. Der Escherkanal leitete die Glarner Linth in den Walensee; der Linthkanal verband Walensee und Zürichsee. 1823 ging die Verantwortung an die beteiligten Kantone über. Die heutige Institution erzählt diese Geschichte als gemeinschaftliche Leistung. Für eine umfassendere Bilanz sind auch Veränderungen von Nutzung, Eigentum und Gewässerlandschaft zu untersuchen.", "image": "local-linth-source.jpg", "sources": ["localLinth"], "related": ["braudel", "environmenthistory", "local-rail"], "visualQuestion": "Die heutige Kanalansicht zeigt ein Ergebnis und spätere Pflege. Sie ist keine Fotografie der Bauarbeiten von 1807.", "activity": {"title": "Die Erfolgstafel bekommt eine zweite Seite", "scene": "Für einen Weg am Kanal soll eine Informationstafel entstehen. Die Vorderseite feiert die technische Leistung; du gestaltest eine zweite Seite.", "cards": [{"label": "Ereigniszeit", "text": "1807: Beginn der Unternehmung; 1823: Übergang der Verantwortung."}, {"label": "Landschaftszeit", "text": "Wasserläufe, Böden und Nutzungen verändern sich in anderen Geschwindigkeiten als Beschlüsse."}], "steps": [{"label": "Mehr als ein Anfang", "text": "Ordne Bauentscheid, Wasserlauf und Landnutzung verschiedenen Zeitschichten zu. Welche Zeiträume fehlen für eine Bilanz?"}, {"label": "Den Erzähler mitlesen", "text": "Lies die Darstellung des heutigen Linthwerks. Welche Aufgabe hat die Institution heute, und welche zusätzlichen Quellen würdest du für frühere Anwohnende und Umweltfolgen suchen?"}], "result": "Schreibe eine zweite Tafelseite mit einer belegten Veränderung und zwei noch zu untersuchenden Folgen.", "hint": "Kritische Fragen machen den Nutzen des Projekts nicht ungeschehen. Sie verhindern, dass eine Erfolgserzählung alle Folgen vorwegnimmt."}, "tasks": ["Ordne Bauentscheid, Wasserlauf und Landnutzung verschiedenen Zeitschichten zu. Welche Zeiträume fehlen für eine Bilanz?", "Lies die Darstellung des heutigen Linthwerks. Welche Aufgabe hat die Institution heute, und welche zusätzlichen Quellen würdest du für frühere Anwohnende und Umweltfolgen suchen?"], "hint": "Kritische Fragen machen den Nutzen des Projekts nicht ungeschehen. Sie verhindern, dass eine Erfolgserzählung alle Folgen vorwegnimmt."}, {"id": "local-murg", "year": 1836, "lane": "local", "date": "1836 · Gründung der Spinnerei Murg", "title": "Baumwolle am Walensee", "intro": "Eine lokale Fabrik gehört zu einer Geschichte weltweiter Verbindungen.", "text": "1836 gründete Othmar Blumer mit Kapital aus Basel die Spinnerei Murg. Standort, Wasserkraft, Kapital und Baumwolle kamen in einem Betrieb zusammen. Die Herkunft des Rohstoffs und die Lebenswege der Beschäftigten müssen für konkrete Zeiträume untersucht werden: Aus dem Produkt Baumwolle allein folgt noch keine nachgewiesene Lieferroute oder Belegschaftsgeschichte.", "image": "local-murg-source.jpg", "sources": ["localMurg"], "related": ["industry", "haiti", "local-murg1996", "local-coal"], "visualQuestion": "Welche Spuren einer Fabrik erkennst du am späteren Gebäudebestand – und was verrät die Fassade nicht über die Menschen darin?", "activity": {"title": "Von der Spindel aus in die Welt", "scene": "Du arbeitest an einer Ausstellung über Murg. Die Fabrik darf weder als isoliertes Dorfereignis noch als austauschbares Symbol erscheinen.", "cards": [{"label": "Gründung", "text": "1836: Blumers Unternehmensgründung, mit Kapital aus Basel."}, {"label": "Gebäude", "text": "Die Fotografie zeigt den späteren Fabrikbestand. Sichtbare Gebäude sind nicht automatisch Bauten des Gründungsjahrs."}], "steps": [{"label": "Eine Lieferkette als Frage zeichnen", "text": "Verbinde Rohstoff, Transport, Kapital, Energie, Arbeit und Absatz. Nutze durchgezogene Linien nur für belegte Verbindungen, gestrichelte für offene Recherchen."}, {"label": "Menschen wiederfinden", "text": "Welche Lohnlisten, Personalakten oder Erinnerungen könnten Alter, Herkunft und Alltag der Beschäftigten erschliessen? Formuliere eine Frage zu Migration, ohne eine Herkunft vorwegzunehmen."}], "result": "Erstelle ein Beziehungsdiagramm mit mindestens einer belegten Verbindung und zwei präzisen Rechercheaufträgen.", "hint": "Globale Verflechtung ist ein Forschungszugang. Sie ersetzt den Nachweis einer konkreten Geschäftsbeziehung nicht."}, "tasks": ["Verbinde Rohstoff, Transport, Kapital, Energie, Arbeit und Absatz. Nutze durchgezogene Linien nur für belegte Verbindungen, gestrichelte für offene Recherchen.", "Welche Lohnlisten, Personalakten oder Erinnerungen könnten Alter, Herkunft und Alltag der Beschäftigten erschliessen? Formuliere eine Frage zu Migration, ohne eine Herkunft vorwegzunehmen."], "hint": "Globale Verflechtung ist ein Forschungszugang. Sie ersetzt den Nachweis einer konkreten Geschäftsbeziehung nicht."}, {"id": "local-ragaz", "year": 1840, "lane": "local", "date": "1840 · Thermalwasser erreicht Ragaz", "title": "Heilwasser wird zum Standortfaktor", "intro": "Natur, Leitungsbau und zahlende Gäste machen gemeinsam einen Kurort.", "text": "1840 wurde das Thermalwasser aus der Pfäferser Schlucht nach Ragaz geleitet. Die Aufhebung des Klosters Pfäfers 1838 und der Strassenbau 1839 gehören zur Vorgeschichte. Kurwesen verband medizinische Hoffnungen mit neuen Infrastrukturen und wirtschaftlichen Interessen. Der heutige Ortsname Bad Ragaz sollte nicht ungeprüft in jede frühere Quelle übertragen werden.", "image": "local-ragaz-source.jpg", "sources": ["localRagaz"], "related": ["local-rail", "local-heidi", "materialism"], "visualQuestion": "Diese spätere Ansicht der Tamina ist keine Aufnahme der Wasserleitungseröffnung. Welche Geschichte erzählt der gewählte Blick auf den Ort?", "activity": {"title": "Wessen Erholung, wessen Arbeit?", "scene": "Ein historisches Ortsbild zeigt Ragaz. Du entwickelst daraus eine Frage an den Kurbetrieb, nicht bloss eine Sehenswürdigkeit.", "cards": [{"label": "Technischer Einschnitt", "text": "1840 verändert eine Wasserleitung den Ort der Nutzung."}, {"label": "Soziale Frage", "text": "Gäste, Beschäftigte und Anwohnende können denselben Kurbetrieb unterschiedlich erfahren."}], "steps": [{"label": "Bild und Behauptung trennen", "text": "Beschreibe zuerst die Ansicht. Welche Aussagen über Gesundheit oder Wohlstand lassen sich daraus gerade nicht belegen?"}, {"label": "Zugang untersuchen", "text": "Plane einen Vergleich von Kurpreisen und Löhnen aus demselben Jahr. Was könnte er über den Zugang zur Erholung zeigen, und was nicht über den Behandlungserfolg?"}], "result": "Formuliere eine Untersuchungsskizze mit zwei benötigten Quellen und einem begrenzten möglichen Ergebnis.", "hint": "Kurwerbung belegt Erwartungen und Verkaufsargumente; medizinische Wirkungen benötigen andere Nachweise."}, "tasks": ["Beschreibe zuerst die Ansicht. Welche Aussagen über Gesundheit oder Wohlstand lassen sich daraus gerade nicht belegen?", "Plane einen Vergleich von Kurpreisen und Löhnen aus demselben Jahr. Was könnte er über den Zugang zur Erholung zeigen, und was nicht über den Behandlungserfolg?"], "hint": "Kurwerbung belegt Erwartungen und Verkaufsargumente; medizinische Wirkungen benötigen andere Nachweise."}, {"id": "local-rail", "year": 1859, "lane": "local", "date": "1858–1859 · Sargans, Chur und die Verbindung nach Zürich", "title": "Die Eisenbahn ordnet Entfernungen neu", "intro": "Eine kürzere Reise kann andere Erwerbswege unter Druck setzen.", "text": "1858 verband die Eisenbahn Rorschach, Sargans und Chur; 1859 folgte die Verbindung von Zürich über Rapperswil und den Walensee nach Sargans und Chur. Die damalige Route ist nicht mit jeder heutigen Linienführung gleichzusetzen. Für den Raum, in dem zuvor Fuhrdienste und Walenseeschifffahrt wichtig waren, stellte sich damit die Frage nach neuen Chancen und verlorenen Einnahmen.", "image": "local-bridge-source.jpg", "sources": ["localRail"], "related": ["infrastructure", "local-bridge", "local-ragaz"], "visualQuestion": "Die heutige Ansicht am Seedamm dient der räumlichen Orientierung; sie zeigt weder einen Zug von 1859 noch das damalige Verkehrsnetz.", "activity": {"title": "Eine Verbindung – drei verschiedene Bilanzen", "scene": "Du untersuchst die neue Bahn aus Sicht eines reisenden Kurgasts, eines Fuhrunternehmens und einer Person, die Waren versendet.", "cards": [{"label": "Netz statt Luftlinie", "text": "1858 und 1859 bezeichnen Verbindungen im wachsenden Netz."}, {"label": "Vorhandene Wege", "text": "Seequerungen, Schifffahrt und Landtransporte waren schon vor der Bahn organisiert."}], "steps": [{"label": "Den Raum neu zeichnen", "text": "Skizziere Zürich, Rapperswil, Walensee, Sargans und Chur als Knoten. Trage keine Fahrzeiten ein, solange du keinen zeitgenössischen Fahrplan hast."}, {"label": "Fortschritt aufteilen", "text": "Formuliere für die drei Perspektiven je einen möglichen Vorteil oder Nachteil. Entscheide dann, welche Rechnungen, Tarife oder Fahrpläne deine Vermutungen prüfen könnten."}], "result": "Halte drei vorläufige Bilanzen fest und kennzeichne ausdrücklich, welche noch Hypothesen sind.", "hint": "Die Bahn ist kein voraussetzungsloser Beginn von Mobilität. Ein Netz verändert ältere Verbindungen, statt eine leere Landschaft zu erschliessen."}, "tasks": ["Skizziere Zürich, Rapperswil, Walensee, Sargans und Chur als Knoten. Trage keine Fahrzeiten ein, solange du keinen zeitgenössischen Fahrplan hast.", "Formuliere für die drei Perspektiven je einen möglichen Vorteil oder Nachteil. Entscheide dann, welche Rechnungen, Tarife oder Fahrpläne deine Vermutungen prüfen könnten."], "hint": "Die Bahn ist kein voraussetzungsloser Beginn von Mobilität. Ein Netz verändert ältere Verbindungen, statt eine leere Landschaft zu erschliessen."}, {"id": "local-heidi", "year": 1880, "lane": "local", "date": "1880–1881 · Hirzel, Zürich und Maienfeld", "title": "Heidi: Eine erfundene Kindheit prägt einen realen Ort", "intro": "Literatur kann eine Region sichtbar machen und zugleich vieles ausblenden.", "text": "Johanna Spyri, geboren auf dem Hirzel und später in Zürich lebend, veröffentlichte die beiden Heidi-Bände 1880–1881. Die Geschichte verbindet Maienfeld und die Alpenwelt mit einer Reise nach Frankfurt. Heidi ist eine literarische Figur. Ihre internationale Wirkung gehört dennoch zur Geschichte von Alpenbildern und Erinnerung: Ein erfundener Lebenslauf kann die Erwartungen an reale Orte prägen.", "image": "", "sources": ["localHeidi", "localSpyri"], "related": ["halbwachs", "assmann", "local-ragaz"], "visualQuestion": "", "activity": {"title": "Ein Ort und seine berühmteste Nicht-Einwohnerin", "scene": "Eine Klasse möchte «Heidis Leben» als Lokalgeschichte dokumentieren. Du klärst, was sich tatsächlich erforschen lässt.", "cards": [{"label": "Erzählte Welt", "text": "Heidis Handlungen sind Teil eines Romans, keine biografischen Quellen über ein historisches Mädchen."}, {"label": "Wirkungsgeschichte", "text": "Ausgaben, Übersetzungen, Bilder und touristische Darstellungen sind reale Zeugnisse des Umgangs mit der Erzählung."}], "steps": [{"label": "Die Frage wechseln", "text": "Verwandle «Wie lebte Heidi?» in eine historische Frage, die mit einer datierten Buchausgabe oder Tourismusdarstellung beantwortbar wäre."}, {"label": "Memoria anwenden", "text": "Unterscheide persönliche Leseerinnerung, familiäre Weitergabe und institutionelle Vermarktung. Wo helfen Halbwachs beziehungsweise Assmann, wo brauchst du weitere Belege?"}], "result": "Verfasse ein Etikett, das Romanhandlung, Publikationsgeschichte und regionale Erinnerung klar auseinanderhält.", "hint": "Eine erfundene Erzählung kann als Quelle ihrer Entstehungs- und Rezeptionszeit sehr aussagekräftig sein."}, "tasks": ["Verwandle «Wie lebte Heidi?» in eine historische Frage, die mit einer datierten Buchausgabe oder Tourismusdarstellung beantwortbar wäre.", "Unterscheide persönliche Leseerinnerung, familiäre Weitergabe und institutionelle Vermarktung. Wo helfen Halbwachs beziehungsweise Assmann, wo brauchst du weitere Belege?"], "hint": "Eine erfundene Erzählung kann als Quelle ihrer Entstehungs- und Rezeptionszeit sehr aussagekräftig sein."}, {"id": "local-murg1996", "year": 1996, "lane": "local", "date": "1996 · Ende der Spinnerei Murg", "title": "Wenn die Maschinen gehen, bleibt was?", "intro": "Ein Fabrikende ist für ein Gebäude, eine Familie und einen Ort nicht dasselbe Ereignis.", "text": "1996 endete der Spinnereibetrieb in Murg. Maschinen wurden verkauft; der Gebäudekomplex erhielt später neue Nutzungen. Die heutige Eigentümerdarstellung erzählt die Umwandlung zu Wohn-, Arbeits- und Gastlichkeitsräumen. Diese Perspektive erklärt noch nicht, wie ehemalige Beschäftigte das Ende ihrer Arbeit erlebten oder welche Erinnerungen in der neuen Nutzung Platz fanden.", "image": "local-murg-source.jpg", "sources": ["localMurg"], "related": ["local-murg", "halbwachs", "assmann", "braudel"], "visualQuestion": "Welche industrielle Vergangenheit bleibt in einer neuen Nutzung sichtbar? Das Foto allein verrät nicht, wie ehemalige Beschäftigte diese Umgestaltung beurteilen.", "activity": {"title": "Zwei Führungen durch dasselbe Haus", "scene": "Du entwirfst eine Führung mit zwei Stimmen: der heutigen Umnutzungserzählung und einer erst noch zu recherchierenden Arbeitsbiografie.", "cards": [{"label": "Unternehmensdarstellung", "text": "Die Website der heutigen Alten Spinnerei beschreibt Gründung, Schliessung und neue Nutzungen."}, {"label": "Fehlende Stimme", "text": "Eine konkrete Aussage ehemaliger Beschäftigter liegt hier nicht vor. Sie darf nicht erfunden und als Zeugnis ausgegeben werden."}], "steps": [{"label": "Interview vorbereiten", "text": "Formuliere drei offene Fragen an eine ehemalige beschäftigte Person: zu Arbeitsrhythmus, Schliessung und Erinnerung am heutigen Ort."}, {"label": "Das Ende staffeln", "text": "Ordne 1996 im Zeitschichten-Modus ein. Welche Dinge enden an einem bestimmten Tag, welche können als Erfahrung, Gebäude oder Erinnerung weiterwirken?"}], "result": "Erstelle einen Führungsplan mit belegten Stationen und sichtbar markierten Leerstellen für Interviews oder eigene Materialien.", "hint": "Erinnerungsinterviews sind gegenwärtige Rückblicke. Datum, Gesprächssituation und Einverständnis zur Verwendung gehören zum Quellenkontext."}, "tasks": ["Formuliere drei offene Fragen an eine ehemalige beschäftigte Person: zu Arbeitsrhythmus, Schliessung und Erinnerung am heutigen Ort.", "Ordne 1996 im Zeitschichten-Modus ein. Welche Dinge enden an einem bestimmten Tag, welche können als Erfahrung, Gebäude oder Erinnerung weiterwirken?"], "hint": "Erinnerungsinterviews sind gegenwärtige Rückblicke. Datum, Gesprächssituation und Einverständnis zur Verwendung gehören zum Quellenkontext."}, {"id": "local-unesco", "year": 2011, "lane": "local", "date": "2011 · Welterbe der alpinen Pfahlbaustätten", "title": "Wer macht aus alten Pfählen ein Welterbe?", "intro": "Vergangenheit und ihre öffentliche Anerkennung haben verschiedene Daten.", "text": "2011 nahm die UNESCO eine Auswahl prähistorischer Pfahlbaustätten rund um die Alpen in die Welterbeliste auf. Damit bekamen archäologische Überreste eine neue internationale Bedeutung als schützenswertes Erbe. Für die Zürichseeregion lässt sich fragen, wie unsichtbare Befunde unter Wasser oder im Boden öffentlich vermittelt werden. Ein Welterbetitel ist eine gegenwärtige Entscheidung über Vergangenheit, kein Ereignis der Jungsteinzeit.", "image": "local-bridge-source.jpg", "sources": ["localUnesco"], "related": ["local-opera", "pilehouses", "assmann", "local-bridge"], "visualQuestion": "Die moderne Holzbrücke macht einen Seeübergang sichtbar. Sie ist kein prähistorischer Fund und darf nicht als Bildbeweis für eine UNESCO-Fundstelle dienen.", "activity": {"title": "Eine Erinnerung braucht einen Ort – aber welchen?", "scene": "Du sollst am See eine Tafel gestalten, obwohl die archäologischen Überreste selbst kaum sichtbar sind.", "cards": [{"label": "Doppelte Datierung", "text": "Alter der Überreste und Aufnahme in die Welterbeliste gehören auf verschiedene Zeitebenen."}, {"label": "Auswahl", "text": "Eine Welterbeliste erfasst ausgewählte Stätten; nicht jeder bedeutsame Fund besitzt denselben öffentlichen Titel."}], "steps": [{"label": "Sichtbarkeit herstellen", "text": "Entwirf eine Tafel mit drei klar getrennten Elementen: Fundbefund, Rekonstruktion und heutige Schutzentscheidung."}, {"label": "Eine Grenze der Auswahl zeigen", "text": "Welche Geschichte eines heutigen Orts könnte auf einer Pfahlbautafel fehlen? Begründe, warum sie dennoch in die Lokalgeschichte gehört."}], "result": "Schreibe einen Tafeltext, der die beiden Daten auseinanderhält und eine begründete Frage an die Auswahl des Erbes stellt.", "hint": "Materielle Überreste, wissenschaftliches Wissen und kulturelles Gedächtnis sind miteinander verbunden, aber nicht identisch."}, "tasks": ["Entwirf eine Tafel mit drei klar getrennten Elementen: Fundbefund, Rekonstruktion und heutige Schutzentscheidung.", "Welche Geschichte eines heutigen Orts könnte auf einer Pfahlbautafel fehlen? Begründe, warum sie dennoch in die Lokalgeschichte gehört."], "hint": "Materielle Überreste, wissenschaftliches Wissen und kulturelles Gedächtnis sind miteinander verbunden, aber nicht identisch."}]);
+EVENTS.push(...[{"id": "local-opera", "year": -3234, "lane": "local", "date": "3234–3226 v. u. Z. · eine Siedlungsphase in Zürich", "title": "Unter dem Opernhausplatz: ein Dorf auf Zeit", "intro": "Jahrringe machen einzelne Baujahre sichtbar. Eine ganze Lebensgeschichte liefern sie nicht.", "text": "Beim Bau des Parkhauses Opéra wurden mehrere prähistorische Siedlungsphasen untersucht. Für eine Phase lassen sich Bauhölzer auf 3234–3226 v. u. Z. datieren. Häuser, Pflanzenreste und Geräte erlauben Fragen nach Versorgung und Zusammenleben. Die verschiedenen Schichten gehören nicht zu einem einzigen, über Jahrhunderte unveränderten Dorf. Hier wird Lokalgeschichte durch Ausgrabung und naturwissenschaftliche Datierung erst erschliessbar.", "image": "pilehouses-source.jpg", "sources": ["localOpera", "localOperaResearch"], "related": ["pilehouses", "neolithic", "script"], "visualQuestion": "Das Bild gehört zum allgemeinen Eintrag zu Seeufersiedlungen. Es ist kein Grabungsfoto der Fundstelle Parkhaus Opéra; prüfe seinen Bildnachweis und behandle es als Vergleich.", "activity": {"title": "Acht Jahre – und was geschah dazwischen?", "scene": "Die angegebenen Daten beziehen sich auf eine Siedlungsphase unter dem heutigen Opernhausplatz. Was lässt sich daraus über Bau und Nutzung der Häuser sagen?", "cards": [{"label": "Datierter Befund", "text": "Die Jahrringfolge eines Bauholzes kann ein Fälljahr erschliessen; Nutzung, Wiederverwendung und Fundzusammenhang bleiben zu prüfen."}, {"label": "Mehrere Siedlungen", "text": "Schichten trennen verschiedene Bau- und Nutzungsphasen am selben Ort."}], "steps": [{"label": "Die Datierung verstehen", "text": "Was datiert die Jahrringfolge eines Bauholzes? Welche weiteren Angaben wären nötig, um die Nutzungsdauer eines Hauses zu bestimmen?"}, {"label": "Schrift und Sachquellen", "text": "Vergleiche die Zürcher Funde mit dem Eintrag zur frühen Schrift. Welche unterschiedlichen Fragen lassen sich an diese Zeugnisse stellen?"}], "result": "Eine Erklärung der Holzdatierung und ihrer Grenzen für Aussagen über das damalige Dorfleben.", "hint": "Ein genaues Holzdatum macht eine Aussage über damalige Gefühle oder politische Rechte nicht automatisch genauer."}, "tasks": ["Was datiert die Jahrringfolge eines Bauholzes? Welche weiteren Angaben wären nötig, um die Nutzungsdauer eines Hauses zu bestimmen?", "Vergleiche die Zürcher Funde mit dem Eintrag zur frühen Schrift. Welche unterschiedlichen Fragen lassen sich an diese Zeugnisse stellen?"], "hint": "Ein genaues Holzdatum macht eine Aussage über damalige Gefühle oder politische Rechte nicht automatisch genauer."}, {"id": "local-chur", "year": 100, "lane": "local", "date": "1.–3. Jahrhundert u. Z. · Chur-Welschdörfli", "title": "Chur: römischer Alltag am Alpenweg", "intro": "Ein Verkehrskorridor besteht aus Menschen, Versorgung und Macht.", "text": "Im Churer Welschdörfli sind Reste einer römischen Siedlung erhalten. Die Lage südlich des Bodenseeraums und nahe den Bündner Alpenpässen eröffnet Fragen nach Verkehr, Austausch und Herrschaft. Die 1986 errichteten Schutzbauten gehören zur modernen Bewahrung dieser Überreste. Das Jahr 100 auf der Achse ist eine Orientierung innerhalb der römischen Siedlungszeit, kein Gründungsdatum.", "image": "constantine.jpg", "sources": ["localChur", "localRail"], "related": ["infrastructure", "helvetians", "local-rail"], "visualQuestion": "Der Solidus Konstantins ist ein Vergleichsobjekt zur römischen Herrschaft, kein Fund aus Chur und jünger als die hier hervorgehobene Siedlungszeit.", "activity": {"title": "Römisches Chur und seine heutige Erhaltung", "scene": "Die Baureste im Welschdörfli gehören zur römischen Siedlung. Die späteren Schutzbauten zeigen, wie heute mit diesen Überresten umgegangen wird.", "cards": [{"label": "Archäologische Ebene", "text": "Baureste im Welschdörfli belegen eine Siedlung; eine konkrete Lebensgeschichte muss zusätzlich belegt werden."}, {"label": "Überlieferungsebene", "text": "Die heutigen Schutzbauten sind eine Entscheidung des 20. Jahrhunderts darüber, was erhalten und zugänglich bleiben soll."}], "steps": [{"label": "Wege mit Arbeit füllen", "text": "Skizziere Versorgung, Reparaturen, Transport und Kontrolle als mögliche Tätigkeiten. Kennzeichne sie als Untersuchungsfragen, nicht als hier nachgewiesene Berufe."}, {"label": "Zwei Zeiten am selben Ort", "text": "Vergleiche die römische Nutzung mit der Bewahrung seit 1986 im Memoria-Modus: Wer könnte jeweils welchen Wert am Ort sehen?"}], "result": "Zwei getrennte Fragen an denselben Ort: zum römischen Leben und zur heutigen Erhaltung der Überreste.", "hint": "Eine Verkehrsachse bedeutet weder gleiche Vorteile noch gleiche kulturelle Identität für alle Anwohnenden."}, "tasks": ["Skizziere Versorgung, Reparaturen, Transport und Kontrolle als mögliche Tätigkeiten. Kennzeichne sie als Untersuchungsfragen, nicht als hier nachgewiesene Berufe.", "Vergleiche die römische Nutzung mit der Bewahrung seit 1986 im Memoria-Modus: Wer könnte jeweils welchen Wert am Ort sehen?"], "hint": "Eine Verkehrsachse bedeutet weder gleiche Vorteile noch gleiche kulturelle Identität für alle Anwohnenden."}, {"id": "local-bridge", "year": 1360, "lane": "local", "date": "1358–1360 · Rapperswil–Hurden", "title": "Eine Brücke verbindet – und bindet", "intro": "Wer einen Übergang beherrscht, verändert die Wege anderer.", "text": "Unter habsburgischer Herrschaft entstand 1358–1360 die lange Holzbrücke zwischen Rapperswil und Hurden. Sie erleichterte die Seequerung und veränderte die Verbindung von Verkehrswegen und Herrschaft. Die heute begehbare Holzbrücke ist ein moderner Neubau; ihre Ansicht dokumentiert nicht das Aussehen der mittelalterlichen Konstruktion.", "image": "local-bridge-source.jpg", "sources": ["localBridge"], "related": ["medievalworld", "local-rail", "local-unesco"], "visualQuestion": "Welche Teile der heutigen Landschaft darfst du gerade nicht in das Jahr 1360 zurückversetzen?", "activity": {"title": "Wem nützt eine Brücke?", "scene": "Die Brücke von Rapperswil nach Hurden verbindet Orte und ermöglicht die Kontrolle eines Übergangs. Welche Angaben dazu enthält der Eintrag?", "cards": [{"label": "Bauzeit", "text": "1358–1360: ein datierbares Vorhaben in einem bereits genutzten Verkehrsraum."}, {"label": "Ansicht", "text": "Fotografie von 2011: heutige Holzbrücke neben dem Seedamm, keine mittelalterliche Aufnahme."}], "steps": [{"label": "Funktionen unterscheiden", "text": "Welche Aussagen betreffen Verkehr, welche Herrschaft? Lassen sie sich voneinander trennen?"}, {"label": "Nutzen und Kosten", "text": "Welche Angaben gibt es dazu, wer den Übergang nutzte, kontrollierte oder finanzierte? Halte offen, was der Eintrag nicht beantwortet."}], "result": "Eine Erklärung verschiedener Funktionen der Brücke mit klar benannten offenen Fragen.", "hint": "Verbindung und Kontrolle können dieselbe Infrastruktur beschreiben; das eine widerlegt das andere nicht."}, "tasks": ["Welche Aussagen betreffen Verkehr, welche Herrschaft? Lassen sie sich voneinander trennen?", "Welche Angaben gibt es dazu, wer den Übergang nutzte, kontrollierte oder finanzierte? Halte offen, was der Eintrag nicht beantwortet."], "hint": "Verbindung und Kontrolle können dieselbe Infrastruktur beschreiben; das eine widerlegt das andere nicht."}, {"id": "local-reform", "year": 1523, "lane": "local", "date": "29. Januar 1523 · Zürich", "title": "Wer entscheidet über den rechten Glauben?", "intro": "Eine religiöse Auseinandersetzung verändert auch politische Zuständigkeiten.", "text": "An der ersten Zürcher Disputation verhandelte der Rat über die von Huldrych Zwingli vertretene Lehre. Die Reformation war ein Prozess, kein einziger Gründungstag. Der Zürcher Entscheid lässt sich deshalb weder zum gleichzeitigen Wandel aller Gemeinden am See noch zur gemeinsamen Epochengrenze des ganzen Raums bis Chur erklären.", "image": "local-reform-source.jpg", "sources": ["localReform"], "related": ["gutenberg", "medievalworld", "period"], "visualQuestion": "Welche Bedeutung erhält Zwingli durch ein repräsentatives Einzelporträt? Welche Beteiligten bleiben unsichtbar?", "activity": {"title": "1523 als Grenze auf Probe", "scene": "Die Zürcher Disputation fand 1523 statt. Untersuche, welche Entscheidung sie bezeichnet und wie weit sich ihre Bedeutung räumlich eingrenzen lässt.", "cards": [{"label": "Politisches Forum", "text": "Die Disputation fand vor dem Zürcher Rat statt."}, {"label": "Religiöser Anspruch", "text": "Lehre und ihre Begründung wurden zum Gegenstand einer öffentlich-politischen Entscheidung."}], "steps": [{"label": "Entscheidung und Begründung", "text": "Wer begründet eine Glaubensaussage, wer trifft einen Entscheid, wer ist davon betroffen? Welche dieser Stimmen erschliesst der Museumstext?"}, {"label": "Die räumliche Geltung prüfen", "text": "Was rechtfertigt 1523 als Zürcher Zäsur? Was lässt sich aus dem Eintrag über Veränderungen an anderen Orten zwischen Zürich und Chur sagen?"}], "result": "Begründe eine örtlich begrenzte Epochengrenze und benenne, welche Veränderung sie erfasst.", "hint": "Das spätere Porträt eines Reformators ist kein Mitschnitt einer Disputation und belegt nicht die Zustimmung der Bevölkerung."}, "tasks": ["Wer begründet eine Glaubensaussage, wer trifft einen Entscheid, wer ist davon betroffen? Welche dieser Stimmen erschliesst der Museumstext?", "Was rechtfertigt 1523 als Zürcher Zäsur? Was lässt sich aus dem Eintrag über Veränderungen an anderen Orten zwischen Zürich und Chur sagen?"], "hint": "Das spätere Porträt eines Reformators ist kein Mitschnitt einer Disputation und belegt nicht die Zustimmung der Bevölkerung."}, {"id": "local-coal", "year": 1784, "lane": "local", "date": "1784 · Beginn des staatlichen Betriebs in Käpfnach", "title": "Kohle unter Horgen", "intro": "Die Landschaft am See war auch ein Arbeits- und Energieraum.", "text": "In Käpfnach wurde Kohle unter staatlicher Regie von 1784 bis 1910 abgebaut. Die Zahl 1784 bezeichnet diese Betriebsphase, nicht die Entstehung der Lagerstätte und nicht jeden früheren Abbau. Bergbau verbindet geologische Voraussetzungen, Eigentum, Arbeit und Nachfrage nach Energie. Das heutige Besucherbergwerk macht diese Geschichte auf ausgewählten Wegen erfahrbar.", "image": "local-coal-source.jpg", "sources": ["localCoal"], "related": ["industry", "materialism", "local-murg"], "visualQuestion": "Was zeigt das heutige Besucherbergwerk, und welche körperlichen Erfahrungen lassen sich aus der Fotografie nicht gewinnen?", "activity": {"title": "Kohleabbau und Arbeit in Käpfnach", "scene": "Der Eintrag nennt den staatlichen Kohleabbau in Käpfnach. Wie hängen Lagerstätte, Arbeit, Eigentum und Absatz zusammen?", "cards": [{"label": "Eigentum", "text": "Der staatliche Betrieb ist eine Organisationsform, keine Aussage über die Verteilung aller Erträge."}, {"label": "Arbeit unter Tage", "text": "Ein heutiger Zugang zum Bergwerk zeigt Überreste und Vermittlung, nicht unmittelbar den Arbeitsalltag von 1784."}], "steps": [{"label": "Ein Wirkungsgefüge bauen", "text": "Ordne Käpfnach im Materialismus-Modus ein. Verbinde Lagerstätte, Arbeitskräfte, Eigentum und Absatz als zu untersuchende Beziehungen."}, {"label": "Eine Behauptung absichern", "text": "Wähle eine Frage zu Lohn, Gefahr oder Arbeitszeit. Welches konkrete Dokument könnte sie beantworten, und wessen Erfahrung bliebe darin möglicherweise verborgen?"}], "result": "Ein Zusammenhang zwischen den genannten Bedingungen des Bergbaus; unbelegte Beziehungen bleiben als Fragen markiert.", "hint": "Technische Verfügbarkeit von Kohle erklärt noch nicht, wie Menschen arbeiten mussten oder welchen Nutzen sie hatten."}, "tasks": ["Ordne Käpfnach im Materialismus-Modus ein. Verbinde Lagerstätte, Arbeitskräfte, Eigentum und Absatz als zu untersuchende Beziehungen.", "Wähle eine Frage zu Lohn, Gefahr oder Arbeitszeit. Welches konkrete Dokument könnte sie beantworten, und wessen Erfahrung bliebe darin möglicherweise verborgen?"], "hint": "Technische Verfügbarkeit von Kohle erklärt noch nicht, wie Menschen arbeiten mussten oder welchen Nutzen sie hatten."}, {"id": "local-linth", "year": 1807, "lane": "local", "date": "1807–1823 · Linthkorrektion", "title": "Ein Fluss bekommt eine andere Geschichte", "intro": "Ein technisches Rettungswerk ist zugleich ein Eingriff in Landschaft und Gesellschaft.", "text": "Die Linthkorrektion wurde ab 1807 als überkantonale Unternehmung umgesetzt. Der Escherkanal leitete die Glarner Linth in den Walensee; der Linthkanal verband Walensee und Zürichsee. 1823 ging die Verantwortung an die beteiligten Kantone über. Die heutige Institution erzählt diese Geschichte als gemeinschaftliche Leistung. Für eine umfassendere Bilanz sind auch Veränderungen von Nutzung, Eigentum und Gewässerlandschaft zu untersuchen.", "image": "local-linth-source.jpg", "sources": ["localLinth"], "related": ["braudel", "environmenthistory", "local-rail"], "visualQuestion": "Die heutige Kanalansicht zeigt ein Ergebnis und spätere Pflege. Sie ist keine Fotografie der Bauarbeiten von 1807.", "activity": {"title": "Ziele und Folgen der Linthkorrektion", "scene": "Welche Ziele hatte die Linthkorrektion und welche Veränderungen nennt die Darstellung des heutigen Linthwerks? Unterscheide Bauprojekt, Nutzung und langfristige Folgen.", "cards": [{"label": "Ereigniszeit", "text": "1807: Beginn der Unternehmung; 1823: Übergang der Verantwortung."}, {"label": "Landschaftszeit", "text": "Wasserläufe, Böden und Nutzungen verändern sich in anderen Geschwindigkeiten als Beschlüsse."}], "steps": [{"label": "Unterschiedliche Zeiträume", "text": "Ordne Bauentscheid, Wasserlauf und Landnutzung verschiedenen Zeitschichten zu. Welche Zeiträume fehlen für eine Bilanz?"}, {"label": "Die Darstellung des Linthwerks untersuchen", "text": "Welche Ziele und Folgen beschreibt das heutige Linthwerk? Welche Rolle spielt die Institution selbst, und welche Fragen zu Anwohnenden und Umwelt beantwortet ihre Darstellung nicht?"}], "result": "Eine Gegenüberstellung von genannten Zielen, belegten Veränderungen und offenen Fragen zu den Folgen.", "hint": "Kritische Fragen machen den Nutzen des Projekts nicht ungeschehen. Sie verhindern, dass eine Erfolgserzählung alle Folgen vorwegnimmt."}, "tasks": ["Ordne Bauentscheid, Wasserlauf und Landnutzung verschiedenen Zeitschichten zu. Welche Zeiträume fehlen für eine Bilanz?", "Welche Ziele und Folgen beschreibt das heutige Linthwerk? Welche Rolle spielt die Institution selbst, und welche Fragen zu Anwohnenden und Umwelt beantwortet ihre Darstellung nicht?"], "hint": "Kritische Fragen machen den Nutzen des Projekts nicht ungeschehen. Sie verhindern, dass eine Erfolgserzählung alle Folgen vorwegnimmt."}, {"id": "local-murg", "year": 1836, "lane": "local", "date": "1836 · Gründung der Spinnerei Murg", "title": "Baumwolle am Walensee", "intro": "Eine lokale Fabrik gehört zu einer Geschichte weltweiter Verbindungen.", "text": "1836 gründete Othmar Blumer mit Kapital aus Basel die Spinnerei Murg. Standort, Wasserkraft, Kapital und Baumwolle kamen in einem Betrieb zusammen. Die Herkunft des Rohstoffs und die Lebenswege der Beschäftigten müssen für konkrete Zeiträume untersucht werden: Aus dem Produkt Baumwolle allein folgt noch keine nachgewiesene Lieferroute oder Belegschaftsgeschichte.", "image": "local-murg-source.jpg", "sources": ["localMurg"], "related": ["industry", "haiti", "local-murg1996", "local-coal"], "visualQuestion": "Welche Spuren einer Fabrik erkennst du am späteren Gebäudebestand – und was verrät die Fassade nicht über die Menschen darin?", "activity": {"title": "Von der Spindel aus in die Welt", "scene": "Wie hing die Spinnerei Murg mit Kapital, Wasserkraft, Rohstoffen, Transport und Arbeit zusammen? Untersuche die im Eintrag genannten Verbindungen.", "cards": [{"label": "Gründung", "text": "1836: Blumers Unternehmensgründung, mit Kapital aus Basel."}, {"label": "Gebäude", "text": "Die Fotografie zeigt den späteren Fabrikbestand. Sichtbare Gebäude sind nicht automatisch Bauten des Gründungsjahrs."}], "steps": [{"label": "Eine Lieferkette als Frage zeichnen", "text": "Verbinde Rohstoff, Transport, Kapital, Energie, Arbeit und Absatz. Nutze durchgezogene Linien nur für belegte Verbindungen, gestrichelte für offene Recherchen."}, {"label": "Menschen wiederfinden", "text": "Welche Lohnlisten, Personalakten oder Erinnerungen könnten Alter, Herkunft und Alltag der Beschäftigten erschliessen? Formuliere eine Frage zu Migration, ohne eine Herkunft vorwegzunehmen."}], "result": "Erstelle ein Beziehungsdiagramm mit mindestens einer belegten Verbindung und zwei präzisen Rechercheaufträgen.", "hint": "Globale Verflechtung ist ein Forschungszugang. Sie ersetzt den Nachweis einer konkreten Geschäftsbeziehung nicht."}, "tasks": ["Verbinde Rohstoff, Transport, Kapital, Energie, Arbeit und Absatz. Nutze durchgezogene Linien nur für belegte Verbindungen, gestrichelte für offene Recherchen.", "Welche Lohnlisten, Personalakten oder Erinnerungen könnten Alter, Herkunft und Alltag der Beschäftigten erschliessen? Formuliere eine Frage zu Migration, ohne eine Herkunft vorwegzunehmen."], "hint": "Globale Verflechtung ist ein Forschungszugang. Sie ersetzt den Nachweis einer konkreten Geschäftsbeziehung nicht."}, {"id": "local-ragaz", "year": 1840, "lane": "local", "date": "1840 · Thermalwasser erreicht Ragaz", "title": "Heilwasser wird zum Standortfaktor", "intro": "Natur, Leitungsbau und zahlende Gäste machen gemeinsam einen Kurort.", "text": "1840 wurde das Thermalwasser aus der Pfäferser Schlucht nach Ragaz geleitet. Die Aufhebung des Klosters Pfäfers 1838 und der Strassenbau 1839 gehören zur Vorgeschichte. Kurwesen verband medizinische Hoffnungen mit neuen Infrastrukturen und wirtschaftlichen Interessen. Der heutige Ortsname Bad Ragaz sollte nicht ungeprüft in jede frühere Quelle übertragen werden.", "image": "local-ragaz-source.jpg", "sources": ["localRagaz"], "related": ["local-rail", "local-heidi", "materialism"], "visualQuestion": "Diese spätere Ansicht der Tamina ist keine Aufnahme der Wasserleitungseröffnung. Welche Geschichte erzählt der gewählte Blick auf den Ort?", "activity": {"title": "Wessen Erholung, wessen Arbeit?", "scene": "1840 wurde Thermalwasser nach Ragaz geleitet. Was erfahren wir über den Kurbetrieb aus dem Ortsbild und den Angaben im Eintrag?", "cards": [{"label": "Technischer Einschnitt", "text": "1840 verändert eine Wasserleitung den Ort der Nutzung."}, {"label": "Soziale Frage", "text": "Gäste, Beschäftigte und Anwohnende können denselben Kurbetrieb unterschiedlich erfahren."}], "steps": [{"label": "Bild und Behauptung trennen", "text": "Beschreibe zuerst die Ansicht. Welche Aussagen über Gesundheit oder Wohlstand lassen sich daraus gerade nicht belegen?"}, {"label": "Zugang untersuchen", "text": "Plane einen Vergleich von Kurpreisen und Löhnen aus demselben Jahr. Was könnte er über den Zugang zur Erholung zeigen, und was nicht über den Behandlungserfolg?"}], "result": "Eine Untersuchung des Ortsbilds und der vorhandenen Angaben; Fragen zu Zugang und Behandlungserfolg bleiben getrennt.", "hint": "Kurwerbung belegt Erwartungen und Verkaufsargumente; medizinische Wirkungen benötigen andere Nachweise."}, "tasks": ["Beschreibe zuerst die Ansicht. Welche Aussagen über Gesundheit oder Wohlstand lassen sich daraus gerade nicht belegen?", "Plane einen Vergleich von Kurpreisen und Löhnen aus demselben Jahr. Was könnte er über den Zugang zur Erholung zeigen, und was nicht über den Behandlungserfolg?"], "hint": "Kurwerbung belegt Erwartungen und Verkaufsargumente; medizinische Wirkungen benötigen andere Nachweise."}, {"id": "local-rail", "year": 1859, "lane": "local", "date": "1858–1859 · Sargans, Chur und die Verbindung nach Zürich", "title": "Die Eisenbahn ordnet Entfernungen neu", "intro": "Eine kürzere Reise kann andere Erwerbswege unter Druck setzen.", "text": "1858 verband die Eisenbahn Rorschach, Sargans und Chur; 1859 folgte die Verbindung von Zürich über Rapperswil und den Walensee nach Sargans und Chur. Die damalige Route ist nicht mit jeder heutigen Linienführung gleichzusetzen. Für den Raum, in dem zuvor Fuhrdienste und Walenseeschifffahrt wichtig waren, stellte sich damit die Frage nach neuen Chancen und verlorenen Einnahmen.", "image": "local-bridge-source.jpg", "sources": ["localRail"], "related": ["infrastructure", "local-bridge", "local-ragaz"], "visualQuestion": "Die heutige Ansicht am Seedamm dient der räumlichen Orientierung; sie zeigt weder einen Zug von 1859 noch das damalige Verkehrsnetz.", "activity": {"title": "Eine Verbindung – drei verschiedene Bilanzen", "scene": "Du untersuchst die neue Bahn aus Sicht eines reisenden Kurgasts, eines Fuhrunternehmens und einer Person, die Waren versendet.", "cards": [{"label": "Netz statt Luftlinie", "text": "1858 und 1859 bezeichnen Verbindungen im wachsenden Netz."}, {"label": "Vorhandene Wege", "text": "Seequerungen, Schifffahrt und Landtransporte waren schon vor der Bahn organisiert."}], "steps": [{"label": "Den Raum neu zeichnen", "text": "Skizziere Zürich, Rapperswil, Walensee, Sargans und Chur als Knoten. Trage keine Fahrzeiten ein, solange du keinen zeitgenössischen Fahrplan hast."}, {"label": "Fortschritt aufteilen", "text": "Formuliere für die drei Perspektiven je einen möglichen Vorteil oder Nachteil. Entscheide dann, welche Rechnungen, Tarife oder Fahrpläne deine Vermutungen prüfen könnten."}], "result": "Halte drei vorläufige Bilanzen fest und kennzeichne ausdrücklich, welche noch Hypothesen sind.", "hint": "Die Bahn ist kein voraussetzungsloser Beginn von Mobilität. Ein Netz verändert ältere Verbindungen, statt eine leere Landschaft zu erschliessen."}, "tasks": ["Skizziere Zürich, Rapperswil, Walensee, Sargans und Chur als Knoten. Trage keine Fahrzeiten ein, solange du keinen zeitgenössischen Fahrplan hast.", "Formuliere für die drei Perspektiven je einen möglichen Vorteil oder Nachteil. Entscheide dann, welche Rechnungen, Tarife oder Fahrpläne deine Vermutungen prüfen könnten."], "hint": "Die Bahn ist kein voraussetzungsloser Beginn von Mobilität. Ein Netz verändert ältere Verbindungen, statt eine leere Landschaft zu erschliessen."}, {"id": "local-heidi", "year": 1880, "lane": "local", "date": "1880–1881 · Hirzel, Zürich und Maienfeld", "title": "Heidi: Eine erfundene Kindheit prägt einen realen Ort", "intro": "Literatur kann eine Region sichtbar machen und zugleich vieles ausblenden.", "text": "Johanna Spyri, geboren auf dem Hirzel und später in Zürich lebend, veröffentlichte die beiden Heidi-Bände 1880–1881. Die Geschichte verbindet Maienfeld und die Alpenwelt mit einer Reise nach Frankfurt. Heidi ist eine literarische Figur. Ihre internationale Wirkung gehört dennoch zur Geschichte von Alpenbildern und Erinnerung: Ein erfundener Lebenslauf kann die Erwartungen an reale Orte prägen.", "image": "", "sources": ["localHeidi", "localSpyri"], "related": ["halbwachs", "assmann", "local-ragaz"], "visualQuestion": "", "activity": {"title": "Wie prägt Heidi das Bild einer Region?", "scene": "Heidi ist eine Romanfigur. Buchausgaben und touristische Darstellungen können trotzdem historische Quellen sein: Sie zeigen, wie die Erzählung verbreitet und mit Orten verbunden wurde.", "cards": [{"label": "Erzählte Welt", "text": "Heidis Handlungen sind Teil eines Romans, keine biografischen Quellen über ein historisches Mädchen."}, {"label": "Wirkungsgeschichte", "text": "Ausgaben, Übersetzungen, Bilder und touristische Darstellungen sind reale Zeugnisse des Umgangs mit der Erzählung."}], "steps": [{"label": "Erzählung und Wirkung unterscheiden", "text": "Welche Angaben im Eintrag betreffen die Romanhandlung, welche Veröffentlichung und spätere Wirkung?"}, {"label": "Erinnerung untersuchen", "text": "Welche Rolle können persönliche Leseerinnerung, Weitergabe in Familien und touristische Verwendung spielen? Unterscheide die im Eintrag belegten Angaben von möglichen weiteren Fragen."}], "result": "Eine Unterscheidung von Romanhandlung, Veröffentlichung und Wirkung auf das Bild der Region.", "hint": "Eine erfundene Erzählung kann als Quelle ihrer Entstehungs- und Rezeptionszeit sehr aussagekräftig sein."}, "tasks": ["Welche Angaben im Eintrag betreffen die Romanhandlung, welche Veröffentlichung und spätere Wirkung?", "Welche Rolle können persönliche Leseerinnerung, Weitergabe in Familien und touristische Verwendung spielen? Unterscheide die im Eintrag belegten Angaben von möglichen weiteren Fragen."], "hint": "Eine erfundene Erzählung kann als Quelle ihrer Entstehungs- und Rezeptionszeit sehr aussagekräftig sein."}, {"id": "local-murg1996", "year": 1996, "lane": "local", "date": "1996 · Ende der Spinnerei Murg", "title": "Wenn die Maschinen gehen, bleibt was?", "intro": "Ein Fabrikende ist für ein Gebäude, eine Familie und einen Ort nicht dasselbe Ereignis.", "text": "1996 endete der Spinnereibetrieb in Murg. Maschinen wurden verkauft; der Gebäudekomplex erhielt später neue Nutzungen. Die heutige Eigentümerdarstellung erzählt die Umwandlung zu Wohn-, Arbeits- und Gastlichkeitsräumen. Diese Perspektive erklärt noch nicht, wie ehemalige Beschäftigte das Ende ihrer Arbeit erlebten oder welche Erinnerungen in der neuen Nutzung Platz fanden.", "image": "local-murg-source.jpg", "sources": ["localMurg"], "related": ["local-murg", "halbwachs", "assmann", "braudel"], "visualQuestion": "Welche industrielle Vergangenheit bleibt in einer neuen Nutzung sichtbar? Das Foto allein verrät nicht, wie ehemalige Beschäftigte diese Umgestaltung beurteilen.", "activity": {"title": "Wie wird die Schliessung der Spinnerei erzählt?", "scene": "Die heutige Eigentümerdarstellung beschreibt die Schliessung und neue Nutzungen der Spinnerei. Untersuche, was sie über das Gebäude und über die Beschäftigten mitteilt.", "cards": [{"label": "Unternehmensdarstellung", "text": "Die Website der heutigen Alten Spinnerei beschreibt Gründung, Schliessung und neue Nutzungen."}, {"label": "Fehlende Stimme", "text": "Der Eintrag enthält keine Aussage ehemaliger Beschäftigter. Ihre persönlichen Erfahrungen lassen sich daraus nicht erschliessen."}], "steps": [{"label": "Die Darstellung untersuchen", "text": "Was wird über Gründung, Schliessung und Umnutzung berichtet? Welche Fragen zum Arbeitsleben beantwortet der Text, welche bleiben offen?"}, {"label": "Unterschiedliche Zeitverläufe", "text": "Was endete 1996, was bestand weiter oder erhielt eine neue Nutzung? Unterscheide die Angaben über den Betrieb vom unbekannten Erleben einzelner Beschäftigter."}], "result": "Eine Untersuchung der vorhandenen Darstellung mit offenen Fragen zur Perspektive ehemaliger Beschäftigter.", "hint": "Erinnerungsinterviews sind gegenwärtige Rückblicke. Datum, Gesprächssituation und Einverständnis zur Verwendung gehören zum Quellenkontext."}, "tasks": ["Was wird über Gründung, Schliessung und Umnutzung berichtet? Welche Fragen zum Arbeitsleben beantwortet der Text, welche bleiben offen?", "Was endete 1996, was bestand weiter oder erhielt eine neue Nutzung? Unterscheide die Angaben über den Betrieb vom unbekannten Erleben einzelner Beschäftigter."], "hint": "Erinnerungsinterviews sind gegenwärtige Rückblicke. Datum, Gesprächssituation und Einverständnis zur Verwendung gehören zum Quellenkontext."}, {"id": "local-unesco", "year": 2011, "lane": "local", "date": "2011 · Welterbe der alpinen Pfahlbaustätten", "title": "Wer macht aus alten Pfählen ein Welterbe?", "intro": "Vergangenheit und ihre öffentliche Anerkennung haben verschiedene Daten.", "text": "2011 nahm die UNESCO eine Auswahl prähistorischer Pfahlbaustätten rund um die Alpen in die Welterbeliste auf. Damit bekamen archäologische Überreste eine neue internationale Bedeutung als schützenswertes Erbe. Für die Zürichseeregion lässt sich fragen, wie unsichtbare Befunde unter Wasser oder im Boden öffentlich vermittelt werden. Ein Welterbetitel ist eine gegenwärtige Entscheidung über Vergangenheit, kein Ereignis der Jungsteinzeit.", "image": "local-bridge-source.jpg", "sources": ["localUnesco"], "related": ["local-opera", "pilehouses", "assmann", "local-bridge"], "visualQuestion": "Die moderne Holzbrücke macht einen Seeübergang sichtbar. Sie ist kein prähistorischer Fund und darf nicht als Bildbeweis für eine UNESCO-Fundstelle dienen.", "activity": {"title": "Was verändert ein Welterbetitel?", "scene": "Die Überreste sind prähistorisch, die Aufnahme in die Welterbeliste erfolgte 2011. Was verändert eine solche Anerkennung an Schutz und öffentlicher Bedeutung eines Fundorts?", "cards": [{"label": "Doppelte Datierung", "text": "Alter der Überreste und Aufnahme in die Welterbeliste gehören auf verschiedene Zeitebenen."}, {"label": "Auswahl", "text": "Eine Welterbeliste erfasst ausgewählte Stätten; nicht jeder bedeutsame Fund besitzt denselben öffentlichen Titel."}], "steps": [{"label": "Die Zeiten unterscheiden", "text": "Trenne das Alter der Funde von der späteren Erforschung und der Anerkennung als Welterbe. Welche Angaben dazu liegen vor?"}, {"label": "Die Auswahl untersuchen", "text": "Die Welterbeliste umfasst ausgewählte Stätten. Was erfahren wir aus dem Eintrag über diese Auswahl, was nicht über andere örtliche Geschichte?"}], "result": "Eine Erklärung des Unterschieds zwischen dem Alter der Überreste und ihrer heutigen Anerkennung als Welterbe.", "hint": "Materielle Überreste, wissenschaftliches Wissen und kulturelles Gedächtnis sind miteinander verbunden, aber nicht identisch."}, "tasks": ["Trenne das Alter der Funde von der späteren Erforschung und der Anerkennung als Welterbe. Welche Angaben dazu liegen vor?", "Die Welterbeliste umfasst ausgewählte Stätten. Was erfahren wir aus dem Eintrag über diese Auswahl, was nicht über andere örtliche Geschichte?"], "hint": "Materielle Überreste, wissenschaftliches Wissen und kulturelles Gedächtnis sind miteinander verbunden, aber nicht identisch."}]);
 
 IMAGE_MANIFEST.push(...[{"filename": "local-bridge-source.jpg", "motif": "Holzbrücke 2011-02-10 15-15-08.JPG", "author": "Roland zh", "image_date": "2011-02-10", "license": "CC BY-SA 3.0", "license_url": "https://creativecommons.org/licenses/by-sa/3.0", "source_page": "https://commons.wikimedia.org/wiki/File:Holzbr%C3%BCcke_2011-02-10_15-15-08.JPG", "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Holzbr%C3%BCcke_2011-02-10_15-15-08.JPG/960px-Holzbr%C3%BCcke_2011-02-10_15-15-08.JPG", "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."}, {"filename": "local-reform-source.jpg", "motif": "Ulrich-Zwingli-1.jpg", "author": "Hans Asper", "image_date": "1531", "license": "Public domain", "license_url": "", "source_page": "https://commons.wikimedia.org/wiki/File:Ulrich-Zwingli-1.jpg", "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Ulrich-Zwingli-1.jpg", "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."}, {"filename": "local-coal-source.jpg", "motif": "Horgen Bergwerk Käpfnach 1K4A5005.jpg", "author": "Bobo11", "image_date": "2017-12-09 16:31:11", "license": "CC BY-SA 4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0", "source_page": "https://commons.wikimedia.org/wiki/File:Horgen_Bergwerk_K%C3%A4pfnach_1K4A5005.jpg", "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Horgen_Bergwerk_K%C3%A4pfnach_1K4A5005.jpg/960px-Horgen_Bergwerk_K%C3%A4pfnach_1K4A5005.jpg", "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."}, {"filename": "local-linth-source.jpg", "motif": "Escherkanal-Damm.jpg", "author": "Markus Jud", "image_date": "2008-10-10 09:00:31", "license": "CC BY-SA 3.0", "license_url": "https://creativecommons.org/licenses/by-sa/3.0", "source_page": "https://commons.wikimedia.org/wiki/File:Escherkanal-Damm.jpg", "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Escherkanal-Damm.jpg/960px-Escherkanal-Damm.jpg", "source_criticism": "Markus Jud, Bauarbeiten an der Ufersicherung des Escherkanals bei Näfels, 2008. Dokumentiert spätere Erneuerung, nicht den Bau von 1807."}, {"filename": "local-murg-source.jpg", "motif": "Ehemalige Spinnerei Murg 1.jpg", "author": "Marco Zanoli", "image_date": "2011-10-01", "license": "CC BY-SA 3.0", "license_url": "https://creativecommons.org/licenses/by-sa/3.0", "source_page": "https://commons.wikimedia.org/wiki/File:Ehemalige_Spinnerei_Murg_1.jpg", "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Ehemalige_Spinnerei_Murg_1.jpg/960px-Ehemalige_Spinnerei_Murg_1.jpg", "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."}, {"filename": "local-ragaz-source.jpg", "motif": "Gezicht op de Tamina rivier bij Bad Ragaz, Zwitserland Gezicht op de Tamina, in het dorp Ragaz (titel op object), RP-F-2001-7-939-6.jpg", "author": "Fotomechanischer Druck; Sammlung Rijksmuseum (Urheber im Datensatz nicht benannt)", "image_date": "ca. 1895–1900", "license": "CC0", "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en", "source_page": "https://commons.wikimedia.org/wiki/File:Gezicht_op_de_Tamina_rivier_bij_Bad_Ragaz,_Zwitserland_Gezicht_op_de_Tamina,_in_het_dorp_Ragaz_(titel_op_object),_RP-F-2001-7-939-6.jpg", "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Gezicht_op_de_Tamina_rivier_bij_Bad_Ragaz%2C_Zwitserland_Gezicht_op_de_Tamina%2C_in_het_dorp_Ragaz_%28titel_op_object%29%2C_RP-F-2001-7-939-6.jpg/960px-Gezicht_op_de_Tamina_rivier_bij_Bad_Ragaz%2C_Zwitserland_Gezicht_op_de_Tamina%2C_in_het_dorp_Ragaz_%28titel_op_object%29%2C_RP-F-2001-7-939-6.jpg", "source_criticism": "Bilddatierung und Ereignisdatierung unterscheiden. Bildnachweis und Einordnung im Eintrag beachten."}]);
 
 SOURCES.augustineCity={title:'Augustinus: De civitate Dei, Buch XXII, besonders Kap. 30 (englische Übersetzung)',url:'https://www.newadvent.org/fathers/120122.htm'};
 SOURCES.marxPreface={title:'Karl Marx: Vorwort zur Kritik der politischen Ökonomie (1859), englische Übersetzung',url:'https://www.marxists.org/archive/marx/works/1859/critique-pol-economy/preface.htm'};
+
+// Existing sources reused by the revised questions.
+for(const [id,refs] of Object.entries({nietzsche:["war"],halbwachs:["war"],assmann:["war","memory"]})){const e=EVENTS.find(e=>e.id===id);e.related=[...new Set([...(e.related||[]),...refs])];}
