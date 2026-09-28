@@ -372,7 +372,7 @@ try {
   representation=mode;ensureReading(mode);
   const original=worldSceneHtml(lensItems());
   if(original.includes('diagram-number')||original.includes('nodeClip'))throw Error('Numbered circles remain in '+mode);
-  if(mode==='layers'?!original.includes('data-strata-pick'):(!original.includes('concept-relationship')||!original.includes('Einträge zum Einordnen')))throw Error('Missing explanation or open evidence in '+mode);
+  if(mode==='layers'?!original.includes('data-strata-canvas'):(!original.includes('concept-relationship')||!original.includes('Einträge zum Einordnen')))throw Error('Missing explanation or open evidence in '+mode);
   state.lensAssignments[mode]={paris:GLOBAL_LENSES[mode].slots[0][0]};
   const changed=worldSceneHtml(lensItems()),station=changed.slice(changed.indexOf('concept-station station-0'),changed.indexOf('concept-station station-1'));
   if(mode!=='layers'&&!station.includes('data-lens-focus="paris"'))throw Error('Assignment does not move evidence in '+mode);
@@ -414,3 +414,12 @@ if(!strataCellHtml(byId('paris'),0).includes('12. Dezember 2015'))throw Error('M
 if(!strataCellHtml({id:'own-unreviewed'},2).includes('nicht ausgearbeitet'))throw Error('Unreviewed entry must not receive invented content');
 `,ctx);
 console.log('PASS: Distinct historical aspects, explicit evidence gaps and no automatic claims about personal entries.');
+vm.runInContext(`
+const spaceEntries=lensItems();
+const frontSpace=strataSpaceSvg(spaceEntries,1807,100,'front');
+const backSpace=strataSpaceSvg(spaceEntries,1807,100,'back');
+if(frontSpace===backSpace||!frontSpace.includes('<polygon')||!frontSpace.includes('data-strata-object="local-linth"'))throw Error('Missing spatial geometry');
+if(!frontSpace.includes('stroke-dasharray')||!frontSpace.includes('1807–1823'))throw Error('Unknown and dated intervals must differ');
+if(!strataSpaceSvg([],1807,100,'front').includes('<svg'))throw Error('Empty spatial view broken');
+`,ctx);
+console.log('PASS: Perspective geometry, opposite viewing directions, dated intervals and open durations.');
