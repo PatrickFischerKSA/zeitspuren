@@ -147,7 +147,7 @@ const GLOBAL_LENSES={
 function lensNoteKey(mode,id){return 'lens-'+mode+'-'+id}
 function parseLensNote(key){for(const mode of Object.keys(GLOBAL_LENSES)){const prefix='lens-'+mode+'-';if(key.startsWith(prefix))return {mode,id:key.slice(prefix.length)}}return null}
 function lensCorpus(){return [...all(),...Object.values(CONCEPTS)].filter((e,i,a)=>a.findIndex(x=>x.id===e.id)===i)}
-function lensItems(query='',own=false){const q=query.toLocaleLowerCase('de');return lensCorpus().filter(e=>categoryVisible(e)&&(periodCompare||centuryVisible(e))&&(!own||e.own)&&[e.title,e.text,e.date,e.year,e.source].join(' ').toLocaleLowerCase('de').includes(q)).sort((a,b)=>(a.year??Infinity)-(b.year??Infinity)||a.title.localeCompare(b.title,'de'))}
+function lensItems(query='',own=false){const q=query.toLocaleLowerCase('de');return lensCorpus().filter(e=>categoryVisible(e)&&(periodCompare||centuryVisible(e))&&(!own||e.own)&&[e.title,e.text,e.date,e.year,e.source,e.searchText].join(' ').toLocaleLowerCase('de').includes(q)).sort((a,b)=>(a.year??Infinity)-(b.year??Infinity)||a.title.localeCompare(b.title,'de'))}
 function lensAssignment(mode,id){return state.lensAssignments?.[mode]?.[id]||''}
 function lensCard(e){return `<button class="lens-card ${e.id===lensFocus?'is-focus':''}" data-lens-focus="${esc(e.id)}" aria-pressed="${e.id===lensFocus}">${e.image?`<img loading="lazy" src="${imageSrc(e.image)}" alt="">`:'<span class="lens-card-symbol" aria-hidden="true">◇</span>'}<span><small>${lensMapOrder[e.id]?'#'+lensMapOrder[e.id]+' · ':''}${esc(e.date||(e.year?yr(e.year):'Begriff'))}${e.own?' · EIGEN':''}</small><strong>${esc(e.title)}</strong>${mediaBadge(e)}</span></button>`}
 // These are explicit contemporary experiments with historical constructions.

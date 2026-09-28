@@ -2335,3 +2335,1377 @@ const ORIENTATION_EVENTS=ORIENTATION_ROWS.map(([key,year,end,date,title,region,t
  return {id:'orientation-'+key,year,end,date,title,lane:'orientation',orientation:true,region,text,intro:why,why,limit,sources:refs.length?refs:(base?.sources||[]),related:linked?[linked]:[]};
 });
 EVENTS.push(...ORIENTATION_EVENTS);
+
+// Two shared document lanes. Source date controls placement; reference dates remain explicit.
+LANES.splice(1,0,['written','Schriftquellen','Texte · Briefe · Urkunden','#806444'],['audiovisual','Bild, Ton & Film','Bilder · Aufnahmen · Bewegtbild','#526d9c']);
+const DOCUMENT_EVENTS=[
+ {
+  "id": "doc-hammurabi",
+  "year": -1750,
+  "date": "ca. 1750 v. u. Z.",
+  "title": "Rechtssätze Hammurabis",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Königliche Kanzlei Hammurabis",
+   "region": "Babylonien",
+   "language": "Akkadisch; Museumserläuterung Französisch / Englisch",
+   "url": "https://www.louvre.fr/en/the-code-of-hammurabi",
+   "access": "Stele und Erläuterung im Louvre; kein vollständiger deutscher Quellentext.",
+   "focus": "Vergleiche die Behandlung verschiedener sozialer Gruppen. Was zeigt der Text über die Ordnung, die der König beansprucht?",
+   "limit": "Eine Rechtssammlung belegt vorgeschriebene Regeln, nicht deren lückenlose Anwendung.",
+   "reference": "ca. 1750 v. u. Z."
+  },
+  "intro": "Die Inschrift verbindet Rechtsfälle mit dem Anspruch des Königs, Gerechtigkeit zu sichern. Strafen richten sich auch nach sozialem Status.",
+  "text": "",
+  "sources": [
+   "doc-hammurabi"
+  ],
+  "related": [
+   "script"
+  ]
+ },
+ {
+  "id": "doc-cyrus",
+  "year": -539,
+  "date": "nach 539 v. u. Z.",
+  "title": "Kyros-Zylinder",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Babylonischer Text im Auftrag des Kyros",
+   "region": "Babylon",
+   "language": "Babylonisch; englische Erschliessung",
+   "url": "https://www.britishmuseum.org/collection/object/W_1880-0617-1941",
+   "access": "Objektdatensatz, Abbildungen und Erläuterung des British Museum.",
+   "focus": "Achte auf die Gegenüberstellung des vorherigen Königs und des neuen Herrschers.",
+   "limit": "Keine Menschenrechtserklärung im heutigen Sinn; der Text spricht aus königlicher und religiöser Herrschaftsperspektive.",
+   "reference": "nach 539 v. u. Z."
+  },
+  "intro": "Die Inschrift rechtfertigt die neue Herrschaft nach der Einnahme Babylons. Sie stellt Kyros als Wiederhersteller einer gestörten Ordnung dar.",
+  "text": "",
+  "sources": [
+   "doc-cyrus"
+  ],
+  "related": [
+   "egyptworld"
+  ]
+ },
+ {
+  "id": "doc-ashoka",
+  "year": -250,
+  "date": "3. Jahrhundert v. u. Z.",
+  "title": "Ashokas Felsenedikte",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Maurya-Herrscher Ashoka",
+   "region": "Südasien",
+   "language": "Antike Sprachfassungen; englische Übersetzung",
+   "url": "https://worldhistorycommons.org/selections-ashoka-rock-and-pillar-edicts",
+   "access": "Ausgewählte Edikte in Übersetzung.",
+   "focus": "Unterscheide Bericht über Gewalt, Reue und künftig versprochene Regierungspraxis.",
+   "limit": "Die Stimme des Herrschers ersetzt keine Zeugnisse der eroberten Bevölkerung.",
+   "reference": "3. Jahrhundert v. u. Z."
+  },
+  "intro": "Der Herrscher erklärt moralische Grundsätze, religiösen Umgang und seine Haltung zur Eroberung von Kalinga.",
+  "text": "",
+  "sources": [
+   "doc-ashoka"
+  ],
+  "related": [
+   "orientation-qin"
+  ]
+ },
+ {
+  "id": "doc-rosetta",
+  "year": -196,
+  "date": "196 v. u. Z.",
+  "title": "Dekret auf dem Stein von Rosette",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Ägyptische Priesterschaft unter Ptolemaios V.",
+   "region": "Ägypten",
+   "language": "Hieroglyphisch, demotisch und griechisch",
+   "url": "https://www.britishmuseum.org/collection/object/Y_EA24",
+   "access": "Abbildung und Katalog des British Museum.",
+   "focus": "Trenne den antiken Zweck des Dekrets von seinem Nutzen für die Forschung seit dem 19. Jahrhundert.",
+   "limit": "Der Fund von 1799 ist nicht das Entstehungsdatum der Inschrift.",
+   "reference": "196 v. u. Z."
+  },
+  "intro": "Ein priesterliches Dekret ehrt den König. Seine verschiedenen Schriftfassungen wurden später entscheidend für die Entzifferung der Hieroglyphen.",
+  "text": "",
+  "sources": [
+   "doc-rosetta"
+  ],
+  "related": [
+   "script"
+  ]
+ },
+ {
+  "id": "doc-pliny",
+  "year": 112,
+  "date": "ca. 112",
+  "title": "Plinius und Trajan über Christen",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Statthalter Plinius der Jüngere und Kaiser Trajan",
+   "region": "Bithynien-Pontus / Römisches Reich",
+   "language": "Latein; englische Übersetzung",
+   "url": "https://sourcebooks.web.fordham.edu/ancient/pliny-letters.asp",
+   "access": "Briefauswahl; Briefwechsel über Christen am Ende.",
+   "focus": "Vergleiche die Unsicherheiten des Beamten mit den Grenzen, die Trajan dem Vorgehen setzt.",
+   "limit": "Die Verfolgten sprechen hier nicht selbst; die Briefe sind Verwaltungskommunikation.",
+   "reference": "ca. 112"
+  },
+  "intro": "Ein Statthalter fragt, wie er gegen beschuldigte Christen vorgehen soll. Der Kaiser antwortet mit Vorgaben für Ermittlungen und Bestrafung.",
+  "text": "",
+  "sources": [
+   "doc-pliny"
+  ],
+  "related": [
+   "rome"
+  ]
+ },
+ {
+  "id": "doc-confessions",
+  "year": 400,
+  "date": "ca. 397–401",
+  "title": "Augustinus: Confessiones XI",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Augustinus von Hippo",
+   "region": "Nordafrika / Römisches Reich",
+   "language": "Latein; englische Übersetzung",
+   "url": "https://www.newadvent.org/fathers/110111.htm",
+   "access": "Volltext von Buch XI; besonders Kapitel 20 und 28.",
+   "focus": "Lies das Beispiel des Liedes: Was verändert sich zwischen Erwartung, Aufmerksamkeit und Erinnerung?",
+   "limit": "Philosophisch-theologischer Text; keine Beschreibung des Zeitgefühls aller Menschen seiner Zeit.",
+   "reference": "ca. 397–401"
+  },
+  "intro": "Augustinus untersucht, wie Vergangenes und Zukünftiges im gegenwärtigen Bewusstsein vorhanden sein können.",
+  "text": "",
+  "sources": [
+   "doc-confessions"
+  ],
+  "related": [
+   "augustine"
+  ]
+ },
+ {
+  "id": "doc-magna",
+  "year": 1215,
+  "date": "15. Juni 1215",
+  "title": "Magna Carta",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "König Johann und seine politischen Gegenspieler",
+   "region": "England",
+   "language": "Latein; englische Übersetzung",
+   "url": "https://librarycollections.law.umn.edu/magnacarta/mc_english.php",
+   "access": "Englische Übersetzung der Fassung von 1215.",
+   "focus": "Prüfe bei den Schutzbestimmungen, wer als berechtigte Person angesprochen wird.",
+   "limit": "Kein allgemeines demokratisches Grundgesetz. Spätere Deutungen erweiterten ihre Bedeutung.",
+   "reference": "15. Juni 1215"
+  },
+  "intro": "Die Urkunde regelt Herrschaft, Abgaben und Rechtsverfahren im Konflikt zwischen König und Baronen.",
+  "text": "",
+  "sources": [
+   "doc-magna"
+  ],
+  "related": [
+   "period"
+  ]
+ },
+ {
+  "id": "doc-bundesbrief",
+  "year": 1291,
+  "date": "Anfang August 1291",
+  "title": "Bundesbrief von 1291",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Talgemeinschaften Uri, Schwyz und Unterwalden",
+   "region": "Zentralschweiz",
+   "language": "Latein; moderne Übersetzungen, auch Deutsch",
+   "url": "https://www.bundesbrief.ch/public/upload/assets/91667/Bundesbrief_Text_alle%20Sprachen.pdf?fp=1",
+   "access": "Text und Übersetzungen des Bundesbriefmuseums als PDF.",
+   "focus": "Suche konkrete Bestimmungen zu Richtern und Streitfällen. Welche heutigen Vorstellungen einer Staatsgründung stehen nicht im Text?",
+   "limit": "Bündnis von 1291 und nationale Erinnerung seit dem 19. Jahrhundert dürfen nicht gleichgesetzt werden.",
+   "reference": "Anfang August 1291"
+  },
+  "intro": "Die Bündnisurkunde regelt gegenseitige Hilfe, Konflikte und Recht. Ihr späterer Rang als nationales Gründungsdokument ist eine eigene Geschichte.",
+  "text": "",
+  "sources": [
+   "doc-bundesbrief"
+  ],
+  "related": [
+   "orientation-charter"
+  ]
+ },
+ {
+  "id": "doc-battuta",
+  "year": 1355,
+  "date": "ca. 1355 · Reise 1352–1353",
+  "title": "Ibn Battuta über Mali",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Ibn Battuta; literarische Redaktion durch Ibn Dschuzayy",
+   "region": "Mali / Maghreb",
+   "language": "Arabisch; englische Übersetzung",
+   "url": "https://sourcebooks.web.fordham.edu/source/1354-ibnbattuta.asp",
+   "access": "Auszug aus dem Reisebericht.",
+   "focus": "Vergleiche, was er lobt und was ihn befremdet. Welche Massstäbe setzt er voraus?",
+   "limit": "Reise, nachträgliche Erzählung und literarische Bearbeitung sind verschiedene Schritte.",
+   "reference": "ca. 1355 · Reise 1352–1353"
+  },
+  "intro": "Der Reisende beurteilt Hof, religiöse Praxis und gesellschaftliche Gewohnheiten in Mali aus seiner eigenen muslimischen Gelehrtenperspektive.",
+  "text": "",
+  "sources": [
+   "doc-battuta"
+  ],
+  "related": [
+   "timbuktu"
+  ]
+ },
+ {
+  "id": "doc-luther",
+  "year": 1517,
+  "date": "1517",
+  "title": "Luthers 95 Thesen",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Martin Luther",
+   "region": "Wittenberg",
+   "language": "Latein; deutsche Übersetzung",
+   "url": "https://www.luther.de/leben/anschlag/95thesen.html",
+   "access": "Vollständige Thesen in deutscher Übersetzung.",
+   "focus": "Lies die Thesen 27, 36 und 43: Was kritisiert Luther am Verhältnis von Geld und Heil?",
+   "limit": "Die Thesen sind ein theologischer Streittext, noch kein Programm aller späteren Reformationen.",
+   "reference": "1517"
+  },
+  "intro": "Die Thesen kritisieren Ablasspraktiken und behandeln Busse, kirchliche Autorität und Heil.",
+  "text": "",
+  "sources": [
+   "doc-luther"
+  ],
+  "related": [
+   "orientation-luther"
+  ]
+ },
+ {
+  "id": "doc-usdecl",
+  "year": 1776,
+  "date": "4. Juli 1776",
+  "title": "Unabhängigkeitserklärung der USA",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Kontinentalkongress; Entwurf massgeblich Thomas Jefferson",
+   "region": "Nordamerika",
+   "language": "Englisch",
+   "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+   "access": "Transkription der Erklärung bei den National Archives.",
+   "focus": "Vergleiche die universale Sprache des Anfangs mit den tatsächlich vertretenen Gruppen.",
+   "limit": "Sklaverei und Ausschlüsse verschwanden mit der Erklärung nicht.",
+   "reference": "4. Juli 1776"
+  },
+  "intro": "Die Erklärung verbindet einen allgemeinen Gleichheitsanspruch mit einer Liste von Beschwerden gegen den britischen König.",
+  "text": "",
+  "sources": [
+   "doc-usdecl"
+  ],
+  "related": [
+   "orientation-usa"
+  ]
+ },
+ {
+  "id": "doc-equiano",
+  "year": 1789,
+  "date": "1789",
+  "title": "Olaudah Equiano: Lebensbericht",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Olaudah Equiano",
+   "region": "Atlantischer Raum / Grossbritannien",
+   "language": "Englisch",
+   "url": "https://www.gutenberg.org/ebooks/15399",
+   "access": "Digitaler Volltext; Kapitel II zum Sklaventransport.",
+   "focus": "Untersuche in Kapitel II, wie Wahrnehmung und körperliches Erleben die Darstellung prägen.",
+   "limit": "Autobiografisches Erinnern und ein öffentliches Anliegen formen den Text; einzelne biografische Angaben sind Gegenstand der Forschung.",
+   "reference": "1789"
+  },
+  "intro": "Equiano veröffentlicht seine Lebensgeschichte im Kampf gegen den Sklavenhandel. Er verbindet Erfahrungen, religiöse Deutung und politische Überzeugungsarbeit.",
+  "text": "",
+  "sources": [
+   "doc-equiano"
+  ],
+  "related": [
+   "haiti"
+  ]
+ },
+ {
+  "id": "doc-gouges",
+  "year": 1791,
+  "date": "1791",
+  "title": "Olympe de Gouges: Rechte der Frau",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Olympe de Gouges",
+   "region": "Frankreich",
+   "language": "Französisch",
+   "url": "https://gallica.bnf.fr/ark:/12148/bpt6k426138",
+   "access": "Digitalisat der historischen Druckschrift in Gallica / BnF.",
+   "focus": "Vergleiche die Benennung der Rechtsträgerinnen mit dem Gleichheitsanspruch von 1789.",
+   "limit": "Forderung einer politischen Autorin, kein damals geltendes Gesetz.",
+   "reference": "1791"
+  },
+  "intro": "De Gouges formuliert die Rechte der Frau und Bürgerin als Gegenentwurf zu ihrer politischen Ausgrenzung.",
+  "text": "",
+  "sources": [
+   "doc-gouges"
+  ],
+  "related": [
+   "orientation-france",
+   "vote"
+  ]
+ },
+ {
+  "id": "doc-manifest",
+  "year": 1848,
+  "date": "Februar 1848",
+  "title": "Manifest der Kommunistischen Partei",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Karl Marx und Friedrich Engels",
+   "region": "Europa; Druck in London",
+   "language": "Deutsch",
+   "url": "https://www.marxists.org/deutsch/archiv/marx-engels/1848/manifest/index.htm",
+   "access": "Volltext, insbesondere Abschnitt I.",
+   "focus": "Trenne die historische Erklärung von Prognosen und politischen Forderungen.",
+   "limit": "Ein programmatischer Text erklärt nicht von selbst jeden Konflikt und jede Gesellschaft.",
+   "reference": "Februar 1848"
+  },
+  "intro": "Das Manifest deutet gesellschaftlichen Wandel über Klassenverhältnisse und ruft zu politischem Handeln auf.",
+  "text": "",
+  "sources": [
+   "doc-manifest"
+  ],
+  "related": [
+   "materialism"
+  ]
+ },
+ {
+  "id": "doc-constitution",
+  "year": 1848,
+  "date": "12. September 1848",
+  "title": "Schweizer Bundesverfassung von 1848",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Tagsatzung; Verfassungsgeber von 1848",
+   "region": "Schweiz",
+   "language": "Deutsch",
+   "url": "https://www.parlament.ch/centers/documents/_layouts/15/DocIdRedir.aspx?ID=DOCID-1-11889",
+   "access": "Historischer Verfassungstext als PDF beim Parlament.",
+   "focus": "Vergleiche die Regeln politischer Beteiligung mit den Freiheitsrechten. Wer bleibt ausgeschlossen?",
+   "limit": "Die damalige Verfassung ist nicht mit der heutigen Fassung gleichzusetzen.",
+   "reference": "12. September 1848"
+  },
+  "intro": "Die Verfassung richtet den Bundesstaat ein und verteilt Kompetenzen zwischen Bund und Kantonen.",
+  "text": "",
+  "sources": [
+   "doc-constitution"
+  ],
+  "related": [
+   "orientation-federal"
+  ]
+ },
+ {
+  "id": "doc-emancipation",
+  "year": 1863,
+  "date": "1. Januar 1863",
+  "title": "Emancipation Proclamation",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "US-Präsident Abraham Lincoln",
+   "region": "USA",
+   "language": "Englisch",
+   "url": "https://www.archives.gov/milestone-documents/emancipation-proclamation",
+   "access": "Faksimile und Transkription.",
+   "focus": "Lies die Ausnahmen und vergleiche sie mit dem Titel der Proklamation.",
+   "limit": "Nicht die sofortige Abschaffung der Sklaverei in sämtlichen US-Bundesstaaten.",
+   "reference": "1. Januar 1863"
+  },
+  "intro": "Lincoln erklärt die Versklavten in den rebellierenden Gebieten für frei. Der räumliche Geltungsbereich gehört zur Bedeutung des Dokuments.",
+  "text": "",
+  "sources": [
+   "doc-emancipation"
+  ],
+  "related": [
+   "orientation-usa"
+  ]
+ },
+ {
+  "id": "doc-exclusion",
+  "year": 1882,
+  "date": "6. Mai 1882",
+  "title": "Chinese Exclusion Act",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "US-Kongress",
+   "region": "USA / China",
+   "language": "Englisch",
+   "url": "https://www.archives.gov/milestone-documents/chinese-exclusion-act",
+   "access": "Gesetzesdokument mit Transkription.",
+   "focus": "Untersuche, wie der Text Menschen rechtlich kategorisiert und welche Nachweise er verlangt.",
+   "limit": "Ein Gesetz zeigt staatliche Regeln, nicht die gesamten Erfahrungen der Betroffenen.",
+   "reference": "6. Mai 1882"
+  },
+  "intro": "Das Gesetz beschränkt die Einwanderung chinesischer Arbeitskräfte und institutionalisiert rassistische Ausgrenzung.",
+  "text": "",
+  "sources": [
+   "doc-exclusion"
+  ],
+  "related": [
+   "orientation-berlin"
+  ]
+ },
+ {
+  "id": "doc-zimmermann",
+  "year": 1917,
+  "date": "Januar 1917",
+  "title": "Zimmermann-Telegramm",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Deutsches Auswärtiges Amt",
+   "region": "Deutschland / Mexiko / USA",
+   "language": "Deutsch; englische Erschliessung",
+   "url": "https://www.archives.gov/milestone-documents/zimmermann-telegram",
+   "access": "Verschlüsseltes Telegramm und Entschlüsselung.",
+   "focus": "Vergleiche vorgeschlagenes Bündnis, Bedingungen und versprochene Gegenleistung.",
+   "limit": "Ein geheimer Vorschlag ist noch kein geschlossenes Bündnis.",
+   "reference": "Januar 1917"
+  },
+  "intro": "Die deutsche Regierung schlägt Mexiko ein Bündnis für den Fall eines Kriegseintritts der USA vor. Britische Entschlüsselung macht geheime Diplomatie öffentlich.",
+  "text": "",
+  "sources": [
+   "doc-zimmermann"
+  ],
+  "related": [
+   "orientation-ww1"
+  ]
+ },
+ {
+  "id": "doc-fourteen",
+  "year": 1918,
+  "date": "8. Januar 1918",
+  "title": "Wilsons Vierzehn Punkte",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "US-Präsident Woodrow Wilson",
+   "region": "USA / internationale Friedensordnung",
+   "language": "Englisch",
+   "url": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
+   "access": "Redetext und historischer Dokumentnachweis.",
+   "focus": "Vergleiche allgemeine Formulierungen mit den konkret benannten Territorien und Bevölkerungen.",
+   "limit": "Das Programm wurde nicht vollständig umgesetzt; Selbstbestimmung war weder eindeutig noch überall gleich gemeint.",
+   "reference": "8. Januar 1918"
+  },
+  "intro": "Wilson nennt Grundsätze einer Nachkriegsordnung, darunter offene Diplomatie und einen Völkerbund.",
+  "text": "",
+  "sources": [
+   "doc-fourteen"
+  ],
+  "related": [
+   "orientation-versailles"
+  ]
+ },
+ {
+  "id": "doc-kafka",
+  "year": 1919,
+  "date": "November 1919",
+  "title": "Kafka: Brief an den Vater",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Franz Kafka",
+   "region": "Prag / Schelesen",
+   "language": "Deutsch",
+   "url": "https://www.nli.org.il/en/archives/NNL_ARCHIVE_AL997007757179505171/NLI",
+   "access": "Handschrift und Archivbeschreibung der National Library of Israel.",
+   "focus": "Beachte, wie Kafka erinnerte Szenen zu einer Argumentation über Macht und Furcht verbindet.",
+   "limit": "Ein literarisch geformtes Selbstzeugnis liefert keine neutrale Familienchronik.",
+   "reference": "November 1919"
+  },
+  "intro": "Kafka versucht schriftlich, sein Verhältnis zum Vater zu erklären. Der umfangreiche Brief wurde diesem nicht übergeben.",
+  "text": "",
+  "sources": [
+   "doc-kafka"
+  ],
+  "related": [
+   "halbwachs"
+  ]
+ },
+ {
+  "id": "doc-wannsee",
+  "year": 1942,
+  "date": "20. Januar 1942",
+  "title": "Protokoll der Wannsee-Konferenz",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "NS-Verwaltung; Protokoll durch Adolf Eichmann",
+   "region": "Berlin / besetztes Europa",
+   "language": "Deutsch",
+   "url": "https://www.ghwk.de/de/konferenz/protokoll-und-dokumente",
+   "access": "Faksimile des Protokolls und kommentierende Materialien.",
+   "focus": "Untersuche die bürokratischen Kategorien und verschleiernden Begriffe für Gewalt.",
+   "limit": "Täterdokument. Der Massenmord hatte bereits begonnen; die Konferenz war nicht sein Beginn.",
+   "reference": "20. Januar 1942"
+  },
+  "intro": "Das Protokoll dokumentiert die behördenübergreifende Koordination der Verfolgung und Ermordung europäischer Jüdinnen und Juden.",
+  "text": "",
+  "sources": [
+   "doc-wannsee"
+  ],
+  "related": [
+   "orientation-holocaust"
+  ]
+ },
+ {
+  "id": "doc-anne",
+  "year": 1942,
+  "date": "1942–1944 · Veröffentlichung 1947",
+  "title": "Anne Franks Tagebuch",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Anne Frank",
+   "region": "Amsterdam",
+   "language": "Niederländisch; deutsche Erschliessung",
+   "url": "https://www.annefrank.org/de/anne-frank/das-tagebuch/die-beiden-fassungen-von-annes-tagebuch/",
+   "access": "Vergleich der Fassungen mit Textbeispielen; kein freier vollständiger deutscher Buchtext.",
+   "focus": "Vergleiche eine ursprüngliche Passage mit ihrer Überarbeitung: Welche Wirkung verändert sich?",
+   "limit": "Die Überarbeitung macht das Zeugnis nicht unecht. Sie gehört zu seiner Entstehungsgeschichte.",
+   "reference": "1942–1944 · Veröffentlichung 1947"
+  },
+  "intro": "Anne schreibt im Versteck und überarbeitet Teile ihres Tagebuchs 1944 für eine mögliche Veröffentlichung.",
+  "text": "",
+  "sources": [
+   "doc-anne"
+  ],
+  "related": [
+   "orientation-holocaust"
+  ]
+ },
+ {
+  "id": "doc-uncharter",
+  "year": 1945,
+  "date": "26. Juni 1945 · Unterzeichnung",
+  "title": "Charta der Vereinten Nationen",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Gründungsstaaten der UNO",
+   "region": "Welt",
+   "language": "Englisch; weitere Amtssprachen beim Anbieter",
+   "url": "https://www.un.org/en/about-us/un-charter/full-text",
+   "access": "Volltext der Charta.",
+   "focus": "Vergleiche das Prinzip gleicher Souveränität mit den Abstimmungsregeln des Sicherheitsrats.",
+   "limit": "Rechtsnorm, politische Macht und tatsächliches Handeln sind zu unterscheiden.",
+   "reference": "26. Juni 1945 · Unterzeichnung"
+  },
+  "intro": "Die Charta verbindet Friedenssicherung mit einer Ordnung souveräner Staaten und besonderer Machtstellung des Sicherheitsrats.",
+  "text": "",
+  "sources": [
+   "doc-uncharter"
+  ],
+  "related": [
+   "orientation-un"
+  ]
+ },
+ {
+  "id": "doc-udhr",
+  "year": 1948,
+  "date": "10. Dezember 1948",
+  "title": "Allgemeine Erklärung der Menschenrechte",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Generalversammlung der UNO",
+   "region": "Welt",
+   "language": "Englisch; Sprachfassungen beim Anbieter",
+   "url": "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
+   "access": "Volltext der 30 Artikel.",
+   "focus": "Vergleiche bürgerliche, politische und soziale Rechte: Was müsste ihre Verwirklichung jeweils bedeuten?",
+   "limit": "Eine Erklärung ist weder ein Nachweis weltweiter Umsetzung noch selbst ein ratifizierter Vertrag.",
+   "reference": "10. Dezember 1948"
+  },
+  "intro": "Die Erklärung formuliert gleiche Rechte für alle Menschen nach Weltkrieg und nationalsozialistischen Verbrechen.",
+  "text": "",
+  "sources": [
+   "doc-udhr"
+  ],
+  "related": [
+   "orientation-rights"
+  ]
+ },
+ {
+  "id": "doc-paris",
+  "year": 2015,
+  "date": "12. Dezember 2015",
+  "title": "Pariser Klimaabkommen",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "Vertragsstaaten der Klimarahmenkonvention",
+   "region": "Welt",
+   "language": "Englisch",
+   "url": "https://unfccc.int/sites/default/files/english_paris_agreement.pdf",
+   "access": "Offizieller Vertragstext als PDF; Artikel 2 und 4.",
+   "focus": "Vergleiche gemeinsames Ziel, nationale Beiträge und Überprüfung. Wer verpflichtet sich wozu?",
+   "limit": "Der Vertragstext belegt vereinbarte Ziele, nicht deren Erreichung.",
+   "reference": "12. Dezember 2015"
+  },
+  "intro": "Das Abkommen legt Temperaturziele und einen Rahmen nationaler Klimabeiträge fest.",
+  "text": "",
+  "sources": [
+   "doc-paris"
+  ],
+  "related": [
+   "paris"
+  ]
+ },
+ {
+  "id": "doc-who",
+  "year": 2020,
+  "date": "11. März 2020",
+  "title": "WHO: COVID-19 als Pandemie",
+  "lane": "written",
+  "document": {
+   "kind": "Schrift",
+   "creator": "WHO-Generaldirektor Tedros Adhanom Ghebreyesus",
+   "region": "Welt",
+   "language": "Englisch",
+   "url": "https://www.who.int/news-room/speeches/item/who-director-general-s-opening-remarks-at-the-media-briefing-on-covid-19---11-march-2020",
+   "access": "Offizielles Redemanuskript.",
+   "focus": "Trenne Aussagen über den damaligen Wissensstand von Erwartungen und Aufforderungen.",
+   "limit": "Ein zeitgebundenes Kommunikationsdokument; spätere Erkenntnisse dürfen ihm nicht rückwirkend unterstellt werden.",
+   "reference": "11. März 2020"
+  },
+  "intro": "Die WHO charakterisiert COVID-19 als Pandemie und verbindet die Lagebeschreibung mit einem Appell zum Handeln.",
+  "text": "",
+  "sources": [
+   "doc-who"
+  ],
+  "related": [
+   "orientation-covid"
+  ]
+ },
+ {
+  "id": "doc-nebamun",
+  "year": -1350,
+  "date": "ca. 1350 v. u. Z.",
+  "title": "Nebamun: Jagd im Papyrusdickicht",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Bild",
+   "creator": "Unbekannte Werkstatt; Grabkapelle des Nebamun",
+   "region": "Ägypten",
+   "language": "Bild und Hieroglyphen; englischer Katalog",
+   "url": "https://www.britishmuseum.org/collection/object/Y_EA37977",
+   "access": "Vergrösserbare Objektabbildung im British Museum.",
+   "focus": "Vergleiche die Grössen der Personen und ihre Handlungen. Was wird über Rang behauptet?",
+   "limit": "Kein Schnappschuss des Alltags; das Bild hatte eine funeräre Funktion.",
+   "reference": "ca. 1350 v. u. Z."
+  },
+  "intro": "Eine Grabmalerei zeigt Nebamun mit Familie, Tieren und Pflanzen in einer idealisierten Landschaft.",
+  "text": "",
+  "sources": [
+   "doc-nebamun"
+  ],
+  "related": [
+   "egyptworld"
+  ]
+ },
+ {
+  "id": "doc-stgallen",
+  "year": 820,
+  "date": "9. Jahrhundert · ca. 819–830",
+  "title": "St. Galler Klosterplan",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Bild",
+   "creator": "Reichenauer Mönche für Gozbert von St. Gallen",
+   "region": "Bodenseeraum / St. Gallen",
+   "language": "Lateinische Beischriften",
+   "url": "https://www.e-codices.unifr.ch/de/list/one/csg/1092",
+   "access": "Digitales Faksimile, Cod. Sang. 1092, mit Zoom.",
+   "focus": "Suche nach räumlichen Beziehungen zwischen Gebet, Arbeit und Versorgung.",
+   "limit": "Ein Entwurf ist kein vermessener Nachweis einer genau so ausgeführten Anlage.",
+   "reference": "9. Jahrhundert · ca. 819–830"
+  },
+  "intro": "Der Plan ordnet Kirche, Schlafräume, Werkstätten und Versorgung als zusammenhängende Klosteranlage.",
+  "text": "",
+  "sources": [
+   "doc-stgallen"
+  ],
+  "related": [
+   "medievalworld"
+  ]
+ },
+ {
+  "id": "doc-bayeux",
+  "year": 1070,
+  "date": "spätes 11. Jahrhundert · um 1070",
+  "title": "Teppich von Bayeux",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Bild",
+   "creator": "Unbekannte Auftraggeber und Werkstätten",
+   "region": "England / Normandie",
+   "language": "Bilder und lateinische Beischriften",
+   "url": "https://www.bayeuxmuseum.com/en/the-bayeux-tapestry/discover-the-bayeux-tapestry/explore-online/",
+   "access": "Digitales Panorama mit Zoom und Szenenfolge.",
+   "focus": "Vergleiche Bildfolge und Beischriften: Wie werden Eid, Legitimität und Gewalt verbunden?",
+   "limit": "Die Darstellung entstand nach den Ereignissen und vermittelt eine parteiliche Erzählung.",
+   "reference": "Darstellung um 1070; dargestellte Ereignisse vor allem 1064–1066"
+  },
+  "intro": "Die Stickerei erzählt die Vorgeschichte und Durchführung der normannischen Eroberung Englands von 1066.",
+  "text": "",
+  "sources": [
+   "doc-bayeux"
+  ],
+  "related": [
+   "medievalworld"
+  ]
+ },
+ {
+  "id": "doc-waldseemuller",
+  "year": 1507,
+  "date": "1507",
+  "title": "Waldseemüllers Weltkarte",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Bild",
+   "creator": "Martin Waldseemüller und gelehrtes Umfeld",
+   "region": "Saint-Dié / europäische Weltkartografie",
+   "language": "Latein",
+   "url": "https://www.loc.gov/exhibits/exploring-the-early-americas/interactives/waldseemuller-maps/worldmap1507/index.html",
+   "access": "Kartenansicht mit vergrösserbaren Ausschnitten.",
+   "focus": "Prüfe Namen, Leerstellen und Konturen. Welche Arten von Wissen treffen hier zusammen?",
+   "limit": "Eine europäische Wissensordnung, keine neutrale Sicht aller Gesellschaften auf die Welt.",
+   "reference": "1507"
+  },
+  "intro": "Die Karte verbindet antike Geografie mit Berichten europäischer Atlantikreisen und verwendet den Namen America.",
+  "text": "",
+  "sources": [
+   "doc-waldseemuller"
+  ],
+  "related": [
+   "orientation-atlantic"
+  ]
+ },
+ {
+  "id": "doc-liberty",
+  "year": 1830,
+  "date": "1830",
+  "title": "Delacroix: Die Freiheit führt das Volk",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Bild",
+   "creator": "Eugène Delacroix",
+   "region": "Frankreich",
+   "language": "Bild; französischer Katalog",
+   "url": "https://collections.louvre.fr/en/ark:/53355/cl010065872",
+   "access": "Werkabbildung und Provenienz im Louvre-Katalog.",
+   "focus": "Unterscheide sichtbare soziale Gruppen von der symbolischen Hauptfigur.",
+   "limit": "Bezieht sich auf Juli 1830, nicht auf 1789. Keine Augenblicksaufnahme einer Barrikade.",
+   "reference": "1830"
+  },
+  "intro": "Das Gemälde verbindet den Pariser Aufstand mit einer allegorischen Figur der Freiheit.",
+  "text": "",
+  "sources": [
+   "doc-liberty"
+  ],
+  "related": [
+   "orientation-france"
+  ]
+ },
+ {
+  "id": "doc-wave",
+  "year": 1831,
+  "date": "ca. 1830–1832",
+  "title": "Hokusai: Die grosse Welle",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Bild",
+   "creator": "Katsushika Hokusai",
+   "region": "Japan",
+   "language": "Bild; englischer Katalog",
+   "url": "https://www.metmuseum.org/art/collection/search/39799",
+   "access": "Vergrösserbare Werkabbildung und Open-Access-Nachweis.",
+   "focus": "Vergleiche die Grössenverhältnisse von Menschen, Welle und Berg. Wie organisiert das Bild den Blick?",
+   "limit": "Kein Beleg für ein eindeutig identifiziertes Tsunami-Ereignis; künstlerische Komposition und Drucktechnik formen die Darstellung.",
+   "reference": "ca. 1830–1832"
+  },
+  "intro": "Der Farbholzschnitt zeigt Boote, eine grosse Welle und den Fuji. Er gehört zu einer kommerziell verbreiteten Bildserie.",
+  "text": "",
+  "sources": [
+   "doc-wave"
+  ],
+  "related": [
+   "history"
+  ]
+ },
+ {
+  "id": "doc-bourbaki",
+  "year": 1881,
+  "date": "1881 · dargestellt: Februar 1871",
+  "title": "Bourbaki-Panorama",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Bild",
+   "creator": "Edouard Castres und Mitarbeiter",
+   "region": "Schweiz / französische Ostarmee",
+   "language": "Bild; deutsche Museumserläuterung",
+   "url": "https://www.bourbakipanorama.ch/",
+   "access": "Rundbild und digitale Informationen des Museums.",
+   "focus": "Beachte, welche Tätigkeiten Schweizer Helfende und französische Soldaten ausführen.",
+   "limit": "Zehn Jahre nach dem Ereignis gemalt; ein Erinnerungsbild mit eigener Perspektive.",
+   "reference": "1881 · dargestellt: Februar 1871"
+  },
+  "intro": "Das Panorama zeigt die Aufnahme der französischen Ostarmee in der Schweiz und inszeniert Hilfe, Erschöpfung und Grenzübertritt.",
+  "text": "",
+  "sources": [
+   "doc-bourbaki"
+  ],
+  "related": [
+   "assmann"
+  ]
+ },
+ {
+  "id": "doc-sneeze",
+  "year": 1894,
+  "date": "7. Januar 1894",
+  "title": "Fred Ott niest vor der Kamera",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Film",
+   "creator": "Edison Manufacturing Company; W. K. L. Dickson",
+   "region": "USA",
+   "language": "Stummfilm",
+   "url": "https://www.loc.gov/item/00694192/",
+   "access": "Kurzer Film im Player der Library of Congress.",
+   "focus": "Betrachte Anfang und Ende: Was wurde für die Aufnahme eingerichtet?",
+   "limit": "Das frühe Aufnahmedatum macht den Film nicht zu einer unbeobachteten Alltagsszene.",
+   "reference": "7. Januar 1894"
+  },
+  "intro": "Eine für die Kamera ausgeführte Alltagshandlung wird zu einem sehr frühen Bewegungsbild.",
+  "text": "",
+  "sources": [
+   "doc-sneeze"
+  ],
+  "related": [
+   "history"
+  ]
+ },
+ {
+  "id": "doc-train",
+  "year": 1903,
+  "date": "1903",
+  "title": "The Great Train Robbery",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Film",
+   "creator": "Edwin S. Porter / Edison Manufacturing Company",
+   "region": "USA",
+   "language": "Stummfilm",
+   "url": "https://www.loc.gov/item/00694220/",
+   "access": "Vollständiger Film beim Archiv; zum Einstieg die erste Szene.",
+   "focus": "Achte darauf, wie der Schnitt Zusammenhänge herstellt, die keine einzelne Kameraaufnahme zeigen könnte.",
+   "limit": "Fiktionale Handlung; als Quelle für Filmtechnik, Unterhaltung und Gewaltbilder seiner Entstehungszeit geeignet.",
+   "reference": "1903"
+  },
+  "intro": "Der frühe Spielfilm erzählt einen Eisenbahnüberfall mit wechselnden Schauplätzen und Montage.",
+  "text": "",
+  "sources": [
+   "doc-train"
+  ],
+  "related": [
+   "history"
+  ]
+ },
+ {
+  "id": "doc-quake",
+  "year": 1906,
+  "date": "April 1906",
+  "title": "San Francisco nach Erdbeben und Brand",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Film",
+   "creator": "Edison Manufacturing Company",
+   "region": "USA",
+   "language": "Stummfilm",
+   "url": "https://www.loc.gov/item/00694425/",
+   "access": "Historische Filmaufnahmen im Archivplayer.",
+   "focus": "Unterscheide sichtbare Zerstörung von Vermutungen über einzelne Schicksale.",
+   "limit": "Aufnahmen der Folgen, keine Aufnahme des Erdbebens selbst.",
+   "reference": "April 1906"
+  },
+  "intro": "Die Kamera zeigt die beschädigte Stadt und Menschen in den Strassen nach der Katastrophe.",
+  "text": "",
+  "sources": [
+   "doc-quake"
+  ],
+  "related": [
+   "history"
+  ]
+ },
+ {
+  "id": "doc-hine",
+  "year": 1908,
+  "date": "August 1908",
+  "title": "Lewis Hine: Nachtarbeit in der Glashütte",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Bild",
+   "creator": "Lewis Wickes Hine / National Child Labor Committee",
+   "region": "Indiana, USA",
+   "language": "Fotografie; englische Bildunterschrift",
+   "url": "https://www.loc.gov/pictures/item/2018673722/",
+   "access": "Fotografie und damalige Beschriftung im Archiv.",
+   "focus": "Welche Angaben stammen aus dem Bild, welche erst aus Hines Beschriftung?",
+   "limit": "Alter, Uhrzeit und Arbeitsbedingungen sind nicht vollständig am Bild ablesbar.",
+   "reference": "August 1908"
+  },
+  "intro": "Hine dokumentiert einen jungen Arbeiter um ein Uhr nachts. Das Foto gehört zu einer Kampagne gegen Kinderarbeit.",
+  "text": "",
+  "sources": [
+   "doc-hine"
+  ],
+  "related": [
+   "industry"
+  ]
+ },
+ {
+  "id": "doc-suffrage",
+  "year": 1913,
+  "date": "März 1913",
+  "title": "Frauenstimmrechtsdemonstration in Washington",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Bild",
+   "creator": "Zeitgenössische Pressefotografie; Library of Congress",
+   "region": "USA",
+   "language": "Fotografie; englische Erschliessung",
+   "url": "https://www.loc.gov/pictures/item/2001704188/",
+   "access": "Archivfoto mit Download- und Vergrösserungsansicht.",
+   "focus": "Untersuche Anordnung, Publikum und Transparente. Wie wird eine politische Forderung bildlich inszeniert?",
+   "limit": "Der Ausschnitt bildet weder die gesamte Bewegung noch alle Konflikte innerhalb der Bewegung ab.",
+   "reference": "März 1913"
+  },
+  "intro": "Der öffentliche Auftritt macht den Anspruch auf politische Teilhabe sichtbar.",
+  "text": "",
+  "sources": [
+   "doc-suffrage"
+  ],
+  "related": [
+   "vote"
+  ]
+ },
+ {
+  "id": "doc-somme",
+  "year": 1916,
+  "date": "1916",
+  "title": "The Battle of the Somme",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Film",
+   "creator": "Geoffrey Malins und John McDowell; britische Kriegsfilmorganisation",
+   "region": "Westfront",
+   "language": "Stummfilm mit englischen Zwischentiteln",
+   "url": "https://film.iwmcollections.org.uk/r/1310",
+   "access": "Archivfassung bei IWM Film; einzelne Sequenzen auswählen.",
+   "focus": "Vergleiche eine Marschszene mit einer Verwundetenszene. Was kann die Kamera zeigen, was bleibt ausserhalb des Bildes?",
+   "limit": "Propagandistischer Zusammenhang; einzelne Szenen wurden nachgestellt. Der Film enthält Kriegsverletzte und Tote.",
+   "reference": "1916"
+  },
+  "intro": "Der Kriegsfilm verbindet Vorbereitungen, Angriff und Folgen zu einer Erzählung über die Schlacht.",
+  "text": "",
+  "sources": [
+   "doc-somme"
+  ],
+  "related": [
+   "orientation-ww1"
+  ]
+ },
+ {
+  "id": "doc-fdr",
+  "year": 1933,
+  "date": "12. März 1933",
+  "title": "Roosevelt erklärt die Bankenkrise",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Ton",
+   "creator": "Franklin D. Roosevelt",
+   "region": "USA",
+   "language": "Englisch",
+   "url": "https://www.whitehousehistory.org/audio/franklin-d-roosevelt-first-fireside-chat-march-1933",
+   "access": "Historische Radioansprache; Einstieg: erste zwei Minuten.",
+   "focus": "Höre auf Anrede, Tempo und die Erklärung von Fachbegriffen. Wie entsteht Nähe?",
+   "limit": "Politische Vertrauenswerbung; die Rede belegt nicht allein den Erfolg der Massnahmen.",
+   "reference": "12. März 1933"
+  },
+  "intro": "Roosevelt erläutert Bankgeschäfte in direkter Ansprache und wirbt um Vertrauen während der Krise.",
+  "text": "",
+  "sources": [
+   "doc-fdr"
+  ],
+  "related": [
+   "orientation-depression"
+  ]
+ },
+ {
+  "id": "doc-migrant",
+  "year": 1936,
+  "date": "März 1936",
+  "title": "Dorothea Lange: Migrant Mother",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Bild",
+   "creator": "Dorothea Lange; dargestellt: Florence Owens Thompson und Kinder",
+   "region": "Kalifornien, USA",
+   "language": "Fotografie; englische Erschliessung",
+   "url": "https://guides.loc.gov/migrant-mother",
+   "access": "Fotoserie und Erläuterung der Library of Congress.",
+   "focus": "Vergleiche das bekannte Bild mit einer weiteren Aufnahme der Serie. Was verändert die Auswahl?",
+   "limit": "Die abgebildete Frau ist eine bestimmte Person, kein austauschbares Symbol für alle Betroffenen.",
+   "reference": "März 1936"
+  },
+  "intro": "Die bekannte Aufnahme ist Teil einer Serie. Auswahl und Ausschnitt machten eine konkrete Familie zum Symbol der Krise.",
+  "text": "",
+  "sources": [
+   "doc-migrant"
+  ],
+  "related": [
+   "orientation-depression"
+  ]
+ },
+ {
+  "id": "doc-sputnik",
+  "year": 1957,
+  "date": "4. Oktober 1957",
+  "title": "Sputniks Funksignale",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Ton",
+   "creator": "Sowjetische Raumfahrt; Archivzugang über NASA",
+   "region": "UdSSR / Erdumlaufbahn",
+   "language": "Signaltöne ohne Sprache",
+   "url": "https://www.nasa.gov/historical-sounds/",
+   "access": "Auf der NASA-Seite den Eintrag «Sputnik» öffnen.",
+   "focus": "Beschreibe zuerst Rhythmus und Klang. Welche politische Bedeutung entsteht erst durch Kontextwissen?",
+   "limit": "Die Tonfolge allein enthält keine Aussage über politische Überlegenheit.",
+   "reference": "4. Oktober 1957"
+  },
+  "intro": "Das wiederkehrende Radiosignal machte einen Satelliten technisch wahrnehmbar und wurde zum Klangsymbol des Raumfahrtwettlaufs.",
+  "text": "",
+  "sources": [
+   "doc-sputnik"
+  ],
+  "related": [
+   "moon"
+  ]
+ },
+ {
+  "id": "doc-lieberherr",
+  "year": 1971,
+  "date": "7. Februar 1971",
+  "title": "Emilie Lieberherr zum Frauenstimmrecht",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Ton",
+   "creator": "Emilie Lieberherr / SRF, Echo der Zeit",
+   "region": "Zürich / Schweiz",
+   "language": "Deutsch",
+   "url": "REUSE:srfVote",
+   "access": "O-Ton, 2:09 Minuten; direkt hier abspielbar.",
+   "focus": "Höre auf den Unterschied zwischen erreichtem Recht und weiteren Erwartungen.",
+   "limit": "Die Stimme einer Akteurin steht nicht für sämtliche Frauen oder politischen Positionen.",
+   "reference": "7. Februar 1971"
+  },
+  "intro": "Die Zürcher Stadträtin nimmt am Abstimmungstag Stellung zur Einführung des Frauenstimmrechts.",
+  "text": "",
+  "sources": [
+   "doc-lieberherr"
+  ],
+  "related": [
+   "vote"
+  ]
+ },
+ {
+  "id": "doc-apolloaudio",
+  "year": 1969,
+  "date": "21. Juli 1969 · UTC",
+  "title": "Armstrongs erster Schritt: Missionsfunk",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Ton",
+   "creator": "Neil Armstrong / NASA",
+   "region": "Mond / USA",
+   "language": "Englisch",
+   "url": "https://www.nasa.gov/historical-sounds/",
+   "access": "Kurzer Originalfunkspruch; direkt hier abspielbar.",
+   "focus": "Vergleiche den technischen Anlass mit dem universalen Anspruch seiner Formulierung.",
+   "limit": "Ein ausgewählter Ausschnitt; Pausen und technische Übertragung gehören zur Quelle.",
+   "reference": "21. Juli 1969 · UTC"
+  },
+  "intro": "Armstrong verbindet seinen Schritt sprachlich mit der ganzen Menschheit.",
+  "text": "",
+  "sources": [
+   "doc-apolloaudio"
+  ],
+  "related": [
+   "moon"
+  ]
+ },
+ {
+  "id": "doc-apollofilm",
+  "year": 1969,
+  "date": "21. Juli 1969 · UTC",
+  "title": "Mondlandung: Fernsehübertragung",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Film",
+   "creator": "NASA",
+   "region": "Mond / weltweites Fernsehpublikum",
+   "language": "Englisch",
+   "url": "https://www.youtube.com/watch?v=xSdHina-fTk",
+   "access": "NASA-Archivveröffentlichung von 2013; erste zwei Minuten.",
+   "focus": "Welche Bewegung erkennst du im Bild selbst, welche erst mit dem Kommentar?",
+   "limit": "Aufnahme 1969 und spätere Restaurierung bzw. Veröffentlichung sind verschiedene Daten.",
+   "reference": "21. Juli 1969 · UTC"
+  },
+  "intro": "Die Fernsehbilder dokumentieren Armstrongs Abstieg und ersten Schritt; die zugängliche Fassung ist restauriert.",
+  "text": "",
+  "sources": [
+   "doc-apollofilm"
+  ],
+  "related": [
+   "moon"
+  ]
+ },
+ {
+  "id": "doc-earthrise",
+  "year": 1968,
+  "date": "24. Dezember 1968",
+  "title": "Earthrise",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Bild",
+   "creator": "William Anders / Apollo 8 / NASA",
+   "region": "Mondumlaufbahn",
+   "language": "Fotografie; englische Erläuterung",
+   "url": "https://science.nasa.gov/earth/earth-observatory/earthrise-revisited-82693/",
+   "access": "Fotografie und rekonstruierter Aufnahmekontext bei NASA.",
+   "focus": "Trenne den sichtbaren Bildinhalt von der ökologischen Bedeutung, die ihm später zugeschrieben wurde.",
+   "limit": "Eine spätere Rekonstruktion der Kamerabewegung ist nicht mit der Originalaufnahme identisch.",
+   "reference": "24. Dezember 1968"
+  },
+  "intro": "Die Erde erscheint über dem Mondhorizont. Die Aufnahme wurde später zu einem Symbol planetarer Verletzlichkeit.",
+  "text": "",
+  "sources": [
+   "doc-earthrise"
+  ],
+  "related": [
+   "moon",
+   "paris"
+  ]
+ },
+ {
+  "id": "doc-ewr",
+  "year": 1992,
+  "date": "6. Dezember 1992",
+  "title": "Echo der Zeit: Nein zum EWR",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Ton",
+   "creator": "SRF / Echo der Zeit",
+   "region": "Schweiz",
+   "language": "Deutsch",
+   "url": "https://www.srf.ch/audio/echo-der-zeit/das-grosse-nein-zum-ewr-auch-der-bundesrat-gehoert-zu-den?partId=68531d8b-342d-4b46-a04f-130960ba3872",
+   "access": "Zeitgenössischer Radiobeitrag im SRF-Player.",
+   "focus": "Unterscheide Ergebniszahlen von Bewertungen und Erwartungen für die weitere Europapolitik.",
+   "limit": "Die unmittelbare Deutung kennt die späteren bilateralen Entwicklungen noch nicht.",
+   "reference": "6. Dezember 1992"
+  },
+  "intro": "Der Beitrag deutet das Abstimmungsergebnis unmittelbar nach dem Entscheid und benennt politische Verlierer.",
+  "text": "",
+  "sources": [
+   "doc-ewr"
+  ],
+  "related": [
+   "orientation-ewr"
+  ]
+ },
+ {
+  "id": "doc-wallfilm",
+  "year": 1989,
+  "date": "November 1989",
+  "title": "Maueröffnung in der Wochenschau",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Film",
+   "creator": "Bundesarchiv; heutiger Zugang über Bundesregierung",
+   "region": "Berlin",
+   "language": "Deutsch",
+   "url": "REUSE:wallMedia",
+   "access": "Wochenschauausschnitt, 49 Sekunden; direkt hier abspielbar.",
+   "focus": "Achte auf Kommentar, Auswahl und Schnitt: Wie wird aus vielen Handlungen ein einziges Ereignis?",
+   "limit": "Eine Montage zeigt eine Auswahl; nicht jede Szene muss exakt am Moment der Grenzöffnung entstanden sein.",
+   "reference": "November 1989"
+  },
+  "intro": "Eine kurze Montage verdichtet Grenzöffnung und Feier zu einem historischen Wendepunkt.",
+  "text": "",
+  "sources": [
+   "doc-wallfilm"
+  ],
+  "related": [
+   "wall"
+  ]
+ },
+ {
+  "id": "doc-paledot",
+  "year": 1990,
+  "date": "14. Februar 1990",
+  "title": "Voyager: Pale Blue Dot",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Bild",
+   "creator": "NASA / Voyager 1",
+   "region": "Sonnensystem",
+   "language": "Fotografie; englische Erläuterung",
+   "url": "https://science.nasa.gov/resource/voyager-pale-blue-dot-download/",
+   "access": "NASA-Bild; die Seite erläutert auch die Neubearbeitung von 2020.",
+   "focus": "Was kannst du ohne Bildunterschrift erkennen? Wie verändert die Benennung «Erde» deine Wahrnehmung?",
+   "limit": "Das Bild ist technisch erzeugt; die Fassung von 2020 bearbeitet ältere Aufnahmedaten.",
+   "reference": "14. Februar 1990"
+  },
+  "intro": "Die Erde erscheint als winziger Lichtpunkt. Entfernung, Belichtung und Bildverarbeitung machen die Ansicht möglich.",
+  "text": "",
+  "sources": [
+   "doc-paledot"
+  ],
+  "related": [
+   "history"
+  ]
+ },
+ {
+  "id": "doc-marsaudio",
+  "year": 2021,
+  "date": "2021 · veröffentlicht am 17. März",
+  "title": "Perseverance: Fahrgeräusche auf dem Mars",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Ton",
+   "creator": "NASA / JPL-Caltech",
+   "region": "Mars",
+   "language": "Geräusche ohne Sprache",
+   "url": "REUSE:marsMedia",
+   "access": "90 Sekunden bearbeitete Tonaufnahme; direkt hier abspielbar.",
+   "focus": "Trenne gehörte Geräusche von vermuteten Ursachen. Welche Zuordnung braucht technische Angaben?",
+   "limit": "Kein unveränderter «Klang des Mars»: Auswahl und Filterung gehören zur Aufnahme.",
+   "reference": "2021 · veröffentlicht am 17. März"
+  },
+  "intro": "Die Mikrofone erfassen auch den Rover selbst. Der Ausschnitt verbindet mehrere Abschnitte einer Fahrt.",
+  "text": "",
+  "sources": [
+   "doc-marsaudio"
+  ],
+  "related": [
+   "mars"
+  ]
+ },
+ {
+  "id": "doc-parisfilm",
+  "year": 2021,
+  "date": "21. Januar 2021 · Rückblick auf 2015",
+  "title": "UNO erklärt das Pariser Abkommen",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Film",
+   "creator": "United Nations / UN Climate Change",
+   "region": "Welt",
+   "language": "Englisch",
+   "url": "https://webtv.un.org/en/asset/k16/k16ojprimc",
+   "access": "Kurzer institutioneller Erklärfilm, 1:39 Minuten.",
+   "focus": "Achte darauf, ob ein Satz ein Ziel nennt oder eine bereits erreichte Wirkung belegt.",
+   "limit": "Quelle für die Klimakommunikation von 2021; keine Filmaufnahme der Vertragsverhandlungen von 2015.",
+   "reference": "21. Januar 2021 · Rückblick auf 2015"
+  },
+  "intro": "Der Film erläutert rückblickend Ziele des Klimaabkommens von 2015 und wirbt für gemeinsames Handeln.",
+  "text": "",
+  "sources": [
+   "doc-parisfilm"
+  ],
+  "related": [
+   "paris"
+  ]
+ },
+ {
+  "id": "doc-marsfilm",
+  "year": 2021,
+  "date": "18. Oktober 2021",
+  "title": "NASA erläutert die Marsmikrofone",
+  "lane": "audiovisual",
+  "document": {
+   "kind": "Film",
+   "creator": "NASA / JPL-Caltech",
+   "region": "USA / Marsmission",
+   "language": "Englisch",
+   "url": "https://www.jpl.nasa.gov/videos/nasas-perseverance-rover-captures-the-sounds-of-mars/",
+   "access": "Erklärvideo mit Tonbeispielen; erste zwei Minuten.",
+   "focus": "Vergleiche ein Tonbeispiel vor und nach der Erklärung: Was weisst du erst durch die Sprecherinnen und Sprecher?",
+   "limit": "Institutionelle Darstellung kombiniert Messdaten und Vermittlung; keine unbearbeitete Daueraufnahme.",
+   "reference": "18. Oktober 2021"
+  },
+  "intro": "Forschende erläutern, wie die Mikrofone an Perseverance arbeiten und welche Geräusche sie registrieren.",
+  "text": "",
+  "sources": [
+   "doc-marsfilm"
+  ],
+  "related": [
+   "mars"
+  ]
+ }
+];
+for(const e of DOCUMENT_EVENTS){
+ const d=e.document;if(d.url.startsWith('REUSE:'))d.url=SOURCES[d.url.slice(6)].url;
+ SOURCES[e.id]={title:d.creator+' · '+e.title,url:d.url,note:d.access};
+ e.text=d.region+' · '+d.creator;e.searchText=[d.kind,d.creator,d.region,d.language].join(' ');
+}
+EVENTS.push(...DOCUMENT_EVENTS);
+const DOCUMENT_MEDIA_LINKS={ 'doc-lieberherr':['vote','lieberherr'],'doc-apolloaudio':['moon','apollo-voice'],'doc-apollofilm':['moon','apollo-film'],'doc-wallfilm':['wall','wall-news'],'doc-marsaudio':['mars','mars-drive'],'doc-parisfilm':['paris','paris-film'],'doc-marsfilm':['mars','mars-film']};
+for(const [id,[parent,mediaId]] of Object.entries(DOCUMENT_MEDIA_LINKS)){const original=HISTORICAL_MEDIA[parent].find(m=>m.id===mediaId);HISTORICAL_MEDIA[id]=[{...original,id:'source-'+mediaId,provider:parent==='vote'?'SRF':parent==='wall'?'Bundesregierung':parent==='paris'?'UNO':'NASA'}];}
+
+const DOCUMENT_PREVIEWS={
+ 'doc-wave':{url:'https://collectionapi.metmuseum.org/api/collection/v1/iiif/39799/140190/main-image',credit:'The Metropolitan Museum of Art · JP2569 · Public Domain'},
+ 'doc-suffrage':{url:'https://cdn.loc.gov/service/pnp/cph/3a20000/3a24000/3a24500/3a24587r.jpg',credit:'Library of Congress · Datensatz 2001704188 · Nachweis und Rechtehinweise beim Archiv'},
+ 'doc-emancipation':{url:'https://www.archives.gov/files/milestone-documents/images/doc-034-big.jpg',credit:'US National Archives · Emancipation Proclamation, erste Seite'}
+};
+for(const e of DOCUMENT_EVENTS)if(DOCUMENT_PREVIEWS[e.id])e.document.preview=DOCUMENT_PREVIEWS[e.id];

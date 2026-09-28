@@ -16,7 +16,7 @@ for(const bad of [0,1.5,10001,-100001]){const x=JSON.parse(JSON.stringify(state)
 const bad=JSON.parse(JSON.stringify(state));bad.materials['test-event'][0].type='text/html';assert.throws(()=>api.validate(bad));
 const duplicate=JSON.parse(JSON.stringify(state));duplicate.own[0].id='haiti';assert.throws(()=>api.validate(duplicate));
 assert.equal(api.esc('<img onerror="x">'),'&lt;img onerror=&quot;x&quot;&gt;');
-for(const e of events){if(e.orientation){assert(e.why&&e.limit&&e.region&&e.sources.length,e.id+' orientation context')}else{assert(e.activity && e.tasks.length>=2,e.id+' individual activity');assert(e.activity.cards.length>0,e.id+' materials');assert(e.activity.result.length>30,e.id+' outcome');}assert(e.year!==0,e.id+' year');for(const k of e.sources||[])assert(sources[k],e.id+' source '+k);for(const r of e.related||[])assert(events.some(x=>x.id===r)||['history','period','recurrence','materialism','medievalworld','egyptworld'].includes(r),e.id+' related '+r);if(e.image)assert(fs.existsSync(root+'/docs/assets/'+e.image),e.id+' image')}
+for(const e of events){if(e.document){assert(e.document.focus&&e.document.limit&&e.document.url.startsWith('https://')&&e.document.creator&&e.document.reference,e.id+' document context')}else if(e.orientation){assert(e.why&&e.limit&&e.region&&e.sources.length,e.id+' orientation context')}else{assert(e.activity && e.tasks.length>=2,e.id+' individual activity');assert(e.activity.cards.length>0,e.id+' materials');assert(e.activity.result.length>30,e.id+' outcome');}assert(e.year!==0,e.id+' year');for(const k of e.sources||[])assert(sources[k],e.id+' source '+k);for(const r of e.related||[])assert(events.some(x=>x.id===r)||['history','period','recurrence','materialism','medievalworld','egyptworld'].includes(r),e.id+' related '+r);if(e.image)assert(fs.existsSync(root+'/docs/assets/'+e.image),e.id+' image')}
 vm.runInContext('globalThis.mediaTests={media:HISTORICAL_MEDIA,mediaHtml,images:IMAGE_MANIFEST}',ctx);
 for(const [id,items] of Object.entries(ctx.mediaTests.media)){const e=events.find(e=>e.id===id);assert(e,id+' media event');const html=ctx.mediaTests.mediaHtml(e);assert(!html.includes('<iframe'),id+' no automatic embed');assert(!html.includes('<audio'),id+' no automatic audio load');for(const m of items){assert(m.source.startsWith('https://'));assert(m.question.length>50);assert(m.access.length>50);assert(html.includes('data-load-media="'+m.id+'"'));if(m.kind==='youtube')assert(/^[\w-]{11}$/.test(m.youtube));else assert(m.src.startsWith('https://'))}}
 for(const a of ctx.mediaTests.images.filter(a=>a.filename.endsWith('-source.jpg'))){assert(a.author&&a.license&&a.source_page&&a.source_criticism);assert(fs.existsSync(root+'/docs/assets/'+a.filename));assert(!a.image_date.includes('QS:'))}
@@ -382,3 +382,15 @@ const orientation=events.filter(e=>e.orientation);assert.equal(orientation.lengt
 for(const id of ["federal","hijra","qin","decolonization","ewr","swiss-un"])assert(orientation.some(e=>e.id==="orientation-"+id));
 const ownOrientation=api.defaults();ownOrientation.own.push({id:"my-orientation",year:1900,lane:"orientation",title:"Eigener Bezugspunkt",text:"Notiz",source:"Quelle"});assert.equal(api.validate(JSON.parse(JSON.stringify(ownOrientation))).own[0].lane,"orientation");
 console.log("PASS: 57 Orientierungsdaten, weltgeschichtliche und Schweizer Bezugspunkte, eigene Ergänzungen exportierbar.");
+
+vm.runInContext(`globalThis.docTests={items:DOCUMENT_EVENTS,access:documentAccessHtml,activity:documentActivityHtml};`,ctx);
+for(const lane of ['written','audiovisual']){
+ const docs=ctx.docTests.items.filter(e=>e.lane===lane);assert.equal(docs.length,26);
+ for(const e of docs){assert(ctx.docTests.access(e).includes(e.document.url.replaceAll('&','&amp;')));assert(ctx.docTests.activity(e).includes(e.document.focus));}
+ const own=api.defaults();own.own.push({id:'my-doc-'+lane,year:1990,lane,title:'Eigenes Dokument',source:'Familienarchiv',text:'Beschreibung',own:true});own.notes[own.own[0].id]='Beobachtung';const saved=api.validate(JSON.parse(JSON.stringify(own)));assert.equal(saved.own[0].lane,lane);assert.equal(saved.notes[own.own[0].id],'Beobachtung');
+}
+assert.equal(new Set(ctx.docTests.items.map(e=>e.document.kind)).size,4);
+assert(ctx.docTests.items.find(e=>e.id==='doc-bayeux').year>1066);
+assert.equal(ctx.docTests.items.find(e=>e.id==='doc-parisfilm').year,2021);
+
+console.log('PASS: Zwei Dokumentenspuren mit je 26 Einträgen, individuellen Betrachtungshilfen, getrennten Quellendaten und erweiterbaren Kategorien.');
