@@ -817,7 +817,7 @@ function compactWorldWorkspace(){
  $('#worldDrawerClose').onclick=()=>{worldSheet='';sheet.close()};sheet.addEventListener('cancel',()=>{worldSheet=''});
  root.querySelectorAll('a[href="#interpretationSettings"]').forEach(a=>a.onclick=e=>{e.preventDefault();open('settings')});
  root.querySelectorAll('a[href="#interpretationExperiment"]').forEach(a=>a.onclick=e=>{e.preventDefault();worldSheet='';sheet.close();$('#interpretationExperiment').scrollIntoView({block:'nearest'})});
- const board=root.querySelector('#interpretationExperiment .semantic-board');if(board&&!board.classList.contains('schematic-scene')){
+ const board=root.querySelector('#interpretationExperiment .semantic-board');if(board&&!board.matches('.schematic-scene,.goal-overview')){
  const fields=[...board.querySelectorAll('.board-field')],tabs=document.createElement('div'),deck=document.createElement('div');tabs.className='board-field-tabs';tabs.setAttribute('role','group');tabs.setAttribute('aria-label','Deutungsfeld wählen');deck.className='board-deck';
  let current=boardFieldSelection[representation];if(!Number.isInteger(current)||current>=fields.length)current=Math.max(0,fields.findIndex(f=>f.querySelector('.board-card')));
  const activate=i=>{boardFieldSelection[representation]=i;fields.forEach((f,j)=>f.hidden=i!==j);[...tabs.children].forEach((b,j)=>b.setAttribute('aria-pressed',String(i===j)));};
@@ -1189,9 +1189,20 @@ function historicalPresentSceneHtml(items){
  </div>${undatedOverview(items)}<figcaption>Verschiebe das Standjahr: Dieselbe Spur kann vom späteren Geschehen in die Vergangenheit wechseln. Das macht sie noch nicht zum Wissen dieser Person. Die drei Bereiche übertragen Augustinus’ Unterscheidung von Erinnern, gegenwärtiger Aufmerksamkeit und Erwarten auf eine historische Untersuchung.</figcaption></figure>`;
 }
 
+// A goal is an explicit judgement criterion, never a measured upward trajectory.
+function directionOverviewHtml(items){
+ const shown=worldSelection(items).sort((a,b)=>a.year-b.year),goal=telosGoal('direction');
+ const groups=[['open','Noch zu prüfen','Ohne Begründung bleibt die Bedeutung offen.'],['support','Spricht für das Ziel','Eine begründete Verbesserung nach diesem Massstab.'],['counter','Spricht gegen das Ziel','Ein Rückschritt oder ein Gegenbefund.'],['ambivalent','Wirkt unterschiedlich','Zum Beispiel ein Gewinn für einige, ein Verlust für andere.'],['outside','Kein belegter Bezug','Für dieses Ziel ergibt sich bisher keine Aussage.']];
+ const buckets=Object.fromEntries(groups.map(([key])=>[key,[]]));
+ for(const e of shown){const d=readingDecision(e.id);const key=worldAssumption&&goal&&d&&!d.stale&&buckets[d.role]?d.role:'open';buckets[key].push({e,d,key})}
+ const row=({e,d,key})=>`<button class="goal-event board-role-${key}" data-lens-focus="${esc(e.id)}"><span class="goal-event-date">${esc(yr(e.year))}</span>${e.image?`<img src="${esc(imageSrc(e.image))}" alt="" loading="lazy">`:''}<span class="goal-event-body"><strong>${esc(e.title)}</strong>${key!=='open'?`<small>${esc(d.reason)}</small>`:d?.stale?'<small>Ziel oder Annahmen geändert: erneut prüfen.</small>':''}</span><span aria-hidden="true">↗</span></button>`;
+ return `<figure class="world-scene semantic-board goal-overview"><header class="goal-question"><span>FORTSCHRITT – GEMESSEN WORAN?</span><h3>${esc(goal||'Zuerst ein Ziel bestimmen')}</h3><p>Dieses Ziel ist eine gesetzte Vorstellung davon, was besser wäre. Es ist kein feststehendes Ende der Geschichte.</p><a href="#interpretationSettings">Ziel und betroffene Gruppe ändern ↗</a></header><div class="goal-instructions"><span><b>1</b> Ziel lesen oder ändern</span><span><b>2</b> Ereignis öffnen und Belege prüfen</span><span><b>3</b> Wirkung begründet zuordnen</span></div>${!worldAssumption?'<p class="goal-off">Die Zieldeutung ist ausgeschaltet. Alle Ereignisse stehen deshalb ohne Wertung im Prüfbestand.</p>':''}<p class="goal-summary"><strong>${shown.length} Ereignisse · ${shown.length-buckets.open.length} eingeordnet · ${buckets.open.length} offen</strong> Die Spalten zeigen deine Urteile, keine automatisch erkannten Wirkungen. Innerhalb jeder Spalte gilt die Datumsfolge.</p><div class="goal-columns">${groups.map(([key,label,help])=>`<section class="goal-column goal-${key}" aria-label="${label}"><h4>${label} <span>${buckets[key].length}</span></h4><p>${help}</p><div class="goal-events" tabindex="0" aria-label="${label}: Ereignisse, scrollbar">${buckets[key].map(row).join('')||'<p class="goal-empty">Noch keine Zuordnung. Das bedeutet nicht, dass es historisch keine solchen Wirkungen gab.</p>'}</div></section>`).join('')}</div><figcaption>Ändere das Ziel: Bereits begründete Urteile müssen neu geprüft werden. Dass ein Ereignis später stattfindet, macht es nicht zum Fortschritt. Auch viele Verbesserungen beweisen nicht, dass Geschichte notwendig auf dieses Ziel zuläuft.</figcaption>${undatedOverview(items)}</figure>`;
+}
+
 // Spatial diagrams: the marks are events, their positions follow the stated model.
 function worldSceneHtml(items){
  if(representation==='present')return presentSceneHtml(items);
+ if(representation==='direction')return directionOverviewHtml(items);
  const mode=representation,shown=worldSelection(items).sort((a,b)=>a.year-b.year),n=shown.length,anchor=['medieval','direction'].includes(mode)?telosGoal(mode):premiseValue(mode,PREMISE_LABS[mode].anchor);
  const text=(x,y,t,cls='')=>`<text x="${x}" y="${y}" class="${cls}">${esc(t)}</text>`;
  const path=d=>`<path d="${d}"/>`;
@@ -1232,9 +1243,12 @@ function worldSceneHtml(items){
 }
 
 WORLD_READINGS.direction.action='Begründete Zieldeutung anzeigen';
+WORLD_READINGS.direction.counter='Ändere den Massstab: Welche Urteile bleiben begründbar, welche müssen neu geprüft werden?';
+WORLD_READINGS.direction.caution='Die Spalten ordnen Urteile nach einem gewählten Ziel. Sie bilden weder Hegels Philosophie vollständig ab noch beweisen sie einen notwendigen Verlauf.';
 WORLD_READINGS.direction.mechanism='Zeitfolge und Zielbewertung sind getrennte Dimensionen: Eine spätere Spur ist nicht automatisch ein Fortschritt.';
 PERSPECTIVE_INTROS.medieval.transfer='Der Heilshorizont steht über dem irdischen Geschehen. Ereignisse laufen in zeitlicher Reihenfolge nach rechts. Erst eine begründete Einordnung rückt eine Spur zum angenommenen Heil oder davon weg. Das räumliche Verhältnis stellt deine Deutung dar; es beweist keinen göttlichen Plan.';
-PERSPECTIVE_INTROS.direction.limit='Die gestrichelte Aufstiegskurve stellt eine Behauptung zur Prüfung. Ohne begründete Einordnung steigen Ereignisse nicht mit ihrem Datum auf. Die vertikale Position ist deine Wertung nach einem Massstab, keine Messung von Freiheit.';
+PERSPECTIVE_INTROS.direction.transfer='Bestimme zuerst, welches Ziel und wessen Lebensbedingungen du beurteilst. Öffne dann ein Ereignis, prüfe seine Belege und begründe seine Zuordnung. Die fünf Spalten unterscheiden offene Fragen, Verbesserungen, Gegenbefunde, widersprüchliche Wirkungen und fehlenden Bezug.';
+PERSPECTIVE_INTROS.direction.limit='Ein Fortschrittsurteil braucht einen Massstab und eine betroffene Gruppe. Die Zuordnungen sind begründungsbedürftige Urteile, keine Messwerte. Auch eine Folge von Verbesserungen beweist kein notwendiges Ziel der Geschichte.';
 PERSPECTIVE_INTROS.egypt.transfer='Die benannte Ordnung steht im Zentrum. Ereignisse umgeben sie zunächst ohne Wertung. Begründete Zuordnungen verändern die Nähe zu dieser Ordnung. Die Umlaufposition dient der Übersicht und beweist keinen historischen Zyklus.';
 PERSPECTIVE_INTROS.layers.transfer='Die Bildpunkte beginnen als datierte Vorgänge auf der Ereignisebene. Wähle im Popup einen ergänzenden Untersuchungsschwerpunkt: Ereignis, Entwicklung oder lange Dauer. Die Spur wechselt die Ebene. Diese Position sagt, was du untersuchst; sie misst keine Laufzeit.';
 PERSPECTIVE_INTROS.recurrence.transfer='Die Spirale ordnet Winkel nach der gewählten Umlauflänge und den Abstand vom Zentrum nach der zeitlichen Reihenfolge. Verändere die Umlauflänge und beobachte die wechselnden Nachbarschaften. Prüfe dann an Quellen, ob ein gemeinsames Merkmal über die optische Nähe hinaus trägt.';

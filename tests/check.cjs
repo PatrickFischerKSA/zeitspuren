@@ -205,7 +205,7 @@ const wholeItems=lensItems();
 for(const mode of Object.keys(WHOLE_VIEW_FORMS)){
  representation=mode;const html=worldSceneHtml(wholeItems);
  for(const e of wholeItems)if(!html.includes('data-lens-focus="'+e.id+'"'))throw Error('Gesamtschau verliert '+e.id+' in '+mode);
- if(!html.includes('whole-form-backdrop'))throw Error('Gesamtform fehlt');
+ if(!html.includes(mode==='direction'?'goal-columns':'whole-form-backdrop'))throw Error('Gesamtform fehlt');
 }
 representation=overviewOldMode;worldAll=overviewOldAll;
 `,ctx);
@@ -323,3 +323,13 @@ for(let i=0;i<30;i++){
 }
 assert(ct.characters.some(c=>c.id==='nero'&&c.year===60));assert(ct.characters.some(c=>c.id==='custos'&&c.year===1150));
 console.log('PASS: 30 distinct historical first-person drafts, complete perspectives, existing context links and random change without immediate repetition.');
+vm.runInContext(`
+state=defaults();representation='direction';worldAll=true;worldAssumption=true;ensureReading('direction');state.notes['telos-direction-goal']='Politische Gleichberechtigung';
+setReadingDecision('vote','support',2,'1971 wurde das eidgenössische Stimmrecht auf Schweizer Frauen erweitert.');
+let overview=directionOverviewHtml(lensItems());
+if(!overview.includes('goal-event board-role-support')||!overview.includes('1971 wurde'))throw Error('Begründetes Urteil fehlt');
+if(overview.includes('diagram-number')||!overview.includes('Wann beginnt politische Gleichheit?'))throw Error('Unlesbare Ereignisse');
+state.notes['telos-direction-goal']='Anderes Ziel';overview=directionOverviewHtml(lensItems());
+if(overview.includes('goal-event board-role-support')||!overview.includes('erneut prüfen'))throw Error('Zielwechsel muss Urteile öffnen');
+`,ctx);
+console.log('PASS: Zielübersicht zeigt benannte Ereignisse, begründete Urteile und erneute Prüfung nach Zielwechsel.');
