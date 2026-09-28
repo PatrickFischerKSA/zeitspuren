@@ -423,3 +423,12 @@ if(!frontSpace.includes('stroke-dasharray')||!frontSpace.includes('1807–1823')
 if(!strataSpaceSvg([],1807,100,'front').includes('<svg'))throw Error('Empty spatial view broken');
 `,ctx);
 console.log('PASS: Perspective geometry, opposite viewing directions, dated intervals and open durations.');
+vm.runInContext(`
+const directionSaved={state,representation,worldAll,worldYear,worldWindow};state=defaults();representation='direction';ensureReading('direction');randomConceptDraft(()=>0);const firstDirection=randomConceptMeta().model;
+if(directionProposals().length!==3)throw Error('Coherent examples missing');
+state.notes[telosKey('direction','question')]='Meine eigene Frage';if(directionProposals().length)throw Error('Custom question must not inherit automatic examples');
+captureReadings();const restoredDirection=api.validate(JSON.parse(JSON.stringify(state)));if(!Object.values(restoredDirection.interpretations.direction.profiles).some(p=>p.notes['telos-direction-question']==='Meine eigene Frage'))throw Error('Own question not retained');
+randomConceptDraft(()=>0);if(randomConceptMeta().model===firstDirection)throw Error('Repeated random constellation');
+state=directionSaved.state;representation=directionSaved.representation;worldAll=directionSaved.worldAll;worldYear=directionSaved.worldYear;worldWindow=directionSaved.worldWindow;
+`,ctx);
+console.log('PASS: Coherent random constellations, distinct next choice, custom questions and profile backup.');
