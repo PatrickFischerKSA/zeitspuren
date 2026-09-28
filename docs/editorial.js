@@ -1441,3 +1441,897 @@ SOURCES.marxPreface={title:'Karl Marx: Vorwort zur Kritik der politischen Ökono
 
 // Existing sources reused by the revised questions.
 for(const [id,refs] of Object.entries({nietzsche:["war"],halbwachs:["war"],assmann:["war","memory"]})){const e=EVENTS.find(e=>e.id===id);e.related=[...new Set([...(e.related||[]),...refs])];}
+
+// Concise orientation anchors; deliberately separate from the source investigations.
+Object.assign(SOURCES,{
+ "orientSwiss": {
+  "title": "EDA: Geschichte der Schweiz",
+  "url": "https://www.aboutswitzerland.eda.admin.ch/de/geschichte-der-schweiz"
+ },
+ "orient1291": {
+  "title": "Historisches Lexikon der Schweiz: Bundesbriefe",
+  "url": "https://hls-dhs-dss.ch/de/articles/009600/2010-05-07/"
+ },
+ "orient1918": {
+  "title": "Historisches Lexikon der Schweiz: Landesstreik",
+  "url": "https://hls-dhs-dss.ch/de/articles/016533/2012-08-09/"
+ },
+ "orientQin": {
+  "title": "Metropolitan Museum: Qin Dynasty (221–206 B.C.)",
+  "url": "https://www.metmuseum.org/essays/qin-dynasty-221-206-b-c"
+ },
+ "orient800": {
+  "title": "Encyclopaedia Britannica: Charlemagne",
+  "url": "https://www.britannica.com/biography/Charlemagne"
+ },
+ "orientPest": {
+  "title": "Encyclopaedia Britannica: Black Death",
+  "url": "https://www.britannica.com/event/Black-Death"
+ },
+ "orient1453": {
+  "title": "World History Encyclopedia: 1453 – The Fall of Constantinople",
+  "url": "https://www.worldhistory.org/article/1180/1453-the-fall-of-constantinople/"
+ },
+ "orientReform": {
+  "title": "Deutsches Historisches Museum: Reformation und Dreissigjähriger Krieg",
+  "url": "https://www.dhm.de/ausstellungen/dauerausstellung/reformation-und-dreissigjaehriger-krieg/"
+ },
+ "orient1776": {
+  "title": "US National Archives: Declaration of Independence",
+  "url": "https://www.archives.gov/founding-docs/declaration"
+ },
+ "orient1815": {
+  "title": "Deutsches Historisches Museum: 1789–1871",
+  "url": "https://www.dhm.de/archiv/ausstellungen/staendige-ausstellung/1789-1871/index.html"
+ },
+ "orient1799": {
+  "title": "EDA: Die Schweiz unter französischer Herrschaft",
+  "url": "https://www.eda.admin.ch/dam/PRS-Web/de/dokumente/fr-herrschaft_DE.pdf"
+ },
+ "orient1864": {
+  "title": "IKRK: Geschichte des humanitären Völkerrechts",
+  "url": "https://www.icrc.org/en/document/treaties-and-customary-law"
+ },
+ "orient1884": {
+  "title": "Politisches Archiv des Auswärtigen Amts: Generalakte der Berliner Kongo-Konferenz",
+  "url": "https://archiv.diplo.de/arc-de/das-politische-archiv/generalakte-2683776"
+ },
+ "orientWW1": {
+  "title": "National Army Museum: First World War",
+  "url": "https://www.nam.ac.uk/explore/first-world-war"
+ },
+ "orient1917": {
+  "title": "Deutsches Historisches Museum: 1917. Revolution.",
+  "url": "https://www.dhm.de/ausstellungen/archiv/2017/1917-revolution/"
+ },
+ "orient1929": {
+  "title": "Deutsches Historisches Museum: Weltwirtschaftskrise",
+  "url": "https://www.dhm.de/lemo/kapitel/weimarer-republik/industrie-und-wirtschaft/weltwirtschaftskrise"
+ },
+ "orientShoah": {
+  "title": "United States Holocaust Memorial Museum: Einführung in den Holocaust",
+  "url": "https://encyclopedia.ushmm.org/content/de/article/introduction-to-the-holocaust"
+ },
+ "orientWW2": {
+  "title": "National Army Museum: Second World War",
+  "url": "https://www.nam.ac.uk/explore/second-world-war"
+ },
+ "orientUN": {
+  "title": "Vereinte Nationen: Geschichte der UNO",
+  "url": "https://www.un.org/en/about-us/history-of-the-un"
+ },
+ "orientRights": {
+  "title": "Vereinte Nationen: Allgemeine Erklärung der Menschenrechte",
+  "url": "https://www.un.org/en/about-us/universal-declaration-of-human-rights"
+ },
+ "orientPalestine": {
+  "title": "Vereinte Nationen: History of the Question of Palestine",
+  "url": "https://www.un.org/unispal/history/"
+ },
+ "orientChina": {
+  "title": "Bundeszentrale für politische Bildung: Geschichte Chinas",
+  "url": "https://www.bpb.de/themen/asien/china/44247/geschichte/"
+ },
+ "orientEU": {
+  "title": "Rat der Europäischen Union: Historische Zeitleiste",
+  "url": "https://www.consilium.europa.eu/en/history/"
+ },
+ "orientDecol": {
+  "title": "Vereinte Nationen: Dekolonisierung",
+  "url": "https://www.un.org/dppa/decolonization/en/node/644"
+ },
+ "orientCold": {
+  "title": "Bundeszentrale für politische Bildung: Sowjetunion 1953–1991",
+  "url": "https://www.bpb.de/system/files/dokument_pdf/361_IzpB_Sowjetunion_II_barrierefrei_0.pdf"
+ },
+ "orientEWR": {
+  "title": "EDA: Abstimmungen und Chronologie der Europapolitik",
+  "url": "https://www.europa.eda.admin.ch/de/abstimmungen-und-chronologie"
+ },
+ "orientNeutral": {
+  "title": "EDA: Neutralität und UNO-Beitritt",
+  "url": "https://www.aboutswitzerland.eda.admin.ch/de/neutralitaet"
+ },
+ "orientCovid": {
+  "title": "WHO: Chronologie zu COVID-19 (2020)",
+  "url": "https://www.who.int/news/item/27-04-2020-who-timeline---covid-19"
+ },
+ "orientUkraine": {
+  "title": "UNO-Generalversammlung: Aggression gegen die Ukraine, Resolution ES-11/1 (2022)",
+  "url": "https://docs.un.org/en/A/RES/ES-11/1"
+ }
+});
+LANES.unshift(['orientation','Orientierungsdaten','Weltgeschichte · Schweizer Bezüge','#9b7438']);
+SOURCES.orientWestphalia={title:"Historisches Lexikon der Schweiz: Westfälischer Frieden",url:"https://hls-dhs-dss.ch/de/articles/008908/2013-10-28/"};
+const ORIENTATION_ROWS=[
+ [
+  "agriculture",
+  -10000,
+  null,
+  "ab ca. 10 000 v. u. Z.",
+  "Ackerbau und Sesshaftigkeit",
+  "Westasien; später weitere Regionen",
+  "In Teilen Westasiens breiten sich Ackerbau und Tierhaltung aus. Andere Regionen folgen eigenen zeitlichen Verläufen.",
+  "Orientierung für veränderte Ernährung, Siedlungen, Arbeitsteilung und Besitzverhältnisse.",
+  "Kein einzelner Erfindungstag und kein weltweit gleichzeitiger Übergang.",
+  [],
+  "neolithic"
+ ],
+ [
+  "writing",
+  -3200,
+  null,
+  "ab ca. 3200 v. u. Z.",
+  "Frühe Schriftsysteme",
+  "Mesopotamien und Ägypten",
+  "Frühe Schrift ermöglicht dauerhafte Aufzeichnungen, unter anderem für Verwaltung und Herrschaft.",
+  "Ein Bezugspunkt für staatliche Organisation und die Überlieferung schriftlicher Quellen.",
+  "Schriftlose Gesellschaften haben ebenfalls Geschichte; andere Schriften entstehen unabhängig.",
+  [],
+  "script"
+ ],
+ [
+  "democracy",
+  -450,
+  null,
+  "5. Jahrhundert v. u. Z.",
+  "Demokratie in Athen",
+  "Mittelmeerraum",
+  "Athener Bürger entscheiden in politischen Versammlungen. Frauen, Versklavte und ansässige Fremde sind ausgeschlossen.",
+  "Ein antiker Bezugspunkt heutiger Debatten über politische Beteiligung.",
+  "Die antike Bürgerdemokratie ist nicht mit allgemeinem Wahlrecht gleichzusetzen.",
+  [],
+  "athens"
+ ],
+ [
+  "qin",
+  -221,
+  null,
+  "221 v. u. Z.",
+  "Reichseinigung unter Qin",
+  "China",
+  "Qin Shi Huang vereinigt konkurrierende Reiche unter einer zentralisierten Kaiserherrschaft.",
+  "Ein wichtiger Bezugspunkt für die lange Geschichte chinesischer Kaiserreiche.",
+  "China besteht nicht seit diesem Jahr unverändert; Dynastien und Herrschaftsräume wechseln.",
+  [
+   "orientQin"
+  ],
+  "china"
+ ],
+ [
+  "rome-end",
+  476,
+  null,
+  "476",
+  "Absetzung des letzten weströmischen Kaisers",
+  "Westeuropa",
+  "Odoaker setzt Romulus Augustulus ab. Das oströmische Reich besteht weiter.",
+  "Ein häufig verwendetes Orientierungsdatum zwischen europäischer Antike und Mittelalter.",
+  "Politische Zäsur, kein abrupter Wechsel aller Lebensbereiche und keine Welt-Epochengrenze.",
+  [],
+  "romeend"
+ ],
+ [
+  "hijra",
+  622,
+  null,
+  "622",
+  "Hidschra: Mekka → Medina",
+  "Arabische Halbinsel",
+  "Muhammad und seine Anhänger verlassen Mekka und gehen nach Medina.",
+  "Bezugspunkt der islamischen Zeitrechnung und der frühen muslimischen Gemeinschaft.",
+  "Die islamische Jahreszählung verwendet Mondjahre; eine blosse Subtraktion von 622 genügt nicht.",
+  [],
+  "hijra"
+ ],
+ [
+  "charlemagne",
+  800,
+  null,
+  "25. Dezember 800",
+  "Kaiserkrönung Karls des Grossen",
+  "West- und Mitteleuropa",
+  "Papst Leo III. krönt Karl in Rom zum Kaiser.",
+  "Ein Bezugspunkt für das Verhältnis von Kirche, Herrschaft und römischem Erbe im westlichen Europa.",
+  "Das byzantinische Kaisertum besteht parallel; hier beginnt kein einheitliches europäisches Staatswesen.",
+  [
+   "orient800"
+  ],
+  "medievalworld"
+ ],
+ [
+  "printing-china",
+  868,
+  null,
+  "868",
+  "Datierter Druck des Diamant-Sutra",
+  "China",
+  "Das erhaltene Diamant-Sutra trägt eine Datierung von 868 und wurde im Holzblockdruck hergestellt.",
+  "Zeigt eine lange Druckgeschichte ausserhalb Europas, vor Gutenberg.",
+  "Das Datum bezeichnet dieses Exemplar, nicht die Erfindung des Druckens.",
+  [],
+  "print"
+ ],
+ [
+  "charter",
+  1291,
+  null,
+  "August 1291",
+  "Bundesbrief von 1291",
+  "Innerschweiz",
+  "Ein Bündnisbrief von Uri, Schwyz und Unterwalden wird später zum nationalen Gründungsdokument.",
+  "Ein zentraler Bezugspunkt schweizerischer Erinnerungskultur.",
+  "Die Eidgenossenschaft entstand in einem längeren Bündnisprozess; 1291 ist nicht die Gründung des heutigen Bundesstaats.",
+  [
+   "orient1291"
+  ],
+  "period"
+ ],
+ [
+  "plague",
+  1347,
+  1351,
+  "1347–1351",
+  "Pestwelle: der «Schwarze Tod»",
+  "Europa, Mittelmeerraum und Verbindungen nach Asien",
+  "Eine schwere Pestpandemie erreicht weite Teile Europas und verursacht massenhaftes Sterben.",
+  "Orientierung für demografische Krisen, Handelsverbindungen und soziale Veränderungen.",
+  "Die Datierung umreisst die grosse europäische Welle; Ausbrüche reichen räumlich und zeitlich darüber hinaus.",
+  [
+   "orientPest"
+  ],
+  "medievaldaily"
+ ],
+ [
+  "gutenberg",
+  1450,
+  null,
+  "um 1450",
+  "Buchdruck mit beweglichen Metalllettern",
+  "Europa",
+  "Gutenberg entwickelt in Mainz ein Verfahren, das die Produktion gedruckter Bücher in Europa stark erweitert.",
+  "Ein Bezugspunkt für Medienwandel, Reformation und Verbreitung von Wissen.",
+  "Keine weltweite Ersterfindung des Druckens; asiatische Verfahren sind älter.",
+  [],
+  "gutenberg"
+ ],
+ [
+  "constantinople",
+  1453,
+  null,
+  "29. Mai 1453",
+  "Osmanische Eroberung Konstantinopels",
+  "Östlicher Mittelmeerraum",
+  "Die Truppen Mehmeds II. erobern Konstantinopel; das byzantinische Reich endet.",
+  "Orientierung für die osmanische Machtstellung und das Ende des byzantinischen Kaisertums.",
+  "Für andere Weltregionen beginnt dadurch keine neue Epoche.",
+  [
+   "orient1453"
+  ],
+  "romeend"
+ ],
+ [
+  "atlantic",
+  1492,
+  null,
+  "1492",
+  "Kolumbus erreicht die Karibik",
+  "Amerika und Atlantik",
+  "Kolumbus’ Fahrt eröffnet eine Phase dauerhafter europäischer Expansion, Eroberung und kolonialer Verflechtung.",
+  "Ein Schlüsseljahr für den Atlantikraum und die Geschichte europäischer Kolonialherrschaft.",
+  "Amerika war längst besiedelt; «Entdeckung» ist eine europäische Perspektive.",
+  [],
+  "columbus"
+ ],
+ [
+  "luther",
+  1517,
+  null,
+  "1517",
+  "Luthers Ablasskritik",
+  "Europa",
+  "Luthers 95 Thesen werden zum Bezugspunkt der Reformation und der Auseinandersetzung mit kirchlicher Autorität.",
+  "Orientierung für die konfessionellen Umbrüche des 16. Jahrhunderts.",
+  "Die Reformation hat viele Akteure und lokale Verläufe; sie ist nicht an einem Tag abgeschlossen.",
+  [
+   "orientReform"
+  ],
+  "local-reform"
+ ],
+ [
+  "zurich",
+  1523,
+  null,
+  "1523",
+  "Zürcher Disputationen und Reformation",
+  "Zürich und Eidgenossenschaft",
+  "Der Zürcher Rat entscheidet nach Disputationen zugunsten von Zwinglis Reformkurs.",
+  "Verbindet die europäische Reformation mit der konfessionellen Geschichte der Schweiz.",
+  "Andere eidgenössische Orte bleiben katholisch oder verfolgen eigene Reformwege.",
+  [],
+  "local-reform"
+ ],
+ [
+  "thirty-years",
+  1618,
+  1648,
+  "1618–1648",
+  "Dreissigjähriger Krieg",
+  "Europa",
+  "Konfessionelle, dynastische und machtpolitische Konflikte führen zu langjährigen Kriegen mit verheerenden Folgen.",
+  "Ein Bezugspunkt für Krieg, Staatsbildung und Friedensordnung in Europa.",
+  "Nicht nur ein Religionskrieg; Interessen und Bündnisse verändern sich.",
+  [
+   "orientReform"
+  ],
+  "medievalworld"
+ ],
+ [
+  "westphalia",
+  1648,
+  null,
+  "1648",
+  "Westfälischer Frieden",
+  "Europa und Eidgenossenschaft",
+  "Die Friedensschlüsse von Münster und Osnabrück beenden den Dreissigjährigen Krieg. Die Eidgenossenschaft erhält die Anerkennung ihrer Exemtion vom Reich.",
+  "Wichtig für europäische Friedensordnungen und die staatsrechtliche Stellung der Eidgenossenschaft.",
+  "Kein Beginn einer überall geltenden Gleichheit souveräner Staaten.",
+  [
+   "orientWestphalia"
+  ],
+  "period"
+ ],
+ [
+  "industry",
+  1750,
+  1850,
+  "ca. 1750–1850 · erste Phase",
+  "Industrielle Revolution",
+  "Zunächst Grossbritannien; weitere Regionen zeitversetzt",
+  "Mechanisierte Produktion, fossile Energie und Fabrikarbeit verändern Wirtschaft und Alltag.",
+  "Grundorientierung für Kapitalismus, soziale Frage, Urbanisierung und die Industrialisierung der Schweiz.",
+  "Ein Prozess mit regional verschiedenen Verläufen, kein punktuelles Ereignis.",
+  [],
+  "industry"
+ ],
+ [
+  "usa",
+  1776,
+  null,
+  "4. Juli 1776",
+  "US-Unabhängigkeitserklärung",
+  "Nordamerika und Atlantik",
+  "Dreizehn Kolonien erklären ihre Unabhängigkeit von Grossbritannien. Die Erklärung beruft sich auf gleiche Rechte.",
+  "Ein Bezugspunkt für Revolutionen, Verfassungen und Menschenrechtsansprüche.",
+  "Versklavung und der Ausschluss vieler Menschen bestehen trotz des Gleichheitsanspruchs fort.",
+  [
+   "orient1776"
+  ],
+  "revolution"
+ ],
+ [
+  "france",
+  1789,
+  null,
+  "1789",
+  "Beginn der Französischen Revolution",
+  "Frankreich, Europa und Atlantik",
+  "Die Revolution stellt die ständische Ordnung infrage; die Erklärung der Menschen- und Bürgerrechte formuliert neue Ansprüche.",
+  "Zentrales Orientierungsjahr für Volkssouveränität, Rechte und die politische Moderne.",
+  "Rechtserklärungen bedeuten noch keine Gleichberechtigung aller; der Verlauf bleibt konfliktreich.",
+  [],
+  "revolution"
+ ],
+ [
+  "haiti",
+  1791,
+  1804,
+  "1791–1804",
+  "Haitianische Revolution",
+  "Karibik und Atlantik",
+  "Der Aufstand versklavter Menschen in Saint-Domingue führt durch Krieg und Revolution zur Unabhängigkeit Haitis.",
+  "Verbindet die Geschichte der Revolutionen mit Versklavung, Kolonialismus und Befreiung.",
+  "Freiheit wird gegen koloniale Herrschaft erkämpft; sie folgt nicht automatisch aus europäischen Erklärungen.",
+  [],
+  "haiti"
+ ],
+ [
+  "helvetic",
+  1798,
+  null,
+  "1798",
+  "Helvetische Republik",
+  "Schweiz und Frankreich",
+  "Nach französischer Intervention und dem Zusammenbruch der alten Ordnung entsteht die zentralistische Helvetische Republik.",
+  "Einschnitt für Untertanenverhältnisse, Gleichheitsansprüche und die politische Neuordnung der Schweiz.",
+  "Befreiung von alten Herrschaften und militärische Fremdbestimmung bestehen nebeneinander.",
+  [
+   "orientSwiss",
+   "orient1799"
+  ],
+  "revolution"
+ ],
+ [
+  "coalition",
+  1799,
+  null,
+  "1799",
+  "Zweiter Koalitionskrieg in der Schweiz",
+  "Zürich, Alpenraum und Europa",
+  "Französische, österreichische und russische Truppen kämpfen im Gebiet der heutigen Schweiz; die Schlachten bei Zürich gehören dazu.",
+  "Verbindet europäische Revolutionskriege mit der Lokalgeschichte zwischen Zürich und Chur.",
+  "Die Kämpfe betreffen auch Versorgung, Einquartierungen und die Zivilbevölkerung.",
+  [
+   "orient1799"
+  ],
+  "local-linth"
+ ],
+ [
+  "vienna",
+  1815,
+  null,
+  "1815",
+  "Wiener Kongress und Schweizer Neutralität",
+  "Europa und Schweiz",
+  "Nach Napoleons Niederlage wird Europa neu geordnet. Die dauernde Neutralität der Schweiz wird international anerkannt.",
+  "Bezugspunkt für die europäische Ordnung nach Napoleon und die Schweizer Aussenpolitik.",
+  "Neutralität bedeutet nicht Abwesenheit politischer und wirtschaftlicher Verflechtungen.",
+  [
+   "orient1815",
+   "orientNeutral"
+  ],
+  "period"
+ ],
+ [
+  "federal",
+  1848,
+  null,
+  "12. September 1848",
+  "Gründung des Schweizer Bundesstaats",
+  "Schweiz; europäische Revolutionen",
+  "Nach dem Sonderbundskrieg von 1847 schafft die Bundesverfassung einen Bundesstaat mit gemeinsamen Institutionen.",
+  "Grunddatum der heutigen schweizerischen Staatsordnung, im europäischen Revolutionsjahr 1848.",
+  "Die neue Ordnung schliesst Frauen politisch aus; Gleichberechtigung ist nicht vollendet.",
+  [
+   "orientSwiss"
+  ],
+  "vote"
+ ],
+ [
+  "geneva",
+  1864,
+  null,
+  "22. August 1864",
+  "Erste Genfer Konvention",
+  "Schweiz und internationale Politik",
+  "Staaten vereinbaren den Schutz verwundeter Soldaten und des Sanitätspersonals im Krieg.",
+  "Ein Bezugspunkt für das humanitäre Völkerrecht und die internationale Rolle Genfs.",
+  "Die Konvention verbietet Krieg nicht; Regeln garantieren auch nicht ihre Einhaltung.",
+  [
+   "orient1864"
+  ],
+  "war"
+ ],
+ [
+  "constitution",
+  1874,
+  null,
+  "1874",
+  "Revidierte Bundesverfassung",
+  "Schweiz",
+  "Die Totalrevision stärkt den Bund und führt das fakultative Referendum auf Bundesebene ein.",
+  "Orientierung für den Ausbau der direkten Demokratie.",
+  "Die Volksinitiative auf Teilrevision folgt 1891; politische Rechte bleiben zunächst männlichen Bürgern vorbehalten.",
+  [
+   "orientSwiss"
+  ],
+  "vote"
+ ],
+ [
+  "berlin",
+  1884,
+  1885,
+  "1884–1885",
+  "Berliner Kongo-Konferenz",
+  "Afrika und europäische Kolonialmächte",
+  "Die Konferenz regelt koloniale Ansprüche und Handelsfragen ohne gleichberechtigte Vertretung der betroffenen afrikanischen Gesellschaften.",
+  "Ein Bezugspunkt für den Hochimperialismus und koloniale Gewalt.",
+  "Afrika wird nicht an einem einzigen Konferenztisch vollständig aufgeteilt; Eroberungen und Widerstand haben eigene Verläufe.",
+  [
+   "orient1884"
+  ],
+  "timbuktu"
+ ],
+ [
+  "ww1",
+  1914,
+  1918,
+  "1914–1918",
+  "Erster Weltkrieg",
+  "Europa und Welt",
+  "Der Krieg mobilisiert Armeen, Wirtschaft und Gesellschaften weit über Europa hinaus und endet mit dem Zerfall mehrerer Imperien.",
+  "Grundorientierung für Gewalt, Nationalismus und die Krisen des 20. Jahrhunderts.",
+  "Auch Kolonien und neutrale Staaten sind betroffen; die Schweiz bleibt militärisch neutral, aber wirtschaftlich und sozial berührt.",
+  [
+   "orientWW1"
+  ],
+  "war"
+ ],
+ [
+  "russia",
+  1917,
+  null,
+  "1917",
+  "Revolutionen in Russland",
+  "Russland und Welt",
+  "Die Februarrevolution stürzt den Zaren; im Oktober übernehmen die Bolschewiki die Macht. Es folgen Bürgerkrieg und eine neue Herrschaftsordnung.",
+  "Ein Bezugspunkt für Kommunismus, Revolutionsgeschichte und die spätere Systemkonkurrenz.",
+  "Die Sowjetunion wird erst 1922 gegründet. Februar und Oktober folgen dem damaligen russischen Kalender.",
+  [
+   "orient1917"
+  ],
+  "materialism"
+ ],
+ [
+  "strike",
+  1918,
+  null,
+  "12.–14. November 1918",
+  "Schweizer Landesstreik",
+  "Schweiz",
+  "Ein landesweiter Generalstreik bündelt Forderungen in einer schweren sozialen und politischen Krise.",
+  "Verbindet Kriegserfahrungen mit Arbeitsbedingungen und politischen Reformforderungen.",
+  "Forderungen wie das Frauenstimmrecht werden nicht sofort erfüllt.",
+  [
+   "orient1918"
+  ],
+  "vote"
+ ],
+ [
+  "depression",
+  1929,
+  null,
+  "ab 1929",
+  "Weltwirtschaftskrise",
+  "Weltwirtschaft",
+  "Aus der Finanz- und Wirtschaftskrise entstehen massive Produktionseinbrüche, Arbeitslosigkeit und internationale Verwerfungen.",
+  "Orientierung für wirtschaftliche Verflechtung und die Krisen demokratischer Ordnungen.",
+  "Der Börsenkrach allein erklärt nicht alle Ursachen; politische Antworten unterscheiden sich.",
+  [
+   "orient1929"
+  ],
+  "materialism"
+ ],
+ [
+  "nazism",
+  1933,
+  null,
+  "30. Januar 1933",
+  "Hitlers Ernennung und Aufbau der NS-Diktatur",
+  "Deutschland und Europa",
+  "Hitler wird Reichskanzler. Das NS-Regime beseitigt demokratische Rechte, verfolgt Gegner und setzt antisemitische Ausgrenzung durch.",
+  "Grunddatum für die Geschichte der nationalsozialistischen Diktatur.",
+  "Die Diktatur wird schrittweise durch Gewalt, Gesetze, Zustimmung und Mitwirkung errichtet.",
+  [
+   "orientShoah"
+  ],
+  "war"
+ ],
+ [
+  "ww2",
+  1939,
+  1945,
+  "1939–1945 · in Europa",
+  "Zweiter Weltkrieg",
+  "Welt",
+  "Der deutsche Angriff auf Polen eröffnet den Krieg in Europa. Im asiatisch-pazifischen Raum reicht die Kriegsgeschichte weiter zurück.",
+  "Grundorientierung für Besatzung, Vernichtungskrieg, Widerstand und die Nachkriegsordnung.",
+  "1939 ist eine europäische Anfangsdatierung; der japanische Krieg in China eskaliert bereits 1937.",
+  [
+   "orientWW2"
+  ],
+  "memory"
+ ],
+ [
+  "holocaust",
+  1941,
+  1945,
+  "1941–1945 · systematischer Massenmord",
+  "Shoah / Holocaust",
+  "Europa",
+  "NS-Deutschland und seine Verbündeten und Helfer ermorden etwa sechs Millionen jüdische Menschen. Seit 1933 sind Verfolgung und Entrechtung vorausgegangen.",
+  "Unverzichtbarer Bezugspunkt für Antisemitismus, staatlich organisierte Gewalt und Erinnerung.",
+  "Der Zeitraum bezeichnet die Phase des systematischen Massenmords, nicht den Beginn der Verfolgung.",
+  [
+   "orientShoah"
+  ],
+  "memory"
+ ],
+ [
+  "un",
+  1945,
+  null,
+  "24. Oktober 1945",
+  "Gründung der Vereinten Nationen",
+  "Welt",
+  "Mit Inkrafttreten der UN-Charta entsteht die UNO als neue internationale Organisation.",
+  "Orientierung für kollektive Sicherheit, internationale Zusammenarbeit und die Nachkriegsordnung.",
+  "Die Organisation ist auf ihre Mitgliedstaaten angewiesen; das Vetorecht spiegelt Machtunterschiede.",
+  [
+   "orientUN"
+  ],
+  "paris"
+ ],
+ [
+  "india",
+  1947,
+  null,
+  "1947",
+  "Unabhängigkeit und Teilung Britisch-Indiens",
+  "Südasien",
+  "Indien und Pakistan werden unabhängig. Die Teilung geht mit massiver Gewalt und Flucht einher.",
+  "Ein zentraler Bezugspunkt der Dekolonisierung und der Geschichte Südasiens.",
+  "Unabhängigkeit und Befreiung können mit neuen Grenzen und Konflikten verbunden sein.",
+  [],
+  "india"
+ ],
+ [
+  "rights",
+  1948,
+  null,
+  "10. Dezember 1948",
+  "Allgemeine Erklärung der Menschenrechte",
+  "Welt",
+  "Die UNO-Generalversammlung verabschiedet die Allgemeine Erklärung der Menschenrechte.",
+  "Bezugspunkt für universelle Rechte und politische Ansprüche nach dem Zweiten Weltkrieg.",
+  "Eine Erklärung ist weder ein weltweit durchgesetzter Zustand noch selbst ein verbindlicher Vertrag.",
+  [
+   "orientRights"
+  ],
+  "revolution"
+ ],
+ [
+  "israel",
+  1948,
+  null,
+  "1948",
+  "Israelische Staatsgründung und Nakba",
+  "Israel / Palästina und Naher Osten",
+  "Die Staatsgründung Israels und der Krieg von 1948 sind mit der Flucht und Vertreibung Hunderttausender Palästinenserinnen und Palästinenser verbunden.",
+  "Ein Grunddatum für den israelisch-palästinensischen Konflikt und unterschiedliche nationale Erinnerungen.",
+  "Die Vorgeschichte reicht weit zurück; das Datum erklärt weder alle Ursachen noch die Erfahrungen aller Beteiligten.",
+  [
+   "orientPalestine"
+  ],
+  "memory"
+ ],
+ [
+  "prc",
+  1949,
+  null,
+  "1. Oktober 1949",
+  "Ausrufung der Volksrepublik China",
+  "China und Ostasien",
+  "Mao Zedong ruft nach dem Sieg der Kommunisten im Bürgerkrieg die Volksrepublik China aus. Die Regierung der Republik China zieht sich nach Taiwan zurück.",
+  "Ein Schlüsseljahr für das politische Ostasien und die globale Systemkonkurrenz.",
+  "Die folgende Entwicklung umfasst tiefgreifende Brüche; sie ist keine unveränderte Fortsetzung seit 1949.",
+  [
+   "orientChina"
+  ],
+  "china"
+ ],
+ [
+  "eec",
+  1957,
+  null,
+  "25. März 1957",
+  "Römische Verträge",
+  "Europa",
+  "Sechs Staaten unterzeichnen die Verträge über EWG und Euratom; sie treten 1958 in Kraft.",
+  "Ein Bezugspunkt der europäischen Integration, wichtig auch für die Beziehungen der Schweiz zu Europa.",
+  "Die Europäische Union unter diesem Namen entsteht erst 1993.",
+  [
+   "orientEU"
+  ],
+  "period"
+ ],
+ [
+  "decolonization",
+  1960,
+  null,
+  "1960",
+  "«Afrikanisches Jahr» und Dekolonisierung",
+  "Afrika und Welt",
+  "Viele afrikanische Staaten werden unabhängig. Die UNO verabschiedet eine Erklärung zur Beendigung kolonialer Herrschaft.",
+  "Orientierung für Selbstbestimmung und die veränderte internationale Ordnung.",
+  "Dekolonisierung beginnt früher und endet nicht 1960; wirtschaftliche Abhängigkeiten können fortbestehen.",
+  [
+   "orientDecol"
+  ],
+  "timbuktu"
+ ],
+ [
+  "cuba",
+  1962,
+  null,
+  "Oktober 1962",
+  "Kubakrise",
+  "USA, Sowjetunion und Kuba",
+  "Die Stationierung sowjetischer Atomraketen auf Kuba führt zur direkten Konfrontation der Supermächte.",
+  "Ein Schlüsselbeispiel für nukleare Bedrohung und Verhandlungen im Kalten Krieg.",
+  "Der vermiedene Atomkrieg bedeutet nicht das Ende der Systemkonkurrenz.",
+  [
+   "orientCold"
+  ],
+  "moon"
+ ],
+ [
+  "moon",
+  1969,
+  null,
+  "20./21. Juli 1969",
+  "Erste bemannte Mondlandung",
+  "USA und globale Öffentlichkeit",
+  "Apollo 11 erreicht den Mond; Menschen betreten erstmals seine Oberfläche.",
+  "Orientierung für Raumfahrt, Technikgeschichte und die Konkurrenz im Kalten Krieg.",
+  "Technischer Erfolg ist kein allgemeines Mass gesellschaftlichen Fortschritts.",
+  [],
+  "moon"
+ ],
+ [
+  "vote",
+  1971,
+  null,
+  "7. Februar 1971",
+  "Frauenstimmrecht auf Bundesebene",
+  "Schweiz",
+  "Die stimmberechtigten Schweizer Männer stimmen der Einführung des Frauenstimm- und -wahlrechts auf Bundesebene zu.",
+  "Ein Grunddatum der schweizerischen Demokratiegeschichte.",
+  "Kantonale Rechte haben andere Daten; Appenzell Innerrhoden folgt erst 1990 nach Bundesgerichtsentscheid.",
+  [],
+  "vote"
+ ],
+ [
+  "wall",
+  1989,
+  null,
+  "1989 · 9. November in Berlin",
+  "Umbrüche in Osteuropa und Maueröffnung",
+  "Europa",
+  "Proteste und politische Veränderungen erschüttern die staatssozialistischen Ordnungen; die Berliner Mauer wird geöffnet.",
+  "Ein Bezugspunkt für das Ende der europäischen Blockteilung.",
+  "Die deutsche Vereinigung folgt 1990; die Sowjetunion besteht bis 1991.",
+  [],
+  "wall"
+ ],
+ [
+  "ussr",
+  1991,
+  null,
+  "1991",
+  "Auflösung der Sowjetunion",
+  "Osteuropa, Kaukasus und Zentralasien",
+  "Die Sowjetunion zerfällt; ihre bisherigen Unionsrepubliken werden unabhängige Staaten.",
+  "Grundorientierung für die Neuordnung nach dem Kalten Krieg.",
+  "Die neuen Staaten verfolgen unterschiedliche Wege; Demokratie oder Frieden folgen nicht zwangsläufig.",
+  [
+   "orientCold"
+  ],
+  "wall"
+ ],
+ [
+  "maastricht",
+  1992,
+  null,
+  "1992 · in Kraft 1993",
+  "Vertrag von Maastricht",
+  "Europa",
+  "Der Vertrag wird unterzeichnet und begründet mit seinem Inkrafttreten 1993 die Europäische Union.",
+  "Orientierung für die Weiterentwicklung der europäischen Integration.",
+  "Unterzeichnung und Inkrafttreten unterscheiden; die Schweiz gehört nicht zu den Mitgliedstaaten.",
+  [
+   "orientEU"
+  ],
+  "period"
+ ],
+ [
+  "ewr",
+  1992,
+  null,
+  "6. Dezember 1992",
+  "Schweizer Nein zum EWR",
+  "Schweiz und Europa",
+  "Die Schweizer Stimmberechtigten lehnen den Beitritt zum Europäischen Wirtschaftsraum ab.",
+  "Ein Bezugspunkt für die weitere Entwicklung des bilateralen Wegs.",
+  "EWR und EU sind nicht dasselbe; die Abstimmung betrifft den EWR-Beitritt.",
+  [
+   "orientEWR"
+  ],
+  "vote"
+ ],
+ [
+  "swiss-un",
+  2002,
+  null,
+  "2002",
+  "UNO-Beitritt der Schweiz",
+  "Schweiz und Welt",
+  "Nach der Volksabstimmung vom März wird die Schweiz im September Mitglied der Vereinten Nationen.",
+  "Orientierung für die internationale Einbindung der Schweiz.",
+  "Die Schweiz war schon vorher international tätig, etwa als Sitzstaat von UNO-Organisationen.",
+  [
+   "orientNeutral"
+  ],
+  "orientation-un"
+ ],
+ [
+  "climate",
+  2015,
+  null,
+  "12. Dezember 2015",
+  "Pariser Klimaabkommen",
+  "Welt",
+  "Staaten verabschieden ein gemeinsames Abkommen zur Begrenzung der globalen Erwärmung.",
+  "Ein Bezugspunkt für internationale Klimapolitik und die Geschichte des Anthropozän-Diskurses.",
+  "Beschluss, Umsetzung und messbare Wirkung haben unterschiedliche Zeitverläufe.",
+  [],
+  "paris"
+ ],
+ [
+  "covid",
+  2020,
+  null,
+  "11. März 2020",
+  "WHO bezeichnet COVID-19 als Pandemie",
+  "Welt",
+  "Die WHO charakterisiert die Ausbreitung von COVID-19 als Pandemie.",
+  "Orientierung für globale Verflechtung, Gesundheitspolitik und gesellschaftliche Krisenerfahrungen.",
+  "Die Krankheit entstand nicht an diesem Tag; die Bezeichnung markiert eine Bewertung der Ausbreitung.",
+  [
+   "orientCovid"
+  ],
+  "environmenthistory"
+ ],
+ [
+  "ukraine",
+  2022,
+  null,
+  "24. Februar 2022",
+  "Russische Grossinvasion der Ukraine",
+  "Europa und Welt",
+  "Russland beginnt den grossangelegten Angriff auf die Ukraine.",
+  "Ein Einschnitt für die europäische Sicherheitsordnung und internationale Beziehungen.",
+  "Der russisch-ukrainische Krieg beginnt bereits 2014; 2022 bezeichnet seine massive Ausweitung.",
+  [
+   "orientUkraine"
+  ],
+  "war"
+ ]
+];
+Object.assign(SOURCES,{"orientVersailles": {"title": "Deutsches Historisches Museum: Versailler Vertrag und Kriegsschuldfrage", "url": "https://www.dhm.de/archiv/ausstellungen/der-erste-weltkrieg/rooms/kriegsschuld.htm"}, "orient911": {"title": "National September 11 Memorial & Museum: Memorial", "url": "https://911memorial.org/visit/memorial"}, "orientFinance": {"title": "Federal Reserve History: The Great Recession and Its Aftermath", "url": "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath"}});
+ORIENTATION_ROWS.push(...[["versailles", 1919, null, "28. Juni 1919", "Versailler Vertrag", "Europa und internationale Ordnung", "Der Friedensvertrag mit Deutschland gehört zu den Pariser Friedensschlüssen nach dem Ersten Weltkrieg.", "Orientierung für Grenzänderungen, Reparationen, den Völkerbund und die Konflikte der Zwischenkriegszeit.", "Die Friedensordnung umfasst mehrere Verträge. Der Zweite Weltkrieg ist keine zwangsläufige Folge eines einzelnen Vertrags.", ["orientVersailles"], "orientation-ww1"], ["war-end", 1945, null, "1945 · Mai in Europa, September in Asien", "Ende des Zweiten Weltkriegs", "Welt", "Deutschland kapituliert im Mai. Nach den Atombombenabwürfen auf Hiroshima und Nagasaki sowie dem sowjetischen Kriegseintritt gegen Japan endet auch der Krieg im Pazifik.", "Grunddatum für Befreiung von der NS-Herrschaft, Besatzungsordnungen und das atomare Zeitalter.", "Kriegsende bedeutet nicht überall sofortigen Frieden; die Erfahrungen von Befreiung, Verlust und Vertreibung unterscheiden sich.", ["orientWW2"], "orientation-un"], ["september11", 2001, null, "11. September 2001", "Terroranschläge in den USA", "USA und Welt", "Al-Qaida verübt mit entführten Passagierflugzeugen Anschläge auf das World Trade Center und das Pentagon; ein weiteres Flugzeug stürzt in Pennsylvania ab.", "Ein Bezugspunkt für Terrorismus, Sicherheitsdebatten und die folgenden Kriege.", "Die Anschläge erklären nicht allein sämtliche Entscheidungen, die anschliessend als Terrorbekämpfung begründet werden.", ["orient911"], "war"], ["finance", 2008, null, "2008 · Zuspitzung einer Krise seit 2007", "Globale Finanzkrise", "Weltwirtschaft und Schweiz", "Die Krise der Finanzmärkte verschärft sich und greift auf die Realwirtschaft über.", "Orientierung für globale Abhängigkeiten, Bankenrisiken und staatliche Krisenintervention.", "Ein einzelner Bankenbankrott ist kein vollständiges Ursachenmodell; die Vorgeschichte reicht weiter zurück.", ["orientFinance"], "orientation-depression"]]);
+const ORIENTATION_EVENTS=ORIENTATION_ROWS.map(([key,year,end,date,title,region,text,why,limit,refs,linked])=>{
+ const base=EVENTS.find(e=>e.id===linked);
+ return {id:'orientation-'+key,year,end,date,title,lane:'orientation',orientation:true,region,text,intro:why,why,limit,sources:refs.length?refs:(base?.sources||[]),related:linked?[linked]:[]};
+});
+EVENTS.push(...ORIENTATION_EVENTS);
