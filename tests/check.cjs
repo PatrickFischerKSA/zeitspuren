@@ -402,8 +402,15 @@ console.log('PASS: Zwei Dokumentenspuren mit je 26 Einträgen, individuellen Bet
 vm.runInContext(`
 const strataPrevious={representation,worldAll};representation='layers';worldAll=true;
 const strataItems=lensItems(),strataMarkup=strataExplorerHtml(strataItems);
-for(const event of worldSelection(strataItems)){if(strataMarkup.split('data-strata-entry="'+event.id+'"').length-1!==3)throw Error('Missing stratum '+event.id);}
+for(const event of worldSelection(strataItems)){if(strataMarkup.split('data-strata-entry="'+event.id+'"').length-1!==1)throw Error('Missing source '+event.id);}
 if(strataMarkup.includes('Einträge zum Einordnen')||!strataMarkup.includes('data-strata-range'))throw Error('Old pool or missing navigation');
 representation=strataPrevious.representation;worldAll=strataPrevious.worldAll;
 `,ctx);
 console.log('PASS: Alle datierten Einträge auf drei Schichten, Cursor- und Tastaturnavigation statt Einordnungspool.');
+vm.runInContext(`
+const distinctLayers=[0,1,2].map(i=>strataCellHtml(byId('timbuktu'),i));
+if(new Set(distinctLayers).size!==3||!distinctLayers[0].includes('Kein einzelnes Ereignis'))throw Error('Duplicated layers or false event');
+if(!strataCellHtml(byId('paris'),0).includes('12. Dezember 2015'))throw Error('Missing event date');
+if(!strataCellHtml({id:'own-unreviewed'},2).includes('nicht ausgearbeitet'))throw Error('Unreviewed entry must not receive invented content');
+`,ctx);
+console.log('PASS: Distinct historical aspects, explicit evidence gaps and no automatic claims about personal entries.');
