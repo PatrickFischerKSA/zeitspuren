@@ -96,9 +96,12 @@ console.log('PASS: Mehrfachauswahl, leere Auswahl, erneutes Einschalten und Begr
 
 vm.runInContext('globalThis.spatial={tunnelOrdinal,tunnelYear,tunnelProject,tunnelScene};tunnelTime=1800;tunnelSpan=200',ctx);
 assert.equal(ctx.spatial.tunnelYear(ctx.spatial.tunnelOrdinal(-1)+1),1);
-const pLocal=ctx.spatial.tunnelProject('local',0),pEurope=ctx.spatial.tunnelProject('eu',0);assert.notEqual(pLocal.x,pEurope.x);assert.notEqual(pLocal.y,pEurope.y);assert(ctx.spatial.tunnelProject('local',1).scale<pLocal.scale);
+const pLocal=ctx.spatial.tunnelProject('local',0),pEurope=ctx.spatial.tunnelProject('eu',0);assert.notEqual(pLocal.x,pEurope.x);assert.notEqual(pLocal.y,pEurope.y);assert.equal(ctx.spatial.tunnelProject('local',1).scale,pLocal.scale);assert.equal(ctx.spatial.tunnelProject('local',1).x-pLocal.x,190);
 const before=ctx.spatial.tunnelScene(events);vm.runInContext('tunnelTime=1800.5',ctx);const after=ctx.spatial.tunnelScene(events);assert.notEqual(before.html,after.html);assert(after.shown.some(o=>o.e.id==='local-linth'));assert(!after.shown.some(o=>!Number.isFinite(o.e.year)));assert(!after.html.includes('NaN'));
-console.log('PASS: Zeitfahrt zwischen Ereignisdaten; getrennte räumliche Kategorienachsen; Perspektivtiefe; kein Jahr null.');
+const cylinderIds=html=>[...html.matchAll(/data-explore="([^"]+)"|data-cylinder-group="([^"]+)"/g)].flatMap(m=>(m[1]||m[2]).split(',')).sort();
+assert.deepEqual(cylinderIds(after.html),Array.from(after.shown,o=>o.e.id).sort());
+vm.runInContext('tunnelAngle=Math.PI',ctx);const rotated=ctx.spatial.tunnelScene(events);assert.deepEqual(cylinderIds(rotated.html),cylinderIds(after.html));assert.notEqual(rotated.html,after.html);assert(Math.abs(ctx.spatial.tunnelProject('local',0).depth+pLocal.depth)<1e-9);vm.runInContext('tunnelAngle=0',ctx);
+console.log('PASS: Zeitfahrt zwischen Ereignisdaten; getrennte räumliche Kategorienachsen; Zylinder mit konstanten Kartengrössen; kein Jahr null.');
 
 vm.runInContext("globalThis.worldAPI={worldSelection,worldSceneHtml};worldYear=2026;worldWindow=130;worldAll=false;worldAssumption=true;state=defaults();state.own=[{id:'own-present',year:2026,lane:'local',own:true,title:'Eigene Gegenwart',text:'Beleg'}]",ctx);
 for(const mode of Object.keys(ut.lenses)){vm.runInContext(`representation='${mode}';worldAssumption=true`,ctx);if(mode==='memoria')vm.runInContext("state.notes['premise-memoria-group']='Untersuchtes Stadtmuseum'",ctx);const first=ctx.worldAPI.worldSceneHtml(ut.lensItems());assert(first.includes('data-lens-focus="own-present"'));assert(first.includes('data-lens-focus="paris"'));assert(first.includes('data-lens-focus="history"'));vm.runInContext('worldAssumption=false',ctx);assert.notEqual(first,ctx.worldAPI.worldSceneHtml(ut.lensItems()),mode+' changes the visible construction')}
