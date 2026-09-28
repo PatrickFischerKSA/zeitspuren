@@ -338,3 +338,9 @@ console.log('PASS: Zielübersicht zeigt benannte Ereignisse, begründete Urteile
 
 {const avatarState=api.defaults();avatarState.avatars=[{id:'avatar-test',year:1150,name:'Anna',role:'Schreiberin',place:'Zürich',memory:'Erinnerung',attention:'Wahrnehmung',expectation:'Erwartung',social:'Familie',source:'Als Modell angenommen'}];avatarState.activeAvatar='avatar-test';const copy=api.validate(JSON.parse(JSON.stringify(avatarState)));assert.equal(copy.avatars[0].name,'Anna');assert.equal(copy.activeAvatar,'avatar-test');avatarState.avatars[0].year=0;assert.throws(()=>api.validate(avatarState));}
 console.log('PASS: Eigene Avatare mit Quellenangaben und Auswahl überstehen den Sicherungsrundlauf; Jahr null wird zurückgewiesen.');
+{
+ const portraitState=api.defaults();portraitState.avatars=[{id:'avatar-portrait',year:1900,role:'Test',portraitId:'custos',portraitData:'data:image/png;base64,aGVsbG8='}];
+ const restored=api.validate(JSON.parse(JSON.stringify(portraitState)));assert.equal(restored.avatars[0].portraitId,'custos');assert.equal(restored.avatars[0].portraitData,portraitState.avatars[0].portraitData);
+ portraitState.avatars[0].portraitData='data:image/svg+xml;base64,aGVsbG8=';assert.throws(()=>api.validate(portraitState));
+}
+console.log('PASS: Profilbilder werden gesichert; aktive Bildformate und fremde URLs sind ausgeschlossen.');
