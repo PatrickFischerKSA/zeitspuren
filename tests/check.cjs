@@ -101,6 +101,7 @@ const before=ctx.spatial.tunnelScene(events);vm.runInContext('tunnelTime=1800.5'
 const cylinderIds=html=>[...html.matchAll(/data-explore="([^"]+)"|data-cylinder-group="([^"]+)"/g)].flatMap(m=>(m[1]||m[2]).split(',')).sort();
 assert.deepEqual(cylinderIds(after.html),Array.from(after.shown,o=>o.e.id).sort());
 vm.runInContext('tunnelAngle=Math.PI',ctx);const rotated=ctx.spatial.tunnelScene(events);assert.deepEqual(cylinderIds(rotated.html),cylinderIds(after.html));assert.notEqual(rotated.html,after.html);assert(Math.abs(ctx.spatial.tunnelProject('local',0).depth+pLocal.depth)<1e-9);vm.runInContext('tunnelAngle=0',ctx);
+for(const view of ['front','back']){vm.runInContext(`tunnelView='${view}'`,ctx);const end=ctx.spatial.tunnelScene(events);assert.deepEqual(cylinderIds(end.html),cylinderIds(after.html));assert(!end.html.includes('NaN'));assert(end.html.includes(view==='front'?'Blick vorwärts':'Blick zurück'));}vm.runInContext("tunnelView='side'",ctx);
 console.log('PASS: Zeitfahrt zwischen Ereignisdaten; getrennte räumliche Kategorienachsen; Zylinder mit konstanten Kartengrössen; kein Jahr null.');
 
 vm.runInContext("globalThis.worldAPI={worldSelection,worldSceneHtml};worldYear=2026;worldWindow=130;worldAll=false;worldAssumption=true;state=defaults();state.own=[{id:'own-present',year:2026,lane:'local',own:true,title:'Eigene Gegenwart',text:'Beleg'}]",ctx);
