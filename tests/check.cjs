@@ -314,15 +314,15 @@ console.log('PASS: Klangfolge wandert von Erwartung über Aufmerksamkeit in Erin
 // Character drafts remain separate from historical entries and filter state.
 vm.runInContext('globalThis.characterTests={characters:AUGUSTINE_CHARACTERS,next:nextAugustineCharacter};',ctx);
 const ct=ctx.characterTests;
-assert.equal(ct.characters.length,30);
-assert.equal(new Set(ct.characters.map(c=>c.id)).size,30);
-for(let i=0;i<30;i++){
+assert.equal(ct.characters.length,37);
+assert.equal(new Set(ct.characters.map(c=>c.id)).size,37);
+for(let i=0;i<ct.characters.length;i++){
  const c=ct.characters[i];assert(Number.isInteger(c.year)&&c.year!==0);assert(events.some(e=>e.id===c.related)||ctx.modelTests.concepts[c.related]);
  for(const field of ['memory','attention','expectation','limit'])assert(c[field].length>35,c.id+' '+field);
- for(const value of [0,.01,.5,.99,.99999999]){const next=ct.next(i,value);assert(next>=0&&next<30);assert.notEqual(next,i);}
+ for(const value of [0,.01,.5,.99,.99999999]){const next=ct.next(i,value);assert(next>=0&&next<ct.characters.length);assert.notEqual(next,i);}
 }
 assert(ct.characters.some(c=>c.id==='nero'&&c.year===60));assert(ct.characters.some(c=>c.id==='custos'&&c.year===1150));
-console.log('PASS: 30 distinct historical first-person drafts, complete perspectives, existing context links and random change without immediate repetition.');
+console.log('PASS: 37 distinct historical first-person drafts, complete perspectives, existing context links and random change without immediate repetition.');
 vm.runInContext(`
 const goalTestPrevious={state,representation,worldAll,worldAssumption};
 state=defaults();representation='direction';worldAll=true;worldAssumption=true;ensureReading('direction');state.notes['telos-direction-goal']='Politische Gleichberechtigung';
@@ -344,3 +344,19 @@ console.log('PASS: Eigene Avatare mit Quellenangaben und Auswahl überstehen den
  portraitState.avatars[0].portraitData='data:image/svg+xml;base64,aGVsbG8=';assert.throws(()=>api.validate(portraitState));
 }
 console.log('PASS: Profilbilder werden gesichert; aktive Bildformate und fremde URLs sind ausgeschlossen.');
+
+// New profiles must remain selectable after saving and retain their critical framing in both views.
+vm.runInContext('globalThis.savedCharacterTestState=state;globalThis.characterExtensionTests={all:characterLibrary(),present:presentSceneHtml,memory:memoryCharacterHtml};state=defaults()',ctx);
+const cx=ctx.characterExtensionTests;
+for(const id of ['roman-sexworker','feud-knight','jacobin1794','java1900','pow1946','liberia2003','neonazi1993']){
+ const c=cx.all.find(x=>x.id===id);assert(c&&c.critical&&c.counterMemory&&c.references.length,id+' complete context');
+ vm.runInContext('state.activeAvatar='+JSON.stringify(id),ctx);
+ const saved=api.validate(JSON.parse(vm.runInContext('JSON.stringify(state)',ctx)));assert.equal(saved.activeAvatar,id);
+ assert(cx.present(events).includes(c.critical));assert(cx.memory().includes(c.counterMemory));
+ for(const [,url] of c.references)assert(url.startsWith('https://'));
+ assert(fs.existsSync(root+'/docs/assets/portrait-'+id+'.jpg'),id+' portrait');
+}
+assert(cx.all.every((c,i)=>!i||cx.all[i-1].year<=c.year));
+console.log('PASS: Seven additional perspectives persist, retain counter-perspectives in both views and have local portraits.');
+
+vm.runInContext('state=savedCharacterTestState',ctx);

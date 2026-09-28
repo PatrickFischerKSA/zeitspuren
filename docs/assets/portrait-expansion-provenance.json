@@ -1,0 +1,42 @@
+{
+  "method": "Built-in image_gen tool",
+  "created": "2026-09-28",
+  "type": "AI illustrations of fictional historical models, not historical sources",
+  "assets": [
+    {
+      "id": "roman-sexworker",
+      "file": "portrait-roman-sexworker.jpg",
+      "prompt": "Use case: historical-scene. One square head-and-shoulders portrait thumbnail for an educational history website. An adult Roman woman aged about 32 in Rome around 80 CE, plain opaque modest linen tunic, dark tied hair, ordinary practical appearance. Fictional historical model of a woman who works in prostitution, portrayed with dignity, fully clothed, no sexualization. Style: restrained hand-painted gouache editorial illustration, warm parchment background, muted teal, ochre and terracotta palette, natural facial features, soft even light. Face centred, clearly readable at 56 pixels. No text, border, props, logos or watermark. This is an explicitly fictional illustrative character, not a documented historical person."
+    },
+    {
+      "id": "feud-knight",
+      "file": "portrait-feud-knight.jpg",
+      "prompt": "Use case: historical-scene. One square head-and-shoulders portrait thumbnail for an educational history website. An adult man aged about 40, lower nobility in German lands around 1400, simple worn wool tunic and a glimpse of a padded collar, short beard, ordinary face. Fictional model of a knight engaged in violent feuds, no weapons or armor spectacle. Style: restrained hand-painted gouache editorial illustration, warm parchment background, muted teal, ochre and terracotta palette, natural facial features, soft even light. Face centred, clearly readable at 56 pixels. No text, border, props, logos or watermark. This is an explicitly fictional illustrative character, not a documented historical person."
+    },
+    {
+      "id": "jacobin1794",
+      "file": "portrait-jacobin1794.jpg",
+      "prompt": "Use case: historical-scene. One square head-and-shoulders portrait thumbnail for an educational history website. An adult French man aged about 35 in Paris in 1794, simple dark coat and linen neckcloth, natural unpowdered hair, ordinary face. Fictional revolutionary surveillance committee member. Style: restrained hand-painted gouache editorial illustration, warm parchment background, muted teal, ochre and terracotta palette, natural facial features, soft even light. Face centred, clearly readable at 56 pixels. No text, border, props, logos or watermark. This is an explicitly fictional illustrative character, not a documented historical person."
+    },
+    {
+      "id": "java1900",
+      "file": "portrait-java1900.jpg",
+      "prompt": "Use case: historical-scene. One square head-and-shoulders portrait thumbnail for an educational history website. An adult Javanese woman aged about 30 in Java in 1900, modest opaque cotton kebaya blouse, pinned up black hair, composed ordinary appearance. Fictional historical model of an unmarried companion and household manager of a Dutch plantation owner. No exoticization or sexualization. Style: restrained hand-painted gouache editorial illustration, warm parchment background, muted teal, ochre and terracotta palette, natural facial features, soft even light. Face centred, clearly readable at 56 pixels. No text, border, props, logos or watermark. This is an explicitly fictional illustrative character, not a documented historical person."
+    },
+    {
+      "id": "pow1946",
+      "file": "portrait-pow1946.jpg",
+      "prompt": "Use case: historical-scene. One square head-and-shoulders portrait thumbnail for an educational history website. An adult German man aged about 30 in Soviet captivity in 1946, worn plain grey-green jacket without insignia, short untidy brown hair, slight stubble. Fictional former Wehrmacht then Waffen-SS member and prisoner of war for a critical history lesson. No symbols, weapons, medals, or heroic framing. Style: restrained hand-painted gouache editorial illustration, warm parchment background, muted teal, ochre and terracotta palette, natural facial features, soft even light. Face centred, clearly readable at 56 pixels. No text, border, props, logos or watermark. This is an explicitly fictional illustrative character, not a documented historical person."
+    },
+    {
+      "id": "liberia2003",
+      "file": "portrait-liberia2003.jpg",
+      "prompt": "Use case: historical-scene. One square head-and-shoulders portrait thumbnail for an educational history website. A Liberian Black boy aged 15 in late 2003 wearing an ordinary worn opaque blue shirt, short hair, neutral thoughtful expression. Fictional educational model of a former recruited child soldier, portrayed as a child with dignity, no weapons, uniform, violence, wounds or dramatic suffering. Style: restrained hand-painted gouache editorial illustration, warm parchment background, muted teal, ochre and terracotta palette, natural facial features, soft even light. Face centred, clearly readable at 56 pixels. No text, border, props, logos or watermark. This is an explicitly fictional illustrative character, not a documented historical person."
+    },
+    {
+      "id": "neonazi1993",
+      "file": "portrait-neonazi1993.jpg",
+      "prompt": "Use case: historical-scene. One square head-and-shoulders portrait thumbnail for an educational history website. An adult German man aged 22 in eastern Germany in 1993, plain dark bomber jacket over an ordinary shirt, short light brown cropped hair. Fictional participant in neo-Nazi violence for a critical history lesson. An ordinary face, no extremist symbols, slogans, salutes, tattoos, weapons, intimidation or heroic framing. Style: restrained hand-painted gouache editorial illustration, warm parchment background, muted teal, ochre and terracotta palette, natural facial features, soft even light. Face centred, clearly readable at 56 pixels. No text, border, props, logos or watermark. This is an explicitly fictional illustrative character, not a documented historical person."
+    }
+  ]
+}
