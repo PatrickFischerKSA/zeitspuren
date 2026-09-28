@@ -53,7 +53,7 @@ vm.runInContext("state.own.push({id:'universe-own',year:1900,lane:'ideas',own:tr
 assert.equal(ut.lensItems('',true).length,1);assert.equal(ut.lensItems('eigene denkspur').length,1);assert(ut.lensUniverseHtml('',true).includes('data-lens-focus="universe-own"'));assert(ut.lensUniverseHtml('NO-MATCH').includes('ausserhalb des aktuellen Suchfilters'));
 const malformed=api.defaults();malformed.lensAssignments={egypt:{haiti:'not-a-slot',invented:'order'}};assert.deepEqual(Object.keys(api.validate(malformed).lensAssignments.egypt),[]);
 const legacy=api.defaults();delete legacy.lensAssignments;assert(api.validate(legacy).lensAssignments);
-vm.runInContext("representation='memoria';lensFocus='memory'",ctx);const memoryHtml=ut.lensUniverseHtml();assert(memoryHtml.includes('Soziale Beziehungen'));assert(memoryHtml.includes('Halbwachs: soziale Rahmen'));assert(memoryHtml.includes('Assmann: kommunikativ'));assert(memoryHtml.includes('Überlappende Erinnerungsräume'));
+vm.runInContext("representation='memoria';lensFocus='memory'",ctx);const memoryHtml=ut.lensUniverseHtml();assert(memoryHtml.includes('Soziale Beziehungen'));assert(memoryHtml.includes('Halbwachs: soziale Rahmen'));assert(memoryHtml.includes('Assmann: kommunikativ'));assert(memoryHtml.includes('Auswahl, Vergessen und Gegen-Erinnerungen'));
 const page=fs.readFileSync(root+'/docs/index.html','utf8');assert(page.indexOf('id="timelineUndated"')>page.indexOf('id="scroll"'));assert(page.includes('id="conceptView"'));assert(!page.includes('class="questions"'));
 console.log('PASS: Gesamter Bestand in allen acht Konzeptansichten; eigene Begriffe; Suchfilter; Fokus; Zuordnungen und Deutungen im Sicherungsrundlauf; alte Sicherungen.');
 // Exercise the actual timeline renderer and all eleven views with the same corpus.
@@ -205,7 +205,7 @@ const wholeItems=lensItems();
 for(const mode of Object.keys(WHOLE_VIEW_FORMS)){
  representation=mode;const html=worldSceneHtml(wholeItems);
  for(const e of wholeItems)if(!html.includes('data-lens-focus="'+e.id+'"'))throw Error('Gesamtschau verliert '+e.id+' in '+mode);
- if(!html.includes(mode==='direction'?'goal-columns':'whole-form-backdrop'))throw Error('Gesamtform fehlt');
+ if(!html.includes(mode==='direction'?'goal-columns':mode==='present'?'whole-form-backdrop':'concept-relationship'))throw Error('Gesamtform fehlt');
 }
 representation=overviewOldMode;worldAll=overviewOldAll;
 `,ctx);
@@ -360,3 +360,20 @@ assert(cx.all.every((c,i)=>!i||cx.all[i-1].year<=c.year));
 console.log('PASS: Seven additional perspectives persist, retain counter-perspectives in both views and have local portraits.');
 
 vm.runInContext('state=savedCharacterTestState',ctx);
+vm.runInContext(`
+const conceptSnapshot={state,representation,worldAll,worldAssumption};
+try {
+ state=defaults();worldAll=true;worldAssumption=true;
+ for(const mode of ['layers','medieval','egypt','materialism','memoria','recurrence']){
+  representation=mode;ensureReading(mode);
+  const original=worldSceneHtml(lensItems());
+  if(original.includes('diagram-number')||original.includes('nodeClip'))throw Error('Numbered circles remain in '+mode);
+  if(!original.includes('concept-relationship')||!original.includes('Noch keinem Untersuchungsschwerpunkt'))throw Error('Missing explanation or open evidence in '+mode);
+  state.lensAssignments[mode]={paris:GLOBAL_LENSES[mode].slots[0][0]};
+  const changed=worldSceneHtml(lensItems()),station=changed.slice(changed.indexOf('concept-station station-0'),changed.indexOf('concept-station station-1'));
+  if(!station.includes('data-lens-focus="paris"'))throw Error('Assignment does not move evidence in '+mode);
+  if(changed===original)throw Error('Static form '+mode);
+ }
+} finally {state=conceptSnapshot.state;representation=conceptSnapshot.representation;worldAll=conceptSnapshot.worldAll;worldAssumption=conceptSnapshot.worldAssumption}
+`,ctx);
+console.log('PASS: Six distinct explanatory forms, readable entries without numbered circles, open evidence and real reassignment.');
