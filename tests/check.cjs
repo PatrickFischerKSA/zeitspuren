@@ -209,7 +209,7 @@ const wholeItems=lensItems();
 for(const mode of Object.keys(WHOLE_VIEW_FORMS)){
  representation=mode;const html=worldSceneHtml(wholeItems);
  for(const e of wholeItems)if(!html.includes('data-lens-focus="'+e.id+'"'))throw Error('Gesamtschau verliert '+e.id+' in '+mode);
- if(!html.includes(mode==='direction'?'goal-columns':mode==='present'?'whole-form-backdrop':mode==='layers'?'strata-landscape':'concept-relationship'))throw Error('Gesamtform fehlt');
+ if(!html.includes(mode==='direction'?'goal-columns':mode==='present'?'whole-form-backdrop':mode==='layers'?'strata-depth':'concept-relationship'))throw Error('Gesamtform fehlt');
 }
 representation=overviewOldMode;worldAll=overviewOldAll;
 `,ctx);
@@ -372,7 +372,7 @@ try {
   representation=mode;ensureReading(mode);
   const original=worldSceneHtml(lensItems());
   if(original.includes('diagram-number')||original.includes('nodeClip'))throw Error('Numbered circles remain in '+mode);
-  if(mode==='layers'?!original.includes('data-strata-probe'):(!original.includes('concept-relationship')||!original.includes('Einträge zum Einordnen')))throw Error('Missing explanation or open evidence in '+mode);
+  if(mode==='layers'?!original.includes('data-strata-pick'):(!original.includes('concept-relationship')||!original.includes('Einträge zum Einordnen')))throw Error('Missing explanation or open evidence in '+mode);
   state.lensAssignments[mode]={paris:GLOBAL_LENSES[mode].slots[0][0]};
   const changed=worldSceneHtml(lensItems()),station=changed.slice(changed.indexOf('concept-station station-0'),changed.indexOf('concept-station station-1'));
   if(mode!=='layers'&&!station.includes('data-lens-focus="paris"'))throw Error('Assignment does not move evidence in '+mode);
