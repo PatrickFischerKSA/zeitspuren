@@ -291,3 +291,7 @@ initCenturyControls();
 initPeriodCompare();
 
 initWorkspaceNavigation();
+
+const renderWithoutLiveScenario=render;render=function(){ensureLiveScenario();renderWithoutLiveScenario();installLiveScenarioControls()};
+
+render();
