@@ -245,7 +245,7 @@ function lensUniverseHtml(query='',own=false){
 }
 function renderLensUniverse(){
  ensureReading(representation);if(prepareRandomConcept()){render();return}const stage=$('#modeStage');stage.innerHTML=lensUniverseHtml($('#search').value,onlyOwn);compactWorldWorkspace();wireMode();installProfileZoom();
- wireStrataExplorers();wireDirectionWorkspace();
+ wireStrataExplorers();wireDirectionWorkspace();installConstellationBar();
  const redraw=()=>renderMode();wireReadings(redraw);if($('#randomHeilButton'))$('#randomHeilButton').onclick=()=>{try{randomConceptDraft();render();}catch(e){$('#randomHeilStatus').textContent=e.message}};$$('[data-concrete-choice]').forEach(b=>b.onclick=()=>{concreteChoice[representation]=Number(b.dataset.concreteChoice);redraw();$('.concrete-choice').scrollIntoView({block:'start'})});
  $$('[data-premise]').forEach(el=>el.oninput=()=>{state.notes[premiseKey(representation,el.dataset.premise)]=el.value;save()});if($('#premiseApply'))$('#premiseApply').onclick=()=>{worldSheet='';redraw();$('.world-scene').scrollIntoView({block:'start',behavior:'smooth'})};
  $$('[data-telos]').forEach(el=>el.oninput=()=>{state.notes[telosKey(representation,el.dataset.telos)]=el.value;save()});if($('#telosApply'))$('#telosApply').onclick=()=>{worldSheet='';redraw();$('.world-scene').scrollIntoView({block:'start',behavior:'smooth'})};
@@ -1972,3 +1972,40 @@ WHOLE_VIEW_FORMS.present.subtitle='Erinnern, Aufmerken und Erwarten geschehen je
 WHOLE_VIEW_FORMS.present.icon='M8 35Q50 12 92 35M8 35Q50 58 92 35M50 12V60M42 35H58';
 
 for(const m of RANDOM_CONCEPT_MODELS.direction){m.view={year:1900,window:130,all:false};m.fields.standpoint=({participation:'Menschen, die von politischen Rechten ausgeschlossen sind',welfare:'Menschen, deren Versorgung von Lohn und lokalen Ressourcen abhängt',ecology:'Menschen, die langfristige Folgen heutiger Ressourcennutzung tragen'})[m.id];m.fields.question=({participation:'Wer gewinnt politische Mitsprache, und wer bleibt ausgeschlossen?',welfare:'Wer gewinnt Sicherheit im Alltag, und wer trägt die Kosten?',ecology:'Verbessern sich Lebensbedingungen dauerhaft oder werden Belastungen verlagert?'})[m.id];}
+
+function constellationFields(mode){return ['medieval','direction'].includes(mode)?TELOS_FIELDS:PREMISE_LABS[mode]?.fields||[]}
+function constellationKey(mode,field){return ['medieval','direction'].includes(mode)?telosKey(mode,field):premiseKey(mode,field)}
+function preserveEditedConstellation(mode){
+ captureReadings();const p=activeReading(mode);if(!p)return;const meta=mode==='medieval'?generatedHeilMeta(p):randomConceptMeta(p,mode);if(!meta)return;
+ const model=mode==='medieval'?RANDOM_HEIL_MODELS.find(m=>m.id===meta.model):RANDOM_CONCEPT_MODELS[mode]?.find(m=>m.id===meta.model);
+ const fields=mode==='medieval'?Object.fromEntries(['goal','standpoint','necessity','counter'].map(k=>[k,model[k]])):model.fields;
+ const changed=Object.entries(fields).some(([k,v])=>p.notes[constellationKey(mode,k)]!==v)||Object.keys(p.decisions).length||Object.keys(p.assignments).length||Object.keys(p.notes).some(k=>k===constellationKey(mode,'customRange')||k===constellationKey(mode,'question')&&!('question' in fields));
+ if(!changed)return;const bucket=ensureReading(mode);if(bucket.profiles.length>=30)throw Error('30 Entwürfe gespeichert. Bitte zuerst einen nicht mehr benötigten Entwurf entfernen.');
+ const copy=JSON.parse(JSON.stringify(p));copy.id=uid();copy.name='Eigener Entwurf · '+p.name.replace('Zufallsentwurf · ','');delete copy.notes[mode==='medieval'?RANDOM_HEIL_KEY:randomConceptKey(mode)];bucket.profiles.push(copy);save();
+}
+function nextConstellation(){
+ const mode=representation;
+ if(['present','memoria'].includes(mode)){
+ captureReadings();const c=augustineCharacter(),p=activeReading(mode);if(p&&Object.values(p.notes).some(Boolean)){const bucket=ensureReading(mode);if(bucket.profiles.length>=30)throw Error('30 Entwürfe gespeichert. Bitte zuerst einen nicht mehr benötigten Entwurf entfernen.');const copy=JSON.parse(JSON.stringify(p));copy.id=uid();copy.name='Personenentwurf · '+(c.name||c.role);bucket.profiles.push(copy)}
+ const candidates=characterLibrary().filter(x=>x.id!==c.id),next=candidates[Math.floor(Math.random()*candidates.length)];worldYear=next.year;worldWindow=50;worldAll=false;selectCharacter(next.id);return;
+ }
+ preserveEditedConstellation(mode);randomConceptDraft();if(mode==='layers')strataDate=worldYear;render();
+}
+function constellationBarHtml(){
+ const mode=representation,person=['present','memoria'].includes(mode),c=person?augustineCharacter():null;
+ const fields=constellationFields(mode),anchor=fields[0]?.[0],value=person?(c.name||c.role)+' · '+c.place:state.notes[constellationKey(mode,anchor)]||'Voraussetzungen noch offen';
+ return `<section class="constellation-bar" aria-label="Konstellation für diese Darstellung"><div><strong>${person?'Person und Lebenslage':'Aktuelle Konstellation'}</strong><span>${esc(value)}</span><small>${worldAll?'Gesamter gewählter Zeitraum':esc(yr(worldYear-worldWindow)+' bis '+yr(worldYear+worldWindow))} · ${visibleCategories.size} Kategorien${mode==='recurrence'?' · Umlauf '+worldPeriod+' Jahre':''}</small></div><button data-next-constellation>Nächste Zufallskonstellation ↻</button><button data-edit-constellation>Eigene Einstellungen & Frage ↗</button><p class="constellation-question">${esc(state.notes[constellationKey(mode,'question')]||'')}</p><p data-constellation-status role="status"></p></section>`;
+}
+function installConstellationBar(){
+ if(!GLOBAL_LENSES[representation])return;
+ if(representation==='direction'){
+ const b=$('[data-direction-random]');if(b){b.textContent='Nächste Zufallskonstellation ↻';b.onclick=()=>{try{nextConstellation()}catch(e){b.insertAdjacentHTML('afterend',`<p role="status">${esc(e.message)}</p>`)}}}return;
+ }
+ const host=$('#interpretationExperiment');if(!host)return;host.insertAdjacentHTML('afterbegin',constellationBarHtml());
+ $('[data-next-constellation]').onclick=()=>{try{nextConstellation()}catch(e){$('[data-constellation-status]').textContent=e.message}};
+ $('[data-edit-constellation]').onclick=()=>{
+ const mode=representation,fields=[...constellationFields(mode)];if(!fields.some(f=>f[0]==='question'))fields.push(['question','Eigene Fragestellung','']);
+ show(`<h2 id="dialogTitle">Konstellation bearbeiten</h2><form id="constellationForm">${fields.map(([key,label])=>`<label>${esc(label)}<textarea name="${esc(key)}" rows="2" maxlength="4000">${esc(state.notes[constellationKey(mode,key)]||'')}</textarea></label>`).join('')}<div class="direction-dates"><label>Von <input name="rangeFrom" type="number" required value="${worldAll?worldYear-worldWindow:worldYear-worldWindow}"></label><label>Bis <input name="rangeTo" type="number" required value="${worldYear+worldWindow}"></label></div><p id="constellationError" role="status"></p><button>Eigene Konstellation anwenden</button></form>`,'EINSTELLUNGEN UND FRAGE');
+ $('#constellationForm').onsubmit=e=>{e.preventDefault();const f=e.target,from=Number(f.elements.rangeFrom.value),to=Number(f.elements.rangeTo.value);if(!from||!to||from>=to||from< -100000||to>10000){$('#constellationError').textContent='Bitte einen aufsteigenden Zeitraum ohne Jahr null angeben.';return}for(const [key] of fields)state.notes[constellationKey(mode,key)]=f.elements[key].value;state.notes[constellationKey(mode,'customRange')]=JSON.stringify([from,to]);worldYear=(from+to)/2;worldWindow=(to-from)/2;worldAll=false;if(mode==='layers')strataDate=worldYear;captureReadings();save();popup.close();renderMode()};
+ };
+}

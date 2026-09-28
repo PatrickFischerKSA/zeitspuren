@@ -432,3 +432,9 @@ randomConceptDraft(()=>0);if(randomConceptMeta().model===firstDirection)throw Er
 state=directionSaved.state;representation=directionSaved.representation;worldAll=directionSaved.worldAll;worldYear=directionSaved.worldYear;worldWindow=directionSaved.worldWindow;
 `,ctx);
 console.log('PASS: Coherent random constellations, distinct next choice, custom questions and profile backup.');
+vm.runInContext(`
+const barPrevious={state,representation};state=defaults();for(const mode of Object.keys(GLOBAL_LENSES)){representation=mode;ensureReading(mode);const html=constellationBarHtml();if(!html.includes('data-next-constellation')||!html.includes('data-edit-constellation'))throw Error('Missing controls '+mode)}
+representation='egypt';randomConceptDraft(()=>0);const p=activeReading(),meta=randomConceptMeta();state.notes[premiseKey('egypt','question')]='Meine Frage bleibt';preserveEditedConstellation('egypt');randomConceptDraft(()=>0);if(!profileBucket('egypt').profiles.some(p=>p.notes['premise-egypt-question']==='Meine Frage bleibt'))throw Error('Edited constellation lost');if(randomConceptMeta().model===meta.model)throw Error('Same next random model');
+state=barPrevious.state;representation=barPrevious.representation;
+`,ctx);
+console.log('PASS: Random controls across all concept views; edited constellations preserved on next draw.');
