@@ -838,10 +838,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Schreiber",
     "place": "Ägypten",
     "related": "scribe",
-    "memory": "Ich erinnere mich an die Zahlen, die ich gestern aufgeschrieben habe. Bei einer Lieferung musste ich nachzählen.",
-    "attention": "Ich prüfe die nächste Getreidemenge und halte die Angaben fest.",
-    "expectation": "Ich hoffe, dass meine Aufzeichnungen bei der nächsten Kontrolle stimmen.",
-    "limit": "Mein Wissen stammt aus meiner Arbeit und aus Mitteilungen im Umfeld der Verwaltung."
+    "memory": "Mein Kollege fand gestern einen Fehler in meiner Liste. Ich hatte eine Zahl übernommen, statt selbst nachzuzählen. Jetzt fällt mir wieder ein, wie lange der Lieferant auf die Berichtigung warten musste.",
+    "attention": "Die gemeldete Menge passt nicht zu meiner Zählung. Ich vergleiche beide Angaben, bevor ich den Unterschied weitergebe: Ein sauber geschriebenes Verzeichnis kann trotzdem falsch sein.",
+    "expectation": "Ich möchte selbstständig Listen führen dürfen. Eine weitere Berichtigung könnte das verzögern; schweige ich über den Unterschied, stimmt die Abrechnung womöglich nicht.",
+    "limit": "Angenommen: ein jüngerer Schreiber einer Getreideverwaltung, dessen erfahrener Kollege seine Listen kontrolliert. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: ein jüngerer Schreiber einer Getreideverwaltung, dessen erfahrener Kollege seine Listen kontrolliert.",
+    "social": "Der ältere Kollege beurteilt seine Arbeit; der Lieferant kennt den Transport. Beide können dieselbe Abweichung anders erklären.",
+    "practice": "Listen bewahren Mengen, aber nicht alle Umstände einer Lieferung. Mündliche Auskünfte ergänzen und korrigieren die Schrift."
   },
   {
     "id": "potter",
@@ -849,10 +852,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Töpferin",
     "place": "Athen",
     "related": "athens",
-    "memory": "Ich erinnere mich an ein Gefäss, das beim Brennen gesprungen ist.",
-    "attention": "Ich glätte den Rand eines neuen Gefässes und höre das Gespräch in der Werkstatt.",
-    "expectation": "Ich hoffe, dass der nächste Brand gelingt und wir genügend verkaufen.",
-    "limit": "Politische Teilhabe und Einblick in öffentliche Entscheidungen sind nicht für alle Menschen gleich."
+    "memory": "Beim letzten Brand riss eine Schale, deren dünnen Rand ich besonders gelungen fand. Meine Schwester meinte, ich hätte zu schnell gearbeitet; ich vermute einen Fehler beim Trocknen.",
+    "attention": "Ich lasse den neuen Rand etwas dicker. Neben mir verlangt ein Kunde billigere Ware. Was ihm gleich aussieht, fühlt sich unter meinen Fingern unterschiedlich an.",
+    "expectation": "Ich will herausfinden, warum die Schale sprang. Zugleich brauchen wir verkäufliche Gefässe; für einen weiteren Versuch bleibt wenig Ton übrig.",
+    "limit": "Angenommen: eine Frau, die in einer attischen Familienwerkstatt Gefässe formt; die genaue Arbeitsteilung ist nicht überliefert. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine Frau, die in einer attischen Familienwerkstatt Gefässe formt; die genaue Arbeitsteilung ist nicht überliefert.",
+    "social": "Schwester und Kundschaft bewerten die Arbeit nach unterschiedlichen Massstäben: Haltbarkeit, Können und Preis.",
+    "practice": "Handgriffe und beschädigte Gefässe vermitteln Erfahrungswissen. Kein erhaltener Gegenstand verrät von sich aus, wer welchen Arbeitsschritt ausführte."
   },
   {
     "id": "nero",
@@ -860,10 +866,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Versklavte Frau zur Zeit Neros",
     "place": "Rom",
     "related": "rome",
-    "memory": "Ich erinnere mich an den Haushalt, aus dem man mich fortgebracht hat, und an eine dort zurückgebliebene Person.",
-    "attention": "Ich erledige die zugewiesene Arbeit und achte darauf, ob jemand nach mir ruft.",
-    "expectation": "Ich wünsche mir, die zurückgebliebene Person wiederzusehen. Ob ich den Haushalt verlassen darf, entscheide ich nicht selbst.",
-    "limit": "Diese erfundene Lebenssituation steht im Zusammenhang römischer Sklaverei. Sie ist keine überlieferte Biografie."
+    "memory": "Beim Flicken fällt mir ein Stich ein, den mir eine ältere Mitbewohnerin gezeigt hat. Seit ihrer Freilassung sehe ich sie selten. Sie hat mir erzählt, dass sie weiterhin für ihren früheren Besitzer arbeitet.",
+    "attention": "Ich trenne eine schiefe Naht wieder auf. Ein anderer Versklavter bittet mich um Hilfe mit seinem Gewand; zuerst muss das Kleid der Hausherrin fertig werden. Ich entscheide über meine Arbeitsschritte, nicht über meine Zeit.",
+    "expectation": "Vielleicht kann die Freigelassene eine Nachricht an meine Schwester bringen. Ich würde sie gern selbst besuchen. Eine Freilassung wünsche ich mir auch, doch auf eine Zusage kann ich mich nicht berufen.",
+    "limit": "Angenommen: eine in Rom versklavte Frau, die in einem wohlhabenden Haushalt Kleidung ausbessert. Eine frühere Mitbewohnerin lebt nach ihrer Freilassung anderswo. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine in Rom versklavte Frau, die in einem wohlhabenden Haushalt Kleidung ausbessert. Eine frühere Mitbewohnerin lebt nach ihrer Freilassung anderswo.",
+    "social": "Mitversklavte geben Wissen und Unterstützung weiter; die Hausherrin verfügt über Arbeit und Bewegungsfreiheit. Die Freigelassene verbindet beide Lebensbereiche, ohne rechtlich gleichgestellt zu sein.",
+    "practice": "Ein erlernter Stich und mündliche Nachrichten halten Beziehungen gegenwärtig. Die Erinnerungen dieser Figur sind konstruiert; Inschriften und Rechtszeugnisse belegen andere einzelne Lebenslagen."
   },
   {
     "id": "chur",
@@ -871,10 +880,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Handwerker",
     "place": "Chur",
     "related": "local-chur",
-    "memory": "Ich erinnere mich an eine Reparatur für einen Reisenden, dessen Wagen beschädigt war.",
-    "attention": "Ich prüfe ein Werkzeug. Von der Strasse höre ich Menschen und Tiere.",
-    "expectation": "Ich rechne mit neuer Arbeit, weiss aber nicht, wer als Nächstes hier ankommt.",
-    "limit": "Nachrichten erreichen mich durch Menschen, die den Ort besuchen; ich überblicke nicht das ganze Reich."
+    "memory": "Ein Fuhrmann reklamierte kürzlich eine Reparatur. Ich erinnere mich an das beschädigte Teil, aber nicht mehr genau daran, welche Weiterfahrt er angekündigt hatte.",
+    "attention": "Ich suche am Holz nach einer Schwachstelle. Der Kunde drängt zur Abfahrt; mein Gehilfe rät, das ganze Teil zu ersetzen. Das kostet mehr, könnte aber eine zweite Reparatur vermeiden.",
+    "expectation": "Mit guter Arbeit möchte ich den Kunden behalten. Ich fürchte zugleich, dass er schon den Zeitverlust mir zurechnet, auch wenn der alte Schaden die Ursache war.",
+    "limit": "Angenommen: ein Handwerker, der Wagenbestandteile repariert und von Reisenden wie von örtlicher Kundschaft lebt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: ein Handwerker, der Wagenbestandteile repariert und von Reisenden wie von örtlicher Kundschaft lebt.",
+    "social": "Reisende bringen Aufträge und Nachrichten; der Gehilfe hat eigenes Erfahrungswissen. Ihr Verhältnis ist nicht nur das von Anweisung und Ausführung.",
+    "practice": "Werkstücke, Reklamationen und Erzählungen über Wege vermitteln Wissen, dessen Verlässlichkeit sich im Gebrauch erweist."
   },
   {
     "id": "rome470",
@@ -882,10 +894,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Händlerin",
     "place": "Italien",
     "related": "romeend",
-    "memory": "Ich erinnere mich an eine Reise, auf der wir länger als geplant auf Weiterfahrt warten mussten.",
-    "attention": "Ich bespreche eine Lieferung und frage nach der Sicherheit des Weges.",
-    "expectation": "Ich hoffe, dass die Ware ankommt. Welche politische Ordnung in einigen Jahren besteht, weiss ich nicht.",
-    "limit": "Die spätere Epochengrenze 476 gehört nicht zum Wissen dieser Figur."
+    "memory": "Bei der letzten Lieferung sagte mein Bruder, wir hätten zu lange gewartet. Ich erinnere mich dagegen vor allem an die widersprüchlichen Nachrichten über den Weg.",
+    "attention": "Ein Bote meldet freie Durchfahrt. Ich frage, ob er die Strecke selbst zurückgelegt oder die Auskunft nur gehört hat. Mein Bruder möchte die Ware sofort abschicken.",
+    "expectation": "Ich will den Verkauf abschliessen, ohne unsere Rücklagen aufs Spiel zu setzen. Vielleicht teilen wir die Lieferung; dann steigen allerdings die Transportkosten.",
+    "limit": "Angenommen: eine Händlerin in Italien, die mit ihrem Bruder eine kleine Warenlieferung finanziert; weder Wohnort noch Warenart sind belegt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine Händlerin in Italien, die mit ihrem Bruder eine kleine Warenlieferung finanziert; weder Wohnort noch Warenart sind belegt.",
+    "social": "Der Bruder trägt das finanzielle Risiko mit, bewertet Nachrichten aber anders. Ein Bote ist Vermittler, nicht automatisch Augenzeuge.",
+    "practice": "Mündliche Wegnachrichten und Abrechnungen halten verschiedene Ausschnitte derselben Reise fest."
   },
   {
     "id": "china868",
@@ -893,10 +908,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Mitarbeiter einer Druckwerkstatt",
     "place": "China",
     "related": "print",
-    "memory": "Ich erinnere mich an ein Blatt, auf dem die Schrift nur unvollständig erschien.",
-    "attention": "Ich kontrolliere den Abdruck und vergleiche die Zeichen mit der Vorlage.",
-    "expectation": "Ich möchte weitere gut lesbare Blätter herstellen. Wer sie später lesen wird, kenne ich nicht.",
-    "limit": "Der Entwurf knüpft an den belegten Holzblockdruck an, nicht an eine bekannte Person aus der Werkstatt des Diamant-Sutra."
+    "memory": "Ein Leser zeigte uns eine undeutlich gedruckte Zeile. Ich hatte das Blatt für brauchbar gehalten. Erst sein Hinweis machte mir klar, welche Zeichen sich verwechseln liessen.",
+    "attention": "Ich prüfe Farbe und Papier, bevor ich den nächsten Abdruck abnehme. Die Erklärung eines Besuchers zum Text höre ich nur in Bruchstücken; für die Arbeit muss ich nicht jede Auslegung kennen.",
+    "expectation": "Ich möchte weniger Blätter verwerfen. Zugleich frage ich mich, ob ein deutlicher Druck genügt, wenn verschiedene Leser dieselbe Stelle unterschiedlich erklären.",
+    "limit": "Angenommen: ein Arbeiter beim Holzblockdruck buddhistischer Texte; keine identifizierte Person der Diamant-Sutra-Werkstatt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: ein Arbeiter beim Holzblockdruck buddhistischer Texte; keine identifizierte Person der Diamant-Sutra-Werkstatt.",
+    "social": "Handwerkliche Erfahrung, religiöse Auslegung und Finanzierung liegen bei unterschiedlichen Beteiligten.",
+    "practice": "Druckstöcke vervielfältigen einen Text; Vortrag und Gespräch verändern, wie er verstanden wird."
   },
   {
     "id": "custos",
@@ -904,10 +922,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Kustos eines Klosters",
     "place": "Mitteleuropa",
     "related": "medievalworld",
-    "memory": "Ich erinnere mich an das letzte Fest, als vor dem Gottesdienst noch etwas fehlte.",
-    "attention": "Ich prüfe die für den Gottesdienst benötigten Gegenstände und höre auf das Glockenzeichen.",
-    "expectation": "Ich erwarte die nächste Gebetszeit und hoffe, dass alles bereitliegt. Mein Dienst gehört für mich zum Leben vor Gott.",
-    "limit": "Kustos bezeichnet hier einen mit der Sorge für Kirche und Gottesdienst betrauten Mönch. Aufgaben unterschieden sich zwischen Klöstern."
+    "memory": "Am letzten Fest bemerkte ein Mitbruder einen fehlenden Leuchter vor mir. Sein Hinweis half; dass er mich vor den anderen zurechtwies, beschäftigt mich noch.",
+    "attention": "Ich stelle die Geräte bereit und teile einem jüngeren Bruder eine Aufgabe zu. Während ich die Reihenfolge prüfe, denke ich an den Streit statt an die Worte des Gebets.",
+    "expectation": "Vor dem nächsten Fest möchte ich die Aufgaben besser verteilen und mit dem Mitbruder sprechen. Ich hoffe auf Versöhnung, scheue aber davor zurück, meinen Ärger einzugestehen.",
+    "limit": "Angenommen: ein Mönch mit Verantwortung für Kirchengerät, Beleuchtung und Vorbereitung des Gottesdienstes in einem benediktinisch geprägten Kloster. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: ein Mönch mit Verantwortung für Kirchengerät, Beleuchtung und Vorbereitung des Gottesdienstes in einem benediktinisch geprägten Kloster.",
+    "social": "Amt, Alter und gemeinsame Regel strukturieren die Beziehungen. Religiöser Anspruch und persönliche Kränkung bestehen nebeneinander.",
+    "practice": "Gebetszeiten, wiederkehrende Feste und gemeinsam benutzte Gegenstände tragen Erinnerung; eine Regel beschreibt Sollvorstellungen, nicht jedes tatsächliche Verhalten."
   },
   {
     "id": "nun",
@@ -915,10 +936,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Nonne",
     "place": "England",
     "related": "medievalworld",
-    "memory": "Ich erinnere mich an eine Textstelle, die wir gemeinsam gelesen haben.",
-    "attention": "Ich versuche, beim Gebet aufmerksam zu bleiben, während mir diese Worte wieder einfallen.",
-    "expectation": "Ich hoffe, die Stelle besser zu verstehen und meine täglichen Aufgaben erfüllen zu können.",
-    "limit": "Die Stimme ist erfunden. Sie steht nicht für alle Nonnen oder für ein einheitliches mittelalterliches Denken."
+    "memory": "Meine Mitschwester fragte gestern nach einer Psalmstelle. Ich gab die Erklärung weiter, die ich selbst gelernt hatte; ihre Nachfrage konnte ich nicht beantworten.",
+    "attention": "Beim gemeinsamen Gebet höre ich die vertrauten Worte und denke wieder an ihre Frage. Gleichzeitig bemerke ich, dass sie in der Zeile verrutscht, und zeige ihr die Stelle.",
+    "expectation": "Ich möchte eine erfahrene Schwester um eine Erklärung bitten. Vielleicht gibt es mehr als eine Lesart; vor der Jüngeren würde ich ungern zugeben, wie unsicher ich selbst bin.",
+    "limit": "Angenommen: eine lesekundige Nonne in einem englischen Konvent, die einer jüngeren Mitschwester beim Lesen hilft. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine lesekundige Nonne in einem englischen Konvent, die einer jüngeren Mitschwester beim Lesen hilft.",
+    "social": "Lernen verläuft zwischen Schwestern verschiedener Erfahrung. Eine Lehrende kann zugleich selbst auf Hilfe angewiesen sein.",
+    "practice": "Wiederholtes Sprechen, Handschrift und Auslegung verbinden eingeprägte Worte mit neuen Fragen."
   },
   {
     "id": "bridge",
@@ -926,10 +950,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Arbeiter am Seeübergang",
     "place": "Rapperswil–Hurden",
     "related": "local-bridge",
-    "memory": "Ich erinnere mich an einen Arbeitstag, an dem Wind unsere Arbeit am Wasser erschwerte.",
-    "attention": "Ich achte auf meinen Stand und auf die Menschen, mit denen ich arbeite.",
-    "expectation": "Ich hoffe, dass die Arbeit heute ohne Unfall endet. Wie lange der Übergang bestehen wird, weiss ich nicht.",
-    "limit": "Arbeitsablauf und persönliche Erinnerung sind für diesen Entwurf angenommen."
+    "memory": "Mein Verwandter warnte mich beim letzten Einsatz vor einer glatten Stelle. Ich hatte sie übersehen. Später erzählte er anderen davon, als wäre ich grundsätzlich ungeschickt.",
+    "attention": "Ich prüfe meinen Stand und reiche ihm ein Werkzeug. Diesmal entdecke ich selbst eine lockere Verbindung; ich muss ihn darauf aufmerksam machen, obwohl ich noch verärgert bin.",
+    "expectation": "Ich möchte zeigen, dass ich die Arbeit beherrsche, ohne mich aus Trotz zu gefährden. Nach Feierabend will ich klären, was er weitererzählt hat.",
+    "limit": "Angenommen: ein Arbeiter am hölzernen Seeübergang nach dessen Bau, der mit einem erfahrenen Verwandten arbeitet. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: ein Arbeiter am hölzernen Seeübergang nach dessen Bau, der mit einem erfahrenen Verwandten arbeitet.",
+    "social": "Verwandtschaft bietet Zugang zur Arbeit, bringt aber auch Abhängigkeit und Erwartungen mit sich.",
+    "practice": "Handgriffe und Erzählungen über Beinaheunfälle vermitteln Erfahrung; in ihrer Weitergabe werden Leistungen unterschiedlich gewichtet."
   },
   {
     "id": "ming",
@@ -937,10 +964,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Handwerker",
     "place": "China unter der frühen Ming-Dynastie",
     "related": "china",
-    "memory": "Ich erinnere mich an die Unruhe der vergangenen Jahre.",
-    "attention": "Ich arbeite an einem Auftrag und höre, was andere über die neue Herrschaft erzählen.",
-    "expectation": "Ich wünsche mir verlässliche Aufträge. Ob die neue Herrschaft meinen Alltag dauerhaft verändert, bleibt offen.",
-    "limit": "Der Dynastiebeginn ist ein historischer Bezugspunkt; die individuelle Erfahrung wird hier nicht als belegt ausgegeben."
+    "memory": "Mein Vater spricht von den vergangenen Jahren vor allem als Zeit der Verluste. Mir fällt auch ein Nachbar ein, der uns damals Werkzeug lieh. Wir erzählen dieselbe Zeit unterschiedlich.",
+    "attention": "Ich bessere ein Gerät für einen Kunden aus, der von neuen Anordnungen berichtet. Ich frage nach, was für unseren Ort tatsächlich angeordnet wurde und was er nur vermutet.",
+    "expectation": "Ich möchte einen grösseren Auftrag annehmen. Mein Vater rät, Vorräte zurückzuhalten. Ob mehr Arbeit jetzt Sicherheit oder zusätzliche Verpflichtung bedeutet, ist für uns strittig.",
+    "limit": "Angenommen: ein Handwerker in einem chinesischen Ort unter früher Ming-Herrschaft; sein Haushalt hat unruhige Jahre erlebt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: ein Handwerker in einem chinesischen Ort unter früher Ming-Herrschaft; sein Haushalt hat unruhige Jahre erlebt.",
+    "social": "Zwei Generationen desselben Haushalts gewichten Verluste, Hilfe und Risiken unterschiedlich.",
+    "practice": "Familienerzählungen und Berichte über Anordnungen vermitteln Vergangenheit und Herrschaft aus begrenzter örtlicher Sicht."
   },
   {
     "id": "mainz",
@@ -948,10 +978,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Geselle einer Druckwerkstatt",
     "place": "Mainz",
     "related": "gutenberg",
-    "memory": "Ich erinnere mich an die Mühe, einen fehlerhaften Satz zu berichtigen.",
-    "attention": "Ich prüfe die gesetzten Zeichen und einen frischen Abdruck.",
-    "expectation": "Ich hoffe, dass die Arbeit gelingt. Welche Verbreitung gedruckte Bücher später erreichen, kann ich nicht wissen.",
-    "limit": "Die Figur kennt ihre Werkstatt, nicht die spätere Erzählung einer weltweiten Medienrevolution."
+    "memory": "Gestern übersah ich einen vertauschten Buchstaben. Der Korrekturleser entdeckte ihn erst im Abdruck. Ich weiss noch, wie selbstverständlich mir der fehlerhafte Satz beim ersten Prüfen vorkam.",
+    "attention": "Ich lese die neue Zeile Zeichen für Zeichen. Hinter mir wartet ein Kollege auf den Satz. Je vertrauter mir die Worte werden, desto leichter ergänze ich im Kopf, was gar nicht dasteht.",
+    "expectation": "Ich möchte den Bogen ohne weitere Korrektur fertigstellen. Zu schnelles Arbeiten spart jetzt Zeit, könnte aber viele gleich fehlerhafte Abzüge erzeugen.",
+    "limit": "Angenommen: ein Geselle beim frühen Buchdruck, der mit Setzern und Korrekturlesern zusammenarbeitet. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: ein Geselle beim frühen Buchdruck, der mit Setzern und Korrekturlesern zusammenarbeitet.",
+    "social": "Setzer, Drucker und Leser hängen voneinander ab, erkennen Fehler aber an unterschiedlichen Stellen.",
+    "practice": "Vorlage, Satz und Korrekturabdruck zeigen, dass Vervielfältigung auch Fehler vervielfältigen kann."
   },
   {
     "id": "caribbean",
@@ -959,10 +992,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Bäuerin",
     "place": "Karibik",
     "related": "americas1491",
-    "memory": "Ich erinnere mich an die letzte Ernte und daran, mit wem ich die Arbeit geteilt habe.",
-    "attention": "Ich prüfe die Pflanzen und bespreche mit anderen die anstehenden Arbeiten.",
-    "expectation": "Ich hoffe auf eine ausreichende Ernte. Von einer späteren europäischen Ankunft weiss ich nichts.",
-    "limit": "Die Region umfasste unterschiedliche Gesellschaften. Dieser allgemeine Entwurf behauptet keine bestimmte lokale Biografie."
+    "memory": "Meine Tante zeigte mir, wie wir die Wurzeln verarbeiten. Wenn ich es heute einer Jüngeren erkläre, fallen mir ihre Worte ein, aber manche ihrer Handgriffe kann ich besser vormachen als beschreiben.",
+    "attention": "Ich prüfe mit einer Verwandten, welche Pflanzen wir ernten. Sie möchte mehr stehen lassen; ich denke an das Essen für die Menschen, die uns bei der Arbeit helfen.",
+    "expectation": "Für die nächste Pflanzung möchte ich genügend Material zurückbehalten. Zugleich will ich die Hilfe unserer Verwandten erwidern. Beides lässt sich nicht ohne Absprache entscheiden.",
+    "limit": "Angenommen: eine indigene Frau auf Hispaniola, die mit Angehörigen Maniok anbaut und verarbeitet; keine Stimme für sämtliche karibischen Gesellschaften. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine indigene Frau auf Hispaniola, die mit Angehörigen Maniok anbaut und verarbeitet; keine Stimme für sämtliche karibischen Gesellschaften.",
+    "social": "Wissen, Arbeit und Verpflichtungen verbinden mehrere Angehörige; innerhalb der Gemeinschaft bestehen unterschiedliche Einschätzungen.",
+    "practice": "Vormachen, gemeinsames Verarbeiten und Erzählungen vermitteln Wissen ohne die Voraussetzung schriftlicher Aufzeichnungen."
   },
   {
     "id": "timbuktu",
@@ -970,10 +1006,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Abschreiber",
     "place": "Timbuktu",
     "related": "timbuktu",
-    "memory": "Ich erinnere mich an eine schwierige Passage, zu der ich eine Erklärung gehört habe.",
-    "attention": "Ich vergleiche meine Abschrift mit der Vorlage und halte bei einer unklaren Stelle inne.",
-    "expectation": "Ich hoffe, eine zuverlässige Abschrift fertigzustellen und die Passage besser zu verstehen.",
-    "limit": "Die Stimme knüpft an handschriftliche Wissensvermittlung an; ihre konkreten Gedanken sind erfunden."
+    "memory": "Bei einer früheren Abschrift hielt ich eine Randbemerkung für einen Teil des Textes. Ein Gelehrter berichtigte mich. Seitdem frage ich genauer, welche Hand welche Worte hinzugefügt hat.",
+    "attention": "Ich vergleiche eine schwer lesbare Stelle mit der Vorlage. Der Auftraggeber erwartet bald das fertige Werk; ich möchte die Unklarheit markieren, statt stillschweigend eine Lesart festzulegen.",
+    "expectation": "Ich will für zuverlässige Arbeit bekannt sein. Vielleicht lässt sich eine zweite Abschrift vergleichen; wenn sie abweicht, ist die Entscheidung allerdings noch nicht getroffen.",
+    "limit": "Angenommen: ein Abschreiber, der für einen Besitzer eine Handschrift kopiert und Zugang zu gelehrten Gesprächen hat. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: ein Abschreiber, der für einen Besitzer eine Handschrift kopiert und Zugang zu gelehrten Gesprächen hat.",
+    "social": "Besitz, handwerkliche Arbeit und Gelehrsamkeit fallen nicht zusammen. Der Auftraggeber bestimmt den Termin, nicht jede sachliche Antwort.",
+    "practice": "Haupttext, Randnotizen und mündliche Auslegung tragen unterschiedliche Schichten der Überlieferung."
   },
   {
     "id": "zurich",
@@ -981,10 +1020,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Handwerkerin",
     "place": "Zürich",
     "related": "local-reform",
-    "memory": "Ich erinnere mich an Gespräche über Predigten, bei denen wir uneinig waren.",
-    "attention": "Ich höre Berichte über die Disputation und frage nach dem Entscheid des Rats.",
-    "expectation": "Ich möchte wissen, was sich für Gottesdienst und Alltag ändern wird. Den weiteren Verlauf kenne ich nicht.",
-    "limit": "Die Figur hört vermittelte Nachrichten. Sie ist weder automatisch Augenzeugin noch Vertreterin aller Zürcherinnen."
+    "memory": "Meine Mutter verband ein bestimmtes Gebet mit dem Andenken an ihren Vater. Ein Nachbar nannte solche Gewohnheiten unnötig. Mich traf daran weniger sein Argument als sein Ton.",
+    "attention": "Bei der Arbeit höre ich einen Bericht über den Ratsentscheid. Ich frage, welche Worte tatsächlich gefallen sind. Mein Bruder und der Nachbar ziehen daraus bereits verschiedene Schlüsse.",
+    "expectation": "Ich möchte verstehen, was sich ändern soll, ohne die Erinnerung meiner Mutter lächerlich zu machen. Ob wir künftig gemeinsam zum Gottesdienst gehen, ist für mich eine konkrete Sorge.",
+    "limit": "Angenommen: eine Handwerkerin in Zürich, die Berichte über die Disputation hört und in ihrem Haushalt verschiedene religiöse Positionen erlebt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine Handwerkerin in Zürich, die Berichte über die Disputation hört und in ihrem Haushalt verschiedene religiöse Positionen erlebt.",
+    "social": "Familiengedächtnis, Nachbarschaft und religiöse Auseinandersetzung überschneiden sich, ohne eine einheitliche Position zu ergeben.",
+    "practice": "Gebete und Erzählungen bewahren familiäre Bindungen; Berichte über öffentliche Diskussionen erreichen den Haushalt vermittelt."
   },
   {
     "id": "coal",
@@ -992,10 +1034,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Bergarbeiter",
     "place": "Käpfnach bei Horgen",
     "related": "local-coal",
-    "memory": "Ich erinnere mich an die Erschöpfung nach meiner letzten Arbeit unter Tage.",
-    "attention": "Ich achte auf Werkzeug, Arbeitsraum und die Menschen neben mir.",
-    "expectation": "Ich hoffe, nach der Arbeit sicher zurückzukehren und meinen Lebensunterhalt bestreiten zu können.",
-    "limit": "Der Beginn des staatlichen Betriebs ist der Bezugspunkt; Arbeitsbedingungen im Einzelnen werden nicht rekonstruiert."
+    "memory": "Ein älterer Arbeiter bemerkte zuletzt eine Veränderung, die mir entgangen war. Ich erinnere mich genauer an seine Warnung als an das, was ich selbst im Arbeitsraum sah.",
+    "attention": "Ich halte kurz inne und vergleiche die Stelle mit seiner Beschreibung. Mein Nachbar drängt weiterzuarbeiten. Ich muss entscheiden, ob ich nachfrage und den Ablauf unterbreche.",
+    "expectation": "Ich will Erfahrung gewinnen und als verlässlich gelten. Dazu gehört für mich, eine Unsicherheit auszusprechen; ich fürchte aber, als langsam beurteilt zu werden.",
+    "limit": "Angenommen: ein Arbeiter im Käpfnacher Bergbau, der Erfahrung unter Tage sammelt und zum Einkommen seines Haushalts beiträgt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: ein Arbeiter im Käpfnacher Bergbau, der Erfahrung unter Tage sammelt und zum Einkommen seines Haushalts beiträgt.",
+    "social": "Erfahrene Kollegen vermitteln Wissen. Leistungsdruck und gegenseitige Verantwortung können miteinander in Konflikt geraten.",
+    "practice": "Körperliche Erfahrung und mündliche Warnungen prägen Erinnerung anders als betriebliche Förderzahlen."
   },
   {
     "id": "paris1789",
@@ -1003,10 +1048,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Wäscherin",
     "place": "Paris",
     "related": "revolution",
-    "memory": "Ich erinnere mich an Tage, an denen das Geld kaum für Nahrung reichte.",
-    "attention": "Ich höre politische Forderungen und frage mich, was davon meinen Alltag betrifft.",
-    "expectation": "Ich hoffe auf Erleichterung. Ob sich Rechte und Lebensbedingungen für mich verändern, weiss ich nicht.",
-    "limit": "Eine mögliche individuelle Hoffnung, keine belegte Meinung einer ganzen Berufsgruppe."
+    "memory": "Eine Kundin versprach mir letzte Woche Bezahlung und vertröstete mich erneut. Beim Gespräch über teures Brot dachte ich deshalb nicht nur an Preise, sondern an das Geld, das mir fehlt.",
+    "attention": "Ich rechne aus, was ich heute einkaufen kann. Eine Nachbarin will zu einer Versammlung, eine andere hält das für Zeitverlust. Beide brauchen ebenso dringend ihren Verdienst.",
+    "expectation": "Ich möchte selbst hören, was gefordert wird. Dafür müsste jemand meine Arbeit übernehmen. Grössere Mitsprache wünsche ich mir, doch sie ersetzt die ausstehende Zahlung nicht.",
+    "limit": "Angenommen: eine Pariser Wäscherin, deren Kundschaft unregelmässig zahlt und deren Nachbarinnen politisch unterschiedlicher Meinung sind. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine Pariser Wäscherin, deren Kundschaft unregelmässig zahlt und deren Nachbarinnen politisch unterschiedlicher Meinung sind.",
+    "social": "Kundschaft, Nachbarinnen und Haushalt verbinden wirtschaftliche Abhängigkeit mit unterschiedlichen politischen Entscheidungen.",
+    "practice": "Abrechnungen, Marktgespräche und Versammlungen setzen verschiedene Prioritäten; keine davon vertritt allein alle arbeitenden Frauen."
   },
   {
     "id": "haiti1791",
@@ -1014,10 +1062,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Versklavte Arbeiterin",
     "place": "Saint-Domingue",
     "related": "haiti",
-    "memory": "Ich erinnere mich an die Trennung von einem nahestehenden Menschen.",
-    "attention": "Ich versuche zu verstehen, welchen Nachrichten über Widerstand ich trauen kann.",
-    "expectation": "Ich wünsche mir Freiheit und Sicherheit. Den Ausgang der Konflikte kenne ich nicht.",
-    "limit": "Die spätere Unabhängigkeit Haitis ist keine Erinnerung oder sichere Erwartung dieser Figur."
+    "memory": "Meine Schwester erzählte mir bei unserem letzten Treffen von einer geplanten Flucht. Ich weiss nicht, ob sie wirklich aufbrach. Jetzt klingt das Gespräch für mich anders als damals.",
+    "attention": "Ein Mitversklavter berichtet von einem Aufstand und nennt einen Treffpunkt. Ich frage, von wem er es weiss. Zu lange zu zögern kann ebenso gefährlich sein wie einer falschen Nachricht zu folgen.",
+    "expectation": "Ich will die Gewalt der Versklavung hinter mir lassen und meine Schwester finden. Ob ich bleiben, fliehen oder mich anderen anschliessen kann, hängt auch davon ab, wem ich vertrauen kann.",
+    "limit": "Angenommen: eine versklavte Feldarbeiterin im Norden Saint-Domingues während der Erhebungen; sie hat eine Schwester auf einer anderen Plantage. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine versklavte Feldarbeiterin im Norden Saint-Domingues während der Erhebungen; sie hat eine Schwester auf einer anderen Plantage.",
+    "social": "Verwandtschaft über Plantagengrenzen hinweg und Kontakte unter Versklavten eröffnen Möglichkeiten unter extremer Gewalt und ungleichem Zugang zu Nachrichten.",
+    "practice": "Mündliche Nachrichten sind lebenswichtig und schwer überprüfbar. Koloniale Akten über Widerstand geben die Perspektive der Beteiligten nur vermittelt wieder."
   },
   {
     "id": "linth",
@@ -1025,10 +1076,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Arbeiter an der Linthkorrektion",
     "place": "Linthebene",
     "related": "local-linth",
-    "memory": "Ich erinnere mich an Wege und Felder, auf denen Wasser stand.",
-    "attention": "Ich arbeite am Kanal und sehe, wie sich der Verlauf des Wassers verändert.",
-    "expectation": "Ich hoffe auf weniger Überschwemmungen. Welche Folgen der Eingriff langfristig hat, kann ich nicht überblicken.",
-    "limit": "Die individuelle Lebensgeschichte ist erfunden; der Zeitraum gehört zur Linthkorrektion."
+    "memory": "Mein Onkel zeigte mir eine Wiese, die lange unter Wasser stand. Ein Nachbar beklagte dagegen den Zugang zu seinem Land während der Arbeiten. Wenn vom Nutzen des Kanals die Rede ist, höre ich beide Stimmen.",
+    "attention": "Ich räume mit anderen Erde weg. Beim Mittagessen streiten wir darüber, wem die Arbeiten zuerst helfen. Mein Lohn ist ein unmittelbarer Vorteil; über die künftigen Felder entscheide ich nicht.",
+    "expectation": "Ich wünsche mir trocknere Wege und weitere bezahlte Arbeit. Wenn die Baustelle endet, fallen diese beiden Hoffnungen vielleicht auseinander.",
+    "limit": "Angenommen: ein Kanalbauer aus der Region, dessen Verwandte unterschiedlich von vernässtem Land und den Bauarbeiten betroffen sind. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: ein Kanalbauer aus der Region, dessen Verwandte unterschiedlich von vernässtem Land und den Bauarbeiten betroffen sind.",
+    "social": "Bauarbeiter, Landbesitzer und andere Anwohner haben überlappende, aber nicht gleiche Interessen.",
+    "practice": "Erinnerungen an Hochwasser und Baustellen stehen neben Plänen und Berichten, die den Eingriff anders bewerten."
   },
   {
     "id": "murg1840",
@@ -1036,10 +1090,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Spinnerin",
     "place": "Murg am Walensee",
     "related": "local-murg",
-    "memory": "Ich erinnere mich an meinen ersten Arbeitstag und die ungewohnten Geräusche.",
-    "attention": "Ich achte auf den laufenden Arbeitsvorgang und darauf, ob eine Störung auftritt.",
-    "expectation": "Ich hoffe auf einen verlässlichen Lohn und darauf, nach der Arbeit Zeit für meine Angehörigen zu haben.",
-    "limit": "Die Stimme beschreibt eine mögliche einzelne Perspektive, keine erhobene Aussage über die Belegschaft."
+    "memory": "Bei meinem ersten gerissenen Faden half mir eine Kollegin, ohne mich blosszustellen. Nun merke ich, wie schnell ich selbst ungeduldig werde, wenn die Neue dieselbe Hilfe braucht.",
+    "attention": "Ich setze einen Faden an und beobachte zugleich ihre Handgriffe. Zwischen den Maschinengeräuschen verständigen wir uns mit kurzen Zeichen; ausführlich erklären kann ich jetzt wenig.",
+    "expectation": "Ich möchte, dass sie sicherer wird und wir die Arbeit schaffen. Nachher brauche ich Ruhe, habe aber zu Hause noch Aufgaben. Der Lohn verschafft mir Spielraum und bindet mich zugleich an diese Arbeitszeiten.",
+    "limit": "Angenommen: eine Spinnerin in Murg, die eine neue Kollegin einarbeitet und einen Teil ihres Lohns im Haushalt abgibt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine Spinnerin in Murg, die eine neue Kollegin einarbeitet und einen Teil ihres Lohns im Haushalt abgibt.",
+    "social": "Kollegiale Hilfe, betriebliche Anforderungen und Pflichten im Haushalt bestimmen die Zeit unterschiedlich.",
+    "practice": "Handgriffe, Zeichen und Gespräche nach der Arbeit vermitteln Erfahrungswissen, das Lohnlisten nicht erfassen."
   },
   {
     "id": "ragaz",
@@ -1047,10 +1104,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Wäscherin im Kurort",
     "place": "Ragaz",
     "related": "local-ragaz",
-    "memory": "Ich erinnere mich an eine Zeit mit besonders viel Wäsche und langen Arbeitstagen.",
-    "attention": "Ich sortiere die Wäsche und höre, dass neue Gäste angekommen sind.",
-    "expectation": "Ich hoffe auf genug Arbeit, aber auch auf Erholung. Ob die Saison gut wird, weiss ich noch nicht.",
-    "limit": "Die angenommene Arbeitsperspektive unterscheidet sich vom Blick zahlender Kurgäste."
+    "memory": "Letzte Saison nahmen wir mehr Wäsche an, als wir gut bewältigen konnten. Meine Verwandte erinnert sich vor allem an den Verdienst; mir fallen zuerst die schmerzenden Hände ein.",
+    "attention": "Ich sortiere die Stücke und entdecke eine beschädigte Naht. Bevor wir waschen, will ich festhalten, dass sie schon offen war. Sonst könnten wir für den Schaden verantwortlich gemacht werden.",
+    "expectation": "Zusätzliche Gäste könnten mehr Einkommen bringen. Ich möchte diesmal eine Grenze vereinbaren, auch wenn meine Verwandte das als entgangene Gelegenheit sieht.",
+    "limit": "Angenommen: eine Wäscherin in Ragaz, die Aufträge aus dem Kurbetrieb erhält und mit einer Verwandten arbeitet. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine Wäscherin in Ragaz, die Aufträge aus dem Kurbetrieb erhält und mit einer Verwandten arbeitet.",
+    "social": "Arbeitspartnerin und Auftraggeber teilen ihr Interesse an erledigter Wäsche, nicht unbedingt an gleichen Arbeitsbedingungen.",
+    "practice": "Beschädigte Textilien, Rechnungen und Saisonerinnerungen dokumentieren verschiedene Seiten des Kuraufenthalts."
   },
   {
     "id": "boat",
@@ -1058,10 +1118,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Schiffer",
     "place": "Walensee",
     "related": "local-rail",
-    "memory": "Ich erinnere mich an Fahrten, bei denen Reisende und Waren auf mein Boot angewiesen waren.",
-    "attention": "Ich höre von neuen Bahnverbindungen und bespreche einen Transport.",
-    "expectation": "Ich frage mich, ob ich künftig weniger Aufträge bekomme oder andere Fahrten anbieten kann.",
-    "limit": "Die wirtschaftliche Folge wird als offene Frage formuliert, nicht aus dem späteren Bahnnetz abgeleitet."
+    "memory": "Eine Fahrt, auf die ich wegen des Wetters verzichtete, nennt mein Neffe noch immer eine verlorene Gelegenheit. Ich erinnere mich vor allem an die Bedingungen draussen auf dem See.",
+    "attention": "Ich verhandele einen Transportpreis. Der Kunde vergleicht mit der angekündigten Bahn, deren Nutzen mein Neffe begeistert beschreibt. Für meine Fahrt muss ich trotzdem Wetter und Ladung einschätzen.",
+    "expectation": "Vielleicht verlieren wir Strecken, gewinnen aber Zubringerfahrten. Mein Neffe möchte zur Bahn. Ich könnte seine Entscheidung unterstützen und dennoch einen Teil unserer gemeinsamen Arbeit verlieren.",
+    "limit": "Angenommen: ein Schiffer auf dem Walensee, der mit einem jüngeren Angehörigen über die künftige Erwerbsarbeit spricht. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: ein Schiffer auf dem Walensee, der mit einem jüngeren Angehörigen über die künftige Erwerbsarbeit spricht.",
+    "social": "Kundschaft, Angehörige und konkurrierende Verkehrsanbieter rechnen mit unterschiedlichen Möglichkeiten.",
+    "practice": "Erinnerte Fahrten und weitergegebene Wetterkenntnis stehen neben Fahrplänen und Versprechen neuer Verbindungen."
   },
   {
     "id": "reader",
@@ -1069,10 +1132,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Junge Leserin",
     "place": "Zürich",
     "related": "local-heidi",
-    "memory": "Ich erinnere mich an eine Berglandschaft, die ich selbst gesehen habe.",
-    "attention": "Ich lese Heidi und vergleiche die beschriebene Welt mit meinen eigenen Vorstellungen.",
-    "expectation": "Ich möchte weiter lesen und vielleicht einmal die Gegend besuchen. Wie berühmt die Geschichte wird, weiss ich nicht.",
-    "limit": "Die Figur erlebt Literatur. Heidis Handlungen werden nicht zu historischen Erinnerungen eines wirklichen Mädchens."
+    "memory": "Vom letzten Bergbesuch erinnere ich mich an nasse Schuhe und einen Streit. Beim Lesen fallen mir plötzlich auch der Geruch des Heus und eine freundliche Begegnung wieder ein.",
+    "attention": "Meine Freundin findet Heidis Leben beneidenswert. Ich lese eine Stelle noch einmal: Was uns frei erscheint, könnte für jemanden, der dort arbeiten muss, anders aussehen.",
+    "expectation": "Ich möchte meiner Freundin das Kapitel vorlesen und ihre Meinung hören. Bei einer nächsten Reise würde ich gern genauer hinschauen, statt überall die Figuren aus dem Buch zu suchen.",
+    "limit": "Angenommen: eine Zürcher Leserin mit Zugang zu Heidi, die das Buch mit einer Freundin bespricht. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine Zürcher Leserin mit Zugang zu Heidi, die das Buch mit einer Freundin bespricht.",
+    "social": "Eigene Reiseerfahrung, Freundin und literarische Darstellung prägen einander, ohne deckungsgleich zu werden.",
+    "practice": "Das Buch ruft Erinnerungen hervor und ordnet sie um. Erzählte Ereignisse werden dadurch nicht selbst Erlebnisse der Leserin."
   },
   {
     "id": "war1914",
@@ -1080,10 +1146,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Angehörige eines Gefallenen",
     "place": "Deutschsprachiger Raum",
     "related": "war",
-    "memory": "Ich erinnere mich an unser letztes Gespräch, bevor er fortging.",
-    "attention": "Ich lese die Todesanzeige und bleibe am Wort Heldentod hängen.",
-    "expectation": "Ich frage mich, wie wir künftig von ihm sprechen werden. Wann der Krieg endet, weiss ich nicht.",
-    "limit": "Die Angehörige und ihre Beziehung sind erfunden; die vorhandene Anzeige dient als Anlass, nicht als Beleg ihrer Gefühle."
+    "memory": "Beim Abschied stritten wir über eine Kleinigkeit. Jetzt erzählen die anderen vor allem von seiner Zuversicht. Ich möchte ihnen nicht widersprechen, aber unser letztes Gespräch passt schlecht dazu.",
+    "attention": "Ich lese «Heldentod» in der Anzeige und versuche, meinen Bruder darin wiederzuerkennen. Meine Mutter findet Trost in dem Wort; mir fehlen seine alltäglichen Eigenheiten.",
+    "expectation": "Ich möchte etwas von ihm aufbewahren, das auch unsere Unstimmigkeiten zulässt. Vielleicht schreibe ich das letzte Gespräch auf; ich weiss nicht, ob ich es der Familie zeigen werde.",
+    "limit": "Angenommen: die Schwester eines gefallenen Soldaten; ihre Familiengeschichte ist nicht aus der gezeigten Todesanzeige erschlossen. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: die Schwester eines gefallenen Soldaten; ihre Familiengeschichte ist nicht aus der gezeigten Todesanzeige erschlossen.",
+    "social": "Schwester, Mutter und öffentliche Trauersprache geben demselben Verlust unterschiedliche Bedeutungen.",
+    "practice": "Todesanzeige, persönliches Gespräch und aufbewahrte Gegenstände erzeugen verschiedene Erinnerungsbilder."
   },
   {
     "id": "india1947",
@@ -1091,10 +1160,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Schneiderin",
     "place": "Punjab",
     "related": "india",
-    "memory": "Ich erinnere mich an die Nachbarschaft, in der ich gearbeitet habe.",
-    "attention": "Ich versuche, Nachrichten über sichere Wege und über Angehörige zu bekommen.",
-    "expectation": "Ich hoffe, wieder einen sicheren Alltag aufbauen zu können. Wo das möglich sein wird, ist offen.",
-    "limit": "Die Stimme ist ein angenommener Einzelfall im Zusammenhang der Teilung, keine allgemeine Erfahrung aller Betroffenen."
+    "memory": "Ich denke an eine Kundin, deren unfertiges Kleid in meiner Werkstatt blieb. Ob sie noch dort ist, weiss ich nicht. In den Nachrichten über ganze Bevölkerungsgruppen finde ich unsere Gespräche kaum wieder.",
+    "attention": "Ich ändere ein geliehenes Kleidungsstück und frage Neuankommende nach unserer Strasse. Die Verwandten wollen planen; ich warte auf eine Nachricht, die ihre Vorschläge wieder verändern könnte.",
+    "expectation": "Ich möchte meine Arbeit wieder aufnehmen und einen vermissten Angehörigen erreichen. Zurückgehen und neu anfangen sind für mich noch keine klar getrennten Möglichkeiten.",
+    "limit": "Angenommen: eine Schneiderin aus dem Punjab, die während der Teilung vorübergehend bei Verwandten unterkommt; Religion und Fluchtweg sind nicht festgelegt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine Schneiderin aus dem Punjab, die während der Teilung vorübergehend bei Verwandten unterkommt; Religion und Fluchtweg sind nicht festgelegt.",
+    "social": "Verwandte bieten Unterkunft, haben aber eigene Grenzen. Frühere Nachbarschaft und neue politische Zugehörigkeiten fallen nicht einfach zusammen.",
+    "practice": "Nachrichten über Vermisste und erinnerte Kundenbeziehungen bewahren Einzelheiten, die nationale Erzählungen leicht übergehen."
   },
   {
     "id": "vote1971",
@@ -1102,10 +1174,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Stimmbürgerin vor ihrer ersten eidgenössischen Abstimmung",
     "place": "Schweiz",
     "related": "vote",
-    "memory": "Ich erinnere mich an politische Entscheidungen, bei denen ich auf Bundesebene nicht mitstimmen durfte.",
-    "attention": "Ich lese die Abstimmungsunterlagen und bespreche unterschiedliche Argumente.",
-    "expectation": "Ich will meine Stimme abgeben. Welche Entscheidung sich durchsetzt, kenne ich noch nicht.",
-    "limit": "Der Standpunkt liegt nach Einführung des Frauenstimmrechts; lokale und persönliche Vorgeschichten bleiben verschieden."
+    "memory": "Mein Mann erklärte mir früher oft, wie «wir» stimmen würden. An einer Vorlage hatten wir uns gestritten. Jetzt merke ich, dass ich seine Begründung noch immer zuerst im Kopf habe.",
+    "attention": "Ich lese die Unterlagen selbst und notiere eine Frage. Meine Freundin ist anderer Meinung als ich; dass wir beide abstimmen dürfen, bedeutet nicht, dass wir dieselben Interessen vertreten.",
+    "expectation": "Ich möchte meine Entscheidung begründen können, auch wenn sie niemand in meinem Umfeld teilt. Meine Stimme abzugeben beendet nicht automatisch die Gewohnheit, politische Fragen ihm zu überlassen.",
+    "limit": "Angenommen: eine Schweizerin nach Einführung des eidgenössischen Frauenstimmrechts; sie diskutiert eine bevorstehende Vorlage mit ihrem Mann und einer Freundin. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine Schweizerin nach Einführung des eidgenössischen Frauenstimmrechts; sie diskutiert eine bevorstehende Vorlage mit ihrem Mann und einer Freundin.",
+    "social": "Ehe, Freundschaft und Staatsbürgerrecht eröffnen unterschiedliche Formen der Mitsprache und des Widerspruchs.",
+    "practice": "Frühere Gespräche und eigene Notizen beeinflussen den Umgang mit neuen politischen Rechten."
   },
   {
     "id": "berlin1989",
@@ -1113,10 +1188,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Student",
     "place": "Ost-Berlin, 8. November",
     "related": "wall",
-    "memory": "Ich erinnere mich an Gespräche und öffentliche Proteste der letzten Wochen.",
-    "attention": "Ich höre Nachrichten und spreche mit Freunden darüber, was sich ändern könnte.",
-    "expectation": "Ich hoffe auf mehr Freiheit zu reisen. Was morgen geschieht, weiss ich nicht.",
-    "limit": "Der Tag ist bewusst vor der Maueröffnung gewählt. Spätere Ereignisse werden nicht vorweggenommen."
+    "memory": "Bei der letzten Diskussion wollte ein Freund vor allem ausreisen. Ich sprach von Veränderungen hier. Hinterher fragte ich mich, ob ich seine Gründe überhaupt angehört hatte.",
+    "attention": "Wir vergleichen Meldungen über die politische Lage. Eine Freundin hofft auf eine andere DDR, ein anderer spricht von Weggehen. Ich teile ihre Unzufriedenheit, nicht jede Vorstellung danach.",
+    "expectation": "Ich möchte reisen dürfen und an Veränderungen mitwirken. Ich fürchte, dass unsere Gruppe auseinandergeht, gerade wenn mehr möglich wird. Einen konkreten Ablauf für morgen kenne ich nicht.",
+    "limit": "Angenommen: ein Ost-Berliner Student am 8. November, der Veränderungen befürwortet, aber mit Freunden über deren Richtung streitet. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: ein Ost-Berliner Student am 8. November, der Veränderungen befürwortet, aber mit Freunden über deren Richtung streitet.",
+    "social": "Freunde teilen Kritik, entwickeln daraus aber verschiedene Zukunftswünsche.",
+    "practice": "Nachrichten, Protesterfahrungen und private Gespräche liefern konkurrierende Erwartungen, keine Kenntnis der folgenden Maueröffnung."
   },
   {
     "id": "murg1996",
@@ -1124,10 +1202,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Mechaniker der Spinnerei",
     "place": "Murg",
     "related": "local-murg1996",
-    "memory": "Ich erinnere mich an eine Maschine, deren Geräusche ich nach Jahren genau kannte.",
-    "attention": "Ich sehe, dass der Betrieb endet, und frage nach meiner nächsten Arbeit.",
-    "expectation": "Ich hoffe, eine neue Stelle zu finden. Welche Nutzung das Gebäude später erhält, weiss ich noch nicht.",
-    "limit": "Die konkrete Berufsbiografie ist erfunden; die Schliessung von 1996 ist der historische Bezugspunkt."
+    "memory": "An einem bestimmten Geräusch erkannte ich früher eine Störung. Ein Kollege nannte das meine besondere Fähigkeit. Jetzt fällt mir auf, wie sehr mein Ansehen an Maschinen hing, die bald stillstehen.",
+    "attention": "Ich ordne Werkzeug und bespreche mit einem Kollegen, was noch zu erledigen ist. Er freut sich auf einen Wechsel. Seine Erleichterung macht meinen eigenen Verlust nicht kleiner, aber auch nicht allgemein gültig.",
+    "expectation": "Ich will eine Stelle finden, an der meine Erfahrung zählt. Gleichzeitig frage ich mich, welche Fähigkeiten ich neu lernen muss und ob ich wieder Anfänger sein kann.",
+    "limit": "Angenommen: ein langjähriger Mechaniker der Spinnerei Murg während der Betriebsschliessung; keine dokumentierte Beschäftigtenbiografie. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: ein langjähriger Mechaniker der Spinnerei Murg während der Betriebsschliessung; keine dokumentierte Beschäftigtenbiografie.",
+    "social": "Kollegen erleben dieselbe Schliessung verschieden; berufliches Wissen und Anerkennung lassen sich nicht vollständig in eine neue Stelle mitnehmen.",
+    "practice": "Geräusche, Werkzeuge und gemeinsame Reparaturgeschichten bewahren Betriebswissen jenseits offizieller Firmengeschichte."
   },
   {
     "id": "archaeology2010",
@@ -1135,10 +1216,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Archäologin",
     "place": "Zürich, Sechseläutenplatz beim Opernhaus nahe Stadelhofen",
     "related": "local-opera",
-    "memory": "Ich erinnere mich an eine ältere Grabung, bei der ein unscheinbarer Fund wichtig wurde.",
-    "attention": "Ich dokumentiere Holzreste und ihre Lage, bevor der Zusammenhang verloren geht.",
-    "expectation": "Ich hoffe auf auswertbare Datierungen. Welche Ergebnisse sie liefern werden, steht noch nicht fest.",
-    "limit": "Diese Stimme gehört zur heutigen Erforschung, nicht zur prähistorischen Bevölkerung."
+    "memory": "Bei einer früheren Grabung hielten wir zwei Hölzer zunächst für zusammengehörig. Erst die Auswertung trennte die Bauphasen. An diese Korrektur denke ich jetzt vor jedem vorschnellen Zusammenhang.",
+    "attention": "Ich zeichne die Lage eines Holzes ein und bespreche mit einem Kollegen eine mögliche Zuordnung. Solange die Datierung fehlt, halte ich Beobachtung und Vermutung getrennt fest.",
+    "expectation": "Ich möchte wissen, ob die Proben dieselbe Bauphase ergeben. Ein abweichendes Datum wäre kein misslungener Befund: Es könnte unsere bisherige Ordnung verändern.",
+    "limit": "Angenommen: eine Archäologin bei den Untersuchungen am Zürcher Opernhaus, die Grabungsbefunde dokumentiert; keine reale Mitarbeiterin wird zitiert. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine Archäologin bei den Untersuchungen am Zürcher Opernhaus, die Grabungsbefunde dokumentiert; keine reale Mitarbeiterin wird zitiert.",
+    "social": "Grabungsteam und spätere Spezialauswertung verfügen über unterschiedliche Ausschnitte des Befunds.",
+    "practice": "Pläne, Proben und Dokumentation ermöglichen nachträgliche Korrekturen; persönliche Erinnerung allein reicht dafür nicht."
   },
   {
     "id": "paris2015",
@@ -1146,10 +1230,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Studentin",
     "place": "Paris",
     "related": "paris",
-    "memory": "Ich erinnere mich an Diskussionen, in denen wir an einer gemeinsamen Klimapolitik gezweifelt haben.",
-    "attention": "Ich lese Nachrichten über das beschlossene Abkommen und suche nach seinen Zielen.",
-    "expectation": "Ich hoffe auf wirksame Umsetzung. Ob die Ziele erreicht werden, lässt sich heute nicht wissen.",
-    "limit": "Die Hoffnung gehört zum erfundenen Entwurf; der Vertragsbeschluss ist kein Beleg seiner späteren Wirkung."
+    "memory": "Mein Vater fragte bei unserer letzten Diskussion nach den Arbeitsplätzen in seiner Branche. Ich hielt das für Ausweichen. Beim Lesen des Abkommens fällt mir ein, dass ich ihm keine konkrete Antwort gab.",
+    "attention": "Ich suche im beschlossenen Text nach Verpflichtungen und unterscheide sie von den Überschriften in den Nachrichten. Eine Freundin feiert den Beschluss; ich freue mich und bleibe bei der Umsetzung unsicher.",
+    "expectation": "Ich möchte politisch mitarbeiten, ohne die Kosten für andere einfach wegzuerklären. Woran ich in einigen Jahren Erfolg messen würde, muss ich genauer benennen als nur mit «Abkommen erreicht».",
+    "limit": "Angenommen: eine Studentin in Paris nach dem Klimaabkommen, die mit ihrer Familie über Klimapolitik diskutiert. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine Studentin in Paris nach dem Klimaabkommen, die mit ihrer Familie über Klimapolitik diskutiert.",
+    "social": "Freundeskreis und Familie verbinden globale Ziele mit ungleichen beruflichen und finanziellen Sorgen.",
+    "practice": "Vertragstext, Berichterstattung und Familiengespräche machen verschiedene Massstäbe für denselben Beschluss sichtbar."
   },
   {
     "id": "image2023",
@@ -1157,10 +1244,13 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Nutzerin sozialer Medien",
     "place": "Zürich",
     "related": "ai",
-    "memory": "Ich erinnere mich an ein früheres Bild, dessen Herkunft sich später anders herausstellte.",
-    "attention": "Ich sehe eine eindringliche Kriegsszene und suche nach Angaben zu ihrer Herstellung.",
-    "expectation": "Ich möchte die Herkunft klären, bevor ich das Bild weitergebe. Noch weiss ich nicht, was meine Suche ergibt.",
-    "limit": "Die Figur illustriert eine mögliche Prüfung digitaler Bilder, nicht einen dokumentierten Einzelfall."
+    "memory": "Vor einigen Wochen teilte ich ein Bild zu schnell. Ein Freund korrigierte die Ortsangabe. Ich löschte es, schrieb aber nicht allen, die es von mir erhalten hatten.",
+    "attention": "Die neue Aufnahme berührt mich, und die Absenderin ist mir vertraut. Trotzdem suche ich nach der frühesten auffindbaren Veröffentlichung. Vertrauen in sie beantwortet die Frage nach der Bildherkunft nicht.",
+    "expectation": "Ich möchte eine belastbare Erklärung finden und die frühere Weiterleitung richtigstellen. Bleibt die Herkunft offen, will ich das sagen, statt durch eine vorschnelle Entlarvung erneut Sicherheit vorzutäuschen.",
+    "limit": "Angenommen: eine Zürcher Nutzerin, die in einem privaten Chat ein angebliches Kriegsfoto erhält und kurz zuvor selbst ein ungeprüftes Bild weitergeleitet hat. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
+    "context": "Angenommen: eine Zürcher Nutzerin, die in einem privaten Chat ein angebliches Kriegsfoto erhält und kurz zuvor selbst ein ungeprüftes Bild weitergeleitet hat.",
+    "social": "Persönliches Vertrauen und Verantwortung gegenüber Empfängern wirken anders als die Reichweitenlogik einer Plattform.",
+    "practice": "Chatverläufe, Bildunterschriften und frühere Veröffentlichungen ermöglichen Prüfung; auch eine Korrektur muss die ursprünglichen Empfänger erreichen."
   }
 ];
 const CHARACTER_SOCIAL_CONTEXTS=[
@@ -1186,7 +1276,7 @@ function augustinePaint(room){const progress=augustineProgress;room.style.setPro
 async function augustinePlay(room){if(augustinePlaying){stopAugustine();augustinePaint(room);return}if(augustineProgress>=1)augustineProgress=0;augustineLastTone=-1;if(augustineSound){try{augustineAudio??=new (window.AudioContext||window.webkitAudioContext)();await augustineAudio.resume()}catch{augustineSound=false;room.querySelector('[data-conscious-sound]').checked=false;room.querySelector('[data-audio-status]').textContent='Audio hier nicht verfügbar; die sichtbare Folge funktioniert weiterhin.'}}augustinePlaying=true;const start=performance.now()-augustineProgress*16000;
  const tick=now=>{if(!augustinePlaying||!room.isConnected){stopAugustine();return}augustineProgress=Math.min(1,(now-start)/16000);const index=Math.floor(augustineProgress*8);if(index<8&&index!==augustineLastTone){augustineLastTone=index;if(augustineSound&&augustineAudio){const osc=augustineAudio.createOscillator(),gain=augustineAudio.createGain(),t=augustineAudio.currentTime;osc.type='sine';osc.frequency.value=AUGUSTINE_TONES[index];gain.gain.setValueAtTime(0,t);gain.gain.linearRampToValueAtTime(.1,t+.04);gain.gain.exponentialRampToValueAtTime(.001,t+1.6);osc.connect(gain);gain.connect(augustineAudio.destination);osc.start(t);osc.stop(t+1.65);augustineVoice=osc}}if(augustineProgress>=1)stopAugustine();augustinePaint(room);if(augustinePlaying)augustineFrame=requestAnimationFrame(tick)};augustineFrame=requestAnimationFrame(tick);
 }
-function presentSceneHtml(items){const c=augustineCharacter(),person=augustineExperience==='person';return `<figure class="world-scene semantic-board schematic-scene augustine-room ${person?'person-mode':'sound-mode'}" data-conscious-room><div class="conscious-heading"><div><span>AUGUSTINUS · DISTENTIO ANIMI</span><h3>Ein Bewusstsein. Drei Weisen des Gegenwärtigseins.</h3></div><button data-eternity aria-pressed="false">Ewigkeit gegenüberstellen ↗</button></div>${augustineCharacterControls()}<div class="conscious-space"><div class="conscious-floor" aria-hidden="true"></div><div class="conscious-stretch" aria-hidden="true"></div><div class="conscious-self"><small>BEWUSSTSEIN</small><strong>${person?yr(c.year):'Jetzt'}</strong><span>${person?'Mein Jetzt · '+esc(c.place):'Die Seele hält auseinander,<br>was sie zugleich gegenwärtig hat.'}</span></div><div class="conscious-label conscious-memory"><h4>memoria</h4><p>Gegenwart des Vergangenen</p><span>${person?esc(c.memory):'Der Ton ist nicht mehr.<br>Seine Spur ist jetzt in dir.'}</span></div><div class="conscious-label conscious-attention"><h4>attentio / contuitus</h4><p>Gegenwart des Gegenwärtigen</p><span>${person?esc(c.attention):'Du hörst. Schon vergeht der Ton.'}</span></div><div class="conscious-label conscious-expectation"><h4>expectatio</h4><p>Gegenwart des Zukünftigen</p><span>${person?esc(c.expectation):'Der Ton ist noch nicht.<br>Du bist jetzt auf ihn gerichtet.'}</span></div><div class="conscious-focus" aria-hidden="true"></div><div class="conscious-score" aria-label="Acht Töne: vom Erwarteten durch die Aufmerksamkeit ins Erinnerte">${AUGUSTINE_TONES.map((_,i)=>`<span class="conscious-tone" data-tone="${i}" data-phase="expected" style="left:${50+i*6}%">♪<small>${i+1}</small></span>`).join('')}</div><div class="conscious-direction">← aus Erwartung durch Aufmerksamkeit in Erinnerung</div><aside class="conscious-eternity" hidden><span>THEOLOGISCHER GEGENBEGRIFF</span><h3>Gottes Ewigkeit</h3><strong>Kein Vorher. Kein Nachher.</strong><p>Bei Augustinus ist Gott nicht am Ende einer unendlich langen Zeitachse. Ewigkeit unterliegt keinem Nacheinander.</p><p>Die räumliche Trennung veranschaulicht den Unterschied zwischen zeitlichem Erleben und Ewigkeit.</p><button data-eternity-back>Zur menschlichen Zeiterfahrung ↩</button></aside></div><div class="conscious-player"><button data-conscious-play>▶ Klangfolge erleben</button><button data-conscious-reset aria-label="Klangfolge zurücksetzen">↺ Anfang</button><label><input type="checkbox" data-conscious-sound checked> Mit Ton</label><input type="range" min="0" max="1" step="0.001" value="${augustineProgress}" data-conscious-progress aria-label="Verlauf der Klangfolge"><output data-conscious-status aria-live="off">Die Folge ist noch nicht erklungen. Was erwartest du?</output><span data-audio-status role="status"></span></div>${person?`<details class="conscious-character-note"><summary>Was ist an dieser Figur angenommen?</summary><p>${esc(c.limit)}</p>${c.source?`<p>Quellen / Annahmen: ${esc(c.source)}</p>`:''}<p>Die Ich-Sätze sind für diese Ansicht geschrieben. Sie beschreiben keine belegte Person und keine einheitliche Sicht ihrer Gruppe. Augustinus’ Begriffe werden hier auf eine mögliche Erfahrung übertragen; die Figur muss sie nicht selbst gekannt haben. Die Figurenwahl verändert deine Kategorie- und Zeitfilter nicht.</p>${eventLink(c.related,'Historischen Zusammenhang im vorhandenen Eintrag öffnen')}${c.id==='nero'?'<p><a href="https://www.britishmuseum.org/exhibitions/nero-man-behind-myth/slavery-ancient-rome" target="_blank" rel="noopener">British Museum: Sklaverei im antiken Rom</a></p>':''}</details>`:''}<details class="conscious-explain"><summary>Was erfahre ich hier – und wo endet das Bild?</summary><p>Höre die Folge, halte sie an und höre sie erneut. Beim zweiten Hören kann deine Erinnerung die Erwartung verändern. Während des Hörens wird Erwartetes gegenwärtig und geht ins Erinnern über. Erinnerung und Erwartung vollziehen sich beide jetzt.</p><p>Die «Erstreckung der Seele» bezeichnet diese Spannung. Der Raum und die wandernden Noten sind unsere Veranschaulichung, keine von Augustinus entworfene Geometrie. Die Töne bilden ein eigens erzeugtes Klangbeispiel, kein historisches Lied. Beim ersten Hören kennst du die genaue Fortsetzung noch nicht; die sichtbaren Noten zeigen nur die angekündigte Anzahl, nicht die Tonhöhen.</p><p>Augustinus fragt in <em>Confessiones</em> XI, wie Zeit sein kann, wenn Vergangenes nicht mehr und Zukünftiges noch nicht ist und Gegenwart vergeht. Seine Unterscheidung der drei Gegenwarten ist keine Behauptung dreier voneinander unabhängiger Zeiträume. Vgl. XI, 20 und 26–28.</p><ul>${sourceHtml(['augustine'])}</ul></details><details class="conscious-history"><summary>Historische Spuren in diesen Bewusstseinsraum einbringen · ${worldSelection(items).length} datierte Spuren</summary><p>Der Hörversuch ist deine eigene Zeiterfahrung. Für eine historische Person brauchst du dagegen Quellen: Was erinnerte sie, worauf achtete sie, was erwartete sie? Frühere Ereignisse werden nicht allein durch ihr Datum zu ihrer Erinnerung. Alle ausgewählten Spuren bleiben hier untersuchbar.</p>${historicalPresentSceneHtml(items)}</details><figcaption>Ein virtueller Bewusstseinsraum, keine Kugel und keine objektive Weltzeit. Erinnerung, Aufmerksamkeit und Erwartung sind gegenwärtige Vollzüge.</figcaption></figure>`}
+function presentSceneHtml(items){const c=augustineCharacter(),person=augustineExperience==='person';return `<figure class="world-scene semantic-board schematic-scene augustine-room ${person?'person-mode':'sound-mode'}" data-conscious-room><div class="conscious-heading"><div><span>AUGUSTINUS · DISTENTIO ANIMI</span><h3>Ein Bewusstsein. Drei Weisen des Gegenwärtigseins.</h3></div><button data-eternity aria-pressed="false">Ewigkeit gegenüberstellen ↗</button></div>${augustineCharacterControls()}<div class="conscious-space"><div class="conscious-floor" aria-hidden="true"></div><div class="conscious-stretch" aria-hidden="true"></div><div class="conscious-self"><small>BEWUSSTSEIN</small><strong>${person?yr(c.year):'Jetzt'}</strong><span>${person?'Mein Jetzt · '+esc(c.place):'Die Seele hält auseinander,<br>was sie zugleich gegenwärtig hat.'}</span></div><div class="conscious-label conscious-memory"><h4>memoria</h4><p>Gegenwart des Vergangenen</p><span>${person?esc(c.memory):'Der Ton ist nicht mehr.<br>Seine Spur ist jetzt in dir.'}</span></div><div class="conscious-label conscious-attention"><h4>attentio / contuitus</h4><p>Gegenwart des Gegenwärtigen</p><span>${person?esc(c.attention):'Du hörst. Schon vergeht der Ton.'}</span></div><div class="conscious-label conscious-expectation"><h4>expectatio</h4><p>Gegenwart des Zukünftigen</p><span>${person?esc(c.expectation):'Der Ton ist noch nicht.<br>Du bist jetzt auf ihn gerichtet.'}</span></div><div class="conscious-focus" aria-hidden="true"></div><div class="conscious-score" aria-label="Acht Töne: vom Erwarteten durch die Aufmerksamkeit ins Erinnerte">${AUGUSTINE_TONES.map((_,i)=>`<span class="conscious-tone" data-tone="${i}" data-phase="expected" style="left:${50+i*6}%">♪<small>${i+1}</small></span>`).join('')}</div><div class="conscious-direction">← aus Erwartung durch Aufmerksamkeit in Erinnerung</div><aside class="conscious-eternity" hidden><span>THEOLOGISCHER GEGENBEGRIFF</span><h3>Gottes Ewigkeit</h3><strong>Kein Vorher. Kein Nachher.</strong><p>Bei Augustinus ist Gott nicht am Ende einer unendlich langen Zeitachse. Ewigkeit unterliegt keinem Nacheinander.</p><p>Die räumliche Trennung veranschaulicht den Unterschied zwischen zeitlichem Erleben und Ewigkeit.</p><button data-eternity-back>Zur menschlichen Zeiterfahrung ↩</button></aside></div><div class="conscious-player"><button data-conscious-play>▶ Klangfolge erleben</button><button data-conscious-reset aria-label="Klangfolge zurücksetzen">↺ Anfang</button><label><input type="checkbox" data-conscious-sound checked> Mit Ton</label><input type="range" min="0" max="1" step="0.001" value="${augustineProgress}" data-conscious-progress aria-label="Verlauf der Klangfolge"><output data-conscious-status aria-live="off">Die Folge ist noch nicht erklungen. Was erwartest du?</output><span data-audio-status role="status"></span></div>${person?`<details class="conscious-character-note"><summary>Lebenslage und Annahmen dieser Person</summary><p>${esc(c.limit)}</p>${c.source?`<p>Quellen / Annahmen: ${esc(c.source)}</p>`:''}<p>Die Ich-Sätze sind für diese Ansicht geschrieben. Sie beschreiben keine belegte Person und keine einheitliche Sicht ihrer Gruppe. Augustinus’ Begriffe werden hier auf eine mögliche Erfahrung übertragen; die Figur muss sie nicht selbst gekannt haben. Die Figurenwahl verändert deine Kategorie- und Zeitfilter nicht.</p>${eventLink(c.related,'Historischen Zusammenhang im vorhandenen Eintrag öffnen')}${c.id==='nero'?'<p><a href="https://www.britishmuseum.org/exhibitions/nero-man-behind-myth/slavery-ancient-rome" target="_blank" rel="noopener">British Museum: Sklaverei im antiken Rom</a></p>':''}${c.id==='custos'||c.id==='nun'?'<p><a href="https://osb.org/our-roots/the-rule/" target="_blank" rel="noopener">Benediktsregel: gemeinsames Leben, Gebet und Arbeit (Normtext, keine Biografie)</a></p>':''}${c.id==='china868'?'<p><a href="https://idp.bl.uk/discover/learning/dunhuang/collection-items/cave-17-the-library-cave/" target="_blank" rel="noopener">British Library: überlieferter Druck des Diamant-Sutra von 868</a></p>':''}</details>`:''}<details class="conscious-explain"><summary>Was erfahre ich hier – und wo endet das Bild?</summary><p>Höre die Folge, halte sie an und höre sie erneut. Beim zweiten Hören kann deine Erinnerung die Erwartung verändern. Während des Hörens wird Erwartetes gegenwärtig und geht ins Erinnern über. Erinnerung und Erwartung vollziehen sich beide jetzt.</p><p>Die «Erstreckung der Seele» bezeichnet diese Spannung. Der Raum und die wandernden Noten sind unsere Veranschaulichung, keine von Augustinus entworfene Geometrie. Die Töne bilden ein eigens erzeugtes Klangbeispiel, kein historisches Lied. Beim ersten Hören kennst du die genaue Fortsetzung noch nicht; die sichtbaren Noten zeigen nur die angekündigte Anzahl, nicht die Tonhöhen.</p><p>Augustinus fragt in <em>Confessiones</em> XI, wie Zeit sein kann, wenn Vergangenes nicht mehr und Zukünftiges noch nicht ist und Gegenwart vergeht. Seine Unterscheidung der drei Gegenwarten ist keine Behauptung dreier voneinander unabhängiger Zeiträume. Vgl. XI, 20 und 26–28.</p><ul>${sourceHtml(['augustine'])}</ul></details><details class="conscious-history"><summary>Historische Spuren in diesen Bewusstseinsraum einbringen · ${worldSelection(items).length} datierte Spuren</summary><p>Der Hörversuch ist deine eigene Zeiterfahrung. Für eine historische Person brauchst du dagegen Quellen: Was erinnerte sie, worauf achtete sie, was erwartete sie? Frühere Ereignisse werden nicht allein durch ihr Datum zu ihrer Erinnerung. Alle ausgewählten Spuren bleiben hier untersuchbar.</p>${historicalPresentSceneHtml(items)}</details><figcaption>Ein virtueller Bewusstseinsraum, keine Kugel und keine objektive Weltzeit. Erinnerung, Aufmerksamkeit und Erwartung sind gegenwärtige Vollzüge.</figcaption></figure>`}
 function wireAugustine(){document.addEventListener('change',e=>{if(e.target.matches('[data-conscious-character]'))selectCharacter(e.target.value)});document.addEventListener('click',e=>{if(e.target.closest('[data-character-gallery]')){openCharacterGallery();return}if(e.target.closest('[data-avatar-new]')){openAvatarEditor();return}if(e.target.closest('[data-avatar-edit]')){openAvatarEditor(true);return}if(e.target.closest('[data-conscious-random]')){const all=characterLibrary(),i=all.findIndex(c=>c.id===augustineCharacter().id);selectCharacter(all[nextAugustineCharacter(i,Math.random(),all.length)].id);return}const room=e.target.closest('[data-conscious-room]');if(!room)return;const experience=e.target.closest('[data-conscious-view]');if(experience){stopAugustine();augustineExperience=experience.dataset.consciousView;render();return}if(e.target.closest('[data-conscious-play]'))augustinePlay(room);if(e.target.closest('[data-conscious-reset]')){stopAugustine();augustineProgress=0;augustinePaint(room)}if(e.target.closest('[data-eternity],[data-eternity-back]')){stopAugustine();const panel=room.querySelector('.conscious-eternity'),opening=panel.hidden;panel.hidden=!opening;room.classList.toggle('eternity-visible',opening);room.querySelector('[data-eternity]').setAttribute('aria-pressed',String(opening));augustinePaint(room)}});document.addEventListener('input',e=>{const room=e.target.closest('[data-conscious-room]');if(!room)return;if(e.target.matches('[data-conscious-progress]')){stopAugustine();augustineProgress=Number(e.target.value);augustinePaint(room)}if(e.target.matches('[data-conscious-sound]')){augustineSound=e.target.checked;if(!augustineSound&&augustineVoice){try{augustineVoice.stop()}catch{}augustineVoice=null}}});document.addEventListener('visibilitychange',()=>{if(document.hidden)stopAugustine()});}
 
 function historicalPresentSceneHtml(items){
