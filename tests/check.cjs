@@ -209,7 +209,7 @@ const wholeItems=lensItems();
 for(const mode of Object.keys(WHOLE_VIEW_FORMS)){
  representation=mode;const html=worldSceneHtml(wholeItems);
  for(const e of wholeItems)if(!html.includes('data-lens-focus="'+e.id+'"'))throw Error('Gesamtschau verliert '+e.id+' in '+mode);
- if(!html.includes(mode==='direction'?'goal-columns':mode==='present'?'whole-form-backdrop':'concept-relationship'))throw Error('Gesamtform fehlt');
+ if(!html.includes(mode==='direction'?'goal-columns':mode==='present'?'whole-form-backdrop':mode==='layers'?'strata-landscape':'concept-relationship'))throw Error('Gesamtform fehlt');
 }
 representation=overviewOldMode;worldAll=overviewOldAll;
 `,ctx);
@@ -372,10 +372,10 @@ try {
   representation=mode;ensureReading(mode);
   const original=worldSceneHtml(lensItems());
   if(original.includes('diagram-number')||original.includes('nodeClip'))throw Error('Numbered circles remain in '+mode);
-  if(!original.includes('concept-relationship')||!original.includes('Einträge zum Einordnen'))throw Error('Missing explanation or open evidence in '+mode);
+  if(mode==='layers'?!original.includes('data-strata-probe'):(!original.includes('concept-relationship')||!original.includes('Einträge zum Einordnen')))throw Error('Missing explanation or open evidence in '+mode);
   state.lensAssignments[mode]={paris:GLOBAL_LENSES[mode].slots[0][0]};
   const changed=worldSceneHtml(lensItems()),station=changed.slice(changed.indexOf('concept-station station-0'),changed.indexOf('concept-station station-1'));
-  if(!station.includes('data-lens-focus="paris"'))throw Error('Assignment does not move evidence in '+mode);
+  if(mode!=='layers'&&!station.includes('data-lens-focus="paris"'))throw Error('Assignment does not move evidence in '+mode);
   if(changed===original)throw Error('Static form '+mode);
  }
 } finally {state=conceptSnapshot.state;representation=conceptSnapshot.representation;worldAll=conceptSnapshot.worldAll;worldAssumption=conceptSnapshot.worldAssumption}
@@ -398,3 +398,12 @@ assert(ctx.docTests.items.find(e=>e.id==='doc-bayeux').year>1066);
 assert.equal(ctx.docTests.items.find(e=>e.id==='doc-parisfilm').year,2021);
 
 console.log('PASS: Zwei Dokumentenspuren mit je 26 Einträgen, individuellen Betrachtungshilfen, getrennten Quellendaten und erweiterbaren Kategorien.');
+
+vm.runInContext(`
+const strataPrevious={representation,worldAll};representation='layers';worldAll=true;
+const strataItems=lensItems(),strataMarkup=strataExplorerHtml(strataItems);
+for(const event of worldSelection(strataItems)){if(strataMarkup.split('data-strata-entry="'+event.id+'"').length-1!==3)throw Error('Missing stratum '+event.id);}
+if(strataMarkup.includes('Einträge zum Einordnen')||!strataMarkup.includes('data-strata-range'))throw Error('Old pool or missing navigation');
+representation=strataPrevious.representation;worldAll=strataPrevious.worldAll;
+`,ctx);
+console.log('PASS: Alle datierten Einträge auf drei Schichten, Cursor- und Tastaturnavigation statt Einordnungspool.');
