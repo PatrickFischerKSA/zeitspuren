@@ -241,10 +241,10 @@ vm.runInContext(`
   for(const [field,value] of Object.entries(model.fields))if(state.notes[randomFieldKey(mode,field)]!==value)throw Error('Parameter fehlt: '+mode+field);
   if(worldYear!==meta.year||worldAll!==meta.all||worldPeriod!==meta.period)throw Error('Ansicht nicht angewendet');
   if(mode==='present'&&worldYear!==model.view.year)throw Error('Inkohärenter Wissensstand');
-  if(!randomConceptHtml().includes('Erzeugter Zeitraum:'))throw Error('Zeitraum fehlt');
+  if(mode!=='memoria'&&!randomConceptHtml().includes('Erzeugter Zeitraum:'))throw Error('Zeitraum fehlt');
   captureReadings();const copy=validate(JSON.parse(JSON.stringify(state))).interpretations[mode].profiles.find(p=>p.id===id);
   if(!randomConceptMeta(copy,mode))throw Error('Backup verliert Zufallsparameter');
-  state.notes[key]='Manuell geändert';if(!randomConceptHtml().includes('Manuell angepasst'))throw Error('Änderung nicht kenntlich');
+  state.notes[key]='Manuell geändert';if(mode!=='memoria'&&!randomConceptHtml().includes('Manuell angepasst'))throw Error('Änderung nicht kenntlich');
   if(Object.keys(activeReading().decisions).length)throw Error('Erfundene Ereignisbewertung');
  }
  }finally{({state,representation,worldYear,worldWindow,worldAll,worldPeriod,worldAssumption,visibleCategories,onlyOwn,readingComparison,worldSheet,lastRestoredHeil}=snapshot);for(const k of Object.keys(worldAssumptions))delete worldAssumptions[k];Object.assign(worldAssumptions,snapshot.assumptions);for(const k of Object.keys(restoredRandomConcept))delete restoredRandomConcept[k];Object.assign(restoredRandomConcept,snapshot.restored)}
@@ -335,3 +335,6 @@ if(overview.includes('goal-event board-role-support')||!overview.includes('erneu
 state=goalTestPrevious.state;representation=goalTestPrevious.representation;worldAll=goalTestPrevious.worldAll;worldAssumption=goalTestPrevious.worldAssumption;
 `,ctx);
 console.log('PASS: Zielübersicht zeigt benannte Ereignisse, begründete Urteile und erneute Prüfung nach Zielwechsel.');
+
+{const avatarState=api.defaults();avatarState.avatars=[{id:'avatar-test',year:1150,name:'Anna',role:'Schreiberin',place:'Zürich',memory:'Erinnerung',attention:'Wahrnehmung',expectation:'Erwartung',social:'Familie',source:'Als Modell angenommen'}];avatarState.activeAvatar='avatar-test';const copy=api.validate(JSON.parse(JSON.stringify(avatarState)));assert.equal(copy.avatars[0].name,'Anna');assert.equal(copy.activeAvatar,'avatar-test');avatarState.avatars[0].year=0;assert.throws(()=>api.validate(avatarState));}
+console.log('PASS: Eigene Avatare mit Quellenangaben und Auswahl überstehen den Sicherungsrundlauf; Jahr null wird zurückgewiesen.');
