@@ -438,3 +438,10 @@ representation='egypt';randomConceptDraft(()=>0);const p=activeReading(),meta=ra
 state=barPrevious.state;representation=barPrevious.representation;
 `,ctx);
 console.log('PASS: Random controls across all concept views; edited constellations preserved on next draw.');
+vm.runInContext(`
+const graphPrevious={state,representation,worldAssumption};state=defaults();worldAssumption=true;representation='materialism';ensureReading(representation);state.notes[premiseKey(representation,'mechanism')]='Wasserkraft und Eigentum';
+const graphA=constellationGraphHtml(representation,lensItems());state.notes[premiseKey(representation,'mechanism')]='Andere Wirkungskette';const graphB=constellationGraphHtml(representation,lensItems());if(graphA===graphB||!graphB.includes('Andere Wirkungskette'))throw Error('Parameters do not alter graph');
+setReadingDecision('paris','counter',3,'Ein begründeter Gegenbefund');const graphC=constellationGraphHtml(representation,lensItems());if(!graphC.includes('widerspricht')||!graphC.includes('stroke-width="8"'))throw Error('Decision and weight missing in graph');
+state=graphPrevious.state;representation=graphPrevious.representation;worldAssumption=graphPrevious.worldAssumption;
+`,ctx);
+console.log('PASS: Parameter text, counter-evidence and decision weight change the visualization.');
