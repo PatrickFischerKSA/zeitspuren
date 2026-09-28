@@ -839,10 +839,10 @@ const AUGUSTINE_CHARACTERS=[
     "place": "Ägypten",
     "related": "scribe",
     "memory": "Mein Kollege fand gestern einen Fehler in meiner Liste. Ich hatte eine Zahl übernommen, statt selbst nachzuzählen. Jetzt fällt mir wieder ein, wie lange der Lieferant auf die Berichtigung warten musste.",
-    "attention": "Die gemeldete Menge passt nicht zu meiner Zählung. Ich vergleiche beide Angaben, bevor ich den Unterschied weitergebe: Ein sauber geschriebenes Verzeichnis kann trotzdem falsch sein.",
-    "expectation": "Ich möchte selbstständig Listen führen dürfen. Eine weitere Berichtigung könnte das verzögern; schweige ich über den Unterschied, stimmt die Abrechnung womöglich nicht.",
-    "limit": "Angenommen: ein jüngerer Schreiber einer Getreideverwaltung, dessen erfahrener Kollege seine Listen kontrolliert. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: ein jüngerer Schreiber einer Getreideverwaltung, dessen erfahrener Kollege seine Listen kontrolliert.",
+    "attention": "Die Zahl passt nicht zu meiner Liste. Ich lasse zuerst den Lieferanten noch einmal zählen. Wenn mein Kollege dazukommt, soll er sehen, dass ich die Sache bereits prüfe.",
+    "expectation": "Bei der nächsten freien Stelle will ich berücksichtigt werden. Mein Kollege musste schliesslich auch einmal lernen. Noch eine öffentliche Zurechtweisung lasse ich mir nicht ohne Antwort gefallen.",
+    "limit": "Konstruierter Lebenslauf: Er lernte bei einem Verwandten schreiben und erhielt durch dessen Empfehlung eine Stelle in der Getreideverwaltung. Eine fehlerhafte Abrechnung kostete ihn Ansehen; seither will er besonders genau wirken und selbst eine besser bezahlte Aufgabe erhalten. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Er lernte bei einem Verwandten schreiben und erhielt durch dessen Empfehlung eine Stelle in der Getreideverwaltung. Eine fehlerhafte Abrechnung kostete ihn Ansehen; seither will er besonders genau wirken und selbst eine besser bezahlte Aufgabe erhalten.",
     "social": "Der ältere Kollege beurteilt seine Arbeit; der Lieferant kennt den Transport. Beide können dieselbe Abweichung anders erklären.",
     "practice": "Listen bewahren Mengen, aber nicht alle Umstände einer Lieferung. Mündliche Auskünfte ergänzen und korrigieren die Schrift."
   },
@@ -853,10 +853,10 @@ const AUGUSTINE_CHARACTERS=[
     "place": "Athen",
     "related": "athens",
     "memory": "Beim letzten Brand riss eine Schale, deren dünnen Rand ich besonders gelungen fand. Meine Schwester meinte, ich hätte zu schnell gearbeitet; ich vermute einen Fehler beim Trocknen.",
-    "attention": "Ich lasse den neuen Rand etwas dicker. Neben mir verlangt ein Kunde billigere Ware. Was ihm gleich aussieht, fühlt sich unter meinen Fingern unterschiedlich an.",
+    "attention": "Ich glätte den Rand und lasse meine Schwester die einfacheren Stücke machen. Der Kunde will weniger zahlen. Dann soll er anderswo kaufen; meine Arbeit ist nicht schlechter, nur weil er den Unterschied nicht sieht.",
     "expectation": "Ich will herausfinden, warum die Schale sprang. Zugleich brauchen wir verkäufliche Gefässe; für einen weiteren Versuch bleibt wenig Ton übrig.",
-    "limit": "Angenommen: eine Frau, die in einer attischen Familienwerkstatt Gefässe formt; die genaue Arbeitsteilung ist nicht überliefert. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine Frau, die in einer attischen Familienwerkstatt Gefässe formt; die genaue Arbeitsteilung ist nicht überliefert.",
+    "limit": "Konstruierter Lebenslauf: Sie lernte das Formen von Gefässen in der Werkstatt ihrer Familie. Nach dem Tod eines Angehörigen übernahm sie mehr Arbeit, ohne über alle Einnahmen bestimmen zu können. Ihre Schwester hilft ihr, kritisiert aber ihre teuren Versuche mit neuen Formen. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie lernte das Formen von Gefässen in der Werkstatt ihrer Familie. Nach dem Tod eines Angehörigen übernahm sie mehr Arbeit, ohne über alle Einnahmen bestimmen zu können. Ihre Schwester hilft ihr, kritisiert aber ihre teuren Versuche mit neuen Formen.",
     "social": "Schwester und Kundschaft bewerten die Arbeit nach unterschiedlichen Massstäben: Haltbarkeit, Können und Preis.",
     "practice": "Handgriffe und beschädigte Gefässe vermitteln Erfahrungswissen. Kein erhaltener Gegenstand verrät von sich aus, wer welchen Arbeitsschritt ausführte."
   },
@@ -867,10 +867,10 @@ const AUGUSTINE_CHARACTERS=[
     "place": "Rom",
     "related": "rome",
     "memory": "Beim Flicken fällt mir ein Stich ein, den mir eine ältere Mitbewohnerin gezeigt hat. Seit ihrer Freilassung sehe ich sie selten. Sie hat mir erzählt, dass sie weiterhin für ihren früheren Besitzer arbeitet.",
-    "attention": "Ich trenne eine schiefe Naht wieder auf. Ein anderer Versklavter bittet mich um Hilfe mit seinem Gewand; zuerst muss das Kleid der Hausherrin fertig werden. Ich entscheide über meine Arbeitsschritte, nicht über meine Zeit.",
-    "expectation": "Vielleicht kann die Freigelassene eine Nachricht an meine Schwester bringen. Ich würde sie gern selbst besuchen. Eine Freilassung wünsche ich mir auch, doch auf eine Zusage kann ich mich nicht berufen.",
-    "limit": "Angenommen: eine in Rom versklavte Frau, die in einem wohlhabenden Haushalt Kleidung ausbessert. Eine frühere Mitbewohnerin lebt nach ihrer Freilassung anderswo. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine in Rom versklavte Frau, die in einem wohlhabenden Haushalt Kleidung ausbessert. Eine frühere Mitbewohnerin lebt nach ihrer Freilassung anderswo.",
+    "attention": "Die neue Magd hat die Gewänder falsch abgelegt. Ich lasse sie alles noch einmal ordnen. Nähen kann sie nicht; solange das so bleibt, wird man mich für diese Arbeit brauchen.",
+    "expectation": "Die Freigelassene soll meiner Schwester eine Nachricht bringen. Ich will wissen, ob sie noch im selben Haus ist. Wenn hier jemand freigelassen wird, hoffe ich, dass meine Arbeit mehr zählt als die Freundlichkeit der Neuen.",
+    "limit": "Konstruierter Lebenslauf: Sie wuchs in einem römischen Haushalt als Versklavte auf und wurde später verkauft. Eine ältere Mitversklavte brachte ihr das Ausbessern von Kleidung bei. Durch dieses Können erhielt sie eine besondere Aufgabe; die Freilassung der Lehrerin änderte an ihrem eigenen Status nichts. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie wuchs in einem römischen Haushalt als Versklavte auf und wurde später verkauft. Eine ältere Mitversklavte brachte ihr das Ausbessern von Kleidung bei. Durch dieses Können erhielt sie eine besondere Aufgabe; die Freilassung der Lehrerin änderte an ihrem eigenen Status nichts.",
     "social": "Mitversklavte geben Wissen und Unterstützung weiter; die Hausherrin verfügt über Arbeit und Bewegungsfreiheit. Die Freigelassene verbindet beide Lebensbereiche, ohne rechtlich gleichgestellt zu sein.",
     "practice": "Ein erlernter Stich und mündliche Nachrichten halten Beziehungen gegenwärtig. Die Erinnerungen dieser Figur sind konstruiert; Inschriften und Rechtszeugnisse belegen andere einzelne Lebenslagen."
   },
@@ -883,8 +883,8 @@ const AUGUSTINE_CHARACTERS=[
     "memory": "Ein Fuhrmann reklamierte kürzlich eine Reparatur. Ich erinnere mich an das beschädigte Teil, aber nicht mehr genau daran, welche Weiterfahrt er angekündigt hatte.",
     "attention": "Ich suche am Holz nach einer Schwachstelle. Der Kunde drängt zur Abfahrt; mein Gehilfe rät, das ganze Teil zu ersetzen. Das kostet mehr, könnte aber eine zweite Reparatur vermeiden.",
     "expectation": "Mit guter Arbeit möchte ich den Kunden behalten. Ich fürchte zugleich, dass er schon den Zeitverlust mir zurechnet, auch wenn der alte Schaden die Ursache war.",
-    "limit": "Angenommen: ein Handwerker, der Wagenbestandteile repariert und von Reisenden wie von örtlicher Kundschaft lebt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: ein Handwerker, der Wagenbestandteile repariert und von Reisenden wie von örtlicher Kundschaft lebt.",
+    "limit": "Konstruierter Lebenslauf: Er kam als junger Gehilfe nach Chur und übernahm später eine kleine Werkstatt. Ein Verwandter bürgte für einen Werkzeugkauf. Seit er selbst einen Gehilfen beschäftigt, muss er nicht nur Reparaturen, sondern auch dessen Unterhalt und Reklamationen tragen. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Er kam als junger Gehilfe nach Chur und übernahm später eine kleine Werkstatt. Ein Verwandter bürgte für einen Werkzeugkauf. Seit er selbst einen Gehilfen beschäftigt, muss er nicht nur Reparaturen, sondern auch dessen Unterhalt und Reklamationen tragen.",
     "social": "Reisende bringen Aufträge und Nachrichten; der Gehilfe hat eigenes Erfahrungswissen. Ihr Verhältnis ist nicht nur das von Anweisung und Ausführung.",
     "practice": "Werkstücke, Reklamationen und Erzählungen über Wege vermitteln Wissen, dessen Verlässlichkeit sich im Gebrauch erweist."
   },
@@ -897,8 +897,8 @@ const AUGUSTINE_CHARACTERS=[
     "memory": "Bei der letzten Lieferung sagte mein Bruder, wir hätten zu lange gewartet. Ich erinnere mich dagegen vor allem an die widersprüchlichen Nachrichten über den Weg.",
     "attention": "Ein Bote meldet freie Durchfahrt. Ich frage, ob er die Strecke selbst zurückgelegt oder die Auskunft nur gehört hat. Mein Bruder möchte die Ware sofort abschicken.",
     "expectation": "Ich will den Verkauf abschliessen, ohne unsere Rücklagen aufs Spiel zu setzen. Vielleicht teilen wir die Lieferung; dann steigen allerdings die Transportkosten.",
-    "limit": "Angenommen: eine Händlerin in Italien, die mit ihrem Bruder eine kleine Warenlieferung finanziert; weder Wohnort noch Warenart sind belegt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine Händlerin in Italien, die mit ihrem Bruder eine kleine Warenlieferung finanziert; weder Wohnort noch Warenart sind belegt.",
+    "limit": "Konstruierter Lebenslauf: Sie begann mit Botengängen im Handel ihrer Familie und beteiligt sich inzwischen mit eigenem Geld an Lieferungen. Nach einem Verlust besteht ihr Bruder auf Mitsprache. Sie braucht seine Mittel, hält seine Kenntnisse der Handelswege aber für schlechter als ihre eigenen. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie begann mit Botengängen im Handel ihrer Familie und beteiligt sich inzwischen mit eigenem Geld an Lieferungen. Nach einem Verlust besteht ihr Bruder auf Mitsprache. Sie braucht seine Mittel, hält seine Kenntnisse der Handelswege aber für schlechter als ihre eigenen.",
     "social": "Der Bruder trägt das finanzielle Risiko mit, bewertet Nachrichten aber anders. Ein Bote ist Vermittler, nicht automatisch Augenzeuge.",
     "practice": "Mündliche Wegnachrichten und Abrechnungen halten verschiedene Ausschnitte derselben Reise fest."
   },
@@ -911,8 +911,8 @@ const AUGUSTINE_CHARACTERS=[
     "memory": "Ein Leser zeigte uns eine undeutlich gedruckte Zeile. Ich hatte das Blatt für brauchbar gehalten. Erst sein Hinweis machte mir klar, welche Zeichen sich verwechseln liessen.",
     "attention": "Ich prüfe Farbe und Papier, bevor ich den nächsten Abdruck abnehme. Die Erklärung eines Besuchers zum Text höre ich nur in Bruchstücken; für die Arbeit muss ich nicht jede Auslegung kennen.",
     "expectation": "Ich möchte weniger Blätter verwerfen. Zugleich frage ich mich, ob ein deutlicher Druck genügt, wenn verschiedene Leser dieselbe Stelle unterschiedlich erklären.",
-    "limit": "Angenommen: ein Arbeiter beim Holzblockdruck buddhistischer Texte; keine identifizierte Person der Diamant-Sutra-Werkstatt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: ein Arbeiter beim Holzblockdruck buddhistischer Texte; keine identifizierte Person der Diamant-Sutra-Werkstatt.",
+    "limit": "Konstruierter Lebenslauf: Er lernte Papier und Farbe in einer Werkstatt handhaben, bevor er selbst Abzüge herstellen durfte. Ein Auftrag für religiöse Texte sichert vorläufig seine Arbeit. Das Ansehen der Stifter wächst stärker als sein Verdienst; dennoch ist er stolz auf gute Drucke. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Er lernte Papier und Farbe in einer Werkstatt handhaben, bevor er selbst Abzüge herstellen durfte. Ein Auftrag für religiöse Texte sichert vorläufig seine Arbeit. Das Ansehen der Stifter wächst stärker als sein Verdienst; dennoch ist er stolz auf gute Drucke.",
     "social": "Handwerkliche Erfahrung, religiöse Auslegung und Finanzierung liegen bei unterschiedlichen Beteiligten.",
     "practice": "Druckstöcke vervielfältigen einen Text; Vortrag und Gespräch verändern, wie er verstanden wird."
   },
@@ -922,11 +922,11 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Kustos eines Klosters",
     "place": "Mitteleuropa",
     "related": "medievalworld",
-    "memory": "Am letzten Fest bemerkte ein Mitbruder einen fehlenden Leuchter vor mir. Sein Hinweis half; dass er mich vor den anderen zurechtwies, beschäftigt mich noch.",
-    "attention": "Ich stelle die Geräte bereit und teile einem jüngeren Bruder eine Aufgabe zu. Während ich die Reihenfolge prüfe, denke ich an den Streit statt an die Worte des Gebets.",
-    "expectation": "Vor dem nächsten Fest möchte ich die Aufgaben besser verteilen und mit dem Mitbruder sprechen. Ich hoffe auf Versöhnung, scheue aber davor zurück, meinen Ärger einzugestehen.",
-    "limit": "Angenommen: ein Mönch mit Verantwortung für Kirchengerät, Beleuchtung und Vorbereitung des Gottesdienstes in einem benediktinisch geprägten Kloster. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: ein Mönch mit Verantwortung für Kirchengerät, Beleuchtung und Vorbereitung des Gottesdienstes in einem benediktinisch geprägten Kloster.",
+    "memory": "Als ich das Amt erhielt, sagte der Abt, auf mich sei Verlass. Daran erinnere ich den jüngeren Bruder, wenn er meine Anordnung übergeht. Dass er beim letzten Fest den fehlenden Leuchter zuerst bemerkte, macht ihn noch nicht zum Kustos.",
+    "attention": "Ich teile die Dienste ein und gebe dem Jüngeren die mühsame Vorbereitung. Er soll lernen, eine Aufgabe ordentlich zu Ende zu bringen. Während des Gebets ärgere ich mich, dass er meinen Blick meidet.",
+    "expectation": "Zum nächsten Fest muss alles bereit sein. Ich werde für meinen Dienst vor Gott einstehen; darum dulde ich keine Nachlässigkeit. Der Bruder soll sich an die Ordnung halten, dann können wir wieder gut miteinander auskommen.",
+    "limit": "Konstruierter Lebenslauf: Er kam als Jugendlicher ins Kloster und übernahm nach Jahren untergeordneter Dienste die Sorge für Kirchengerät und Gottesdienstvorbereitung. Das Amt verschaffte ihm Vertrauen und Einfluss. Einen jüngeren Bruder, den er früher unterstützte, empfindet er inzwischen als Konkurrenten. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Er kam als Jugendlicher ins Kloster und übernahm nach Jahren untergeordneter Dienste die Sorge für Kirchengerät und Gottesdienstvorbereitung. Das Amt verschaffte ihm Vertrauen und Einfluss. Einen jüngeren Bruder, den er früher unterstützte, empfindet er inzwischen als Konkurrenten.",
     "social": "Amt, Alter und gemeinsame Regel strukturieren die Beziehungen. Religiöser Anspruch und persönliche Kränkung bestehen nebeneinander.",
     "practice": "Gebetszeiten, wiederkehrende Feste und gemeinsam benutzte Gegenstände tragen Erinnerung; eine Regel beschreibt Sollvorstellungen, nicht jedes tatsächliche Verhalten."
   },
@@ -938,9 +938,9 @@ const AUGUSTINE_CHARACTERS=[
     "related": "medievalworld",
     "memory": "Meine Mitschwester fragte gestern nach einer Psalmstelle. Ich gab die Erklärung weiter, die ich selbst gelernt hatte; ihre Nachfrage konnte ich nicht beantworten.",
     "attention": "Beim gemeinsamen Gebet höre ich die vertrauten Worte und denke wieder an ihre Frage. Gleichzeitig bemerke ich, dass sie in der Zeile verrutscht, und zeige ihr die Stelle.",
-    "expectation": "Ich möchte eine erfahrene Schwester um eine Erklärung bitten. Vielleicht gibt es mehr als eine Lesart; vor der Jüngeren würde ich ungern zugeben, wie unsicher ich selbst bin.",
-    "limit": "Angenommen: eine lesekundige Nonne in einem englischen Konvent, die einer jüngeren Mitschwester beim Lesen hilft. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine lesekundige Nonne in einem englischen Konvent, die einer jüngeren Mitschwester beim Lesen hilft.",
+    "expectation": "Ich werde die ältere Schwester um ihre Auslegung bitten, bevor ich weiter unterrichte. Nicht jede Frage lässt sich im Vorübergehen beantworten. Dass die Jüngere vor allen nachhakt, will ich ihr dennoch abgewöhnen.",
+    "limit": "Konstruierter Lebenslauf: Ihre Familie brachte sie als Mädchen in den Konvent. Dort lernte sie lesen und gewann später Ansehen als Lehrende. Einen angebotenen Wechsel in ein anderes Haus lehnte sie ab; sie hängt an ihrer Gemeinschaft, obwohl sie sich über deren Rangordnung ärgert. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Ihre Familie brachte sie als Mädchen in den Konvent. Dort lernte sie lesen und gewann später Ansehen als Lehrende. Einen angebotenen Wechsel in ein anderes Haus lehnte sie ab; sie hängt an ihrer Gemeinschaft, obwohl sie sich über deren Rangordnung ärgert.",
     "social": "Lernen verläuft zwischen Schwestern verschiedener Erfahrung. Eine Lehrende kann zugleich selbst auf Hilfe angewiesen sein.",
     "practice": "Wiederholtes Sprechen, Handschrift und Auslegung verbinden eingeprägte Worte mit neuen Fragen."
   },
@@ -953,8 +953,8 @@ const AUGUSTINE_CHARACTERS=[
     "memory": "Mein Verwandter warnte mich beim letzten Einsatz vor einer glatten Stelle. Ich hatte sie übersehen. Später erzählte er anderen davon, als wäre ich grundsätzlich ungeschickt.",
     "attention": "Ich prüfe meinen Stand und reiche ihm ein Werkzeug. Diesmal entdecke ich selbst eine lockere Verbindung; ich muss ihn darauf aufmerksam machen, obwohl ich noch verärgert bin.",
     "expectation": "Ich möchte zeigen, dass ich die Arbeit beherrsche, ohne mich aus Trotz zu gefährden. Nach Feierabend will ich klären, was er weitererzählt hat.",
-    "limit": "Angenommen: ein Arbeiter am hölzernen Seeübergang nach dessen Bau, der mit einem erfahrenen Verwandten arbeitet. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: ein Arbeiter am hölzernen Seeübergang nach dessen Bau, der mit einem erfahrenen Verwandten arbeitet.",
+    "limit": "Konstruierter Lebenslauf: Er folgte einem älteren Verwandten zur Arbeit am Seeübergang. Nach mehreren Einsätzen vertraute man ihm schwierigere Aufgaben an. Eine Verletzung unterbrach seinen Verdienst; nun nimmt er wieder Arbeit an und möchte nicht länger als der unerfahrene Verwandte gelten. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Er folgte einem älteren Verwandten zur Arbeit am Seeübergang. Nach mehreren Einsätzen vertraute man ihm schwierigere Aufgaben an. Eine Verletzung unterbrach seinen Verdienst; nun nimmt er wieder Arbeit an und möchte nicht länger als der unerfahrene Verwandte gelten.",
     "social": "Verwandtschaft bietet Zugang zur Arbeit, bringt aber auch Abhängigkeit und Erwartungen mit sich.",
     "practice": "Handgriffe und Erzählungen über Beinaheunfälle vermitteln Erfahrung; in ihrer Weitergabe werden Leistungen unterschiedlich gewichtet."
   },
@@ -965,10 +965,10 @@ const AUGUSTINE_CHARACTERS=[
     "place": "China unter der frühen Ming-Dynastie",
     "related": "china",
     "memory": "Mein Vater spricht von den vergangenen Jahren vor allem als Zeit der Verluste. Mir fällt auch ein Nachbar ein, der uns damals Werkzeug lieh. Wir erzählen dieselbe Zeit unterschiedlich.",
-    "attention": "Ich bessere ein Gerät für einen Kunden aus, der von neuen Anordnungen berichtet. Ich frage nach, was für unseren Ort tatsächlich angeordnet wurde und was er nur vermutet.",
+    "attention": "Der Auftrag kommt von einem Mann der neuen Verwaltung. Mein Vater warnt mich vor solchen Verbindungen. Er hat seine Erfahrung; bezahlen muss ich das geliehene Werkzeug. Ich nehme den Auftrag an.",
     "expectation": "Ich möchte einen grösseren Auftrag annehmen. Mein Vater rät, Vorräte zurückzuhalten. Ob mehr Arbeit jetzt Sicherheit oder zusätzliche Verpflichtung bedeutet, ist für uns strittig.",
-    "limit": "Angenommen: ein Handwerker in einem chinesischen Ort unter früher Ming-Herrschaft; sein Haushalt hat unruhige Jahre erlebt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: ein Handwerker in einem chinesischen Ort unter früher Ming-Herrschaft; sein Haushalt hat unruhige Jahre erlebt.",
+    "limit": "Konstruierter Lebenslauf: Seine Familie verlor während der Kämpfe Aufträge und Werkzeug. Er baute mit geliehenem Material eine Werkstatt auf. Unter der neuen Dynastie sucht er zahlungskräftige Auftraggeber; der Vater hält seine Bereitschaft, sich mit neuen Amtsträgern gutzustellen, für gefährlich. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Seine Familie verlor während der Kämpfe Aufträge und Werkzeug. Er baute mit geliehenem Material eine Werkstatt auf. Unter der neuen Dynastie sucht er zahlungskräftige Auftraggeber; der Vater hält seine Bereitschaft, sich mit neuen Amtsträgern gutzustellen, für gefährlich.",
     "social": "Zwei Generationen desselben Haushalts gewichten Verluste, Hilfe und Risiken unterschiedlich.",
     "practice": "Familienerzählungen und Berichte über Anordnungen vermitteln Vergangenheit und Herrschaft aus begrenzter örtlicher Sicht."
   },
@@ -979,10 +979,10 @@ const AUGUSTINE_CHARACTERS=[
     "place": "Mainz",
     "related": "gutenberg",
     "memory": "Gestern übersah ich einen vertauschten Buchstaben. Der Korrekturleser entdeckte ihn erst im Abdruck. Ich weiss noch, wie selbstverständlich mir der fehlerhafte Satz beim ersten Prüfen vorkam.",
-    "attention": "Ich lese die neue Zeile Zeichen für Zeichen. Hinter mir wartet ein Kollege auf den Satz. Je vertrauter mir die Worte werden, desto leichter ergänze ich im Kopf, was gar nicht dasteht.",
-    "expectation": "Ich möchte den Bogen ohne weitere Korrektur fertigstellen. Zu schnelles Arbeiten spart jetzt Zeit, könnte aber viele gleich fehlerhafte Abzüge erzeugen.",
-    "limit": "Angenommen: ein Geselle beim frühen Buchdruck, der mit Setzern und Korrekturlesern zusammenarbeitet. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: ein Geselle beim frühen Buchdruck, der mit Setzern und Korrekturlesern zusammenarbeitet.",
+    "attention": "Ich korrigiere den Satz, bevor der Meister ihn sieht. Dem neuen Gesellen erkläre ich nur, was er für seinen Teil braucht. Er verlangt schon jetzt denselben Lohn wie ich.",
+    "expectation": "Wenn das Buch gelingt, soll der Meister sich daran erinnern, wer die schwierigen Stellen gesetzt hat. Vielleicht kann ich bessere Bedingungen verlangen. Für immer will ich nicht derjenige sein, der Fehler anderer ausbessert.",
+    "limit": "Konstruierter Lebenslauf: Er begann mit Hilfsarbeiten in einer Werkstatt und lernte schrittweise das Setzen. Nach einem misslungenen Auftrag blieb ein Teil seines Verdienstes aus. Er möchte zu den verlässlichsten Gesellen zählen, behält aber nützliche Handgriffe gelegentlich für sich. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Er begann mit Hilfsarbeiten in einer Werkstatt und lernte schrittweise das Setzen. Nach einem misslungenen Auftrag blieb ein Teil seines Verdienstes aus. Er möchte zu den verlässlichsten Gesellen zählen, behält aber nützliche Handgriffe gelegentlich für sich.",
     "social": "Setzer, Drucker und Leser hängen voneinander ab, erkennen Fehler aber an unterschiedlichen Stellen.",
     "practice": "Vorlage, Satz und Korrekturabdruck zeigen, dass Vervielfältigung auch Fehler vervielfältigen kann."
   },
@@ -995,8 +995,8 @@ const AUGUSTINE_CHARACTERS=[
     "memory": "Meine Tante zeigte mir, wie wir die Wurzeln verarbeiten. Wenn ich es heute einer Jüngeren erkläre, fallen mir ihre Worte ein, aber manche ihrer Handgriffe kann ich besser vormachen als beschreiben.",
     "attention": "Ich prüfe mit einer Verwandten, welche Pflanzen wir ernten. Sie möchte mehr stehen lassen; ich denke an das Essen für die Menschen, die uns bei der Arbeit helfen.",
     "expectation": "Für die nächste Pflanzung möchte ich genügend Material zurückbehalten. Zugleich will ich die Hilfe unserer Verwandten erwidern. Beides lässt sich nicht ohne Absprache entscheiden.",
-    "limit": "Angenommen: eine indigene Frau auf Hispaniola, die mit Angehörigen Maniok anbaut und verarbeitet; keine Stimme für sämtliche karibischen Gesellschaften. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine indigene Frau auf Hispaniola, die mit Angehörigen Maniok anbaut und verarbeitet; keine Stimme für sämtliche karibischen Gesellschaften.",
+    "limit": "Konstruierter Lebenslauf: Sie lernte Anbau und Verarbeitung von Maniok von älteren Verwandten. Später übernahm sie Verantwortung für einen Teil der gemeinsamen Arbeit. Nach einer schwachen Ernte stritt sie mit Angehörigen über die Verteilung; ihre Stellung beruht ebenso auf erwiesener Hilfe wie auf Forderungen an andere. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie lernte Anbau und Verarbeitung von Maniok von älteren Verwandten. Später übernahm sie Verantwortung für einen Teil der gemeinsamen Arbeit. Nach einer schwachen Ernte stritt sie mit Angehörigen über die Verteilung; ihre Stellung beruht ebenso auf erwiesener Hilfe wie auf Forderungen an andere.",
     "social": "Wissen, Arbeit und Verpflichtungen verbinden mehrere Angehörige; innerhalb der Gemeinschaft bestehen unterschiedliche Einschätzungen.",
     "practice": "Vormachen, gemeinsames Verarbeiten und Erzählungen vermitteln Wissen ohne die Voraussetzung schriftlicher Aufzeichnungen."
   },
@@ -1009,8 +1009,8 @@ const AUGUSTINE_CHARACTERS=[
     "memory": "Bei einer früheren Abschrift hielt ich eine Randbemerkung für einen Teil des Textes. Ein Gelehrter berichtigte mich. Seitdem frage ich genauer, welche Hand welche Worte hinzugefügt hat.",
     "attention": "Ich vergleiche eine schwer lesbare Stelle mit der Vorlage. Der Auftraggeber erwartet bald das fertige Werk; ich möchte die Unklarheit markieren, statt stillschweigend eine Lesart festzulegen.",
     "expectation": "Ich will für zuverlässige Arbeit bekannt sein. Vielleicht lässt sich eine zweite Abschrift vergleichen; wenn sie abweicht, ist die Entscheidung allerdings noch nicht getroffen.",
-    "limit": "Angenommen: ein Abschreiber, der für einen Besitzer eine Handschrift kopiert und Zugang zu gelehrten Gesprächen hat. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: ein Abschreiber, der für einen Besitzer eine Handschrift kopiert und Zugang zu gelehrten Gesprächen hat.",
+    "limit": "Konstruierter Lebenslauf: Er lernte Lesen und Schreiben im Umfeld eines Lehrers und begann mit einfachen Abschreibarbeiten. Ein wohlhabender Auftraggeber verschaffte ihm Zugang zu weiteren Handschriften. Er lebt von diesem Verhältnis, möchte aber auch als jemand gelten, der Texte versteht und nicht nur kopiert. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Er lernte Lesen und Schreiben im Umfeld eines Lehrers und begann mit einfachen Abschreibarbeiten. Ein wohlhabender Auftraggeber verschaffte ihm Zugang zu weiteren Handschriften. Er lebt von diesem Verhältnis, möchte aber auch als jemand gelten, der Texte versteht und nicht nur kopiert.",
     "social": "Besitz, handwerkliche Arbeit und Gelehrsamkeit fallen nicht zusammen. Der Auftraggeber bestimmt den Termin, nicht jede sachliche Antwort.",
     "practice": "Haupttext, Randnotizen und mündliche Auslegung tragen unterschiedliche Schichten der Überlieferung."
   },
@@ -1021,10 +1021,10 @@ const AUGUSTINE_CHARACTERS=[
     "place": "Zürich",
     "related": "local-reform",
     "memory": "Meine Mutter verband ein bestimmtes Gebet mit dem Andenken an ihren Vater. Ein Nachbar nannte solche Gewohnheiten unnötig. Mich traf daran weniger sein Argument als sein Ton.",
-    "attention": "Bei der Arbeit höre ich einen Bericht über den Ratsentscheid. Ich frage, welche Worte tatsächlich gefallen sind. Mein Bruder und der Nachbar ziehen daraus bereits verschiedene Schlüsse.",
+    "attention": "Mein Bruder erzählt wieder, was der Rat beschlossen habe. Er hat die Disputation nicht gehört und spricht trotzdem, als hätte er mitentschieden. Das Gebet meiner Mutter lasse ich mir von ihm nicht verbieten.",
     "expectation": "Ich möchte verstehen, was sich ändern soll, ohne die Erinnerung meiner Mutter lächerlich zu machen. Ob wir künftig gemeinsam zum Gottesdienst gehen, ist für mich eine konkrete Sorge.",
-    "limit": "Angenommen: eine Handwerkerin in Zürich, die Berichte über die Disputation hört und in ihrem Haushalt verschiedene religiöse Positionen erlebt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine Handwerkerin in Zürich, die Berichte über die Disputation hört und in ihrem Haushalt verschiedene religiöse Positionen erlebt.",
+    "limit": "Konstruierter Lebenslauf: Sie arbeitete zunächst im Haushalt ihrer Eltern und später in einer Werkstatt. Der Tod eines Angehörigen festigte ihre Bindung an vertraute Gebete. Über die neuen Predigten geriet sie mit ihrem Bruder in Streit; für ihn gehören religiöse Veränderung und ein neues öffentliches Ansehen zusammen. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie arbeitete zunächst im Haushalt ihrer Eltern und später in einer Werkstatt. Der Tod eines Angehörigen festigte ihre Bindung an vertraute Gebete. Über die neuen Predigten geriet sie mit ihrem Bruder in Streit; für ihn gehören religiöse Veränderung und ein neues öffentliches Ansehen zusammen.",
     "social": "Familiengedächtnis, Nachbarschaft und religiöse Auseinandersetzung überschneiden sich, ohne eine einheitliche Position zu ergeben.",
     "practice": "Gebete und Erzählungen bewahren familiäre Bindungen; Berichte über öffentliche Diskussionen erreichen den Haushalt vermittelt."
   },
@@ -1037,8 +1037,8 @@ const AUGUSTINE_CHARACTERS=[
     "memory": "Ein älterer Arbeiter bemerkte zuletzt eine Veränderung, die mir entgangen war. Ich erinnere mich genauer an seine Warnung als an das, was ich selbst im Arbeitsraum sah.",
     "attention": "Ich halte kurz inne und vergleiche die Stelle mit seiner Beschreibung. Mein Nachbar drängt weiterzuarbeiten. Ich muss entscheiden, ob ich nachfrage und den Ablauf unterbreche.",
     "expectation": "Ich will Erfahrung gewinnen und als verlässlich gelten. Dazu gehört für mich, eine Unsicherheit auszusprechen; ich fürchte aber, als langsam beurteilt zu werden.",
-    "limit": "Angenommen: ein Arbeiter im Käpfnacher Bergbau, der Erfahrung unter Tage sammelt und zum Einkommen seines Haushalts beiträgt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: ein Arbeiter im Käpfnacher Bergbau, der Erfahrung unter Tage sammelt und zum Einkommen seines Haushalts beiträgt.",
+    "limit": "Konstruierter Lebenslauf: Er verdiente seinen Unterhalt zunächst mit wechselnden Arbeiten und nahm dann eine Stelle im Käpfnacher Bergbau an. Ein erfahrener Arbeiter führte ihn ein. Der regelmässigere Verdienst verschafft ihm Gewicht im Haushalt; eine Unterbrechung könnte auch diese Stellung gefährden. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Er verdiente seinen Unterhalt zunächst mit wechselnden Arbeiten und nahm dann eine Stelle im Käpfnacher Bergbau an. Ein erfahrener Arbeiter führte ihn ein. Der regelmässigere Verdienst verschafft ihm Gewicht im Haushalt; eine Unterbrechung könnte auch diese Stellung gefährden.",
     "social": "Erfahrene Kollegen vermitteln Wissen. Leistungsdruck und gegenseitige Verantwortung können miteinander in Konflikt geraten.",
     "practice": "Körperliche Erfahrung und mündliche Warnungen prägen Erinnerung anders als betriebliche Förderzahlen."
   },
@@ -1050,9 +1050,9 @@ const AUGUSTINE_CHARACTERS=[
     "related": "revolution",
     "memory": "Eine Kundin versprach mir letzte Woche Bezahlung und vertröstete mich erneut. Beim Gespräch über teures Brot dachte ich deshalb nicht nur an Preise, sondern an das Geld, das mir fehlt.",
     "attention": "Ich rechne aus, was ich heute einkaufen kann. Eine Nachbarin will zu einer Versammlung, eine andere hält das für Zeitverlust. Beide brauchen ebenso dringend ihren Verdienst.",
-    "expectation": "Ich möchte selbst hören, was gefordert wird. Dafür müsste jemand meine Arbeit übernehmen. Grössere Mitsprache wünsche ich mir, doch sie ersetzt die ausstehende Zahlung nicht.",
-    "limit": "Angenommen: eine Pariser Wäscherin, deren Kundschaft unregelmässig zahlt und deren Nachbarinnen politisch unterschiedlicher Meinung sind. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine Pariser Wäscherin, deren Kundschaft unregelmässig zahlt und deren Nachbarinnen politisch unterschiedlicher Meinung sind.",
+    "expectation": "Die Kundin soll endlich bezahlen. Bei der nächsten Versammlung will ich sagen, wie Leute mit vollen Schränken uns hinhalten. Wenn sie dafür ihren guten Namen verliert, kann sie sich bei sich selbst bedanken.",
+    "limit": "Konstruierter Lebenslauf: Sie lernte das Waschen bei einer Verwandten und gewann nach und nach eigene Kundschaft. Ausstehende Zahlungen brachten sie mehrfach in Schulden. In der Nachbarschaft begann sie, politische Versammlungen zu besuchen; dort wird sie eher angehört als von manchen ihrer Kunden. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie lernte das Waschen bei einer Verwandten und gewann nach und nach eigene Kundschaft. Ausstehende Zahlungen brachten sie mehrfach in Schulden. In der Nachbarschaft begann sie, politische Versammlungen zu besuchen; dort wird sie eher angehört als von manchen ihrer Kunden.",
     "social": "Kundschaft, Nachbarinnen und Haushalt verbinden wirtschaftliche Abhängigkeit mit unterschiedlichen politischen Entscheidungen.",
     "practice": "Abrechnungen, Marktgespräche und Versammlungen setzen verschiedene Prioritäten; keine davon vertritt allein alle arbeitenden Frauen."
   },
@@ -1064,9 +1064,9 @@ const AUGUSTINE_CHARACTERS=[
     "related": "haiti",
     "memory": "Meine Schwester erzählte mir bei unserem letzten Treffen von einer geplanten Flucht. Ich weiss nicht, ob sie wirklich aufbrach. Jetzt klingt das Gespräch für mich anders als damals.",
     "attention": "Ein Mitversklavter berichtet von einem Aufstand und nennt einen Treffpunkt. Ich frage, von wem er es weiss. Zu lange zu zögern kann ebenso gefährlich sein wie einer falschen Nachricht zu folgen.",
-    "expectation": "Ich will die Gewalt der Versklavung hinter mir lassen und meine Schwester finden. Ob ich bleiben, fliehen oder mich anderen anschliessen kann, hängt auch davon ab, wem ich vertrauen kann.",
-    "limit": "Angenommen: eine versklavte Feldarbeiterin im Norden Saint-Domingues während der Erhebungen; sie hat eine Schwester auf einer anderen Plantage. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine versklavte Feldarbeiterin im Norden Saint-Domingues während der Erhebungen; sie hat eine Schwester auf einer anderen Plantage.",
+    "expectation": "Ich will fort von dieser Plantage und meine Schwester finden. Ich will auch, dass die Besitzer ihre Macht verlieren. Wenn man mir dafür verspricht, einfach nur wieder sicher arbeiten zu dürfen, ist mir das zu wenig.",
+    "limit": "Konstruierter Lebenslauf: Sie wurde von ihrer Schwester getrennt und zur Feldarbeit auf einer anderen Plantage gezwungen. Heimliche Kontakte hielten die Verbindung zeitweise aufrecht. Seit Berichte über Widerstand eintreffen, sucht sie nicht nur nach Schutz, sondern nach einer Möglichkeit, die Gewalt der Besitzer zu brechen. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie wurde von ihrer Schwester getrennt und zur Feldarbeit auf einer anderen Plantage gezwungen. Heimliche Kontakte hielten die Verbindung zeitweise aufrecht. Seit Berichte über Widerstand eintreffen, sucht sie nicht nur nach Schutz, sondern nach einer Möglichkeit, die Gewalt der Besitzer zu brechen.",
     "social": "Verwandtschaft über Plantagengrenzen hinweg und Kontakte unter Versklavten eröffnen Möglichkeiten unter extremer Gewalt und ungleichem Zugang zu Nachrichten.",
     "practice": "Mündliche Nachrichten sind lebenswichtig und schwer überprüfbar. Koloniale Akten über Widerstand geben die Perspektive der Beteiligten nur vermittelt wieder."
   },
@@ -1079,8 +1079,8 @@ const AUGUSTINE_CHARACTERS=[
     "memory": "Mein Onkel zeigte mir eine Wiese, die lange unter Wasser stand. Ein Nachbar beklagte dagegen den Zugang zu seinem Land während der Arbeiten. Wenn vom Nutzen des Kanals die Rede ist, höre ich beide Stimmen.",
     "attention": "Ich räume mit anderen Erde weg. Beim Mittagessen streiten wir darüber, wem die Arbeiten zuerst helfen. Mein Lohn ist ein unmittelbarer Vorteil; über die künftigen Felder entscheide ich nicht.",
     "expectation": "Ich wünsche mir trocknere Wege und weitere bezahlte Arbeit. Wenn die Baustelle endet, fallen diese beiden Hoffnungen vielleicht auseinander.",
-    "limit": "Angenommen: ein Kanalbauer aus der Region, dessen Verwandte unterschiedlich von vernässtem Land und den Bauarbeiten betroffen sind. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: ein Kanalbauer aus der Region, dessen Verwandte unterschiedlich von vernässtem Land und den Bauarbeiten betroffen sind.",
+    "limit": "Konstruierter Lebenslauf: Er arbeitete saisonweise auf Höfen und erhielt dann Verdienst beim Kanalbau. In der Verwandtschaft besitzen einige Land, andere leben vor allem von Lohnarbeit. Eine dauerhafte Stelle wäre für ihn wichtiger als eine Wertsteigerung der Grundstücke, die ihm nicht gehören. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Er arbeitete saisonweise auf Höfen und erhielt dann Verdienst beim Kanalbau. In der Verwandtschaft besitzen einige Land, andere leben vor allem von Lohnarbeit. Eine dauerhafte Stelle wäre für ihn wichtiger als eine Wertsteigerung der Grundstücke, die ihm nicht gehören.",
     "social": "Bauarbeiter, Landbesitzer und andere Anwohner haben überlappende, aber nicht gleiche Interessen.",
     "practice": "Erinnerungen an Hochwasser und Baustellen stehen neben Plänen und Berichten, die den Eingriff anders bewerten."
   },
@@ -1091,10 +1091,10 @@ const AUGUSTINE_CHARACTERS=[
     "place": "Murg am Walensee",
     "related": "local-murg",
     "memory": "Bei meinem ersten gerissenen Faden half mir eine Kollegin, ohne mich blosszustellen. Nun merke ich, wie schnell ich selbst ungeduldig werde, wenn die Neue dieselbe Hilfe braucht.",
-    "attention": "Ich setze einen Faden an und beobachte zugleich ihre Handgriffe. Zwischen den Maschinengeräuschen verständigen wir uns mit kurzen Zeichen; ausführlich erklären kann ich jetzt wenig.",
+    "attention": "Die Neue lässt schon wieder einen Faden reissen. Ich helfe ihr, aber nicht jedes Mal sofort. Ich habe meine eigene Arbeit. Wenn der Aufseher fragt, soll sie selbst erklären, warum sie nicht nachkommt.",
     "expectation": "Ich möchte, dass sie sicherer wird und wir die Arbeit schaffen. Nachher brauche ich Ruhe, habe aber zu Hause noch Aufgaben. Der Lohn verschafft mir Spielraum und bindet mich zugleich an diese Arbeitszeiten.",
-    "limit": "Angenommen: eine Spinnerin in Murg, die eine neue Kollegin einarbeitet und einen Teil ihres Lohns im Haushalt abgibt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine Spinnerin in Murg, die eine neue Kollegin einarbeitet und einen Teil ihres Lohns im Haushalt abgibt.",
+    "limit": "Konstruierter Lebenslauf: Sie begann als unerfahrene Arbeiterin in der Spinnerei und wurde sicherer im Umgang mit den Maschinen. Ihr Lohn hilft dem Haushalt, reicht aber nicht für einen eigenen. Die Einarbeitung neuer Kolleginnen bedeutet Anerkennung und zusätzliche Arbeit, für die sie nicht automatisch mehr erhält. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie begann als unerfahrene Arbeiterin in der Spinnerei und wurde sicherer im Umgang mit den Maschinen. Ihr Lohn hilft dem Haushalt, reicht aber nicht für einen eigenen. Die Einarbeitung neuer Kolleginnen bedeutet Anerkennung und zusätzliche Arbeit, für die sie nicht automatisch mehr erhält.",
     "social": "Kollegiale Hilfe, betriebliche Anforderungen und Pflichten im Haushalt bestimmen die Zeit unterschiedlich.",
     "practice": "Handgriffe, Zeichen und Gespräche nach der Arbeit vermitteln Erfahrungswissen, das Lohnlisten nicht erfassen."
   },
@@ -1107,8 +1107,8 @@ const AUGUSTINE_CHARACTERS=[
     "memory": "Letzte Saison nahmen wir mehr Wäsche an, als wir gut bewältigen konnten. Meine Verwandte erinnert sich vor allem an den Verdienst; mir fallen zuerst die schmerzenden Hände ein.",
     "attention": "Ich sortiere die Stücke und entdecke eine beschädigte Naht. Bevor wir waschen, will ich festhalten, dass sie schon offen war. Sonst könnten wir für den Schaden verantwortlich gemacht werden.",
     "expectation": "Zusätzliche Gäste könnten mehr Einkommen bringen. Ich möchte diesmal eine Grenze vereinbaren, auch wenn meine Verwandte das als entgangene Gelegenheit sieht.",
-    "limit": "Angenommen: eine Wäscherin in Ragaz, die Aufträge aus dem Kurbetrieb erhält und mit einer Verwandten arbeitet. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine Wäscherin in Ragaz, die Aufträge aus dem Kurbetrieb erhält und mit einer Verwandten arbeitet.",
+    "limit": "Konstruierter Lebenslauf: Sie übernahm mit einer Verwandten Waschaufträge aus dem Kurbetrieb und gewann durch Empfehlungen neue Kunden. Eine starke Saison brachte Geld, aber auch Schulden für zusätzliche Anschaffungen. Nun will die Verwandte weiter wachsen, während sie selbst die Arbeitslast begrenzen möchte. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie übernahm mit einer Verwandten Waschaufträge aus dem Kurbetrieb und gewann durch Empfehlungen neue Kunden. Eine starke Saison brachte Geld, aber auch Schulden für zusätzliche Anschaffungen. Nun will die Verwandte weiter wachsen, während sie selbst die Arbeitslast begrenzen möchte.",
     "social": "Arbeitspartnerin und Auftraggeber teilen ihr Interesse an erledigter Wäsche, nicht unbedingt an gleichen Arbeitsbedingungen.",
     "practice": "Beschädigte Textilien, Rechnungen und Saisonerinnerungen dokumentieren verschiedene Seiten des Kuraufenthalts."
   },
@@ -1120,9 +1120,9 @@ const AUGUSTINE_CHARACTERS=[
     "related": "local-rail",
     "memory": "Eine Fahrt, auf die ich wegen des Wetters verzichtete, nennt mein Neffe noch immer eine verlorene Gelegenheit. Ich erinnere mich vor allem an die Bedingungen draussen auf dem See.",
     "attention": "Ich verhandele einen Transportpreis. Der Kunde vergleicht mit der angekündigten Bahn, deren Nutzen mein Neffe begeistert beschreibt. Für meine Fahrt muss ich trotzdem Wetter und Ladung einschätzen.",
-    "expectation": "Vielleicht verlieren wir Strecken, gewinnen aber Zubringerfahrten. Mein Neffe möchte zur Bahn. Ich könnte seine Entscheidung unterstützen und dennoch einen Teil unserer gemeinsamen Arbeit verlieren.",
-    "limit": "Angenommen: ein Schiffer auf dem Walensee, der mit einem jüngeren Angehörigen über die künftige Erwerbsarbeit spricht. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: ein Schiffer auf dem Walensee, der mit einem jüngeren Angehörigen über die künftige Erwerbsarbeit spricht.",
+    "expectation": "Vielleicht braucht die Bahn unsere Zubringerfahrten. Dann sollen die Herren vernünftig bezahlen. Mein Neffe tut, als sei alles Neue besser; wenn er geht, wird er merken, dass dort auch niemand auf ihn gewartet hat.",
+    "limit": "Konstruierter Lebenslauf: Er lernte das Schifferhandwerk in seiner Familie und baute Beziehungen zu regelmässigen Auftraggebern auf. Eine misslungene Fahrt kostete ihn Geld und Vertrauen. Als die Bahn näher rückt, streitet er mit einem jüngeren Angehörigen darüber, ob Erfahrung auf dem See noch eine Zukunft bietet. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Er lernte das Schifferhandwerk in seiner Familie und baute Beziehungen zu regelmässigen Auftraggebern auf. Eine misslungene Fahrt kostete ihn Geld und Vertrauen. Als die Bahn näher rückt, streitet er mit einem jüngeren Angehörigen darüber, ob Erfahrung auf dem See noch eine Zukunft bietet.",
     "social": "Kundschaft, Angehörige und konkurrierende Verkehrsanbieter rechnen mit unterschiedlichen Möglichkeiten.",
     "practice": "Erinnerte Fahrten und weitergegebene Wetterkenntnis stehen neben Fahrplänen und Versprechen neuer Verbindungen."
   },
@@ -1135,8 +1135,8 @@ const AUGUSTINE_CHARACTERS=[
     "memory": "Vom letzten Bergbesuch erinnere ich mich an nasse Schuhe und einen Streit. Beim Lesen fallen mir plötzlich auch der Geruch des Heus und eine freundliche Begegnung wieder ein.",
     "attention": "Meine Freundin findet Heidis Leben beneidenswert. Ich lese eine Stelle noch einmal: Was uns frei erscheint, könnte für jemanden, der dort arbeiten muss, anders aussehen.",
     "expectation": "Ich möchte meiner Freundin das Kapitel vorlesen und ihre Meinung hören. Bei einer nächsten Reise würde ich gern genauer hinschauen, statt überall die Figuren aus dem Buch zu suchen.",
-    "limit": "Angenommen: eine Zürcher Leserin mit Zugang zu Heidi, die das Buch mit einer Freundin bespricht. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine Zürcher Leserin mit Zugang zu Heidi, die das Buch mit einer Freundin bespricht.",
+    "limit": "Konstruierter Lebenslauf: Sie besuchte die Schule in Zürich und leiht sich Bücher im Bekanntenkreis. Eine Reise in die Berge blieb ihr als Abwechslung vom Alltag in Erinnerung. Mit ihrer Freundin streitet sie darüber, welche Lebensweise glücklicher sei; von der täglichen Arbeit der Bergbevölkerung kennt sie wenig. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie besuchte die Schule in Zürich und leiht sich Bücher im Bekanntenkreis. Eine Reise in die Berge blieb ihr als Abwechslung vom Alltag in Erinnerung. Mit ihrer Freundin streitet sie darüber, welche Lebensweise glücklicher sei; von der täglichen Arbeit der Bergbevölkerung kennt sie wenig.",
     "social": "Eigene Reiseerfahrung, Freundin und literarische Darstellung prägen einander, ohne deckungsgleich zu werden.",
     "practice": "Das Buch ruft Erinnerungen hervor und ordnet sie um. Erzählte Ereignisse werden dadurch nicht selbst Erlebnisse der Leserin."
   },
@@ -1147,10 +1147,10 @@ const AUGUSTINE_CHARACTERS=[
     "place": "Deutschsprachiger Raum",
     "related": "war",
     "memory": "Beim Abschied stritten wir über eine Kleinigkeit. Jetzt erzählen die anderen vor allem von seiner Zuversicht. Ich möchte ihnen nicht widersprechen, aber unser letztes Gespräch passt schlecht dazu.",
-    "attention": "Ich lese «Heldentod» in der Anzeige und versuche, meinen Bruder darin wiederzuerkennen. Meine Mutter findet Trost in dem Wort; mir fehlen seine alltäglichen Eigenheiten.",
+    "attention": "Meine Mutter will «Heldentod» in der Anzeige stehen haben. Ich lasse es dabei. Den letzten Streit mit meinem Bruder erzähle ich der Nachbarin nicht; sie hat schon genug darüber geredet, was wir als Familie angeblich empfinden sollten.",
     "expectation": "Ich möchte etwas von ihm aufbewahren, das auch unsere Unstimmigkeiten zulässt. Vielleicht schreibe ich das letzte Gespräch auf; ich weiss nicht, ob ich es der Familie zeigen werde.",
-    "limit": "Angenommen: die Schwester eines gefallenen Soldaten; ihre Familiengeschichte ist nicht aus der gezeigten Todesanzeige erschlossen. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: die Schwester eines gefallenen Soldaten; ihre Familiengeschichte ist nicht aus der gezeigten Todesanzeige erschlossen.",
+    "limit": "Konstruierter Lebenslauf: Sie wuchs mit ihrem Bruder auf und blieb im Heimatort, als er eingezogen wurde. Zunächst las sie seine Briefe auch Nachbarn vor. Seit der Todesnachricht verwaltet sie mit der Mutter seine wenigen Hinterlassenschaften; über die öffentliche Erinnerung sind beide nicht immer einig. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie wuchs mit ihrem Bruder auf und blieb im Heimatort, als er eingezogen wurde. Zunächst las sie seine Briefe auch Nachbarn vor. Seit der Todesnachricht verwaltet sie mit der Mutter seine wenigen Hinterlassenschaften; über die öffentliche Erinnerung sind beide nicht immer einig.",
     "social": "Schwester, Mutter und öffentliche Trauersprache geben demselben Verlust unterschiedliche Bedeutungen.",
     "practice": "Todesanzeige, persönliches Gespräch und aufbewahrte Gegenstände erzeugen verschiedene Erinnerungsbilder."
   },
@@ -1163,8 +1163,8 @@ const AUGUSTINE_CHARACTERS=[
     "memory": "Ich denke an eine Kundin, deren unfertiges Kleid in meiner Werkstatt blieb. Ob sie noch dort ist, weiss ich nicht. In den Nachrichten über ganze Bevölkerungsgruppen finde ich unsere Gespräche kaum wieder.",
     "attention": "Ich ändere ein geliehenes Kleidungsstück und frage Neuankommende nach unserer Strasse. Die Verwandten wollen planen; ich warte auf eine Nachricht, die ihre Vorschläge wieder verändern könnte.",
     "expectation": "Ich möchte meine Arbeit wieder aufnehmen und einen vermissten Angehörigen erreichen. Zurückgehen und neu anfangen sind für mich noch keine klar getrennten Möglichkeiten.",
-    "limit": "Angenommen: eine Schneiderin aus dem Punjab, die während der Teilung vorübergehend bei Verwandten unterkommt; Religion und Fluchtweg sind nicht festgelegt. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine Schneiderin aus dem Punjab, die während der Teilung vorübergehend bei Verwandten unterkommt; Religion und Fluchtweg sind nicht festgelegt.",
+    "limit": "Konstruierter Lebenslauf: Sie lernte das Nähen bei einer Verwandten und baute sich im Punjab einen Kundenkreis auf. Während der Teilung verliess sie ihre Werkstatt und kam bei Angehörigen unter. Sie besitzt ihr Können weiter, muss um Material, Räume und neue Kundschaft aber erneut verhandeln. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie lernte das Nähen bei einer Verwandten und baute sich im Punjab einen Kundenkreis auf. Während der Teilung verliess sie ihre Werkstatt und kam bei Angehörigen unter. Sie besitzt ihr Können weiter, muss um Material, Räume und neue Kundschaft aber erneut verhandeln.",
     "social": "Verwandte bieten Unterkunft, haben aber eigene Grenzen. Frühere Nachbarschaft und neue politische Zugehörigkeiten fallen nicht einfach zusammen.",
     "practice": "Nachrichten über Vermisste und erinnerte Kundenbeziehungen bewahren Einzelheiten, die nationale Erzählungen leicht übergehen."
   },
@@ -1176,9 +1176,9 @@ const AUGUSTINE_CHARACTERS=[
     "related": "vote",
     "memory": "Mein Mann erklärte mir früher oft, wie «wir» stimmen würden. An einer Vorlage hatten wir uns gestritten. Jetzt merke ich, dass ich seine Begründung noch immer zuerst im Kopf habe.",
     "attention": "Ich lese die Unterlagen selbst und notiere eine Frage. Meine Freundin ist anderer Meinung als ich; dass wir beide abstimmen dürfen, bedeutet nicht, dass wir dieselben Interessen vertreten.",
-    "expectation": "Ich möchte meine Entscheidung begründen können, auch wenn sie niemand in meinem Umfeld teilt. Meine Stimme abzugeben beendet nicht automatisch die Gewohnheit, politische Fragen ihm zu überlassen.",
-    "limit": "Angenommen: eine Schweizerin nach Einführung des eidgenössischen Frauenstimmrechts; sie diskutiert eine bevorstehende Vorlage mit ihrem Mann und einer Freundin. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine Schweizerin nach Einführung des eidgenössischen Frauenstimmrechts; sie diskutiert eine bevorstehende Vorlage mit ihrem Mann und einer Freundin.",
+    "expectation": "In dieser Sache werde ich wohl gleich stimmen wie mein Mann. Meine Freundin hält das schon für ein Versagen. Das ärgert mich: Ich wollte das Stimmrecht nicht, damit nun sie mir vorschreibt, wie eine Frau zu entscheiden hat.",
+    "limit": "Konstruierter Lebenslauf: Sie führte lange einen Haushalt und arbeitete zeitweise gegen Lohn. Politische Fragen besprach sie mit ihrem Mann, der auf Bundesebene allein abstimmen konnte. Nun erhält sie selbst dieses Recht; inhaltlich stimmt sie häufig mit ihm überein und will trotzdem nicht von ihm vertreten werden. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie führte lange einen Haushalt und arbeitete zeitweise gegen Lohn. Politische Fragen besprach sie mit ihrem Mann, der auf Bundesebene allein abstimmen konnte. Nun erhält sie selbst dieses Recht; inhaltlich stimmt sie häufig mit ihm überein und will trotzdem nicht von ihm vertreten werden.",
     "social": "Ehe, Freundschaft und Staatsbürgerrecht eröffnen unterschiedliche Formen der Mitsprache und des Widerspruchs.",
     "practice": "Frühere Gespräche und eigene Notizen beeinflussen den Umgang mit neuen politischen Rechten."
   },
@@ -1190,9 +1190,9 @@ const AUGUSTINE_CHARACTERS=[
     "related": "wall",
     "memory": "Bei der letzten Diskussion wollte ein Freund vor allem ausreisen. Ich sprach von Veränderungen hier. Hinterher fragte ich mich, ob ich seine Gründe überhaupt angehört hatte.",
     "attention": "Wir vergleichen Meldungen über die politische Lage. Eine Freundin hofft auf eine andere DDR, ein anderer spricht von Weggehen. Ich teile ihre Unzufriedenheit, nicht jede Vorstellung danach.",
-    "expectation": "Ich möchte reisen dürfen und an Veränderungen mitwirken. Ich fürchte, dass unsere Gruppe auseinandergeht, gerade wenn mehr möglich wird. Einen konkreten Ablauf für morgen kenne ich nicht.",
-    "limit": "Angenommen: ein Ost-Berliner Student am 8. November, der Veränderungen befürwortet, aber mit Freunden über deren Richtung streitet. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: ein Ost-Berliner Student am 8. November, der Veränderungen befürwortet, aber mit Freunden über deren Richtung streitet.",
+    "expectation": "Ich will reisen können und hier etwas verändern. Dass mein Freund einfach wegwill, empfinde ich als Stichlassen. Er sagt, ich könnte mir das Bleiben leichter leisten als er. Darüber will ich heute nicht weiterreden.",
+    "limit": "Konstruierter Lebenslauf: Er wuchs in Ost-Berlin auf, erhielt einen Studienplatz und lernte dort seinen heutigen Freundeskreis kennen. Nach zunächst privaten Diskussionen besuchte er eine Protestveranstaltung. Er will Reformen, möchte seinen Studienplatz behalten und ist mit Freunden uneinig, die vor allem fortgehen wollen. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Er wuchs in Ost-Berlin auf, erhielt einen Studienplatz und lernte dort seinen heutigen Freundeskreis kennen. Nach zunächst privaten Diskussionen besuchte er eine Protestveranstaltung. Er will Reformen, möchte seinen Studienplatz behalten und ist mit Freunden uneinig, die vor allem fortgehen wollen.",
     "social": "Freunde teilen Kritik, entwickeln daraus aber verschiedene Zukunftswünsche.",
     "practice": "Nachrichten, Protesterfahrungen und private Gespräche liefern konkurrierende Erwartungen, keine Kenntnis der folgenden Maueröffnung."
   },
@@ -1205,8 +1205,8 @@ const AUGUSTINE_CHARACTERS=[
     "memory": "An einem bestimmten Geräusch erkannte ich früher eine Störung. Ein Kollege nannte das meine besondere Fähigkeit. Jetzt fällt mir auf, wie sehr mein Ansehen an Maschinen hing, die bald stillstehen.",
     "attention": "Ich ordne Werkzeug und bespreche mit einem Kollegen, was noch zu erledigen ist. Er freut sich auf einen Wechsel. Seine Erleichterung macht meinen eigenen Verlust nicht kleiner, aber auch nicht allgemein gültig.",
     "expectation": "Ich will eine Stelle finden, an der meine Erfahrung zählt. Gleichzeitig frage ich mich, welche Fähigkeiten ich neu lernen muss und ob ich wieder Anfänger sein kann.",
-    "limit": "Angenommen: ein langjähriger Mechaniker der Spinnerei Murg während der Betriebsschliessung; keine dokumentierte Beschäftigtenbiografie. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: ein langjähriger Mechaniker der Spinnerei Murg während der Betriebsschliessung; keine dokumentierte Beschäftigtenbiografie.",
+    "limit": "Konstruierter Lebenslauf: Er begann als junger Arbeiter in der Spinnerei und wurde durch Reparaturerfahrung zum gefragten Mechaniker. Einen früheren Stellenwechsel schlug er aus. Mit der Schliessung verliert er deshalb nicht nur den Lohn, sondern auch eine Stellung, die er über Jahrzehnte aufgebaut hat. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Er begann als junger Arbeiter in der Spinnerei und wurde durch Reparaturerfahrung zum gefragten Mechaniker. Einen früheren Stellenwechsel schlug er aus. Mit der Schliessung verliert er deshalb nicht nur den Lohn, sondern auch eine Stellung, die er über Jahrzehnte aufgebaut hat.",
     "social": "Kollegen erleben dieselbe Schliessung verschieden; berufliches Wissen und Anerkennung lassen sich nicht vollständig in eine neue Stelle mitnehmen.",
     "practice": "Geräusche, Werkzeuge und gemeinsame Reparaturgeschichten bewahren Betriebswissen jenseits offizieller Firmengeschichte."
   },
@@ -1217,10 +1217,10 @@ const AUGUSTINE_CHARACTERS=[
     "place": "Zürich, Sechseläutenplatz beim Opernhaus nahe Stadelhofen",
     "related": "local-opera",
     "memory": "Bei einer früheren Grabung hielten wir zwei Hölzer zunächst für zusammengehörig. Erst die Auswertung trennte die Bauphasen. An diese Korrektur denke ich jetzt vor jedem vorschnellen Zusammenhang.",
-    "attention": "Ich zeichne die Lage eines Holzes ein und bespreche mit einem Kollegen eine mögliche Zuordnung. Solange die Datierung fehlt, halte ich Beobachtung und Vermutung getrennt fest.",
-    "expectation": "Ich möchte wissen, ob die Proben dieselbe Bauphase ergeben. Ein abweichendes Datum wäre kein misslungener Befund: Es könnte unsere bisherige Ordnung verändern.",
-    "limit": "Angenommen: eine Archäologin bei den Untersuchungen am Zürcher Opernhaus, die Grabungsbefunde dokumentiert; keine reale Mitarbeiterin wird zitiert. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine Archäologin bei den Untersuchungen am Zürcher Opernhaus, die Grabungsbefunde dokumentiert; keine reale Mitarbeiterin wird zitiert.",
+    "attention": "Die Holzlage passt gut zu unserer bisherigen Deutung. Mein Kollege mahnt zur Vorsicht. Ich trage die Unsicherheit ein, möchte aber nicht, dass in der Besprechung nur noch von Zweifeln die Rede ist.",
+    "expectation": "Ich hoffe, dass die Datierung unsere Zuordnung bestätigt. Ein anderer Befund wäre auch ein Ergebnis, nur müssten wir vieles neu bearbeiten. Für meine nächste Bewerbung hätte ich gern etwas Abgeschlossenes vorzuweisen.",
+    "limit": "Konstruierter Lebenslauf: Sie arbeitete nach dem Studium auf wechselnden Grabungen und lernte, unter Zeitdruck Befunde zu dokumentieren. Eine frühere Deutung musste sie zurücknehmen. Am Zürcher Opernhaus erhofft sie sich fachlich wichtige Ergebnisse und eine Fortsetzung ihrer Beschäftigung. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie arbeitete nach dem Studium auf wechselnden Grabungen und lernte, unter Zeitdruck Befunde zu dokumentieren. Eine frühere Deutung musste sie zurücknehmen. Am Zürcher Opernhaus erhofft sie sich fachlich wichtige Ergebnisse und eine Fortsetzung ihrer Beschäftigung.",
     "social": "Grabungsteam und spätere Spezialauswertung verfügen über unterschiedliche Ausschnitte des Befunds.",
     "practice": "Pläne, Proben und Dokumentation ermöglichen nachträgliche Korrekturen; persönliche Erinnerung allein reicht dafür nicht."
   },
@@ -1231,10 +1231,10 @@ const AUGUSTINE_CHARACTERS=[
     "place": "Paris",
     "related": "paris",
     "memory": "Mein Vater fragte bei unserer letzten Diskussion nach den Arbeitsplätzen in seiner Branche. Ich hielt das für Ausweichen. Beim Lesen des Abkommens fällt mir ein, dass ich ihm keine konkrete Antwort gab.",
-    "attention": "Ich suche im beschlossenen Text nach Verpflichtungen und unterscheide sie von den Überschriften in den Nachrichten. Eine Freundin feiert den Beschluss; ich freue mich und bleibe bei der Umsetzung unsicher.",
+    "attention": "Meine Freundin feiert das Abkommen, mein Vater fragt wieder nach den Arbeitsplätzen. Ich schicke ihm einen Artikel, den ich selbst erst überflogen habe. Heute möchte ich den Beschluss nicht schon wieder gegen seine Einwände verteidigen.",
     "expectation": "Ich möchte politisch mitarbeiten, ohne die Kosten für andere einfach wegzuerklären. Woran ich in einigen Jahren Erfolg messen würde, muss ich genauer benennen als nur mit «Abkommen erreicht».",
-    "limit": "Angenommen: eine Studentin in Paris nach dem Klimaabkommen, die mit ihrer Familie über Klimapolitik diskutiert. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine Studentin in Paris nach dem Klimaabkommen, die mit ihrer Familie über Klimapolitik diskutiert.",
+    "limit": "Konstruierter Lebenslauf: Sie kam zum Studium nach Paris und schloss sich einer Gruppe an, die über Klimapolitik diskutiert. Ihr Vater arbeitet in einer Branche, deren Zukunft dabei umstritten ist. Erste politische Aktivitäten verschaffen ihr Anerkennung im Freundeskreis und führen zu Streit in der Familie. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie kam zum Studium nach Paris und schloss sich einer Gruppe an, die über Klimapolitik diskutiert. Ihr Vater arbeitet in einer Branche, deren Zukunft dabei umstritten ist. Erste politische Aktivitäten verschaffen ihr Anerkennung im Freundeskreis und führen zu Streit in der Familie.",
     "social": "Freundeskreis und Familie verbinden globale Ziele mit ungleichen beruflichen und finanziellen Sorgen.",
     "practice": "Vertragstext, Berichterstattung und Familiengespräche machen verschiedene Massstäbe für denselben Beschluss sichtbar."
   },
@@ -1245,10 +1245,10 @@ const AUGUSTINE_CHARACTERS=[
     "place": "Zürich",
     "related": "ai",
     "memory": "Vor einigen Wochen teilte ich ein Bild zu schnell. Ein Freund korrigierte die Ortsangabe. Ich löschte es, schrieb aber nicht allen, die es von mir erhalten hatten.",
-    "attention": "Die neue Aufnahme berührt mich, und die Absenderin ist mir vertraut. Trotzdem suche ich nach der frühesten auffindbaren Veröffentlichung. Vertrauen in sie beantwortet die Frage nach der Bildherkunft nicht.",
-    "expectation": "Ich möchte eine belastbare Erklärung finden und die frühere Weiterleitung richtigstellen. Bleibt die Herkunft offen, will ich das sagen, statt durch eine vorschnelle Entlarvung erneut Sicherheit vorzutäuschen.",
-    "limit": "Angenommen: eine Zürcher Nutzerin, die in einem privaten Chat ein angebliches Kriegsfoto erhält und kurz zuvor selbst ein ungeprüftes Bild weitergeleitet hat. Die beschriebenen Beziehungen, Handlungen und Ich-Aussagen sind Annahmen dieses Modells, keine überlieferten persönlichen Zeugnisse.",
-    "context": "Angenommen: eine Zürcher Nutzerin, die in einem privaten Chat ein angebliches Kriegsfoto erhält und kurz zuvor selbst ein ungeprüftes Bild weitergeleitet hat.",
+    "attention": "Die Aufnahme passt zu dem, was ich über den Krieg lese. Unter meinem letzten Beitrag verlangen Leute Belege. Ich suche nach einer Bestätigung; auf die erste gegenteilige Fundstelle klicke ich nicht sofort.",
+    "expectation": "Ich möchte diesmal recht behalten. Wenn das Bild falsch ist, werde ich es entfernen. Eine weitere grosse Richtigstellung würde aber auch diejenigen bestärken, die meinen Beiträgen grundsätzlich misstrauen.",
+    "limit": "Konstruierter Lebenslauf: Sie nutzt seit Jahren soziale Medien und wird im Bekanntenkreis oft nach Nachrichten gefragt. Ein häufig weitergeleiteter Beitrag brachte ihr Aufmerksamkeit. Nach einer öffentlich korrigierten Falschzuordnung achtet sie stärker auf Quellen, will ihren Ruf als gut informierte Person aber nicht verlieren. Lebensstationen, Beziehungen und Ich-Aussagen sind angenommen; sie sind keine überlieferte Biografie und stehen nicht für alle Menschen dieser Lebenslage.",
+    "context": "Konstruierter Lebenslauf: Sie nutzt seit Jahren soziale Medien und wird im Bekanntenkreis oft nach Nachrichten gefragt. Ein häufig weitergeleiteter Beitrag brachte ihr Aufmerksamkeit. Nach einer öffentlich korrigierten Falschzuordnung achtet sie stärker auf Quellen, will ihren Ruf als gut informierte Person aber nicht verlieren.",
     "social": "Persönliches Vertrauen und Verantwortung gegenüber Empfängern wirken anders als die Reichweitenlogik einer Plattform.",
     "practice": "Chatverläufe, Bildunterschriften und frühere Veröffentlichungen ermöglichen Prüfung; auch eine Korrektur muss die ursprünglichen Empfänger erreichen."
   },
@@ -1258,14 +1258,14 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Prostituierte im antiken Rom",
     "place": "Rom",
     "related": "rome",
-    "context": "Modell: eine etwa 32-jährige freigelassene Frau, die mit Prostitution ihren Lebensunterhalt verdient und ein Zimmer mietet. Rechtsstellung und Arbeitsverhältnisse unterschieden sich erheblich; hier wird weder Sklaverei noch vollständige Unabhängigkeit vorausgesetzt.",
-    "memory": "Eine Bekannte warnte mich vor einem Kunden, der sie nicht bezahlt hatte. Ich nahm ihn trotzdem an, weil die Miete fällig war. Wenn ich daran denke, erinnere ich mich auch daran, wie wenig ich ihrer Warnung zuhören wollte.",
-    "attention": "Ich zähle die Einnahmen und lege die Zimmermiete beiseite. Ein Bekannter grüsst mich allein freundlich und geht vor anderen an mir vorbei. Ich brauche seine gelegentlichen Empfehlungen, will aber nicht so tun, als bemerkte ich das nicht.",
-    "expectation": "Ich möchte Geld zurücklegen und später mit einer Bekannten eine kleine Garküche betreiben. Sie würde mitarbeiten, fürchtet aber, dass mein Ruf Kundschaft fernhält. Ein anderer Verdienst würde nicht einfach ändern, was die Nachbarn über mich erzählen.",
+    "context": "Konstruierter Lebenslauf: Als Erwachsene aus der Sklaverei freigelassen, verdiente sie zunächst mit wechselnden Arbeiten und später mit Prostitution. Inzwischen ist sie etwa 32, mietet ein Zimmer und kennt zahlungskräftige Kunden. Einen Teil ihres Geldes gibt sie einer Verwandten; mit einer anderen Frau ist sie wegen abgeworbener Kundschaft zerstritten. Die Freilassung beendete nicht alle Abhängigkeiten.",
+    "memory": "Anfangs wusste ich nicht, welcher Kunde zahlt und welcher nur verspricht. Eine ältere Frau half mir. Später kam einer ihrer besten Kunden zu mir; sie meint noch immer, ich hätte ihn ihr weggenommen. Ich habe ihn jedenfalls nicht zurückgeschickt.",
+    "attention": "Ich zähle das Geld und lege mehr für mich zurück, als ich meiner Verwandten gesagt habe. Ein Stammkunde erwartet, dass ich nur für ihn da bin. Wenn er das will, soll er auch die Tage bezahlen, an denen er nicht kommt.",
+    "expectation": "Mit einer Garküche hätte ich andere Arbeit, aber weniger Verdienst ist auch keine Freiheit. Vielleicht bleibe ich noch eine Weile dabei. Ich will selbst Rücklagen haben und nicht wieder von den Versprechen eines einzigen Mannes leben.",
     "social": "Kunden verfügen über Geld und können Gewalt ausüben; Vermieter und frühere Abhängigkeiten begrenzen Entscheidungen. Andere Frauen vermitteln Warnungen und Kontakte, stehen aber auch in Konkurrenz.",
     "practice": "Gerüchte und Kundenerinnerungen beeinflussen Sicherheit und Einkommen. Graffiti und literarische Darstellungen stammen oft aus einer männlichen Aussenperspektive und erschliessen keine vollständige Frauenbiografie.",
     "critical": "Gesellschaftliche Stigmatisierung ist keine persönliche Schuld. Erwerbsentscheidungen unter wirtschaftlichem Druck sind von sexueller Ausbeutung und Gewalt durch andere zu unterscheiden.",
-    "counterMemory": "Die Warnung der Bekannten und die Perspektive einer Frau in sexueller Versklavung würden andere Grenzen sichtbar machen. Der angenommene Status einer Freigelassenen darf nicht auf alle Prostituierten übertragen werden.",
+    "counterMemory": "Die Figur ist weder ein Gegenbild moralischer Reinheit noch durch ihre Erwerbstätigkeit schuldig. Die frühere Helferin würde den Streit um Kundschaft anders erzählen. Abhängigkeiten, Stigma und mögliche Gewalt müssen neben ihren eigenen Entscheidungen untersucht werden.",
     "references": [
       [
         "Archäologischer Park Pompeji: Grabungsführer, Abschnitt Lupanar (Vergleichsort, nicht Rom)",
@@ -1276,7 +1276,7 @@ const AUGUSTINE_CHARACTERS=[
         "https://www.britishmuseum.org/exhibitions/nero-man-behind-myth/slavery-ancient-rome"
       ]
     ],
-    "limit": "Modell: eine etwa 32-jährige freigelassene Frau, die mit Prostitution ihren Lebensunterhalt verdient und ein Zimmer mietet. Rechtsstellung und Arbeitsverhältnisse unterschieden sich erheblich; hier wird weder Sklaverei noch vollständige Unabhängigkeit vorausgesetzt. Alle persönlichen Handlungen, Beziehungen und Aussagen dieses Modells sind konstruiert. Die verlinkten Untersuchungen belegen den historischen Rahmen, nicht diese Biografie."
+    "limit": "Konstruierter Lebenslauf: Als Erwachsene aus der Sklaverei freigelassen, verdiente sie zunächst mit wechselnden Arbeiten und später mit Prostitution. Inzwischen ist sie etwa 32, mietet ein Zimmer und kennt zahlungskräftige Kunden. Einen Teil ihres Geldes gibt sie einer Verwandten; mit einer anderen Frau ist sie wegen abgeworbener Kundschaft zerstritten. Die Freilassung beendete nicht alle Abhängigkeiten. Alle persönlichen Lebensstationen und Ich-Aussagen sind konstruiert. Die Quellen erläutern den historischen Rahmen, nicht diese Biografie."
   },
   {
     "id": "feud-knight",
@@ -1284,10 +1284,10 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Niederadliger Fehdeführer («Raubritter»)",
     "place": "Oberrhein",
     "related": "medievalworld",
-    "context": "Modell: ein etwa 40-jähriger Niederadliger, der einen behaupteten Anspruch gegen eine Stadt mit bewaffneten Überfällen durchsetzen will. «Raubritter» ist eine später verbreitete, wertende Sammelbezeichnung, keine einheitliche mittelalterliche Berufsgruppe.",
-    "memory": "Mein Vater erzählte, wie unser Haus frühere Ansprüche durchgesetzt hatte. An diese Geschichten dachte ich, als wir Kaufleute anhielten und ihre Ware wegnahmen. Einer zeigte mir, dass er mit unserem Gegner gar keinen Vertrag hatte. Ich liess ihn trotzdem festhalten.",
-    "attention": "Ich diktiere ein Schreiben, in dem ich unser Vorgehen als rechtmässige Fehde bezeichne. Mein Knecht fragt nach seinem Anteil. Im Hof warten die festgehaltenen Fuhrleute; ihre Forderung nach Freilassung nehme ich nicht in das Schreiben auf.",
-    "expectation": "Ich rechne damit, dass die Stadt verhandelt, bevor weitere Transporte ausbleiben. Zugleich fürchte ich einen bewaffneten Gegenschlag. Ich möchte als Wahrer unseres Rechts gelten, nicht als Räuber; ob die Betroffenen diese Unterscheidung anerkennen, kümmert mich wenig.",
+    "context": "Konstruierter Lebenslauf: Er wuchs als jüngerer Sohn eines niederadligen Hauses auf und diente zunächst einem mächtigeren Herrn. Nach einer Erbteilung erhielt er wenig Einkommen, hielt aber an standesgemässen Ausgaben fest. Mit etwa 40 unterhält er bewaffnete Gefolgsleute, verschuldet sich und nimmt eine strittige Forderung gegen eine Stadt zum Anlass für Überfälle. «Raubritter» ist eine spätere wertende Sammelbezeichnung.",
+    "memory": "Mein Vater hätte sich von diesen Kaufleuten nicht hinhalten lassen. Früher achtete man den Namen unseres Hauses. Seit wir die ersten Wagen festgesetzt haben, schickt die Stadt wenigstens jemanden, der mit mir spricht.",
+    "attention": "Der Fuhrmann behauptet, mit dem Streit nichts zu tun zu haben. Seine Ladung gehört einem Bürger der Stadt, das genügt mir. Ich lasse die Forderung aufschreiben und halte ihn fest, bis jemand bezahlt. Meine Leute wollen ihren Anteil.",
+    "expectation": "Ich werde nicht mit leeren Händen nachgeben. Wenn die Stadt zahlt, kann ich meine Männer halten und einen Teil der Schulden begleichen. Danach will ich eine Verbindung für meine Tochter finden, die unserem Haus wieder Gewicht gibt.",
     "social": "Familienansehen, Gefolgschaft und materielle Interessen verstärken die Gewalt. Kaufleute, Fuhrleute und bäuerliche Haushalte tragen Schäden, obwohl sie nicht selbst die Fehde begonnen haben.",
     "practice": "Fehdebriefe und Familienerzählungen begründen Ansprüche; Beschwerden und städtische Rechnungen können Überfälle, Lösegeld und Verluste aus anderer Sicht dokumentieren.",
     "critical": "Die Berufung auf Ehre oder Fehderecht rechtfertigt nicht automatisch den konkreten Überfall. Seine Selbstdarstellung verdeckt Gewalt gegen Unbeteiligte.",
@@ -1298,7 +1298,7 @@ const AUGUSTINE_CHARACTERS=[
         "https://hls-dhs-dss.ch/de/articles/008606/2006-10-23/"
       ]
     ],
-    "limit": "Modell: ein etwa 40-jähriger Niederadliger, der einen behaupteten Anspruch gegen eine Stadt mit bewaffneten Überfällen durchsetzen will. «Raubritter» ist eine später verbreitete, wertende Sammelbezeichnung, keine einheitliche mittelalterliche Berufsgruppe. Alle persönlichen Handlungen, Beziehungen und Aussagen dieses Modells sind konstruiert. Die verlinkten Untersuchungen belegen den historischen Rahmen, nicht diese Biografie."
+    "limit": "Konstruierter Lebenslauf: Er wuchs als jüngerer Sohn eines niederadligen Hauses auf und diente zunächst einem mächtigeren Herrn. Nach einer Erbteilung erhielt er wenig Einkommen, hielt aber an standesgemässen Ausgaben fest. Mit etwa 40 unterhält er bewaffnete Gefolgsleute, verschuldet sich und nimmt eine strittige Forderung gegen eine Stadt zum Anlass für Überfälle. «Raubritter» ist eine spätere wertende Sammelbezeichnung. Alle persönlichen Lebensstationen und Ich-Aussagen sind konstruiert. Die Quellen erläutern den historischen Rahmen, nicht diese Biografie."
   },
   {
     "id": "jacobin1794",
@@ -1306,10 +1306,10 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Anhänger des Wohlfahrtsausschusses",
     "place": "Paris, Frühjahr 1794",
     "related": "revolution",
-    "context": "Modell: ein etwa 35-jähriger Schreiber in einem lokalen revolutionären Überwachungskomitee. Er unterstützt die Politik des Wohlfahrtsausschusses, gehört aber weder diesem nationalen Ausschuss noch automatisch einem Gericht an.",
-    "memory": "Als die Republik bedroht schien, meldete ich mich zur Mitarbeit. Darauf bin ich stolz. Später schrieb ich eine Anzeige gegen einen Händler auf, mit dem ich schon wegen einer unbezahlten Rechnung gestritten hatte. Beides halte ich in meinen Erzählungen gern auseinander.",
-    "attention": "Ich übertrage Aussagen in ein Protokoll. Ein Zeuge hat das angebliche Gespräch nur vom Hörensagen. Ich lasse den Satz dennoch bestimmt klingen: Eine unsichere Anzeige könnte unseren Eifer fragwürdig erscheinen lassen.",
-    "expectation": "Ich erwarte, dass entschlossenes Vorgehen die Republik schützt und mir Anerkennung verschafft. Wenn wir nachgeben, fürchte ich Verrat; wenn die Beschuldigung nicht stimmt, könnte meine Unterschrift gegen mich sprechen. Ich hoffe, diese Frage werde niemand stellen.",
+    "context": "Konstruierter Lebenslauf: Er arbeitete als Schreiber und konnte vor der Revolution kaum auf ein öffentliches Amt hoffen. Er schloss sich einer politischen Sektion an, unterstützte die Republik und gelangte in ein lokales Überwachungskomitee. Mit etwa 35 verfügt er über Akten und Einfluss. Ein alter Zahlungsstreit mit einem Händler geht inzwischen in eine politische Beschuldigung ein. Er unterstützt den Wohlfahrtsausschuss, gehört ihm aber nicht an.",
+    "memory": "Vor wenigen Jahren hätten Leute wie dieser Händler mich warten lassen. Jetzt muss er auf unsere Fragen antworten. Als ich mich für die Republik einsetzte, haben andere abgewartet. Ich sehe nicht ein, warum gerade sie heute unsere Entschlossenheit beurteilen sollen.",
+    "attention": "Der Zeuge hat die Worte nicht selbst gehört. Dennoch passen sie zu allem, was wir über den Mann erfahren haben. Ich nehme die Aussage auf. Wir können nicht jede Massnahme aufschieben, bis auch der letzte Zweifler zufrieden ist.",
+    "expectation": "Ich erwarte, dass die Republik sich gegen ihre Gegner behauptet. Dann wird man wissen, wer in der Gefahr standgehalten hat. Den Händler einfach freizulassen, wäre für mich ein Eingeständnis, dass wir uns von Anfang an getäuscht hätten.",
     "social": "Politische Überzeugung, örtliche Konflikte und persönliches Fortkommen wirken zusammen. Komiteekollegen belohnen Eifer; Beschuldigte und Angehörige verfügen nicht über denselben Einfluss auf die Akte.",
     "practice": "Protokolle verwandeln wechselhafte Aussagen in amtlich wirkende Gewissheit. Spätere Selbstberichte können Beteiligung verkleinern oder als notwendige Pflichterfüllung darstellen.",
     "critical": "Republikanische Ziele, Kriegsangst und Gruppendruck erklären Motive, entlasten aber nicht von der Verantwortung für verfälschte Aussagen und Verfolgung.",
@@ -1320,7 +1320,7 @@ const AUGUSTINE_CHARACTERS=[
         "https://histoire-image.org/etudes/comite-revolutionnaire-terreur"
       ]
     ],
-    "limit": "Modell: ein etwa 35-jähriger Schreiber in einem lokalen revolutionären Überwachungskomitee. Er unterstützt die Politik des Wohlfahrtsausschusses, gehört aber weder diesem nationalen Ausschuss noch automatisch einem Gericht an. Alle persönlichen Handlungen, Beziehungen und Aussagen dieses Modells sind konstruiert. Die verlinkten Untersuchungen belegen den historischen Rahmen, nicht diese Biografie."
+    "limit": "Konstruierter Lebenslauf: Er arbeitete als Schreiber und konnte vor der Revolution kaum auf ein öffentliches Amt hoffen. Er schloss sich einer politischen Sektion an, unterstützte die Republik und gelangte in ein lokales Überwachungskomitee. Mit etwa 35 verfügt er über Akten und Einfluss. Ein alter Zahlungsstreit mit einem Händler geht inzwischen in eine politische Beschuldigung ein. Er unterstützt den Wohlfahrtsausschuss, gehört ihm aber nicht an. Alle persönlichen Lebensstationen und Ich-Aussagen sind konstruiert. Die Quellen erläutern den historischen Rahmen, nicht diese Biografie."
   },
   {
     "id": "java1900",
@@ -1328,21 +1328,21 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Nyai eines niederländischen Grossgrundbesitzers",
     "place": "Java, Niederländisch-Indien",
     "related": "materialism",
-    "context": "Modell: eine etwa 30-jährige Javanerin, unverheiratete Partnerin und Haushaltsverwalterin eines niederländischen Plantagen- und Grossgrundbesitzers, mit einem gemeinsamen Kind. Nyai bezeichnet hier eine koloniale Beziehung von Hausarbeit, Partnerschaft und ungleicher Macht; «Geliebte» allein verharmlost diese Verhältnisse.",
-    "memory": "Als unser Kind krank war, blieb er mit mir an seinem Bett. An diese Nähe denke ich gern. Beim Besuch seiner europäischen Bekannten wurde ich später nicht mit an den Tisch gebeten. Beide Erinnerungen gehören zu demselben Mann.",
-    "attention": "Ich weise einer Hausangestellten Arbeit zu und übersetze eine Bitte an ihn. Im Haushalt habe ich Einfluss; über Geld und unsere Zukunft entscheidet er weitgehend. Die Angestellte erinnert mich daran, dass meine Anweisung ihren freien Nachmittag kostet.",
-    "expectation": "Er spricht davon, unser Kind in Europa ausbilden zu lassen. Ich wünsche ihm Möglichkeiten, die ich nicht hatte, und fürchte eine Trennung. Ich will eine verbindliche Vereinbarung, weiss aber nicht, wer meine Interessen gegen seine vertreten würde.",
+    "context": "Konstruierter Lebenslauf: Sie kam als junge Erwachsene in den Haushalt eines niederländischen Plantagen- und Grossgrundbesitzers. Daraus entstand eine unverheiratete Beziehung; sie bekam ein Kind und übernahm die Haushaltsführung. Mit etwa 30 verfügt sie über Geld für Einkäufe und erteilt Angestellten Anweisungen, wird im europäischen Bekanntenkreis aber oft übergangen. An ihrer besseren materiellen Stellung gegenüber Verwandten hält sie fest. Nyai bezeichnet hier diese koloniale Verbindung von Hausarbeit und Partnerschaft.",
+    "memory": "Meine Schwester sagte, ich hätte mich an ihn verkauft. Als ihr Geld fehlte, nahm sie meine Hilfe trotzdem an. Er kann zärtlich sein; ich kenne aber auch die Abende, an denen er mich vor seinen Gästen behandelt wie eine Angestellte.",
+    "attention": "Die Hausangestellte will zu ihrer Familie. Ich brauche sie heute hier und lehne ab. Mein Partner hat Besuch angekündigt; wenn etwas fehlt, fragt er mich danach. Den Gästen will ich keinen Anlass geben, über unseren Haushalt zu lachen.",
+    "expectation": "Unser Kind soll eine gute Ausbildung erhalten und nicht so abhängig sein wie meine Schwester. Wenn er dafür eine Reise nach Europa plant, will ich mitentscheiden. Eine europäische Ehefrau, die eines Tages meinen Platz übernimmt, werde ich nicht freundlich willkommen heissen.",
     "social": "Zuneigung und Abhängigkeit schliessen sich nicht aus. Gegenüber dem europäischen Besitzer ist sie benachteiligt, gegenüber Hausangestellten übt sie selbst Macht aus. Koloniale Statusordnungen prägen die Familie.",
     "practice": "Familienfotos können die Mutter ausblenden, obwohl ihre Arbeit den Haushalt trägt. Briefe und Verwaltungsakten erfassen Beziehungen nach anderen Kategorien als die Beteiligten.",
     "critical": "Die Beziehung wird weder als romantische Gleichberechtigung noch als vollständige Willenlosigkeit dargestellt. Ihr begrenzter Einfluss im Haushalt hebt koloniale und geschlechtliche Abhängigkeit nicht auf.",
-    "counterMemory": "Wie schildern Kind und Hausangestellte dieselbe Familie? Anerkennung eines Kindes, Vermögensfragen und Sorgebefugnisse müssten für den konkreten Zeitpunkt anhand der Rechtslage und der Akten geprüft werden.",
+    "counterMemory": "Die Schwester könnte ihre Hilfe als Verpflichtung erleben, die Angestellte ihre Haushaltsführung als Zwang. Zuneigung, eigenes Vorteilsstreben und koloniale Benachteiligung bestehen nebeneinander. Die konkrete Rechtsstellung von Mutter und Kind ist nicht aus dieser Stimme abzuleiten.",
     "references": [
       [
         "Wereldmuseum Leiden: Nyai, Familienbeziehungen und koloniale Fotografie",
         "https://leiden.wereldmuseum.nl/nl/wereldverhalen/familieverbanden-in-de-koloniale-tijd-indonesie"
       ]
     ],
-    "limit": "Modell: eine etwa 30-jährige Javanerin, unverheiratete Partnerin und Haushaltsverwalterin eines niederländischen Plantagen- und Grossgrundbesitzers, mit einem gemeinsamen Kind. Nyai bezeichnet hier eine koloniale Beziehung von Hausarbeit, Partnerschaft und ungleicher Macht; «Geliebte» allein verharmlost diese Verhältnisse. Alle persönlichen Handlungen, Beziehungen und Aussagen dieses Modells sind konstruiert. Die verlinkten Untersuchungen belegen den historischen Rahmen, nicht diese Biografie."
+    "limit": "Konstruierter Lebenslauf: Sie kam als junge Erwachsene in den Haushalt eines niederländischen Plantagen- und Grossgrundbesitzers. Daraus entstand eine unverheiratete Beziehung; sie bekam ein Kind und übernahm die Haushaltsführung. Mit etwa 30 verfügt sie über Geld für Einkäufe und erteilt Angestellten Anweisungen, wird im europäischen Bekanntenkreis aber oft übergangen. An ihrer besseren materiellen Stellung gegenüber Verwandten hält sie fest. Nyai bezeichnet hier diese koloniale Verbindung von Hausarbeit und Partnerschaft. Alle persönlichen Lebensstationen und Ich-Aussagen sind konstruiert. Die Quellen erläutern den historischen Rahmen, nicht diese Biografie."
   },
   {
     "id": "pow1946",
@@ -1350,14 +1350,14 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Ehemaliger Wehrmacht- und Waffen-SS-Soldat in Gefangenschaft",
     "place": "Sowjetunion",
     "related": "history",
-    "context": "Modell: ein etwa 30-jähriger Deutscher, zunächst im Heer der Wehrmacht, ab 1944 in der Waffen-SS, seit 1945 in sowjetischer Kriegsgefangenschaft. Für diese konstruierte Biografie wird angenommen, dass er zuvor Zivilisten vor ihrer Ermordung bewachte. Es wird keine reale Person oder konkrete Einheit beschuldigt.",
-    "memory": "Beim Bewachen der festgenommenen Zivilisten erklärte unser Vorgesetzter, es gehe um Sicherheit. Ich sah, dass auch Kinder unter ihnen waren. Nachher hörte ich die Schüsse. Wenn ich davon erzähle, beginne ich meist damit, dass ich selbst nicht geschossen habe.",
-    "attention": "Im Lager schreibe ich nach Hause über Hunger und Krankheit. Über die Bewachung schreibe ich nichts. Ein Mitgefangener sagt, wir seien alle nur Soldaten gewesen. Ich lasse den Satz stehen, obwohl ich weiss, welche Unterschiede er zudeckt.",
-    "expectation": "Ich will heimkehren und fürchte Fragen nach meiner Einheit und den Festgenommenen. Ich hoffe, meine Familie werde zuerst mein Leiden sehen. Ob ich dann von meiner Beteiligung erzähle, entscheide ich in meinem Kopf immer wieder zugunsten des Schweigens.",
+    "context": "Konstruierter Lebenslauf: Als junger Mann begrüsste er den nationalsozialistischen Aufstieg und trat später ins Heer ein. Im besetzten Osten bewachte er Zivilisten, die anschliessend ermordet wurden. Für das Modell ist 1944 ein Wechsel zur Waffen-SS angenommen; Wehrmacht und Waffen-SS waren verschiedene Organisationen. Seit 1945 ist er sowjetischer Kriegsgefangener. Mit etwa 30 erlebt er Hunger und Krankheit und hält an Teilen seines früheren Selbstbildes fest. Keine reale Person oder Einheit wird damit identifiziert.",
+    "memory": "Ich war stolz auf meine Uniform und darauf, nicht zu denen zu gehören, die immer nur redeten. Bei der Absperrung standen auch Kinder. Ich hatte meinen Posten; geschossen haben andere. So habe ich es damals gesehen, und dabei bleibe ich.",
+    "attention": "Im Brief schreibe ich, dass ich lebe und nach Hause will. Ein Mitgefangener fragt nach unserem Einsatz im Osten. Ich sage ihm, er solle sich um seine eigenen Angelegenheiten kümmern. Über das, was wir hier durchmachen, können wir reden.",
+    "expectation": "Meine Familie soll erfahren, was die Gefangenschaft mit mir gemacht hat. Ich rechne damit, dass alte Kameraden zu mir halten. Wenn man mich nach den Erschiessungen fragt, werde ich sagen, dass ich Wache stand. Mehr sollen sie mir erst einmal nachweisen.",
     "social": "Militärische Befehle, eigene Zustimmung und Kameradschaft können Beteiligung begünstigen. In Gefangenschaft entsteht eine Leidensgemeinschaft, die individuelle Verantwortlichkeiten zugleich verdecken kann.",
     "practice": "Feldpost, Lagerbriefe, Einheitsunterlagen und Aussagen Überlebender besitzen unterschiedliche Leerstellen. Eine spätere Opfererzählung kann tatsächliches Leiden enthalten und frühere Täterschaft ausblenden.",
     "critical": "Wehrmacht und Waffen-SS waren verschiedene Organisationen; hier ist ein Wechsel modelliert. Das Leiden in Gefangenschaft hebt Verantwortung für die Mitwirkung an einem Kriegsverbrechen nicht auf.",
-    "counterMemory": "Die Ich-Erzählung ist ausdrücklich eine mögliche Selbstentlastung. Aussagen Überlebender und Tatunterlagen wären nötig, um Handlungen und Wissen zu rekonstruieren. Weder Gefangenschaft noch Organisationszugehörigkeit allein beweisen eine konkrete individuelle Tat.",
+    "counterMemory": "«Nur Wache» ist hier eine Selbstentlastung, kein Nachweis fehlender Verantwortung. Die modellierte Beteiligung muss neben Aussagen Überlebender und Tatunterlagen stehen. Hunger und Krankheit in Gefangenschaft sind damit weder zu leugnen noch als Ausgleich für frühere Verbrechen zu verrechnen.",
     "references": [
       [
         "USHMM: Waffen-SS und ihre organisatorische Stellung",
@@ -1372,7 +1372,7 @@ const AUGUSTINE_CHARACTERS=[
         "https://www.dhm.de/lemo/kapitel/der-zweite-weltkrieg/kriegsverlauf/kriegsgefangenschaft"
       ]
     ],
-    "limit": "Modell: ein etwa 30-jähriger Deutscher, zunächst im Heer der Wehrmacht, ab 1944 in der Waffen-SS, seit 1945 in sowjetischer Kriegsgefangenschaft. Für diese konstruierte Biografie wird angenommen, dass er zuvor Zivilisten vor ihrer Ermordung bewachte. Es wird keine reale Person oder konkrete Einheit beschuldigt. Alle persönlichen Handlungen, Beziehungen und Aussagen dieses Modells sind konstruiert. Die verlinkten Untersuchungen belegen den historischen Rahmen, nicht diese Biografie."
+    "limit": "Konstruierter Lebenslauf: Als junger Mann begrüsste er den nationalsozialistischen Aufstieg und trat später ins Heer ein. Im besetzten Osten bewachte er Zivilisten, die anschliessend ermordet wurden. Für das Modell ist 1944 ein Wechsel zur Waffen-SS angenommen; Wehrmacht und Waffen-SS waren verschiedene Organisationen. Seit 1945 ist er sowjetischer Kriegsgefangener. Mit etwa 30 erlebt er Hunger und Krankheit und hält an Teilen seines früheren Selbstbildes fest. Keine reale Person oder Einheit wird damit identifiziert. Alle persönlichen Lebensstationen und Ich-Aussagen sind konstruiert. Die Quellen erläutern den historischen Rahmen, nicht diese Biografie."
   },
   {
     "id": "liberia2003",
@@ -1380,21 +1380,21 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Als Kind rekrutierter Soldat",
     "place": "Liberia, nach dem Waffenstillstand",
     "related": "history",
-    "context": "Modell: ein 15-jähriger Junge, der mit 13 von einer bewaffneten Gruppe zwangsrekrutiert wurde. Angenommen werden Wachaufgaben, Beteiligung an Plünderungen und Bedrohung von Zivilpersonen; keine einzelne dokumentierte Kindheitsgeschichte wird nacherzählt.",
-    "memory": "Als die Männer mich mitnahmen, dachte ich, ich müsse nur lange genug gehorchen, um zurückzukommen. Später fürchteten sich Erwachsene vor mir, wenn ich bewaffnet war. Ich erinnere mich an einen Mann, dem ich Essen abnahm, und daran, dass die anderen mich dafür lobten.",
-    "attention": "Jetzt trage ich wieder gewöhnliche Kleidung. Ein früherer Kamerad ruft mich bei meinem Kriegsnamen; bei den Helfern soll ich meinen anderen Namen nennen. Ich möchte nicht zurück zur Gruppe, vermisse aber jemanden, der weiss, was ich erlebt habe.",
-    "expectation": "Ich möchte meine Familie finden und wieder lernen. Ich fürchte, dass Nachbarn mich nur als den Bewaffneten erkennen. Von dem Essen, das ich dem Mann wegnahm, könnte ich erzählen; ich weiss nicht, ob man dann noch versteht, wie ich in die Gruppe geriet.",
+    "context": "Konstruierter Lebenslauf: Mit 13 wurde er gewaltsam einer bewaffneten Gruppe angeschlossen, zunächst als Träger und Helfer, später mit einer Waffe. Er bedrohte Zivilpersonen und beteiligte sich an Plünderungen. Anerkennung durch ältere Kämpfer und Zugriff auf Lebensmittel banden ihn zusätzlich an die Gruppe. Nach dem Waffenstillstand 2003 ist er 15 und versucht, ausserhalb der Einheit zurechtzukommen. Zwang, Bindung und zeitweise genossene Macht werden zusammen modelliert.",
+    "memory": "Zuerst hatte ich Angst vor allen. Später musste der Händler mir etwas geben, wenn ich kam. Die älteren Kämpfer lachten und nannten mich mutig. Ich erinnere mich gern an das Lob; an das Gesicht des Händlers nicht.",
+    "attention": "Hier werde ich wieder behandelt wie ein kleiner Junge. Ich soll warten, wenn Erwachsene sprechen. Ein früherer Kamerad nimmt mich ernst und nennt mich bei meinem Kriegsnamen. Ich bin froh, ihn zu sehen, auch wenn ich nicht wieder mit ihm fortwill.",
+    "expectation": "Ich will zu meiner Familie, wenn sie noch dort ist. Zur Schule gehen wäre gut, aber nicht, wenn alle über mich lachen. Ich will die Waffe nicht zurückhaben; dass niemand mehr auf mich hört, gefällt mir trotzdem nicht.",
     "social": "Erwachsene Rekrutierer und Kommandeure üben Gewalt und Kontrolle aus. Beziehungen zu anderen Kindern bieten Schutz und binden an die Gruppe. Betroffene Zivilpersonen behalten eigene Ansprüche und Erinnerungen.",
     "practice": "Kriegsnamen und Gruppenerzählungen prägen Zugehörigkeit. Gespräche bei der Reintegration können frühere Identitäten wieder zugänglich machen, dürfen aber kein erzwungenes öffentliches Geständnis verlangen.",
     "critical": "Ein zwangsrekrutiertes Kind ist besonders schutzbedürftig. Erlittener Zwang und verursachtes Leid müssen gemeinsam sichtbar bleiben, ohne seine Verantwortung mit der erwachsener Rekrutierer gleichzusetzen.",
-    "counterMemory": "Wie erinnern der beraubte Mann, Angehörige und andere rekrutierte Kinder denselben Krieg? Schutz, Rückkehr und Aufarbeitung benötigen mehr als die Forderung, das Kind solle seine Geschichte offenlegen.",
+    "counterMemory": "Die Perspektive des bedrohten Händlers widerspricht der Erinnerung an Anerkennung. Dass ein Kind zeitweise Macht erlebt oder vermisst, beseitigt weder den Rekrutierungszwang noch die Verantwortung erwachsener Kommandeure. Eine solche Reaktion darf nicht allen betroffenen Kindern zugeschrieben werden.",
     "references": [
       [
         "Human Rights Watch: Interviews und Untersuchung zum Einsatz von Kindern in Liberia (2004)",
         "https://www.hrw.org/report/2004/02/02/how-fight-how-kill/child-soldiers-liberia"
       ]
     ],
-    "limit": "Modell: ein 15-jähriger Junge, der mit 13 von einer bewaffneten Gruppe zwangsrekrutiert wurde. Angenommen werden Wachaufgaben, Beteiligung an Plünderungen und Bedrohung von Zivilpersonen; keine einzelne dokumentierte Kindheitsgeschichte wird nacherzählt. Alle persönlichen Handlungen, Beziehungen und Aussagen dieses Modells sind konstruiert. Die verlinkten Untersuchungen belegen den historischen Rahmen, nicht diese Biografie."
+    "limit": "Konstruierter Lebenslauf: Mit 13 wurde er gewaltsam einer bewaffneten Gruppe angeschlossen, zunächst als Träger und Helfer, später mit einer Waffe. Er bedrohte Zivilpersonen und beteiligte sich an Plünderungen. Anerkennung durch ältere Kämpfer und Zugriff auf Lebensmittel banden ihn zusätzlich an die Gruppe. Nach dem Waffenstillstand 2003 ist er 15 und versucht, ausserhalb der Einheit zurechtzukommen. Zwang, Bindung und zeitweise genossene Macht werden zusammen modelliert. Alle persönlichen Lebensstationen und Ich-Aussagen sind konstruiert. Die Quellen erläutern den historischen Rahmen, nicht diese Biografie."
   },
   {
     "id": "neonazi1993",
@@ -1402,21 +1402,21 @@ const AUGUSTINE_CHARACTERS=[
     "role": "Neonazi in einer ostdeutschen Kleinstadt",
     "place": "Sachsen",
     "related": "history",
-    "context": "Modell: ein 22-jähriger Mann, der einer neonazistischen Clique angehört und sich an einem rassistischen Übergriff beteiligt hat. Er ist keine identifizierte Person. Weder Herkunft aus Ostdeutschland noch soziale Unsicherheit erklären eine solche Entscheidung zwangsläufig.",
-    "memory": "Nach dem Angriff klopften mir die anderen auf die Schulter. Wir erzählten später, wir hätten nur reagiert. Tatsächlich hatten wir den Mann wegen seiner zugeschriebenen Herkunft ausgesucht. Daran lasse ich beim Erzählen die entscheidende Stelle weg.",
-    "attention": "Meine Schwester fragt, weshalb der Mann jetzt nicht mehr allein zur Arbeit geht. Ich rede von unseren eigenen Problemen und werde laut. In der Clique muss ich meine Version nicht erklären; dort bringt sie mir Zustimmung.",
-    "expectation": "Ich will meinen Platz in der Gruppe behalten und fürchte eine Anzeige. Ein früherer Freund hält Abstand. Ich könnte ihn anrufen, schiebe es aber auf: Ich will die Folgen loswerden, ohne bisher meine Überzeugungen oder meine Tat aufzugeben.",
+    "context": "Konstruierter Lebenslauf: Schon vor der Vereinigung suchte er Anschluss an eine rechte Clique. Nach 1990 lernte er weitere Aktivisten kennen, ging zu Szenetreffen und arbeitete zeitweise regulär. Mit 22 beteiligt er sich an einem rassistischen Übergriff. Er findet Zustimmung in Teilen seines Umfelds, verliert aber einen alten Freund. Er ist weder als arbeitsloser Automatismus noch als bereits geläuterter Aussteiger angelegt.",
+    "memory": "Nach dem Angriff sagten die anderen, auf mich sei Verlass. Mein alter Freund nennt mich seitdem einen Schläger. Früher kam er selbst mit uns mit; jetzt tut er, als hätte er nie dazugehört. Ich vermisse ihn, aber nachlaufen werde ich ihm nicht.",
+    "attention": "Meine Schwester will wissen, was uns der Mann getan habe. Ich antworte, sie verstehe nicht, worum es gehe. Dass wir ihn wegen seiner Herkunft ausgesucht haben, bestreite ich ihr gegenüber. Bei den anderen muss ich das nicht verstecken.",
+    "expectation": "Ich will in der Gruppe etwas gelten und bei den nächsten Treffen wieder dabei sein. Wegen einer Anzeige werde ich meine Ansichten nicht ändern. Vielleicht braucht mein alter Freund irgendwann selbst Hilfe; dann wird er schon wissen, wo er mich findet.",
     "social": "Cliquenanerkennung, rassistische Ideologie und Zustimmung oder Wegsehen im Umfeld stützen Gewalt. Die Schwester und der frühere Freund zeigen, dass dasselbe regionale Umfeld auch Widerspruch ermöglicht.",
     "practice": "Wiederholte Cliquenerzählungen stellen Angriffe als angebliche Abwehr dar. Aussagen Betroffener, Zeugenaussagen und Gerichtsunterlagen können diese Umdeutung widerlegen.",
     "critical": "Die Ich-Aussagen legen rassistische Auswahl und Selbstrechtfertigung offen. Sie sind keine Zustimmung zur Ideologie; die Perspektive des Angegriffenen darf nicht hinter den Sorgen des Täters verschwinden.",
-    "counterMemory": "Welche Tatsachen verschweigt die Cliquenerzählung? Für den Betroffenen gehören Angst, eingeschränkte Bewegungsfreiheit und die Reaktion des Umfelds zur Geschichte. Ein Ausstieg wird hier nicht als bereits geschehene Läuterung behauptet.",
+    "counterMemory": "Die Clique belohnt rassistische Gewalt und die Figur hält an ihrer Zugehörigkeit fest. Freundschaft und Erwerbsarbeit widersprechen der Täterschaft nicht. Für den Angegriffenen gehören Bedrohung und eingeschränkte Bewegungsfreiheit zur Geschichte, auch wenn der Täter davon nicht sprechen will.",
     "references": [
       [
         "Bundeszentrale für politische Bildung: rechte Gewalt in Ost und West",
         "https://www.bpb.de/themen/deutschlandarchiv/270811/rechte-gewalt-in-ost-und-west/"
       ]
     ],
-    "limit": "Modell: ein 22-jähriger Mann, der einer neonazistischen Clique angehört und sich an einem rassistischen Übergriff beteiligt hat. Er ist keine identifizierte Person. Weder Herkunft aus Ostdeutschland noch soziale Unsicherheit erklären eine solche Entscheidung zwangsläufig. Alle persönlichen Handlungen, Beziehungen und Aussagen dieses Modells sind konstruiert. Die verlinkten Untersuchungen belegen den historischen Rahmen, nicht diese Biografie."
+    "limit": "Konstruierter Lebenslauf: Schon vor der Vereinigung suchte er Anschluss an eine rechte Clique. Nach 1990 lernte er weitere Aktivisten kennen, ging zu Szenetreffen und arbeitete zeitweise regulär. Mit 22 beteiligt er sich an einem rassistischen Übergriff. Er findet Zustimmung in Teilen seines Umfelds, verliert aber einen alten Freund. Er ist weder als arbeitsloser Automatismus noch als bereits geläuterter Aussteiger angelegt. Alle persönlichen Lebensstationen und Ich-Aussagen sind konstruiert. Die Quellen erläutern den historischen Rahmen, nicht diese Biografie."
   }
 ];
 const CHARACTER_SOCIAL_CONTEXTS=[
@@ -1432,8 +1432,8 @@ function openCharacterGallery(){let dialog=$('#characterGallery');if(!dialog){di
 function characterSocial(c){const i=AUGUSTINE_CHARACTERS.findIndex(x=>x.id===c.id);return c.social||(i>=0?CHARACTER_SOCIAL_CONTEXTS[i]:'Noch keine sozialen Beziehungen angegeben')}
 function selectCharacter(id){const c=characterLibrary().find(x=>x.id===id);if(!c)return;stopAugustine();state.activeAvatar=id;const i=AUGUSTINE_CHARACTERS.findIndex(x=>x.id===id);if(i>=0)augustineCharacterIndex=i;augustineExperience='person';ensureReading('memoria');state.notes['premise-memoria-group']=(c.name?c.name+' · ':'')+c.role+' · '+c.place+' · '+yr(c.year);state.notes['premise-memoria-practice']=characterSocial(c)+(c.practice?' · '+c.practice:'');state.notes['premise-memoria-selection']=c.memory;captureReadings();save();render()}
 function characterPickerHtml(){const c=augustineCharacter();return `${characterPortraitHtml(c)}<label>Person <select data-conscious-character aria-label="Historische Ich-Perspektive">${characterLibrary().map(v=>`<option value="${esc(v.id)}" ${v.id===c.id?'selected':''}>${yr(v.year)} · ${esc(v.name?v.name+' · '+v.role:v.role)} · ${esc(v.place)}</option>`).join('')}</select></label><button data-character-gallery>Personen mit Bildern</button><button data-conscious-random>Andere Person zufällig ↻</button><button data-avatar-new>Eigenen Avatar erstellen +</button>${c.own?'<button data-avatar-edit>Avatar bearbeiten</button>':''}`}
-function augustineCharacterControls(){const c=augustineCharacter();return `<div class="conscious-character-controls"><div class="conscious-experience" role="group" aria-label="Zeiterfahrung wählen"><button data-conscious-view="person" aria-pressed="${augustineExperience==='person'}">Ich-Perspektive</button><button data-conscious-view="sound" aria-pressed="${augustineExperience==='sound'}">Klangfolge</button></div>${characterPickerHtml()}<span class="character-disclaimer">${AUGUSTINE_CHARACTERS.length} historische Personenmodelle${state.avatars?.length?' · '+state.avatars.length+' eigene Avatare':''} · Ich-Aussagen und Porträtillustrationen sind keine historischen Quellen</span></div>${augustineExperience==='person'?`<div class="conscious-character-context"><strong>${esc(c.name?c.name+' · ':'')}${esc(c.role)} · ${esc(c.place)} · ${yr(c.year)}</strong><span>${esc(c.critical||'Eine modellierte Einzelperspektive. Alle drei Bezüge vollziehen sich in ihrem Jetzt.')}</span></div>`:''}`}
-function characterEvidenceHtml(c){return `${c.counterMemory?`<p><strong>Was diese Stimme ausblendet:</strong> ${esc(c.counterMemory)}</p>`:''}${c.references?.length?`<ul>${c.references.map(([label,url])=>`<li><a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a></li>`).join('')}</ul>`:''}`}
+function augustineCharacterControls(){const c=augustineCharacter();return `<div class="conscious-character-controls"><div class="conscious-experience" role="group" aria-label="Zeiterfahrung wählen"><button data-conscious-view="person" aria-pressed="${augustineExperience==='person'}">Ich-Perspektive</button><button data-conscious-view="sound" aria-pressed="${augustineExperience==='sound'}">Klangfolge</button></div>${characterPickerHtml()}<span class="character-disclaimer">${AUGUSTINE_CHARACTERS.length} historische Personenmodelle${state.avatars?.length?' · '+state.avatars.length+' eigene Avatare':''} · Konstruierte Biografien und Ich-Stimmen · keine Quellenzitate</span></div>${augustineExperience==='person'?`<div class="conscious-character-context"><strong>${esc(c.name?c.name+' · ':'')}${esc(c.role)} · ${esc(c.place)} · ${yr(c.year)}</strong><span>${esc(c.critical||'Eine modellierte Einzelperspektive. Alle drei Bezüge vollziehen sich in ihrem Jetzt.')}</span></div>`:''}`}
+function characterEvidenceHtml(c){return `${c.counterMemory?`<p><strong>Einordnung ausserhalb der Ich-Stimme:</strong> ${esc(c.counterMemory)}</p>`:''}${c.references?.length?`<ul>${c.references.map(([label,url])=>`<li><a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a></li>`).join('')}</ul>`:''}`}
 function memoryCharacterHtml(){const c=augustineCharacter();return `<section class="memory-character"><div class="conscious-character-controls">${characterPickerHtml()}</div><div class="memory-person">${characterPortraitHtml(c)}<div><h3>${esc(c.name?c.name+' · ':'')}${esc(c.role)} · ${yr(c.year)}</h3><p>${esc(c.place)} · ${esc(c.context||c.limit)}</p></div></div><div class="memory-relations"><div><strong>Was ist dieser Person erinnerlich?</strong><p>${esc(c.memory)}</p></div><div><strong>In welchen Beziehungen erinnert sie?</strong><p>${esc(characterSocial(c))}</p></div><div><strong>Wie wird Erinnerung vermittelt?</strong><p>${esc(c.practice||'Gespräche, Handlungen und überlieferte Zeugnisse dieser Lebenswelt untersuchen. Welche davon diese Person kennt, ist damit noch nicht belegt.')}</p></div></div>${c.critical?`<p class="character-critical">${esc(c.critical)}</p><details><summary>Lebenslage, Gegenperspektiven und Quellen</summary><p>${esc(c.limit)}</p>${characterEvidenceHtml(c)}</details>`:''}<p class="small"><strong>Untersuchter sozialer Rahmen:</strong> ${esc(premiseValue('memoria','group')||characterSocial(c))}</p>${c.source?`<p class="small"><strong>Quellen / Annahmen:</strong> ${esc(c.source)}</p>`:''}<p class="small">Personenmodell, keine überlieferte Biografie. Prüfe an Quellen, was aus dieser Lebenslage tatsächlich bekannt sein konnte. Spätere Ereignisse sind heutige Rückblicke, keine Erinnerungen der Person.</p></section>`}
 function openAvatarEditor(edit=false){let dialog=$('#avatarEditor');if(!dialog){dialog=document.createElement('dialog');dialog.id='avatarEditor';document.body.append(dialog)}const c=edit?augustineCharacter():{};const fields=[['name','Name oder selbst gewählte Bezeichnung',true],['role','Tätigkeit / gesellschaftliche Stellung',true],['place','Ort',true],['context','Lebensumstände',true],['memory','Ich erinnere mich …',true],['attention','Ich nehme gerade wahr …',true],['expectation','Ich erwarte / hoffe / befürchte …',true],['social','Menschen und Gruppen, die mein Erinnern prägen',true],['practice','Gespräche, Texte, Bilder, Rituale oder Gegenstände',false],['source','Quellen / was bleibt angenommen?',true]];dialog.innerHTML=`<form id="avatarForm"><header><h2>${edit?'Avatar bearbeiten':'Eigenen historischen Avatar erstellen'}</h2><button type="button" data-avatar-close>Schliessen ×</button></header><p>Du bestimmst eine einzelne Person und ihre Lebenslage. Aus deinen Angaben entsteht ein gespeichertes Personenprofil mit eigenem Profilbild. Es wird keine historische Biografie automatisch behauptet.</p><label>Jahr (negative Zahl = v. u. Z.; kein Jahr 0)<input name="year" type="number" required min="-100000" max="10000" step="1" value="${c.year||''}"></label><fieldset class="avatar-picture"><legend>Profilbild</legend><div id="avatarPortraitPreview">${characterPortraitHtml(c.id?c:augustineCharacter())}</div><label>Illustration auswählen<select name="portraitId">${AUGUSTINE_CHARACTERS.map(v=>`<option value="${v.id}" ${v.id===characterPortraitId(c.id?c:augustineCharacter())?'selected':''}>${yr(v.year)} · ${esc(v.role)}</option>`).join('')}</select></label><label>Oder eigenes Bild hochladen (PNG, JPEG, WebP; bis 2 MB)<input type="file" name="portraitFile" accept="image/png,image/jpeg,image/webp"></label><label><input type="checkbox" name="replacePortrait">Bisherigen Upload durch die ausgewählte Illustration ersetzen</label><small>Die angebotenen Bilder sind KI-generierte Illustrationen. Wähle das Bild selbst; aus Beruf oder Herkunft wird kein Aussehen abgeleitet.</small></fieldset><div class="avatar-fields">${fields.map(([key,label,required])=>`<label>${label}${['name','role','place'].includes(key)?`<input name="${key}" maxlength="180" ${required?'required':''} value="${esc(c[key]||'')}">`:`<textarea name="${key}" maxlength="3000" rows="2" ${required?'required':''}>${esc(c[key]||'')}</textarea>`}</label>`).join('')}</div><p id="avatarError" role="alert"></p><button type="submit">${edit?'Änderungen speichern':'Avatar erzeugen und verwenden'}</button><p class="small">Auf diesem Gerät gespeichert; über «Eigene Arbeit & Sicherung» exportierbar. In Augustinus und Memoria wählbar.</p></form>`;dialog.querySelector('[data-avatar-close]').onclick=()=>dialog.close();dialog.querySelector('[name=portraitId]').onchange=e=>{$('#avatarPortraitPreview').innerHTML=characterPortraitHtml({id:e.target.value});dialog.querySelector('[name=replacePortrait]').checked=true};dialog.querySelector('[name=portraitFile]').onchange=e=>{const file=e.target.files?.[0];if(!file||file.size>2*1024*1024||!['image/png','image/jpeg','image/webp'].includes(file.type))return;const reader=new FileReader();reader.onload=()=>{$('#avatarPortraitPreview').innerHTML=characterPortraitHtml({id:'preview',role:'Vorschau',portraitData:reader.result})};reader.readAsDataURL(file)};dialog.querySelector('form').onsubmit=async e=>{e.preventDefault();const form=new FormData(e.target),year=Number(form.get('year'));if(!Number.isInteger(year)||year===0){$('#avatarError').textContent='Bitte ein ganzzahliges Jahr ungleich 0 angeben.';return}const avatar={id:edit?c.id:'avatar-'+crypto.randomUUID(),year,own:true,related:'history',limit:'Selbst erstelltes Personenmodell; Annahmen und Quellen im Profil prüfen.'};for(const [key] of fields)avatar[key]=String(form.get(key)||'').trim();avatar.portraitId=String(form.get('portraitId'));avatar.portraitData=form.get('replacePortrait')?'':c.portraitData||'';const file=form.get('portraitFile');if(file?.size){if(file.size>2*1024*1024||!['image/png','image/jpeg','image/webp'].includes(file.type)){$('#avatarError').textContent='Bitte PNG, JPEG oder WebP bis 2 MB wählen.';return}try{avatar.portraitData=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=reject;reader.readAsDataURL(file)})}catch{$('#avatarError').textContent='Das Bild konnte nicht gelesen werden.';return}}state.avatars??=[];const index=state.avatars.findIndex(x=>x.id===avatar.id);if(index<0)state.avatars.push(avatar);else state.avatars[index]=avatar;dialog.close();selectCharacter(avatar.id)};dialog.showModal()}
 const AUGUSTINE_TONES=[261.63,293.66,329.63,392,349.23,329.63,293.66,261.63];
