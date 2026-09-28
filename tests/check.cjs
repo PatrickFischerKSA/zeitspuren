@@ -449,3 +449,8 @@ vm.runInContext(`
 for(const scenario of LIVE_SCENARIOS){if(!byId(scenario.event)||!byId(scenario.other))throw Error('Unknown scenario source');for(const mode of Object.keys(GLOBAL_LENSES)){const fields=liveScenarioFields(mode,scenario);if(Object.values(fields).some(v=>typeof v!=='string'||!v.trim()))throw Error('Incomplete scenario '+mode);if(Object.values(fields).some(v=>/^Prüfe |^Suche |^Benenne /.test(v)))throw Error('Instruction instead of proposed scenario');}}
 `,ctx);
 console.log('PASS: Every concept receives complete scenario statements grounded in existing source entries.');
+vm.runInContext(`
+const climateScenario=LIVE_SCENARIOS.find(s=>s.id==='climate');if(climateScenario.other==='vote')throw Error('Unrelated suffrage counter-example');
+const concreteEgypt=liveScenarioFields('egypt',climateScenario);if(!concreteEgypt.authority.includes('Vertragsparteien')||!concreteEgypt.change.includes('fünf Jahre')||!concreteEgypt.counter.includes('Nachsteuern'))throw Error('Missing concrete climate mechanism');
+`,ctx);
+console.log('PASS: Climate comparison names actors and renewal mechanism; unrelated counter-example removed.');
